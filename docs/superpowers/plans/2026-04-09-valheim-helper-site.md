@@ -1546,29 +1546,74 @@ git commit -m "feat(data): add getDataSet build-time loader"
 
 ## Phase 4: Theme and Layout
 
-### Task 9: Dark dashboard theme CSS
+### Task 9: Theme CSS (oklch, auto dark/light)
 
 **Files:**
 - Create: `<repo>/src/styles/theme.css`
+
+Uses the user-provided oklch palette (hue 264, neutral blue). Dark mode is
+the default; light mode activates automatically via
+`@media (prefers-color-scheme: light)`. Component styles reference only
+the semantic aliases (`--surface`, `--text-soft`, `--accent`, etc.), so the
+aliases are the only layer Phase 5 touches.
 
 - [ ] **Step 1: Write src/styles/theme.css**
 
 Create `<repo>/src/styles/theme.css`:
 
 ```css
+/* ===== Palette — dark (default) ===== */
 :root {
-  --bg: #14181d;
-  --surface: #1a1e24;
-  --surface-2: #1e242c;
-  --border: #2a2f38;
-  --border-soft: #242931;
-  --text: #d8d4c8;
-  --text-soft: #9a9688;
-  --muted: #7a7668;
-  --accent: #e8b87a;
-  --accent-bg: #3a2f22;
-  --accent-border: #5a4530;
-  --danger: #c96a5a;
+  --bg-dark: oklch(0.1 0.025 264);
+  --bg: oklch(0.15 0.025 264);
+  --bg-light: oklch(0.2 0.025 264);
+  --text: oklch(0.96 0.05 264);
+  --text-muted: oklch(0.76 0.05 264);
+  --highlight: oklch(0.5 0.05 264);
+  --border: oklch(0.4 0.05 264);
+  --border-muted: oklch(0.3 0.05 264);
+  --primary: oklch(0.76 0.1 264);
+  --secondary: oklch(0.76 0.1 84);
+  --danger: oklch(0.7 0.05 30);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
+}
+
+/* ===== Palette — light (auto via prefers-color-scheme) ===== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-dark: oklch(0.92 0.025 264);
+    --bg: oklch(0.96 0.025 264);
+    --bg-light: oklch(1 0.025 264);
+    --text: oklch(0.15 0.05 264);
+    --text-muted: oklch(0.4 0.05 264);
+    --highlight: oklch(1 0.05 264);
+    --border: oklch(0.6 0.05 264);
+    --border-muted: oklch(0.7 0.05 264);
+    --primary: oklch(0.4 0.1 264);
+    --secondary: oklch(0.4 0.1 84);
+    --danger: oklch(0.5 0.05 30);
+    --warning: oklch(0.5 0.05 100);
+    --success: oklch(0.5 0.05 160);
+    --info: oklch(0.5 0.05 260);
+  }
+}
+
+/* ===== Semantic aliases (used by component styles) =====
+ * These let the component CSS stay stable across palette changes.
+ * `color-mix` is resolved lazily per use site, so it picks up the
+ * current `--primary` under both dark and light modes automatically.
+ */
+:root {
+  --surface: var(--bg-light);       /* cards, table, filter bar */
+  --surface-sunken: var(--bg-dark); /* expanded rows, pressed states */
+  --border-soft: var(--border-muted);
+  --text-soft: var(--text-muted);
+  --muted: var(--text-muted);
+  --accent: var(--primary);
+  --accent-bg: color-mix(in oklch, var(--primary) 18%, transparent);
+  --accent-border: var(--primary);
 
   --radius: 6px;
   --radius-sm: 4px;
@@ -1662,7 +1707,7 @@ h3 {
 
 ```bash
 git add src/styles/theme.css
-git commit -m "feat(theme): add dark dashboard theme CSS"
+git commit -m "feat(theme): add oklch theme with auto dark/light mode"
 ```
 
 ---
@@ -2601,10 +2646,10 @@ Open `<repo>/src/styles/theme.css` and append (keep all existing content — thi
   font: inherit;
 }
 .recipe-row:hover {
-  background: var(--surface-2);
+  background: var(--surface-sunken);
 }
 .recipe-row--expanded {
-  background: var(--surface-2);
+  background: var(--surface-sunken);
 }
 .recipe-row__name {
   font-weight: 500;
@@ -2623,7 +2668,7 @@ Open `<repo>/src/styles/theme.css` and append (keep all existing content — thi
 }
 .recipe-row__detail {
   padding: 14px 18px 18px 34px;
-  background: var(--surface-2);
+  background: var(--surface-sunken);
   border-bottom: 1px solid var(--border-soft);
   font-size: 12px;
   color: var(--text);
