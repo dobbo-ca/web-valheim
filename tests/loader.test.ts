@@ -88,4 +88,25 @@ describe('loadAll', () => {
       })
     ).toThrow(/stationLevel/);
   });
+
+  it('fails when a recipe yields an unknown item id', async () => {
+    const { validateCrossReferences } = await import('../src/lib/loader');
+    expect(() =>
+      validateCrossReferences({
+        items: [{ id: 'iron', name: 'Iron', category: 'material' }],
+        stations: [{ id: 'forge', name: 'Forge', maxLevel: 7, upgrades: [] }],
+        recipes: [
+          {
+            id: 'x',
+            name: 'X',
+            type: 'crafting',
+            station: 'forge',
+            stationLevel: 1,
+            ingredients: [{ itemId: 'iron', qty: 1 }],
+            yields: { itemId: 'ghost-item', qty: 1 },
+          },
+        ],
+      })
+    ).toThrow(/ghost-item/);
+  });
 });
