@@ -22,6 +22,11 @@ describe('StationSchema', () => {
     const input = { id: 'forge', name: 'Forge', maxLevel: -1, upgrades: [] };
     expect(() => StationSchema.parse(input)).toThrow();
   });
+
+  it('defaults upgrades to [] when omitted', () => {
+    const parsed = StationSchema.parse({ id: 'cauldron', name: 'Cauldron', maxLevel: 5 });
+    expect(parsed.upgrades).toEqual([]);
+  });
 });
 
 describe('ItemSchema', () => {
