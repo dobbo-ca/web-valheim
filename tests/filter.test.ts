@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { filterRecipes, type FilterState } from '../src/lib/filter';
+import { filterRecipes, emptyFilterState, type FilterState } from '../src/lib/filter';
 import type { Recipe } from '../src/lib/types';
 
 const sample: Recipe[] = [
@@ -41,13 +41,7 @@ const sample: Recipe[] = [
   },
 ];
 
-const empty: FilterState = {
-  type: 'all',
-  station: 'all',
-  maxStationLevel: 10,
-  ingredientIds: [],
-  query: '',
-};
+const empty: FilterState = { ...emptyFilterState };
 
 describe('filterRecipes', () => {
   it('returns everything when filters are empty', () => {
