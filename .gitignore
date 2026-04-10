@@ -1,0 +1,21 @@
+# Superpowers brainstorm artifacts
+.superpowers/
+
+# Node
+node_modules/
+dist/
+.astro/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
