@@ -1,0 +1,8 @@
+- id: forge
+  name: Forge
+  maxLevel: 7
+  upgrades: []
+- id: cauldron
+  name: Cauldron
+  maxLevel: 5
+  upgrades: []

@@ -1,0 +1,9 @@
+- id: iron-sword
+  name: Iron Sword
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: iron, qty: 60 }
+    - { itemId: wood, qty: 2 }
+    - { itemId: leather-scraps, qty: 2 }
