@@ -69,7 +69,7 @@ requested. YAML + Zod gives easy hand-editing with build-time safety.
 ### Repo Layout
 
 ```
-valheim-helper/
+web-valheim/
 ├── astro.config.mjs
 ├── package.json
 ├── tsconfig.json
@@ -115,18 +115,18 @@ valheim-helper/
 
 ### Source Repo & Deployment
 
-- **Source repo:** `dobbo-ca/valheim-helper` (new, in the dobbo-ca org)
-- **Publish target:** `cdobbyn/cdobbyn.github.io` (existing), under its
+- **Source repo:** `dobbo-ca/web-valheim` (new, in the dobbo-ca org)
+- **Publish target:** `dobbo-ca/dobbo-ca.github.io` (existing), under its
   `valheim/` subdirectory. Served at `https://www.dobbo.ca/valheim/` via the
   existing CNAME on the Pages repo.
 
-**Cross-org auth:** A dedicated GitHub App, installed on both:
+**Deploy auth:** A dedicated GitHub App, installed on both repos in the `dobbo-ca` org:
 
-- `dobbo-ca/valheim-helper` — permissions: `contents: read`, `actions: read`
-- `cdobbyn/cdobbyn.github.io` — permissions: `contents: write`
+- `dobbo-ca/web-valheim` — permissions: `contents: read`, `actions: read`
+- `dobbo-ca/dobbo-ca.github.io` — permissions: `contents: write`
 
 The deploy workflow uses `actions/create-github-app-token@v1` with the App ID
-and private key (stored as repo secrets on `dobbo-ca/valheim-helper`) to mint a
+and private key (stored as repo secrets on `dobbo-ca/web-valheim`) to mint a
 short-lived installation token. The workflow then checks out the Pages repo,
 removes the existing `valheim/` directory, copies `dist/*` into it, commits,
 and pushes.
@@ -136,14 +136,14 @@ permissions per repo, revocable centrally, no personal account entanglement.
 
 ### Build & Deploy Flow
 
-1. Push to `main` on `dobbo-ca/valheim-helper`
+1. Push to `main` on `dobbo-ca/web-valheim`
 2. `ci.yml` runs lint, typecheck, tests, build (PR and main)
 3. On main: `deploy.yml` runs after CI passes:
    - `pnpm install && pnpm build` → `dist/`
    - Mint App installation token
-   - Checkout `cdobbyn/cdobbyn.github.io`
+   - Checkout `dobbo-ca/dobbo-ca.github.io`
    - `rm -rf valheim/ && cp -r dist/* valheim/`
-   - Commit `"deploy: valheim-helper @ <short-sha>"` and push
+   - Commit `"deploy: web-valheim @ <short-sha>"` and push
 4. GitHub Pages picks up the push automatically
 
 Astro's `base: '/valheim/'` ensures all asset URLs resolve correctly when
@@ -324,7 +324,7 @@ Detail pages are pure static HTML — no JS required to render.
 - `/valheim/` — home, mounts `<RecipeTable client:load />`
 - `/valheim/recipes/<slug>/` — per-recipe detail
 - `/valheim/about/` — credits, data source notes, how to report errors
-  (link to new issue on `dobbo-ca/valheim-helper`)
+  (link to new issue on `dobbo-ca/web-valheim`)
 
 ## Extensibility Plan (v2+)
 
@@ -379,7 +379,7 @@ deploy.
 ### Deploy (main only)
 
 `deploy.yml` runs after `ci.yml` succeeds on main. Mints the GitHub App token
-and syncs `dist/` into `cdobbyn/cdobbyn.github.io/valheim/`.
+and syncs `dist/` into `dobbo-ca/dobbo-ca.github.io/valheim/`.
 
 ## Open Questions / Deferred Decisions
 
@@ -389,9 +389,9 @@ brainstorming and are captured above:
 - MVP scope → crafting + cooking recipes only
 - Data source → curated YAML, seeded once via throwaway wiki scraper
 - Stack → Astro + SolidJS + TypeScript
-- Deploy → GitHub Action syncs to `cdobbyn/cdobbyn.github.io/valheim/`
-- Repo home → `dobbo-ca/valheim-helper` with a dedicated GitHub App for
-  cross-org deploy auth
+- Deploy → GitHub Action syncs to `dobbo-ca/dobbo-ca.github.io/valheim/`
+- Repo home → `dobbo-ca/web-valheim` with a dedicated GitHub App for
+  deploy auth
 - Layout → filterable table, dark dashboard theme
 - Row interaction → inline expand + "open detail page" link
 - Reverse lookup → clickable ingredient chips that filter the table
