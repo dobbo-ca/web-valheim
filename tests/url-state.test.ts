@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { encodeFilterState, decodeFilterState } from '../src/lib/url-state';
+import { emptyFilterState, type FilterState } from '../src/lib/filter';
 
 describe('URL state', () => {
   it('encodes all fields', () => {
@@ -45,5 +46,22 @@ describe('URL state', () => {
     expect(state.maxStationLevel).toBe(Number.POSITIVE_INFINITY);
     expect(state.ingredientIds).toEqual([]);
     expect(state.query).toBe('');
+  });
+
+  it('round-trips a fully populated state', () => {
+    const original: FilterState = {
+      type: 'crafting',
+      station: 'forge',
+      maxStationLevel: 3,
+      ingredientIds: ['iron', 'wood'],
+      query: 'sword',
+    };
+    expect(decodeFilterState(encodeFilterState(original))).toEqual(original);
+  });
+
+  it('round-trips emptyFilterState', () => {
+    expect(decodeFilterState(encodeFilterState(emptyFilterState))).toEqual(
+      emptyFilterState,
+    );
   });
 });
