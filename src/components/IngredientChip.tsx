@@ -20,8 +20,7 @@ export const IngredientChip: Component<Props> = (props) => {
       disabled={!clickable}
       onClick={() => props.onClick?.(props.itemId)}
     >
-      {props.label}
-      {props.qty != null && <span class="chip__qty"> ×{props.qty}</span>}
+      {props.label}{props.qty != null && <>{' '}<span class="chip__qty">×{props.qty}</span></>}
     </button>
   );
 };
