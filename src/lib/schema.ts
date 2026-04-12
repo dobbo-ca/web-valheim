@@ -39,6 +39,7 @@ export const FoodStatsSchema = z.object({
   stamina: z.number().nonnegative(),
   duration: z.number().nonnegative(),
   regen: z.number().nonnegative(),
+  eitr: z.number().nonnegative().optional(),
 });
 
 export const SecondaryStepSchema = z.object({

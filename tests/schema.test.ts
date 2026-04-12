@@ -145,3 +145,31 @@ describe('RecipeSchema — secondaryStep field', () => {
     ).toThrow();
   });
 });
+
+describe('RecipeSchema — food with eitr', () => {
+  it('accepts food stats with eitr', () => {
+    const result = RecipeSchema.parse({
+      id: 'mushrooms-galore',
+      name: 'Mushrooms Galore',
+      type: 'cooking',
+      station: 'food-table',
+      stationLevel: 1,
+      ingredients: [{ itemId: 'magecap', qty: 3 }],
+      food: { hp: 65, stamina: 65, duration: 3000, regen: 5, eitr: 33 },
+    });
+    expect(result.food?.eitr).toBe(33);
+  });
+
+  it('accepts food stats without eitr', () => {
+    const result = RecipeSchema.parse({
+      id: 'bread',
+      name: 'Bread',
+      type: 'cooking',
+      station: 'food-table',
+      stationLevel: 1,
+      ingredients: [{ itemId: 'barley-flour', qty: 10 }],
+      food: { hp: 23, stamina: 70, duration: 1500, regen: 2 },
+    });
+    expect(result.food?.eitr).toBeUndefined();
+  });
+});
