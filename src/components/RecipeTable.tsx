@@ -51,6 +51,7 @@ export const RecipeTable: Component<Props> = (props) => {
   const [pageSize, setPageSize] = createSignal<number>(readStoredPageSize());
   const [cart, setCart] = createStore<Record<string, number>>({});
   const [drawerOpen, setDrawerOpen] = createSignal(false);
+  const [mounted, setMounted] = createSignal(false);
 
   // Stable sorted recipe IDs used as the integer index for URL encoding
   const recipeIndex = createMemo(() =>
@@ -78,6 +79,8 @@ export const RecipeTable: Component<Props> = (props) => {
         // localStorage unavailable or corrupt
       }
     }
+
+    setMounted(true);
   });
 
   createEffect(() => {
@@ -283,6 +286,7 @@ export const RecipeTable: Component<Props> = (props) => {
   const end = () => Math.min(clampedPage() * pageSize(), sorted().length);
 
   return (
+    <Show when={mounted()} fallback={<div class="recipe-table__loading" />}>
     <div class="recipe-table">
       <div class="recipe-table__toolbar">
         <FilterBar state={state()} stations={props.data.stations} onChange={commit} />
@@ -425,5 +429,6 @@ export const RecipeTable: Component<Props> = (props) => {
         onClear={handleClearCart}
       />
     </div>
+    </Show>
   );
 };
