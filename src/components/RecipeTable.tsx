@@ -1,10 +1,22 @@
-import { For, Show, createMemo, createSignal, onMount, type Component } from 'solid-js';
+import { For, Show, createEffect, createMemo, createSignal, onMount, type Component } from 'solid-js';
+import { createStore, reconcile } from 'solid-js/store';
 import type { DataSet } from '../lib/loader';
 import type { FilterState } from '../lib/filter';
 import { filterRecipes, emptyFilterState } from '../lib/filter';
 import { decodeFilterState, encodeFilterState } from '../lib/url-state';
+import {
+  addToCart,
+  removeFromCart,
+  setQty,
+  clearCart,
+  aggregateGroceryList,
+  encodeCartUrl,
+  decodeCartUrl,
+} from '../lib/cart';
 import { FilterBar } from './FilterBar';
 import { RecipeRow } from './RecipeRow';
+import { CartButton } from './CartButton';
+import { CartDrawer } from './CartDrawer';
 
 type SortKey = 'name' | 'station' | 'level';
 type SortDir = 'asc' | 'desc';
@@ -23,10 +35,49 @@ export const RecipeTable: Component<Props> = (props) => {
   const [sortDir, setSortDir] = createSignal<SortDir>('asc');
   const [page, setPage] = createSignal(1);
   const [pageSize, setPageSize] = createSignal<number>(20);
+  const [cart, setCart] = createStore<Record<string, number>>({});
+  const [drawerOpen, setDrawerOpen] = createSignal(false);
 
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
     setState(decodeFilterState(params));
+
+    // Hydrate cart: URL param takes precedence over localStorage
+    const cartParam = params.get('cart');
+    if (cartParam) {
+      setCart(reconcile(decodeCartUrl(cartParam)));
+    } else {
+      try {
+        const stored = localStorage.getItem('valheim-cart');
+        if (stored) {
+          setCart(reconcile(decodeCartUrl(stored)));
+        }
+      } catch {
+        // localStorage unavailable
+      }
+    }
+  });
+
+  createEffect(() => {
+    const keys = Object.keys(cart);
+    const snapshot = Object.fromEntries(keys.map((k) => [k, cart[k]]));
+    const encoded = encodeCartUrl(snapshot);
+    // Persist to localStorage
+    try {
+      localStorage.setItem('valheim-cart', encoded);
+    } catch {
+      // localStorage unavailable
+    }
+    // Update URL
+    const params = new URLSearchParams(window.location.search);
+    if (encoded) {
+      params.set('cart', encoded);
+    } else {
+      params.delete('cart');
+    }
+    const qs = params.toString();
+    const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    window.history.replaceState({}, '', url);
   });
 
   const itemsById = createMemo(
@@ -36,6 +87,53 @@ export const RecipeTable: Component<Props> = (props) => {
   const stationsById = createMemo(
     () => new Map(props.data.stations.map((s) => [s.id, s])),
   );
+
+  const recipesById = createMemo(
+    () => new Map(props.data.recipes.map((r) => [r.id, r])),
+  );
+
+  const cartKeys = createMemo(() => Object.keys(cart));
+  const cartCount = createMemo(() => cartKeys().length);
+
+  const groceryList = createMemo(() =>
+    aggregateGroceryList(
+      Object.fromEntries(cartKeys().map((k) => [k, cart[k]])),
+      recipesById(),
+      itemsById(),
+    ),
+  );
+
+  const cartEntries = createMemo(() =>
+    cartKeys().map((recipeId) => ({
+      recipeId,
+      recipeName: recipesById().get(recipeId)?.name ?? recipeId,
+      qty: cart[recipeId],
+    })),
+  );
+
+  const handleAddToCart = (recipeId: string) => {
+    const snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
+    setCart(reconcile(addToCart(snapshot, recipeId)));
+  };
+
+  const handleSetQty = (recipeId: string, qty: number) => {
+    const snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
+    const next = setQty(snapshot, recipeId, qty);
+    setCart(reconcile(next));
+    if (Object.keys(next).length === 0) setDrawerOpen(false);
+  };
+
+  const handleRemoveFromCart = (recipeId: string) => {
+    const snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
+    const next = removeFromCart(snapshot, recipeId);
+    setCart(reconcile(next));
+    if (Object.keys(next).length === 0) setDrawerOpen(false);
+  };
+
+  const handleClearCart = () => {
+    setCart(reconcile(clearCart()));
+    setDrawerOpen(false);
+  };
 
   const filtered = createMemo(() => filterRecipes(props.data.recipes, state()));
 
@@ -96,6 +194,10 @@ export const RecipeTable: Component<Props> = (props) => {
     setState(next);
     setPage(1);
     const params = encodeFilterState(next);
+    // Preserve cart param across filter changes
+    const currentParams = new URLSearchParams(window.location.search);
+    const cartParam = currentParams.get('cart');
+    if (cartParam) params.set('cart', cartParam);
     const qs = params.toString();
     const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
     window.history.replaceState({}, '', url);
@@ -150,7 +252,10 @@ export const RecipeTable: Component<Props> = (props) => {
 
   return (
     <div class="recipe-table">
-      <FilterBar state={state()} stations={props.data.stations} onChange={commit} />
+      <div class="recipe-table__toolbar">
+        <FilterBar state={state()} stations={props.data.stations} onChange={commit} />
+        <CartButton count={cartCount()} onClick={() => setDrawerOpen(true)} />
+      </div>
 
       <Show when={state().ingredientIds.length > 0}>
         <div class="reverse-lookup-strip">
@@ -188,6 +293,7 @@ export const RecipeTable: Component<Props> = (props) => {
             </button>
           </span>
           <span role="columnheader">Ingredients</span>
+          <span role="columnheader" class="sr-only">Cart</span>
         </div>
 
         <For each={paginated()} fallback={<div class="recipe-table__empty">No recipes match these filters.</div>}>
@@ -198,8 +304,11 @@ export const RecipeTable: Component<Props> = (props) => {
               stationsById={stationsById()}
               expanded={expandedId() === recipe.id}
               baseHref={props.baseHref}
+              inCart={recipe.id in cart}
               onToggle={toggleRow}
               onIngredientClick={addIngredient}
+              onAddToCart={handleAddToCart}
+              onOpenCart={() => setDrawerOpen(true)}
             />
           )}
         </For>
@@ -267,6 +376,16 @@ export const RecipeTable: Component<Props> = (props) => {
           </For>
         </div>
       </div>
+
+      <CartDrawer
+        open={drawerOpen()}
+        entries={cartEntries()}
+        groceryList={groceryList()}
+        onClose={() => setDrawerOpen(false)}
+        onSetQty={handleSetQty}
+        onRemove={handleRemoveFromCart}
+        onClear={handleClearCart}
+      />
     </div>
   );
 };

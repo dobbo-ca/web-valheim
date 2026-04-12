@@ -35,8 +35,11 @@ describe('RecipeRow', () => {
         stationsById={stationsById}
         expanded={false}
         baseHref="/valheim/"
+        inCart={false}
         onToggle={() => {}}
         onIngredientClick={() => {}}
+        onAddToCart={() => {}}
+        onOpenCart={() => {}}
       />
     ));
     expect(screen.getByText('Iron Sword')).toBeInTheDocument();
@@ -54,8 +57,11 @@ describe('RecipeRow', () => {
         stationsById={stationsById}
         expanded={true}
         baseHref="/valheim/"
+        inCart={false}
         onToggle={() => {}}
         onIngredientClick={() => {}}
+        onAddToCart={() => {}}
+        onOpenCart={() => {}}
       />
     ));
     expect(screen.getByText(/Strong vs skeletons/)).toBeInTheDocument();
@@ -71,8 +77,11 @@ describe('RecipeRow', () => {
         stationsById={stationsById}
         expanded={false}
         baseHref="/valheim/"
+        inCart={false}
         onToggle={onToggle}
         onIngredientClick={() => {}}
+        onAddToCart={() => {}}
+        onOpenCart={() => {}}
       />
     ));
     fireEvent.click(screen.getByRole('button', { name: /Iron Sword/ }));
@@ -88,8 +97,11 @@ describe('RecipeRow', () => {
         stationsById={stationsById}
         expanded={true}
         baseHref="/valheim/"
+        inCart={false}
         onToggle={() => {}}
         onIngredientClick={onIngredientClick}
+        onAddToCart={() => {}}
+        onOpenCart={() => {}}
       />
     ));
     fireEvent.click(screen.getByRole('button', { name: /Iron ×60/ }));
@@ -104,8 +116,11 @@ describe('RecipeRow', () => {
         stationsById={stationsById}
         expanded={true}
         baseHref="/valheim/"
+        inCart={false}
         onToggle={() => {}}
         onIngredientClick={() => {}}
+        onAddToCart={() => {}}
+        onOpenCart={() => {}}
       />
     ));
     // Row button is the one with aria-expanded="true"
@@ -125,8 +140,11 @@ describe('RecipeRow', () => {
         stationsById={stationsById}
         expanded={true}
         baseHref="/valheim/"
+        inCart={false}
         onToggle={() => {}}
         onIngredientClick={() => {}}
+        onAddToCart={() => {}}
+        onOpenCart={() => {}}
       />
     ));
     expect(
