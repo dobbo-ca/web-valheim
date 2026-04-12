@@ -442,20 +442,32 @@ h3 {
   color: var(--text-soft);
 }
 @media (max-width: 768px) {
-  .filter-bar {
+  .recipe-table__toolbar {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
     gap: 6px;
+    align-items: stretch;
+  }
+  .recipe-table__toolbar .filter-bar {
+    display: contents;
   }
   .filter-bar__search {
-    min-width: unset;
-    width: 100%;
-    order: -1;
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .cart-badge {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 6px 10px;
+    font-size: 12px;
   }
   .filter-bar__level {
     display: none;
   }
   .filter-bar__row {
+    grid-column: 1 / -1;
+    grid-row: 2;
     display: flex;
     gap: 6px;
     align-items: stretch;
