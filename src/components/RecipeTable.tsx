@@ -423,6 +423,8 @@ export const RecipeTable: Component<Props> = (props) => {
         onSetQty={handleSetQty}
         onRemove={handleRemoveFromCart}
         onClear={handleClearCart}
+        iconIds={iconSet()}
+        spriteHref={props.spriteHref ?? `${props.baseHref}icons/sprite.svg`}
       />
     </div>
     </Show>
