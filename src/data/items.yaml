@@ -45,12 +45,23 @@
 - { id: royal-jelly, name: Royal Jelly, category: material, stackSize: 50 }
 - { id: mandible, name: Mandible, category: material, stackSize: 50 }
 
+# Mistlands materials (additions)
+- { id: scale-hide, name: Scale Hide, category: material, stackSize: 50 }
+
 # Ashlands materials
 - { id: flametal, name: Flametal, category: material, stackSize: 30 }
 - { id: charred-bone, name: Charred Bone, category: material, stackSize: 50 }
 - { id: morgen-heart, name: Morgen Heart, category: material, stackSize: 20 }
+- { id: morgen-sinew, name: Morgen Sinew, category: material, stackSize: 20 }
 - { id: bilebag, name: Bilebag, category: material, stackSize: 20 }
 - { id: coal, name: Coal, category: material, stackSize: 50 }
+- { id: asksvin-hide, name: Asksvin Hide, category: material, stackSize: 50 }
+- { id: ashwood, name: Ashwood, category: material, stackSize: 50 }
+- { id: proustite-powder, name: Proustite Powder, category: material, stackSize: 50 }
+- { id: celestial-feather, name: Celestial Feather, category: material, stackSize: 20 }
+- { id: bloodstone, name: Bloodstone, category: material, stackSize: 20 }
+- { id: skeleton-trophy, name: Skeleton Trophy, category: material, stackSize: 20 }
+- { id: wolf-trophy, name: Wolf Trophy, category: material, stackSize: 20 }
 
 # Plains materials (additions)
 - { id: flax, name: Flax, category: material, stackSize: 50 }

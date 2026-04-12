@@ -158,6 +158,29 @@
     - { itemId: leather-scraps, qty: 3 }
   tags: [cape, armor, tier-1]
 
+- id: wolf-fur-cape
+  name: Wolf Fur Cape
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  ingredients:
+    - { itemId: wolf-pelt, qty: 6 }
+    - { itemId: wolf-trophy, qty: 1 }
+    - { itemId: silver, qty: 4 }
+  tags: [cape, armor, tier-4]
+  notes: Provides frost resistance.
+
+- id: lox-cape
+  name: Lox Cape
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  ingredients:
+    - { itemId: lox-pelt, qty: 6 }
+    - { itemId: silver, qty: 2 }
+  tags: [cape, armor, tier-5]
+  notes: Provides frost resistance.
+
 - id: troll-leather-helmet
   name: Troll Leather Helmet
   type: crafting
@@ -1184,6 +1207,19 @@
     - { itemId: charred-bone, qty: 5 }
   tags: [shield, tower-shield, tier-7]
 
+# Black Forge cape
+- id: ashen-cape
+  name: Ashen Cape
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: asksvin-hide, qty: 6 }
+    - { itemId: morgen-sinew, qty: 2 }
+    - { itemId: flametal, qty: 5 }
+  tags: [cape, armor, tier-7]
+  notes: -10% attack stamina, -20% block stamina.
+
 # Black Forge arrows
 - id: carapace-arrow
   name: Carapace Arrow
@@ -1361,6 +1397,116 @@
     - { itemId: linen-thread, qty: 15 }
     - { itemId: carapace, qty: 10 }
   tags: [legs, armor, magic, tier-6]
+
+# Feather Cape (Galdr Table level 1)
+- id: feather-cape
+  name: Feather Cape
+  type: crafting
+  station: galdr-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: feathers, qty: 10 }
+    - { itemId: scale-hide, qty: 5 }
+    - { itemId: refined-eitr, qty: 20 }
+  tags: [cape, armor, magic, tier-6]
+  notes: Provides 100% fall damage reduction.
+
+# Ashlands staves (Galdr Table level 2)
+- id: staff-of-fracturing
+  name: Staff of Fracturing
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: charred-bone, qty: 15 }
+    - { itemId: ashwood, qty: 5 }
+    - { itemId: proustite-powder, qty: 8 }
+  tags: [staff, two-handed, magic, tier-7]
+
+- id: dundr
+  name: Dundr
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: ashwood, qty: 10 }
+    - { itemId: flametal, qty: 4 }
+    - { itemId: celestial-feather, qty: 3 }
+    - { itemId: bloodstone, qty: 1 }
+  tags: [staff, two-handed, magic, tier-7]
+  notes: Shoots grapeshot of 12 lightning bolts.
+
+- id: trollstav
+  name: Trollstav
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: charred-bone, qty: 15 }
+    - { itemId: troll-trophy, qty: 1 }
+    - { itemId: flametal, qty: 3 }
+    - { itemId: bloodstone, qty: 1 }
+  tags: [staff, two-handed, magic, tier-7]
+  notes: Summons a large troll.
+
+- id: dead-raiser
+  name: Dead Raiser
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: bone-fragments, qty: 10 }
+    - { itemId: refined-eitr, qty: 16 }
+    - { itemId: skeleton-trophy, qty: 4 }
+  tags: [staff, two-handed, magic, tier-6]
+  notes: Blood magic staff — uses Eitr and Health.
+
+# Embla armor set (Galdr Table level 2)
+- id: hood-of-embla
+  name: Hood of Embla
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: linen-thread, qty: 16 }
+    - { itemId: refined-eitr, qty: 15 }
+    - { itemId: asksvin-hide, qty: 2 }
+  tags: [helmet, armor, magic, tier-7]
+
+- id: robes-of-embla
+  name: Robes of Embla
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: linen-thread, qty: 20 }
+    - { itemId: refined-eitr, qty: 20 }
+    - { itemId: asksvin-hide, qty: 10 }
+    - { itemId: flametal, qty: 5 }
+  tags: [chest, armor, magic, tier-7]
+
+- id: trousers-of-embla
+  name: Trousers of Embla
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: linen-thread, qty: 20 }
+    - { itemId: refined-eitr, qty: 20 }
+    - { itemId: asksvin-hide, qty: 10 }
+  tags: [legs, armor, magic, tier-7]
+
+# Asksvin Cloak (Galdr Table level 2)
+- id: asksvin-cloak
+  name: Asksvin Cloak
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: asksvin-hide, qty: 6 }
+    - { itemId: morgen-sinew, qty: 2 }
+  tags: [cape, armor, tier-7]
+  notes: Wind run effect, -15% dodge stamina.
 
 # ── Artisan Table ──────────────────────────────────────────────────────────────
 
