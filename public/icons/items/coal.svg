@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Large chunk -->
+  <polygon points="10,20 22,14 32,18 30,34 14,36" fill="#2A2A2A"/>
+  <!-- Highlight face -->
+  <polygon points="10,20 22,14 22,20 12,24" fill="#3A3A3A"/>
+  <!-- Small chunk -->
+  <polygon points="30,26 40,22 42,34 34,38" fill="#2A2A2A"/>
+  <!-- Small chunk highlight -->
+  <polygon points="30,26 40,22 38,24 30,28" fill="#3A3A3A"/>
+  <!-- Shadow edges -->
+  <polygon points="22,20 30,18 30,34 14,36 16,34 28,32 28,20" fill="#1A1A1A"/>
+</svg>

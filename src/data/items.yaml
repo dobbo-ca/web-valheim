@@ -123,8 +123,95 @@
 - { id: major-healing-mead, name: Major Healing Mead, category: food, stackSize: 10 }
 - { id: minor-stamina-mead, name: Minor Stamina Mead, category: food, stackSize: 10 }
 - { id: medium-stamina-mead, name: Medium Stamina Mead, category: food, stackSize: 10 }
-- { id: major-stamina-mead, name: Major Stamina Mead, category: food, stackSize: 10 }
 - { id: poison-resistance-mead, name: Poison Resistance Mead, category: food, stackSize: 10 }
 - { id: frost-resistance-mead, name: Frost Resistance Mead, category: food, stackSize: 10 }
 - { id: fire-resistance-barley-wine, name: Fire Resistance Barley Wine, category: food, stackSize: 10 }
 - { id: tasty-mead, name: Tasty Mead, category: food, stackSize: 10 }
+
+# New raw meats
+- { id: hare-meat, name: Hare Meat, category: ingredient, stackSize: 20 }
+- { id: chicken-meat, name: Chicken Meat, category: ingredient, stackSize: 20 }
+- { id: bonemaw-meat, name: Bonemaw Meat, category: ingredient, stackSize: 20 }
+- { id: asksvin-tail, name: Asksvin Tail, category: ingredient, stackSize: 20 }
+- { id: volture-meat, name: Volture Meat, category: ingredient, stackSize: 20 }
+- { id: anglerfish, name: Anglerfish, category: ingredient, stackSize: 20 }
+
+# New crafting/recipe ingredients
+- { id: blood-clot, name: Blood Clot, category: material, stackSize: 50 }
+- { id: greydwarf-eye, name: Greydwarf Eye, category: material, stackSize: 50 }
+- { id: smoke-puff, name: Smoke Puff, category: material, stackSize: 50 }
+- { id: fishing-bait, name: Fishing Bait, category: material, stackSize: 100 }
+- { id: bread-dough, name: Bread Dough, category: food, stackSize: 10 }
+
+# Trophies (for bait recipes)
+- { id: ulv-trophy, name: Ulv Trophy, category: material, stackSize: 20 }
+- { id: serpent-trophy, name: Serpent Trophy, category: material, stackSize: 20 }
+- { id: surtling-trophy, name: Surtling Trophy, category: material, stackSize: 20 }
+- { id: lox-trophy, name: Lox Trophy, category: material, stackSize: 20 }
+- { id: troll-trophy, name: Troll Trophy, category: material, stackSize: 20 }
+- { id: abomination-trophy, name: Abomination Trophy, category: material, stackSize: 20 }
+- { id: fuling-trophy, name: Fuling Trophy, category: material, stackSize: 20 }
+
+# Bog Witch spices (purchasable)
+- { id: woodland-herb-blend, name: Woodland Herb Blend, category: ingredient, stackSize: 50 }
+- { id: seafarers-herbs, name: "Seafarer's Herbs", category: ingredient, stackSize: 50 }
+- { id: mountain-peak-pepper-powder, name: Mountain Peak Pepper Powder, category: ingredient, stackSize: 50 }
+- { id: grasslands-herbalist-harvest, name: Grasslands Herbalist Harvest, category: ingredient, stackSize: 50 }
+- { id: herbs-of-the-hidden-hills, name: Herbs of the Hidden Hills, category: ingredient, stackSize: 50 }
+- { id: fiery-spice-powder, name: Fiery Spice Powder, category: ingredient, stackSize: 50 }
+
+# Cooked meats (spit outputs)
+- { id: grilled-neck-tail, name: Grilled Neck Tail, category: food, stackSize: 10 }
+- { id: cooked-boar-meat, name: Cooked Boar Meat, category: food, stackSize: 10 }
+- { id: cooked-deer-meat, name: Cooked Deer Meat, category: food, stackSize: 10 }
+- { id: cooked-fish, name: Cooked Fish, category: food, stackSize: 10 }
+- { id: cooked-wolf-meat, name: Cooked Wolf Meat, category: food, stackSize: 10 }
+- { id: cooked-hare-meat, name: Cooked Hare Meat, category: food, stackSize: 10 }
+- { id: cooked-chicken-meat, name: Cooked Chicken Meat, category: food, stackSize: 10 }
+- { id: cooked-serpent-meat, name: Cooked Serpent Meat, category: food, stackSize: 10 }
+- { id: cooked-lox-meat, name: Cooked Lox Meat, category: food, stackSize: 10 }
+- { id: cooked-seeker-meat, name: Cooked Seeker Meat, category: food, stackSize: 10 }
+- { id: cooked-bonemaw-meat, name: Cooked Bonemaw Meat, category: food, stackSize: 10 }
+- { id: cooked-asksvin-tail, name: Cooked Asksvin Tail, category: food, stackSize: 10 }
+- { id: cooked-volture-meat, name: Cooked Volture Meat, category: food, stackSize: 10 }
+
+# Bait outputs
+- { id: cold-fishing-bait, name: Cold Fishing Bait, category: tool, stackSize: 100 }
+- { id: frosty-fishing-bait, name: Frosty Fishing Bait, category: tool, stackSize: 100 }
+- { id: heavy-fishing-bait, name: Heavy Fishing Bait, category: tool, stackSize: 100 }
+- { id: hot-fishing-bait, name: Hot Fishing Bait, category: tool, stackSize: 100 }
+- { id: misty-fishing-bait, name: Misty Fishing Bait, category: tool, stackSize: 100 }
+- { id: mossy-fishing-bait, name: Mossy Fishing Bait, category: tool, stackSize: 100 }
+- { id: sticky-fishing-bait, name: Sticky Fishing Bait, category: tool, stackSize: 100 }
+- { id: stingy-fishing-bait, name: Stingy Fishing Bait, category: tool, stackSize: 100 }
+
+# Baked goods (oven outputs)
+- { id: bread, name: Bread, category: food, stackSize: 10 }
+- { id: fish-n-bread, name: "Fish 'n' Bread", category: food, stackSize: 10 }
+- { id: honey-glazed-chicken, name: Honey Glazed Chicken, category: food, stackSize: 10 }
+- { id: lox-meat-pie, name: Lox Meat Pie, category: food, stackSize: 10 }
+- { id: stuffed-mushroom, name: Stuffed Mushroom, category: food, stackSize: 10 }
+- { id: meat-platter, name: Meat Platter, category: food, stackSize: 10 }
+
+# Feast outputs
+- { id: whole-roasted-meadow-boar, name: Whole Roasted Meadow Boar, category: food, stackSize: 1 }
+- { id: black-forest-buffet-platter, name: Black Forest Buffet Platter, category: food, stackSize: 1 }
+- { id: sailors-bounty, name: "Sailor's Bounty", category: food, stackSize: 1 }
+- { id: swamp-dwellers-delight, name: "Swamp Dweller's Delight", category: food, stackSize: 1 }
+- { id: hearty-mountain-loggers-stew, name: "Hearty Mountain Logger's Stew", category: food, stackSize: 1 }
+- { id: plains-pie-picnic, name: Plains Pie Picnic, category: food, stackSize: 1 }
+- { id: mushrooms-galore, name: "Mushrooms Galore à la Mistlands", category: food, stackSize: 1 }
+- { id: ashlands-gourmet-bowl, name: Ashlands Gourmet Bowl, category: food, stackSize: 1 }
+
+# Mead additions
+- { id: lingering-healing-mead, name: Lingering Healing Mead, category: food, stackSize: 10 }
+- { id: lingering-stamina-mead, name: Lingering Stamina Mead, category: food, stackSize: 10 }
+
+# Other items referenced by feasts
+- { id: misthare-supreme, name: Misthare Supreme, category: food, stackSize: 10 }
+- { id: deer-stew, name: Deer Stew, category: food, stackSize: 10 }
+- { id: wolf-skewer, name: Wolf Skewer, category: food, stackSize: 10 }
+- { id: onion-soup, name: Onion Soup, category: food, stackSize: 10 }
+- { id: turnip-stew, name: Turnip Stew, category: food, stackSize: 10 }
+- { id: yggdrasil-porridge, name: Yggdrasil Porridge, category: food, stackSize: 10 }
+- { id: scorching-medley, name: Scorching Medley, category: food, stackSize: 10 }

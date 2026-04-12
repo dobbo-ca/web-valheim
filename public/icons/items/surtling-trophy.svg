@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Plaque -->
+  <rect x="10" y="30" width="28" height="14" rx="2" fill="#A0722A"/>
+  <!-- Head -->
+  <rect x="15" y="16" width="18" height="18" rx="3" fill="#CC4400"/>
+  <!-- Flame tips (top of head) -->
+  <polygon points="16,16 13,6 20,12" fill="#FF6620"/>
+  <polygon points="24,16 22,4 26,4 28,16" fill="#FF6620"/>
+  <polygon points="32,16 35,6 28,12" fill="#FF6620"/>
+  <!-- Eyes (glowing) -->
+  <rect x="18" y="22" width="4" height="4" fill="#FFEE00"/>
+  <rect x="26" y="22" width="4" height="4" fill="#FFEE00"/>
+  <!-- Mouth glow -->
+  <rect x="19" y="28" width="10" height="3" rx="1" fill="#FF4400"/>
+</svg>

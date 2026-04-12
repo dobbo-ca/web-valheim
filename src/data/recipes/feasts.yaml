@@ -1,0 +1,156 @@
+# ── Feasts (Food Table) ──────────────────────────────────────────────────────
+# Feasts are placed on a Serving Tray (10 servings per placement, 50-min buff).
+
+- id: whole-roasted-meadow-boar
+  name: Whole Roasted Meadow Boar
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: cooked-deer-meat, qty: 2 }
+    - { itemId: cooked-boar-meat, qty: 5 }
+    - { itemId: dandelion, qty: 4 }
+    - { itemId: woodland-herb-blend, qty: 1 }
+  yields: { itemId: whole-roasted-meadow-boar, qty: 10 }
+  food:
+    hp: 35
+    stamina: 35
+    duration: 3000
+    regen: 2
+  tags: [feast, tier-1]
+  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+
+- id: black-forest-buffet-platter
+  name: Black Forest Buffet Platter
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: deer-stew, qty: 3 }
+    - { itemId: thistle, qty: 5 }
+    - { itemId: queens-jam, qty: 4 }
+    - { itemId: woodland-herb-blend, qty: 1 }
+  yields: { itemId: black-forest-buffet-platter, qty: 10 }
+  food:
+    hp: 35
+    stamina: 35
+    duration: 3000
+    regen: 3
+  tags: [feast, tier-2]
+  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+
+- id: sailors-bounty
+  name: "Sailor's Bounty"
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: cooked-fish, qty: 5 }
+    - { itemId: thistle, qty: 4 }
+    - { itemId: cooked-serpent-meat, qty: 2 }
+    - { itemId: seafarers-herbs, qty: 1 }
+  yields: { itemId: sailors-bounty, qty: 10 }
+  food:
+    hp: 45
+    stamina: 45
+    duration: 3000
+    regen: 3
+  tags: [feast, tier-4]
+  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+
+- id: swamp-dwellers-delight
+  name: "Swamp Dweller's Delight"
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: sausages, qty: 8 }
+    - { itemId: bloodbag, qty: 4 }
+    - { itemId: turnip-stew, qty: 2 }
+    - { itemId: woodland-herb-blend, qty: 1 }
+  yields: { itemId: swamp-dwellers-delight, qty: 10 }
+  food:
+    hp: 35
+    stamina: 35
+    duration: 3000
+    regen: 3
+  tags: [feast, tier-3]
+  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+
+- id: hearty-mountain-loggers-stew
+  name: "Hearty Mountain Logger's Stew"
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: wolf-skewer, qty: 2 }
+    - { itemId: onion-soup, qty: 3 }
+    - { itemId: carrot, qty: 4 }
+    - { itemId: mountain-peak-pepper-powder, qty: 1 }
+  yields: { itemId: hearty-mountain-loggers-stew, qty: 10 }
+  food:
+    hp: 45
+    stamina: 45
+    duration: 3000
+    regen: 3
+  tags: [feast, tier-4]
+  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+
+- id: plains-pie-picnic
+  name: Plains Pie Picnic
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: bread, qty: 3 }
+    - { itemId: lox-meat-pie, qty: 2 }
+    - { itemId: cloudberries, qty: 5 }
+    - { itemId: grasslands-herbalist-harvest, qty: 1 }
+  yields: { itemId: plains-pie-picnic, qty: 10 }
+  food:
+    hp: 55
+    stamina: 55
+    duration: 3000
+    regen: 4
+  tags: [feast, tier-5]
+  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+
+- id: mushrooms-galore
+  name: "Mushrooms Galore à la Mistlands"
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: misthare-supreme, qty: 1 }
+    - { itemId: cooked-seeker-meat, qty: 3 }
+    - { itemId: yggdrasil-porridge, qty: 1 }
+    - { itemId: herbs-of-the-hidden-hills, qty: 1 }
+  yields: { itemId: mushrooms-galore, qty: 10 }
+  food:
+    hp: 65
+    stamina: 65
+    duration: 3000
+    regen: 5
+    eitr: 33
+  tags: [feast, tier-6]
+  notes: "Place on a Serving Tray for 10 servings. 50-minute buff. Grants Eitr."
+
+- id: ashlands-gourmet-bowl
+  name: Ashlands Gourmet Bowl
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: cooked-asksvin-tail, qty: 3 }
+    - { itemId: vineberry-cluster, qty: 5 }
+    - { itemId: scorching-medley, qty: 2 }
+    - { itemId: fiery-spice-powder, qty: 1 }
+  yields: { itemId: ashlands-gourmet-bowl, qty: 10 }
+  food:
+    hp: 75
+    stamina: 75
+    duration: 3000
+    regen: 6
+    eitr: 38
+  tags: [feast, tier-7]
+  notes: "Place on a Serving Tray for 10 servings. 50-minute buff. Grants Eitr."

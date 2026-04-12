@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Main blob -->
+  <ellipse cx="24" cy="26" rx="12" ry="10" fill="#8B0000"/>
+  <!-- Drip/droplet point -->
+  <polygon points="20,34 24,44 28,34" fill="#8B0000"/>
+  <!-- Highlight -->
+  <ellipse cx="20" cy="22" rx="5" ry="4" fill="#AA2020"/>
+  <!-- Shadow -->
+  <ellipse cx="27" cy="30" rx="5" ry="3" fill="#5A0000"/>
+</svg>

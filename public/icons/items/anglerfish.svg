@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Tail fin -->
+  <polygon points="36,16 44,10 44,38 36,32" fill="#2A3A6A"/>
+  <!-- Body -->
+  <ellipse cx="22" cy="26" rx="16" ry="12" fill="#2A3A6A"/>
+  <!-- Belly -->
+  <ellipse cx="22" cy="29" rx="12" ry="7" fill="#4A5A8A"/>
+  <!-- Eye -->
+  <circle cx="12" cy="22" r="3" fill="#E0E0E0"/>
+  <circle cx="12" cy="22" r="1" fill="#1A1A2A"/>
+  <!-- Lure -->
+  <rect x="10" y="12" width="2" height="8" fill="#4A5A8A"/>
+  <circle cx="11" cy="11" r="2" fill="#AAFF44"/>
+  <!-- Mouth teeth -->
+  <polygon points="8,26 6,30 10,30" fill="#E0D8C8"/>
+  <polygon points="12,27 10,32 14,32" fill="#E0D8C8"/>
+</svg>

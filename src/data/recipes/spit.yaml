@@ -1,0 +1,185 @@
+# ── Cooking Spit ──────────────────────────────────────────────────────────────
+
+- id: grilled-neck-tail
+  name: Grilled Neck Tail
+  type: cooking
+  station: cooking-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: neck-tail, qty: 1 }
+  food:
+    hp: 25
+    stamina: 8
+    duration: 1200
+    regen: 2
+  tags: [food, tier-0]
+
+- id: cooked-boar-meat
+  name: Cooked Boar Meat
+  type: cooking
+  station: cooking-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: boar-meat, qty: 1 }
+  food:
+    hp: 30
+    stamina: 10
+    duration: 1200
+    regen: 2
+  tags: [food, tier-0]
+
+- id: cooked-deer-meat
+  name: Cooked Deer Meat
+  type: cooking
+  station: cooking-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: deer-meat, qty: 1 }
+  food:
+    hp: 35
+    stamina: 12
+    duration: 1200
+    regen: 2
+  tags: [food, tier-1]
+
+- id: cooked-fish
+  name: Cooked Fish
+  type: cooking
+  station: cooking-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: fish-raw, qty: 1 }
+  food:
+    hp: 45
+    stamina: 15
+    duration: 1200
+    regen: 3
+  tags: [food, tier-2]
+
+- id: cooked-wolf-meat
+  name: Cooked Wolf Meat
+  type: cooking
+  station: cooking-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: wolf-meat, qty: 1 }
+  food:
+    hp: 45
+    stamina: 15
+    duration: 1200
+    regen: 3
+  tags: [food, tier-3]
+
+- id: cooked-hare-meat
+  name: Cooked Hare Meat
+  type: cooking
+  station: cooking-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: hare-meat, qty: 1 }
+  food:
+    hp: 60
+    stamina: 20
+    duration: 1200
+    regen: 5
+  tags: [food, tier-6]
+
+- id: cooked-chicken-meat
+  name: Cooked Chicken Meat
+  type: cooking
+  station: cooking-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: chicken-meat, qty: 1 }
+  food:
+    hp: 60
+    stamina: 20
+    duration: 1200
+    regen: 5
+  tags: [food, tier-6]
+
+# ── Iron Spit ─────────────────────────────────────────────────────────────────
+
+- id: cooked-serpent-meat
+  name: Cooked Serpent Meat
+  type: cooking
+  station: iron-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: serpent-meat, qty: 1 }
+  food:
+    hp: 70
+    stamina: 23
+    duration: 1500
+    regen: 3
+  tags: [food, tier-4]
+
+- id: cooked-lox-meat
+  name: Cooked Lox Meat
+  type: cooking
+  station: iron-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: lox-meat, qty: 1 }
+  food:
+    hp: 50
+    stamina: 16
+    duration: 1200
+    regen: 4
+  tags: [food, tier-5]
+
+- id: cooked-seeker-meat
+  name: Cooked Seeker Meat
+  type: cooking
+  station: iron-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: seeker-meat, qty: 1 }
+  food:
+    hp: 60
+    stamina: 20
+    duration: 1200
+    regen: 5
+  tags: [food, tier-6]
+
+- id: cooked-bonemaw-meat
+  name: Cooked Bonemaw Meat
+  type: cooking
+  station: iron-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: bonemaw-meat, qty: 1 }
+  food:
+    hp: 90
+    stamina: 30
+    duration: 1500
+    regen: 6
+  tags: [food, tier-7]
+
+- id: cooked-asksvin-tail
+  name: Cooked Asksvin Tail
+  type: cooking
+  station: iron-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: asksvin-tail, qty: 1 }
+  food:
+    hp: 70
+    stamina: 24
+    duration: 1200
+    regen: 6
+  tags: [food, tier-7]
+
+- id: cooked-volture-meat
+  name: Cooked Volture Meat
+  type: cooking
+  station: iron-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: volture-meat, qty: 1 }
+  food:
+    hp: 70
+    stamina: 24
+    duration: 1200
+    regen: 6
+  tags: [food, tier-7]
