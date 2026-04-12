@@ -47,6 +47,8 @@
 
 # Mistlands materials (additions)
 - { id: scale-hide, name: Scale Hide, category: material, stackSize: 50 }
+- { id: chitin, name: Chitin, category: material, stackSize: 50 }
+- { id: sealbreaker-fragment, name: Sealbreaker Fragment, category: material, stackSize: 20 }
 
 # Ashlands materials
 - { id: flametal, name: Flametal, category: material, stackSize: 30 }
@@ -60,6 +62,8 @@
 - { id: proustite-powder, name: Proustite Powder, category: material, stackSize: 50 }
 - { id: celestial-feather, name: Celestial Feather, category: material, stackSize: 20 }
 - { id: bloodstone, name: Bloodstone, category: material, stackSize: 20 }
+- { id: iolite, name: Iolite, category: material, stackSize: 20 }
+- { id: jade, name: Jade, category: material, stackSize: 20 }
 - { id: skeleton-trophy, name: Skeleton Trophy, category: material, stackSize: 20 }
 - { id: wolf-trophy, name: Wolf Trophy, category: material, stackSize: 20 }
 
@@ -114,6 +118,7 @@
 - { id: frost-arrow, name: Frost Arrow, category: weapon, stackSize: 100 }
 - { id: carapace-arrow, name: Carapace Arrow, category: weapon, stackSize: 100 }
 - { id: charred-arrow, name: Charred Arrow, category: weapon, stackSize: 100 }
+- { id: needle-arrow, name: Needle Arrow, category: weapon, stackSize: 100 }
 - { id: iron-bolt, name: Iron Bolt, category: weapon, stackSize: 100 }
 - { id: bone-bolt, name: Bone Bolt, category: weapon, stackSize: 100 }
 - { id: black-metal-bolt, name: Black Metal Bolt, category: weapon, stackSize: 100 }
