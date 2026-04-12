@@ -1,13 +1,15 @@
 import { For, Show, createMemo, createSignal, onMount, type Component } from 'solid-js';
-
-type SortKey = 'name' | 'station' | 'level';
-type SortDir = 'asc' | 'desc';
 import type { DataSet } from '../lib/loader';
 import type { FilterState } from '../lib/filter';
 import { filterRecipes, emptyFilterState } from '../lib/filter';
 import { decodeFilterState, encodeFilterState } from '../lib/url-state';
 import { FilterBar } from './FilterBar';
 import { RecipeRow } from './RecipeRow';
+
+type SortKey = 'name' | 'station' | 'level';
+type SortDir = 'asc' | 'desc';
+
+const PAGE_SIZES = [10, 20, 50, 100] as const;
 
 interface Props {
   data: DataSet;
@@ -19,6 +21,8 @@ export const RecipeTable: Component<Props> = (props) => {
   const [expandedId, setExpandedId] = createSignal<string | null>(null);
   const [sortKey, setSortKey] = createSignal<SortKey | null>(null);
   const [sortDir, setSortDir] = createSignal<SortDir>('asc');
+  const [page, setPage] = createSignal(1);
+  const [pageSize, setPageSize] = createSignal<number>(20);
 
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
@@ -57,6 +61,46 @@ export const RecipeTable: Component<Props> = (props) => {
     });
   });
 
+  const totalPages = createMemo(() =>
+    Math.max(1, Math.ceil(sorted().length / pageSize())),
+  );
+
+  const clampedPage = createMemo(() => Math.min(page(), totalPages()));
+
+  const paginated = createMemo(() => {
+    const p = clampedPage();
+    const size = pageSize();
+    return sorted().slice((p - 1) * size, p * size);
+  });
+
+  // Page numbers to render: always include first, last, and a window around
+  // the current page. null entries render as ellipsis separators.
+  const visiblePages = createMemo((): (number | null)[] => {
+    const total = totalPages();
+    const cur = clampedPage();
+    if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+    const set = new Set<number>([1, total]);
+    for (let i = Math.max(1, cur - 1); i <= Math.min(total, cur + 1); i++) set.add(i);
+    const nums = [...set].sort((a, b) => a - b);
+    const result: (number | null)[] = [];
+    let prev = 0;
+    for (const n of nums) {
+      if (n - prev > 1) result.push(null);
+      result.push(n);
+      prev = n;
+    }
+    return result;
+  });
+
+  const commit = (next: FilterState) => {
+    setState(next);
+    setPage(1);
+    const params = encodeFilterState(next);
+    const qs = params.toString();
+    const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    window.history.replaceState({}, '', url);
+  };
+
   const toggleSort = (key: SortKey) => {
     if (sortKey() !== key) {
       setSortKey(key);
@@ -67,19 +111,12 @@ export const RecipeTable: Component<Props> = (props) => {
       setSortKey(null);
       setSortDir('asc');
     }
+    setPage(1);
   };
 
   const sortIndicator = (key: SortKey) => {
     if (sortKey() !== key) return ' ⇅';
     return sortDir() === 'asc' ? ' ▲' : ' ▼';
-  };
-
-  const commit = (next: FilterState) => {
-    setState(next);
-    const params = encodeFilterState(next);
-    const qs = params.toString();
-    const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
-    window.history.replaceState({}, '', url);
   };
 
   const toggleRow = (id: string) => {
@@ -107,6 +144,9 @@ export const RecipeTable: Component<Props> = (props) => {
 
   const activeIngredientLabel = (id: string) =>
     itemsById().get(id)?.name ?? id;
+
+  const start = () => (clampedPage() - 1) * pageSize() + 1;
+  const end = () => Math.min(clampedPage() * pageSize(), sorted().length);
 
   return (
     <div class="recipe-table">
@@ -150,7 +190,7 @@ export const RecipeTable: Component<Props> = (props) => {
           <span role="columnheader">Ingredients</span>
         </div>
 
-        <For each={sorted()} fallback={<div class="recipe-table__empty">No recipes match these filters.</div>}>
+        <For each={paginated()} fallback={<div class="recipe-table__empty">No recipes match these filters.</div>}>
           {(recipe) => (
             <RecipeRow
               recipe={recipe}
@@ -166,7 +206,66 @@ export const RecipeTable: Component<Props> = (props) => {
       </div>
 
       <div class="recipe-table__footer">
-        Showing {filtered().length} of {props.data.recipes.length} recipes
+        <span>
+          {sorted().length === 0
+            ? 'No recipes match these filters.'
+            : `${start()}–${end()} of ${sorted().length} recipes`}
+        </span>
+
+        <Show when={totalPages() > 1}>
+          <div class="recipe-table__pagination">
+            <button
+              class="recipe-table__page-btn"
+              disabled={clampedPage() === 1}
+              onClick={() => setPage((p) => p - 1)}
+              aria-label="Previous page"
+            >
+              ‹
+            </button>
+
+            <For each={visiblePages()}>
+              {(p) =>
+                p === null ? (
+                  <span class="recipe-table__page-ellipsis">…</span>
+                ) : (
+                  <button
+                    class="recipe-table__page-btn"
+                    classList={{ 'recipe-table__page-btn--active': p === clampedPage() }}
+                    onClick={() => setPage(p)}
+                    aria-label={`Page ${p}`}
+                    aria-current={p === clampedPage() ? 'page' : undefined}
+                  >
+                    {p}
+                  </button>
+                )
+              }
+            </For>
+
+            <button
+              class="recipe-table__page-btn"
+              disabled={clampedPage() === totalPages()}
+              onClick={() => setPage((p) => p + 1)}
+              aria-label="Next page"
+            >
+              ›
+            </button>
+          </div>
+        </Show>
+
+        <div class="recipe-table__page-size">
+          <span>Per page:</span>
+          <For each={PAGE_SIZES}>
+            {(size) => (
+              <button
+                class="recipe-table__page-btn"
+                classList={{ 'recipe-table__page-btn--active': pageSize() === size }}
+                onClick={() => { setPageSize(size); setPage(1); }}
+              >
+                {size}
+              </button>
+            )}
+          </For>
+        </div>
       </div>
     </div>
   );

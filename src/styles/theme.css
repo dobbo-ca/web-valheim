@@ -350,4 +350,50 @@ h3 {
   margin-top: 10px;
   font-size: 11px;
   color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.recipe-table__pagination {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.recipe-table__page-size {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+.recipe-table__page-btn {
+  background: transparent;
+  border: 1px solid var(--border-muted);
+  color: var(--text-soft);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  min-width: 28px;
+  line-height: 1.4;
+}
+.recipe-table__page-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.recipe-table__page-btn--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+.recipe-table__page-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.recipe-table__page-ellipsis {
+  padding: 0 4px;
+  color: var(--muted);
+  font-size: 11px;
 }
