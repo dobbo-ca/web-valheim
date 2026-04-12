@@ -86,4 +86,19 @@ test.describe('valheim helper smoke', () => {
     await expect(page.locator('.cart-drawer')).not.toBeVisible();
     await expect(page.locator('.cart-badge')).not.toBeVisible();
   });
+
+  test('recipe row displays item icon when available', async ({ page }) => {
+    await page.goto('/valheim/');
+    const icon = page.locator('.item-icon--md').first();
+    await expect(icon).toBeVisible();
+    await expect(icon).toHaveAttribute('src', /\/icons\/items\/.*\.svg$/);
+  });
+
+  test('ingredient chip displays icon when expanded', async ({ page }) => {
+    await page.goto('/valheim/');
+    const firstRow = page.locator('.recipe-row').first();
+    await firstRow.click();
+    const chipIcon = page.locator('.recipe-row__detail .item-icon--sm').first();
+    await expect(chipIcon).toBeVisible();
+  });
 });
