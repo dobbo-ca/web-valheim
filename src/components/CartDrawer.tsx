@@ -7,6 +7,7 @@ interface CartEntry {
   recipeId: string;
   recipeName: string;
   qty: number;
+  yieldQty: number;
 }
 
 interface Props {
@@ -110,6 +111,9 @@ export const CartDrawer: Component<Props> = (props) => {
                         <ItemIcon id={entry.recipeId} size="sm" spriteHref={props.spriteHref} />
                       </Show>
                       {entry.recipeName}
+                      <Show when={entry.yieldQty > 1}>
+                        <span class="cart-drawer__item-yield">×{entry.yieldQty}</span>
+                      </Show>
                     </span>
                     <div class="cart-drawer__qty-controls">
                       <button

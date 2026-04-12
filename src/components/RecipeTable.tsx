@@ -140,11 +140,15 @@ export const RecipeTable: Component<Props> = (props) => {
   );
 
   const cartEntries = createMemo(() =>
-    cartKeys().map((recipeId) => ({
-      recipeId,
-      recipeName: recipesById().get(recipeId)?.name ?? recipeId,
-      qty: cart[recipeId],
-    })),
+    cartKeys().map((recipeId) => {
+      const recipe = recipesById().get(recipeId);
+      return {
+        recipeId,
+        recipeName: recipe?.name ?? recipeId,
+        qty: cart[recipeId],
+        yieldQty: recipe?.yields?.qty ?? 1,
+      };
+    }),
   );
 
   const handleAddToCart = (recipeId: string) => {
