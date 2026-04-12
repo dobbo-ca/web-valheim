@@ -50,6 +50,7 @@
 - { id: charred-bone, name: Charred Bone, category: material }
 - { id: morgen-heart, name: Morgen Heart, category: material }
 - { id: bilebag, name: Bilebag, category: material }
+- { id: coal, name: Coal, category: material }
 
 # Plains materials (additions)
 - { id: flax, name: Flax, category: material }
@@ -59,6 +60,7 @@
 
 # Cooking ingredients
 - { id: raspberries, name: Raspberries, category: ingredient }
+- { id: dandelion, name: Dandelion, category: ingredient }
 - { id: blueberries, name: Blueberries, category: ingredient }
 - { id: cloudberries, name: Cloudberries, category: ingredient }
 - { id: honey, name: Honey, category: ingredient }
