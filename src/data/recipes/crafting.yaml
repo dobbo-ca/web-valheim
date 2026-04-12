@@ -327,6 +327,41 @@
   yields: { itemId: frost-arrow, qty: 20 }
   tags: [arrow, elemental, tier-4]
 
+- id: needle-arrow
+  name: Needle Arrow
+  type: crafting
+  station: workbench
+  stationLevel: 4
+  ingredients:
+    - { itemId: needle, qty: 4 }
+    - { itemId: feathers, qty: 2 }
+  yields: { itemId: needle-arrow, qty: 20 }
+  tags: [arrow, tier-5]
+
+# Abyssal weapons
+- id: abyssal-razor
+  name: Abyssal Razor
+  type: crafting
+  station: workbench
+  stationLevel: 4
+  ingredients:
+    - { itemId: fine-wood, qty: 2 }
+    - { itemId: chitin, qty: 4 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [knife, one-handed, tier-3]
+
+- id: abyssal-harpoon
+  name: Abyssal Harpoon
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  ingredients:
+    - { itemId: fine-wood, qty: 8 }
+    - { itemId: chitin, qty: 30 }
+    - { itemId: leather-scraps, qty: 3 }
+  tags: [spear, tool, tier-3]
+  notes: Used to drag creatures. Does not break on hit.
+
 # ── Forge ──────────────────────────────────────────────────────────────────────
 
 # Bronze tier (forge level 1)
@@ -456,6 +491,27 @@
     - { itemId: feathers, qty: 2 }
   yields: { itemId: bronzehead-arrow, qty: 20 }
   tags: [arrow, tier-2]
+
+- id: bronze-nails
+  name: Bronze Nails
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: bronze, qty: 1 }
+  yields: { itemId: bronze-nails, qty: 20 }
+  tags: [material, tier-2]
+
+- id: cultivator
+  name: Cultivator
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: core-wood, qty: 5 }
+    - { itemId: bronze, qty: 5 }
+  tags: [tool, tier-2]
+  notes: Used for farming — plant seeds and flatten terrain.
 
 # Iron tier (forge level 2)
 - id: huntsman-bow
@@ -609,6 +665,27 @@
     - { itemId: feathers, qty: 2 }
   yields: { itemId: ironhead-arrow, qty: 20 }
   tags: [arrow, tier-3]
+
+- id: iron-nails
+  name: Iron Nails
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: iron, qty: 1 }
+  yields: { itemId: iron-nails, qty: 10 }
+  tags: [material, tier-3]
+
+- id: iron-battleaxe
+  name: Iron Battleaxe
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: ancient-bark, qty: 30 }
+    - { itemId: iron, qty: 35 }
+    - { itemId: leather-scraps, qty: 4 }
+  tags: [battleaxe, two-handed, tier-3]
 
 # Silver/Mountain tier (forge level 3)
 - id: ancient-bark-spear
@@ -1306,6 +1383,106 @@
   yields: { itemId: charred-bolt, qty: 20 }
   tags: [bolt, elemental, tier-7]
 
+# Black Forge gem-upgraded weapons (Ashlands)
+- id: bloodgeon
+  name: Bloodgeon
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 8 }
+    - { itemId: bloodstone, qty: 1 }
+  tags: [mace, one-handed, tier-7]
+  notes: Flametal Mace upgraded with Bloodstone. Bleed damage.
+
+- id: brutal-slayer
+  name: Brutal Slayer
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 15 }
+    - { itemId: bloodstone, qty: 1 }
+  tags: [sledge, two-handed, tier-7]
+  notes: Slayer upgraded with Bloodstone. Bleed damage.
+
+- id: scourging-slayer
+  name: Scourging Slayer
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 15 }
+    - { itemId: iolite, qty: 1 }
+  tags: [sledge, two-handed, tier-7]
+  notes: Slayer upgraded with Iolite. Lightning damage.
+
+- id: primal-slayer
+  name: Primal Slayer
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 15 }
+    - { itemId: jade, qty: 1 }
+  tags: [sledge, two-handed, tier-7]
+  notes: Slayer upgraded with Jade. Poison damage.
+
+- id: nidhogg-the-bleeding
+  name: "Nidh\xF6gg the Bleeding"
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 6 }
+    - { itemId: bloodstone, qty: 1 }
+  tags: [atgeir, two-handed, tier-7]
+  notes: "Nidh\xF6gg upgraded with Bloodstone. Bleed damage."
+
+- id: nidhogg-the-thundering
+  name: "Nidh\xF6gg the Thundering"
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 6 }
+    - { itemId: iolite, qty: 1 }
+  tags: [atgeir, two-handed, tier-7]
+  notes: "Nidh\xF6gg upgraded with Iolite. Lightning damage."
+
+- id: nidhogg-the-primal
+  name: "Nidh\xF6gg the Primal"
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 6 }
+    - { itemId: jade, qty: 1 }
+  tags: [atgeir, two-handed, tier-7]
+  notes: "Nidh\xF6gg upgraded with Jade. Poison damage."
+
+- id: storm-star
+  name: Storm Star
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 8 }
+    - { itemId: iolite, qty: 1 }
+  tags: [mace, one-handed, tier-7]
+  notes: Flametal Mace upgraded with Iolite. Lightning damage.
+
+- id: klossen
+  name: Klossen
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 8 }
+    - { itemId: jade, qty: 1 }
+  tags: [mace, one-handed, tier-7]
+  notes: Flametal Mace upgraded with Jade. Poison damage.
+
 # ── Galdr Table ────────────────────────────────────────────────────────────────
 
 # Staves (Galdr Table level 1–2)
@@ -1365,6 +1542,17 @@
   tags: [staff, two-handed, magic, tier-6]
 
 # Eitr-infused armor (Galdr Table level 1–2)
+- id: eitr-weave-hood
+  name: Eitr-Weave Hood
+  type: crafting
+  station: galdr-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: linen-thread, qty: 15 }
+    - { itemId: refined-eitr, qty: 15 }
+    - { itemId: iron, qty: 2 }
+  tags: [helmet, armor, magic, tier-6]
+
 - id: eitr-robe
   name: Eitr-Weave Robe
   type: crafting
@@ -1397,6 +1585,17 @@
     - { itemId: linen-thread, qty: 15 }
     - { itemId: carapace, qty: 10 }
   tags: [legs, armor, magic, tier-6]
+
+# Sealbreaker (Galdr Table)
+- id: sealbreaker
+  name: Sealbreaker
+  type: crafting
+  station: galdr-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: sealbreaker-fragment, qty: 9 }
+  tags: [tool, tier-6]
+  notes: Key item to unlock The Queen boss. Not consumed on use.
 
 # Feather Cape (Galdr Table level 1)
 - id: feather-cape
