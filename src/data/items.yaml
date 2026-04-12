@@ -66,7 +66,7 @@
 - { id: yellow-mushroom, name: Yellow Mushroom, category: ingredient }
 - { id: carrot, name: Carrot, category: ingredient }
 - { id: turnip, name: Turnip, category: ingredient }
-- { id: boar-meat, name: Raw Meat, category: ingredient }
+- { id: boar-meat, name: Boar Meat, category: ingredient }
 - { id: deer-meat, name: Deer Meat, category: ingredient }
 - { id: neck-tail, name: Neck Tail, category: ingredient }
 - { id: fish-raw, name: Raw Fish, category: ingredient }
