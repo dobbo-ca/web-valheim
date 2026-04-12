@@ -86,12 +86,6 @@
       requires:
         - { itemId: iron, qty: 5 }
         - { itemId: silver, qty: 3 }
-    - level: 5
-      name: Maelstrom
-      requires:
-        - { itemId: yggdrasil-wood, qty: 10 }
-        - { itemId: iron, qty: 5 }
-        - { itemId: refined-eitr, qty: 3 }
 - id: stonecutter
   name: Stonecutter
   maxLevel: 1
