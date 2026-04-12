@@ -47,6 +47,17 @@ const base = import.meta.env.BASE_URL;
     </ul>
   </section>
 
+  {(() => {
+    const yieldItemId = recipe.yields?.itemId ?? recipe.id;
+    const item = itemsById.get(yieldItemId);
+    return item?.stackSize ? (
+      <section class="detail-section">
+        <h2>Stack size</h2>
+        <p>{item.stackSize}</p>
+      </section>
+    ) : null;
+  })()}
+
   {recipe.food && (
     <section class="detail-section">
       <h2>Food stats</h2>

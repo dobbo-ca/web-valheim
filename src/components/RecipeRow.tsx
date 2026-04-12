@@ -109,6 +109,19 @@ export const RecipeRow: Component<Props> = (props) => {
             </div>
           </Show>
 
+          <Show when={(() => {
+            const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
+            const item = props.itemsById.get(yieldItemId);
+            return item?.stackSize;
+          })()}>
+            {(stackSize) => (
+              <div class="recipe-row__section">
+                <span class="label">Stack size</span>
+                <span>{stackSize()}</span>
+              </div>
+            )}
+          </Show>
+
           <Show when={props.recipe.food}>
             {(food) => (
               <div class="recipe-row__section">
