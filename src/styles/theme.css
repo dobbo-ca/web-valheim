@@ -377,11 +377,11 @@ h3 {
   grid-column: 5;
   justify-self: end;
 }
-.recipe-row:hover {
-  background: var(--surface-sunken);
+.recipe-row__wrapper:hover {
+  background: color-mix(in oklch, var(--bg) 40%, var(--surface));
 }
-.recipe-row--expanded {
-  background: var(--surface-sunken);
+.recipe-row__wrapper:has(.recipe-row--expanded) {
+  background: color-mix(in oklch, var(--bg) 40%, var(--surface));
 }
 .recipe-row__name {
   font-weight: 500;
