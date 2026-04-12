@@ -8,11 +8,26 @@ const fixtureRoot = (name: string) =>
 describe('loadAll', () => {
   it('loads valid fixtures without errors', async () => {
     const data = await loadAll(fixtureRoot('valid'));
-    expect(data.items.length).toBe(5);
+    expect(data.items.length).toBe(6);
     expect(data.stations.length).toBe(2);
-    expect(data.recipes.length).toBe(2);
+    expect(data.recipes.length).toBe(3);
     expect(data.recipes.find((r) => r.id === 'iron-sword')?.station).toBe('forge');
     expect(data.recipes.find((r) => r.id === 'queens-jam')?.food?.hp).toBe(32);
+  });
+
+  it('generates building pseudo-recipes from station upgrades', async () => {
+    const data = await loadAll(fixtureRoot('valid'));
+    const building = data.recipes.filter((r) => r.type === 'building');
+    expect(building.length).toBe(1);
+    expect(building[0]).toMatchObject({
+      id: 'upgrade-forge-2',
+      name: 'Forge Bellows',
+      type: 'building',
+      station: 'forge',
+      stationLevel: 2,
+      tags: ['station-upgrade'],
+    });
+    expect(building[0].ingredients).toEqual([{ itemId: 'deer-hide', qty: 5 }]);
   });
 
   it('fails when a recipe references a missing station', async () => {

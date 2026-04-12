@@ -47,7 +47,36 @@ export const SecondaryStepSchema = z.object({
   description: z.string().min(1),
 });
 
-export const RecipeTypeSchema = z.enum(['crafting', 'cooking']);
+export const RecipeTypeSchema = z.enum(['crafting', 'cooking', 'building']);
+
+export const DamageStatsSchema = z.object({
+  slash: z.number().nonnegative().optional(),
+  pierce: z.number().nonnegative().optional(),
+  blunt: z.number().nonnegative().optional(),
+  fire: z.number().nonnegative().optional(),
+  frost: z.number().nonnegative().optional(),
+  lightning: z.number().nonnegative().optional(),
+  poison: z.number().nonnegative().optional(),
+  spirit: z.number().nonnegative().optional(),
+});
+
+export const ItemStatsSchema = z.object({
+  damage: DamageStatsSchema.optional(),
+  armor: z.number().nonnegative().optional(),
+  block: z.number().nonnegative().optional(),
+  parry: z.number().nonnegative().optional(),
+  knockback: z.number().nonnegative().optional(),
+  backstab: z.number().nonnegative().optional(),
+  durability: z.number().nonnegative().optional(),
+  weight: z.number().nonnegative().optional(),
+  movementPenalty: z.number().optional(),
+});
+
+export const ItemUpgradeSchema = z.object({
+  quality: z.number().int().positive(),
+  ingredients: z.array(IngredientRefSchema),
+  stats: ItemStatsSchema.optional(),
+});
 
 export const RecipeSchema = z.object({
   id: z.string().min(1),
@@ -62,6 +91,8 @@ export const RecipeSchema = z.object({
   notes: z.string().optional(),
   food: FoodStatsSchema.optional(),
   secondaryStep: SecondaryStepSchema.optional(),
+  stats: ItemStatsSchema.optional(),
+  upgrades: z.array(ItemUpgradeSchema).optional(),
 });
 
 export const StationsFileSchema = z.array(StationSchema);

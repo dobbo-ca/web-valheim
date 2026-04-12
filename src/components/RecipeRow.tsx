@@ -17,6 +17,22 @@ interface Props {
   onOpenCart: () => void;
   iconIds?: Set<string>;
   spriteHref?: string;
+  iconBase?: string;
+  upgradeKeysInCart: Set<string>;
+  onAddUpgradeToCart: (cartKey: string) => void;
+  onAddMaxUpgrades: (recipeId: string) => void;
+}
+
+function formatStatSummary(recipe: Recipe): string | null {
+  if (!recipe.stats) return null;
+  if (recipe.stats.damage) {
+    const parts = Object.entries(recipe.stats.damage)
+      .filter(([, v]) => v != null && v > 0)
+      .map(([type, val]) => `${val} ${type}`);
+    if (parts.length > 0) return parts.join(' / ');
+  }
+  if (recipe.stats.armor != null) return `${recipe.stats.armor} armor`;
+  return null;
 }
 
 function formatIngredients(
@@ -67,6 +83,9 @@ export const RecipeRow: Component<Props> = (props) => {
           <Show when={!props.expanded}>
             <span class="recipe-row__ings">
               {formatIngredients(props.recipe, props.itemsById)}
+              {formatStatSummary(props.recipe) && (
+                <span class="recipe-row__stat-badge">{formatStatSummary(props.recipe)}</span>
+              )}
             </span>
           </Show>
         </button>
@@ -134,6 +153,139 @@ export const RecipeRow: Component<Props> = (props) => {
                 </div>
               </div>
             )}
+          </Show>
+
+          <Show when={props.recipe.stats}>
+            {(stats) => (
+              <div class="recipe-row__section">
+                <span class="label">Stats</span>
+                <div class="stats-table">
+                  <Show when={stats().damage}>
+                    {(dmg) => (
+                      <For each={Object.entries(dmg()).filter(([, v]) => v != null && v > 0)}>
+                        {([type, val]) => (
+                          <div class="stats-table__row">
+                            <span class="stats-table__key">{type}</span>
+                            <span class="stats-table__val">{val}</span>
+                          </div>
+                        )}
+                      </For>
+                    )}
+                  </Show>
+                  <Show when={stats().armor != null}>
+                    <div class="stats-table__row">
+                      <span class="stats-table__key">armor</span>
+                      <span class="stats-table__val">{stats().armor}</span>
+                    </div>
+                  </Show>
+                  <Show when={stats().block != null}>
+                    <div class="stats-table__row">
+                      <span class="stats-table__key">block</span>
+                      <span class="stats-table__val">{stats().block}</span>
+                    </div>
+                  </Show>
+                  <Show when={stats().parry != null}>
+                    <div class="stats-table__row">
+                      <span class="stats-table__key">parry</span>
+                      <span class="stats-table__val">{stats().parry}</span>
+                    </div>
+                  </Show>
+                  <Show when={stats().durability != null}>
+                    <div class="stats-table__row">
+                      <span class="stats-table__key">durability</span>
+                      <span class="stats-table__val">{stats().durability}</span>
+                    </div>
+                  </Show>
+                  <Show when={stats().weight != null}>
+                    <div class="stats-table__row">
+                      <span class="stats-table__key">weight</span>
+                      <span class="stats-table__val">{stats().weight}</span>
+                    </div>
+                  </Show>
+                </div>
+              </div>
+            )}
+          </Show>
+
+          <Show when={props.recipe.upgrades && props.recipe.upgrades.length > 0}>
+            <div class="recipe-row__section">
+              <span class="label">Upgrades</span>
+              <div class="upgrade-list">
+                <For each={props.recipe.upgrades!}>
+                  {(upgrade) => {
+                    const cartKey = `${props.recipe.id}+${upgrade.quality}`;
+                    const inCart = () => props.upgradeKeysInCart.has(cartKey);
+                    return (
+                      <div class="upgrade-list__entry">
+                        <div class="upgrade-list__header">
+                          <span class="upgrade-list__quality">★{upgrade.quality}</span>
+                          <div class="chips">
+                            <For each={upgrade.ingredients}>
+                              {(ing) => (
+                                <IngredientChip
+                                  itemId={ing.itemId}
+                                  label={props.itemsById.get(ing.itemId)?.name ?? ing.itemId}
+                                  qty={ing.qty}
+                                  onClick={props.onIngredientClick}
+                                  hasIcon={props.iconIds?.has(ing.itemId) ?? false}
+                                  iconBase={props.iconBase}
+                                />
+                              )}
+                            </For>
+                          </div>
+                          <button
+                            type="button"
+                            class="add-to-cart-btn add-to-cart-btn--sm"
+                            classList={{ 'add-to-cart-btn--in-cart': inCart() }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (inCart()) {
+                                props.onOpenCart();
+                              } else {
+                                props.onAddUpgradeToCart(cartKey);
+                              }
+                            }}
+                            aria-label={inCart() ? `${props.recipe.name} +${upgrade.quality - 1} in cart` : `Add ${props.recipe.name} +${upgrade.quality - 1} to cart`}
+                          >
+                            {inCart() ? '✓' : '+'}
+                          </button>
+                        </div>
+                        <Show when={upgrade.stats}>
+                          {(uStats) => (
+                            <div class="upgrade-list__stats">
+                              <Show when={uStats().damage}>
+                                {(dmg) => (
+                                  <For each={Object.entries(dmg()).filter(([, v]) => v != null && v > 0)}>
+                                    {([type, val]) => <span class="upgrade-list__stat">{val} {type}</span>}
+                                  </For>
+                                )}
+                              </Show>
+                              <Show when={uStats().armor != null}>
+                                <span class="upgrade-list__stat">{uStats().armor} armor</span>
+                              </Show>
+                              <Show when={uStats().durability != null}>
+                                <span class="upgrade-list__stat">{uStats().durability} dur</span>
+                              </Show>
+                            </div>
+                          )}
+                        </Show>
+                      </div>
+                    );
+                  }}
+                </For>
+                <button
+                  type="button"
+                  class="add-to-cart-btn upgrade-list__max-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    props.onAddMaxUpgrades(props.recipe.id);
+                  }}
+                  aria-label={`Add all upgrades for ${props.recipe.name}`}
+                >
+                  + Max Upgrades
+                </button>
+              </div>
+            </div>
           </Show>
 
           <Show when={props.recipe.notes}>

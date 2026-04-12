@@ -589,6 +589,45 @@
   yields: { itemId: iron-sword, qty: 1 }
   tags: [sword, one-handed, tier-3]
   notes: Strong vs. skeletons and stonegolems.
+  stats:
+    damage: { slash: 35 }
+    block: 15
+    parry: 30
+    knockback: 40
+    backstab: 3
+    durability: 200
+    weight: 1.6
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: wood, qty: 2 }
+        - { itemId: leather-scraps, qty: 2 }
+      stats:
+        damage: { slash: 41 }
+        block: 15
+        parry: 30
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+        - { itemId: wood, qty: 4 }
+        - { itemId: leather-scraps, qty: 4 }
+      stats:
+        damage: { slash: 47 }
+        block: 15
+        parry: 30
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: wood, qty: 6 }
+        - { itemId: leather-scraps, qty: 6 }
+      stats:
+        damage: { slash: 53 }
+        block: 15
+        parry: 30
+        durability: 350
 
 - id: iron-mace
   name: Iron Mace

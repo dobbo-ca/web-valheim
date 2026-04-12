@@ -11,6 +11,8 @@ describe('URL state', () => {
       maxStationLevel: 3,
       ingredientIds: ['iron', 'wood'],
       query: 'sword',
+      tags: [],
+      stationCeilings: {},
     });
     expect(params.get('type')).toBe('crafting');
     expect(params.get('station')).toBe('forge');
@@ -28,6 +30,8 @@ describe('URL state', () => {
       maxStationLevel: Number.POSITIVE_INFINITY,
       ingredientIds: [],
       query: '',
+      tags: [],
+      stationCeilings: {},
     });
     expect([...params.keys()]).toEqual([]);
   });
@@ -79,6 +83,8 @@ describe('URL state', () => {
       maxStationLevel: 3,
       ingredientIds: ['iron', 'wood'],
       query: 'sword',
+      tags: [],
+      stationCeilings: {},
     };
     expect(decodeFilterState(encodeFilterState(original))).toEqual(original);
   });
@@ -87,5 +93,43 @@ describe('URL state', () => {
     expect(decodeFilterState(encodeFilterState(emptyFilterState))).toEqual(
       emptyFilterState,
     );
+  });
+
+  it('encodes tags', () => {
+    const params = encodeFilterState({ ...emptyFilterState, tags: ['sword', 'one-handed'] });
+    expect(params.get('tags')).toBe('sword,one-handed');
+  });
+
+  it('omits empty tags', () => {
+    const params = encodeFilterState({ ...emptyFilterState, tags: [] });
+    expect(params.get('tags')).toBeNull();
+  });
+
+  it('decodes tags', () => {
+    const state = decodeFilterState(new URLSearchParams('tags=sword,axe'));
+    expect(state.tags).toEqual(['sword', 'axe']);
+  });
+
+  it('encodes station ceilings', () => {
+    const params = encodeFilterState({
+      ...emptyFilterState,
+      stationCeilings: { forge: 3, workbench: 2 },
+    });
+    expect(params.get('stn-forge')).toBe('3');
+    expect(params.get('stn-workbench')).toBe('2');
+  });
+
+  it('decodes station ceilings', () => {
+    const state = decodeFilterState(new URLSearchParams('stn-forge=3&stn-workbench=2'));
+    expect(state.stationCeilings).toEqual({ forge: 3, workbench: 2 });
+  });
+
+  it('round-trips tags and station ceilings', () => {
+    const original: FilterState = {
+      ...emptyFilterState,
+      tags: ['sword'],
+      stationCeilings: { forge: 5 },
+    };
+    expect(decodeFilterState(encodeFilterState(original))).toEqual(original);
   });
 });

@@ -40,6 +40,9 @@ describe('RecipeRow', () => {
         onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
+        upgradeKeysInCart={new Set()}
+        onAddUpgradeToCart={() => {}}
+        onAddMaxUpgrades={() => {}}
       />
     ));
     expect(screen.getByText('Iron Sword')).toBeInTheDocument();
@@ -62,6 +65,9 @@ describe('RecipeRow', () => {
         onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
+        upgradeKeysInCart={new Set()}
+        onAddUpgradeToCart={() => {}}
+        onAddMaxUpgrades={() => {}}
       />
     ));
     expect(screen.getByText(/Strong vs skeletons/)).toBeInTheDocument();
@@ -82,6 +88,9 @@ describe('RecipeRow', () => {
         onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
+        upgradeKeysInCart={new Set()}
+        onAddUpgradeToCart={() => {}}
+        onAddMaxUpgrades={() => {}}
       />
     ));
     fireEvent.click(screen.getByRole('button', { name: /Iron Sword/ }));
@@ -102,6 +111,9 @@ describe('RecipeRow', () => {
         onIngredientClick={onIngredientClick}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
+        upgradeKeysInCart={new Set()}
+        onAddUpgradeToCart={() => {}}
+        onAddMaxUpgrades={() => {}}
       />
     ));
     fireEvent.click(screen.getByRole('button', { name: /Iron ×60/ }));
@@ -121,6 +133,9 @@ describe('RecipeRow', () => {
         onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
+        upgradeKeysInCart={new Set()}
+        onAddUpgradeToCart={() => {}}
+        onAddMaxUpgrades={() => {}}
       />
     ));
     // Row button is the one with aria-expanded="true"
@@ -145,6 +160,9 @@ describe('RecipeRow', () => {
         onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
+        upgradeKeysInCart={new Set()}
+        onAddUpgradeToCart={() => {}}
+        onAddMaxUpgrades={() => {}}
       />
     ));
     expect(
@@ -166,6 +184,9 @@ describe('RecipeRow', () => {
         onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
+        upgradeKeysInCart={new Set()}
+        onAddUpgradeToCart={() => {}}
+        onAddMaxUpgrades={() => {}}
         iconIds={iconIds}
       />
     ));
@@ -188,6 +209,9 @@ describe('RecipeRow', () => {
         onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
+        upgradeKeysInCart={new Set()}
+        onAddUpgradeToCart={() => {}}
+        onAddMaxUpgrades={() => {}}
       />
     ));
     expect(document.querySelector('.item-icon--md')).toBeNull();
@@ -207,6 +231,9 @@ describe('RecipeRow', () => {
         onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
+        upgradeKeysInCart={new Set()}
+        onAddUpgradeToCart={() => {}}
+        onAddMaxUpgrades={() => {}}
         iconIds={iconIds}
       />
     ));

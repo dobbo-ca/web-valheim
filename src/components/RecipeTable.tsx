@@ -12,6 +12,7 @@ import {
   aggregateGroceryList,
   encodeCartUrl,
   decodeCartUrl,
+  parseCartKey,
 } from '../lib/cart';
 import { FilterBar } from './FilterBar';
 import { RecipeRow } from './RecipeRow';
@@ -131,6 +132,32 @@ export const RecipeTable: Component<Props> = (props) => {
   const cartKeys = createMemo(() => Object.keys(cart));
   const cartCount = createMemo(() => cartKeys().length);
 
+  const upgradeKeysInCart = createMemo(() => {
+    const set = new Set<string>();
+    for (const key of cartKeys()) {
+      if (key.includes('+')) set.add(key);
+    }
+    return set;
+  });
+
+  const handleAddUpgradeToCart = (cartKey: string) => {
+    const snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
+    setCart(reconcile(addToCart(snapshot, cartKey)));
+  };
+
+  const handleAddMaxUpgrades = (recipeId: string) => {
+    const recipe = recipesById().get(recipeId);
+    if (!recipe?.upgrades) return;
+    let snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
+    for (const upgrade of recipe.upgrades) {
+      const ceiling = state().stationCeilings[recipe.station];
+      if (ceiling != null && upgrade.quality > ceiling) continue;
+      const key = `${recipeId}+${upgrade.quality}`;
+      snapshot = addToCart(snapshot, key);
+    }
+    setCart(reconcile(snapshot));
+  };
+
   const groceryList = createMemo(() =>
     aggregateGroceryList(
       Object.fromEntries(cartKeys().map((k) => [k, cart[k]])),
@@ -140,13 +167,16 @@ export const RecipeTable: Component<Props> = (props) => {
   );
 
   const cartEntries = createMemo(() =>
-    cartKeys().map((recipeId) => {
-      const recipe = recipesById().get(recipeId);
+    cartKeys().map((cartKey) => {
+      const { baseId, quality } = parseCartKey(cartKey);
+      const baseRecipe = recipesById().get(baseId);
+      const baseName = baseRecipe?.name ?? baseId;
+      const displayName = quality != null ? `${baseName} +${quality - 1}` : baseName;
       return {
-        recipeId,
-        recipeName: recipe?.name ?? recipeId,
-        qty: cart[recipeId],
-        yieldQty: recipe?.yields?.qty ?? 1,
+        recipeId: cartKey,
+        recipeName: displayName,
+        qty: cart[cartKey],
+        yieldQty: quality == null ? (baseRecipe?.yields?.qty ?? 1) : 1,
       };
     }),
   );
@@ -347,6 +377,10 @@ export const RecipeTable: Component<Props> = (props) => {
               onOpenCart={() => setDrawerOpen(true)}
               iconIds={iconSet()}
               spriteHref={props.spriteHref ?? `${props.baseHref}icons/sprite.svg`}
+              iconBase={`${props.baseHref}icons/items`}
+              upgradeKeysInCart={upgradeKeysInCart()}
+              onAddUpgradeToCart={handleAddUpgradeToCart}
+              onAddMaxUpgrades={handleAddMaxUpgrades}
             />
           )}
         </For>

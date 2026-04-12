@@ -1,7 +1,11 @@
 - id: forge
   name: Forge
   maxLevel: 7
-  upgrades: []
+  upgrades:
+    - level: 2
+      name: Forge Bellows
+      requires:
+        - { itemId: deer-hide, qty: 5 }
 - id: cauldron
   name: Cauldron
   maxLevel: 5

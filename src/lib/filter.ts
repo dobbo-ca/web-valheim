@@ -2,11 +2,13 @@ import type { Recipe, RecipeType } from './types';
 
 export interface FilterState {
   type: RecipeType | 'all';
-  station: string; // station id or 'all'
+  station: string;
   minStationLevel: number;
   maxStationLevel: number;
-  ingredientIds: string[]; // AND
+  ingredientIds: string[];
   query: string;
+  tags: string[];
+  stationCeilings: Record<string, number>;
 }
 
 export const emptyFilterState: FilterState = {
@@ -16,6 +18,8 @@ export const emptyFilterState: FilterState = {
   maxStationLevel: Number.POSITIVE_INFINITY,
   ingredientIds: [],
   query: '',
+  tags: [],
+  stationCeilings: {},
 };
 
 export function filterRecipes(recipes: Recipe[], state: FilterState): Recipe[] {
@@ -24,7 +28,19 @@ export function filterRecipes(recipes: Recipe[], state: FilterState): Recipe[] {
     if (state.type !== 'all' && r.type !== state.type) return false;
     if (state.station !== 'all' && r.station !== state.station) return false;
     if (r.stationLevel < state.minStationLevel) return false;
-    if (r.stationLevel > state.maxStationLevel) return false;
+
+    // Per-station ceiling overrides global max when lower
+    const ceiling = state.stationCeilings[r.station];
+    const effectiveMax = ceiling != null
+      ? Math.min(ceiling, Number.isFinite(state.maxStationLevel) ? state.maxStationLevel : ceiling)
+      : state.maxStationLevel;
+    if (r.stationLevel > effectiveMax) return false;
+
+    // Tag filtering: OR logic — recipe must have at least one of the selected tags
+    if (state.tags.length > 0) {
+      const recipeTags = r.tags ?? [];
+      if (!state.tags.some((t) => recipeTags.includes(t))) return false;
+    }
 
     if (state.ingredientIds.length > 0) {
       const ingIds = new Set(r.ingredients.map((i) => i.itemId));

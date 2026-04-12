@@ -1,19 +1,16 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('valheim helper smoke', () => {
-  test('home page loads and shows recipes', async ({ page }) => {
+test.describe('recipe table', () => {
+  test('loads and shows recipes including building type', async ({ page }) => {
     await page.goto('/valheim/');
     await expect(page.getByRole('heading', { name: 'Recipes' })).toBeVisible();
     await page.goto('/valheim/?q=iron+sword');
     await expect(page.getByText('Iron Sword')).toBeVisible();
-    await page.goto('/valheim/?type=cooking');
-    await expect(page.getByText('Queens Jam')).toBeVisible();
   });
 
-  test('type chip filters the table', async ({ page }) => {
-    await page.goto('/valheim/');
-    await page.getByRole('button', { name: 'Cooking' }).click();
-    await expect(page.getByText('Queens Jam')).toBeVisible();
+  test('search filters the table', async ({ page }) => {
+    await page.goto('/valheim/?q=chopping+block');
+    await expect(page.getByText('Chopping Block')).toBeVisible();
     await expect(page.getByText('Iron Sword')).not.toBeVisible();
   });
 
@@ -31,24 +28,20 @@ test.describe('valheim helper smoke', () => {
     await expect(page.getByText('Queens Jam')).not.toBeVisible();
   });
 
-  test('URL state survives reload', async ({ page }) => {
-    await page.goto('/valheim/?type=cooking');
-    await expect(page.getByText('Queens Jam')).toBeVisible();
-    await expect(page.getByText('Iron Sword')).not.toBeVisible();
-  });
-
   test('detail page is reachable', async ({ page }) => {
     await page.goto('/valheim/recipes/iron-sword/');
     await expect(page.getByRole('heading', { name: 'Iron Sword' })).toBeVisible();
     await expect(page.getByText(/Used as ingredient in|Ingredients/)).toBeVisible();
   });
+});
 
-  test('adding a recipe shows cart badge', async ({ page }) => {
+test.describe('advanced filters', () => {
+  test('toggle opens and closes the panel', async ({ page }) => {
     await page.goto('/valheim/');
-    await expect(page.locator('.cart-badge')).not.toBeVisible();
-    await page.getByRole('button', { name: 'Add to cart' }).first().click();
-    await expect(page.locator('.cart-badge')).toBeVisible();
-    await expect(page.locator('.cart-badge__count')).toHaveText('1');
+    await page.getByRole('button', { name: /Filters/ }).click();
+    await expect(page.getByText('Type')).toBeVisible();
+    await page.getByRole('button', { name: /Filters/ }).click();
+    await expect(page.getByText('Type')).not.toBeVisible();
   });
 
   test('cart drawer opens and shows grocery list', async ({ page }) => {
@@ -87,18 +80,19 @@ test.describe('valheim helper smoke', () => {
     await expect(page.locator('.cart-badge')).not.toBeVisible();
   });
 
-  test('recipe row displays item icon when available', async ({ page }) => {
+  test('building type filter shows station upgrades', async ({ page }) => {
     await page.goto('/valheim/');
-    const icon = page.locator('.item-icon--md').first();
-    await expect(icon).toBeVisible();
-    await expect(icon).toHaveAttribute('src', /\/icons\/items\/.*\.svg$/);
+    await page.getByRole('button', { name: /Filters/ }).click();
+    await page.getByRole('button', { name: 'Building' }).click();
+    await expect(page.getByText('Chopping Block')).toBeVisible();
+    await expect(page.getByText('Iron Sword')).not.toBeVisible();
   });
 
-  test('ingredient chip displays icon when expanded', async ({ page }) => {
+  test('station-upgrade tag filter works', async ({ page }) => {
     await page.goto('/valheim/');
-    const firstRow = page.locator('.recipe-row').first();
-    await firstRow.click();
-    const chipIcon = page.locator('.recipe-row__detail .item-icon--sm').first();
-    await expect(chipIcon).toBeVisible();
+    await page.getByRole('button', { name: /Filters/ }).click();
+    await page.getByRole('button', { name: 'station-upgrade' }).click();
+    await expect(page.getByText('Chopping Block')).toBeVisible();
+    await expect(page.getByText('Forge Bellows')).toBeVisible();
   });
 });

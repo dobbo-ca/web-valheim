@@ -15,10 +15,16 @@ export function encodeFilterState(state: FilterState): URLSearchParams {
   if (state.query.trim().length > 0) {
     params.set('q', state.query.trim());
   }
+  if (state.tags.length > 0) {
+    params.set('tags', state.tags.join(','));
+  }
+  for (const [stationId, level] of Object.entries(state.stationCeilings)) {
+    params.set(`stn-${stationId}`, String(level));
+  }
   return params;
 }
 
-const recipeTypes: RecipeType[] = ['crafting', 'cooking'];
+const recipeTypes: RecipeType[] = ['crafting', 'cooking', 'building'];
 
 export function decodeFilterState(params: URLSearchParams): FilterState {
   const rawType = params.get('type');
@@ -46,5 +52,20 @@ export function decodeFilterState(params: URLSearchParams): FilterState {
 
   const query = params.get('q') ?? '';
 
-  return { type, station, minStationLevel, maxStationLevel, ingredientIds, query };
+  const tagsRaw = params.get('tags');
+  const tags = tagsRaw
+    ? tagsRaw.split(',').map((s) => s.trim()).filter(Boolean)
+    : [];
+
+  const stationCeilings: Record<string, number> = {};
+  for (const [key, value] of params.entries()) {
+    if (key.startsWith('stn-')) {
+      const parsed = Number.parseInt(value, 10);
+      if (Number.isFinite(parsed)) {
+        stationCeilings[key.slice(4)] = parsed;
+      }
+    }
+  }
+
+  return { type, station, minStationLevel, maxStationLevel, ingredientIds, query, tags, stationCeilings };
 }
