@@ -1,6 +1,7 @@
 import { For, Show, createEffect, createSignal, onCleanup, type Component } from 'solid-js';
 import type { GroceryItem } from '../lib/cart';
 import { formatGroceryList } from '../lib/cart';
+import { ItemIcon } from './ItemIcon';
 
 interface CartEntry {
   recipeId: string;
@@ -16,6 +17,8 @@ interface Props {
   onSetQty: (recipeId: string, qty: number) => void;
   onRemove: (recipeId: string) => void;
   onClear: () => void;
+  iconIds?: Set<string>;
+  spriteHref?: string;
 }
 
 export const CartDrawer: Component<Props> = (props) => {
@@ -102,7 +105,12 @@ export const CartDrawer: Component<Props> = (props) => {
               <For each={props.entries}>
                 {(entry) => (
                   <div class="cart-drawer__item">
-                    <span class="cart-drawer__item-name">{entry.recipeName}</span>
+                    <span class="cart-drawer__item-name">
+                      <Show when={props.iconIds?.has(entry.recipeId)}>
+                        <ItemIcon id={entry.recipeId} size="sm" spriteHref={props.spriteHref} />
+                      </Show>
+                      {entry.recipeName}
+                    </span>
                     <div class="cart-drawer__qty-controls">
                       <button
                         type="button"
@@ -162,7 +170,12 @@ export const CartDrawer: Component<Props> = (props) => {
                 <For each={props.groceryList}>
                   {(item) => (
                     <div class="cart-drawer__grocery-item">
-                      <span>{item.name}</span>
+                      <span class="cart-drawer__grocery-name">
+                        <Show when={props.iconIds?.has(item.itemId)}>
+                          <ItemIcon id={item.itemId} size="sm" spriteHref={props.spriteHref} />
+                        </Show>
+                        {item.name}
+                      </span>
                       <span class="cart-drawer__grocery-qty">×{item.qty}</span>
                     </div>
                   )}

@@ -756,6 +756,14 @@ h3 {
 .cart-drawer__item-name {
   font-size: 13px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cart-drawer__grocery-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .cart-drawer__qty-controls {
   display: flex;
