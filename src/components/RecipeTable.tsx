@@ -377,7 +377,6 @@ export const RecipeTable: Component<Props> = (props) => {
               onOpenCart={() => setDrawerOpen(true)}
               iconIds={iconSet()}
               spriteHref={props.spriteHref ?? `${props.baseHref}icons/sprite.svg`}
-              iconBase={`${props.baseHref}icons/items`}
               upgradeKeysInCart={upgradeKeysInCart()}
               onAddUpgradeToCart={handleAddUpgradeToCart}
               onAddMaxUpgrades={handleAddMaxUpgrades}

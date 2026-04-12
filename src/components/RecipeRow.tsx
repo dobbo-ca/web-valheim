@@ -17,7 +17,6 @@ interface Props {
   onOpenCart: () => void;
   iconIds?: Set<string>;
   spriteHref?: string;
-  iconBase?: string;
   upgradeKeysInCart: Set<string>;
   onAddUpgradeToCart: (cartKey: string) => void;
   onAddMaxUpgrades: (recipeId: string) => void;
@@ -228,7 +227,7 @@ export const RecipeRow: Component<Props> = (props) => {
                                   qty={ing.qty}
                                   onClick={props.onIngredientClick}
                                   hasIcon={props.iconIds?.has(ing.itemId) ?? false}
-                                  iconBase={props.iconBase}
+                                  spriteHref={props.spriteHref}
                                 />
                               )}
                             </For>
