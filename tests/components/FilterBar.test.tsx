@@ -12,6 +12,7 @@ const stations: Station[] = [
 const empty: FilterState = {
   type: 'all',
   station: 'all',
+  minStationLevel: 1,
   maxStationLevel: Number.POSITIVE_INFINITY,
   ingredientIds: [],
   query: '',
@@ -25,7 +26,7 @@ describe('FilterBar', () => {
     expect(screen.getByRole('button', { name: 'All' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Crafting' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Cooking' })).toBeInTheDocument();
-    expect(screen.getByLabelText(/station/i)).toBeInTheDocument();
+    expect(screen.getByLabelText('Station')).toBeInTheDocument();
   });
 
   it('emits a new state when a type chip is clicked', () => {

@@ -5,6 +5,7 @@ export function encodeFilterState(state: FilterState): URLSearchParams {
   const params = new URLSearchParams();
   if (state.type !== 'all') params.set('type', state.type);
   if (state.station !== 'all') params.set('station', state.station);
+  if (state.minStationLevel > 1) params.set('minlvl', String(state.minStationLevel));
   if (Number.isFinite(state.maxStationLevel)) {
     params.set('lvl', String(state.maxStationLevel));
   }
@@ -28,6 +29,10 @@ export function decodeFilterState(params: URLSearchParams): FilterState {
 
   const station = params.get('station') ?? 'all';
 
+  const minLvlRaw = params.get('minlvl');
+  const minLvlParsed = minLvlRaw == null ? NaN : Number.parseInt(minLvlRaw, 10);
+  const minStationLevel = Number.isFinite(minLvlParsed) ? minLvlParsed : 1;
+
   const lvlRaw = params.get('lvl');
   const lvlParsed = lvlRaw == null ? NaN : Number.parseInt(lvlRaw, 10);
   const maxStationLevel = Number.isFinite(lvlParsed)
@@ -41,5 +46,5 @@ export function decodeFilterState(params: URLSearchParams): FilterState {
 
   const query = params.get('q') ?? '';
 
-  return { type, station, maxStationLevel, ingredientIds, query };
+  return { type, station, minStationLevel, maxStationLevel, ingredientIds, query };
 }

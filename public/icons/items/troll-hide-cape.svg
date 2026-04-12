@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Cape body -->
+  <polygon points="10,6 38,6 44,44 4,44" fill="#4A6A8A"/>
+  <!-- Highlight top fold -->
+  <polygon points="10,6 38,6 34,16 14,16" fill="#5A7A9A"/>
+  <!-- Collar clasp -->
+  <rect x="20" y="4" width="8" height="6" rx="1" fill="#3A5A7A"/>
+  <!-- Drape folds -->
+  <rect x="8" y="22" width="2" height="18" fill="#3A5A7A"/>
+  <rect x="20" y="18" width="2" height="22" fill="#3A5A7A"/>
+  <rect x="38" y="22" width="2" height="18" fill="#3A5A7A"/>
+</svg>

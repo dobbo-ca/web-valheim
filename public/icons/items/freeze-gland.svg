@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Outer glow -->
+  <polygon points="24,4 30,16 42,16 32,26 36,40 24,32 12,40 16,26 6,16 18,16" fill="#AADDFF"/>
+  <!-- Crystal body -->
+  <polygon points="24,10 28,18 38,18 30,24 34,36 24,28 14,36 18,24 10,18 20,18" fill="#88BBDD"/>
+  <!-- Center shine -->
+  <rect x="21" y="18" width="6" height="6" fill="#CCEEFF"/>
+</svg>

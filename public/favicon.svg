@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Transparent background -->
+  <!-- Wooden shield circle -->
+  <circle cx="16" cy="16" r="13" fill="#6A4E2A"/>
+  <circle cx="16" cy="16" r="11" fill="#8B6914"/>
+  <circle cx="16" cy="16" r="10" fill="#7A5C12"/>
+  <!-- Shield rim -->
+  <circle cx="16" cy="16" r="12" fill="none" stroke="#A0722A" stroke-width="1.5"/>
+  <!-- Wood grain lines -->
+  <rect x="5" y="15" width="22" height="1" fill="#6A4E2A" opacity="0.5"/>
+  <rect x="7" y="11" width="18" height="1" fill="#6A4E2A" opacity="0.3"/>
+  <rect x="7" y="20" width="18" height="1" fill="#6A4E2A" opacity="0.3"/>
+  <!-- V letter - fiery orange -->
+  <polygon points="9,7 13,7 16,20 19,7 23,7 18,25 14,25" fill="#CC4400"/>
+  <!-- V highlight - brighter inner -->
+  <polygon points="11,8 13,8 16,19 19,8 21,8 17,24 15,24" fill="#E87830"/>
+  <!-- V hot center stroke -->
+  <polygon points="12,9 14,9 16,18 18,9 20,9 17,23 15,23" fill="#FFB040"/>
+  <!-- V bright core -->
+  <rect x="15" y="20" width="2" height="3" fill="#FFD060"/>
+  <rect x="14" y="17" width="1" height="2" fill="#FFD060"/>
+  <rect x="17" y="17" width="1" height="2" fill="#FFD060"/>
+</svg>

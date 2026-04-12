@@ -3,6 +3,7 @@ import type { Recipe, RecipeType } from './types';
 export interface FilterState {
   type: RecipeType | 'all';
   station: string; // station id or 'all'
+  minStationLevel: number;
   maxStationLevel: number;
   ingredientIds: string[]; // AND
   query: string;
@@ -11,6 +12,7 @@ export interface FilterState {
 export const emptyFilterState: FilterState = {
   type: 'all',
   station: 'all',
+  minStationLevel: 1,
   maxStationLevel: Number.POSITIVE_INFINITY,
   ingredientIds: [],
   query: '',
@@ -21,6 +23,7 @@ export function filterRecipes(recipes: Recipe[], state: FilterState): Recipe[] {
   return recipes.filter((r) => {
     if (state.type !== 'all' && r.type !== state.type) return false;
     if (state.station !== 'all' && r.station !== state.station) return false;
+    if (r.stationLevel < state.minStationLevel) return false;
     if (r.stationLevel > state.maxStationLevel) return false;
 
     if (state.ingredientIds.length > 0) {

@@ -23,10 +23,23 @@ type SortDir = 'asc' | 'desc';
 
 const PAGE_SIZES = [10, 20, 50, 100] as const;
 const CART_STORAGE_KEY = 'valheim-cart';
+const PAGE_SIZE_KEY = 'valheim-page-size';
+
+function readStoredPageSize(): number {
+  try {
+    const stored = localStorage.getItem(PAGE_SIZE_KEY);
+    if (stored) {
+      const parsed = Number.parseInt(stored, 10);
+      if ((PAGE_SIZES as readonly number[]).includes(parsed)) return parsed;
+    }
+  } catch {}
+  return 20;
+}
 
 interface Props {
   data: DataSet;
   baseHref: string;
+  iconIds?: string[];
 }
 
 export const RecipeTable: Component<Props> = (props) => {
@@ -35,9 +48,10 @@ export const RecipeTable: Component<Props> = (props) => {
   const [sortKey, setSortKey] = createSignal<SortKey | null>(null);
   const [sortDir, setSortDir] = createSignal<SortDir>('asc');
   const [page, setPage] = createSignal(1);
-  const [pageSize, setPageSize] = createSignal<number>(20);
+  const [pageSize, setPageSize] = createSignal<number>(readStoredPageSize());
   const [cart, setCart] = createStore<Record<string, number>>({});
   const [drawerOpen, setDrawerOpen] = createSignal(false);
+  const [mounted, setMounted] = createSignal(false);
 
   // Stable sorted recipe IDs used as the integer index for URL encoding
   const recipeIndex = createMemo(() =>
@@ -65,6 +79,8 @@ export const RecipeTable: Component<Props> = (props) => {
         // localStorage unavailable or corrupt
       }
     }
+
+    setMounted(true);
   });
 
   createEffect(() => {
@@ -101,6 +117,10 @@ export const RecipeTable: Component<Props> = (props) => {
 
   const stationsById = createMemo(
     () => new Map(props.data.stations.map((s) => [s.id, s])),
+  );
+
+  const iconSet = createMemo(
+    () => new Set(props.iconIds ?? []),
   );
 
   const recipesById = createMemo(
@@ -266,6 +286,7 @@ export const RecipeTable: Component<Props> = (props) => {
   const end = () => Math.min(clampedPage() * pageSize(), sorted().length);
 
   return (
+    <Show when={mounted()} fallback={<div class="recipe-table__loading" />}>
     <div class="recipe-table">
       <div class="recipe-table__toolbar">
         <FilterBar state={state()} stations={props.data.stations} onChange={commit} />
@@ -324,6 +345,8 @@ export const RecipeTable: Component<Props> = (props) => {
               onIngredientClick={addIngredient}
               onAddToCart={handleAddToCart}
               onOpenCart={() => setDrawerOpen(true)}
+              iconIds={iconSet()}
+              iconBase={`${props.baseHref}icons/items`}
             />
           )}
         </For>
@@ -383,7 +406,11 @@ export const RecipeTable: Component<Props> = (props) => {
               <button
                 class="recipe-table__page-btn"
                 classList={{ 'recipe-table__page-btn--active': pageSize() === size }}
-                onClick={() => { setPageSize(size); setPage(1); }}
+                onClick={() => {
+                  setPageSize(size);
+                  setPage(1);
+                  try { localStorage.setItem(PAGE_SIZE_KEY, String(size)); } catch {}
+                }}
               >
                 {size}
               </button>
@@ -402,5 +429,6 @@ export const RecipeTable: Component<Props> = (props) => {
         onClear={handleClearCart}
       />
     </div>
+    </Show>
   );
 };
