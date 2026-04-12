@@ -20,34 +20,36 @@ export const FilterBar: Component<Props> = (props) => {
 
   return (
     <div class="filter-bar">
-      <div class="filter-bar__chips" role="group" aria-label="Recipe type">
-        <For each={typeChips}>
-          {(chip) => (
-            <button
-              type="button"
-              class="filter-chip"
-              classList={{ 'filter-chip--active': props.state.type === chip.value }}
-              onClick={() => update({ type: chip.value })}
-            >
-              {chip.label}
-            </button>
-          )}
-        </For>
-      </div>
-
-      <label class="filter-bar__station">
-        <span class="sr-only">Station</span>
-        <select
-          aria-label="Station"
-          value={props.state.station}
-          onChange={(e) => update({ station: e.currentTarget.value })}
-        >
-          <option value="all">All stations</option>
-          <For each={props.stations}>
-            {(s) => <option value={s.id}>{s.name}</option>}
+      <div class="filter-bar__row">
+        <div class="filter-bar__chips" role="group" aria-label="Recipe type">
+          <For each={typeChips}>
+            {(chip) => (
+              <button
+                type="button"
+                class="filter-chip"
+                classList={{ 'filter-chip--active': props.state.type === chip.value }}
+                onClick={() => update({ type: chip.value })}
+              >
+                {chip.label}
+              </button>
+            )}
           </For>
-        </select>
-      </label>
+        </div>
+
+        <label class="filter-bar__station">
+          <span class="sr-only">Station</span>
+          <select
+            aria-label="Station"
+            value={props.state.station}
+            onChange={(e) => update({ station: e.currentTarget.value })}
+          >
+            <option value="all">All stations</option>
+            <For each={props.stations}>
+              {(s) => <option value={s.id}>{s.name}</option>}
+            </For>
+          </select>
+        </label>
+      </div>
 
       <div class="filter-bar__level" role="group" aria-label="Station level range">
         <span class="label">Lvl</span>
