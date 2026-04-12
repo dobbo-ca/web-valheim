@@ -40,6 +40,7 @@ interface Props {
   data: DataSet;
   baseHref: string;
   iconIds?: string[];
+  spriteHref?: string;
 }
 
 export const RecipeTable: Component<Props> = (props) => {
@@ -341,7 +342,7 @@ export const RecipeTable: Component<Props> = (props) => {
               onAddToCart={handleAddToCart}
               onOpenCart={() => setDrawerOpen(true)}
               iconIds={iconSet()}
-              spriteHref={`${props.baseHref}icons/sprite.svg`}
+              spriteHref={props.spriteHref ?? `${props.baseHref}icons/sprite.svg`}
             />
           )}
         </For>
