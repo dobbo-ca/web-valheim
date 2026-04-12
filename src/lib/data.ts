@@ -1,9 +1,7 @@
 import { resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { loadAll, type DataSet } from './loader';
 
-const here = fileURLToPath(new URL('.', import.meta.url));
-const dataRoot = resolve(here, '../data');
+const dataRoot = resolve(process.cwd(), 'src/data');
 
 let cache: DataSet | null = null;
 let pending: Promise<DataSet> | null = null;

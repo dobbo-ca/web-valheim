@@ -1,13 +1,13 @@
 ---
-// Placeholder home — filled in during Phase 5
+import Base from '../layouts/Base.astro';
+import { getDataSet } from '../lib/data';
+import { RecipeTable } from '../components/RecipeTable';
+
+const data = await getDataSet();
+const base = import.meta.env.BASE_URL;
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Valheim Helper</title>
-  </head>
-  <body>
-    <h1>Valheim Helper</h1>
-    <p>Coming soon.</p>
-  </body>
-</html>
+<Base title="Valheim Recipes">
+  <h1>Recipes</h1>
+  <p class="subtitle">Filterable crafting + cooking reference. Click a row to expand; click an ingredient to reverse-lookup.</p>
+  <RecipeTable client:load data={data} baseHref={base} />
+</Base>
