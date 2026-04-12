@@ -225,6 +225,9 @@ h3 {
 
 /* ===== Chips ===== */
 .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   background: var(--accent-bg);
   border: 1px solid var(--accent-border);
   color: var(--text);
@@ -252,6 +255,16 @@ h3 {
   flex-wrap: wrap;
   gap: 6px;
 }
+
+/* ===== Item icons ===== */
+.item-icon {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.item-icon--sm { width: 16px; height: 16px; }
+.item-icon--md { width: 24px; height: 24px; }
 
 /* ===== Recipe table grid ===== */
 .recipe-table__grid {
@@ -308,6 +321,9 @@ h3 {
 }
 .recipe-row__name {
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .recipe-row--expanded .recipe-row__name {
   color: var(--accent);
