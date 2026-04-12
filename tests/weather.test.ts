@@ -6,7 +6,6 @@ import {
   getWeatherIcon,
   getWeatherLabel,
   ALL_BIOMES,
-  type Biome,
   type WeatherType,
 } from '../src/lib/weather';
 
