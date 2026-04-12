@@ -133,3 +133,27 @@
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 5 }
         - { itemId: mandible, qty: 3 }
+- id: mead-ketill
+  name: Mead Ketill
+  maxLevel: 1
+  upgrades: []
+- id: cooking-spit
+  name: Cooking Spit
+  maxLevel: 1
+  upgrades: []
+- id: iron-spit
+  name: Iron Spit
+  maxLevel: 1
+  upgrades: []
+- id: food-table
+  name: Food Table
+  maxLevel: 1
+  upgrades: []
+- id: oven
+  name: Oven
+  maxLevel: 1
+  upgrades: []
+- id: fermenter
+  name: Fermenter
+  maxLevel: 1
+  upgrades: []
