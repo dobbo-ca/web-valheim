@@ -1,6 +1,9 @@
 # Superpowers brainstorm artifacts
 .superpowers/
 
+# Git worktrees
+.worktrees/
+
 # Node
 node_modules/
 dist/
