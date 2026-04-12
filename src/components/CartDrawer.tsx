@@ -78,14 +78,34 @@ export const CartDrawer: Component<Props> = (props) => {
                       >
                         −
                       </button>
-                      <span class="cart-drawer__qty-value">{entry.qty}</span>
+                      <input
+                        type="number"
+                        class="cart-drawer__qty-input"
+                        value={entry.qty}
+                        min="1"
+                        aria-label={`${entry.recipeName} quantity`}
+                        onInput={(e) => {
+                          const val = Number.parseInt(e.currentTarget.value, 10);
+                          if (Number.isFinite(val) && val > 0) {
+                            props.onSetQty(entry.recipeId, val);
+                          }
+                        }}
+                      />
                       <button
                         type="button"
                         class="cart-drawer__qty-btn"
                         onClick={() => props.onSetQty(entry.recipeId, entry.qty + 1)}
-                        aria-label={`Increase ${entry.recipeName} quantity`}
+                        aria-label={`Increase ${entry.recipeName} quantity by 1`}
                       >
-                        +
+                        +1
+                      </button>
+                      <button
+                        type="button"
+                        class="cart-drawer__qty-btn"
+                        onClick={() => props.onSetQty(entry.recipeId, entry.qty + 5)}
+                        aria-label={`Increase ${entry.recipeName} quantity by 5`}
+                      >
+                        +5
                       </button>
                       <button
                         type="button"

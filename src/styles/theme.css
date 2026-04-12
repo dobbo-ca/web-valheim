@@ -262,7 +262,7 @@ h3 {
 }
 .recipe-table__header {
   display: grid;
-  grid-template-columns: 2fr 1fr 60px 3fr auto;
+  grid-template-columns: 2fr 1fr 60px 3fr 86px;
   gap: 12px;
   padding: 10px 14px;
   align-items: center;
@@ -276,27 +276,29 @@ h3 {
 }
 .recipe-row__wrapper {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 2fr 1fr 60px 3fr 86px;
+  gap: 12px;
   align-items: center;
+  padding: 10px 14px;
   border-bottom: 1px solid var(--border-soft);
 }
 .recipe-row {
   display: grid;
-  grid-template-columns: 2fr 1fr 60px 3fr;
-  gap: 12px;
-  padding: 10px 14px;
+  grid-template-columns: subgrid;
+  grid-column: 1 / 5;
   align-items: center;
-  font-size: 13px;
   background: transparent;
   border: 0;
   text-align: left;
   color: var(--text);
   cursor: pointer;
   font: inherit;
-  width: 100%;
+  font-size: 13px;
+  padding: 0;
 }
 .recipe-row__cart-cell {
-  padding-right: 14px;
+  grid-column: 5;
+  justify-self: end;
 }
 .recipe-row:hover {
   background: var(--surface-sunken);
@@ -561,11 +563,22 @@ h3 {
   border-color: var(--accent);
   color: var(--accent);
 }
-.cart-drawer__qty-value {
-  min-width: 24px;
+.cart-drawer__qty-input {
+  width: 48px;
   text-align: center;
   font-size: 13px;
   font-weight: 600;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 2px 4px;
+  -moz-appearance: textfield;
+}
+.cart-drawer__qty-input::-webkit-inner-spin-button,
+.cart-drawer__qty-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .cart-drawer__remove-btn {
   background: none;
