@@ -178,15 +178,15 @@ h3 {
 .filter-bar {
   display: flex;
   gap: 10px;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   margin-bottom: 10px;
 }
 .filter-bar__row {
   display: contents;
 }
-.filter-bar__row {
-  display: contents;
+.filter-bar__station {
+  display: flex;
 }
 .filter-bar__chips {
   display: flex;
@@ -470,11 +470,15 @@ h3 {
     text-align: center;
     line-height: 1.2;
   }
+  .filter-bar__station {
+    flex: 1;
+    display: flex;
+  }
   .filter-bar select {
     flex: 1;
     padding: 0 8px;
     font-size: 12px;
-    line-height: 1.2;
+    height: 100%;
   }
   .recipe-table__header {
     grid-template-columns: 2fr 1.5fr 24px;
