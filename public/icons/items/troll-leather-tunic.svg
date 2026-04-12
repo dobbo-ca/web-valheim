@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Torso body -->
+  <polygon points="14,8 34,8 40,14 40,40 8,40 8,14" fill="#4A6A8A"/>
+  <!-- Shoulders highlight -->
+  <polygon points="14,8 34,8 36,14 12,14" fill="#5A7A9A"/>
+  <!-- Left arm -->
+  <rect x="4" y="14" width="6" height="18" fill="#4A6A8A"/>
+  <!-- Right arm -->
+  <rect x="38" y="14" width="6" height="18" fill="#4A6A8A"/>
+  <!-- Seam center -->
+  <rect x="22" y="14" width="4" height="26" fill="#3A5A7A"/>
+  <!-- Collar -->
+  <rect x="18" y="6" width="12" height="6" rx="2" fill="#3A5A7A"/>
+</svg>

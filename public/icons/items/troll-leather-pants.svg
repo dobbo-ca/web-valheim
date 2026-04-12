@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Waistband -->
+  <rect x="8" y="6" width="32" height="6" fill="#3A5A7A"/>
+  <!-- Seat/hip area -->
+  <rect x="8" y="12" width="32" height="10" fill="#4A6A8A"/>
+  <!-- Left leg -->
+  <rect x="8" y="22" width="14" height="22" rx="2" fill="#4A6A8A"/>
+  <!-- Right leg -->
+  <rect x="26" y="22" width="14" height="22" rx="2" fill="#4A6A8A"/>
+  <!-- Leg seam left -->
+  <rect x="10" y="26" width="2" height="14" fill="#3A5A7A"/>
+  <!-- Leg seam right -->
+  <rect x="36" y="26" width="2" height="14" fill="#3A5A7A"/>
+  <!-- Crotch gap -->
+  <rect x="22" y="22" width="4" height="6" fill="#3A2A1A"/>
+</svg>
