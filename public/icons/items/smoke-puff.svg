@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Bottom cloud puff -->
+  <ellipse cx="24" cy="36" rx="12" ry="6" fill="#A0A0A0"/>
+  <!-- Middle puffs -->
+  <ellipse cx="16" cy="28" rx="8" ry="7" fill="#A0A0A0"/>
+  <ellipse cx="30" cy="30" rx="9" ry="7" fill="#C0C0C0"/>
+  <!-- Top puff -->
+  <ellipse cx="22" cy="20" rx="9" ry="8" fill="#C0C0C0"/>
+  <!-- Shadow areas -->
+  <ellipse cx="28" cy="38" rx="6" ry="3" fill="#808080"/>
+  <ellipse cx="16" cy="32" rx="4" ry="3" fill="#808080"/>
+</svg>

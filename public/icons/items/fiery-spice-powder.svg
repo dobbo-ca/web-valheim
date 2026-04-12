@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Jar body -->
+  <rect x="14" y="26" width="20" height="16" rx="2" fill="#CC4400"/>
+  <!-- Jar highlight -->
+  <rect x="14" y="26" width="6" height="16" rx="2" fill="#EE6620"/>
+  <!-- Jar shadow -->
+  <rect x="30" y="26" width="4" height="16" rx="2" fill="#AA2200"/>
+  <!-- Lid -->
+  <rect x="12" y="20" width="24" height="8" rx="2" fill="#AA2200"/>
+  <!-- Lid highlight -->
+  <rect x="12" y="20" width="8" height="8" rx="2" fill="#CC4400"/>
+  <!-- Cork/cap -->
+  <rect x="18" y="14" width="12" height="8" rx="2" fill="#C8B090"/>
+  <!-- Heat shimmer / flame wisps from cap -->
+  <polygon points="22,14 20,8 24,12" fill="#FF6620"/>
+  <polygon points="26,14 28,6 24,11" fill="#FF8840"/>
+  <!-- Spice dots on label -->
+  <rect x="18" y="30" width="2" height="2" fill="#AA2200"/>
+  <rect x="22" y="32" width="2" height="2" fill="#AA2200"/>
+  <rect x="26" y="30" width="2" height="2" fill="#AA2200"/>
+</svg>

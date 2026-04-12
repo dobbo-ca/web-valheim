@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Plaque -->
+  <rect x="10" y="30" width="28" height="14" rx="2" fill="#A0722A"/>
+  <!-- Large round head -->
+  <rect x="13" y="12" width="22" height="22" rx="6" fill="#4A6A9A"/>
+  <!-- Brow ridge -->
+  <rect x="13" y="18" width="22" height="5" fill="#3A5A8A"/>
+  <!-- Eyes -->
+  <rect x="16" y="19" width="5" height="4" fill="#1A2A4A"/>
+  <rect x="27" y="19" width="5" height="4" fill="#1A2A4A"/>
+  <!-- Nose -->
+  <rect x="21" y="25" width="6" height="4" rx="2" fill="#3A5A8A"/>
+  <!-- Mouth -->
+  <rect x="17" y="30" width="14" height="3" rx="1" fill="#2A3A6A"/>
+  <!-- Tusk -->
+  <rect x="19" y="33" width="3" height="5" rx="1" fill="#E0D8C8"/>
+  <rect x="26" y="33" width="3" height="5" rx="1" fill="#E0D8C8"/>
+</svg>

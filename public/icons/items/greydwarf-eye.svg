@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Outer sclera -->
+  <circle cx="24" cy="24" r="14" fill="#E0E0E0"/>
+  <!-- Iris -->
+  <circle cx="24" cy="24" r="10" fill="#88CC88"/>
+  <!-- Mid iris -->
+  <circle cx="24" cy="24" r="7" fill="#44AA44"/>
+  <!-- Pupil -->
+  <circle cx="24" cy="24" r="4" fill="#2A2A2A"/>
+  <!-- Glint -->
+  <circle cx="27" cy="21" r="2" fill="#FFFFFF"/>
+</svg>
