@@ -98,6 +98,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: barley-flour, qty: 10 }
+  yields: { itemId: bread, qty: 1 }
   secondaryStep:
     station: oven
     description: "Bake in an Oven (~50 seconds). Burns if left too long."
@@ -116,6 +117,7 @@
   ingredients:
     - { itemId: anglerfish, qty: 1 }
     - { itemId: bread-dough, qty: 2 }
+  yields: { itemId: fish-n-bread, qty: 1 }
   secondaryStep:
     station: oven
     description: "Bake in an Oven (~50 seconds). Burns if left too long."
@@ -135,6 +137,7 @@
     - { itemId: chicken-meat, qty: 1 }
     - { itemId: honey, qty: 3 }
     - { itemId: jotun-puffs, qty: 2 }
+  yields: { itemId: honey-glazed-chicken, qty: 1 }
   secondaryStep:
     station: oven
     description: "Bake in an Oven (~50 seconds). Burns if left too long."
@@ -154,6 +157,7 @@
     - { itemId: cloudberries, qty: 2 }
     - { itemId: lox-meat, qty: 2 }
     - { itemId: barley-flour, qty: 4 }
+  yields: { itemId: lox-meat-pie, qty: 1 }
   secondaryStep:
     station: oven
     description: "Bake in an Oven (~50 seconds). Burns if left too long."
@@ -173,6 +177,7 @@
     - { itemId: magecap, qty: 3 }
     - { itemId: blood-clot, qty: 1 }
     - { itemId: turnip, qty: 2 }
+  yields: { itemId: stuffed-mushroom, qty: 1 }
   secondaryStep:
     station: oven
     description: "Bake in an Oven (~50 seconds). Burns if left too long."
@@ -193,6 +198,7 @@
     - { itemId: hare-meat, qty: 1 }
     - { itemId: lox-meat, qty: 1 }
     - { itemId: seeker-meat, qty: 1 }
+  yields: { itemId: meat-platter, qty: 1 }
   secondaryStep:
     station: oven
     description: "Bake in an Oven (~50 seconds). Burns if left too long."
