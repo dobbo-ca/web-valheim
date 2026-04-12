@@ -274,6 +274,7 @@ h3 {
   color: var(--text);
   cursor: pointer;
   font: inherit;
+  width: 100%;
 }
 .recipe-row:hover {
   background: var(--surface-sunken);
@@ -321,6 +322,25 @@ h3 {
   gap: 14px;
   color: var(--text);
 }
+.recipe-table__sort-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+}
+.recipe-table__sort-btn:hover {
+  color: var(--text);
+}
+.recipe-table__sort-btn--active {
+  color: var(--accent);
+}
+
 .recipe-table__empty {
   padding: 24px;
   text-align: center;

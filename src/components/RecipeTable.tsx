@@ -1,4 +1,7 @@
 import { For, Show, createMemo, createSignal, onMount, type Component } from 'solid-js';
+
+type SortKey = 'name' | 'station' | 'level';
+type SortDir = 'asc' | 'desc';
 import type { DataSet } from '../lib/loader';
 import type { FilterState } from '../lib/filter';
 import { filterRecipes, emptyFilterState } from '../lib/filter';
@@ -14,6 +17,8 @@ interface Props {
 export const RecipeTable: Component<Props> = (props) => {
   const [state, setState] = createSignal<FilterState>(emptyFilterState);
   const [expandedId, setExpandedId] = createSignal<string | null>(null);
+  const [sortKey, setSortKey] = createSignal<SortKey | null>(null);
+  const [sortDir, setSortDir] = createSignal<SortDir>('asc');
 
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
@@ -29,6 +34,45 @@ export const RecipeTable: Component<Props> = (props) => {
   );
 
   const filtered = createMemo(() => filterRecipes(props.data.recipes, state()));
+
+  const sorted = createMemo(() => {
+    const key = sortKey();
+    const rows = filtered();
+    if (!key) return rows;
+    const dir = sortDir() === 'asc' ? 1 : -1;
+    return [...rows].sort((a, b) => {
+      let av: string | number;
+      let bv: string | number;
+      if (key === 'name') {
+        av = a.name.toLowerCase();
+        bv = b.name.toLowerCase();
+      } else if (key === 'station') {
+        av = (stationsById().get(a.station)?.name ?? a.station).toLowerCase();
+        bv = (stationsById().get(b.station)?.name ?? b.station).toLowerCase();
+      } else {
+        av = a.stationLevel;
+        bv = b.stationLevel;
+      }
+      return av < bv ? -dir : av > bv ? dir : 0;
+    });
+  });
+
+  const toggleSort = (key: SortKey) => {
+    if (sortKey() !== key) {
+      setSortKey(key);
+      setSortDir('asc');
+    } else if (sortDir() === 'asc') {
+      setSortDir('desc');
+    } else {
+      setSortKey(null);
+      setSortDir('asc');
+    }
+  };
+
+  const sortIndicator = (key: SortKey) => {
+    if (sortKey() !== key) return ' ⇅';
+    return sortDir() === 'asc' ? ' ▲' : ' ▼';
+  };
 
   const commit = (next: FilterState) => {
     setState(next);
@@ -88,13 +132,25 @@ export const RecipeTable: Component<Props> = (props) => {
 
       <div class="recipe-table__grid" role="table">
         <div class="recipe-table__header" role="row">
-          <span role="columnheader">Name</span>
-          <span role="columnheader">Station</span>
-          <span role="columnheader">Lvl</span>
+          <span role="columnheader" aria-sort={sortKey() === 'name' ? (sortDir() === 'asc' ? 'ascending' : 'descending') : 'none'}>
+            <button class="recipe-table__sort-btn" classList={{ 'recipe-table__sort-btn--active': sortKey() === 'name' }} onClick={() => toggleSort('name')}>
+              Name{sortIndicator('name')}
+            </button>
+          </span>
+          <span role="columnheader" aria-sort={sortKey() === 'station' ? (sortDir() === 'asc' ? 'ascending' : 'descending') : 'none'}>
+            <button class="recipe-table__sort-btn" classList={{ 'recipe-table__sort-btn--active': sortKey() === 'station' }} onClick={() => toggleSort('station')}>
+              Station{sortIndicator('station')}
+            </button>
+          </span>
+          <span role="columnheader" aria-sort={sortKey() === 'level' ? (sortDir() === 'asc' ? 'ascending' : 'descending') : 'none'}>
+            <button class="recipe-table__sort-btn" classList={{ 'recipe-table__sort-btn--active': sortKey() === 'level' }} onClick={() => toggleSort('level')}>
+              Lvl{sortIndicator('level')}
+            </button>
+          </span>
           <span role="columnheader">Ingredients</span>
         </div>
 
-        <For each={filtered()} fallback={<div class="recipe-table__empty">No recipes match these filters.</div>}>
+        <For each={sorted()} fallback={<div class="recipe-table__empty">No recipes match these filters.</div>}>
           {(recipe) => (
             <RecipeRow
               recipe={recipe}
