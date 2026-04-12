@@ -99,39 +99,48 @@ describe('RecipeSchema', () => {
   });
 });
 
-describe('RecipeSchema — mead field', () => {
+describe('RecipeSchema — secondaryStep field', () => {
   const baseRecipe = {
     id: 'minor-healing-mead',
     name: 'Minor Healing Mead',
     type: 'cooking',
-    station: 'cauldron',
+    station: 'mead-ketill',
     stationLevel: 1,
     ingredients: [{ itemId: 'honey', qty: 10 }],
   };
 
-  it('accepts a recipe with mead info', () => {
+  it('accepts a recipe with secondaryStep', () => {
     const result = RecipeSchema.parse({
       ...baseRecipe,
       yields: { itemId: 'minor-healing-mead', qty: 6 },
-      mead: {
-        baseName: 'Mead Base: Minor Healing',
-        fermenterDuration: 2400,
+      secondaryStep: {
+        station: 'fermenter',
+        description: 'Ferment for 2 in-game days. Produces ×6.',
       },
     });
-    expect(result.mead?.baseName).toBe('Mead Base: Minor Healing');
-    expect(result.mead?.fermenterDuration).toBe(2400);
+    expect(result.secondaryStep?.station).toBe('fermenter');
+    expect(result.secondaryStep?.description).toBe('Ferment for 2 in-game days. Produces ×6.');
   });
 
-  it('accepts a recipe without mead info', () => {
+  it('accepts a recipe without secondaryStep', () => {
     const result = RecipeSchema.parse(baseRecipe);
-    expect(result.mead).toBeUndefined();
+    expect(result.secondaryStep).toBeUndefined();
   });
 
-  it('rejects mead with missing baseName', () => {
+  it('rejects secondaryStep with missing station', () => {
     expect(() =>
       RecipeSchema.parse({
         ...baseRecipe,
-        mead: { fermenterDuration: 2400 },
+        secondaryStep: { description: 'Bake in an Oven.' },
+      }),
+    ).toThrow();
+  });
+
+  it('rejects secondaryStep with missing description', () => {
+    expect(() =>
+      RecipeSchema.parse({
+        ...baseRecipe,
+        secondaryStep: { station: 'oven' },
       }),
     ).toThrow();
   });

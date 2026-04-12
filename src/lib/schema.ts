@@ -41,9 +41,9 @@ export const FoodStatsSchema = z.object({
   regen: z.number().nonnegative(),
 });
 
-export const MeadInfoSchema = z.object({
-  baseName: z.string().min(1),
-  fermenterDuration: z.number().int().positive(),
+export const SecondaryStepSchema = z.object({
+  station: z.string().min(1),
+  description: z.string().min(1),
 });
 
 export const RecipeTypeSchema = z.enum(['crafting', 'cooking']);
@@ -60,7 +60,7 @@ export const RecipeSchema = z.object({
   tags: z.array(z.string()).optional(),
   notes: z.string().optional(),
   food: FoodStatsSchema.optional(),
-  mead: MeadInfoSchema.optional(),
+  secondaryStep: SecondaryStepSchema.optional(),
 });
 
 export const StationsFileSchema = z.array(StationSchema);
