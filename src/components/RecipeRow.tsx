@@ -60,9 +60,13 @@ export const RecipeRow: Component<Props> = (props) => {
             </Show>
           </span>
           <span class="recipe-row__station">
-            {props.stationsById.get(props.recipe.station)?.name ?? props.recipe.station}
+            {(() => {
+              const station = props.stationsById.get(props.recipe.station);
+              const stationName = station?.name ?? props.recipe.station;
+              const upgrade = station?.upgrades.find((u) => u.level === props.recipe.stationLevel);
+              return upgrade?.name ? `${stationName} — ${upgrade.name}` : `${stationName} Lv ${props.recipe.stationLevel}`;
+            })()}
           </span>
-          <span class="recipe-row__lvl">{props.recipe.stationLevel}</span>
           <Show when={!props.expanded}>
             <span class="recipe-row__ings">
               {formatIngredients(props.recipe, props.itemsById)}
