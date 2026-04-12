@@ -285,9 +285,9 @@
   station: cauldron
   stationLevel: 5
   ingredients:
-    - { itemId: cloudberries, qty: 4 }
-    - { itemId: raspberries, qty: 4 }
-    - { itemId: blueberries, qty: 4 }
+    - { itemId: sap, qty: 3 }
+    - { itemId: fiddlehead, qty: 2 }
+    - { itemId: vineberry-cluster, qty: 2 }
   food:
     hp: 55
     stamina: 55

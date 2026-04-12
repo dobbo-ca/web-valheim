@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Main hide body -->
+  <polygon points="8,10 40,10 44,38 4,38" fill="#4A6A8A"/>
+  <!-- Highlight ridge -->
+  <polygon points="8,10 40,10 36,20 12,20" fill="#5A7A9A"/>
+  <!-- Texture lines -->
+  <rect x="14" y="24" width="20" height="2" fill="#3A5A7A"/>
+  <rect x="16" y="30" width="16" height="2" fill="#3A5A7A"/>
+  <!-- Edges -->
+  <rect x="4" y="36" width="40" height="4" fill="#3A5A7A"/>
+</svg>

@@ -14,6 +14,8 @@ interface Props {
   onIngredientClick: (itemId: string) => void;
   onAddToCart: (recipeId: string) => void;
   onOpenCart: () => void;
+  iconIds?: Set<string>;
+  iconBase?: string;
 }
 
 function formatIngredients(
@@ -27,6 +29,9 @@ function formatIngredients(
 
 export const RecipeRow: Component<Props> = (props) => {
   const detailId = () => `recipe-row-detail-${props.recipe.id}`;
+  const iconBase = () => props.iconBase ?? '/icons/items';
+  const hasRecipeIcon = () => props.iconIds?.has(props.recipe.id) ?? false;
+
   return (
     <>
       <div class="recipe-row__wrapper">
@@ -40,6 +45,15 @@ export const RecipeRow: Component<Props> = (props) => {
         >
           <span class="recipe-row__name">
             {props.expanded ? '▾ ' : ''}
+            <Show when={hasRecipeIcon()}>
+              <img
+                class="item-icon item-icon--md"
+                src={`${iconBase()}/${props.recipe.id}.svg`}
+                alt=""
+                width={24}
+                height={24}
+              />
+            </Show>
             {props.recipe.name}
           </span>
           <span class="recipe-row__station">
@@ -73,6 +87,8 @@ export const RecipeRow: Component<Props> = (props) => {
                     label={props.itemsById.get(ing.itemId)?.name ?? ing.itemId}
                     qty={ing.qty}
                     onClick={props.onIngredientClick}
+                    hasIcon={props.iconIds?.has(ing.itemId) ?? false}
+                    iconBase={iconBase()}
                   />
                 )}
               </For>

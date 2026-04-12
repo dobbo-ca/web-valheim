@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Main obsidian body -->
+  <polygon points="24,4 42,16 38,40 10,40 6,16" fill="#1A1A2A"/>
+  <!-- Mid highlight facet -->
+  <polygon points="24,4 42,16 34,20 18,20 6,16" fill="#3A3A5A"/>
+  <!-- Shine sliver -->
+  <polygon points="28,8 36,16 32,18" fill="#6A6A8A"/>
+  <!-- Small shine dot -->
+  <rect x="30" y="10" width="3" height="3" fill="#8A8AAA"/>
+</svg>

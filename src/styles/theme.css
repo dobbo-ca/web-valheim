@@ -196,6 +196,70 @@ h3 {
   min-width: 14px;
   text-align: right;
 }
+.filter-bar__level-input {
+  width: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px 0;
+}
+
+/* ===== Dual-thumb range slider ===== */
+.range-slider {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  min-width: 80px;
+}
+.range-slider__track {
+  position: absolute;
+  height: 4px;
+  background: var(--border-muted);
+  width: 100%;
+  border-radius: 2px;
+}
+.range-slider__fill {
+  position: absolute;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.range-slider input[type="range"] {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  margin: 0;
+  height: 20px;
+}
+.range-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+.range-slider input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  border-style: solid;
+}
 
 /* ===== Recipe table toolbar ===== */
 .recipe-table__toolbar {
@@ -207,6 +271,7 @@ h3 {
 }
 .recipe-table__toolbar .filter-bar {
   margin-bottom: 0;
+  flex: 1;
 }
 
 /* ===== Reverse lookup strip ===== */
@@ -225,6 +290,9 @@ h3 {
 
 /* ===== Chips ===== */
 .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   background: var(--accent-bg);
   border: 1px solid var(--accent-border);
   color: var(--text);
@@ -252,6 +320,16 @@ h3 {
   flex-wrap: wrap;
   gap: 6px;
 }
+
+/* ===== Item icons ===== */
+.item-icon {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.item-icon--sm { width: 16px; height: 16px; }
+.item-icon--md { width: 24px; height: 24px; }
 
 /* ===== Recipe table grid ===== */
 .recipe-table__grid {
@@ -300,14 +378,17 @@ h3 {
   grid-column: 5;
   justify-self: end;
 }
-.recipe-row:hover {
-  background: var(--surface-sunken);
+.recipe-row__wrapper:hover {
+  background: color-mix(in oklch, var(--bg) 40%, var(--surface));
 }
-.recipe-row--expanded {
-  background: var(--surface-sunken);
+.recipe-row__wrapper:has(.recipe-row--expanded) {
+  background: color-mix(in oklch, var(--bg) 40%, var(--surface));
 }
 .recipe-row__name {
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .recipe-row--expanded .recipe-row__name {
   color: var(--accent);
@@ -402,7 +483,7 @@ h3 {
   min-width: 28px;
   line-height: 1.4;
 }
-.recipe-table__page-btn:hover:not(:disabled) {
+.recipe-table__page-btn:hover:not(:disabled):not(.recipe-table__page-btn--active) {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -456,18 +537,18 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--accent);
-  color: var(--bg);
-  border: none;
-  border-radius: 999px;
-  padding: 6px 14px;
+  background: var(--surface);
+  color: var(--text-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
   font: inherit;
   font-size: 13px;
-  font-weight: 600;
   cursor: pointer;
 }
 .cart-badge:hover {
-  opacity: 0.85;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 .cart-badge__icon {
   font-size: 14px;
@@ -501,6 +582,17 @@ h3 {
 @keyframes cart-slide-in {
   from { transform: translateX(100%); }
   to { transform: translateX(0); }
+}
+@keyframes cart-slide-out {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+.cart-drawer--closing {
+  animation: cart-slide-out 0.2s ease-in forwards;
+}
+.cart-drawer__overlay--closing {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
 }
 .cart-drawer__header {
   display: flex;

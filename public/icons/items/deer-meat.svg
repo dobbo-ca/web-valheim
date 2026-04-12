@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Meat body (darker than boar) -->
+  <polygon points="10,16 38,12 40,34 12,38" fill="#AA3333"/>
+  <!-- Fat strip top -->
+  <polygon points="10,16 38,12 38,18 10,22" fill="#D09090"/>
+  <!-- Fat marbling -->
+  <rect x="18" y="24" width="8" height="2" fill="#D09090"/>
+  <rect x="28" y="28" width="6" height="2" fill="#D09090"/>
+  <!-- Bone stub -->
+  <rect x="8" y="36" width="4" height="6" rx="2" fill="#E0D8C8"/>
+</svg>

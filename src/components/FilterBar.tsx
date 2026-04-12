@@ -49,21 +49,75 @@ export const FilterBar: Component<Props> = (props) => {
         </select>
       </label>
 
-      <label class="filter-bar__level">
-        <span class="label">Max Lvl</span>
+      <div class="filter-bar__level" role="group" aria-label="Station level range">
+        <span class="label">Lvl</span>
         <input
-          type="range"
-          min="1"
-          max="7"
-          value={Number.isFinite(props.state.maxStationLevel) ? String(props.state.maxStationLevel) : '7'}
-          onInput={(e) =>
-            update({ maxStationLevel: Number.parseInt(e.currentTarget.value, 10) })
-          }
+          type="text"
+          inputmode="numeric"
+          pattern="[1-7]"
+          maxLength={1}
+          class="filter-bar__level-input"
+          aria-label="Minimum station level"
+          value={String(props.state.minStationLevel)}
+          onInput={(e) => {
+            const raw = e.currentTarget.value.replace(/\D/g, '');
+            if (!raw) return;
+            const val = Math.max(1, Math.min(7, Number.parseInt(raw, 10)));
+            const max = Number.isFinite(props.state.maxStationLevel) ? props.state.maxStationLevel : 7;
+            update({ minStationLevel: Math.min(val, max) });
+            e.currentTarget.value = String(Math.min(val, max));
+          }}
         />
-        <span class="filter-bar__level-value">
-          {Number.isFinite(props.state.maxStationLevel) ? props.state.maxStationLevel : 7}
-        </span>
-      </label>
+        <div class="range-slider">
+          <div class="range-slider__track" />
+          <div
+            class="range-slider__fill"
+            style={{
+              left: `${((props.state.minStationLevel - 1) / 6) * 100}%`,
+              width: `${(((Number.isFinite(props.state.maxStationLevel) ? props.state.maxStationLevel : 7) - props.state.minStationLevel) / 6) * 100}%`,
+            }}
+          />
+          <input
+            type="range"
+            min="1"
+            max="7"
+            value={String(props.state.minStationLevel)}
+            aria-label="Minimum station level"
+            onInput={(e) => {
+              const val = Number.parseInt(e.currentTarget.value, 10);
+              const max = Number.isFinite(props.state.maxStationLevel) ? props.state.maxStationLevel : 7;
+              update({ minStationLevel: Math.min(val, max) });
+            }}
+          />
+          <input
+            type="range"
+            min="1"
+            max="7"
+            value={Number.isFinite(props.state.maxStationLevel) ? String(props.state.maxStationLevel) : '7'}
+            aria-label="Maximum station level"
+            onInput={(e) => {
+              const val = Number.parseInt(e.currentTarget.value, 10);
+              update({ maxStationLevel: Math.max(val, props.state.minStationLevel) });
+            }}
+          />
+        </div>
+        <input
+          type="text"
+          inputmode="numeric"
+          pattern="[1-7]"
+          maxLength={1}
+          class="filter-bar__level-input"
+          aria-label="Maximum station level"
+          value={Number.isFinite(props.state.maxStationLevel) ? String(props.state.maxStationLevel) : '7'}
+          onInput={(e) => {
+            const raw = e.currentTarget.value.replace(/\D/g, '');
+            if (!raw) return;
+            const val = Math.max(1, Math.min(7, Number.parseInt(raw, 10)));
+            update({ maxStationLevel: Math.max(val, props.state.minStationLevel) });
+            e.currentTarget.value = String(Math.max(val, props.state.minStationLevel));
+          }}
+        />
+      </div>
 
       <input
         type="search"

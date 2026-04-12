@@ -151,4 +151,65 @@ describe('RecipeRow', () => {
       screen.getByRole('link', { name: /open detail page/ }),
     ).toHaveAttribute('href', '/valheim/recipes/iron-sword/');
   });
+
+  it('renders recipe icon when iconIds includes the recipe id', () => {
+    const iconIds = new Set(['iron-sword']);
+    render(() => (
+      <RecipeRow
+        recipe={recipe}
+        itemsById={itemsById}
+        stationsById={stationsById}
+        expanded={false}
+        baseHref="/valheim/"
+        inCart={false}
+        onToggle={() => {}}
+        onIngredientClick={() => {}}
+        onAddToCart={() => {}}
+        onOpenCart={() => {}}
+        iconIds={iconIds}
+      />
+    ));
+    const icon = document.querySelector('.item-icon--md') as HTMLImageElement;
+    expect(icon).toBeInTheDocument();
+    expect(icon.src).toContain('/icons/items/iron-sword.svg');
+  });
+
+  it('does not render icon when iconIds is absent', () => {
+    render(() => (
+      <RecipeRow
+        recipe={recipe}
+        itemsById={itemsById}
+        stationsById={stationsById}
+        expanded={false}
+        baseHref="/valheim/"
+        inCart={false}
+        onToggle={() => {}}
+        onIngredientClick={() => {}}
+        onAddToCart={() => {}}
+        onOpenCart={() => {}}
+      />
+    ));
+    expect(document.querySelector('.item-icon--md')).toBeNull();
+  });
+
+  it('renders ingredient chip icons when expanded and iconIds provided', () => {
+    const iconIds = new Set(['iron', 'wood']);
+    render(() => (
+      <RecipeRow
+        recipe={recipe}
+        itemsById={itemsById}
+        stationsById={stationsById}
+        expanded={true}
+        baseHref="/valheim/"
+        inCart={false}
+        onToggle={() => {}}
+        onIngredientClick={() => {}}
+        onAddToCart={() => {}}
+        onOpenCart={() => {}}
+        iconIds={iconIds}
+      />
+    ));
+    const smIcons = document.querySelectorAll('.item-icon--sm');
+    expect(smIcons.length).toBe(2);
+  });
 });
