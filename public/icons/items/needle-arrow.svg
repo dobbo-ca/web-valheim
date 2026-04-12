@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Shaft -->
+  <rect x="22" y="14" width="4" height="26" fill="#8B6D4A"/>
+  <!-- Needle tip (thin, silver) -->
+  <polygon points="24,2 26,14 22,14" fill="#C0C0C0"/>
+  <!-- Feathers -->
+  <polygon points="18,40 22,36 22,44" fill="#5D8A2D"/>
+  <polygon points="30,40 26,36 26,44" fill="#5D8A2D"/>
+</svg>
