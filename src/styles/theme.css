@@ -435,13 +435,13 @@ h3 {
 }
 @media (max-width: 768px) {
   .recipe-table__header {
-    grid-template-columns: 2fr 1.5fr 86px;
+    grid-template-columns: 2fr 1.5fr 42px;
   }
   .recipe-table__header > :nth-child(3) {
     display: none;
   }
   .recipe-row__wrapper {
-    grid-template-columns: 2fr 1.5fr 86px;
+    grid-template-columns: 2fr 1.5fr 42px;
   }
   .recipe-row {
     grid-column: 1 / 3;
@@ -450,6 +450,13 @@ h3 {
     grid-column: 3;
   }
   .recipe-row__ings {
+    display: none;
+  }
+  .add-to-cart-btn {
+    min-width: 32px;
+    padding: 4px 8px;
+  }
+  .add-to-cart-btn__label {
     display: none;
   }
 }

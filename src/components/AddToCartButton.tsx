@@ -24,7 +24,8 @@ export const AddToCartButton: Component<Props> = (props) => {
       onClick={handleClick}
       aria-label={props.inCart ? 'In cart — click to view' : 'Add to cart'}
     >
-      {props.inCart ? '✓ In Cart' : '+ Add'}
+      <span class="add-to-cart-btn__icon">{props.inCart ? '✓' : '+'}</span>
+      <span class="add-to-cart-btn__label">{props.inCart ? ' In Cart' : ' Add'}</span>
     </button>
   );
 };
