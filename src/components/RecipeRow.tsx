@@ -22,6 +22,7 @@ function formatIngredients(
 }
 
 export const RecipeRow: Component<Props> = (props) => {
+  const detailId = () => `recipe-row-detail-${props.recipe.id}`;
   return (
     <>
       <button
@@ -29,6 +30,7 @@ export const RecipeRow: Component<Props> = (props) => {
         class="recipe-row"
         classList={{ 'recipe-row--expanded': props.expanded }}
         aria-expanded={props.expanded}
+        aria-controls={detailId()}
         onClick={() => props.onToggle(props.recipe.id)}
       >
         <span class="recipe-row__name">
@@ -50,7 +52,7 @@ export const RecipeRow: Component<Props> = (props) => {
       </button>
 
       <Show when={props.expanded}>
-        <div class="recipe-row__detail">
+        <div class="recipe-row__detail" id={detailId()}>
           <div class="recipe-row__section">
             <span class="label">Ingredients</span>
             <div class="chips">

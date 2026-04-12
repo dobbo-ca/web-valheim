@@ -95,4 +95,42 @@ describe('RecipeRow', () => {
     fireEvent.click(screen.getByRole('button', { name: /Iron ×60/ }));
     expect(onIngredientClick).toHaveBeenCalledWith('iron');
   });
+
+  it('row button accessible name does not include ingredient list when expanded', () => {
+    render(() => (
+      <RecipeRow
+        recipe={recipe}
+        itemsById={itemsById}
+        stationsById={stationsById}
+        expanded={true}
+        baseHref="/valheim/"
+        onToggle={() => {}}
+        onIngredientClick={() => {}}
+      />
+    ));
+    // Row button is the one with aria-expanded="true"
+    const rowBtn = screen
+      .getAllByRole('button')
+      .find((el) => el.getAttribute('aria-expanded') === 'true');
+    expect(rowBtn).toBeDefined();
+    expect(rowBtn!.textContent ?? '').not.toMatch(/Iron ×60/);
+    expect(rowBtn!.textContent ?? '').not.toMatch(/Wood ×2/);
+  });
+
+  it('renders permalink anchor with the correct href', () => {
+    render(() => (
+      <RecipeRow
+        recipe={recipe}
+        itemsById={itemsById}
+        stationsById={stationsById}
+        expanded={true}
+        baseHref="/valheim/"
+        onToggle={() => {}}
+        onIngredientClick={() => {}}
+      />
+    ));
+    expect(
+      screen.getByRole('link', { name: /open detail page/ }),
+    ).toHaveAttribute('href', '/valheim/recipes/iron-sword/');
+  });
 });
