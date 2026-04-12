@@ -39,6 +39,22 @@ describe('ItemSchema', () => {
     const input = { id: 'iron', name: 'Iron', category: 'bogus' };
     expect(() => ItemSchema.parse(input)).toThrow();
   });
+
+  it('accepts item with stackSize (positive integer)', () => {
+    const input = { id: 'arrow-fire', name: 'Fire Arrow', category: 'material' as const, stackSize: 100 };
+    expect(() => ItemSchema.parse(input)).not.toThrow();
+  });
+
+  it('accepts item without stackSize (optional)', () => {
+    const input = { id: 'iron', name: 'Iron', category: 'material' as const };
+    const parsed = ItemSchema.parse(input);
+    expect(parsed.stackSize).toBeUndefined();
+  });
+
+  it('rejects stackSize of 0', () => {
+    const input = { id: 'iron', name: 'Iron', category: 'material' as const, stackSize: 0 };
+    expect(() => ItemSchema.parse(input)).toThrow();
+  });
 });
 
 describe('RecipeSchema', () => {

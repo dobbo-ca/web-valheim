@@ -13,6 +13,7 @@ export const ItemSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
   category: ItemCategorySchema,
+  stackSize: z.number().int().positive().optional(),
 });
 
 export const IngredientRefSchema = z.object({
