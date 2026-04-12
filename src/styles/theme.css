@@ -1105,6 +1105,16 @@ h3 {
   padding: 4px 10px;
   font-size: 11px;
 }
+.filter-chip--group {
+  font-weight: 600;
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+.filter-chip--partial {
+  background: color-mix(in oklch, var(--accent) 12%, transparent);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
 .adv-filter__station-levels {
   display: flex;
   flex-wrap: wrap;

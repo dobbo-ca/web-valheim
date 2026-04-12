@@ -9,11 +9,22 @@ interface TagGroup {
 
 const tagGroups: TagGroup[] = [
   { label: 'Weapons', tags: ['sword', 'axe', 'mace', 'spear', 'knife', 'atgeir', 'sledge', 'battleaxe', 'club'] },
-  { label: 'Ranged', tags: ['bow', 'crossbow', 'arrow', 'bolt', 'staff'] },
+  { label: 'Projectiles', tags: ['bow', 'crossbow', 'arrow', 'bolt', 'staff'] },
   { label: 'Armor', tags: ['helmet', 'chest', 'legs', 'cape', 'shield', 'tower-shield'] },
 ];
 
 const standaloneTags = ['tool', 'station-upgrade', 'utility', 'magic', 'elemental', 'building'];
+
+const biomes: { label: string; tier: string }[] = [
+  { label: 'Meadows', tier: 'tier-0' },
+  { label: 'Black Forest', tier: 'tier-1' },
+  { label: 'Swamp', tier: 'tier-2' },
+  { label: 'Mountain', tier: 'tier-3' },
+  { label: 'Plains', tier: 'tier-4' },
+  { label: 'Mistlands', tier: 'tier-5' },
+  { label: 'Ashlands', tier: 'tier-6' },
+  { label: 'Deep North', tier: 'tier-7' },
+];
 
 interface Props {
   state: FilterState;
@@ -40,6 +51,21 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
     update({ tags: next });
   };
 
+  const toggleGroup = (group: TagGroup) => {
+    const current = props.state.tags;
+    const allSelected = group.tags.every((t) => current.includes(t));
+    const next = allSelected
+      ? current.filter((t) => !group.tags.includes(t))
+      : [...new Set([...current, ...group.tags])];
+    update({ tags: next });
+  };
+
+  const isGroupActive = (group: TagGroup) =>
+    group.tags.every((t) => props.state.tags.includes(t));
+
+  const isGroupPartial = (group: TagGroup) =>
+    !isGroupActive(group) && group.tags.some((t) => props.state.tags.includes(t));
+
   const stationsWithUpgrades = () =>
     props.stations.filter((s) => s.upgrades.length > 0);
 
@@ -61,12 +87,12 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
     <div class="adv-filter">
       <div class="adv-filter__section">
         <span class="adv-filter__label">Type</span>
-        <div class="filter-bar__chips" role="group" aria-label="Recipe type">
+        <div class="adv-filter__tags" role="group" aria-label="Recipe type">
           <For each={typeChips}>
             {(chip) => (
               <button
                 type="button"
-                class="filter-chip"
+                class="filter-chip filter-chip--sm"
                 classList={{ 'filter-chip--active': props.state.type === chip.value }}
                 onClick={() => update({ type: chip.value })}
               >
@@ -96,8 +122,19 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
         <For each={tagGroups}>
           {(group) => (
             <div class="adv-filter__tag-group">
-              <span class="adv-filter__tag-group-label">{group.label}</span>
               <div class="adv-filter__tags">
+                <button
+                  type="button"
+                  class="filter-chip filter-chip--sm filter-chip--group"
+                  classList={{
+                    'filter-chip--active': isGroupActive(group),
+                    'filter-chip--partial': isGroupPartial(group),
+                  }}
+                  onClick={() => toggleGroup(group)}
+                  aria-label={`Toggle all ${group.label}`}
+                >
+                  {group.label}
+                </button>
                 <For each={group.tags}>
                   {(tag) => (
                     <button
@@ -124,6 +161,24 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                 onClick={() => toggleTag(tag)}
               >
                 {tag}
+              </button>
+            )}
+          </For>
+        </div>
+      </div>
+
+      <div class="adv-filter__section">
+        <span class="adv-filter__label">Biome</span>
+        <div class="adv-filter__tags">
+          <For each={biomes}>
+            {(biome) => (
+              <button
+                type="button"
+                class="filter-chip filter-chip--sm"
+                classList={{ 'filter-chip--active': props.state.tags.includes(biome.tier) }}
+                onClick={() => toggleTag(biome.tier)}
+              >
+                {biome.label}
               </button>
             )}
           </For>
