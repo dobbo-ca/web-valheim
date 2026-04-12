@@ -1,5 +1,3 @@
-import pkg from 'lz-string';
-const { compressToEncodedURIComponent, decompressFromEncodedURIComponent } = pkg;
 import type { Item, Recipe } from './types';
 
 // ---------------------------------------------------------------------------
@@ -81,26 +79,66 @@ export function aggregateGroceryList(
 }
 
 // ---------------------------------------------------------------------------
-// Cart URL encoding (lz-string)
+// Cart URL encoding (integer index + base64url)
 // ---------------------------------------------------------------------------
 
-/** Compress cart to a URL-safe string. Returns '' for empty cart. */
-export function encodeCartUrl(cart: Cart): string {
-  if (Object.keys(cart).length === 0) return '';
-  return compressToEncodedURIComponent(JSON.stringify(cart));
+/**
+ * Encode cart as a compact base64url string.
+ *
+ * Intermediate format: "index.qty,index.qty,..." where index is the recipe's
+ * position in the sorted recipeIndex array. Qty of 1 omits the ".1" suffix.
+ * The intermediate string is then base64url-encoded to keep URLs opaque.
+ *
+ * @param cart       The cart store (recipeId → qty)
+ * @param recipeIndex Sorted array of all recipe IDs (deterministic ordering)
+ */
+export function encodeCartUrl(cart: Cart, recipeIndex: string[]): string {
+  const entries = Object.entries(cart);
+  if (entries.length === 0) return '';
+  const idToIdx = new Map(recipeIndex.map((id, i) => [id, i]));
+  const parts: string[] = [];
+  for (const [recipeId, qty] of entries) {
+    const idx = idToIdx.get(recipeId);
+    if (idx == null) continue;
+    parts.push(qty === 1 ? String(idx) : `${idx}.${qty}`);
+  }
+  if (parts.length === 0) return '';
+  return btoa(parts.join(','))
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/, '');
 }
 
-/** Decompress and parse a cart string. Returns {} on any error. */
-export function decodeCartUrl(encoded: string): Cart {
+/**
+ * Decode a base64url cart string back to a Cart.
+ *
+ * @param encoded     The base64url string from the URL
+ * @param recipeIndex Sorted array of all recipe IDs (same order used to encode)
+ */
+export function decodeCartUrl(encoded: string, recipeIndex: string[]): Cart {
   try {
     if (!encoded) return {};
-    const json = decompressFromEncodedURIComponent(encoded);
-    if (!json) return {};
-    const parsed = JSON.parse(json);
-    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return {};
-    return Object.fromEntries(
-      Object.entries(parsed).filter(([, v]) => typeof v === 'number' && v > 0),
-    ) as Cart;
+    const padded = encoded.replace(/-/g, '+').replace(/_/g, '/');
+    const raw = atob(padded);
+    const cart: Cart = {};
+    for (const part of raw.split(',')) {
+      const trimmed = part.trim();
+      if (!trimmed) continue;
+      const dotIdx = trimmed.indexOf('.');
+      let idx: number;
+      let qty: number;
+      if (dotIdx === -1) {
+        idx = Number.parseInt(trimmed, 10);
+        qty = 1;
+      } else {
+        idx = Number.parseInt(trimmed.slice(0, dotIdx), 10);
+        qty = Number.parseInt(trimmed.slice(dotIdx + 1), 10);
+      }
+      if (!Number.isFinite(idx) || !Number.isFinite(qty) || qty <= 0) continue;
+      if (idx < 0 || idx >= recipeIndex.length) continue;
+      cart[recipeIndex[idx]] = qty;
+    }
+    return cart;
   } catch {
     return {};
   }

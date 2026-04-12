@@ -179,39 +179,59 @@ describe('aggregateGroceryList', () => {
 
 // ---- encodeCartUrl / decodeCartUrl ------------------------------------------
 
+const recipeIndex = ['axe', 'hammer', 'queens-jam', 'sword'];
+
 describe('encodeCartUrl', () => {
   it('returns empty string for empty cart', () => {
-    expect(encodeCartUrl({})).toBe('');
+    expect(encodeCartUrl({}, recipeIndex)).toBe('');
   });
 
   it('returns a non-empty string for non-empty cart', () => {
-    const encoded = encodeCartUrl({ 'recipe-1': 2 });
+    const encoded = encodeCartUrl({ hammer: 2 }, recipeIndex);
     expect(typeof encoded).toBe('string');
     expect(encoded.length).toBeGreaterThan(0);
+  });
+
+  it('produces a compact output', () => {
+    const encoded = encodeCartUrl({ hammer: 3, 'queens-jam': 5, sword: 2 }, recipeIndex);
+    expect(encoded.length).toBeLessThan(20);
+  });
+
+  it('omits qty suffix for qty 1', () => {
+    const encoded = encodeCartUrl({ axe: 1 }, recipeIndex);
+    // base64url of "0" (index 0, no .1 suffix)
+    const decoded = atob(encoded.replace(/-/g, '+').replace(/_/g, '/'));
+    expect(decoded).toBe('0');
   });
 });
 
 describe('decodeCartUrl', () => {
   it('returns empty cart for empty string', () => {
-    expect(decodeCartUrl('')).toEqual({});
+    expect(decodeCartUrl('', recipeIndex)).toEqual({});
   });
 
   it('returns empty cart for null-like values', () => {
-    expect(decodeCartUrl(null as unknown as string)).toEqual({});
-    expect(decodeCartUrl(undefined as unknown as string)).toEqual({});
+    expect(decodeCartUrl(null as unknown as string, recipeIndex)).toEqual({});
+    expect(decodeCartUrl(undefined as unknown as string, recipeIndex)).toEqual({});
   });
 
   it('returns empty cart for garbage input', () => {
-    expect(decodeCartUrl('not-valid-compressed-data!!!!')).toEqual({});
+    expect(decodeCartUrl('!!!', recipeIndex)).toEqual({});
   });
 
   it('round-trips a cart', () => {
-    const cart: Cart = { 'recipe-1': 2, 'recipe-2': 1 };
-    expect(decodeCartUrl(encodeCartUrl(cart))).toEqual(cart);
+    const cart: Cart = { hammer: 2, 'queens-jam': 1 };
+    expect(decodeCartUrl(encodeCartUrl(cart, recipeIndex), recipeIndex)).toEqual(cart);
   });
 
   it('round-trips an empty cart', () => {
-    expect(decodeCartUrl(encodeCartUrl({}))).toEqual({});
+    expect(decodeCartUrl(encodeCartUrl({}, recipeIndex), recipeIndex)).toEqual({});
+  });
+
+  it('ignores out-of-range indices', () => {
+    // base64url of "999.3" — index 999 doesn't exist
+    const encoded = btoa('999.3').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    expect(decodeCartUrl(encoded, recipeIndex)).toEqual({});
   });
 });
 

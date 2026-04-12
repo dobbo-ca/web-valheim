@@ -22,6 +22,7 @@ type SortKey = 'name' | 'station' | 'level';
 type SortDir = 'asc' | 'desc';
 
 const PAGE_SIZES = [10, 20, 50, 100] as const;
+const CART_STORAGE_KEY = 'valheim-cart';
 
 interface Props {
   data: DataSet;
@@ -38,6 +39,11 @@ export const RecipeTable: Component<Props> = (props) => {
   const [cart, setCart] = createStore<Record<string, number>>({});
   const [drawerOpen, setDrawerOpen] = createSignal(false);
 
+  // Stable sorted recipe IDs used as the integer index for URL encoding
+  const recipeIndex = createMemo(() =>
+    [...props.data.recipes].map((r) => r.id).sort(),
+  );
+
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
     setState(decodeFilterState(params));
@@ -45,15 +51,18 @@ export const RecipeTable: Component<Props> = (props) => {
     // Hydrate cart: URL param takes precedence over localStorage
     const cartParam = params.get('cart');
     if (cartParam) {
-      setCart(reconcile(decodeCartUrl(cartParam)));
+      setCart(reconcile(decodeCartUrl(cartParam, recipeIndex())));
     } else {
       try {
-        const stored = localStorage.getItem('valheim-cart');
+        const stored = localStorage.getItem(CART_STORAGE_KEY);
         if (stored) {
-          setCart(reconcile(decodeCartUrl(stored)));
+          const parsed = JSON.parse(stored);
+          if (typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed)) {
+            setCart(reconcile(parsed));
+          }
         }
       } catch {
-        // localStorage unavailable
+        // localStorage unavailable or corrupt
       }
     }
   });
@@ -61,14 +70,20 @@ export const RecipeTable: Component<Props> = (props) => {
   createEffect(() => {
     const keys = Object.keys(cart);
     const snapshot = Object.fromEntries(keys.map((k) => [k, cart[k]]));
-    const encoded = encodeCartUrl(snapshot);
-    // Persist to localStorage
+
+    // Persist to localStorage as JSON (index-independent)
     try {
-      localStorage.setItem('valheim-cart', encoded);
+      if (keys.length === 0) {
+        localStorage.removeItem(CART_STORAGE_KEY);
+      } else {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(snapshot));
+      }
     } catch {
       // localStorage unavailable
     }
-    // Update URL
+
+    // Update URL with compact encoded form
+    const encoded = encodeCartUrl(snapshot, recipeIndex());
     const params = new URLSearchParams(window.location.search);
     if (encoded) {
       params.set('cart', encoded);
