@@ -1,95 +1,95 @@
 # Materials
-- { id: wood, name: Wood, category: material }
-- { id: fine-wood, name: Fine Wood, category: material }
-- { id: core-wood, name: Core Wood, category: material }
-- { id: stone, name: Stone, category: material }
-- { id: flint, name: Flint, category: material }
-- { id: copper, name: Copper, category: material }
-- { id: tin, name: Tin, category: material }
-- { id: bronze, name: Bronze, category: material }
-- { id: iron, name: Iron, category: material }
-- { id: silver, name: Silver, category: material }
-- { id: black-metal, name: Black Metal, category: material }
-- { id: leather-scraps, name: Leather Scraps, category: material }
-- { id: deer-hide, name: Deer Hide, category: material }
-- { id: troll-hide, name: Troll Hide, category: material }
-- { id: wolf-pelt, name: Wolf Pelt, category: material }
-- { id: lox-pelt, name: Lox Pelt, category: material }
-- { id: feathers, name: Feathers, category: material }
-- { id: deer-trophy, name: Deer Trophy, category: material }
-- { id: hard-antler, name: Hard Antler, category: material }
-- { id: resin, name: Resin, category: material }
-- { id: bone-fragments, name: Bone Fragments, category: material }
-- { id: ancient-bark, name: Ancient Bark, category: material }
-- { id: guck, name: Guck, category: material }
-- { id: ymir-flesh, name: Ymir Flesh, category: material }
-- { id: freeze-gland, name: Freeze Gland, category: material }
-- { id: wolf-fang, name: Wolf Fang, category: material }
-- { id: crystal, name: Crystal, category: material }
-- { id: linen-thread, name: Linen Thread, category: material }
-- { id: needle, name: Needle, category: material }
-- { id: chain, name: Chain, category: material }
-- { id: serpent-scale, name: Serpent Scale, category: material }
-- { id: ooze, name: Ooze, category: material }
-- { id: obsidian, name: Obsidian, category: material }
-- { id: draugr-elite-trophy, name: Draugr Elite Trophy, category: material }
-- { id: drake-trophy, name: Drake Trophy, category: material }
+- { id: wood, name: Wood, category: material, stackSize: 50 }
+- { id: fine-wood, name: Fine Wood, category: material, stackSize: 50 }
+- { id: core-wood, name: Core Wood, category: material, stackSize: 50 }
+- { id: stone, name: Stone, category: material, stackSize: 50 }
+- { id: flint, name: Flint, category: material, stackSize: 30 }
+- { id: copper, name: Copper, category: material, stackSize: 30 }
+- { id: tin, name: Tin, category: material, stackSize: 30 }
+- { id: bronze, name: Bronze, category: material, stackSize: 30 }
+- { id: iron, name: Iron, category: material, stackSize: 30 }
+- { id: silver, name: Silver, category: material, stackSize: 30 }
+- { id: black-metal, name: Black Metal, category: material, stackSize: 30 }
+- { id: leather-scraps, name: Leather Scraps, category: material, stackSize: 50 }
+- { id: deer-hide, name: Deer Hide, category: material, stackSize: 50 }
+- { id: troll-hide, name: Troll Hide, category: material, stackSize: 50 }
+- { id: wolf-pelt, name: Wolf Pelt, category: material, stackSize: 50 }
+- { id: lox-pelt, name: Lox Pelt, category: material, stackSize: 50 }
+- { id: feathers, name: Feathers, category: material, stackSize: 50 }
+- { id: deer-trophy, name: Deer Trophy, category: material, stackSize: 20 }
+- { id: hard-antler, name: Hard Antler, category: material, stackSize: 20 }
+- { id: resin, name: Resin, category: material, stackSize: 50 }
+- { id: bone-fragments, name: Bone Fragments, category: material, stackSize: 50 }
+- { id: ancient-bark, name: Ancient Bark, category: material, stackSize: 50 }
+- { id: guck, name: Guck, category: material, stackSize: 50 }
+- { id: ymir-flesh, name: Ymir Flesh, category: material, stackSize: 50 }
+- { id: freeze-gland, name: Freeze Gland, category: material, stackSize: 50 }
+- { id: wolf-fang, name: Wolf Fang, category: material, stackSize: 50 }
+- { id: crystal, name: Crystal, category: material, stackSize: 50 }
+- { id: linen-thread, name: Linen Thread, category: material, stackSize: 50 }
+- { id: needle, name: Needle, category: material, stackSize: 50 }
+- { id: chain, name: Chain, category: material, stackSize: 50 }
+- { id: serpent-scale, name: Serpent Scale, category: material, stackSize: 50 }
+- { id: ooze, name: Ooze, category: material, stackSize: 50 }
+- { id: obsidian, name: Obsidian, category: material, stackSize: 50 }
+- { id: draugr-elite-trophy, name: Draugr Elite Trophy, category: material, stackSize: 20 }
+- { id: drake-trophy, name: Drake Trophy, category: material, stackSize: 20 }
 
 # Mistlands materials
-- { id: carapace, name: Carapace, category: material }
-- { id: refined-eitr, name: Refined Eitr, category: material }
-- { id: dvergr-needle, name: Dvergr Needle, category: material }
-- { id: yggdrasil-wood, name: Yggdrasil Wood, category: material }
-- { id: black-marble, name: Black Marble, category: material }
-- { id: sap, name: Sap, category: material }
-- { id: royal-jelly, name: Royal Jelly, category: material }
-- { id: mandible, name: Mandible, category: material }
+- { id: carapace, name: Carapace, category: material, stackSize: 50 }
+- { id: refined-eitr, name: Refined Eitr, category: material, stackSize: 50 }
+- { id: dvergr-needle, name: Dvergr Needle, category: material, stackSize: 50 }
+- { id: yggdrasil-wood, name: Yggdrasil Wood, category: material, stackSize: 50 }
+- { id: black-marble, name: Black Marble, category: material, stackSize: 50 }
+- { id: sap, name: Sap, category: material, stackSize: 50 }
+- { id: royal-jelly, name: Royal Jelly, category: material, stackSize: 50 }
+- { id: mandible, name: Mandible, category: material, stackSize: 50 }
 
 # Ashlands materials
-- { id: flametal, name: Flametal, category: material }
-- { id: charred-bone, name: Charred Bone, category: material }
-- { id: morgen-heart, name: Morgen Heart, category: material }
-- { id: bilebag, name: Bilebag, category: material }
-- { id: coal, name: Coal, category: material }
+- { id: flametal, name: Flametal, category: material, stackSize: 30 }
+- { id: charred-bone, name: Charred Bone, category: material, stackSize: 50 }
+- { id: morgen-heart, name: Morgen Heart, category: material, stackSize: 50 }
+- { id: bilebag, name: Bilebag, category: material, stackSize: 50 }
+- { id: coal, name: Coal, category: material, stackSize: 50 }
 
 # Plains materials (additions)
-- { id: flax, name: Flax, category: material }
-- { id: barley, name: Barley, category: material }
-- { id: bronze-nails, name: Bronze Nails, category: material }
-- { id: iron-nails, name: Iron Nails, category: material }
+- { id: flax, name: Flax, category: material, stackSize: 50 }
+- { id: barley, name: Barley, category: material, stackSize: 50 }
+- { id: bronze-nails, name: Bronze Nails, category: material, stackSize: 100 }
+- { id: iron-nails, name: Iron Nails, category: material, stackSize: 100 }
 
 # Cooking ingredients
-- { id: raspberries, name: Raspberries, category: ingredient }
-- { id: dandelion, name: Dandelion, category: ingredient }
-- { id: blueberries, name: Blueberries, category: ingredient }
-- { id: cloudberries, name: Cloudberries, category: ingredient }
-- { id: honey, name: Honey, category: ingredient }
-- { id: mushroom, name: Mushroom, category: ingredient }
-- { id: yellow-mushroom, name: Yellow Mushroom, category: ingredient }
-- { id: carrot, name: Carrot, category: ingredient }
-- { id: turnip, name: Turnip, category: ingredient }
-- { id: boar-meat, name: Boar Meat, category: ingredient }
-- { id: deer-meat, name: Deer Meat, category: ingredient }
-- { id: neck-tail, name: Neck Tail, category: ingredient }
-- { id: fish-raw, name: Raw Fish, category: ingredient }
-- { id: wolf-meat, name: Wolf Meat, category: ingredient }
-- { id: serpent-meat, name: Serpent Meat, category: ingredient }
-- { id: lox-meat, name: Lox Meat, category: ingredient }
-- { id: onion, name: Onion, category: ingredient }
-- { id: barley-flour, name: Barley Flour, category: ingredient }
-- { id: bloodbag, name: Bloodbag, category: ingredient }
-- { id: thistle, name: Thistle, category: ingredient }
-- { id: entrails, name: Entrails, category: ingredient }
+- { id: raspberries, name: Raspberries, category: ingredient, stackSize: 50 }
+- { id: dandelion, name: Dandelion, category: ingredient, stackSize: 50 }
+- { id: blueberries, name: Blueberries, category: ingredient, stackSize: 50 }
+- { id: cloudberries, name: Cloudberries, category: ingredient, stackSize: 50 }
+- { id: honey, name: Honey, category: ingredient, stackSize: 50 }
+- { id: mushroom, name: Mushroom, category: ingredient, stackSize: 50 }
+- { id: yellow-mushroom, name: Yellow Mushroom, category: ingredient, stackSize: 50 }
+- { id: carrot, name: Carrot, category: ingredient, stackSize: 50 }
+- { id: turnip, name: Turnip, category: ingredient, stackSize: 50 }
+- { id: boar-meat, name: Boar Meat, category: ingredient, stackSize: 20 }
+- { id: deer-meat, name: Deer Meat, category: ingredient, stackSize: 20 }
+- { id: neck-tail, name: Neck Tail, category: ingredient, stackSize: 20 }
+- { id: fish-raw, name: Raw Fish, category: ingredient, stackSize: 20 }
+- { id: wolf-meat, name: Wolf Meat, category: ingredient, stackSize: 20 }
+- { id: serpent-meat, name: Serpent Meat, category: ingredient, stackSize: 20 }
+- { id: lox-meat, name: Lox Meat, category: ingredient, stackSize: 20 }
+- { id: onion, name: Onion, category: ingredient, stackSize: 50 }
+- { id: barley-flour, name: Barley Flour, category: ingredient, stackSize: 20 }
+- { id: bloodbag, name: Bloodbag, category: ingredient, stackSize: 50 }
+- { id: thistle, name: Thistle, category: ingredient, stackSize: 50 }
+- { id: entrails, name: Entrails, category: ingredient, stackSize: 50 }
 
 # Mistlands cooking ingredients
-- { id: jotun-puffs, name: Jotun Puffs, category: ingredient }
-- { id: seeker-meat, name: Seeker Meat, category: ingredient }
-- { id: magecap, name: Magecap, category: ingredient }
-- { id: fiddlehead, name: Fiddlehead, category: ingredient }
-- { id: vineberry-cluster, name: Vineberry Cluster, category: ingredient }
+- { id: jotun-puffs, name: Jotun Puffs, category: ingredient, stackSize: 50 }
+- { id: seeker-meat, name: Seeker Meat, category: ingredient, stackSize: 20 }
+- { id: magecap, name: Magecap, category: ingredient, stackSize: 50 }
+- { id: fiddlehead, name: Fiddlehead, category: ingredient, stackSize: 50 }
+- { id: vineberry-cluster, name: Vineberry Cluster, category: ingredient, stackSize: 50 }
 
 # Ashlands cooking ingredients
-- { id: charred-meat, name: Charred Meat, category: ingredient }
+- { id: charred-meat, name: Charred Meat, category: ingredient, stackSize: 20 }
 
 # Crafted projectiles
 - { id: wood-arrow, name: Wood Arrow, category: weapon, stackSize: 100 }

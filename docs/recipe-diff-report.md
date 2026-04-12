@@ -37,120 +37,30 @@ Items that are missing a `stackSize` field or have the wrong value.
 
 | Item ID | Issue | Actual | Expected |
 | ------- | ----- | ------ | -------- |
-| `ancient-bark` | `stackSize` field absent | — | 50 |
-| `ballista-bolt` | item missing from items.yaml | — | 50 |
-| `barley` | `stackSize` field absent | — | 50 |
-| `barley-flour` | `stackSize` field absent | — | 20 |
-| `bilebag` | `stackSize` field absent | — | 20 |
-| `black-marble` | `stackSize` field absent | — | 50 |
-| `black-metal` | `stackSize` field absent | — | 30 |
-| `black-metal-bolt` | item missing from items.yaml | — | 100 |
+| `bilebag` | wrong stackSize | 50 | 20 |
 | `blood-pudding` | item missing from items.yaml | — | 10 |
-| `bloodbag` | `stackSize` field absent | — | 50 |
-| `blueberries` | `stackSize` field absent | — | 50 |
-| `boar-jerky` | item missing from items.yaml | — | 10 |
-| `boar-meat` | `stackSize` field absent | — | 20 |
-| `bone-bolt` | item missing from items.yaml | — | 100 |
-| `bone-fragments` | `stackSize` field absent | — | 50 |
-| `bronze` | `stackSize` field absent | — | 30 |
-| `bronze-nails` | `stackSize` field absent | — | 100 |
-| `bronzehead-arrow` | item missing from items.yaml | — | 100 |
-| `carapace` | `stackSize` field absent | — | 50 |
-| `carapace-arrow` | item missing from items.yaml | — | 100 |
-| `carapace-bolt` | item missing from items.yaml | — | 100 |
-| `carrot` | `stackSize` field absent | — | 50 |
 | `carrot-soup` | item missing from items.yaml | — | 10 |
-| `chain` | `stackSize` field absent | — | 20 |
-| `charred-arrow` | item missing from items.yaml | — | 100 |
-| `charred-bolt` | item missing from items.yaml | — | 100 |
-| `charred-bone` | `stackSize` field absent | — | 50 |
-| `charred-meat` | `stackSize` field absent | — | 20 |
-| `cloudberries` | `stackSize` field absent | — | 50 |
-| `coal` | item missing from items.yaml | — | 50 |
-| `copper` | `stackSize` field absent | — | 30 |
-| `core-wood` | `stackSize` field absent | — | 50 |
-| `crystal` | `stackSize` field absent | — | 50 |
-| `dandelion` | item missing from items.yaml | — | 50 |
-| `deer-hide` | `stackSize` field absent | — | 50 |
-| `deer-meat` | `stackSize` field absent | — | 20 |
+| `chain` | wrong stackSize | 50 | 20 |
 | `deer-stew` | item missing from items.yaml | — | 10 |
-| `deer-trophy` | `stackSize` field absent | — | 20 |
-| `drake-trophy` | `stackSize` field absent | — | 20 |
-| `draugr-elite-trophy` | `stackSize` field absent | — | 20 |
-| `dvergr-needle` | `stackSize` field absent | — | 20 |
-| `entrails` | `stackSize` field absent | — | 50 |
+| `dvergr-needle` | wrong stackSize | 50 | 20 |
 | `eyescream` | item missing from items.yaml | — | 10 |
-| `feathers` | `stackSize` field absent | — | 50 |
-| `fiddlehead` | `stackSize` field absent | — | 50 |
 | `fiery-svinstew` | item missing from items.yaml | — | 10 |
-| `fine-wood` | `stackSize` field absent | — | 50 |
-| `fire-arrow` | item missing from items.yaml | — | 100 |
-| `fish-raw` | `stackSize` field absent | — | 20 |
 | `fish-wraps` | item missing from items.yaml | — | 10 |
-| `flametal` | `stackSize` field absent | — | 30 |
-| `flax` | `stackSize` field absent | — | 50 |
-| `flint` | `stackSize` field absent | — | 50 |
-| `flinthead-arrow` | item missing from items.yaml | — | 100 |
-| `freeze-gland` | `stackSize` field absent | — | 20 |
-| `frost-arrow` | item missing from items.yaml | — | 100 |
-| `guck` | `stackSize` field absent | — | 50 |
-| `hard-antler` | `stackSize` field absent | — | 20 |
-| `honey` | `stackSize` field absent | — | 50 |
-| `iron` | `stackSize` field absent | — | 30 |
-| `iron-bolt` | item missing from items.yaml | — | 100 |
-| `iron-nails` | `stackSize` field absent | — | 100 |
-| `ironhead-arrow` | item missing from items.yaml | — | 100 |
-| `jotun-puffs` | `stackSize` field absent | — | 50 |
-| `leather-scraps` | `stackSize` field absent | — | 50 |
-| `linen-thread` | `stackSize` field absent | — | 50 |
-| `lox-meat` | `stackSize` field absent | — | 20 |
-| `lox-pelt` | `stackSize` field absent | — | 50 |
-| `magecap` | `stackSize` field absent | — | 50 |
-| `mandible` | `stackSize` field absent | — | 50 |
+| `flint` | wrong stackSize | 30 | 50 |
+| `freeze-gland` | wrong stackSize | 50 | 20 |
 | `minced-meat-sauce` | item missing from items.yaml | — | 10 |
-| `morgen-heart` | `stackSize` field absent | — | 20 |
-| `mushroom` | `stackSize` field absent | — | 50 |
+| `morgen-heart` | wrong stackSize | 50 | 20 |
 | `mushroom-omelette` | item missing from items.yaml | — | 10 |
-| `neck-tail` | `stackSize` field absent | — | 20 |
-| `needle` | `stackSize` field absent | — | 20 |
-| `obsidian` | `stackSize` field absent | — | 50 |
-| `obsidian-arrow` | item missing from items.yaml | — | 100 |
-| `onion` | `stackSize` field absent | — | 50 |
+| `needle` | wrong stackSize | 50 | 20 |
 | `onion-soup` | item missing from items.yaml | — | 10 |
-| `ooze` | `stackSize` field absent | — | 50 |
-| `poison-arrow` | item missing from items.yaml | — | 100 |
-| `queens-jam` | item missing from items.yaml | — | 10 |
-| `raspberries` | `stackSize` field absent | — | 50 |
-| `refined-eitr` | `stackSize` field absent | — | 20 |
-| `resin` | `stackSize` field absent | — | 50 |
-| `royal-jelly` | `stackSize` field absent | — | 50 |
-| `salad` | item missing from items.yaml | — | 10 |
-| `sap` | `stackSize` field absent | — | 50 |
-| `sausages` | item missing from items.yaml | — | 10 |
+| `refined-eitr` | wrong stackSize | 50 | 20 |
 | `seeker-aspic` | item missing from items.yaml | — | 10 |
-| `seeker-meat` | `stackSize` field absent | — | 20 |
-| `serpent-meat` | `stackSize` field absent | — | 20 |
-| `serpent-scale` | `stackSize` field absent | — | 20 |
+| `serpent-scale` | wrong stackSize | 50 | 20 |
 | `serpent-stew` | item missing from items.yaml | — | 10 |
-| `silver` | `stackSize` field absent | — | 30 |
-| `silver-arrow` | item missing from items.yaml | — | 100 |
-| `stone` | `stackSize` field absent | — | 50 |
-| `thistle` | `stackSize` field absent | — | 50 |
-| `tin` | `stackSize` field absent | — | 30 |
-| `troll-hide` | `stackSize` field absent | — | 50 |
-| `turnip` | `stackSize` field absent | — | 50 |
 | `turnip-stew` | item missing from items.yaml | — | 10 |
-| `vineberry-cluster` | `stackSize` field absent | — | 50 |
-| `wolf-fang` | `stackSize` field absent | — | 20 |
-| `wolf-jerky` | item missing from items.yaml | — | 10 |
-| `wolf-meat` | `stackSize` field absent | — | 20 |
-| `wolf-pelt` | `stackSize` field absent | — | 50 |
+| `wolf-fang` | wrong stackSize | 50 | 20 |
 | `wolf-skewer` | item missing from items.yaml | — | 10 |
-| `wood` | `stackSize` field absent | — | 50 |
-| `wood-arrow` | item missing from items.yaml | — | 100 |
-| `yellow-mushroom` | `stackSize` field absent | — | 50 |
-| `yggdrasil-wood` | `stackSize` field absent | — | 50 |
-| `ymir-flesh` | `stackSize` field absent | — | 20 |
+| `ymir-flesh` | wrong stackSize | 50 | 20 |
 
 ## 3. Mead Recipe Gaps
 
@@ -158,32 +68,29 @@ Mead recipes that are missing or have incorrect fields (yield, mead block, ferme
 
 | Recipe ID | Issue |
 | --------- | ----- |
-| `minor-healing-mead` | missing entirely |
-| `medium-healing-mead` | missing entirely |
-| `major-healing-mead` | missing entirely |
-| `minor-stamina-mead` | missing entirely |
-| `medium-stamina-mead` | missing entirely |
-| `major-stamina-mead` | missing entirely |
-| `poison-resistance-mead` | missing entirely |
-| `frost-resistance-mead` | missing entirely |
-| `tasty-mead` | missing entirely |
-| `fire-resistance-barley-wine` | missing entirely |
+| `minor-healing-mead` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
+| `medium-healing-mead` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
+| `major-healing-mead` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
+| `minor-stamina-mead` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
+| `medium-stamina-mead` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
+| `major-stamina-mead` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
+| `poison-resistance-mead` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
+| `frost-resistance-mead` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
+| `tasty-mead` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
+| `fire-resistance-barley-wine` | yield absent ≠ 6; fermentDuration absent ≠ 2400 |
 
 ## 4. Missing Items (referenced by meads)
 
 Ingredient items that mead recipes reference but that do not appear in `items.yaml`.
 
-| Item ID | Referenced By | Status |
-| ------- | ------------- | ------ |
-| `dandelion` | referenced by `minor-healing-mead` | not in items.yaml |
-| `coal` | referenced by `poison-resistance-mead` | not in items.yaml |
+_All mead ingredient items are present in items.yaml._
 
 ## Summary
 
 | Category | Gap Count |
 | -------- | --------- |
 | Yield gaps | 22 |
-| Stack size gaps | 114 |
+| Stack size gaps | 24 |
 | Mead recipe gaps | 10 |
-| Missing items (meads) | 2 |
-| **Total** | **148** |
+| Missing items (meads) | 0 |
+| **Total** | **56** |
