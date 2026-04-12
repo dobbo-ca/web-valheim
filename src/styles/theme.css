@@ -376,7 +376,7 @@ h3 {
 }
 .recipe-table__header {
   display: grid;
-  grid-template-columns: 2fr 1fr 60px 3fr 86px;
+  grid-template-columns: 2fr 1.5fr 3fr 86px;
   gap: 12px;
   padding: 10px 14px;
   align-items: center;
@@ -390,7 +390,7 @@ h3 {
 }
 .recipe-row__wrapper {
   display: grid;
-  grid-template-columns: 2fr 1fr 60px 3fr 86px;
+  grid-template-columns: 2fr 1.5fr 3fr 86px;
   gap: 12px;
   align-items: center;
   padding: 10px 14px;
@@ -399,7 +399,7 @@ h3 {
 .recipe-row {
   display: grid;
   grid-template-columns: subgrid;
-  grid-column: 1 / 5;
+  grid-column: 1 / 4;
   align-items: center;
   background: transparent;
   border: 0;
@@ -411,7 +411,7 @@ h3 {
   padding: 0;
 }
 .recipe-row__cart-cell {
-  grid-column: 5;
+  grid-column: 4;
   justify-self: end;
 }
 .recipe-row__wrapper:hover {
@@ -430,7 +430,6 @@ h3 {
   color: var(--accent);
 }
 .recipe-row__station,
-.recipe-row__lvl,
 .recipe-row__ings {
   color: var(--text-soft);
 }

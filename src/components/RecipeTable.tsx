@@ -323,11 +323,6 @@ export const RecipeTable: Component<Props> = (props) => {
               Station{sortIndicator('station')}
             </button>
           </span>
-          <span role="columnheader" aria-sort={sortKey() === 'level' ? (sortDir() === 'asc' ? 'ascending' : 'descending') : 'none'}>
-            <button class="recipe-table__sort-btn" classList={{ 'recipe-table__sort-btn--active': sortKey() === 'level' }} onClick={() => toggleSort('level')}>
-              Lvl{sortIndicator('level')}
-            </button>
-          </span>
           <span role="columnheader">Ingredients</span>
           <span role="columnheader" class="sr-only">Cart</span>
         </div>
