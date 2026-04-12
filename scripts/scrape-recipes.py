@@ -343,10 +343,11 @@ def check_yields(recipes: list[dict]) -> list[str]:
             )
             continue
         recipe = recipe_map[recipe_id]
-        actual_qty = recipe.get("yield", None)
+        yields = recipe.get("yields")
+        actual_qty = yields.get("qty") if isinstance(yields, dict) else None
         if actual_qty is None:
             lines.append(
-                f"| `{recipe_id}` | `yield` field absent | — | {expected_qty} |"
+                f"| `{recipe_id}` | `yields` field absent | — | {expected_qty} |"
             )
         elif actual_qty != expected_qty:
             lines.append(
@@ -396,14 +397,16 @@ def check_meads(recipes: list[dict], items: list[dict]) -> tuple[list[str], list
         else:
             actual = recipe_map[mead_id]
             issues = []
-            if actual.get("yield") != mead["yield"]:
+            actual_yields = actual.get("yields")
+            actual_yield_qty = actual_yields.get("qty") if isinstance(actual_yields, dict) else None
+            if actual_yield_qty != mead["yield"]:
                 issues.append(
-                    f"yield {actual.get('yield', 'absent')} ≠ {mead['yield']}"
+                    f"yield {actual_yield_qty or 'absent'} ≠ {mead['yield']}"
                 )
             if "mead" not in actual:
                 issues.append("no `mead` block")
-            elif actual["mead"].get("fermentDuration") != mead["mead"]["fermentDuration"]:
-                fd = actual["mead"].get("fermentDuration", "absent")
+            elif actual["mead"].get("fermenterDuration") != mead["mead"]["fermentDuration"]:
+                fd = actual["mead"].get("fermenterDuration", "absent")
                 issues.append(
                     f"fermentDuration {fd} ≠ {mead['mead']['fermentDuration']}"
                 )

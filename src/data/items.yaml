@@ -3,7 +3,7 @@
 - { id: fine-wood, name: Fine Wood, category: material, stackSize: 50 }
 - { id: core-wood, name: Core Wood, category: material, stackSize: 50 }
 - { id: stone, name: Stone, category: material, stackSize: 50 }
-- { id: flint, name: Flint, category: material, stackSize: 30 }
+- { id: flint, name: Flint, category: material, stackSize: 50 }
 - { id: copper, name: Copper, category: material, stackSize: 30 }
 - { id: tin, name: Tin, category: material, stackSize: 30 }
 - { id: bronze, name: Bronze, category: material, stackSize: 30 }
@@ -22,14 +22,14 @@
 - { id: bone-fragments, name: Bone Fragments, category: material, stackSize: 50 }
 - { id: ancient-bark, name: Ancient Bark, category: material, stackSize: 50 }
 - { id: guck, name: Guck, category: material, stackSize: 50 }
-- { id: ymir-flesh, name: Ymir Flesh, category: material, stackSize: 50 }
-- { id: freeze-gland, name: Freeze Gland, category: material, stackSize: 50 }
-- { id: wolf-fang, name: Wolf Fang, category: material, stackSize: 50 }
+- { id: ymir-flesh, name: Ymir Flesh, category: material, stackSize: 20 }
+- { id: freeze-gland, name: Freeze Gland, category: material, stackSize: 20 }
+- { id: wolf-fang, name: Wolf Fang, category: material, stackSize: 20 }
 - { id: crystal, name: Crystal, category: material, stackSize: 50 }
 - { id: linen-thread, name: Linen Thread, category: material, stackSize: 50 }
-- { id: needle, name: Needle, category: material, stackSize: 50 }
-- { id: chain, name: Chain, category: material, stackSize: 50 }
-- { id: serpent-scale, name: Serpent Scale, category: material, stackSize: 50 }
+- { id: needle, name: Needle, category: material, stackSize: 20 }
+- { id: chain, name: Chain, category: material, stackSize: 20 }
+- { id: serpent-scale, name: Serpent Scale, category: material, stackSize: 20 }
 - { id: ooze, name: Ooze, category: material, stackSize: 50 }
 - { id: obsidian, name: Obsidian, category: material, stackSize: 50 }
 - { id: draugr-elite-trophy, name: Draugr Elite Trophy, category: material, stackSize: 20 }
@@ -37,8 +37,8 @@
 
 # Mistlands materials
 - { id: carapace, name: Carapace, category: material, stackSize: 50 }
-- { id: refined-eitr, name: Refined Eitr, category: material, stackSize: 50 }
-- { id: dvergr-needle, name: Dvergr Needle, category: material, stackSize: 50 }
+- { id: refined-eitr, name: Refined Eitr, category: material, stackSize: 20 }
+- { id: dvergr-needle, name: Dvergr Needle, category: material, stackSize: 20 }
 - { id: yggdrasil-wood, name: Yggdrasil Wood, category: material, stackSize: 50 }
 - { id: black-marble, name: Black Marble, category: material, stackSize: 50 }
 - { id: sap, name: Sap, category: material, stackSize: 50 }
@@ -48,8 +48,8 @@
 # Ashlands materials
 - { id: flametal, name: Flametal, category: material, stackSize: 30 }
 - { id: charred-bone, name: Charred Bone, category: material, stackSize: 50 }
-- { id: morgen-heart, name: Morgen Heart, category: material, stackSize: 50 }
-- { id: bilebag, name: Bilebag, category: material, stackSize: 50 }
+- { id: morgen-heart, name: Morgen Heart, category: material, stackSize: 20 }
+- { id: bilebag, name: Bilebag, category: material, stackSize: 20 }
 - { id: coal, name: Coal, category: material, stackSize: 50 }
 
 # Plains materials (additions)
