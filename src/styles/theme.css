@@ -221,7 +221,7 @@ h3 {
 }
 .filter-bar__search {
   flex: 1;
-  min-width: 200px;
+  min-width: 120px;
 }
 .filter-bar__level {
   display: flex;
@@ -441,6 +441,9 @@ h3 {
 .recipe-row__ings {
   color: var(--text-soft);
 }
+.recipe-row__station-level-short {
+  display: none;
+}
 @media (max-width: 768px) {
   .recipe-table__toolbar {
     display: grid;
@@ -510,8 +513,11 @@ h3 {
   .recipe-row__ings {
     display: none;
   }
-  .recipe-row__station-upgrade {
+  .recipe-row__station-level {
     display: none;
+  }
+  .recipe-row__station-level-short {
+    display: inline;
   }
   .add-to-cart-btn {
     min-width: unset;

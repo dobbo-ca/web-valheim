@@ -28,9 +28,7 @@ const base = import.meta.env.BASE_URL;
   <p class="subtitle">
     {recipe.type === 'crafting' ? 'Crafting' : 'Cooking'} · {(() => {
       const stationName = station?.name ?? recipe.station;
-      const upgrade = station?.upgrades.find((u) => u.level === recipe.stationLevel);
-      if (upgrade?.name) return `${stationName} — ${upgrade.name}`;
-      if (recipe.stationLevel > 1) return `${stationName} Lv ${recipe.stationLevel}`;
+      if (recipe.stationLevel > 1) return `${stationName} (Lv ${recipe.stationLevel})`;
       return stationName;
     })()}
   </p>
