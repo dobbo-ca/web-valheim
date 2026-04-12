@@ -23,6 +23,7 @@ type SortDir = 'asc' | 'desc';
 
 const PAGE_SIZES = [10, 20, 50, 100] as const;
 const CART_STORAGE_KEY = 'valheim-cart';
+const PAGE_SIZE_KEY = 'valheim-page-size';
 
 interface Props {
   data: DataSet;
@@ -48,6 +49,19 @@ export const RecipeTable: Component<Props> = (props) => {
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
     setState(decodeFilterState(params));
+
+    // Hydrate page size from localStorage
+    try {
+      const storedSize = localStorage.getItem(PAGE_SIZE_KEY);
+      if (storedSize) {
+        const parsed = Number.parseInt(storedSize, 10);
+        if ((PAGE_SIZES as readonly number[]).includes(parsed)) {
+          setPageSize(parsed);
+        }
+      }
+    } catch {
+      // localStorage unavailable
+    }
 
     // Hydrate cart: URL param takes precedence over localStorage
     const cartParam = params.get('cart');
@@ -390,7 +404,11 @@ export const RecipeTable: Component<Props> = (props) => {
               <button
                 class="recipe-table__page-btn"
                 classList={{ 'recipe-table__page-btn--active': pageSize() === size }}
-                onClick={() => { setPageSize(size); setPage(1); }}
+                onClick={() => {
+                  setPageSize(size);
+                  setPage(1);
+                  try { localStorage.setItem(PAGE_SIZE_KEY, String(size)); } catch {}
+                }}
               >
                 {size}
               </button>
