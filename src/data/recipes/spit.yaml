@@ -7,6 +7,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: neck-tail, qty: 1 }
+  yields: { itemId: grilled-neck-tail, qty: 1 }
   food:
     hp: 25
     stamina: 8
@@ -21,6 +22,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: boar-meat, qty: 1 }
+  yields: { itemId: cooked-boar-meat, qty: 1 }
   food:
     hp: 30
     stamina: 10
@@ -35,6 +37,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: deer-meat, qty: 1 }
+  yields: { itemId: cooked-deer-meat, qty: 1 }
   food:
     hp: 35
     stamina: 12
@@ -49,6 +52,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: fish-raw, qty: 1 }
+  yields: { itemId: cooked-fish, qty: 1 }
   food:
     hp: 45
     stamina: 15
@@ -63,6 +67,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: wolf-meat, qty: 1 }
+  yields: { itemId: cooked-wolf-meat, qty: 1 }
   food:
     hp: 45
     stamina: 15
@@ -77,6 +82,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: hare-meat, qty: 1 }
+  yields: { itemId: cooked-hare-meat, qty: 1 }
   food:
     hp: 60
     stamina: 20
@@ -91,6 +97,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: chicken-meat, qty: 1 }
+  yields: { itemId: cooked-chicken-meat, qty: 1 }
   food:
     hp: 60
     stamina: 20
@@ -107,6 +114,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: serpent-meat, qty: 1 }
+  yields: { itemId: cooked-serpent-meat, qty: 1 }
   food:
     hp: 70
     stamina: 23
@@ -121,6 +129,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: lox-meat, qty: 1 }
+  yields: { itemId: cooked-lox-meat, qty: 1 }
   food:
     hp: 50
     stamina: 16
@@ -135,6 +144,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: seeker-meat, qty: 1 }
+  yields: { itemId: cooked-seeker-meat, qty: 1 }
   food:
     hp: 60
     stamina: 20
@@ -149,6 +159,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: bonemaw-meat, qty: 1 }
+  yields: { itemId: cooked-bonemaw-meat, qty: 1 }
   food:
     hp: 90
     stamina: 30
@@ -163,6 +174,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: asksvin-tail, qty: 1 }
+  yields: { itemId: cooked-asksvin-tail, qty: 1 }
   food:
     hp: 70
     stamina: 24
@@ -177,6 +189,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: volture-meat, qty: 1 }
+  yields: { itemId: cooked-volture-meat, qty: 1 }
   food:
     hp: 70
     stamina: 24

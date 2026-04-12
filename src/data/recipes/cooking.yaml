@@ -22,6 +22,7 @@
   ingredients:
     - { itemId: carrot, qty: 3 }
     - { itemId: mushroom, qty: 1 }
+  yields: { itemId: carrot-soup, qty: 1 }
   food:
     hp: 20
     stamina: 60
@@ -37,6 +38,7 @@
   ingredients:
     - { itemId: turnip, qty: 3 }
     - { itemId: boar-meat, qty: 1 }
+  yields: { itemId: turnip-stew, qty: 1 }
   food:
     hp: 55
     stamina: 25
@@ -70,6 +72,7 @@
     - { itemId: deer-meat, qty: 1 }
     - { itemId: carrot, qty: 3 }
     - { itemId: mushroom, qty: 1 }
+  yields: { itemId: deer-stew, qty: 1 }
   food:
     hp: 45
     stamina: 45
@@ -86,6 +89,7 @@
     - { itemId: boar-meat, qty: 2 }
     - { itemId: carrot, qty: 1 }
     - { itemId: mushroom, qty: 1 }
+  yields: { itemId: minced-meat-sauce, qty: 1 }
   food:
     hp: 40
     stamina: 40
@@ -120,6 +124,7 @@
     - { itemId: serpent-meat, qty: 1 }
     - { itemId: honey, qty: 2 }
     - { itemId: mushroom, qty: 3 }
+  yields: { itemId: serpent-stew, qty: 1 }
   food:
     hp: 80
     stamina: 80
@@ -135,6 +140,7 @@
   stationLevel: 3
   ingredients:
     - { itemId: onion, qty: 3 }
+  yields: { itemId: onion-soup, qty: 1 }
   food:
     hp: 30
     stamina: 70
@@ -150,6 +156,7 @@
   ingredients:
     - { itemId: freeze-gland, qty: 3 }
     - { itemId: bloodbag, qty: 1 }
+  yields: { itemId: eyescream, qty: 1 }
   food:
     hp: 53
     stamina: 53
@@ -182,6 +189,7 @@
   ingredients:
     - { itemId: wolf-meat, qty: 4 }
     - { itemId: onion, qty: 3 }
+  yields: { itemId: wolf-skewer, qty: 1 }
   food:
     hp: 70
     stamina: 23
@@ -198,6 +206,7 @@
     - { itemId: bloodbag, qty: 2 }
     - { itemId: thistle, qty: 3 }
     - { itemId: barley-flour, qty: 2 }
+  yields: { itemId: blood-pudding, qty: 1 }
   food:
     hp: 90
     stamina: 50
@@ -213,6 +222,7 @@
   ingredients:
     - { itemId: fish-raw, qty: 2 }
     - { itemId: barley-flour, qty: 4 }
+  yields: { itemId: fish-wraps, qty: 1 }
   food:
     hp: 60
     stamina: 90
@@ -230,6 +240,7 @@
     - { itemId: seeker-meat, qty: 1 }
     - { itemId: magecap, qty: 1 }
     - { itemId: carapace, qty: 2 }
+  yields: { itemId: fiery-svinstew, qty: 1 }
   food:
     hp: 85
     stamina: 23
@@ -246,6 +257,7 @@
     - { itemId: jotun-puffs, qty: 2 }
     - { itemId: magecap, qty: 1 }
     - { itemId: royal-jelly, qty: 1 }
+  yields: { itemId: mushroom-omelette, qty: 1 }
   food:
     hp: 25
     stamina: 90
@@ -277,6 +289,7 @@
   ingredients:
     - { itemId: seeker-meat, qty: 2 }
     - { itemId: royal-jelly, qty: 2 }
+  yields: { itemId: seeker-aspic, qty: 1 }
   food:
     hp: 23
     stamina: 23
@@ -293,6 +306,7 @@
     - { itemId: sap, qty: 3 }
     - { itemId: fiddlehead, qty: 2 }
     - { itemId: vineberry-cluster, qty: 2 }
+  yields: { itemId: sizzling-berry-broth, qty: 1 }
   food:
     hp: 55
     stamina: 55
@@ -308,6 +322,7 @@
   ingredients:
     - { itemId: cloudberries, qty: 3 }
     - { itemId: jotun-puffs, qty: 2 }
+  yields: { itemId: spicy-marmalade, qty: 1 }
   food:
     hp: 30
     stamina: 80
@@ -323,6 +338,7 @@
   ingredients:
     - { itemId: jotun-puffs, qty: 4 }
     - { itemId: sap, qty: 2 }
+  yields: { itemId: yggdrasil-porridge, qty: 1 }
   food:
     hp: 115
     stamina: 35
@@ -340,6 +356,7 @@
     - { itemId: jotun-puffs, qty: 2 }
     - { itemId: magecap, qty: 2 }
     - { itemId: sap, qty: 1 }
+  yields: { itemId: marinated-greens, qty: 1 }
   food:
     hp: 25
     stamina: 95
@@ -356,6 +373,7 @@
     - { itemId: seeker-meat, qty: 2 }
     - { itemId: carapace, qty: 2 }
     - { itemId: royal-jelly, qty: 1 }
+  yields: { itemId: mashed-meat, qty: 1 }
   food:
     hp: 95
     stamina: 25
@@ -372,6 +390,7 @@
     - { itemId: charred-meat, qty: 2 }
     - { itemId: magecap, qty: 1 }
     - { itemId: seeker-meat, qty: 1 }
+  yields: { itemId: scorching-medley, qty: 1 }
   food:
     hp: 70
     stamina: 70
@@ -388,6 +407,7 @@
     - { itemId: jotun-puffs, qty: 3 }
     - { itemId: magecap, qty: 2 }
     - { itemId: sap, qty: 2 }
+  yields: { itemId: sparkling-shroomshake, qty: 1 }
   food:
     hp: 40
     stamina: 40

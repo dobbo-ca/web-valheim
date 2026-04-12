@@ -11,6 +11,7 @@
   ingredients:
     - { itemId: wood, qty: 3 }
     - { itemId: stone, qty: 2 }
+  yields: { itemId: hammer, qty: 1 }
   tags: [tool, tier-0]
 
 - id: hoe
@@ -21,6 +22,7 @@
   ingredients:
     - { itemId: wood, qty: 5 }
     - { itemId: stone, qty: 2 }
+  yields: { itemId: hoe, qty: 1 }
   tags: [tool, tier-0]
 
 # Weapons
@@ -31,6 +33,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: wood, qty: 6 }
+  yields: { itemId: club, qty: 1 }
   tags: [club, one-handed, tier-0]
 
 - id: crude-bow
@@ -41,6 +44,7 @@
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: leather-scraps, qty: 8 }
+  yields: { itemId: crude-bow, qty: 1 }
   tags: [bow, two-handed, tier-0]
 
 - id: stone-axe
@@ -51,6 +55,7 @@
   ingredients:
     - { itemId: wood, qty: 5 }
     - { itemId: stone, qty: 4 }
+  yields: { itemId: stone-axe, qty: 1 }
   tags: [axe, one-handed, tier-0]
 
 - id: flint-axe
@@ -61,6 +66,7 @@
   ingredients:
     - { itemId: wood, qty: 5 }
     - { itemId: flint, qty: 6 }
+  yields: { itemId: flint-axe, qty: 1 }
   tags: [axe, one-handed, tier-1]
 
 - id: flint-knife
@@ -72,6 +78,7 @@
     - { itemId: wood, qty: 2 }
     - { itemId: flint, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: flint-knife, qty: 1 }
   tags: [knife, one-handed, tier-1]
 
 - id: flint-spear
@@ -83,6 +90,7 @@
     - { itemId: wood, qty: 5 }
     - { itemId: flint, qty: 10 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: flint-spear, qty: 1 }
   tags: [spear, one-handed, tier-1]
 
 - id: antler-pickaxe
@@ -93,6 +101,7 @@
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: hard-antler, qty: 1 }
+  yields: { itemId: antler-pickaxe, qty: 1 }
   tags: [pickaxe, tool, tier-1]
 
 - id: finewood-bow
@@ -104,6 +113,7 @@
     - { itemId: fine-wood, qty: 10 }
     - { itemId: core-wood, qty: 10 }
     - { itemId: deer-hide, qty: 2 }
+  yields: { itemId: finewood-bow, qty: 1 }
   tags: [bow, two-handed, tier-2]
 
 - id: stagbreaker
@@ -115,6 +125,7 @@
     - { itemId: core-wood, qty: 20 }
     - { itemId: deer-trophy, qty: 5 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: stagbreaker, qty: 1 }
   tags: [sledge, two-handed, tier-1]
 
 # Armor
@@ -126,6 +137,7 @@
   ingredients:
     - { itemId: deer-hide, qty: 6 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: leather-helmet, qty: 1 }
   tags: [helmet, armor, tier-1]
 
 - id: leather-tunic
@@ -136,6 +148,7 @@
   ingredients:
     - { itemId: deer-hide, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: leather-tunic, qty: 1 }
   tags: [chest, armor, tier-1]
 
 - id: leather-pants
@@ -146,6 +159,7 @@
   ingredients:
     - { itemId: deer-hide, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: leather-pants, qty: 1 }
   tags: [legs, armor, tier-1]
 
 - id: deer-hide-cape
@@ -156,6 +170,7 @@
   ingredients:
     - { itemId: deer-hide, qty: 4 }
     - { itemId: leather-scraps, qty: 3 }
+  yields: { itemId: deer-hide-cape, qty: 1 }
   tags: [cape, armor, tier-1]
 
 - id: wolf-fur-cape
@@ -167,6 +182,7 @@
     - { itemId: wolf-pelt, qty: 6 }
     - { itemId: wolf-trophy, qty: 1 }
     - { itemId: silver, qty: 4 }
+  yields: { itemId: wolf-fur-cape, qty: 1 }
   tags: [cape, armor, tier-4]
   notes: Provides frost resistance.
 
@@ -178,6 +194,7 @@
   ingredients:
     - { itemId: lox-pelt, qty: 6 }
     - { itemId: silver, qty: 2 }
+  yields: { itemId: lox-cape, qty: 1 }
   tags: [cape, armor, tier-5]
   notes: Provides frost resistance.
 
@@ -189,6 +206,7 @@
   ingredients:
     - { itemId: troll-hide, qty: 5 }
     - { itemId: bone-fragments, qty: 3 }
+  yields: { itemId: troll-leather-helmet, qty: 1 }
   tags: [helmet, armor, tier-2]
 
 - id: troll-leather-tunic
@@ -199,6 +217,7 @@
   ingredients:
     - { itemId: troll-hide, qty: 10 }
     - { itemId: bone-fragments, qty: 4 }
+  yields: { itemId: troll-leather-tunic, qty: 1 }
   tags: [chest, armor, tier-2]
 
 - id: troll-leather-pants
@@ -209,6 +228,7 @@
   ingredients:
     - { itemId: troll-hide, qty: 10 }
     - { itemId: bone-fragments, qty: 4 }
+  yields: { itemId: troll-leather-pants, qty: 1 }
   tags: [legs, armor, tier-2]
 
 - id: troll-hide-cape
@@ -219,6 +239,7 @@
   ingredients:
     - { itemId: troll-hide, qty: 5 }
     - { itemId: bone-fragments, qty: 3 }
+  yields: { itemId: troll-hide-cape, qty: 1 }
   tags: [cape, armor, tier-2]
 
 # Shields
@@ -231,6 +252,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: resin, qty: 4 }
     - { itemId: leather-scraps, qty: 4 }
+  yields: { itemId: wood-shield, qty: 1 }
   tags: [shield, tier-0]
 
 - id: wood-tower-shield
@@ -241,6 +263,7 @@
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: leather-scraps, qty: 4 }
+  yields: { itemId: wood-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-0]
 
 - id: bone-tower-shield
@@ -252,6 +275,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: bone-fragments, qty: 4 }
     - { itemId: leather-scraps, qty: 4 }
+  yields: { itemId: bone-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-1]
 
 # Arrows
@@ -348,6 +372,7 @@
     - { itemId: fine-wood, qty: 2 }
     - { itemId: chitin, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: abyssal-razor, qty: 1 }
   tags: [knife, one-handed, tier-3]
 
 - id: abyssal-harpoon
@@ -359,6 +384,7 @@
     - { itemId: fine-wood, qty: 8 }
     - { itemId: chitin, qty: 30 }
     - { itemId: leather-scraps, qty: 3 }
+  yields: { itemId: abyssal-harpoon, qty: 1 }
   tags: [spear, tool, tier-3]
   notes: Used to drag creatures. Does not break on hit.
 
@@ -373,6 +399,7 @@
   ingredients:
     - { itemId: wood, qty: 2 }
     - { itemId: copper, qty: 8 }
+  yields: { itemId: copper-knife, qty: 1 }
   tags: [knife, one-handed, tier-1]
 
 - id: bronze-axe
@@ -384,6 +411,7 @@
     - { itemId: wood, qty: 4 }
     - { itemId: bronze, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: bronze-axe, qty: 1 }
   tags: [axe, one-handed, tier-2]
 
 - id: bronze-pickaxe
@@ -394,6 +422,7 @@
   ingredients:
     - { itemId: core-wood, qty: 3 }
     - { itemId: bronze, qty: 10 }
+  yields: { itemId: bronze-pickaxe, qty: 1 }
   tags: [pickaxe, tool, tier-2]
 
 - id: bronze-mace
@@ -405,6 +434,7 @@
     - { itemId: wood, qty: 4 }
     - { itemId: bronze, qty: 8 }
     - { itemId: leather-scraps, qty: 3 }
+  yields: { itemId: bronze-mace, qty: 1 }
   tags: [mace, one-handed, tier-2]
 
 - id: bronze-atgeir
@@ -416,6 +446,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: bronze, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: bronze-atgeir, qty: 1 }
   tags: [atgeir, two-handed, tier-2]
 
 - id: bronze-spear
@@ -427,6 +458,7 @@
     - { itemId: wood, qty: 5 }
     - { itemId: bronze, qty: 6 }
     - { itemId: deer-hide, qty: 2 }
+  yields: { itemId: bronze-spear, qty: 1 }
   tags: [spear, one-handed, tier-2]
 
 - id: bronze-sword
@@ -438,6 +470,7 @@
     - { itemId: bronze, qty: 8 }
     - { itemId: wood, qty: 2 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: bronze-sword, qty: 1 }
   tags: [sword, one-handed, tier-2]
 
 - id: bronze-buckler
@@ -448,6 +481,7 @@
   ingredients:
     - { itemId: bronze, qty: 10 }
     - { itemId: wood, qty: 4 }
+  yields: { itemId: bronze-buckler, qty: 1 }
   tags: [shield, tier-2]
 
 - id: bronze-helmet
@@ -458,6 +492,7 @@
   ingredients:
     - { itemId: bronze, qty: 5 }
     - { itemId: deer-hide, qty: 2 }
+  yields: { itemId: bronze-helmet, qty: 1 }
   tags: [helmet, armor, tier-2]
 
 - id: bronze-plate-cuirass
@@ -468,6 +503,7 @@
   ingredients:
     - { itemId: bronze, qty: 10 }
     - { itemId: deer-hide, qty: 2 }
+  yields: { itemId: bronze-plate-cuirass, qty: 1 }
   tags: [chest, armor, tier-2]
 
 - id: bronze-plate-leggings
@@ -478,6 +514,7 @@
   ingredients:
     - { itemId: bronze, qty: 5 }
     - { itemId: deer-hide, qty: 2 }
+  yields: { itemId: bronze-plate-leggings, qty: 1 }
   tags: [legs, armor, tier-2]
 
 - id: bronzehead-arrow
@@ -510,6 +547,7 @@
   ingredients:
     - { itemId: core-wood, qty: 5 }
     - { itemId: bronze, qty: 5 }
+  yields: { itemId: cultivator, qty: 1 }
   tags: [tool, tier-2]
   notes: Used for farming — plant seeds and flatten terrain.
 
@@ -524,6 +562,7 @@
     - { itemId: iron, qty: 20 }
     - { itemId: feathers, qty: 10 }
     - { itemId: deer-hide, qty: 2 }
+  yields: { itemId: huntsman-bow, qty: 1 }
   tags: [bow, two-handed, tier-3]
 
 - id: iron-sword
@@ -535,6 +574,7 @@
     - { itemId: iron, qty: 60 }
     - { itemId: wood, qty: 2 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: iron-sword, qty: 1 }
   tags: [sword, one-handed, tier-3]
   notes: Strong vs. skeletons and stonegolems.
 
@@ -547,6 +587,7 @@
     - { itemId: iron, qty: 20 }
     - { itemId: wood, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: iron-mace, qty: 1 }
   tags: [mace, one-handed, tier-3]
 
 - id: iron-atgeir
@@ -558,6 +599,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: iron, qty: 30 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: iron-atgeir, qty: 1 }
   tags: [atgeir, two-handed, tier-3]
 
 - id: iron-axe
@@ -569,6 +611,7 @@
     - { itemId: wood, qty: 4 }
     - { itemId: iron, qty: 20 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: iron-axe, qty: 1 }
   tags: [axe, one-handed, tier-3]
 
 - id: iron-pickaxe
@@ -579,6 +622,7 @@
   ingredients:
     - { itemId: core-wood, qty: 3 }
     - { itemId: iron, qty: 20 }
+  yields: { itemId: iron-pickaxe, qty: 1 }
   tags: [pickaxe, tool, tier-3]
 
 - id: iron-sledge
@@ -591,6 +635,7 @@
     - { itemId: iron, qty: 30 }
     - { itemId: ymir-flesh, qty: 4 }
     - { itemId: draugr-elite-trophy, qty: 1 }
+  yields: { itemId: iron-sledge, qty: 1 }
   tags: [sledge, two-handed, tier-3]
   notes: Massive AOE damage; knocks back groups of enemies.
 
@@ -602,6 +647,7 @@
   ingredients:
     - { itemId: iron, qty: 10 }
     - { itemId: ancient-bark, qty: 4 }
+  yields: { itemId: iron-buckler, qty: 1 }
   tags: [shield, tier-3]
 
 - id: iron-tower-shield
@@ -612,6 +658,7 @@
   ingredients:
     - { itemId: fine-wood, qty: 15 }
     - { itemId: iron, qty: 10 }
+  yields: { itemId: iron-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-3]
 
 - id: banded-shield
@@ -622,6 +669,7 @@
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: iron, qty: 8 }
+  yields: { itemId: banded-shield, qty: 1 }
   tags: [shield, tier-3]
 
 - id: iron-helmet
@@ -632,6 +680,7 @@
   ingredients:
     - { itemId: iron, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
+  yields: { itemId: iron-helmet, qty: 1 }
   tags: [helmet, armor, tier-3]
 
 - id: iron-scale-mail
@@ -642,6 +691,7 @@
   ingredients:
     - { itemId: iron, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
+  yields: { itemId: iron-scale-mail, qty: 1 }
   tags: [chest, armor, tier-3]
 
 - id: iron-greaves
@@ -652,6 +702,7 @@
   ingredients:
     - { itemId: iron, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
+  yields: { itemId: iron-greaves, qty: 1 }
   tags: [legs, armor, tier-3]
 
 - id: ironhead-arrow
@@ -685,6 +736,7 @@
     - { itemId: ancient-bark, qty: 30 }
     - { itemId: iron, qty: 35 }
     - { itemId: leather-scraps, qty: 4 }
+  yields: { itemId: iron-battleaxe, qty: 1 }
   tags: [battleaxe, two-handed, tier-3]
 
 # Silver/Mountain tier (forge level 3)
@@ -697,6 +749,7 @@
     - { itemId: ancient-bark, qty: 10 }
     - { itemId: iron, qty: 10 }
     - { itemId: troll-hide, qty: 4 }
+  yields: { itemId: ancient-bark-spear, qty: 1 }
   tags: [spear, one-handed, tier-3]
 
 - id: draugr-fang
@@ -709,6 +762,7 @@
     - { itemId: silver, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
     - { itemId: guck, qty: 10 }
+  yields: { itemId: draugr-fang, qty: 1 }
   tags: [bow, two-handed, tier-4]
   notes: Shoots poison arrows; pairs well with Poison arrows for stacking DoT.
 
@@ -722,6 +776,7 @@
     - { itemId: silver, qty: 30 }
     - { itemId: ymir-flesh, qty: 5 }
     - { itemId: freeze-gland, qty: 5 }
+  yields: { itemId: frostner, qty: 1 }
   tags: [mace, one-handed, tier-4]
   notes: Deals frost and spirit damage; slows enemies. Strong vs. undead.
 
@@ -735,6 +790,7 @@
     - { itemId: wolf-fang, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
     - { itemId: silver, qty: 2 }
+  yields: { itemId: fang-spear, qty: 1 }
   tags: [spear, one-handed, tier-4]
 
 - id: silver-knife
@@ -747,6 +803,7 @@
     - { itemId: silver, qty: 10 }
     - { itemId: leather-scraps, qty: 3 }
     - { itemId: iron, qty: 2 }
+  yields: { itemId: silver-knife, qty: 1 }
   tags: [knife, one-handed, tier-4]
 
 - id: crystal-battleaxe
@@ -758,6 +815,7 @@
     - { itemId: ancient-bark, qty: 40 }
     - { itemId: silver, qty: 30 }
     - { itemId: crystal, qty: 10 }
+  yields: { itemId: crystal-battleaxe, qty: 1 }
   tags: [battleaxe, two-handed, tier-4]
 
 - id: silver-shield
@@ -768,6 +826,7 @@
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: silver, qty: 8 }
+  yields: { itemId: silver-shield, qty: 1 }
   tags: [shield, tier-4]
 
 - id: serpent-scale-shield
@@ -779,6 +838,7 @@
     - { itemId: fine-wood, qty: 10 }
     - { itemId: iron, qty: 4 }
     - { itemId: serpent-scale, qty: 8 }
+  yields: { itemId: serpent-scale-shield, qty: 1 }
   tags: [shield, tier-4]
   notes: High block power; excellent vs. staggered enemies.
 
@@ -791,6 +851,7 @@
     - { itemId: silver, qty: 20 }
     - { itemId: wolf-pelt, qty: 5 }
     - { itemId: chain, qty: 1 }
+  yields: { itemId: wolf-armor-chest, qty: 1 }
   tags: [chest, armor, tier-4]
 
 - id: wolf-armor-legs
@@ -802,6 +863,7 @@
     - { itemId: silver, qty: 10 }
     - { itemId: wolf-pelt, qty: 4 }
     - { itemId: chain, qty: 1 }
+  yields: { itemId: wolf-armor-legs, qty: 1 }
   tags: [legs, armor, tier-4]
 
 - id: drake-helmet
@@ -813,6 +875,7 @@
     - { itemId: silver, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
     - { itemId: drake-trophy, qty: 1 }
+  yields: { itemId: drake-helmet, qty: 1 }
   tags: [helmet, armor, tier-4]
 
 - id: silver-arrow
@@ -837,6 +900,7 @@
     - { itemId: fine-wood, qty: 2 }
     - { itemId: black-metal, qty: 20 }
     - { itemId: linen-thread, qty: 5 }
+  yields: { itemId: black-metal-sword, qty: 1 }
   tags: [sword, one-handed, tier-5]
 
 - id: black-metal-axe
@@ -848,6 +912,7 @@
     - { itemId: fine-wood, qty: 6 }
     - { itemId: black-metal, qty: 20 }
     - { itemId: linen-thread, qty: 5 }
+  yields: { itemId: black-metal-axe, qty: 1 }
   tags: [axe, one-handed, tier-5]
 
 - id: black-metal-atgeir
@@ -859,6 +924,7 @@
     - { itemId: fine-wood, qty: 10 }
     - { itemId: black-metal, qty: 30 }
     - { itemId: linen-thread, qty: 5 }
+  yields: { itemId: black-metal-atgeir, qty: 1 }
   tags: [atgeir, two-handed, tier-5]
 
 - id: black-metal-knife
@@ -870,6 +936,7 @@
     - { itemId: fine-wood, qty: 4 }
     - { itemId: black-metal, qty: 10 }
     - { itemId: linen-thread, qty: 5 }
+  yields: { itemId: black-metal-knife, qty: 1 }
   tags: [knife, one-handed, tier-5]
 
 - id: porcupine
@@ -882,6 +949,7 @@
     - { itemId: iron, qty: 20 }
     - { itemId: needle, qty: 5 }
     - { itemId: linen-thread, qty: 10 }
+  yields: { itemId: porcupine, qty: 1 }
   tags: [mace, one-handed, tier-5]
   notes: Deals pierce and blunt damage; one of the strongest one-handed weapons.
 
@@ -894,6 +962,7 @@
     - { itemId: fine-wood, qty: 10 }
     - { itemId: black-metal, qty: 8 }
     - { itemId: chain, qty: 5 }
+  yields: { itemId: black-metal-shield, qty: 1 }
   tags: [shield, tier-5]
 
 - id: black-metal-tower-shield
@@ -905,6 +974,7 @@
     - { itemId: fine-wood, qty: 15 }
     - { itemId: black-metal, qty: 10 }
     - { itemId: chain, qty: 7 }
+  yields: { itemId: black-metal-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-5]
 
 - id: padded-helmet
@@ -915,6 +985,7 @@
   ingredients:
     - { itemId: linen-thread, qty: 10 }
     - { itemId: iron, qty: 5 }
+  yields: { itemId: padded-helmet, qty: 1 }
   tags: [helmet, armor, tier-5]
 
 - id: padded-cuirass
@@ -925,6 +996,7 @@
   ingredients:
     - { itemId: linen-thread, qty: 20 }
     - { itemId: iron, qty: 10 }
+  yields: { itemId: padded-cuirass, qty: 1 }
   tags: [chest, armor, tier-5]
 
 - id: padded-greaves
@@ -935,6 +1007,7 @@
   ingredients:
     - { itemId: linen-thread, qty: 10 }
     - { itemId: iron, qty: 10 }
+  yields: { itemId: padded-greaves, qty: 1 }
   tags: [legs, armor, tier-5]
 
 - id: silver-sword
@@ -946,6 +1019,7 @@
     - { itemId: silver, qty: 40 }
     - { itemId: wood, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
+  yields: { itemId: silver-sword, qty: 1 }
   tags: [sword, one-handed, tier-4]
 
 # ── Black Forge ────────────────────────────────────────────────────────────────
@@ -960,6 +1034,7 @@
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: refined-eitr, qty: 3 }
+  yields: { itemId: himminafl, qty: 1 }
   tags: [atgeir, two-handed, tier-6]
 
 - id: jotun-bane
@@ -971,6 +1046,7 @@
     - { itemId: carapace, qty: 5 }
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: refined-eitr, qty: 2 }
+  yields: { itemId: jotun-bane, qty: 1 }
   tags: [knife, one-handed, tier-6]
 
 - id: spinesnap
@@ -982,6 +1058,7 @@
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: mandible, qty: 4 }
+  yields: { itemId: spinesnap, qty: 1 }
   tags: [crossbow, two-handed, tier-6]
 
 - id: arbalest
@@ -993,6 +1070,7 @@
     - { itemId: carapace, qty: 20 }
     - { itemId: yggdrasil-wood, qty: 10 }
     - { itemId: iron, qty: 5 }
+  yields: { itemId: arbalest, qty: 1 }
   tags: [crossbow, two-handed, tier-6]
 
 - id: krom
@@ -1004,6 +1082,7 @@
     - { itemId: carapace, qty: 20 }
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: refined-eitr, qty: 5 }
+  yields: { itemId: krom, qty: 1 }
   tags: [sword, two-handed, tier-6]
 
 - id: mistwalker
@@ -1015,6 +1094,7 @@
     - { itemId: carapace, qty: 15 }
     - { itemId: refined-eitr, qty: 3 }
     - { itemId: freeze-gland, qty: 3 }
+  yields: { itemId: mistwalker, qty: 1 }
   tags: [sword, one-handed, tier-6]
 
 - id: carapace-spear
@@ -1025,6 +1105,7 @@
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 5 }
+  yields: { itemId: carapace-spear, qty: 1 }
   tags: [spear, one-handed, tier-6]
 
 - id: ripper
@@ -1036,6 +1117,7 @@
     - { itemId: carapace, qty: 8 }
     - { itemId: dvergr-needle, qty: 3 }
     - { itemId: refined-eitr, qty: 2 }
+  yields: { itemId: ripper, qty: 1 }
   tags: [knife, one-handed, tier-6]
 
 - id: skoll-and-hati
@@ -1047,6 +1129,7 @@
     - { itemId: carapace, qty: 20 }
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: refined-eitr, qty: 5 }
+  yields: { itemId: skoll-and-hati, qty: 1 }
   tags: [axe, one-handed, tier-6]
 
 - id: demolisher
@@ -1058,6 +1141,7 @@
     - { itemId: carapace, qty: 20 }
     - { itemId: black-marble, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 8 }
+  yields: { itemId: demolisher, qty: 1 }
   tags: [sledge, two-handed, tier-6]
 
 - id: splitnir
@@ -1069,6 +1153,7 @@
     - { itemId: carapace, qty: 10 }
     - { itemId: dvergr-needle, qty: 5 }
     - { itemId: refined-eitr, qty: 3 }
+  yields: { itemId: splitnir, qty: 1 }
   tags: [spear, one-handed, tier-6]
 
 - id: berserkir
@@ -1080,6 +1165,7 @@
     - { itemId: carapace, qty: 15 }
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: refined-eitr, qty: 4 }
+  yields: { itemId: berserkir, qty: 1 }
   tags: [axe, two-handed, tier-6]
 
 # Ashlands weapons (Black Forge level 3)
@@ -1092,6 +1178,7 @@
     - { itemId: flametal, qty: 10 }
     - { itemId: refined-eitr, qty: 5 }
     - { itemId: morgen-heart, qty: 1 }
+  yields: { itemId: ash-fang, qty: 1 }
   tags: [bow, two-handed, tier-7]
 
 - id: flametal-mace
@@ -1103,6 +1190,7 @@
     - { itemId: flametal, qty: 20 }
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: charred-bone, qty: 5 }
+  yields: { itemId: flametal-mace, qty: 1 }
   tags: [mace, one-handed, tier-7]
 
 - id: slayer
@@ -1114,6 +1202,7 @@
     - { itemId: flametal, qty: 30 }
     - { itemId: bilebag, qty: 3 }
     - { itemId: yggdrasil-wood, qty: 8 }
+  yields: { itemId: slayer, qty: 1 }
   tags: [sledge, two-handed, tier-7]
 
 - id: dyrnwyn
@@ -1125,6 +1214,7 @@
     - { itemId: flametal, qty: 20 }
     - { itemId: refined-eitr, qty: 5 }
     - { itemId: morgen-heart, qty: 2 }
+  yields: { itemId: dyrnwyn, qty: 1 }
   tags: [sword, one-handed, tier-7]
 
 - id: nidhogg
@@ -1136,6 +1226,7 @@
     - { itemId: flametal, qty: 20 }
     - { itemId: charred-bone, qty: 5 }
     - { itemId: bilebag, qty: 2 }
+  yields: { itemId: nidhogg, qty: 1 }
   tags: [atgeir, two-handed, tier-7]
 
 # Black Forge armor — Mistlands (level 1)
@@ -1148,6 +1239,7 @@
     - { itemId: carapace, qty: 10 }
     - { itemId: silver, qty: 5 }
     - { itemId: black-metal, qty: 5 }
+  yields: { itemId: carapace-helmet, qty: 1 }
   tags: [helmet, armor, tier-6]
 
 - id: carapace-breastplate
@@ -1159,6 +1251,7 @@
     - { itemId: carapace, qty: 20 }
     - { itemId: silver, qty: 5 }
     - { itemId: black-metal, qty: 5 }
+  yields: { itemId: carapace-breastplate, qty: 1 }
   tags: [chest, armor, tier-6]
 
 - id: carapace-greaves
@@ -1170,6 +1263,7 @@
     - { itemId: carapace, qty: 15 }
     - { itemId: silver, qty: 5 }
     - { itemId: black-metal, qty: 5 }
+  yields: { itemId: carapace-greaves, qty: 1 }
   tags: [legs, armor, tier-6]
 
 - id: hood-of-ask
@@ -1181,6 +1275,7 @@
     - { itemId: carapace, qty: 10 }
     - { itemId: refined-eitr, qty: 3 }
     - { itemId: linen-thread, qty: 10 }
+  yields: { itemId: hood-of-ask, qty: 1 }
   tags: [helmet, armor, tier-6]
 
 - id: breastplate-of-ask
@@ -1192,6 +1287,7 @@
     - { itemId: carapace, qty: 20 }
     - { itemId: refined-eitr, qty: 5 }
     - { itemId: linen-thread, qty: 20 }
+  yields: { itemId: breastplate-of-ask, qty: 1 }
   tags: [chest, armor, tier-6]
 
 - id: trousers-of-ask
@@ -1203,6 +1299,7 @@
     - { itemId: carapace, qty: 15 }
     - { itemId: refined-eitr, qty: 4 }
     - { itemId: linen-thread, qty: 15 }
+  yields: { itemId: trousers-of-ask, qty: 1 }
   tags: [legs, armor, tier-6]
 
 # Ashlands armor (Black Forge level 3)
@@ -1215,6 +1312,7 @@
     - { itemId: flametal, qty: 10 }
     - { itemId: charred-bone, qty: 5 }
     - { itemId: bilebag, qty: 1 }
+  yields: { itemId: flametal-helmet, qty: 1 }
   tags: [helmet, armor, tier-7]
 
 - id: flametal-breastplate
@@ -1226,6 +1324,7 @@
     - { itemId: flametal, qty: 20 }
     - { itemId: charred-bone, qty: 5 }
     - { itemId: bilebag, qty: 1 }
+  yields: { itemId: flametal-breastplate, qty: 1 }
   tags: [chest, armor, tier-7]
 
 - id: flametal-greaves
@@ -1237,6 +1336,7 @@
     - { itemId: flametal, qty: 15 }
     - { itemId: charred-bone, qty: 5 }
     - { itemId: bilebag, qty: 1 }
+  yields: { itemId: flametal-greaves, qty: 1 }
   tags: [legs, armor, tier-7]
 
 # Black Forge shields
@@ -1249,6 +1349,7 @@
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: black-metal, qty: 5 }
+  yields: { itemId: carapace-buckler, qty: 1 }
   tags: [shield, tier-6]
 
 - id: carapace-shield
@@ -1260,6 +1361,7 @@
     - { itemId: carapace, qty: 15 }
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: black-metal, qty: 5 }
+  yields: { itemId: carapace-shield, qty: 1 }
   tags: [shield, tier-6]
 
 - id: flametal-shield
@@ -1271,6 +1373,7 @@
     - { itemId: flametal, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: charred-bone, qty: 3 }
+  yields: { itemId: flametal-shield, qty: 1 }
   tags: [shield, tier-7]
 
 - id: flametal-tower-shield
@@ -1282,6 +1385,7 @@
     - { itemId: flametal, qty: 15 }
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: charred-bone, qty: 5 }
+  yields: { itemId: flametal-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-7]
 
 # Black Forge cape
@@ -1294,6 +1398,7 @@
     - { itemId: asksvin-hide, qty: 6 }
     - { itemId: morgen-sinew, qty: 2 }
     - { itemId: flametal, qty: 5 }
+  yields: { itemId: ashen-cape, qty: 1 }
   tags: [cape, armor, tier-7]
   notes: -10% attack stamina, -20% block stamina.
 
@@ -1392,6 +1497,7 @@
   ingredients:
     - { itemId: flametal, qty: 8 }
     - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: bloodgeon, qty: 1 }
   tags: [mace, one-handed, tier-7]
   notes: Flametal Mace upgraded with Bloodstone. Bleed damage.
 
@@ -1403,6 +1509,7 @@
   ingredients:
     - { itemId: flametal, qty: 15 }
     - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: brutal-slayer, qty: 1 }
   tags: [sledge, two-handed, tier-7]
   notes: Slayer upgraded with Bloodstone. Bleed damage.
 
@@ -1414,6 +1521,7 @@
   ingredients:
     - { itemId: flametal, qty: 15 }
     - { itemId: iolite, qty: 1 }
+  yields: { itemId: scourging-slayer, qty: 1 }
   tags: [sledge, two-handed, tier-7]
   notes: Slayer upgraded with Iolite. Lightning damage.
 
@@ -1425,6 +1533,7 @@
   ingredients:
     - { itemId: flametal, qty: 15 }
     - { itemId: jade, qty: 1 }
+  yields: { itemId: primal-slayer, qty: 1 }
   tags: [sledge, two-handed, tier-7]
   notes: Slayer upgraded with Jade. Poison damage.
 
@@ -1436,6 +1545,7 @@
   ingredients:
     - { itemId: flametal, qty: 6 }
     - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: nidhogg-the-bleeding, qty: 1 }
   tags: [atgeir, two-handed, tier-7]
   notes: "Nidh\xF6gg upgraded with Bloodstone. Bleed damage."
 
@@ -1447,6 +1557,7 @@
   ingredients:
     - { itemId: flametal, qty: 6 }
     - { itemId: iolite, qty: 1 }
+  yields: { itemId: nidhogg-the-thundering, qty: 1 }
   tags: [atgeir, two-handed, tier-7]
   notes: "Nidh\xF6gg upgraded with Iolite. Lightning damage."
 
@@ -1458,6 +1569,7 @@
   ingredients:
     - { itemId: flametal, qty: 6 }
     - { itemId: jade, qty: 1 }
+  yields: { itemId: nidhogg-the-primal, qty: 1 }
   tags: [atgeir, two-handed, tier-7]
   notes: "Nidh\xF6gg upgraded with Jade. Poison damage."
 
@@ -1469,6 +1581,7 @@
   ingredients:
     - { itemId: flametal, qty: 8 }
     - { itemId: iolite, qty: 1 }
+  yields: { itemId: storm-star, qty: 1 }
   tags: [mace, one-handed, tier-7]
   notes: Flametal Mace upgraded with Iolite. Lightning damage.
 
@@ -1480,6 +1593,7 @@
   ingredients:
     - { itemId: flametal, qty: 8 }
     - { itemId: jade, qty: 1 }
+  yields: { itemId: klossen, qty: 1 }
   tags: [mace, one-handed, tier-7]
   notes: Flametal Mace upgraded with Jade. Poison damage.
 
@@ -1495,6 +1609,7 @@
     - { itemId: yggdrasil-wood, qty: 10 }
     - { itemId: sap, qty: 5 }
     - { itemId: refined-eitr, qty: 10 }
+  yields: { itemId: staff-of-embers, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
 
 - id: staff-of-frost
@@ -1506,6 +1621,7 @@
     - { itemId: yggdrasil-wood, qty: 10 }
     - { itemId: freeze-gland, qty: 4 }
     - { itemId: refined-eitr, qty: 10 }
+  yields: { itemId: staff-of-frost, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
 
 - id: staff-of-storms
@@ -1517,6 +1633,7 @@
     - { itemId: yggdrasil-wood, qty: 10 }
     - { itemId: dvergr-needle, qty: 5 }
     - { itemId: refined-eitr, qty: 20 }
+  yields: { itemId: staff-of-storms, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
 
 - id: staff-of-protection
@@ -1528,6 +1645,7 @@
     - { itemId: yggdrasil-wood, qty: 10 }
     - { itemId: carapace, qty: 5 }
     - { itemId: refined-eitr, qty: 10 }
+  yields: { itemId: staff-of-protection, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
 
 - id: staff-of-the-wild
@@ -1539,6 +1657,7 @@
     - { itemId: yggdrasil-wood, qty: 10 }
     - { itemId: royal-jelly, qty: 4 }
     - { itemId: refined-eitr, qty: 15 }
+  yields: { itemId: staff-of-the-wild, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
 
 # Eitr-infused armor (Galdr Table level 1–2)
@@ -1551,6 +1670,7 @@
     - { itemId: linen-thread, qty: 15 }
     - { itemId: refined-eitr, qty: 15 }
     - { itemId: iron, qty: 2 }
+  yields: { itemId: eitr-weave-hood, qty: 1 }
   tags: [helmet, armor, magic, tier-6]
 
 - id: eitr-robe
@@ -1562,6 +1682,7 @@
     - { itemId: refined-eitr, qty: 10 }
     - { itemId: linen-thread, qty: 20 }
     - { itemId: carapace, qty: 10 }
+  yields: { itemId: eitr-robe, qty: 1 }
   tags: [chest, armor, magic, tier-6]
 
 - id: eitr-weave-tunic
@@ -1573,6 +1694,7 @@
     - { itemId: refined-eitr, qty: 15 }
     - { itemId: linen-thread, qty: 20 }
     - { itemId: carapace, qty: 15 }
+  yields: { itemId: eitr-weave-tunic, qty: 1 }
   tags: [chest, armor, magic, tier-6]
 
 - id: eitr-weave-trousers
@@ -1584,6 +1706,7 @@
     - { itemId: refined-eitr, qty: 10 }
     - { itemId: linen-thread, qty: 15 }
     - { itemId: carapace, qty: 10 }
+  yields: { itemId: eitr-weave-trousers, qty: 1 }
   tags: [legs, armor, magic, tier-6]
 
 # Sealbreaker (Galdr Table)
@@ -1594,6 +1717,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: sealbreaker-fragment, qty: 9 }
+  yields: { itemId: sealbreaker, qty: 1 }
   tags: [tool, tier-6]
   notes: Key item to unlock The Queen boss. Not consumed on use.
 
@@ -1607,6 +1731,7 @@
     - { itemId: feathers, qty: 10 }
     - { itemId: scale-hide, qty: 5 }
     - { itemId: refined-eitr, qty: 20 }
+  yields: { itemId: feather-cape, qty: 1 }
   tags: [cape, armor, magic, tier-6]
   notes: Provides 100% fall damage reduction.
 
@@ -1620,6 +1745,7 @@
     - { itemId: charred-bone, qty: 15 }
     - { itemId: ashwood, qty: 5 }
     - { itemId: proustite-powder, qty: 8 }
+  yields: { itemId: staff-of-fracturing, qty: 1 }
   tags: [staff, two-handed, magic, tier-7]
 
 - id: dundr
@@ -1632,6 +1758,7 @@
     - { itemId: flametal, qty: 4 }
     - { itemId: celestial-feather, qty: 3 }
     - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: dundr, qty: 1 }
   tags: [staff, two-handed, magic, tier-7]
   notes: Shoots grapeshot of 12 lightning bolts.
 
@@ -1645,6 +1772,7 @@
     - { itemId: troll-trophy, qty: 1 }
     - { itemId: flametal, qty: 3 }
     - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: trollstav, qty: 1 }
   tags: [staff, two-handed, magic, tier-7]
   notes: Summons a large troll.
 
@@ -1657,6 +1785,7 @@
     - { itemId: bone-fragments, qty: 10 }
     - { itemId: refined-eitr, qty: 16 }
     - { itemId: skeleton-trophy, qty: 4 }
+  yields: { itemId: dead-raiser, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
   notes: Blood magic staff — uses Eitr and Health.
 
@@ -1670,6 +1799,7 @@
     - { itemId: linen-thread, qty: 16 }
     - { itemId: refined-eitr, qty: 15 }
     - { itemId: asksvin-hide, qty: 2 }
+  yields: { itemId: hood-of-embla, qty: 1 }
   tags: [helmet, armor, magic, tier-7]
 
 - id: robes-of-embla
@@ -1682,6 +1812,7 @@
     - { itemId: refined-eitr, qty: 20 }
     - { itemId: asksvin-hide, qty: 10 }
     - { itemId: flametal, qty: 5 }
+  yields: { itemId: robes-of-embla, qty: 1 }
   tags: [chest, armor, magic, tier-7]
 
 - id: trousers-of-embla
@@ -1693,6 +1824,7 @@
     - { itemId: linen-thread, qty: 20 }
     - { itemId: refined-eitr, qty: 20 }
     - { itemId: asksvin-hide, qty: 10 }
+  yields: { itemId: trousers-of-embla, qty: 1 }
   tags: [legs, armor, magic, tier-7]
 
 # Asksvin Cloak (Galdr Table level 2)
@@ -1704,6 +1836,7 @@
   ingredients:
     - { itemId: asksvin-hide, qty: 6 }
     - { itemId: morgen-sinew, qty: 2 }
+  yields: { itemId: asksvin-cloak, qty: 1 }
   tags: [cape, armor, tier-7]
   notes: Wind run effect, -15% dodge stamina.
 
@@ -1718,6 +1851,7 @@
     - { itemId: lox-pelt, qty: 10 }
     - { itemId: iron, qty: 15 }
     - { itemId: linen-thread, qty: 20 }
+  yields: { itemId: lox-saddle, qty: 1 }
   tags: [utility, tier-5]
   notes: Allows riding Lox.
 
@@ -1730,6 +1864,7 @@
     - { itemId: black-metal, qty: 20 }
     - { itemId: fine-wood, qty: 10 }
     - { itemId: iron, qty: 5 }
+  yields: { itemId: ballista, qty: 1 }
   tags: [building, siege, tier-5]
 
 - id: ballista-bolt

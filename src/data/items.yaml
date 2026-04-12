@@ -231,3 +231,152 @@
 - { id: turnip-stew, name: Turnip Stew, category: food, stackSize: 10 }
 - { id: yggdrasil-porridge, name: Yggdrasil Porridge, category: food, stackSize: 10 }
 - { id: scorching-medley, name: Scorching Medley, category: food, stackSize: 10 }
+- { id: carrot-soup, name: Carrot Soup, category: food, stackSize: 10 }
+- { id: minced-meat-sauce, name: Minced Meat Sauce, category: food, stackSize: 10 }
+- { id: serpent-stew, name: Serpent Stew, category: food, stackSize: 10 }
+- { id: eyescream, name: Eyescream, category: food, stackSize: 10 }
+- { id: blood-pudding, name: Blood Pudding, category: food, stackSize: 10 }
+- { id: fish-wraps, name: Fish Wraps, category: food, stackSize: 10 }
+- { id: fiery-svinstew, name: Fiery Svinstew, category: food, stackSize: 10 }
+- { id: mushroom-omelette, name: Mushroom Omelette, category: food, stackSize: 10 }
+- { id: seeker-aspic, name: Seeker Aspic, category: food, stackSize: 10 }
+- { id: sizzling-berry-broth, name: Sizzling Berry Broth, category: food, stackSize: 10 }
+- { id: spicy-marmalade, name: Spicy Marmalade, category: food, stackSize: 10 }
+- { id: marinated-greens, name: Marinated Greens, category: food, stackSize: 10 }
+- { id: mashed-meat, name: Mashed Meat, category: food, stackSize: 10 }
+- { id: sparkling-shroomshake, name: Sparkling Shroomshake, category: food, stackSize: 10 }
+- { id: hammer, name: Hammer, category: tool, stackSize: 1 }
+- { id: hoe, name: Hoe, category: tool, stackSize: 1 }
+- { id: club, name: Club, category: tool, stackSize: 1 }
+- { id: crude-bow, name: Crude Bow, category: weapon, stackSize: 1 }
+- { id: stone-axe, name: Stone Axe, category: weapon, stackSize: 1 }
+- { id: flint-axe, name: Flint Axe, category: weapon, stackSize: 1 }
+- { id: flint-knife, name: Flint Knife, category: weapon, stackSize: 1 }
+- { id: flint-spear, name: Flint Spear, category: weapon, stackSize: 1 }
+- { id: antler-pickaxe, name: Antler Pickaxe, category: weapon, stackSize: 1 }
+- { id: finewood-bow, name: Finewood Bow, category: weapon, stackSize: 1 }
+- { id: stagbreaker, name: Stagbreaker, category: weapon, stackSize: 1 }
+- { id: leather-helmet, name: Leather Helmet, category: armor, stackSize: 1 }
+- { id: leather-tunic, name: Leather Tunic, category: armor, stackSize: 1 }
+- { id: leather-pants, name: Leather Pants, category: armor, stackSize: 1 }
+- { id: deer-hide-cape, name: Deer Hide Cape, category: armor, stackSize: 1 }
+- { id: wolf-fur-cape, name: Wolf Fur Cape, category: armor, stackSize: 1 }
+- { id: lox-cape, name: Lox Cape, category: armor, stackSize: 1 }
+- { id: troll-leather-helmet, name: Troll Leather Helmet, category: armor, stackSize: 1 }
+- { id: troll-leather-tunic, name: Troll Leather Tunic, category: armor, stackSize: 1 }
+- { id: troll-leather-pants, name: Troll Leather Pants, category: armor, stackSize: 1 }
+- { id: troll-hide-cape, name: Troll Hide Cape, category: armor, stackSize: 1 }
+- { id: wood-shield, name: Wood Shield, category: tool, stackSize: 1 }
+- { id: wood-tower-shield, name: Wood Tower Shield, category: tool, stackSize: 1 }
+- { id: bone-tower-shield, name: Bone Tower Shield, category: tool, stackSize: 1 }
+- { id: abyssal-razor, name: Abyssal Razor, category: weapon, stackSize: 1 }
+- { id: abyssal-harpoon, name: Abyssal Harpoon, category: weapon, stackSize: 1 }
+- { id: copper-knife, name: Copper Knife, category: weapon, stackSize: 1 }
+- { id: bronze-axe, name: Bronze Axe, category: weapon, stackSize: 1 }
+- { id: bronze-pickaxe, name: Bronze Pickaxe, category: weapon, stackSize: 1 }
+- { id: bronze-mace, name: Bronze Mace, category: weapon, stackSize: 1 }
+- { id: bronze-atgeir, name: Bronze Atgeir, category: weapon, stackSize: 1 }
+- { id: bronze-spear, name: Bronze Spear, category: weapon, stackSize: 1 }
+- { id: bronze-sword, name: Bronze Sword, category: weapon, stackSize: 1 }
+- { id: bronze-buckler, name: Bronze Buckler, category: tool, stackSize: 1 }
+- { id: bronze-helmet, name: Bronze Helmet, category: armor, stackSize: 1 }
+- { id: bronze-plate-cuirass, name: Bronze Plate Cuirass, category: armor, stackSize: 1 }
+- { id: bronze-plate-leggings, name: Bronze Plate Leggings, category: armor, stackSize: 1 }
+- { id: cultivator, name: Cultivator, category: tool, stackSize: 1 }
+- { id: huntsman-bow, name: Huntsman Bow, category: weapon, stackSize: 1 }
+- { id: iron-sword, name: Iron Sword, category: weapon, stackSize: 1 }
+- { id: iron-mace, name: Iron Mace, category: weapon, stackSize: 1 }
+- { id: iron-atgeir, name: Iron Atgeir, category: weapon, stackSize: 1 }
+- { id: iron-axe, name: Iron Axe, category: weapon, stackSize: 1 }
+- { id: iron-pickaxe, name: Iron Pickaxe, category: weapon, stackSize: 1 }
+- { id: iron-sledge, name: Iron Sledge, category: weapon, stackSize: 1 }
+- { id: iron-buckler, name: Iron Buckler, category: tool, stackSize: 1 }
+- { id: iron-tower-shield, name: Iron Tower Shield, category: tool, stackSize: 1 }
+- { id: banded-shield, name: Banded Shield, category: tool, stackSize: 1 }
+- { id: iron-helmet, name: Iron Helmet, category: armor, stackSize: 1 }
+- { id: iron-scale-mail, name: Iron Scale Mail, category: armor, stackSize: 1 }
+- { id: iron-greaves, name: Iron Greaves, category: armor, stackSize: 1 }
+- { id: iron-battleaxe, name: Iron Battleaxe, category: weapon, stackSize: 1 }
+- { id: ancient-bark-spear, name: Ancient Bark Spear, category: weapon, stackSize: 1 }
+- { id: draugr-fang, name: Draugr Fang, category: weapon, stackSize: 1 }
+- { id: frostner, name: Frostner, category: weapon, stackSize: 1 }
+- { id: fang-spear, name: Fang Spear, category: weapon, stackSize: 1 }
+- { id: silver-knife, name: Silver Knife, category: weapon, stackSize: 1 }
+- { id: crystal-battleaxe, name: Crystal Battleaxe, category: weapon, stackSize: 1 }
+- { id: silver-shield, name: Silver Shield, category: tool, stackSize: 1 }
+- { id: serpent-scale-shield, name: Serpent Scale Shield, category: tool, stackSize: 1 }
+- { id: wolf-armor-chest, name: Wolf Armor Chest, category: armor, stackSize: 1 }
+- { id: wolf-armor-legs, name: Wolf Armor Legs, category: armor, stackSize: 1 }
+- { id: drake-helmet, name: Drake Helmet, category: armor, stackSize: 1 }
+- { id: black-metal-sword, name: Black Metal Sword, category: weapon, stackSize: 1 }
+- { id: black-metal-axe, name: Black Metal Axe, category: weapon, stackSize: 1 }
+- { id: black-metal-atgeir, name: Black Metal Atgeir, category: weapon, stackSize: 1 }
+- { id: black-metal-knife, name: Black Metal Knife, category: weapon, stackSize: 1 }
+- { id: porcupine, name: Porcupine, category: weapon, stackSize: 1 }
+- { id: black-metal-shield, name: Black Metal Shield, category: tool, stackSize: 1 }
+- { id: black-metal-tower-shield, name: Black Metal Tower Shield, category: tool, stackSize: 1 }
+- { id: padded-helmet, name: Padded Helmet, category: armor, stackSize: 1 }
+- { id: padded-cuirass, name: Padded Cuirass, category: armor, stackSize: 1 }
+- { id: padded-greaves, name: Padded Greaves, category: armor, stackSize: 1 }
+- { id: silver-sword, name: Silver Sword, category: weapon, stackSize: 1 }
+- { id: himminafl, name: Himminafl, category: weapon, stackSize: 1 }
+- { id: jotun-bane, name: Jotun Bane, category: weapon, stackSize: 1 }
+- { id: spinesnap, name: Spinesnap, category: weapon, stackSize: 1 }
+- { id: arbalest, name: Arbalest, category: weapon, stackSize: 1 }
+- { id: krom, name: Krom, category: weapon, stackSize: 1 }
+- { id: mistwalker, name: Mistwalker, category: weapon, stackSize: 1 }
+- { id: carapace-spear, name: Carapace Spear, category: weapon, stackSize: 1 }
+- { id: ripper, name: Ripper, category: weapon, stackSize: 1 }
+- { id: skoll-and-hati, name: Skoll and Hati, category: weapon, stackSize: 1 }
+- { id: demolisher, name: Demolisher, category: weapon, stackSize: 1 }
+- { id: splitnir, name: Splitnir, category: weapon, stackSize: 1 }
+- { id: berserkir, name: Berserkir, category: weapon, stackSize: 1 }
+- { id: ash-fang, name: Ash Fang, category: weapon, stackSize: 1 }
+- { id: flametal-mace, name: Flametal Mace, category: weapon, stackSize: 1 }
+- { id: slayer, name: Slayer, category: weapon, stackSize: 1 }
+- { id: dyrnwyn, name: Dyrnwyn, category: weapon, stackSize: 1 }
+- { id: nidhogg, name: Nidhögg, category: weapon, stackSize: 1 }
+- { id: carapace-helmet, name: Carapace Helmet, category: armor, stackSize: 1 }
+- { id: carapace-breastplate, name: Carapace Breastplate, category: armor, stackSize: 1 }
+- { id: carapace-greaves, name: Carapace Greaves, category: armor, stackSize: 1 }
+- { id: hood-of-ask, name: Hood of Ask, category: armor, stackSize: 1 }
+- { id: breastplate-of-ask, name: Breastplate of Ask, category: armor, stackSize: 1 }
+- { id: trousers-of-ask, name: Trousers of Ask, category: armor, stackSize: 1 }
+- { id: flametal-helmet, name: Flametal Helmet, category: armor, stackSize: 1 }
+- { id: flametal-breastplate, name: Flametal Breastplate, category: armor, stackSize: 1 }
+- { id: flametal-greaves, name: Flametal Greaves, category: armor, stackSize: 1 }
+- { id: carapace-buckler, name: Carapace Buckler, category: tool, stackSize: 1 }
+- { id: carapace-shield, name: Carapace Shield, category: tool, stackSize: 1 }
+- { id: flametal-shield, name: Flametal Shield, category: tool, stackSize: 1 }
+- { id: flametal-tower-shield, name: Flametal Tower Shield, category: tool, stackSize: 1 }
+- { id: ashen-cape, name: Ashen Cape, category: armor, stackSize: 1 }
+- { id: bloodgeon, name: Bloodgeon, category: weapon, stackSize: 1 }
+- { id: brutal-slayer, name: Brutal Slayer, category: weapon, stackSize: 1 }
+- { id: scourging-slayer, name: Scourging Slayer, category: weapon, stackSize: 1 }
+- { id: primal-slayer, name: Primal Slayer, category: weapon, stackSize: 1 }
+- { id: nidhogg-the-bleeding, name: Nidhögg the Bleeding, category: weapon, stackSize: 1 }
+- { id: nidhogg-the-thundering, name: Nidhögg the Thundering, category: weapon, stackSize: 1 }
+- { id: nidhogg-the-primal, name: Nidhögg the Primal, category: weapon, stackSize: 1 }
+- { id: storm-star, name: Storm Star, category: weapon, stackSize: 1 }
+- { id: klossen, name: Klossen, category: weapon, stackSize: 1 }
+- { id: staff-of-embers, name: Staff of Embers, category: weapon, stackSize: 1 }
+- { id: staff-of-frost, name: Staff of Frost, category: weapon, stackSize: 1 }
+- { id: staff-of-storms, name: Staff of Storms, category: weapon, stackSize: 1 }
+- { id: staff-of-protection, name: Staff of Protection, category: weapon, stackSize: 1 }
+- { id: staff-of-the-wild, name: Staff of the Wild, category: weapon, stackSize: 1 }
+- { id: eitr-weave-hood, name: Eitr-Weave Hood, category: armor, stackSize: 1 }
+- { id: eitr-robe, name: Eitr-Weave Robe, category: armor, stackSize: 1 }
+- { id: eitr-weave-tunic, name: Eitr-Weave Tunic, category: armor, stackSize: 1 }
+- { id: eitr-weave-trousers, name: Eitr-Weave Trousers, category: armor, stackSize: 1 }
+- { id: sealbreaker, name: Sealbreaker, category: tool, stackSize: 1 }
+- { id: feather-cape, name: Feather Cape, category: armor, stackSize: 1 }
+- { id: staff-of-fracturing, name: Staff of Fracturing, category: weapon, stackSize: 1 }
+- { id: dundr, name: Dundr, category: weapon, stackSize: 1 }
+- { id: trollstav, name: Trollstav, category: weapon, stackSize: 1 }
+- { id: dead-raiser, name: Dead Raiser, category: weapon, stackSize: 1 }
+- { id: hood-of-embla, name: Hood of Embla, category: armor, stackSize: 1 }
+- { id: robes-of-embla, name: Robes of Embla, category: armor, stackSize: 1 }
+- { id: trousers-of-embla, name: Trousers of Embla, category: armor, stackSize: 1 }
+- { id: asksvin-cloak, name: Asksvin Cloak, category: armor, stackSize: 1 }
+- { id: lox-saddle, name: Lox Saddle, category: tool, stackSize: 1 }
+- { id: ballista, name: Ballista, category: tool, stackSize: 1 }
