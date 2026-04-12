@@ -64,8 +64,8 @@ test.describe('valheim helper smoke', () => {
     await page.goto('/valheim/?q=hammer');
     await page.getByRole('button', { name: 'Add to cart' }).first().click();
     await page.locator('.cart-badge').click();
-    await page.getByRole('button', { name: /Increase.*quantity/ }).click();
-    await expect(page.locator('.cart-drawer__qty-value')).toHaveText('2');
+    await page.getByRole('button', { name: /Increase.*quantity by 1/ }).click();
+    await expect(page.locator('.cart-drawer__qty-input')).toHaveValue('2');
   });
 
   test('cart URL state survives navigation', async ({ page }) => {
