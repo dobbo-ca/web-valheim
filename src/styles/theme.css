@@ -197,6 +197,58 @@ h3 {
   text-align: right;
 }
 
+/* ===== Dual-thumb range slider ===== */
+.range-slider {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  min-width: 80px;
+}
+.range-slider__track {
+  position: absolute;
+  height: 4px;
+  background: var(--border-muted);
+  width: 100%;
+  border-radius: 2px;
+}
+.range-slider__fill {
+  position: absolute;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.range-slider input[type="range"] {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  margin: 0;
+  height: 20px;
+}
+.range-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+.range-slider input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  border-style: solid;
+}
+
 /* ===== Recipe table toolbar ===== */
 .recipe-table__toolbar {
   display: flex;

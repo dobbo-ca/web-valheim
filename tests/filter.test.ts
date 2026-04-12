@@ -103,11 +103,18 @@ describe('filterRecipes', () => {
     ).toEqual(['bronze-sword']);
   });
 
+  it('filters by min station level (hides recipes below floor)', () => {
+    expect(
+      filterRecipes(sample, { ...empty, minStationLevel: 2 }).map((r) => r.id),
+    ).toEqual(['iron-sword']);
+  });
+
   it('combines all filters with AND', () => {
     expect(
       filterRecipes(sample, {
         type: 'crafting',
         station: 'forge',
+        minStationLevel: 1,
         maxStationLevel: 1,
         ingredientIds: ['wood'],
         query: 'sword',
