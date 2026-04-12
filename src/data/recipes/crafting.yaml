@@ -529,6 +529,18 @@
   yields: { itemId: bronzehead-arrow, qty: 20 }
   tags: [arrow, tier-2]
 
+- id: bronze
+  name: Bronze
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: copper, qty: 2 }
+    - { itemId: tin, qty: 1 }
+  yields: { itemId: bronze, qty: 1 }
+  tags: [material, tier-2]
+  notes: Alloy — combine copper and tin.
+
 - id: bronze-nails
   name: Bronze Nails
   type: crafting
