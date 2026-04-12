@@ -196,6 +196,18 @@ h3 {
   min-width: 14px;
   text-align: right;
 }
+.filter-bar__level-input {
+  width: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px 0;
+}
 
 /* ===== Dual-thumb range slider ===== */
 .range-slider {
