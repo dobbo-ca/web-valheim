@@ -1722,3 +1722,188 @@ h3 {
   color: var(--accent);
 }
 
+/* ===== Weather forecast ===== */
+.weather-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.weather-controls__day-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+}
+.weather-controls__day-input label {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.weather-controls__day-input input {
+  width: 80px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.weather-controls__day-input input::-webkit-inner-spin-button,
+.weather-controls__day-input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Biome chips */
+.weather-biome-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.weather-biome-chip {
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.weather-biome-chip--active {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Day cards grid */
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.weather-day-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  cursor: pointer;
+}
+.weather-day-card:hover {
+  border-color: var(--accent-border);
+}
+.weather-day-card--current {
+  border-color: var(--accent-border);
+  border-width: 2px;
+}
+.weather-day-card--expanded {
+  background: var(--surface-sunken);
+  border-color: var(--accent-border);
+}
+.weather-day-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.weather-day-card__day {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.weather-day-card--current .weather-day-card__day {
+  color: var(--accent);
+}
+.weather-day-card__expand {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* Weather entry (used in both card overview and period detail) */
+.weather-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+.weather-entry__icon {
+  width: 24px;
+  height: 24px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+.weather-entry__name {
+  font-size: 13px;
+  font-weight: 500;
+}
+.weather-entry__biome {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Effect badges */
+.weather-effects {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.weather-effect-badge {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.weather-effect-badge--wet {
+  background: color-mix(in oklch, var(--warning) 20%, transparent);
+  color: var(--warning);
+}
+.weather-effect-badge--freezing {
+  background: color-mix(in oklch, var(--info) 20%, transparent);
+  color: var(--info);
+}
+.weather-effect-badge--low-visibility {
+  background: color-mix(in oklch, var(--text-muted) 20%, transparent);
+  color: var(--text-muted);
+}
+.weather-effect-badge--shelter-needed {
+  background: color-mix(in oklch, var(--danger) 20%, transparent);
+  color: var(--danger);
+}
+
+/* Period detail (expanded day) */
+.weather-periods {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-soft);
+}
+.weather-periods__title {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.weather-period-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 12px;
+}
+.weather-period-row__index {
+  color: var(--muted);
+  font-size: 10px;
+  min-width: 14px;
+}
