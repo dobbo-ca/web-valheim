@@ -583,6 +583,17 @@ h3 {
   from { transform: translateX(100%); }
   to { transform: translateX(0); }
 }
+@keyframes cart-slide-out {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+.cart-drawer--closing {
+  animation: cart-slide-out 0.2s ease-in forwards;
+}
+.cart-drawer__overlay--closing {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
 .cart-drawer__header {
   display: flex;
   align-items: center;

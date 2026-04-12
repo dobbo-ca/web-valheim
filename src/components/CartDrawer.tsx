@@ -20,12 +20,35 @@ interface Props {
 
 export const CartDrawer: Component<Props> = (props) => {
   const [copied, setCopied] = createSignal(false);
+  const [visible, setVisible] = createSignal(false);
+  const [closing, setClosing] = createSignal(false);
+
+  createEffect(() => {
+    if (props.open) {
+      setVisible(true);
+      setClosing(false);
+    } else if (visible()) {
+      setClosing(true);
+    }
+  });
+
+  const handleClose = () => {
+    setClosing(true);
+  };
+
+  const handleAnimationEnd = () => {
+    if (closing()) {
+      setVisible(false);
+      setClosing(false);
+      props.onClose();
+    }
+  };
 
   // Close on Escape key
   createEffect(() => {
-    if (!props.open) return;
+    if (!visible()) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') props.onClose();
+      if (e.key === 'Escape') handleClose();
     };
     document.addEventListener('keydown', handler);
     onCleanup(() => document.removeEventListener('keydown', handler));
@@ -43,20 +66,31 @@ export const CartDrawer: Component<Props> = (props) => {
 
   const handleOverlayClick = (e: MouseEvent) => {
     if ((e.target as HTMLElement).classList.contains('cart-drawer__overlay')) {
-      props.onClose();
+      handleClose();
     }
   };
 
   return (
-    <Show when={props.open}>
-      <div class="cart-drawer__overlay" onClick={handleOverlayClick}>
-        <div class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <Show when={visible()}>
+      <div
+        class="cart-drawer__overlay"
+        classList={{ 'cart-drawer__overlay--closing': closing() }}
+        onClick={handleOverlayClick}
+      >
+        <div
+          class="cart-drawer"
+          classList={{ 'cart-drawer--closing': closing() }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Shopping cart"
+          onAnimationEnd={handleAnimationEnd}
+        >
           <div class="cart-drawer__header">
             <h2 class="cart-drawer__title">Cart</h2>
             <button
               type="button"
               class="cart-drawer__close"
-              onClick={props.onClose}
+              onClick={handleClose}
               aria-label="Close cart"
             >
               ✕
