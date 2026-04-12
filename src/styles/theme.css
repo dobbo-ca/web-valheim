@@ -434,26 +434,24 @@ h3 {
   color: var(--text-soft);
 }
 @media (max-width: 768px) {
-  .recipe-table__toolbar {
-    flex-direction: column;
-  }
   .filter-bar {
-    flex-direction: column;
-    align-items: stretch;
     gap: 6px;
-  }
-  .filter-bar__chips {
-    order: -1;
   }
   .filter-bar__search {
     min-width: unset;
-    order: -2;
+    flex: 1 1 100%;
+    order: -1;
   }
   .filter-bar__level {
     display: none;
   }
+  .filter-chip {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
   .filter-bar select {
-    width: 100%;
+    padding: 6px 8px;
+    font-size: 12px;
   }
   .recipe-table__header {
     grid-template-columns: 2fr 1.5fr 24px;
