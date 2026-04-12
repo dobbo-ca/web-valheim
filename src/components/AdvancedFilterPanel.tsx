@@ -92,38 +92,6 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
       </div>
 
       <div class="adv-filter__section">
-        <span class="adv-filter__label">Level Range</span>
-        <div class="adv-filter__level-range">
-          <input
-            type="number"
-            min="1"
-            max="7"
-            value={props.state.minStationLevel}
-            class="adv-filter__level-input"
-            aria-label="Minimum level"
-            onInput={(e) => {
-              const val = Math.max(1, Math.min(7, Number.parseInt(e.currentTarget.value, 10) || 1));
-              const max = Number.isFinite(props.state.maxStationLevel) ? props.state.maxStationLevel : 7;
-              update({ minStationLevel: Math.min(val, max) });
-            }}
-          />
-          <span class="adv-filter__level-sep">–</span>
-          <input
-            type="number"
-            min="1"
-            max="7"
-            value={Number.isFinite(props.state.maxStationLevel) ? props.state.maxStationLevel : 7}
-            class="adv-filter__level-input"
-            aria-label="Maximum level"
-            onInput={(e) => {
-              const val = Math.max(1, Math.min(7, Number.parseInt(e.currentTarget.value, 10) || 7));
-              update({ maxStationLevel: Math.max(val, props.state.minStationLevel) });
-            }}
-          />
-        </div>
-      </div>
-
-      <div class="adv-filter__section">
         <span class="adv-filter__label">Categories</span>
         <For each={tagGroups}>
           {(group) => (
