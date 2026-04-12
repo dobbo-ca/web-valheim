@@ -43,7 +43,8 @@ describe('RecipeRow', () => {
       />
     ));
     expect(screen.getByText('Iron Sword')).toBeInTheDocument();
-    expect(screen.getByText('Forge Lv 2')).toBeInTheDocument();
+    expect(screen.getByText('Forge')).toBeInTheDocument();
+    expect(screen.getByText(/Lv 2/)).toBeInTheDocument();
     // Notes not shown when collapsed
     expect(screen.queryByText(/Strong vs skeletons/)).toBeNull();
   });
