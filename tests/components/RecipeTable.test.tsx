@@ -96,4 +96,30 @@ describe('RecipeTable', () => {
     expect(screen.queryByText('Iron Sword')).toBeNull();
     expect(screen.getByText('Queens Jam')).toBeInTheDocument();
   });
+
+  it('collapses a row when it is clicked again', () => {
+    render(() => <RecipeTable data={data} baseHref="/valheim/" />);
+    const row = screen.getByRole('button', { name: /Iron Sword/ });
+    // First click expands — aria-expanded becomes true
+    fireEvent.click(row);
+    expect(row).toHaveAttribute('aria-expanded', 'true');
+    // Second click collapses — aria-expanded becomes false
+    fireEvent.click(row);
+    expect(row).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  it('removes an ingredient from the filter when the strip chip is clicked', () => {
+    render(() => <RecipeTable data={data} baseHref="/valheim/" />);
+    // Expand and add iron as an active filter
+    fireEvent.click(screen.getByRole('button', { name: /Iron Sword/ }));
+    fireEvent.click(screen.getByRole('button', { name: /Iron ×60/ }));
+    expect(screen.queryByText('Queens Jam')).toBeNull();
+    // Click the remove chip in the reverse-lookup strip
+    fireEvent.click(
+      screen.getByRole('button', { name: /Remove Iron from ingredient filter/ }),
+    );
+    // Strip should be gone and cooking recipe should reappear
+    expect(screen.queryByText(/Uses ingredient/)).toBeNull();
+    expect(screen.getByText('Queens Jam')).toBeInTheDocument();
+  });
 });

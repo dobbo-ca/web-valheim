@@ -49,11 +49,17 @@ export const RecipeTable: Component<Props> = (props) => {
   };
 
   const removeIngredient = (itemId: string) => {
+    const current = state();
     commit({
-      ...state(),
-      ingredientIds: state().ingredientIds.filter((id) => id !== itemId),
+      ...current,
+      ingredientIds: current.ingredientIds.filter((id) => id !== itemId),
     });
   };
+
+  // Note: when filters hide the expanded recipe, expandedId keeps its value.
+  // If filters later include the recipe again, the row will re-expand. This
+  // is intentional — the user's expansion is preserved across transient
+  // filter changes.
 
   const activeIngredientLabel = (id: string) =>
     itemsById().get(id)?.name ?? id;
@@ -70,6 +76,7 @@ export const RecipeTable: Component<Props> = (props) => {
               <button
                 type="button"
                 class="chip chip--active-filter"
+                aria-label={`Remove ${activeIngredientLabel(id)} from ingredient filter`}
                 onClick={() => removeIngredient(id)}
               >
                 {activeIngredientLabel(id)} ✕
