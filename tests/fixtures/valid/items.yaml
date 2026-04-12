@@ -1,0 +1,15 @@
+- id: iron
+  name: Iron
+  category: material
+- id: wood
+  name: Wood
+  category: material
+- id: leather-scraps
+  name: Leather Scraps
+  category: material
+- id: raspberries
+  name: Raspberries
+  category: ingredient
+- id: blueberries
+  name: Blueberries
+  category: ingredient

@@ -1,0 +1,44 @@
+- id: queens-jam
+  name: Queens Jam
+  type: cooking
+  station: cauldron
+  stationLevel: 1
+  ingredients:
+    - { itemId: raspberries, qty: 8 }
+    - { itemId: blueberries, qty: 6 }
+  food:
+    hp: 32
+    stamina: 44
+    duration: 1800
+    regen: 2
+  tags: [food, sustain, tier-2]
+
+- id: carrot-soup
+  name: Carrot Soup
+  type: cooking
+  station: cauldron
+  stationLevel: 1
+  ingredients:
+    - { itemId: carrot, qty: 3 }
+    - { itemId: mushroom, qty: 1 }
+  food:
+    hp: 20
+    stamina: 60
+    duration: 1500
+    regen: 2
+  tags: [food, stamina, tier-2]
+
+- id: turnip-stew
+  name: Turnip Stew
+  type: cooking
+  station: cauldron
+  stationLevel: 1
+  ingredients:
+    - { itemId: turnip, qty: 3 }
+    - { itemId: boar-meat, qty: 1 }
+  food:
+    hp: 55
+    stamina: 25
+    duration: 2000
+    regen: 3
+  tags: [food, hp, tier-3]

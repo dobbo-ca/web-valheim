@@ -1,0 +1,337 @@
+/* ===== Palette — dark (default) ===== */
+:root {
+  --bg-dark: oklch(0.1 0.025 264);
+  --bg: oklch(0.15 0.025 264);
+  --bg-light: oklch(0.2 0.025 264);
+  --text: oklch(0.96 0.05 264);
+  --text-muted: oklch(0.76 0.05 264);
+  --highlight: oklch(0.5 0.05 264);
+  --border: oklch(0.4 0.05 264);
+  --border-muted: oklch(0.3 0.05 264);
+  --primary: oklch(0.76 0.1 264);
+  --secondary: oklch(0.76 0.1 84);
+  --danger: oklch(0.7 0.05 30);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
+}
+
+/* ===== Palette — light (auto via prefers-color-scheme) ===== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-dark: oklch(0.92 0.025 264);
+    --bg: oklch(0.96 0.025 264);
+    --bg-light: oklch(1 0.025 264);
+    --text: oklch(0.15 0.05 264);
+    --text-muted: oklch(0.4 0.05 264);
+    --highlight: oklch(1 0.05 264);
+    --border: oklch(0.6 0.05 264);
+    --border-muted: oklch(0.7 0.05 264);
+    --primary: oklch(0.4 0.1 264);
+    --secondary: oklch(0.4 0.1 84);
+    --danger: oklch(0.5 0.05 30);
+    --warning: oklch(0.5 0.05 100);
+    --success: oklch(0.5 0.05 160);
+    --info: oklch(0.5 0.05 260);
+  }
+}
+
+/* ===== Semantic aliases (used by component styles) =====
+ * These let the component CSS stay stable across palette changes.
+ * `color-mix` is resolved lazily per use site, so it picks up the
+ * current `--primary` under both dark and light modes automatically.
+ */
+:root {
+  --surface: var(--bg-light);       /* cards, table, filter bar */
+  --surface-sunken: var(--bg-dark); /* expanded rows, pressed states */
+  --border-soft: var(--border-muted);
+  --text-soft: var(--text-muted);
+  --muted: var(--text-muted);
+  --accent: var(--primary);
+  --accent-bg: color-mix(in oklch, var(--primary) 18%, transparent);
+  --accent-border: var(--primary);
+
+  --radius: 6px;
+  --radius-sm: 4px;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text);
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 14px 20px;
+}
+.site-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.site-header .brand {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.site-header nav {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+}
+.site-header nav a {
+  color: var(--text-soft);
+}
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ===== Filter bar ===== */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.filter-bar__chips {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.filter-chip {
+  background: transparent;
+  border: 0;
+  color: var(--text-soft);
+  padding: 8px 14px;
+  font: inherit;
+  cursor: pointer;
+}
+.filter-chip--active {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+.filter-bar select,
+.filter-bar__search {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 8px 12px;
+  font: inherit;
+}
+.filter-bar__search {
+  flex: 1;
+  min-width: 200px;
+}
+.filter-bar__level {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  color: var(--text);
+  font-size: 12px;
+}
+.filter-bar__level-value {
+  color: var(--accent);
+  font-weight: 600;
+  min-width: 14px;
+  text-align: right;
+}
+
+/* ===== Reverse lookup strip ===== */
+.reverse-lookup-strip {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+.reverse-lookup-strip .label {
+  color: var(--muted);
+  text-transform: none;
+  font-size: 12px;
+}
+
+/* ===== Chips ===== */
+.chip {
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  color: var(--text);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chip:disabled {
+  cursor: default;
+}
+.chip--active-filter {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 500;
+}
+.chip__qty {
+  color: var(--text-soft);
+  margin-left: 2px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ===== Recipe table grid ===== */
+.recipe-table__grid {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.recipe-table__header,
+.recipe-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 60px 3fr 1fr;
+  gap: 12px;
+  padding: 10px 14px;
+  align-items: center;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.recipe-table__header {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  background: var(--surface);
+}
+.recipe-row {
+  background: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  text-align: left;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+.recipe-row:hover {
+  background: var(--surface-sunken);
+}
+.recipe-row--expanded {
+  background: var(--surface-sunken);
+}
+.recipe-row__name {
+  font-weight: 500;
+}
+.recipe-row--expanded .recipe-row__name {
+  color: var(--accent);
+}
+.recipe-row__station,
+.recipe-row__lvl,
+.recipe-row__ings {
+  color: var(--text-soft);
+}
+.recipe-row__tags {
+  color: var(--muted);
+  font-size: 11px;
+}
+.recipe-row__detail {
+  padding: 14px 18px 18px 34px;
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 12px;
+  color: var(--text);
+}
+.recipe-row__section {
+  margin-bottom: 10px;
+}
+.recipe-row__section .label {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 9px;
+  display: block;
+  margin-bottom: 4px;
+}
+.recipe-row__notes {
+  color: var(--text-soft);
+}
+.recipe-row__permalink {
+  display: inline-block;
+  margin-top: 4px;
+}
+.food-stats {
+  display: flex;
+  gap: 14px;
+  color: var(--text);
+}
+.recipe-table__empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+.recipe-table__footer {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--muted);
+}

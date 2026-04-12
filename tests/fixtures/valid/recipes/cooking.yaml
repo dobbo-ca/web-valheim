@@ -1,0 +1,13 @@
+- id: queens-jam
+  name: Queens Jam
+  type: cooking
+  station: cauldron
+  stationLevel: 1
+  ingredients:
+    - { itemId: raspberries, qty: 8 }
+    - { itemId: blueberries, qty: 6 }
+  food:
+    hp: 32
+    stamina: 44
+    duration: 1800
+    regen: 2

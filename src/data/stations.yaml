@@ -1,0 +1,24 @@
+- id: workbench
+  name: Workbench
+  maxLevel: 5
+  upgrades: []
+- id: forge
+  name: Forge
+  maxLevel: 7
+  upgrades: []
+- id: cauldron
+  name: Cauldron
+  maxLevel: 5
+  upgrades: []
+- id: stonecutter
+  name: Stonecutter
+  maxLevel: 1
+  upgrades: []
+- id: artisan-table
+  name: Artisan Table
+  maxLevel: 1
+  upgrades: []
+- id: black-forge
+  name: Black Forge
+  maxLevel: 3
+  upgrades: []

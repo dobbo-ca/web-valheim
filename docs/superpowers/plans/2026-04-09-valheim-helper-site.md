@@ -4,7 +4,7 @@
 
 **Goal:** Ship an MVP static site with a filterable Valheim recipe table (crafting + cooking), reverse lookup, and per-recipe detail pages, published at `https://www.dobbo.ca/valheim/`.
 
-**Architecture:** Astro meta-framework (SSG, `base: '/valheim/'`) with a single SolidJS island for the interactive filterable table. Data lives as hand-editable YAML validated by Zod at build time, flattened into a single JSON artifact served to the client. Source repo `dobbo-ca/valheim-helper`; GitHub Action deploys built output to a subdirectory of `cdobbyn/cdobbyn.github.io` via a dedicated GitHub App for cross-org auth.
+**Architecture:** Astro meta-framework (SSG, `base: '/valheim/'`) with a single SolidJS island for the interactive filterable table. Data lives as hand-editable YAML validated by Zod at build time, flattened into a single JSON artifact served to the client. Source repo `dobbo-ca/web-valheim`; GitHub Action deploys built output to a subdirectory of `dobbo-ca/dobbo-ca.github.io` via a dedicated GitHub App installed on both repos.
 
 **Tech Stack:** Astro · SolidJS (`@astrojs/solid-js`) · TypeScript · Zod · uFuzzy · YAML · Vitest + `@solidjs/testing-library` · Playwright · pnpm · GitHub Actions
 
@@ -28,7 +28,7 @@ All tasks run from `/Users/christopherdobbyn/Documents/valheim/` (referred to as
 ## File Structure (target)
 
 ```
-valheim-helper/
+web-valheim/
 ├── .github/workflows/
 │   ├── ci.yml
 │   └── deploy.yml
@@ -1546,29 +1546,74 @@ git commit -m "feat(data): add getDataSet build-time loader"
 
 ## Phase 4: Theme and Layout
 
-### Task 9: Dark dashboard theme CSS
+### Task 9: Theme CSS (oklch, auto dark/light)
 
 **Files:**
 - Create: `<repo>/src/styles/theme.css`
+
+Uses the user-provided oklch palette (hue 264, neutral blue). Dark mode is
+the default; light mode activates automatically via
+`@media (prefers-color-scheme: light)`. Component styles reference only
+the semantic aliases (`--surface`, `--text-soft`, `--accent`, etc.), so the
+aliases are the only layer Phase 5 touches.
 
 - [ ] **Step 1: Write src/styles/theme.css**
 
 Create `<repo>/src/styles/theme.css`:
 
 ```css
+/* ===== Palette — dark (default) ===== */
 :root {
-  --bg: #14181d;
-  --surface: #1a1e24;
-  --surface-2: #1e242c;
-  --border: #2a2f38;
-  --border-soft: #242931;
-  --text: #d8d4c8;
-  --text-soft: #9a9688;
-  --muted: #7a7668;
-  --accent: #e8b87a;
-  --accent-bg: #3a2f22;
-  --accent-border: #5a4530;
-  --danger: #c96a5a;
+  --bg-dark: oklch(0.1 0.025 264);
+  --bg: oklch(0.15 0.025 264);
+  --bg-light: oklch(0.2 0.025 264);
+  --text: oklch(0.96 0.05 264);
+  --text-muted: oklch(0.76 0.05 264);
+  --highlight: oklch(0.5 0.05 264);
+  --border: oklch(0.4 0.05 264);
+  --border-muted: oklch(0.3 0.05 264);
+  --primary: oklch(0.76 0.1 264);
+  --secondary: oklch(0.76 0.1 84);
+  --danger: oklch(0.7 0.05 30);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
+}
+
+/* ===== Palette — light (auto via prefers-color-scheme) ===== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-dark: oklch(0.92 0.025 264);
+    --bg: oklch(0.96 0.025 264);
+    --bg-light: oklch(1 0.025 264);
+    --text: oklch(0.15 0.05 264);
+    --text-muted: oklch(0.4 0.05 264);
+    --highlight: oklch(1 0.05 264);
+    --border: oklch(0.6 0.05 264);
+    --border-muted: oklch(0.7 0.05 264);
+    --primary: oklch(0.4 0.1 264);
+    --secondary: oklch(0.4 0.1 84);
+    --danger: oklch(0.5 0.05 30);
+    --warning: oklch(0.5 0.05 100);
+    --success: oklch(0.5 0.05 160);
+    --info: oklch(0.5 0.05 260);
+  }
+}
+
+/* ===== Semantic aliases (used by component styles) =====
+ * These let the component CSS stay stable across palette changes.
+ * `color-mix` is resolved lazily per use site, so it picks up the
+ * current `--primary` under both dark and light modes automatically.
+ */
+:root {
+  --surface: var(--bg-light);       /* cards, table, filter bar */
+  --surface-sunken: var(--bg-dark); /* expanded rows, pressed states */
+  --border-soft: var(--border-muted);
+  --text-soft: var(--text-muted);
+  --muted: var(--text-muted);
+  --accent: var(--primary);
+  --accent-bg: color-mix(in oklch, var(--primary) 18%, transparent);
+  --accent-border: var(--primary);
 
   --radius: 6px;
   --radius-sm: 4px;
@@ -1662,7 +1707,7 @@ h3 {
 
 ```bash
 git add src/styles/theme.css
-git commit -m "feat(theme): add dark dashboard theme CSS"
+git commit -m "feat(theme): add oklch theme with auto dark/light mode"
 ```
 
 ---
@@ -2601,10 +2646,10 @@ Open `<repo>/src/styles/theme.css` and append (keep all existing content — thi
   font: inherit;
 }
 .recipe-row:hover {
-  background: var(--surface-2);
+  background: var(--surface-sunken);
 }
 .recipe-row--expanded {
-  background: var(--surface-2);
+  background: var(--surface-sunken);
 }
 .recipe-row__name {
   font-weight: 500;
@@ -2623,7 +2668,7 @@ Open `<repo>/src/styles/theme.css` and append (keep all existing content — thi
 }
 .recipe-row__detail {
   padding: 14px 18px 18px 34px;
-  background: var(--surface-2);
+  background: var(--surface-sunken);
   border-bottom: 1px solid var(--border-soft);
   font-size: 12px;
   color: var(--text);
@@ -2883,8 +2928,8 @@ import Base from '../layouts/Base.astro';
   <p>
     Recipe data is hand-curated in YAML inside the repository. If you spot
     an error or want to contribute, please open an issue or PR at
-    <a href="https://github.com/dobbo-ca/valheim-helper/issues">
-      dobbo-ca/valheim-helper
+    <a href="https://github.com/dobbo-ca/web-valheim/issues">
+      dobbo-ca/web-valheim
     </a>.
   </p>
 
@@ -3066,8 +3111,8 @@ Create `<repo>/docs/DEPLOY.md`:
 ```markdown
 # Deploy
 
-The site source lives in `dobbo-ca/valheim-helper` and publishes to
-`cdobbyn/cdobbyn.github.io` under the `valheim/` subdirectory. The Pages
+The site source lives in `dobbo-ca/web-valheim` and publishes to
+`dobbo-ca/dobbo-ca.github.io` under the `valheim/` subdirectory. The Pages
 repo serves it at `https://www.dobbo.ca/valheim/` via its existing CNAME.
 
 ## One-time GitHub App setup
@@ -3084,9 +3129,9 @@ repo serves it at `https://www.dobbo.ca/valheim/` via its existing CNAME.
 7. Create the App. Note the **App ID**.
 8. Generate and download a **private key** (`.pem` file). Keep it secret.
 9. Install the App on:
-   - `dobbo-ca/valheim-helper` — select only this repo
-   - `cdobbyn/cdobbyn.github.io` — select only this repo
-10. In `dobbo-ca/valheim-helper` → Settings → Secrets and variables → Actions:
+   - `dobbo-ca/web-valheim` — select only this repo
+   - `dobbo-ca/dobbo-ca.github.io` — select only this repo
+10. In `dobbo-ca/web-valheim` → Settings → Secrets and variables → Actions:
     - Add `DEPLOY_APP_ID` = the App ID
     - Add `DEPLOY_APP_PRIVATE_KEY` = the contents of the `.pem` file
 
@@ -3097,22 +3142,22 @@ repo serves it at `https://www.dobbo.ca/valheim/` via its existing CNAME.
 1. Build the site (`pnpm build` → `dist/`).
 2. Mint a short-lived installation token for the GitHub App
    (`actions/create-github-app-token@v1`).
-3. Checkout `cdobbyn/cdobbyn.github.io` using that token.
+3. Checkout `dobbo-ca/dobbo-ca.github.io` using that token.
 4. Remove its existing `valheim/` directory and copy `dist/*` into it.
 5. Commit and push. GitHub Pages picks up the change automatically.
 
 ## Rollback
 
-Revert the bad commit in `cdobbyn/cdobbyn.github.io` directly:
+Revert the bad commit in `dobbo-ca/dobbo-ca.github.io` directly:
 
 ```bash
-gh repo clone cdobbyn/cdobbyn.github.io
+gh repo clone dobbo-ca/dobbo-ca.github.io
 cd cdobbyn.github.io
 git revert <bad-sha>
 git push
 ```
 
-A fresh deploy from `dobbo-ca/valheim-helper` will overwrite the `valheim/`
+A fresh deploy from `dobbo-ca/web-valheim` will overwrite the `valheim/`
 directory again on the next push to `main`, so you may also need to revert
 the source change.
 ```
@@ -3130,7 +3175,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-valheim-helper
+  group: deploy-web-valheim
   cancel-in-progress: false
 
 jobs:
@@ -3160,13 +3205,13 @@ jobs:
         with:
           app-id: ${{ secrets.DEPLOY_APP_ID }}
           private-key: ${{ secrets.DEPLOY_APP_PRIVATE_KEY }}
-          owner: cdobbyn
-          repositories: cdobbyn.github.io
+          owner: dobbo-ca
+          repositories: dobbo-ca.github.io
 
       - name: Checkout Pages repo
         uses: actions/checkout@v4
         with:
-          repository: cdobbyn/cdobbyn.github.io
+          repository: dobbo-ca/dobbo-ca.github.io
           token: ${{ steps.app-token.outputs.token }}
           path: pages-repo
           fetch-depth: 1
@@ -3192,7 +3237,7 @@ jobs:
             exit 0
           fi
           SHA=$(git -C .. rev-parse --short HEAD)
-          git commit -m "deploy: valheim-helper @ ${SHA}"
+          git commit -m "deploy: web-valheim @ ${SHA}"
           git push origin HEAD
 ```
 
@@ -3251,7 +3296,7 @@ const dataDir = new URL('../src/data/', import.meta.url);
 
 async function fetchPage(url: string): Promise<string> {
   const res = await fetch(url, {
-    headers: { 'User-Agent': 'valheim-helper-seed/1.0 (+https://www.dobbo.ca/valheim/)' },
+    headers: { 'User-Agent': 'web-valheim-seed/1.0 (+https://www.dobbo.ca/valheim/)' },
   });
   if (!res.ok) throw new Error(`${url}: ${res.status}`);
   return res.text();
@@ -3383,13 +3428,13 @@ Open `http://localhost:4321/valheim/` and do a final manual smoke: filter, expan
 - [ ] **Step 1: Create the repo under dobbo-ca**
 
 ```bash
-gh repo create dobbo-ca/valheim-helper --public --description "Valheim helper: filterable recipe reference at www.dobbo.ca/valheim/" --source . --remote origin --push
+gh repo create dobbo-ca/web-valheim --public --description "Valheim helper: filterable recipe reference at www.dobbo.ca/valheim/" --source . --remote origin --push
 ```
 
 Expected: repo exists on GitHub and `main` is pushed. If the `dobbo-ca` org doesn't allow you to create repos directly, create it via the GitHub UI first and then:
 
 ```bash
-git remote add origin git@github.com:dobbo-ca/valheim-helper.git
+git remote add origin git@github.com:dobbo-ca/web-valheim.git
 git push -u origin main
 ```
 
@@ -3405,14 +3450,14 @@ Expected: `ci.yml` passes end-to-end.
 
 Follow every step in `docs/DEPLOY.md` → "One-time GitHub App setup". This requires clicking through the GitHub UI — the plan can't automate it.
 
-After the App is created and installed on both repos, and the two secrets are set on `dobbo-ca/valheim-helper`, trigger a deploy manually:
+After the App is created and installed on both repos, and the two secrets are set on `dobbo-ca/web-valheim`, trigger a deploy manually:
 
 ```bash
 gh workflow run deploy.yml
 gh run watch
 ```
 
-Expected: deploy workflow succeeds. Check `cdobbyn/cdobbyn.github.io` for a new `deploy: valheim-helper @ <sha>` commit adding/updating `valheim/`.
+Expected: deploy workflow succeeds. Check `dobbo-ca/dobbo-ca.github.io` for a new `deploy: web-valheim @ <sha>` commit adding/updating `valheim/`.
 
 - [ ] **Step 4: Verify live site**
 
@@ -3440,7 +3485,7 @@ Expected: `nothing to commit, working tree clean`.
 - [ ] `pnpm test` passes (schema, loader, filter, url-state, all three component suites)
 - [ ] `pnpm test:e2e` passes (6 smoke tests)
 - [ ] CI workflow is green on `main`
-- [ ] Deploy workflow pushes to `cdobbyn/cdobbyn.github.io/valheim/` via the dedicated GitHub App
+- [ ] Deploy workflow pushes to `dobbo-ca/dobbo-ca.github.io/valheim/` via the dedicated GitHub App
 
 ## Out of Scope (Explicit)
 
@@ -3477,5 +3522,5 @@ not MVP blockers.
    that maps the shortcuts to state updates and focus management. Defer
    until after the first deploy.
 
-Both deviations should be filed as issues on `dobbo-ca/valheim-helper`
+Both deviations should be filed as issues on `dobbo-ca/web-valheim`
 after Task 24.

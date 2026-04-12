@@ -1,0 +1,33 @@
+# Materials
+- { id: wood, name: Wood, category: material }
+- { id: fine-wood, name: Fine Wood, category: material }
+- { id: core-wood, name: Core Wood, category: material }
+- { id: stone, name: Stone, category: material }
+- { id: flint, name: Flint, category: material }
+- { id: copper, name: Copper, category: material }
+- { id: tin, name: Tin, category: material }
+- { id: bronze, name: Bronze, category: material }
+- { id: iron, name: Iron, category: material }
+- { id: silver, name: Silver, category: material }
+- { id: black-metal, name: Black Metal, category: material }
+- { id: leather-scraps, name: Leather Scraps, category: material }
+- { id: deer-hide, name: Deer Hide, category: material }
+- { id: troll-hide, name: Troll Hide, category: material }
+- { id: wolf-pelt, name: Wolf Pelt, category: material }
+- { id: lox-pelt, name: Lox Pelt, category: material }
+- { id: feathers, name: Feathers, category: material }
+- { id: deer-trophy, name: Deer Trophy, category: material }
+
+# Cooking ingredients
+- { id: raspberries, name: Raspberries, category: ingredient }
+- { id: blueberries, name: Blueberries, category: ingredient }
+- { id: cloudberries, name: Cloudberries, category: ingredient }
+- { id: honey, name: Honey, category: ingredient }
+- { id: mushroom, name: Mushroom, category: ingredient }
+- { id: yellow-mushroom, name: Yellow Mushroom, category: ingredient }
+- { id: carrot, name: Carrot, category: ingredient }
+- { id: turnip, name: Turnip, category: ingredient }
+- { id: boar-meat, name: Raw Meat, category: ingredient }
+- { id: deer-meat, name: Deer Meat, category: ingredient }
+- { id: neck-tail, name: Neck Tail, category: ingredient }
+- { id: fish-raw, name: Raw Fish, category: ingredient }

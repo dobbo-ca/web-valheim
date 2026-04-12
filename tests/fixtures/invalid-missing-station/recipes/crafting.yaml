@@ -1,0 +1,7 @@
+- id: ghost-hammer
+  name: Ghost Hammer
+  type: crafting
+  station: nonexistent-station
+  stationLevel: 1
+  ingredients:
+    - { itemId: iron, qty: 1 }

@@ -1,0 +1,77 @@
+# Minimal starter set — enough to exercise filters & reverse lookup.
+# Expand by hand (or via the scraper in Task 22) as needed.
+
+- id: stone-axe
+  name: Stone Axe
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 5 }
+    - { itemId: stone, qty: 4 }
+  tags: [axe, one-handed, tier-0]
+
+- id: flint-axe
+  name: Flint Axe
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 5 }
+    - { itemId: flint, qty: 6 }
+  tags: [axe, one-handed, tier-1]
+
+- id: bronze-sword
+  name: Bronze Sword
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: bronze, qty: 8 }
+    - { itemId: wood, qty: 2 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [sword, one-handed, tier-2]
+
+- id: iron-sword
+  name: Iron Sword
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: iron, qty: 60 }
+    - { itemId: wood, qty: 2 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [sword, one-handed, tier-3]
+  notes: Strong vs. skeletons and stonegolems.
+
+- id: iron-mace
+  name: Iron Mace
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: iron, qty: 20 }
+    - { itemId: wood, qty: 4 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [mace, one-handed, tier-3]
+
+- id: iron-buckler
+  name: Iron Buckler
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: iron, qty: 10 }
+    - { itemId: wood, qty: 8 }
+  tags: [shield, tier-3]
+
+- id: silver-sword
+  name: Silver Sword
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: silver, qty: 40 }
+    - { itemId: wood, qty: 4 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [sword, one-handed, tier-4]
