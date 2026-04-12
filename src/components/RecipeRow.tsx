@@ -46,9 +46,6 @@ export const RecipeRow: Component<Props> = (props) => {
             {formatIngredients(props.recipe, props.itemsById)}
           </span>
         </Show>
-        <span class="recipe-row__tags">
-          {(props.recipe.tags ?? []).join(' · ')}
-        </span>
       </button>
 
       <Show when={props.expanded}>

@@ -92,7 +92,6 @@ export const RecipeTable: Component<Props> = (props) => {
           <span role="columnheader">Station</span>
           <span role="columnheader">Lvl</span>
           <span role="columnheader">Ingredients</span>
-          <span role="columnheader">Tags</span>
         </div>
 
         <For each={filtered()} fallback={<div class="recipe-table__empty">No recipes match these filters.</div>}>

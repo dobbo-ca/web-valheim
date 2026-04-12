@@ -251,7 +251,7 @@ h3 {
 .recipe-table__header,
 .recipe-row {
   display: grid;
-  grid-template-columns: 2fr 1fr 60px 3fr 1fr;
+  grid-template-columns: 2fr 1fr 60px 3fr;
   gap: 12px;
   padding: 10px 14px;
   align-items: center;
@@ -291,10 +291,6 @@ h3 {
 .recipe-row__lvl,
 .recipe-row__ings {
   color: var(--text-soft);
-}
-.recipe-row__tags {
-  color: var(--muted);
-  font-size: 11px;
 }
 .recipe-row__detail {
   padding: 14px 18px 18px 34px;

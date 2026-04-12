@@ -42,3 +42,176 @@
     duration: 2000
     regen: 3
   tags: [food, hp, tier-3]
+
+# Cauldron level 2
+- id: boar-jerky
+  name: Boar Jerky
+  type: cooking
+  station: cauldron
+  stationLevel: 2
+  ingredients:
+    - { itemId: boar-meat, qty: 2 }
+    - { itemId: honey, qty: 1 }
+  food:
+    hp: 23
+    stamina: 21
+    duration: 2400
+    regen: 1
+  tags: [food, sustain, tier-2]
+
+- id: deer-stew
+  name: Deer Stew
+  type: cooking
+  station: cauldron
+  stationLevel: 2
+  ingredients:
+    - { itemId: deer-meat, qty: 1 }
+    - { itemId: carrot, qty: 3 }
+    - { itemId: mushroom, qty: 1 }
+  food:
+    hp: 45
+    stamina: 45
+    duration: 1500
+    regen: 3
+  tags: [food, balanced, tier-3]
+
+- id: minced-meat-sauce
+  name: Minced Meat Sauce
+  type: cooking
+  station: cauldron
+  stationLevel: 2
+  ingredients:
+    - { itemId: boar-meat, qty: 2 }
+    - { itemId: carrot, qty: 1 }
+    - { itemId: mushroom, qty: 1 }
+  food:
+    hp: 40
+    stamina: 40
+    duration: 1500
+    regen: 3
+  tags: [food, balanced, tier-2]
+
+# Cauldron level 3
+- id: sausages
+  name: Sausages
+  type: cooking
+  station: cauldron
+  stationLevel: 3
+  ingredients:
+    - { itemId: entrails, qty: 4 }
+    - { itemId: boar-meat, qty: 2 }
+    - { itemId: thistle, qty: 1 }
+  food:
+    hp: 60
+    stamina: 40
+    duration: 1500
+    regen: 3
+  tags: [food, hp, tier-3]
+
+- id: serpent-stew
+  name: Serpent Stew
+  type: cooking
+  station: cauldron
+  stationLevel: 3
+  ingredients:
+    - { itemId: serpent-meat, qty: 1 }
+    - { itemId: honey, qty: 2 }
+    - { itemId: mushroom, qty: 3 }
+  food:
+    hp: 80
+    stamina: 80
+    duration: 2400
+    regen: 4
+  tags: [food, balanced, tier-4]
+  notes: One of the best food items before Mistlands. Found by sailing at night.
+
+- id: onion-soup
+  name: Onion Soup
+  type: cooking
+  station: cauldron
+  stationLevel: 3
+  ingredients:
+    - { itemId: onion, qty: 3 }
+  food:
+    hp: 30
+    stamina: 70
+    duration: 1500
+    regen: 2
+  tags: [food, stamina, tier-3]
+
+- id: eyescream
+  name: Eyescream
+  type: cooking
+  station: cauldron
+  stationLevel: 3
+  ingredients:
+    - { itemId: freeze-gland, qty: 3 }
+    - { itemId: bloodbag, qty: 1 }
+  food:
+    hp: 53
+    stamina: 53
+    duration: 1500
+    regen: 3
+  tags: [food, balanced, tier-4]
+
+# Cauldron level 4
+- id: wolf-jerky
+  name: Wolf Jerky
+  type: cooking
+  station: cauldron
+  stationLevel: 4
+  ingredients:
+    - { itemId: wolf-meat, qty: 2 }
+    - { itemId: honey, qty: 1 }
+  food:
+    hp: 35
+    stamina: 35
+    duration: 2400
+    regen: 2
+  tags: [food, sustain, tier-4]
+
+- id: wolf-skewer
+  name: Wolf Skewer
+  type: cooking
+  station: cauldron
+  stationLevel: 4
+  ingredients:
+    - { itemId: wolf-meat, qty: 4 }
+    - { itemId: onion, qty: 3 }
+  food:
+    hp: 70
+    stamina: 23
+    duration: 2000
+    regen: 4
+  tags: [food, hp, tier-4]
+
+- id: blood-pudding
+  name: Blood Pudding
+  type: cooking
+  station: cauldron
+  stationLevel: 4
+  ingredients:
+    - { itemId: bloodbag, qty: 2 }
+    - { itemId: thistle, qty: 3 }
+    - { itemId: barley-flour, qty: 2 }
+  food:
+    hp: 90
+    stamina: 50
+    duration: 2000
+    regen: 4
+  tags: [food, hp, tier-5]
+
+- id: fish-wraps
+  name: Fish Wraps
+  type: cooking
+  station: cauldron
+  stationLevel: 4
+  ingredients:
+    - { itemId: fish-raw, qty: 2 }
+    - { itemId: barley-flour, qty: 4 }
+  food:
+    hp: 60
+    stamina: 90
+    duration: 2000
+    regen: 4
+  tags: [food, stamina, tier-5]

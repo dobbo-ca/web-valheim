@@ -1,5 +1,47 @@
-# Minimal starter set — enough to exercise filters & reverse lookup.
-# Expand by hand (or via the scraper in Task 22) as needed.
+# Crafting recipes — workbench, forge, and stonecutter.
+
+# ── Workbench ─────────────────────────────────────────────────────────────────
+
+# Tools
+- id: hammer
+  name: Hammer
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 3 }
+    - { itemId: stone, qty: 2 }
+  tags: [tool, tier-0]
+
+- id: hoe
+  name: Hoe
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 5 }
+    - { itemId: stone, qty: 2 }
+  tags: [tool, tier-0]
+
+# Weapons
+- id: club
+  name: Club
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 6 }
+  tags: [club, one-handed, tier-0]
+
+- id: crude-bow
+  name: Crude Bow
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 10 }
+    - { itemId: leather-scraps, qty: 8 }
+  tags: [bow, two-handed, tier-0]
 
 - id: stone-axe
   name: Stone Axe
@@ -21,6 +63,308 @@
     - { itemId: flint, qty: 6 }
   tags: [axe, one-handed, tier-1]
 
+- id: flint-knife
+  name: Flint Knife
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 2 }
+    - { itemId: flint, qty: 4 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [knife, one-handed, tier-1]
+
+- id: flint-spear
+  name: Flint Spear
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 5 }
+    - { itemId: flint, qty: 10 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [spear, one-handed, tier-1]
+
+- id: antler-pickaxe
+  name: Antler Pickaxe
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 10 }
+    - { itemId: hard-antler, qty: 1 }
+  tags: [pickaxe, tool, tier-1]
+
+- id: finewood-bow
+  name: Finewood Bow
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: fine-wood, qty: 10 }
+    - { itemId: core-wood, qty: 10 }
+    - { itemId: deer-hide, qty: 2 }
+  tags: [bow, two-handed, tier-2]
+
+- id: stagbreaker
+  name: Stagbreaker
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  ingredients:
+    - { itemId: core-wood, qty: 20 }
+    - { itemId: deer-trophy, qty: 5 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [sledge, two-handed, tier-1]
+
+# Armor
+- id: leather-helmet
+  name: Leather Helmet
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: deer-hide, qty: 6 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [helmet, armor, tier-1]
+
+- id: leather-tunic
+  name: Leather Tunic
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: deer-hide, qty: 8 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [chest, armor, tier-1]
+
+- id: leather-pants
+  name: Leather Pants
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: deer-hide, qty: 8 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [legs, armor, tier-1]
+
+- id: deer-hide-cape
+  name: Deer Hide Cape
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: deer-hide, qty: 4 }
+    - { itemId: leather-scraps, qty: 3 }
+  tags: [cape, armor, tier-1]
+
+- id: troll-leather-helmet
+  name: Troll Leather Helmet
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  ingredients:
+    - { itemId: troll-hide, qty: 5 }
+    - { itemId: bone-fragments, qty: 3 }
+  tags: [helmet, armor, tier-2]
+
+- id: troll-leather-tunic
+  name: Troll Leather Tunic
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  ingredients:
+    - { itemId: troll-hide, qty: 10 }
+    - { itemId: bone-fragments, qty: 4 }
+  tags: [chest, armor, tier-2]
+
+- id: troll-leather-pants
+  name: Troll Leather Pants
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  ingredients:
+    - { itemId: troll-hide, qty: 10 }
+    - { itemId: bone-fragments, qty: 4 }
+  tags: [legs, armor, tier-2]
+
+- id: troll-hide-cape
+  name: Troll Hide Cape
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  ingredients:
+    - { itemId: troll-hide, qty: 5 }
+    - { itemId: bone-fragments, qty: 3 }
+  tags: [cape, armor, tier-2]
+
+# Shields
+- id: wood-shield
+  name: Wood Shield
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 10 }
+    - { itemId: resin, qty: 4 }
+    - { itemId: leather-scraps, qty: 4 }
+  tags: [shield, tier-0]
+
+- id: wood-tower-shield
+  name: Wood Tower Shield
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 10 }
+    - { itemId: leather-scraps, qty: 4 }
+  tags: [shield, tower-shield, tier-0]
+
+- id: bone-tower-shield
+  name: Bone Tower Shield
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 10 }
+    - { itemId: bone-fragments, qty: 4 }
+    - { itemId: leather-scraps, qty: 4 }
+  tags: [shield, tower-shield, tier-1]
+
+# Arrows
+- id: wood-arrow
+  name: Wood Arrow
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 8 }
+  tags: [arrow, tier-0]
+
+- id: flinthead-arrow
+  name: Flinthead Arrow
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 8 }
+    - { itemId: flint, qty: 2 }
+    - { itemId: feathers, qty: 2 }
+  tags: [arrow, tier-1]
+
+- id: fire-arrow
+  name: Fire Arrow
+  type: crafting
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 8 }
+    - { itemId: resin, qty: 8 }
+    - { itemId: feathers, qty: 2 }
+  tags: [arrow, elemental, tier-1]
+
+- id: obsidian-arrow
+  name: Obsidian Arrow
+  type: crafting
+  station: workbench
+  stationLevel: 3
+  ingredients:
+    - { itemId: wood, qty: 8 }
+    - { itemId: obsidian, qty: 4 }
+    - { itemId: feathers, qty: 2 }
+  tags: [arrow, tier-4]
+
+- id: poison-arrow
+  name: Poison Arrow
+  type: crafting
+  station: workbench
+  stationLevel: 3
+  ingredients:
+    - { itemId: wood, qty: 8 }
+    - { itemId: obsidian, qty: 4 }
+    - { itemId: feathers, qty: 2 }
+    - { itemId: ooze, qty: 2 }
+  tags: [arrow, elemental, tier-4]
+
+- id: frost-arrow
+  name: Frost Arrow
+  type: crafting
+  station: workbench
+  stationLevel: 3
+  ingredients:
+    - { itemId: wood, qty: 8 }
+    - { itemId: obsidian, qty: 4 }
+    - { itemId: feathers, qty: 2 }
+    - { itemId: freeze-gland, qty: 1 }
+  tags: [arrow, elemental, tier-4]
+
+# ── Forge ──────────────────────────────────────────────────────────────────────
+
+# Bronze tier (forge level 1)
+- id: copper-knife
+  name: Copper Knife
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 2 }
+    - { itemId: copper, qty: 8 }
+  tags: [knife, one-handed, tier-1]
+
+- id: bronze-axe
+  name: Bronze Axe
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 4 }
+    - { itemId: bronze, qty: 8 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [axe, one-handed, tier-2]
+
+- id: bronze-pickaxe
+  name: Bronze Pickaxe
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: core-wood, qty: 3 }
+    - { itemId: bronze, qty: 10 }
+  tags: [pickaxe, tool, tier-2]
+
+- id: bronze-mace
+  name: Bronze Mace
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 4 }
+    - { itemId: bronze, qty: 8 }
+    - { itemId: leather-scraps, qty: 3 }
+  tags: [mace, one-handed, tier-2]
+
+- id: bronze-atgeir
+  name: Bronze Atgeir
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 10 }
+    - { itemId: bronze, qty: 8 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [atgeir, two-handed, tier-2]
+
+- id: bronze-spear
+  name: Bronze Spear
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 5 }
+    - { itemId: bronze, qty: 6 }
+    - { itemId: deer-hide, qty: 2 }
+  tags: [spear, one-handed, tier-2]
+
 - id: bronze-sword
   name: Bronze Sword
   type: crafting
@@ -31,6 +375,70 @@
     - { itemId: wood, qty: 2 }
     - { itemId: leather-scraps, qty: 2 }
   tags: [sword, one-handed, tier-2]
+
+- id: bronze-buckler
+  name: Bronze Buckler
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: bronze, qty: 10 }
+    - { itemId: wood, qty: 4 }
+  tags: [shield, tier-2]
+
+- id: bronze-helmet
+  name: Bronze Helmet
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: bronze, qty: 5 }
+    - { itemId: deer-hide, qty: 2 }
+  tags: [helmet, armor, tier-2]
+
+- id: bronze-plate-cuirass
+  name: Bronze Plate Cuirass
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: bronze, qty: 10 }
+    - { itemId: deer-hide, qty: 2 }
+  tags: [chest, armor, tier-2]
+
+- id: bronze-plate-leggings
+  name: Bronze Plate Leggings
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: bronze, qty: 5 }
+    - { itemId: deer-hide, qty: 2 }
+  tags: [legs, armor, tier-2]
+
+- id: bronzehead-arrow
+  name: Bronzehead Arrow
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 8 }
+    - { itemId: bronze, qty: 1 }
+    - { itemId: feathers, qty: 2 }
+  tags: [arrow, tier-2]
+
+# Iron tier (forge level 2)
+- id: huntsman-bow
+  name: Huntsman Bow
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: fine-wood, qty: 10 }
+    - { itemId: iron, qty: 20 }
+    - { itemId: feathers, qty: 10 }
+    - { itemId: deer-hide, qty: 2 }
+  tags: [bow, two-handed, tier-3]
 
 - id: iron-sword
   name: Iron Sword
@@ -55,6 +463,51 @@
     - { itemId: leather-scraps, qty: 2 }
   tags: [mace, one-handed, tier-3]
 
+- id: iron-atgeir
+  name: Iron Atgeir
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: wood, qty: 10 }
+    - { itemId: iron, qty: 30 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [atgeir, two-handed, tier-3]
+
+- id: iron-axe
+  name: Iron Axe
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: wood, qty: 4 }
+    - { itemId: iron, qty: 20 }
+    - { itemId: leather-scraps, qty: 2 }
+  tags: [axe, one-handed, tier-3]
+
+- id: iron-pickaxe
+  name: Iron Pickaxe
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: core-wood, qty: 3 }
+    - { itemId: iron, qty: 20 }
+  tags: [pickaxe, tool, tier-3]
+
+- id: iron-sledge
+  name: Iron Sledge
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: ancient-bark, qty: 10 }
+    - { itemId: iron, qty: 30 }
+    - { itemId: ymir-flesh, qty: 4 }
+    - { itemId: draugr-elite-trophy, qty: 1 }
+  tags: [sledge, two-handed, tier-3]
+  notes: Massive AOE damage; knocks back groups of enemies.
+
 - id: iron-buckler
   name: Iron Buckler
   type: crafting
@@ -62,8 +515,318 @@
   stationLevel: 2
   ingredients:
     - { itemId: iron, qty: 10 }
-    - { itemId: wood, qty: 8 }
+    - { itemId: ancient-bark, qty: 4 }
   tags: [shield, tier-3]
+
+- id: iron-tower-shield
+  name: Iron Tower Shield
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: fine-wood, qty: 15 }
+    - { itemId: iron, qty: 10 }
+  tags: [shield, tower-shield, tier-3]
+
+- id: banded-shield
+  name: Banded Shield
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: fine-wood, qty: 10 }
+    - { itemId: iron, qty: 8 }
+  tags: [shield, tier-3]
+
+- id: iron-helmet
+  name: Iron Helmet
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: iron, qty: 20 }
+    - { itemId: deer-hide, qty: 2 }
+  tags: [helmet, armor, tier-3]
+
+- id: iron-scale-mail
+  name: Iron Scale Mail
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: iron, qty: 20 }
+    - { itemId: deer-hide, qty: 2 }
+  tags: [chest, armor, tier-3]
+
+- id: iron-greaves
+  name: Iron Greaves
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: iron, qty: 20 }
+    - { itemId: deer-hide, qty: 2 }
+  tags: [legs, armor, tier-3]
+
+- id: ironhead-arrow
+  name: Ironhead Arrow
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 8 }
+    - { itemId: iron, qty: 1 }
+    - { itemId: feathers, qty: 2 }
+  tags: [arrow, tier-3]
+
+# Silver/Mountain tier (forge level 3)
+- id: ancient-bark-spear
+  name: Ancient Bark Spear
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ancient-bark, qty: 10 }
+    - { itemId: iron, qty: 10 }
+    - { itemId: troll-hide, qty: 4 }
+  tags: [spear, one-handed, tier-3]
+
+- id: draugr-fang
+  name: Draugr Fang
+  type: crafting
+  station: forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: ancient-bark, qty: 10 }
+    - { itemId: silver, qty: 20 }
+    - { itemId: deer-hide, qty: 2 }
+    - { itemId: guck, qty: 10 }
+  tags: [bow, two-handed, tier-4]
+  notes: Shoots poison arrows; pairs well with Poison arrows for stacking DoT.
+
+- id: frostner
+  name: Frostner
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ancient-bark, qty: 10 }
+    - { itemId: silver, qty: 30 }
+    - { itemId: ymir-flesh, qty: 5 }
+    - { itemId: freeze-gland, qty: 5 }
+  tags: [mace, one-handed, tier-4]
+  notes: Deals frost and spirit damage; slows enemies. Strong vs. undead.
+
+- id: fang-spear
+  name: Fang Spear
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ancient-bark, qty: 10 }
+    - { itemId: wolf-fang, qty: 4 }
+    - { itemId: leather-scraps, qty: 2 }
+    - { itemId: silver, qty: 2 }
+  tags: [spear, one-handed, tier-4]
+
+- id: silver-knife
+  name: Silver Knife
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: wood, qty: 2 }
+    - { itemId: silver, qty: 10 }
+    - { itemId: leather-scraps, qty: 3 }
+    - { itemId: iron, qty: 2 }
+  tags: [knife, one-handed, tier-4]
+
+- id: crystal-battleaxe
+  name: Crystal Battleaxe
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ancient-bark, qty: 40 }
+    - { itemId: silver, qty: 30 }
+    - { itemId: crystal, qty: 10 }
+  tags: [battleaxe, two-handed, tier-4]
+
+- id: silver-shield
+  name: Silver Shield
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: fine-wood, qty: 10 }
+    - { itemId: silver, qty: 8 }
+  tags: [shield, tier-4]
+
+- id: serpent-scale-shield
+  name: Serpent Scale Shield
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: fine-wood, qty: 10 }
+    - { itemId: iron, qty: 4 }
+    - { itemId: serpent-scale, qty: 8 }
+  tags: [shield, tier-4]
+  notes: High block power; excellent vs. staggered enemies.
+
+- id: wolf-armor-chest
+  name: Wolf Armor Chest
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: silver, qty: 20 }
+    - { itemId: wolf-pelt, qty: 5 }
+    - { itemId: chain, qty: 1 }
+  tags: [chest, armor, tier-4]
+
+- id: wolf-armor-legs
+  name: Wolf Armor Legs
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: silver, qty: 10 }
+    - { itemId: wolf-pelt, qty: 4 }
+    - { itemId: chain, qty: 1 }
+  tags: [legs, armor, tier-4]
+
+- id: drake-helmet
+  name: Drake Helmet
+  type: crafting
+  station: forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: silver, qty: 20 }
+    - { itemId: deer-hide, qty: 2 }
+    - { itemId: drake-trophy, qty: 1 }
+  tags: [helmet, armor, tier-4]
+
+- id: silver-arrow
+  name: Silver Arrow
+  type: crafting
+  station: forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 8 }
+    - { itemId: silver, qty: 1 }
+    - { itemId: feathers, qty: 2 }
+  tags: [arrow, tier-4]
+
+# Plains tier (forge level 4)
+- id: black-metal-sword
+  name: Black Metal Sword
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: fine-wood, qty: 2 }
+    - { itemId: black-metal, qty: 20 }
+    - { itemId: linen-thread, qty: 5 }
+  tags: [sword, one-handed, tier-5]
+
+- id: black-metal-axe
+  name: Black Metal Axe
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: fine-wood, qty: 6 }
+    - { itemId: black-metal, qty: 20 }
+    - { itemId: linen-thread, qty: 5 }
+  tags: [axe, one-handed, tier-5]
+
+- id: black-metal-atgeir
+  name: Black Metal Atgeir
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: fine-wood, qty: 10 }
+    - { itemId: black-metal, qty: 30 }
+    - { itemId: linen-thread, qty: 5 }
+  tags: [atgeir, two-handed, tier-5]
+
+- id: black-metal-knife
+  name: Black Metal Knife
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: fine-wood, qty: 4 }
+    - { itemId: black-metal, qty: 10 }
+    - { itemId: linen-thread, qty: 5 }
+  tags: [knife, one-handed, tier-5]
+
+- id: porcupine
+  name: Porcupine
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: fine-wood, qty: 5 }
+    - { itemId: iron, qty: 20 }
+    - { itemId: needle, qty: 5 }
+    - { itemId: linen-thread, qty: 10 }
+  tags: [mace, one-handed, tier-5]
+  notes: Deals pierce and blunt damage; one of the strongest one-handed weapons.
+
+- id: black-metal-shield
+  name: Black Metal Shield
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: fine-wood, qty: 10 }
+    - { itemId: black-metal, qty: 8 }
+    - { itemId: chain, qty: 5 }
+  tags: [shield, tier-5]
+
+- id: black-metal-tower-shield
+  name: Black Metal Tower Shield
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: fine-wood, qty: 15 }
+    - { itemId: black-metal, qty: 10 }
+    - { itemId: chain, qty: 7 }
+  tags: [shield, tower-shield, tier-5]
+
+- id: padded-helmet
+  name: Padded Helmet
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: linen-thread, qty: 10 }
+    - { itemId: iron, qty: 5 }
+  tags: [helmet, armor, tier-5]
+
+- id: padded-cuirass
+  name: Padded Cuirass
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: linen-thread, qty: 20 }
+    - { itemId: iron, qty: 10 }
+  tags: [chest, armor, tier-5]
+
+- id: padded-greaves
+  name: Padded Greaves
+  type: crafting
+  station: forge
+  stationLevel: 4
+  ingredients:
+    - { itemId: linen-thread, qty: 10 }
+    - { itemId: iron, qty: 10 }
+  tags: [legs, armor, tier-5]
 
 - id: silver-sword
   name: Silver Sword
