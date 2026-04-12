@@ -16,6 +16,24 @@
   --info: oklch(0.7 0.05 260);
 }
 
+/* ===== Palette — dark (forced via toggle) ===== */
+:root[data-theme="dark"] {
+  --bg-dark: oklch(0.1 0.025 264);
+  --bg: oklch(0.15 0.025 264);
+  --bg-light: oklch(0.2 0.025 264);
+  --text: oklch(0.96 0.05 264);
+  --text-muted: oklch(0.76 0.05 264);
+  --highlight: oklch(0.5 0.05 264);
+  --border: oklch(0.4 0.05 264);
+  --border-muted: oklch(0.3 0.05 264);
+  --primary: oklch(0.76 0.1 264);
+  --secondary: oklch(0.76 0.1 84);
+  --danger: oklch(0.7 0.05 30);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
+}
+
 /* ===== Palette — light (auto via prefers-color-scheme) ===== */
 @media (prefers-color-scheme: light) {
   :root {
@@ -34,6 +52,24 @@
     --success: oklch(0.5 0.05 160);
     --info: oklch(0.5 0.05 260);
   }
+}
+
+/* ===== Palette — light (forced via toggle) ===== */
+:root[data-theme="light"] {
+  --bg-dark: oklch(0.92 0.025 264);
+  --bg: oklch(0.96 0.025 264);
+  --bg-light: oklch(1 0.025 264);
+  --text: oklch(0.15 0.05 264);
+  --text-muted: oklch(0.4 0.05 264);
+  --highlight: oklch(1 0.05 264);
+  --border: oklch(0.6 0.05 264);
+  --border-muted: oklch(0.7 0.05 264);
+  --primary: oklch(0.4 0.1 264);
+  --secondary: oklch(0.4 0.1 84);
+  --danger: oklch(0.5 0.05 30);
+  --warning: oklch(0.5 0.05 100);
+  --success: oklch(0.5 0.05 160);
+  --info: oklch(0.5 0.05 260);
 }
 
 /* ===== Semantic aliases (used by component styles) =====
