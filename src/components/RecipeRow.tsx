@@ -55,6 +55,9 @@ export const RecipeRow: Component<Props> = (props) => {
               />
             </Show>
             {props.recipe.name}
+            <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
+              <span class="recipe-row__yield">×{props.recipe.yields!.qty}</span>
+            </Show>
           </span>
           <span class="recipe-row__station">
             {props.stationsById.get(props.recipe.station)?.name ?? props.recipe.station}
@@ -94,6 +97,13 @@ export const RecipeRow: Component<Props> = (props) => {
               </For>
             </div>
           </div>
+
+          <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
+            <div class="recipe-row__section">
+              <span class="label">Yields</span>
+              <span>×{props.recipe.yields!.qty} per craft</span>
+            </div>
+          </Show>
 
           <Show when={props.recipe.food}>
             {(food) => (
