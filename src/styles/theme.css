@@ -786,31 +786,55 @@ h3 {
 
 /* ===== Theme toggle ===== */
 .theme-toggle {
-  display: flex;
-  background: var(--surface-sunken);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
+  position: relative;
   margin-left: auto;
 }
-.theme-toggle__btn {
+.theme-toggle__trigger {
   background: transparent;
-  border: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   color: var(--text-soft);
   padding: 6px 10px;
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
+  line-height: 1;
+}
+.theme-toggle__trigger:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.theme-toggle__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px 0;
+  min-width: 120px;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.theme-toggle__option {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--text-soft);
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
   white-space: nowrap;
 }
-.theme-toggle__btn:hover {
+.theme-toggle__option:hover {
+  background: var(--surface-sunken);
   color: var(--text);
 }
-.theme-toggle__btn--active {
-  background: var(--accent);
-  color: var(--bg);
+.theme-toggle__option--active {
+  color: var(--accent);
   font-weight: 600;
 }
