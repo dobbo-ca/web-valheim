@@ -224,3 +224,54 @@ export function getForecast(startDay: number, biome: Biome, numDays: number): Da
 
   return forecasts;
 }
+
+// ---------------------------------------------------------------------------
+// Icon and label helpers
+// ---------------------------------------------------------------------------
+
+/** Map a weather type to its icon filename (without extension). */
+export function getWeatherIcon(weather: WeatherType): string {
+  switch (weather) {
+    case 'Clear':
+    case 'Heath clear':
+    case 'Twilight Clear':
+      return 'clear';
+    case 'Rain':
+    case 'LightRain':
+    case 'SwampRain':
+      return 'rain';
+    case 'ThunderStorm':
+      return 'thunderstorm';
+    case 'Misty':
+    case 'DeepForest Mist':
+      return 'misty';
+    case 'Snow':
+    case 'Twilight Snow':
+      return 'snow';
+    case 'SnowStorm':
+    case 'Twilight Snowstorm':
+      return 'snowstorm';
+    case 'Ashrain':
+      return 'ashrain';
+    case 'Darklands dark':
+      return 'dark';
+  }
+}
+
+/** Human-friendly display name for a weather type. */
+export function getWeatherLabel(weather: WeatherType): string {
+  switch (weather) {
+    case 'DeepForest Mist': return 'Forest Mist';
+    case 'SwampRain': return 'Swamp Rain';
+    case 'Heath clear': return 'Clear';
+    case 'Twilight Snowstorm': return 'Snowstorm';
+    case 'Twilight Snow': return 'Snow';
+    case 'Twilight Clear': return 'Clear';
+    case 'Darklands dark': return 'Darkness';
+    case 'Ashrain': return 'Ash Rain';
+    case 'SnowStorm': return 'Snowstorm';
+    case 'LightRain': return 'Light Rain';
+    case 'ThunderStorm': return 'Thunderstorm';
+    default: return weather;
+  }
+}
