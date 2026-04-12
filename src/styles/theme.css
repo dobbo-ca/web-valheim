@@ -182,6 +182,9 @@ h3 {
   flex-wrap: wrap;
   margin-bottom: 10px;
 }
+.filter-bar__row {
+  display: contents;
+}
 .filter-bar__chips {
   display: flex;
   background: var(--surface);
@@ -435,21 +438,33 @@ h3 {
 }
 @media (max-width: 768px) {
   .filter-bar {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 6px;
   }
   .filter-bar__search {
     min-width: unset;
-    flex: 1 1 100%;
+    width: 100%;
     order: -1;
   }
   .filter-bar__level {
     display: none;
   }
+  .filter-bar__row {
+    display: flex;
+    gap: 6px;
+  }
+  .filter-bar__chips {
+    flex: 1;
+  }
   .filter-chip {
-    padding: 6px 10px;
+    flex: 1;
+    padding: 6px 0;
     font-size: 12px;
+    text-align: center;
   }
   .filter-bar select {
+    flex: 1;
     padding: 6px 8px;
     font-size: 12px;
   }
