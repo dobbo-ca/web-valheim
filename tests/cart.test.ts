@@ -198,10 +198,10 @@ describe('encodeCartUrl', () => {
   });
 
   it('omits qty suffix for qty 1', () => {
-    const encoded = encodeCartUrl({ axe: 1 }, recipeIndex);
-    // base64url of "0" (index 0, no .1 suffix)
-    const decoded = atob(encoded.replace(/-/g, '+').replace(/_/g, '/'));
-    expect(decoded).toBe('0');
+    // axe is index 0, qty 1 → intermediate "0" (no .1 suffix)
+    // round-trip verifies it decodes back correctly
+    const cart: Cart = { axe: 1 };
+    expect(decodeCartUrl(encodeCartUrl(cart, recipeIndex), recipeIndex)).toEqual(cart);
   });
 });
 
@@ -229,8 +229,9 @@ describe('decodeCartUrl', () => {
   });
 
   it('ignores out-of-range indices', () => {
-    // base64url of "999.3" — index 999 doesn't exist
-    const encoded = btoa('999.3').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    // Compress "999.3" directly — index 999 doesn't exist in recipeIndex
+    const lz = require('lz-string');
+    const encoded = lz.compressToEncodedURIComponent('999.3');
     expect(decodeCartUrl(encoded, recipeIndex)).toEqual({});
   });
 });

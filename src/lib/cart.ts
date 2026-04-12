@@ -1,3 +1,5 @@
+import lzString from 'lz-string';
+const { compressToEncodedURIComponent, decompressFromEncodedURIComponent } = lzString;
 import type { Item, Recipe } from './types';
 
 // ---------------------------------------------------------------------------
@@ -79,15 +81,15 @@ export function aggregateGroceryList(
 }
 
 // ---------------------------------------------------------------------------
-// Cart URL encoding (integer index + base64url)
+// Cart URL encoding (integer index + lz-string)
 // ---------------------------------------------------------------------------
 
 /**
- * Encode cart as a compact base64url string.
+ * Encode cart as a compact lz-string compressed URL component.
  *
  * Intermediate format: "index.qty,index.qty,..." where index is the recipe's
  * position in the sorted recipeIndex array. Qty of 1 omits the ".1" suffix.
- * The intermediate string is then base64url-encoded to keep URLs opaque.
+ * The intermediate string is then compressed with lz-string for opaque URLs.
  *
  * @param cart       The cart store (recipeId → qty)
  * @param recipeIndex Sorted array of all recipe IDs (deterministic ordering)
@@ -103,23 +105,20 @@ export function encodeCartUrl(cart: Cart, recipeIndex: string[]): string {
     parts.push(qty === 1 ? String(idx) : `${idx}.${qty}`);
   }
   if (parts.length === 0) return '';
-  return btoa(parts.join(','))
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/, '');
+  return compressToEncodedURIComponent(parts.join(','));
 }
 
 /**
- * Decode a base64url cart string back to a Cart.
+ * Decode an lz-string compressed cart string back to a Cart.
  *
- * @param encoded     The base64url string from the URL
+ * @param encoded     The compressed string from the URL
  * @param recipeIndex Sorted array of all recipe IDs (same order used to encode)
  */
 export function decodeCartUrl(encoded: string, recipeIndex: string[]): Cart {
   try {
     if (!encoded) return {};
-    const padded = encoded.replace(/-/g, '+').replace(/_/g, '/');
-    const raw = atob(padded);
+    const raw = decompressFromEncodedURIComponent(encoded);
+    if (!raw) return {};
     const cart: Cart = {};
     for (const part of raw.split(',')) {
       const trimmed = part.trim();
