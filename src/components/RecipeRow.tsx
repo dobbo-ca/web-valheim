@@ -64,9 +64,13 @@ export const RecipeRow: Component<Props> = (props) => {
               const station = props.stationsById.get(props.recipe.station);
               const stationName = station?.name ?? props.recipe.station;
               const upgrade = station?.upgrades.find((u) => u.level === props.recipe.stationLevel);
-              return upgrade?.name
-                ? <>{stationName}<span class="recipe-row__station-upgrade"> — {upgrade.name}</span></>
-                : `${stationName} Lv ${props.recipe.stationLevel}`;
+              if (upgrade?.name) {
+                return <>{stationName}<span class="recipe-row__station-upgrade"> — {upgrade.name}</span></>;
+              }
+              if (props.recipe.stationLevel > 1) {
+                return <>{stationName}<span class="recipe-row__station-upgrade"> Lv {props.recipe.stationLevel}</span></>;
+              }
+              return stationName;
             })()}
           </span>
           <Show when={!props.expanded}>
