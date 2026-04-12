@@ -103,6 +103,9 @@
 - { id: fiddlehead, name: Fiddlehead, category: ingredient, stackSize: 50 }
 - { id: vineberry-cluster, name: Vineberry Cluster, category: ingredient, stackSize: 50 }
 
+# Mistlands cooking ingredients (additions)
+- { id: egg, name: Egg, category: ingredient, stackSize: 20 }
+
 # Ashlands cooking ingredients
 - { id: charred-meat, name: Charred Meat, category: ingredient, stackSize: 20 }
 
