@@ -77,6 +77,17 @@ const base = import.meta.env.BASE_URL;
     </section>
   )}
 
+  {recipe.mead && (
+    <section class="detail-section">
+      <h2>Brewing</h2>
+      <p>
+        Craft <strong>{recipe.mead.baseName}</strong> at a Cauldron, then place in a
+        <strong> Fermenter</strong> for {Math.round(recipe.mead.fermenterDuration / 1200)} in-game days.
+        {recipe.yields && ` Produces ×${recipe.yields.qty}.`}
+      </p>
+    </section>
+  )}
+
   {usedIn.length > 0 && (
     <section class="detail-section">
       <h2>Used as ingredient in</h2>

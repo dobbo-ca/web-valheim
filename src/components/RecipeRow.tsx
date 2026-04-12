@@ -142,6 +142,20 @@ export const RecipeRow: Component<Props> = (props) => {
             </div>
           </Show>
 
+          <Show when={props.recipe.mead}>
+            {(mead) => (
+              <div class="recipe-row__section recipe-row__mead-info">
+                <span class="label">Brewing</span>
+                <p>
+                  Craft <strong>{mead().baseName}</strong> at a Cauldron, then place in a{' '}
+                  <strong>Fermenter</strong> for{' '}
+                  {Math.round(mead().fermenterDuration / 1200)} in-game days.
+                  {props.recipe.yields && ` Produces ×${props.recipe.yields.qty}.`}
+                </p>
+              </div>
+            )}
+          </Show>
+
           <a
             class="recipe-row__permalink"
             href={`${props.baseHref}recipes/${props.recipe.id}/`}
