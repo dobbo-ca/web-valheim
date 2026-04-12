@@ -66,6 +66,7 @@ const base = import.meta.env.BASE_URL;
         <li>Stamina: {recipe.food.stamina}</li>
         <li>Regen: {recipe.food.regen}</li>
         <li>Duration: {Math.round(recipe.food.duration / 60)} min</li>
+        {recipe.food.eitr && <li>Eitr: {recipe.food.eitr}</li>}
       </ul>
     </section>
   )}
@@ -77,14 +78,10 @@ const base = import.meta.env.BASE_URL;
     </section>
   )}
 
-  {recipe.mead && (
+  {recipe.secondaryStep && (
     <section class="detail-section">
-      <h2>Brewing</h2>
-      <p>
-        Craft <strong>{recipe.mead.baseName}</strong> at a Cauldron, then place in a
-        <strong> Fermenter</strong> for {Math.round(recipe.mead.fermenterDuration / 1200)} in-game days.
-        {recipe.yields && ` Produces ×${recipe.yields.qty}.`}
-      </p>
+      <h2>Next step</h2>
+      <p>{recipe.secondaryStep.description}</p>
     </section>
   )}
 

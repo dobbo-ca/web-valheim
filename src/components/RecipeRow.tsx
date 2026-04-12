@@ -131,6 +131,9 @@ export const RecipeRow: Component<Props> = (props) => {
                   <span>Stam {food().stamina}</span>
                   <span>Regen {food().regen}</span>
                   <span>Duration {Math.round(food().duration / 60)}m</span>
+                  <Show when={food().eitr}>
+                    <span>Eitr {food().eitr}</span>
+                  </Show>
                 </div>
               </div>
             )}
@@ -142,16 +145,11 @@ export const RecipeRow: Component<Props> = (props) => {
             </div>
           </Show>
 
-          <Show when={props.recipe.mead}>
-            {(mead) => (
-              <div class="recipe-row__section recipe-row__mead-info">
-                <span class="label">Brewing</span>
-                <p>
-                  Craft <strong>{mead().baseName}</strong> at a Cauldron, then place in a{' '}
-                  <strong>Fermenter</strong> for{' '}
-                  {Math.round(mead().fermenterDuration / 1200)} in-game days.
-                  {props.recipe.yields && ` Produces ×${props.recipe.yields.qty}.`}
-                </p>
+          <Show when={props.recipe.secondaryStep}>
+            {(step) => (
+              <div class="recipe-row__section">
+                <span class="label">Next step</span>
+                <p>{step().description}</p>
               </div>
             )}
           </Show>
