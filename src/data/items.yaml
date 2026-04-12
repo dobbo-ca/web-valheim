@@ -123,7 +123,6 @@
 - { id: major-healing-mead, name: Major Healing Mead, category: food, stackSize: 10 }
 - { id: minor-stamina-mead, name: Minor Stamina Mead, category: food, stackSize: 10 }
 - { id: medium-stamina-mead, name: Medium Stamina Mead, category: food, stackSize: 10 }
-- { id: major-stamina-mead, name: Major Stamina Mead, category: food, stackSize: 10 }
 - { id: poison-resistance-mead, name: Poison Resistance Mead, category: food, stackSize: 10 }
 - { id: frost-resistance-mead, name: Frost Resistance Mead, category: food, stackSize: 10 }
 - { id: fire-resistance-barley-wine, name: Fire Resistance Barley Wine, category: food, stackSize: 10 }
