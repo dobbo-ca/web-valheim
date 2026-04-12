@@ -91,6 +91,32 @@
 # Ashlands cooking ingredients
 - { id: charred-meat, name: Charred Meat, category: ingredient }
 
+# Crafted projectiles
+- { id: wood-arrow, name: Wood Arrow, category: weapon, stackSize: 100 }
+- { id: flinthead-arrow, name: Flinthead Arrow, category: weapon, stackSize: 100 }
+- { id: fire-arrow, name: Fire Arrow, category: weapon, stackSize: 100 }
+- { id: bronzehead-arrow, name: Bronzehead Arrow, category: weapon, stackSize: 100 }
+- { id: ironhead-arrow, name: Ironhead Arrow, category: weapon, stackSize: 100 }
+- { id: silver-arrow, name: Silver Arrow, category: weapon, stackSize: 100 }
+- { id: obsidian-arrow, name: Obsidian Arrow, category: weapon, stackSize: 100 }
+- { id: poison-arrow, name: Poison Arrow, category: weapon, stackSize: 100 }
+- { id: frost-arrow, name: Frost Arrow, category: weapon, stackSize: 100 }
+- { id: carapace-arrow, name: Carapace Arrow, category: weapon, stackSize: 100 }
+- { id: charred-arrow, name: Charred Arrow, category: weapon, stackSize: 100 }
+- { id: iron-bolt, name: Iron Bolt, category: weapon, stackSize: 100 }
+- { id: bone-bolt, name: Bone Bolt, category: weapon, stackSize: 100 }
+- { id: black-metal-bolt, name: Black Metal Bolt, category: weapon, stackSize: 100 }
+- { id: carapace-bolt, name: Carapace Bolt, category: weapon, stackSize: 100 }
+- { id: charred-bolt, name: Charred Bolt, category: weapon, stackSize: 100 }
+- { id: ballista-bolt, name: Ballista Bolt, category: weapon, stackSize: 50 }
+
+# Crafted food items (for yields cross-reference)
+- { id: queens-jam, name: Queens Jam, category: food, stackSize: 10 }
+- { id: boar-jerky, name: Boar Jerky, category: food, stackSize: 10 }
+- { id: sausages, name: Sausages, category: food, stackSize: 10 }
+- { id: wolf-jerky, name: Wolf Jerky, category: food, stackSize: 10 }
+- { id: salad, name: Salad, category: food, stackSize: 10 }
+
 # Mead products
 - { id: minor-healing-mead, name: Minor Healing Mead, category: food, stackSize: 10 }
 - { id: medium-healing-mead, name: Medium Healing Mead, category: food, stackSize: 10 }

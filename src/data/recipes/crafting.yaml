@@ -239,6 +239,7 @@
   stationLevel: 1
   ingredients:
     - { itemId: wood, qty: 8 }
+  yields: { itemId: wood-arrow, qty: 20 }
   tags: [arrow, tier-0]
 
 - id: flinthead-arrow
@@ -250,6 +251,7 @@
     - { itemId: wood, qty: 8 }
     - { itemId: flint, qty: 2 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: flinthead-arrow, qty: 20 }
   tags: [arrow, tier-1]
 
 - id: fire-arrow
@@ -261,6 +263,7 @@
     - { itemId: wood, qty: 8 }
     - { itemId: resin, qty: 8 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: fire-arrow, qty: 20 }
   tags: [arrow, elemental, tier-1]
 
 - id: obsidian-arrow
@@ -272,6 +275,7 @@
     - { itemId: wood, qty: 8 }
     - { itemId: obsidian, qty: 4 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: obsidian-arrow, qty: 20 }
   tags: [arrow, tier-4]
 
 - id: poison-arrow
@@ -284,6 +288,7 @@
     - { itemId: obsidian, qty: 4 }
     - { itemId: feathers, qty: 2 }
     - { itemId: ooze, qty: 2 }
+  yields: { itemId: poison-arrow, qty: 20 }
   tags: [arrow, elemental, tier-4]
 
 - id: frost-arrow
@@ -296,6 +301,7 @@
     - { itemId: obsidian, qty: 4 }
     - { itemId: feathers, qty: 2 }
     - { itemId: freeze-gland, qty: 1 }
+  yields: { itemId: frost-arrow, qty: 20 }
   tags: [arrow, elemental, tier-4]
 
 # ── Forge ──────────────────────────────────────────────────────────────────────
@@ -425,6 +431,7 @@
     - { itemId: wood, qty: 8 }
     - { itemId: bronze, qty: 1 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: bronzehead-arrow, qty: 20 }
   tags: [arrow, tier-2]
 
 # Iron tier (forge level 2)
@@ -577,6 +584,7 @@
     - { itemId: wood, qty: 8 }
     - { itemId: iron, qty: 1 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: ironhead-arrow, qty: 20 }
   tags: [arrow, tier-3]
 
 # Silver/Mountain tier (forge level 3)
@@ -716,6 +724,7 @@
     - { itemId: wood, qty: 8 }
     - { itemId: silver, qty: 1 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: silver-arrow, qty: 20 }
   tags: [arrow, tier-4]
 
 # Plains tier (forge level 4)
@@ -1185,6 +1194,7 @@
     - { itemId: carapace, qty: 4 }
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: carapace-arrow, qty: 20 }
   tags: [arrow, tier-6]
 
 - id: charred-arrow
@@ -1196,6 +1206,7 @@
     - { itemId: charred-bone, qty: 4 }
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: charred-arrow, qty: 20 }
   tags: [arrow, elemental, tier-7]
 
 # Black Forge bolts (for crossbows)
@@ -1208,6 +1219,7 @@
     - { itemId: iron, qty: 2 }
     - { itemId: wood, qty: 4 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: iron-bolt, qty: 20 }
   tags: [bolt, tier-3]
 
 - id: bone-bolt
@@ -1219,6 +1231,7 @@
     - { itemId: bone-fragments, qty: 4 }
     - { itemId: wood, qty: 4 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: bone-bolt, qty: 20 }
   tags: [bolt, tier-3]
 
 - id: black-metal-bolt
@@ -1230,6 +1243,7 @@
     - { itemId: black-metal, qty: 2 }
     - { itemId: wood, qty: 4 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: black-metal-bolt, qty: 20 }
   tags: [bolt, tier-5]
 
 - id: carapace-bolt
@@ -1241,6 +1255,7 @@
     - { itemId: carapace, qty: 4 }
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: carapace-bolt, qty: 20 }
   tags: [bolt, tier-6]
 
 - id: charred-bolt
@@ -1252,6 +1267,7 @@
     - { itemId: charred-bone, qty: 4 }
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: feathers, qty: 2 }
+  yields: { itemId: charred-bolt, qty: 20 }
   tags: [bolt, elemental, tier-7]
 
 # ── Galdr Table ────────────────────────────────────────────────────────────────
@@ -1379,4 +1395,5 @@
   ingredients:
     - { itemId: black-metal, qty: 2 }
     - { itemId: wood, qty: 4 }
+  yields: { itemId: ballista-bolt, qty: 20 }
   tags: [bolt, siege, tier-5]

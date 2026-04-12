@@ -6,6 +6,7 @@
   ingredients:
     - { itemId: raspberries, qty: 8 }
     - { itemId: blueberries, qty: 6 }
+  yields: { itemId: queens-jam, qty: 4 }
   food:
     hp: 32
     stamina: 44
@@ -52,6 +53,7 @@
   ingredients:
     - { itemId: boar-meat, qty: 2 }
     - { itemId: honey, qty: 1 }
+  yields: { itemId: boar-jerky, qty: 2 }
   food:
     hp: 23
     stamina: 21
@@ -101,6 +103,7 @@
     - { itemId: entrails, qty: 4 }
     - { itemId: boar-meat, qty: 2 }
     - { itemId: thistle, qty: 1 }
+  yields: { itemId: sausages, qty: 4 }
   food:
     hp: 60
     stamina: 40
@@ -163,6 +166,7 @@
   ingredients:
     - { itemId: wolf-meat, qty: 2 }
     - { itemId: honey, qty: 1 }
+  yields: { itemId: wolf-jerky, qty: 2 }
   food:
     hp: 35
     stamina: 35
@@ -257,6 +261,7 @@
   ingredients:
     - { itemId: jotun-puffs, qty: 2 }
     - { itemId: magecap, qty: 2 }
+  yields: { itemId: salad, qty: 3 }
   food:
     hp: 23
     stamina: 70
