@@ -197,6 +197,18 @@ h3 {
   text-align: right;
 }
 
+/* ===== Recipe table toolbar ===== */
+.recipe-table__toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.recipe-table__toolbar .filter-bar {
+  margin-bottom: 0;
+}
+
 /* ===== Reverse lookup strip ===== */
 .reverse-lookup-strip {
   display: flex;
@@ -248,33 +260,45 @@ h3 {
   border-radius: var(--radius);
   overflow: hidden;
 }
-.recipe-table__header,
-.recipe-row {
+.recipe-table__header {
   display: grid;
-  grid-template-columns: 2fr 1fr 60px 3fr;
+  grid-template-columns: 2fr 1fr 60px 3fr 86px;
   gap: 12px;
   padding: 10px 14px;
   align-items: center;
   font-size: 13px;
   border-bottom: 1px solid var(--border-soft);
-}
-.recipe-table__header {
   color: var(--muted);
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: 0.5px;
   background: var(--surface);
 }
+.recipe-row__wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr 60px 3fr 86px;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-soft);
+}
 .recipe-row {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / 5;
+  align-items: center;
   background: transparent;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
+  border: 0;
   text-align: left;
   color: var(--text);
   cursor: pointer;
   font: inherit;
-  width: 100%;
+  font-size: 13px;
+  padding: 0;
+}
+.recipe-row__cart-cell {
+  grid-column: 5;
+  justify-self: end;
 }
 .recipe-row:hover {
   background: var(--surface-sunken);
@@ -396,4 +420,238 @@ h3 {
   padding: 0 4px;
   color: var(--muted);
   font-size: 11px;
+}
+
+/* ===== Add to cart button ===== */
+.add-to-cart-btn {
+  background: color-mix(in oklch, var(--primary) 25%, transparent);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 72px;
+  text-align: center;
+}
+.add-to-cart-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+.add-to-cart-btn--in-cart {
+  background: color-mix(in oklch, var(--success) 18%, transparent);
+  border-color: var(--success);
+  color: var(--success);
+}
+.add-to-cart-btn--in-cart:hover {
+  background: var(--success);
+  color: var(--bg);
+}
+
+/* ===== Cart badge ===== */
+.cart-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cart-badge:hover {
+  opacity: 0.85;
+}
+.cart-badge__icon {
+  font-size: 14px;
+}
+.cart-badge__count {
+  min-width: 14px;
+  text-align: center;
+}
+
+/* ===== Cart drawer ===== */
+.cart-drawer__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 90vw;
+  background: var(--surface);
+  border-left: 2px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  z-index: 101;
+  animation: cart-slide-in 0.2s ease-out;
+}
+@keyframes cart-slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.cart-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.cart-drawer__title {
+  font-size: 16px;
+  margin: 0;
+}
+.cart-drawer__close {
+  background: none;
+  border: none;
+  color: var(--text-soft);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.cart-drawer__close:hover {
+  color: var(--text);
+}
+.cart-drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+.cart-drawer__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.cart-drawer__item-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+.cart-drawer__qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.cart-drawer__qty-btn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+.cart-drawer__qty-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.cart-drawer__qty-input {
+  width: 48px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 2px 4px;
+  -moz-appearance: textfield;
+}
+.cart-drawer__qty-input::-webkit-inner-spin-button,
+.cart-drawer__qty-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.cart-drawer__remove-btn {
+  background: none;
+  border: none;
+  color: var(--text-soft);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 6px;
+  margin-left: 4px;
+}
+.cart-drawer__remove-btn:hover {
+  color: var(--danger);
+}
+.cart-drawer__divider {
+  height: 2px;
+  background: var(--accent);
+  margin: 16px 0;
+}
+.cart-drawer__grocery-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+.cart-drawer__grocery-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  font-size: 13px;
+}
+.cart-drawer__grocery-qty {
+  color: var(--success);
+  font-weight: 600;
+}
+.cart-drawer__footer {
+  padding: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cart-drawer__copy-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cart-drawer__copy-btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+.cart-drawer__copy-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.cart-drawer__clear-btn {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-soft);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.cart-drawer__clear-btn:hover {
+  border-color: var(--danger);
+  color: var(--danger);
 }
