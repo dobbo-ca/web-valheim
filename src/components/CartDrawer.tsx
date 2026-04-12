@@ -1,4 +1,4 @@
-import { For, Show, createSignal, type Component } from 'solid-js';
+import { For, Show, createEffect, createSignal, onCleanup, type Component } from 'solid-js';
 import type { GroceryItem } from '../lib/cart';
 import { formatGroceryList } from '../lib/cart';
 
@@ -21,11 +21,24 @@ interface Props {
 export const CartDrawer: Component<Props> = (props) => {
   const [copied, setCopied] = createSignal(false);
 
+  // Close on Escape key
+  createEffect(() => {
+    if (!props.open) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') props.onClose();
+    };
+    document.addEventListener('keydown', handler);
+    onCleanup(() => document.removeEventListener('keydown', handler));
+  });
+
   const handleCopy = async () => {
-    const text = formatGroceryList(props.groceryList);
-    await navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(formatGroceryList(props.groceryList));
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard write failed (not HTTPS, unfocused tab, etc.)
+    }
   };
 
   const handleOverlayClick = (e: MouseEvent) => {
@@ -37,7 +50,7 @@ export const CartDrawer: Component<Props> = (props) => {
   return (
     <Show when={props.open}>
       <div class="cart-drawer__overlay" onClick={handleOverlayClick}>
-        <div class="cart-drawer" role="dialog" aria-label="Shopping cart">
+        <div class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
           <div class="cart-drawer__header">
             <h2 class="cart-drawer__title">Cart</h2>
             <button

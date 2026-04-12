@@ -96,7 +96,11 @@ export function decodeCartUrl(encoded: string): Cart {
     if (!encoded) return {};
     const json = decompressFromEncodedURIComponent(encoded);
     if (!json) return {};
-    return JSON.parse(json) as Cart;
+    const parsed = JSON.parse(json);
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return {};
+    return Object.fromEntries(
+      Object.entries(parsed).filter(([, v]) => typeof v === 'number' && v > 0),
+    ) as Cart;
   } catch {
     return {};
   }
