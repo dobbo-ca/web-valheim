@@ -482,7 +482,7 @@ h3 {
   min-width: 28px;
   line-height: 1.4;
 }
-.recipe-table__page-btn:hover:not(:disabled) {
+.recipe-table__page-btn:hover:not(:disabled):not(.recipe-table__page-btn--active) {
   border-color: var(--accent);
   color: var(--accent);
 }
