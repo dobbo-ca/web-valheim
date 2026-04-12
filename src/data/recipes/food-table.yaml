@@ -1,0 +1,204 @@
+# ── Food Table — Fishing Bait ─────────────────────────────────────────────────
+
+- id: cold-fishing-bait
+  name: Cold Fishing Bait
+  type: crafting
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: fishing-bait, qty: 20 }
+    - { itemId: ulv-trophy, qty: 1 }
+  yields: { itemId: cold-fishing-bait, qty: 20 }
+  tags: [bait, tier-4]
+
+- id: frosty-fishing-bait
+  name: Frosty Fishing Bait
+  type: crafting
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: fishing-bait, qty: 20 }
+    - { itemId: drake-trophy, qty: 1 }
+  yields: { itemId: frosty-fishing-bait, qty: 20 }
+  tags: [bait, tier-4]
+
+- id: heavy-fishing-bait
+  name: Heavy Fishing Bait
+  type: crafting
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: fishing-bait, qty: 20 }
+    - { itemId: serpent-trophy, qty: 1 }
+  yields: { itemId: heavy-fishing-bait, qty: 20 }
+  tags: [bait, tier-4]
+
+- id: hot-fishing-bait
+  name: Hot Fishing Bait
+  type: crafting
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: fishing-bait, qty: 20 }
+    - { itemId: surtling-trophy, qty: 1 }
+  yields: { itemId: hot-fishing-bait, qty: 20 }
+  tags: [bait, tier-3]
+
+- id: misty-fishing-bait
+  name: Misty Fishing Bait
+  type: crafting
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: fishing-bait, qty: 20 }
+    - { itemId: lox-trophy, qty: 1 }
+  yields: { itemId: misty-fishing-bait, qty: 20 }
+  tags: [bait, tier-5]
+
+- id: mossy-fishing-bait
+  name: Mossy Fishing Bait
+  type: crafting
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: fishing-bait, qty: 20 }
+    - { itemId: troll-trophy, qty: 1 }
+  yields: { itemId: mossy-fishing-bait, qty: 20 }
+  tags: [bait, tier-2]
+
+- id: sticky-fishing-bait
+  name: Sticky Fishing Bait
+  type: crafting
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: fishing-bait, qty: 20 }
+    - { itemId: abomination-trophy, qty: 1 }
+  yields: { itemId: sticky-fishing-bait, qty: 20 }
+  tags: [bait, tier-3]
+
+- id: stingy-fishing-bait
+  name: Stingy Fishing Bait
+  type: crafting
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: fishing-bait, qty: 20 }
+    - { itemId: fuling-trophy, qty: 1 }
+  yields: { itemId: stingy-fishing-bait, qty: 20 }
+  tags: [bait, tier-5]
+
+# ── Food Table — Oven Preparations ────────────────────────────────────────────
+# These produce an uncooked item, then secondaryStep indicates baking in oven.
+
+- id: bread
+  name: Bread
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: barley-flour, qty: 10 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 23
+    stamina: 70
+    duration: 1500
+    regen: 2
+  tags: [food, baked, tier-5]
+
+- id: fish-n-bread
+  name: "Fish 'n' Bread"
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: anglerfish, qty: 1 }
+    - { itemId: bread-dough, qty: 2 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 30
+    stamina: 90
+    duration: 1800
+    regen: 3
+  tags: [food, baked, tier-6]
+
+- id: honey-glazed-chicken
+  name: Honey Glazed Chicken
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: chicken-meat, qty: 1 }
+    - { itemId: honey, qty: 3 }
+    - { itemId: jotun-puffs, qty: 2 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 80
+    stamina: 26
+    duration: 1800
+    regen: 5
+  tags: [food, baked, tier-6]
+
+- id: lox-meat-pie
+  name: Lox Meat Pie
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: cloudberries, qty: 2 }
+    - { itemId: lox-meat, qty: 2 }
+    - { itemId: barley-flour, qty: 4 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 75
+    stamina: 24
+    duration: 1800
+    regen: 4
+  tags: [food, baked, tier-5]
+
+- id: stuffed-mushroom
+  name: Stuffed Mushroom
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: magecap, qty: 3 }
+    - { itemId: blood-clot, qty: 1 }
+    - { itemId: turnip, qty: 2 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 25
+    stamina: 12
+    duration: 1500
+    regen: 3
+    eitr: 75
+  tags: [food, baked, magic, tier-6]
+
+- id: meat-platter
+  name: Meat Platter
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: hare-meat, qty: 1 }
+    - { itemId: lox-meat, qty: 1 }
+    - { itemId: seeker-meat, qty: 1 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 80
+    stamina: 26
+    duration: 1800
+    regen: 5
+  tags: [food, baked, tier-6]
