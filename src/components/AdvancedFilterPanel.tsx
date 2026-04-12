@@ -23,7 +23,6 @@ const biomes: { label: string; tier: string }[] = [
   { label: 'Plains', tier: 'tier-4' },
   { label: 'Mistlands', tier: 'tier-5' },
   { label: 'Ashlands', tier: 'tier-6' },
-  { label: 'Deep North', tier: 'tier-7' },
 ];
 
 interface Props {
