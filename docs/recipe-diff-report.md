@@ -16,17 +16,13 @@ Items that are missing a `stackSize` field or have the wrong value.
 | ------- | ----- | ------ | -------- |
 | `blood-pudding` | item missing from items.yaml | — | 10 |
 | `carrot-soup` | item missing from items.yaml | — | 10 |
-| `deer-stew` | item missing from items.yaml | — | 10 |
 | `eyescream` | item missing from items.yaml | — | 10 |
 | `fiery-svinstew` | item missing from items.yaml | — | 10 |
 | `fish-wraps` | item missing from items.yaml | — | 10 |
 | `minced-meat-sauce` | item missing from items.yaml | — | 10 |
 | `mushroom-omelette` | item missing from items.yaml | — | 10 |
-| `onion-soup` | item missing from items.yaml | — | 10 |
 | `seeker-aspic` | item missing from items.yaml | — | 10 |
 | `serpent-stew` | item missing from items.yaml | — | 10 |
-| `turnip-stew` | item missing from items.yaml | — | 10 |
-| `wolf-skewer` | item missing from items.yaml | — | 10 |
 
 ## 3. Mead Recipe Gaps
 
@@ -45,7 +41,7 @@ _All mead ingredient items are present in items.yaml._
 | Category | Gap Count |
 | -------- | --------- |
 | Yield gaps | 0 |
-| Stack size gaps | 13 |
+| Stack size gaps | 9 |
 | Mead recipe gaps | 0 |
 | Missing items (meads) | 0 |
-| **Total** | **13** |
+| **Total** | **9** |

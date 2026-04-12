@@ -25,6 +25,9 @@ ITEMS_YAML = DATA_DIR / "items.yaml"
 STATIONS_YAML = DATA_DIR / "stations.yaml"
 CRAFTING_YAML = DATA_DIR / "recipes" / "crafting.yaml"
 COOKING_YAML = DATA_DIR / "recipes" / "cooking.yaml"
+FOOD_TABLE_YAML = DATA_DIR / "recipes" / "food-table.yaml"
+FEASTS_YAML = DATA_DIR / "recipes" / "feasts.yaml"
+SPIT_YAML = DATA_DIR / "recipes" / "spit.yaml"
 REPORT_PATH = REPO_ROOT / "docs" / "recipe-diff-report.md"
 
 # ---------------------------------------------------------------------------
@@ -58,6 +61,27 @@ KNOWN_YIELDS: dict[str, int] = {
     "sausages": 4,
     "wolf-jerky": 2,
     "salad": 3,
+    # Fishing bait (all yield 20)
+    "cold-fishing-bait": 20,
+    "frosty-fishing-bait": 20,
+    "heavy-fishing-bait": 20,
+    "hot-fishing-bait": 20,
+    "misty-fishing-bait": 20,
+    "mossy-fishing-bait": 20,
+    "sticky-fishing-bait": 20,
+    "stingy-fishing-bait": 20,
+    # Feasts (all yield 10)
+    "whole-roasted-meadow-boar": 10,
+    "black-forest-buffet-platter": 10,
+    "sailors-bounty": 10,
+    "swamp-dwellers-delight": 10,
+    "hearty-mountain-loggers-stew": 10,
+    "plains-pie-picnic": 10,
+    "mushrooms-galore": 10,
+    "ashlands-gourmet-bowl": 10,
+    # Meads (lingering variants yield 6)
+    "lingering-healing-mead": 6,
+    "lingering-stamina-mead": 6,
 }
 
 # Expected stack sizes per item id.
@@ -175,6 +199,13 @@ KNOWN_STACK_SIZES: dict[str, int] = {
     "deer-trophy": 20,
     "draugr-elite-trophy": 20,
     "drake-trophy": 20,
+    "ulv-trophy": 20,
+    "serpent-trophy": 20,
+    "surtling-trophy": 20,
+    "lox-trophy": 20,
+    "troll-trophy": 20,
+    "abomination-trophy": 20,
+    "fuling-trophy": 20,
     # Misc special items
     "ymir-flesh": 20,
     "freeze-gland": 20,
@@ -187,15 +218,71 @@ KNOWN_STACK_SIZES: dict[str, int] = {
     "morgen-heart": 20,
     "bilebag": 20,
     "refined-eitr": 20,
+    # New ingredients
+    "blood-clot": 50,
+    "greydwarf-eye": 50,
+    "smoke-puff": 50,
+    "fishing-bait": 100,
+    # Cooked meats (spit outputs)
+    "grilled-neck-tail": 10,
+    "cooked-boar-meat": 10,
+    "cooked-deer-meat": 10,
+    "cooked-fish": 10,
+    "cooked-wolf-meat": 10,
+    "cooked-hare-meat": 10,
+    "cooked-chicken-meat": 10,
+    "cooked-serpent-meat": 10,
+    "cooked-lox-meat": 10,
+    "cooked-seeker-meat": 10,
+    "cooked-bonemaw-meat": 10,
+    "cooked-asksvin-tail": 10,
+    "cooked-volture-meat": 10,
+    # Bait outputs
+    "cold-fishing-bait": 100,
+    "frosty-fishing-bait": 100,
+    "heavy-fishing-bait": 100,
+    "hot-fishing-bait": 100,
+    "misty-fishing-bait": 100,
+    "mossy-fishing-bait": 100,
+    "sticky-fishing-bait": 100,
+    "stingy-fishing-bait": 100,
+    # Baked goods
+    "bread-dough": 10,
+    "bread": 10,
+    "fish-n-bread": 10,
+    "honey-glazed-chicken": 10,
+    "lox-meat-pie": 10,
+    "stuffed-mushroom": 10,
+    "meat-platter": 10,
+    # Feast outputs
+    "whole-roasted-meadow-boar": 1,
+    "black-forest-buffet-platter": 1,
+    "sailors-bounty": 1,
+    "swamp-dwellers-delight": 1,
+    "hearty-mountain-loggers-stew": 1,
+    "plains-pie-picnic": 1,
+    "mushrooms-galore": 1,
+    "ashlands-gourmet-bowl": 1,
+    # Mead additions
+    "lingering-healing-mead": 10,
+    "lingering-stamina-mead": 10,
+    # Spices
+    "woodland-herb-blend": 50,
+    "seafarers-herbs": 50,
+    "mountain-peak-pepper-powder": 50,
+    "grasslands-herbalist-harvest": 50,
+    "herbs-of-the-hidden-hills": 50,
+    "fiery-spice-powder": 50,
 }
 
 # Known mead recipes. Each dict mirrors the expected RecipeSchema structure.
+# All meads use station `mead-ketill` and have a secondaryStep (fermenter).
 KNOWN_MEADS: list[dict] = [
     {
         "id": "minor-healing-mead",
+        "station": "mead-ketill",
         "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
             {"itemId": "honey", "qty": 10},
             {"itemId": "blueberries", "qty": 5},
@@ -205,9 +292,9 @@ KNOWN_MEADS: list[dict] = [
     },
     {
         "id": "medium-healing-mead",
-        "stationLevel": 2,
+        "station": "mead-ketill",
+        "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
             {"itemId": "honey", "qty": 10},
             {"itemId": "bloodbag", "qty": 4},
@@ -217,21 +304,20 @@ KNOWN_MEADS: list[dict] = [
     },
     {
         "id": "major-healing-mead",
-        "stationLevel": 5,
+        "station": "mead-ketill",
+        "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
             {"itemId": "honey", "qty": 10},
-            {"itemId": "bloodbag", "qty": 4},
-            {"itemId": "royal-jelly", "qty": 2},
-            {"itemId": "dandelion", "qty": 1},
+            {"itemId": "blood-clot", "qty": 4},
+            {"itemId": "royal-jelly", "qty": 5},
         ],
     },
     {
         "id": "minor-stamina-mead",
+        "station": "mead-ketill",
         "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
             {"itemId": "honey", "qty": 10},
             {"itemId": "raspberries", "qty": 10},
@@ -240,9 +326,9 @@ KNOWN_MEADS: list[dict] = [
     },
     {
         "id": "medium-stamina-mead",
-        "stationLevel": 2,
+        "station": "mead-ketill",
+        "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
             {"itemId": "honey", "qty": 10},
             {"itemId": "cloudberries", "qty": 10},
@@ -250,22 +336,32 @@ KNOWN_MEADS: list[dict] = [
         ],
     },
     {
-        "id": "major-stamina-mead",
-        "stationLevel": 5,
+        "id": "lingering-healing-mead",
+        "station": "mead-ketill",
+        "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
-            {"itemId": "honey", "qty": 10},
+            {"itemId": "sap", "qty": 10},
+            {"itemId": "vineberry-cluster", "qty": 10},
+            {"itemId": "smoke-puff", "qty": 10},
+        ],
+    },
+    {
+        "id": "lingering-stamina-mead",
+        "station": "mead-ketill",
+        "stationLevel": 1,
+        "yield": 6,
+        "ingredients": [
+            {"itemId": "sap", "qty": 10},
             {"itemId": "cloudberries", "qty": 10},
-            {"itemId": "yellow-mushroom", "qty": 10},
-            {"itemId": "jotun-puffs", "qty": 3},
+            {"itemId": "jotun-puffs", "qty": 10},
         ],
     },
     {
         "id": "poison-resistance-mead",
+        "station": "mead-ketill",
         "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
             {"itemId": "honey", "qty": 10},
             {"itemId": "thistle", "qty": 5},
@@ -275,21 +371,21 @@ KNOWN_MEADS: list[dict] = [
     },
     {
         "id": "frost-resistance-mead",
-        "stationLevel": 2,
+        "station": "mead-ketill",
+        "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
             {"itemId": "honey", "qty": 10},
             {"itemId": "thistle", "qty": 5},
             {"itemId": "bloodbag", "qty": 2},
-            {"itemId": "freeze-gland", "qty": 1},
+            {"itemId": "greydwarf-eye", "qty": 1},
         ],
     },
     {
         "id": "tasty-mead",
+        "station": "mead-ketill",
         "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
             {"itemId": "honey", "qty": 10},
             {"itemId": "raspberries", "qty": 10},
@@ -298,9 +394,9 @@ KNOWN_MEADS: list[dict] = [
     },
     {
         "id": "fire-resistance-barley-wine",
-        "stationLevel": 4,
+        "station": "mead-ketill",
+        "stationLevel": 1,
         "yield": 6,
-        "mead": {"fermentDuration": 2400},
         "ingredients": [
             {"itemId": "barley", "qty": 10},
             {"itemId": "cloudberries", "qty": 10},
@@ -323,6 +419,9 @@ def load_all_recipes() -> list[dict]:
     recipes: list[dict] = []
     recipes.extend(load_yaml(CRAFTING_YAML))
     recipes.extend(load_yaml(COOKING_YAML))
+    recipes.extend(load_yaml(FOOD_TABLE_YAML))
+    recipes.extend(load_yaml(FEASTS_YAML))
+    recipes.extend(load_yaml(SPIT_YAML))
     return recipes
 
 
@@ -403,13 +502,12 @@ def check_meads(recipes: list[dict], items: list[dict]) -> tuple[list[str], list
                 issues.append(
                     f"yield {actual_yield_qty or 'absent'} ≠ {mead['yield']}"
                 )
-            if "mead" not in actual:
-                issues.append("no `mead` block")
-            elif actual["mead"].get("fermenterDuration") != mead["mead"]["fermentDuration"]:
-                fd = actual["mead"].get("fermenterDuration", "absent")
-                issues.append(
-                    f"fermentDuration {fd} ≠ {mead['mead']['fermentDuration']}"
-                )
+            actual_station = actual.get("station")
+            expected_station = mead.get("station", "mead-ketill")
+            if actual_station != expected_station:
+                issues.append(f"station `{actual_station}` ≠ `{expected_station}`")
+            if "secondaryStep" not in actual:
+                issues.append("no `secondaryStep` block")
             if issues:
                 mead_lines.append(f"| `{mead_id}` | {'; '.join(issues)} |")
 
