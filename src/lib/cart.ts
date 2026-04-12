@@ -48,6 +48,20 @@ export function clearCart(): Cart {
 // ---------------------------------------------------------------------------
 
 /**
+ * Parse a cart key into base recipe ID and optional upgrade quality.
+ * "iron-sword" → { baseId: "iron-sword", quality: undefined }
+ * "iron-sword+2" → { baseId: "iron-sword", quality: 2 }
+ */
+export function parseCartKey(key: string): { baseId: string; quality?: number } {
+  const plusIdx = key.lastIndexOf('+');
+  if (plusIdx === -1) return { baseId: key };
+  const suffix = key.slice(plusIdx + 1);
+  const quality = Number.parseInt(suffix, 10);
+  if (!Number.isFinite(quality) || quality <= 1) return { baseId: key };
+  return { baseId: key.slice(0, plusIdx), quality };
+}
+
+/**
  * Aggregate all recipe ingredients (multiplied by cart qty) into a sorted
  * list of GroceryItems.
  */
@@ -58,11 +72,21 @@ export function aggregateGroceryList(
 ): GroceryItem[] {
   const totals = new Map<string, { name: string; qty: number }>();
 
-  for (const [recipeId, cartQty] of Object.entries(cart)) {
-    const recipe = recipesById.get(recipeId);
+  for (const [cartKey, cartQty] of Object.entries(cart)) {
+    const { baseId, quality } = parseCartKey(cartKey);
+    const recipe = recipesById.get(baseId);
     if (!recipe) continue;
 
-    for (const { itemId, qty } of recipe.ingredients) {
+    let ingredients: { itemId: string; qty: number }[];
+    if (quality != null) {
+      const upgrade = recipe.upgrades?.find((u) => u.quality === quality);
+      if (!upgrade) continue;
+      ingredients = upgrade.ingredients;
+    } else {
+      ingredients = recipe.ingredients;
+    }
+
+    for (const { itemId, qty } of ingredients) {
       const item = itemsById.get(itemId);
       if (!item) continue;
 

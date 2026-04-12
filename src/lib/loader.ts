@@ -42,6 +42,21 @@ export async function loadAll(dataRoot: string): Promise<DataSet> {
     recipes.push(...parsed);
   }
 
+  // Generate building pseudo-recipes from station upgrades
+  for (const station of stations) {
+    for (const upgrade of station.upgrades) {
+      recipes.push({
+        id: `upgrade-${station.id}-${upgrade.level}`,
+        name: upgrade.name ?? `${station.name} Level ${upgrade.level}`,
+        type: 'building',
+        station: station.id,
+        stationLevel: upgrade.level,
+        ingredients: upgrade.requires,
+        tags: ['station-upgrade'],
+      });
+    }
+  }
+
   const data: DataSet = { items, stations, recipes };
   validateCrossReferences(data);
   return data;

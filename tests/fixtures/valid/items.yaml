@@ -13,3 +13,6 @@
 - id: blueberries
   name: Blueberries
   category: ingredient
+- id: deer-hide
+  name: Deer Hide
+  category: material

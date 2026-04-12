@@ -8,6 +8,9 @@ import type {
   IngredientRefSchema,
   RecipeTypeSchema,
   ItemCategorySchema,
+  DamageStatsSchema,
+  ItemStatsSchema,
+  ItemUpgradeSchema,
 } from './schema';
 
 export type Item = z.infer<typeof ItemSchema>;
@@ -18,3 +21,6 @@ export type SecondaryStep = z.infer<typeof SecondaryStepSchema>;
 export type IngredientRef = z.infer<typeof IngredientRefSchema>;
 export type RecipeType = z.infer<typeof RecipeTypeSchema>;
 export type ItemCategory = z.infer<typeof ItemCategorySchema>;
+export type DamageStats = z.infer<typeof DamageStatsSchema>;
+export type ItemStats = z.infer<typeof ItemStatsSchema>;
+export type ItemUpgrade = z.infer<typeof ItemUpgradeSchema>;

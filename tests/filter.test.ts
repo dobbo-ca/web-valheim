@@ -39,6 +39,15 @@ const sample: Recipe[] = [
       { itemId: 'blueberries', qty: 6 },
     ],
   },
+  {
+    id: 'upgrade-forge-2',
+    name: 'Forge Bellows',
+    type: 'building',
+    station: 'forge',
+    stationLevel: 2,
+    ingredients: [{ itemId: 'wood', qty: 5 }],
+    tags: ['station-upgrade'],
+  },
 ];
 
 const empty: FilterState = { ...emptyFilterState };
@@ -49,6 +58,7 @@ describe('filterRecipes', () => {
       'iron-sword',
       'bronze-sword',
       'queens-jam',
+      'upgrade-forge-2',
     ]);
   });
 
@@ -106,7 +116,7 @@ describe('filterRecipes', () => {
   it('filters by min station level (hides recipes below floor)', () => {
     expect(
       filterRecipes(sample, { ...empty, minStationLevel: 2 }).map((r) => r.id),
-    ).toEqual(['iron-sword']);
+    ).toEqual(['iron-sword', 'upgrade-forge-2']);
   });
 
   it('combines all filters with AND', () => {
@@ -118,7 +128,39 @@ describe('filterRecipes', () => {
         maxStationLevel: 1,
         ingredientIds: ['wood'],
         query: 'sword',
+        tags: [],
+        stationCeilings: {},
       }).map((r) => r.id),
     ).toEqual(['bronze-sword']);
+  });
+
+  it('filters by building type', () => {
+    expect(
+      filterRecipes(sample, { ...empty, type: 'building' }).map((r) => r.id),
+    ).toEqual(['upgrade-forge-2']);
+  });
+
+  it('filters by tags (OR within selection)', () => {
+    expect(
+      filterRecipes(sample, { ...empty, tags: ['sword'] }).map((r) => r.id),
+    ).toEqual(['iron-sword', 'bronze-sword']);
+  });
+
+  it('filters by multiple tags (OR — matches any)', () => {
+    expect(
+      filterRecipes(sample, { ...empty, tags: ['sword', 'station-upgrade'] }).map((r) => r.id),
+    ).toEqual(['iron-sword', 'bronze-sword', 'upgrade-forge-2']);
+  });
+
+  it('filters by per-station ceiling', () => {
+    expect(
+      filterRecipes(sample, { ...empty, stationCeilings: { forge: 1 } }).map((r) => r.id),
+    ).toEqual(['bronze-sword', 'queens-jam']);
+  });
+
+  it('per-station ceiling overrides maxStationLevel when lower', () => {
+    expect(
+      filterRecipes(sample, { ...empty, maxStationLevel: 7, stationCeilings: { forge: 1 } }).map((r) => r.id),
+    ).toEqual(['bronze-sword', 'queens-jam']);
   });
 });
