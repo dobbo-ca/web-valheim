@@ -62,15 +62,18 @@ export function aggregateGroceryList(
     const recipe = recipesById.get(recipeId);
     if (!recipe) continue;
 
+    const yieldPerCraft = recipe.yields?.qty ?? 1;
+    const crafts = Math.ceil(cartQty / yieldPerCraft);
+
     for (const { itemId, qty } of recipe.ingredients) {
       const item = itemsById.get(itemId);
       if (!item) continue;
 
       const existing = totals.get(itemId);
       if (existing) {
-        existing.qty += qty * cartQty;
+        existing.qty += qty * crafts;
       } else {
-        totals.set(itemId, { name: item.name, qty: qty * cartQty });
+        totals.set(itemId, { name: item.name, qty: qty * crafts });
       }
     }
   }

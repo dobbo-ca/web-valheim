@@ -39,6 +39,22 @@ describe('ItemSchema', () => {
     const input = { id: 'iron', name: 'Iron', category: 'bogus' };
     expect(() => ItemSchema.parse(input)).toThrow();
   });
+
+  it('accepts item with stackSize (positive integer)', () => {
+    const input = { id: 'arrow-fire', name: 'Fire Arrow', category: 'material' as const, stackSize: 100 };
+    expect(() => ItemSchema.parse(input)).not.toThrow();
+  });
+
+  it('accepts item without stackSize (optional)', () => {
+    const input = { id: 'iron', name: 'Iron', category: 'material' as const };
+    const parsed = ItemSchema.parse(input);
+    expect(parsed.stackSize).toBeUndefined();
+  });
+
+  it('rejects stackSize of 0', () => {
+    const input = { id: 'iron', name: 'Iron', category: 'material' as const, stackSize: 0 };
+    expect(() => ItemSchema.parse(input)).toThrow();
+  });
 });
 
 describe('RecipeSchema', () => {
@@ -80,5 +96,43 @@ describe('RecipeSchema', () => {
       ingredients: [],
     };
     expect(() => RecipeSchema.parse(input)).toThrow();
+  });
+});
+
+describe('RecipeSchema — mead field', () => {
+  const baseRecipe = {
+    id: 'minor-healing-mead',
+    name: 'Minor Healing Mead',
+    type: 'cooking',
+    station: 'cauldron',
+    stationLevel: 1,
+    ingredients: [{ itemId: 'honey', qty: 10 }],
+  };
+
+  it('accepts a recipe with mead info', () => {
+    const result = RecipeSchema.parse({
+      ...baseRecipe,
+      yields: { itemId: 'minor-healing-mead', qty: 6 },
+      mead: {
+        baseName: 'Mead Base: Minor Healing',
+        fermenterDuration: 2400,
+      },
+    });
+    expect(result.mead?.baseName).toBe('Mead Base: Minor Healing');
+    expect(result.mead?.fermenterDuration).toBe(2400);
+  });
+
+  it('accepts a recipe without mead info', () => {
+    const result = RecipeSchema.parse(baseRecipe);
+    expect(result.mead).toBeUndefined();
+  });
+
+  it('rejects mead with missing baseName', () => {
+    expect(() =>
+      RecipeSchema.parse({
+        ...baseRecipe,
+        mead: { fermenterDuration: 2400 },
+      }),
+    ).toThrow();
   });
 });

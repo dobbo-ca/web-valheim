@@ -6,6 +6,7 @@
   ingredients:
     - { itemId: raspberries, qty: 8 }
     - { itemId: blueberries, qty: 6 }
+  yields: { itemId: queens-jam, qty: 4 }
   food:
     hp: 32
     stamina: 44
@@ -52,6 +53,7 @@
   ingredients:
     - { itemId: boar-meat, qty: 2 }
     - { itemId: honey, qty: 1 }
+  yields: { itemId: boar-jerky, qty: 2 }
   food:
     hp: 23
     stamina: 21
@@ -101,6 +103,7 @@
     - { itemId: entrails, qty: 4 }
     - { itemId: boar-meat, qty: 2 }
     - { itemId: thistle, qty: 1 }
+  yields: { itemId: sausages, qty: 4 }
   food:
     hp: 60
     stamina: 40
@@ -163,6 +166,7 @@
   ingredients:
     - { itemId: wolf-meat, qty: 2 }
     - { itemId: honey, qty: 1 }
+  yields: { itemId: wolf-jerky, qty: 2 }
   food:
     hp: 35
     stamina: 35
@@ -257,6 +261,7 @@
   ingredients:
     - { itemId: jotun-puffs, qty: 2 }
     - { itemId: magecap, qty: 2 }
+  yields: { itemId: salad, qty: 3 }
   food:
     hp: 23
     stamina: 70
@@ -389,3 +394,165 @@
     duration: 2400
     regen: 8
   tags: [food, regen, tier-7]
+
+# ── Meads ─────────────────────────────────────────────────────────────────────
+# Meads are brewed at the Cauldron as a mead base, then fermented.
+
+# Cauldron level 1
+- id: minor-healing-mead
+  name: Minor Healing Mead
+  type: cooking
+  station: cauldron
+  stationLevel: 1
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: blueberries, qty: 5 }
+    - { itemId: raspberries, qty: 10 }
+    - { itemId: dandelion, qty: 1 }
+  yields: { itemId: minor-healing-mead, qty: 6 }
+  mead:
+    baseName: "Mead Base: Minor Healing"
+    fermenterDuration: 2400
+  tags: [mead, heal, tier-1]
+
+- id: minor-stamina-mead
+  name: Minor Stamina Mead
+  type: cooking
+  station: cauldron
+  stationLevel: 1
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: raspberries, qty: 10 }
+    - { itemId: yellow-mushroom, qty: 10 }
+  yields: { itemId: minor-stamina-mead, qty: 6 }
+  mead:
+    baseName: "Mead Base: Minor Stamina"
+    fermenterDuration: 2400
+  tags: [mead, stamina, tier-1]
+
+- id: poison-resistance-mead
+  name: Poison Resistance Mead
+  type: cooking
+  station: cauldron
+  stationLevel: 1
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: thistle, qty: 5 }
+    - { itemId: neck-tail, qty: 1 }
+    - { itemId: coal, qty: 10 }
+  yields: { itemId: poison-resistance-mead, qty: 6 }
+  mead:
+    baseName: "Mead Base: Poison Resistance"
+    fermenterDuration: 2400
+  tags: [mead, resistance, tier-1]
+
+- id: tasty-mead
+  name: Tasty Mead
+  type: cooking
+  station: cauldron
+  stationLevel: 1
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: raspberries, qty: 10 }
+    - { itemId: blueberries, qty: 5 }
+  yields: { itemId: tasty-mead, qty: 6 }
+  mead:
+    baseName: "Mead Base: Tasty"
+    fermenterDuration: 2400
+  tags: [mead, rested, tier-1]
+
+# Cauldron level 2
+- id: medium-healing-mead
+  name: Medium Healing Mead
+  type: cooking
+  station: cauldron
+  stationLevel: 2
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: bloodbag, qty: 4 }
+    - { itemId: raspberries, qty: 10 }
+    - { itemId: dandelion, qty: 1 }
+  yields: { itemId: medium-healing-mead, qty: 6 }
+  mead:
+    baseName: "Mead Base: Medium Healing"
+    fermenterDuration: 2400
+  tags: [mead, heal, tier-3]
+
+- id: medium-stamina-mead
+  name: Medium Stamina Mead
+  type: cooking
+  station: cauldron
+  stationLevel: 2
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: cloudberries, qty: 10 }
+    - { itemId: yellow-mushroom, qty: 10 }
+  yields: { itemId: medium-stamina-mead, qty: 6 }
+  mead:
+    baseName: "Mead Base: Medium Stamina"
+    fermenterDuration: 2400
+  tags: [mead, stamina, tier-3]
+
+- id: frost-resistance-mead
+  name: Frost Resistance Mead
+  type: cooking
+  station: cauldron
+  stationLevel: 2
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: thistle, qty: 5 }
+    - { itemId: bloodbag, qty: 2 }
+    - { itemId: freeze-gland, qty: 1 }
+  yields: { itemId: frost-resistance-mead, qty: 6 }
+  mead:
+    baseName: "Mead Base: Frost Resistance"
+    fermenterDuration: 2400
+  tags: [mead, resistance, tier-3]
+
+# Cauldron level 4
+- id: fire-resistance-barley-wine
+  name: Fire Resistance Barley Wine
+  type: cooking
+  station: cauldron
+  stationLevel: 4
+  ingredients:
+    - { itemId: barley, qty: 10 }
+    - { itemId: cloudberries, qty: 10 }
+  yields: { itemId: fire-resistance-barley-wine, qty: 6 }
+  mead:
+    baseName: "Barley Wine Base: Fire Resistance"
+    fermenterDuration: 2400
+  tags: [mead, resistance, tier-5]
+
+# Cauldron level 5
+- id: major-healing-mead
+  name: Major Healing Mead
+  type: cooking
+  station: cauldron
+  stationLevel: 5
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: bloodbag, qty: 4 }
+    - { itemId: royal-jelly, qty: 2 }
+    - { itemId: dandelion, qty: 1 }
+  yields: { itemId: major-healing-mead, qty: 6 }
+  mead:
+    baseName: "Mead Base: Major Healing"
+    fermenterDuration: 2400
+  tags: [mead, heal, tier-6]
+
+- id: major-stamina-mead
+  name: Major Stamina Mead
+  type: cooking
+  station: cauldron
+  stationLevel: 5
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: cloudberries, qty: 10 }
+    - { itemId: yellow-mushroom, qty: 10 }
+    - { itemId: jotun-puffs, qty: 3 }
+  yields: { itemId: major-stamina-mead, qty: 6 }
+  mead:
+    baseName: "Mead Base: Major Stamina"
+    fermenterDuration: 2400
+  tags: [mead, stamina, tier-6]

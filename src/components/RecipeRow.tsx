@@ -55,11 +55,18 @@ export const RecipeRow: Component<Props> = (props) => {
               />
             </Show>
             {props.recipe.name}
+            <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
+              <span class="recipe-row__yield">×{props.recipe.yields!.qty}</span>
+            </Show>
           </span>
           <span class="recipe-row__station">
-            {props.stationsById.get(props.recipe.station)?.name ?? props.recipe.station}
+            {(() => {
+              const station = props.stationsById.get(props.recipe.station);
+              const stationName = station?.name ?? props.recipe.station;
+              const upgrade = station?.upgrades.find((u) => u.level === props.recipe.stationLevel);
+              return upgrade?.name ? `${stationName} — ${upgrade.name}` : `${stationName} Lv ${props.recipe.stationLevel}`;
+            })()}
           </span>
-          <span class="recipe-row__lvl">{props.recipe.stationLevel}</span>
           <Show when={!props.expanded}>
             <span class="recipe-row__ings">
               {formatIngredients(props.recipe, props.itemsById)}
@@ -95,6 +102,26 @@ export const RecipeRow: Component<Props> = (props) => {
             </div>
           </div>
 
+          <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
+            <div class="recipe-row__section">
+              <span class="label">Yields</span>
+              <span>×{props.recipe.yields!.qty} per craft</span>
+            </div>
+          </Show>
+
+          <Show when={(() => {
+            const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
+            const item = props.itemsById.get(yieldItemId);
+            return item?.stackSize;
+          })()}>
+            {(stackSize) => (
+              <div class="recipe-row__section">
+                <span class="label">Stack size</span>
+                <span>{stackSize()}</span>
+              </div>
+            )}
+          </Show>
+
           <Show when={props.recipe.food}>
             {(food) => (
               <div class="recipe-row__section">
@@ -113,6 +140,20 @@ export const RecipeRow: Component<Props> = (props) => {
             <div class="recipe-row__section recipe-row__notes">
               {props.recipe.notes}
             </div>
+          </Show>
+
+          <Show when={props.recipe.mead}>
+            {(mead) => (
+              <div class="recipe-row__section recipe-row__mead-info">
+                <span class="label">Brewing</span>
+                <p>
+                  Craft <strong>{mead().baseName}</strong> at a Cauldron, then place in a{' '}
+                  <strong>Fermenter</strong> for{' '}
+                  {Math.round(mead().fermenterDuration / 1200)} in-game days.
+                  {props.recipe.yields && ` Produces ×${props.recipe.yields.qty}.`}
+                </p>
+              </div>
+            )}
           </Show>
 
           <a

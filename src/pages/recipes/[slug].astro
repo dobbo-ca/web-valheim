@@ -26,7 +26,11 @@ const base = import.meta.env.BASE_URL;
   <p><a href={base}>← Back to all recipes</a></p>
   <h1>{recipe.name}</h1>
   <p class="subtitle">
-    {recipe.type === 'crafting' ? 'Crafting' : 'Cooking'} · {station?.name ?? recipe.station} · Level {recipe.stationLevel}
+    {recipe.type === 'crafting' ? 'Crafting' : 'Cooking'} · {(() => {
+      const stationName = station?.name ?? recipe.station;
+      const upgrade = station?.upgrades.find((u) => u.level === recipe.stationLevel);
+      return upgrade?.name ? `${stationName} — ${upgrade.name}` : `${stationName} Lv ${recipe.stationLevel}`;
+    })()}
   </p>
 
   <section class="detail-section">
@@ -42,6 +46,17 @@ const base = import.meta.env.BASE_URL;
       ))}
     </ul>
   </section>
+
+  {(() => {
+    const yieldItemId = recipe.yields?.itemId ?? recipe.id;
+    const item = itemsById.get(yieldItemId);
+    return item?.stackSize ? (
+      <section class="detail-section">
+        <h2>Stack size</h2>
+        <p>{item.stackSize}</p>
+      </section>
+    ) : null;
+  })()}
 
   {recipe.food && (
     <section class="detail-section">
@@ -59,6 +74,17 @@ const base = import.meta.env.BASE_URL;
     <section class="detail-section">
       <h2>Notes</h2>
       <p>{recipe.notes}</p>
+    </section>
+  )}
+
+  {recipe.mead && (
+    <section class="detail-section">
+      <h2>Brewing</h2>
+      <p>
+        Craft <strong>{recipe.mead.baseName}</strong> at a Cauldron, then place in a
+        <strong> Fermenter</strong> for {Math.round(recipe.mead.fermenterDuration / 1200)} in-game days.
+        {recipe.yields && ` Produces ×${recipe.yields.qty}.`}
+      </p>
     </section>
   )}
 
