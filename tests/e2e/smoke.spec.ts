@@ -42,4 +42,48 @@ test.describe('valheim helper smoke', () => {
     await expect(page.getByRole('heading', { name: 'Iron Sword' })).toBeVisible();
     await expect(page.getByText(/Used as ingredient in|Ingredients/)).toBeVisible();
   });
+
+  test('adding a recipe shows cart badge', async ({ page }) => {
+    await page.goto('/valheim/');
+    await expect(page.locator('.cart-badge')).not.toBeVisible();
+    await page.getByRole('button', { name: 'Add to cart' }).first().click();
+    await expect(page.locator('.cart-badge')).toBeVisible();
+    await expect(page.locator('.cart-badge__count')).toHaveText('1');
+  });
+
+  test('cart drawer opens and shows grocery list', async ({ page }) => {
+    await page.goto('/valheim/?q=hammer');
+    await page.getByRole('button', { name: 'Add to cart' }).first().click();
+    await page.locator('.cart-badge').click();
+    await expect(page.locator('.cart-drawer')).toBeVisible();
+    await expect(page.locator('.cart-drawer__item-name')).toHaveText('Hammer');
+    await expect(page.locator('.cart-drawer__grocery-item').first()).toBeVisible();
+  });
+
+  test('quantity controls update grocery list', async ({ page }) => {
+    await page.goto('/valheim/?q=hammer');
+    await page.getByRole('button', { name: 'Add to cart' }).first().click();
+    await page.locator('.cart-badge').click();
+    await page.getByRole('button', { name: /Increase.*quantity/ }).click();
+    await expect(page.locator('.cart-drawer__qty-value')).toHaveText('2');
+  });
+
+  test('cart URL state survives navigation', async ({ page }) => {
+    await page.goto('/valheim/?q=hammer');
+    await page.getByRole('button', { name: 'Add to cart' }).first().click();
+    const url = page.url();
+    expect(url).toContain('cart=');
+    await page.goto(url);
+    await expect(page.locator('.cart-badge')).toBeVisible();
+    await expect(page.locator('.cart-badge__count')).toHaveText('1');
+  });
+
+  test('clearing cart removes badge and closes drawer', async ({ page }) => {
+    await page.goto('/valheim/?q=hammer');
+    await page.getByRole('button', { name: 'Add to cart' }).first().click();
+    await page.locator('.cart-badge').click();
+    await page.getByRole('button', { name: 'Clear Cart' }).click();
+    await expect(page.locator('.cart-drawer')).not.toBeVisible();
+    await expect(page.locator('.cart-badge')).not.toBeVisible();
+  });
 });

@@ -1,7 +1,5 @@
-import {
-  compressToEncodedURIComponent,
-  decompressFromEncodedURIComponent,
-} from 'lz-string';
+import pkg from 'lz-string';
+const { compressToEncodedURIComponent, decompressFromEncodedURIComponent } = pkg;
 import type { Item, Recipe } from './types';
 
 // ---------------------------------------------------------------------------
