@@ -25,6 +25,17 @@ const PAGE_SIZES = [10, 20, 50, 100] as const;
 const CART_STORAGE_KEY = 'valheim-cart';
 const PAGE_SIZE_KEY = 'valheim-page-size';
 
+function readStoredPageSize(): number {
+  try {
+    const stored = localStorage.getItem(PAGE_SIZE_KEY);
+    if (stored) {
+      const parsed = Number.parseInt(stored, 10);
+      if ((PAGE_SIZES as readonly number[]).includes(parsed)) return parsed;
+    }
+  } catch {}
+  return 20;
+}
+
 interface Props {
   data: DataSet;
   baseHref: string;
@@ -37,7 +48,7 @@ export const RecipeTable: Component<Props> = (props) => {
   const [sortKey, setSortKey] = createSignal<SortKey | null>(null);
   const [sortDir, setSortDir] = createSignal<SortDir>('asc');
   const [page, setPage] = createSignal(1);
-  const [pageSize, setPageSize] = createSignal<number>(20);
+  const [pageSize, setPageSize] = createSignal<number>(readStoredPageSize());
   const [cart, setCart] = createStore<Record<string, number>>({});
   const [drawerOpen, setDrawerOpen] = createSignal(false);
 
@@ -49,19 +60,6 @@ export const RecipeTable: Component<Props> = (props) => {
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
     setState(decodeFilterState(params));
-
-    // Hydrate page size from localStorage
-    try {
-      const storedSize = localStorage.getItem(PAGE_SIZE_KEY);
-      if (storedSize) {
-        const parsed = Number.parseInt(storedSize, 10);
-        if ((PAGE_SIZES as readonly number[]).includes(parsed)) {
-          setPageSize(parsed);
-        }
-      }
-    } catch {
-      // localStorage unavailable
-    }
 
     // Hydrate cart: URL param takes precedence over localStorage
     const cartParam = params.get('cart');
