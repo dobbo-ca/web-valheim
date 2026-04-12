@@ -27,6 +27,7 @@ const CART_STORAGE_KEY = 'valheim-cart';
 interface Props {
   data: DataSet;
   baseHref: string;
+  iconIds?: string[];
 }
 
 export const RecipeTable: Component<Props> = (props) => {
@@ -101,6 +102,10 @@ export const RecipeTable: Component<Props> = (props) => {
 
   const stationsById = createMemo(
     () => new Map(props.data.stations.map((s) => [s.id, s])),
+  );
+
+  const iconSet = createMemo(
+    () => new Set(props.iconIds ?? []),
   );
 
   const recipesById = createMemo(
@@ -324,6 +329,8 @@ export const RecipeTable: Component<Props> = (props) => {
               onIngredientClick={addIngredient}
               onAddToCart={handleAddToCart}
               onOpenCart={() => setDrawerOpen(true)}
+              iconIds={iconSet()}
+              iconBase={`${props.baseHref}icons/items`}
             />
           )}
         </For>
