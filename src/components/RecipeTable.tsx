@@ -341,7 +341,7 @@ export const RecipeTable: Component<Props> = (props) => {
               onAddToCart={handleAddToCart}
               onOpenCart={() => setDrawerOpen(true)}
               iconIds={iconSet()}
-              iconBase={`${props.baseHref}icons/items`}
+              spriteHref={`${props.baseHref}icons/sprite.svg`}
             />
           )}
         </For>

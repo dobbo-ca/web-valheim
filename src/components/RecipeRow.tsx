@@ -2,6 +2,7 @@ import { For, Show, type Component } from 'solid-js';
 import type { Recipe, Item, Station } from '../lib/types';
 import { IngredientChip } from './IngredientChip';
 import { AddToCartButton } from './AddToCartButton';
+import { ItemIcon } from './ItemIcon';
 
 interface Props {
   recipe: Recipe;
@@ -15,7 +16,7 @@ interface Props {
   onAddToCart: (recipeId: string) => void;
   onOpenCart: () => void;
   iconIds?: Set<string>;
-  iconBase?: string;
+  spriteHref?: string;
 }
 
 function formatIngredients(
@@ -29,7 +30,7 @@ function formatIngredients(
 
 export const RecipeRow: Component<Props> = (props) => {
   const detailId = () => `recipe-row-detail-${props.recipe.id}`;
-  const iconBase = () => props.iconBase ?? '/icons/items';
+  const spriteHref = () => props.spriteHref ?? '/icons/sprite.svg';
   const hasRecipeIcon = () => props.iconIds?.has(props.recipe.id) ?? false;
 
   return (
@@ -46,13 +47,7 @@ export const RecipeRow: Component<Props> = (props) => {
           <span class="recipe-row__name">
             {props.expanded ? '▾ ' : ''}
             <Show when={hasRecipeIcon()}>
-              <img
-                class="item-icon item-icon--md"
-                src={`${iconBase()}/${props.recipe.id}.svg`}
-                alt=""
-                width={24}
-                height={24}
-              />
+              <ItemIcon id={props.recipe.id} size="md" spriteHref={spriteHref()} />
             </Show>
             {props.recipe.name}
             <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
@@ -101,7 +96,7 @@ export const RecipeRow: Component<Props> = (props) => {
                     qty={ing.qty}
                     onClick={props.onIngredientClick}
                     hasIcon={props.iconIds?.has(ing.itemId) ?? false}
-                    iconBase={iconBase()}
+                    spriteHref={spriteHref()}
                   />
                 )}
               </For>

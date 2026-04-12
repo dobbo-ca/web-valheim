@@ -169,9 +169,10 @@ describe('RecipeRow', () => {
         iconIds={iconIds}
       />
     ));
-    const icon = document.querySelector('.item-icon--md') as HTMLImageElement;
+    const icon = document.querySelector('.item-icon--md');
     expect(icon).toBeInTheDocument();
-    expect(icon.src).toContain('/icons/items/iron-sword.svg');
+    const use = icon?.querySelector('use');
+    expect(use?.getAttribute('href')).toContain('#iron-sword');
   });
 
   it('does not render icon when iconIds is absent', () => {

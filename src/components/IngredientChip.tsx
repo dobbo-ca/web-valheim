@@ -1,4 +1,5 @@
 import { Show, type Component } from 'solid-js';
+import { ItemIcon } from './ItemIcon';
 
 interface Props {
   itemId: string;
@@ -7,13 +8,12 @@ interface Props {
   onClick?: (itemId: string) => void;
   variant?: 'ingredient' | 'active-filter';
   hasIcon?: boolean;
-  iconBase?: string;
+  spriteHref?: string;
 }
 
 export const IngredientChip: Component<Props> = (props) => {
   const clickable = typeof props.onClick === 'function';
   const variant = () => props.variant ?? 'ingredient';
-  const iconBase = () => props.iconBase ?? '/icons/items';
 
   return (
     <button
@@ -24,13 +24,7 @@ export const IngredientChip: Component<Props> = (props) => {
       onClick={() => props.onClick?.(props.itemId)}
     >
       <Show when={props.hasIcon}>
-        <img
-          class="item-icon item-icon--sm"
-          src={`${iconBase()}/${props.itemId}.svg`}
-          alt=""
-          width={16}
-          height={16}
-        />
+        <ItemIcon id={props.itemId} size="sm" spriteHref={props.spriteHref} />
       </Show>
       {props.label}{props.qty != null && <>{' '}<span class="chip__qty">×{props.qty}</span></>}
     </button>
