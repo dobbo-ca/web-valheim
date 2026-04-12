@@ -432,6 +432,8 @@ h3 {
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
+  min-width: 72px;
+  text-align: center;
 }
 .add-to-cart-btn:hover {
   background: var(--accent);
