@@ -271,6 +271,7 @@ h3 {
 }
 .recipe-table__toolbar .filter-bar {
   margin-bottom: 0;
+  flex: 1;
 }
 
 /* ===== Reverse lookup strip ===== */
