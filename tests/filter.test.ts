@@ -14,6 +14,7 @@ const sample: Recipe[] = [
       { itemId: 'wood', qty: 2 },
     ],
     tags: ['sword', 'one-handed'],
+    biome: 'swamp',
   },
   {
     id: 'bronze-sword',
@@ -27,6 +28,7 @@ const sample: Recipe[] = [
       { itemId: 'leather-scraps', qty: 2 },
     ],
     tags: ['sword', 'one-handed'],
+    biome: 'black-forest',
   },
   {
     id: 'queens-jam',
@@ -38,6 +40,7 @@ const sample: Recipe[] = [
       { itemId: 'raspberries', qty: 8 },
       { itemId: 'blueberries', qty: 6 },
     ],
+    biome: 'meadows',
   },
   {
     id: 'upgrade-forge-2',
@@ -130,6 +133,7 @@ describe('filterRecipes', () => {
         query: 'sword',
         tags: [],
         stationCeilings: {},
+        biomes: [],
       }).map((r) => r.id),
     ).toEqual(['bronze-sword']);
   });
@@ -162,5 +166,24 @@ describe('filterRecipes', () => {
     expect(
       filterRecipes(sample, { ...empty, maxStationLevel: 7, stationCeilings: { forge: 1 } }).map((r) => r.id),
     ).toEqual(['bronze-sword', 'queens-jam']);
+  });
+
+  it('filters by biome (single)', () => {
+    expect(
+      filterRecipes(sample, { ...empty, biomes: ['meadows'] }).map((r) => r.id),
+    ).toEqual(['queens-jam']);
+  });
+
+  it('filters by biome (multiple, OR logic)', () => {
+    expect(
+      filterRecipes(sample, { ...empty, biomes: ['swamp', 'black-forest'] }).map((r) => r.id),
+    ).toEqual(['iron-sword', 'bronze-sword']);
+  });
+
+  it('excludes recipes without a biome when biome filter is active', () => {
+    // upgrade-forge-2 has no biome set
+    expect(
+      filterRecipes(sample, { ...empty, biomes: ['meadows'] }).map((r) => r.id),
+    ).not.toContain('upgrade-forge-2');
   });
 });

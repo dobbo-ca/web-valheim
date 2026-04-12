@@ -15,14 +15,14 @@ const tagGroups: TagGroup[] = [
 
 const standaloneTags = ['tool', 'station-upgrade', 'utility', 'magic', 'elemental', 'building'];
 
-const biomes: { label: string; tier: string }[] = [
-  { label: 'Meadows', tier: 'tier-0' },
-  { label: 'Black Forest', tier: 'tier-1' },
-  { label: 'Swamp', tier: 'tier-2' },
-  { label: 'Mountain', tier: 'tier-3' },
-  { label: 'Plains', tier: 'tier-4' },
-  { label: 'Mistlands', tier: 'tier-5' },
-  { label: 'Ashlands', tier: 'tier-6' },
+const biomes: { label: string; value: string }[] = [
+  { label: 'Meadows', value: 'meadows' },
+  { label: 'Black Forest', value: 'black-forest' },
+  { label: 'Swamp', value: 'swamp' },
+  { label: 'Mountain', value: 'mountain' },
+  { label: 'Plains', value: 'plains' },
+  { label: 'Mistlands', value: 'mistlands' },
+  { label: 'Ashlands', value: 'ashlands' },
 ];
 
 interface Props {
@@ -48,6 +48,14 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
       ? current.filter((t) => t !== tag)
       : [...current, tag];
     update({ tags: next });
+  };
+
+  const toggleBiome = (biome: string) => {
+    const current = props.state.biomes;
+    const next = current.includes(biome)
+      ? current.filter((b) => b !== biome)
+      : [...current, biome];
+    update({ biomes: next });
   };
 
   const toggleGroup = (group: TagGroup) => {
@@ -174,8 +182,8 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
               <button
                 type="button"
                 class="filter-chip filter-chip--sm"
-                classList={{ 'filter-chip--active': props.state.tags.includes(biome.tier) }}
-                onClick={() => toggleTag(biome.tier)}
+                classList={{ 'filter-chip--active': props.state.biomes.includes(biome.value) }}
+                onClick={() => toggleBiome(biome.value)}
               >
                 {biome.label}
               </button>

@@ -9,6 +9,7 @@ export interface FilterState {
   query: string;
   tags: string[];
   stationCeilings: Record<string, number>;
+  biomes: string[];
 }
 
 export const emptyFilterState: FilterState = {
@@ -20,6 +21,7 @@ export const emptyFilterState: FilterState = {
   query: '',
   tags: [],
   stationCeilings: {},
+  biomes: [],
 };
 
 export function filterRecipes(recipes: Recipe[], state: FilterState): Recipe[] {
@@ -40,6 +42,11 @@ export function filterRecipes(recipes: Recipe[], state: FilterState): Recipe[] {
     if (state.tags.length > 0) {
       const recipeTags = r.tags ?? [];
       if (!state.tags.some((t) => recipeTags.includes(t))) return false;
+    }
+
+    // Biome filter: recipe must match one of the selected biomes
+    if (state.biomes.length > 0) {
+      if (!r.biome || !state.biomes.includes(r.biome)) return false;
     }
 
     if (state.ingredientIds.length > 0) {

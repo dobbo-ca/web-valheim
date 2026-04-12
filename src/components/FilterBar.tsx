@@ -82,6 +82,7 @@ export const FilterBar: Component<Props> = (props) => {
     props.state.type !== 'all' ||
     props.state.station !== 'all' ||
     props.state.tags.length > 0 ||
+    props.state.biomes.length > 0 ||
     Object.keys(props.state.stationCeilings).length > 0 ||
     props.state.minStationLevel > 1 ||
     Number.isFinite(props.state.maxStationLevel);

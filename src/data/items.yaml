@@ -1,113 +1,113 @@
 # Materials
-- { id: wood, name: Wood, category: material, stackSize: 50 }
-- { id: fine-wood, name: Fine Wood, category: material, stackSize: 50 }
-- { id: core-wood, name: Core Wood, category: material, stackSize: 50 }
-- { id: stone, name: Stone, category: material, stackSize: 50 }
-- { id: flint, name: Flint, category: material, stackSize: 50 }
-- { id: copper, name: Copper, category: material, stackSize: 30 }
-- { id: tin, name: Tin, category: material, stackSize: 30 }
-- { id: bronze, name: Bronze, category: material, stackSize: 30 }
-- { id: iron, name: Iron, category: material, stackSize: 30 }
-- { id: silver, name: Silver, category: material, stackSize: 30 }
-- { id: black-metal, name: Black Metal, category: material, stackSize: 30 }
-- { id: leather-scraps, name: Leather Scraps, category: material, stackSize: 50 }
-- { id: deer-hide, name: Deer Hide, category: material, stackSize: 50 }
-- { id: troll-hide, name: Troll Hide, category: material, stackSize: 50 }
-- { id: wolf-pelt, name: Wolf Pelt, category: material, stackSize: 50 }
-- { id: lox-pelt, name: Lox Pelt, category: material, stackSize: 50 }
-- { id: feathers, name: Feathers, category: material, stackSize: 50 }
-- { id: deer-trophy, name: Deer Trophy, category: material, stackSize: 20 }
-- { id: hard-antler, name: Hard Antler, category: material, stackSize: 20 }
-- { id: resin, name: Resin, category: material, stackSize: 50 }
-- { id: bone-fragments, name: Bone Fragments, category: material, stackSize: 50 }
-- { id: ancient-bark, name: Ancient Bark, category: material, stackSize: 50 }
-- { id: guck, name: Guck, category: material, stackSize: 50 }
-- { id: ymir-flesh, name: Ymir Flesh, category: material, stackSize: 20 }
-- { id: freeze-gland, name: Freeze Gland, category: material, stackSize: 20 }
-- { id: wolf-fang, name: Wolf Fang, category: material, stackSize: 20 }
-- { id: crystal, name: Crystal, category: material, stackSize: 50 }
-- { id: linen-thread, name: Linen Thread, category: material, stackSize: 50 }
-- { id: needle, name: Needle, category: material, stackSize: 20 }
-- { id: chain, name: Chain, category: material, stackSize: 20 }
-- { id: serpent-scale, name: Serpent Scale, category: material, stackSize: 20 }
-- { id: ooze, name: Ooze, category: material, stackSize: 50 }
-- { id: obsidian, name: Obsidian, category: material, stackSize: 50 }
-- { id: draugr-elite-trophy, name: Draugr Elite Trophy, category: material, stackSize: 20 }
-- { id: drake-trophy, name: Drake Trophy, category: material, stackSize: 20 }
+- { id: wood, name: Wood, category: material, stackSize: 50, biome: meadows }
+- { id: fine-wood, name: Fine Wood, category: material, stackSize: 50, biome: black-forest }
+- { id: core-wood, name: Core Wood, category: material, stackSize: 50, biome: black-forest }
+- { id: stone, name: Stone, category: material, stackSize: 50, biome: meadows }
+- { id: flint, name: Flint, category: material, stackSize: 50, biome: meadows }
+- { id: copper, name: Copper, category: material, stackSize: 30, biome: black-forest }
+- { id: tin, name: Tin, category: material, stackSize: 30, biome: black-forest }
+- { id: bronze, name: Bronze, category: material, stackSize: 30, biome: black-forest }
+- { id: iron, name: Iron, category: material, stackSize: 30, biome: swamp }
+- { id: silver, name: Silver, category: material, stackSize: 30, biome: mountain }
+- { id: black-metal, name: Black Metal, category: material, stackSize: 30, biome: plains }
+- { id: leather-scraps, name: Leather Scraps, category: material, stackSize: 50, biome: meadows }
+- { id: deer-hide, name: Deer Hide, category: material, stackSize: 50, biome: meadows }
+- { id: troll-hide, name: Troll Hide, category: material, stackSize: 50, biome: black-forest }
+- { id: wolf-pelt, name: Wolf Pelt, category: material, stackSize: 50, biome: mountain }
+- { id: lox-pelt, name: Lox Pelt, category: material, stackSize: 50, biome: plains }
+- { id: feathers, name: Feathers, category: material, stackSize: 50, biome: meadows }
+- { id: deer-trophy, name: Deer Trophy, category: material, stackSize: 20, biome: meadows }
+- { id: hard-antler, name: Hard Antler, category: material, stackSize: 20, biome: meadows }
+- { id: resin, name: Resin, category: material, stackSize: 50, biome: meadows }
+- { id: bone-fragments, name: Bone Fragments, category: material, stackSize: 50, biome: meadows }
+- { id: ancient-bark, name: Ancient Bark, category: material, stackSize: 50, biome: swamp }
+- { id: guck, name: Guck, category: material, stackSize: 50, biome: swamp }
+- { id: ymir-flesh, name: Ymir Flesh, category: material, stackSize: 20, biome: black-forest }
+- { id: freeze-gland, name: Freeze Gland, category: material, stackSize: 20, biome: mountain }
+- { id: wolf-fang, name: Wolf Fang, category: material, stackSize: 20, biome: mountain }
+- { id: crystal, name: Crystal, category: material, stackSize: 50, biome: mountain }
+- { id: linen-thread, name: Linen Thread, category: material, stackSize: 50, biome: plains }
+- { id: needle, name: Needle, category: material, stackSize: 20, biome: plains }
+- { id: chain, name: Chain, category: material, stackSize: 20, biome: swamp }
+- { id: serpent-scale, name: Serpent Scale, category: material, stackSize: 20, biome: plains }
+- { id: ooze, name: Ooze, category: material, stackSize: 50, biome: swamp }
+- { id: obsidian, name: Obsidian, category: material, stackSize: 50, biome: mountain }
+- { id: draugr-elite-trophy, name: Draugr Elite Trophy, category: material, stackSize: 20, biome: swamp }
+- { id: drake-trophy, name: Drake Trophy, category: material, stackSize: 20, biome: mountain }
 
 # Mistlands materials
-- { id: carapace, name: Carapace, category: material, stackSize: 50 }
-- { id: refined-eitr, name: Refined Eitr, category: material, stackSize: 20 }
-- { id: dvergr-needle, name: Dvergr Needle, category: material, stackSize: 20 }
-- { id: yggdrasil-wood, name: Yggdrasil Wood, category: material, stackSize: 50 }
-- { id: black-marble, name: Black Marble, category: material, stackSize: 50 }
-- { id: sap, name: Sap, category: material, stackSize: 50 }
-- { id: royal-jelly, name: Royal Jelly, category: material, stackSize: 50 }
-- { id: mandible, name: Mandible, category: material, stackSize: 50 }
+- { id: carapace, name: Carapace, category: material, stackSize: 50, biome: mistlands }
+- { id: refined-eitr, name: Refined Eitr, category: material, stackSize: 20, biome: mistlands }
+- { id: dvergr-needle, name: Dvergr Needle, category: material, stackSize: 20, biome: mistlands }
+- { id: yggdrasil-wood, name: Yggdrasil Wood, category: material, stackSize: 50, biome: mistlands }
+- { id: black-marble, name: Black Marble, category: material, stackSize: 50, biome: mistlands }
+- { id: sap, name: Sap, category: material, stackSize: 50, biome: mistlands }
+- { id: royal-jelly, name: Royal Jelly, category: material, stackSize: 50, biome: mistlands }
+- { id: mandible, name: Mandible, category: material, stackSize: 50, biome: mistlands }
 
 # Mistlands materials (additions)
-- { id: scale-hide, name: Scale Hide, category: material, stackSize: 50 }
-- { id: chitin, name: Chitin, category: material, stackSize: 50 }
-- { id: sealbreaker-fragment, name: Sealbreaker Fragment, category: material, stackSize: 20 }
+- { id: scale-hide, name: Scale Hide, category: material, stackSize: 50, biome: mistlands }
+- { id: chitin, name: Chitin, category: material, stackSize: 50, biome: mistlands }
+- { id: sealbreaker-fragment, name: Sealbreaker Fragment, category: material, stackSize: 20, biome: mistlands }
 
 # Ashlands materials
-- { id: flametal, name: Flametal, category: material, stackSize: 30 }
-- { id: charred-bone, name: Charred Bone, category: material, stackSize: 50 }
-- { id: morgen-heart, name: Morgen Heart, category: material, stackSize: 20 }
-- { id: morgen-sinew, name: Morgen Sinew, category: material, stackSize: 20 }
-- { id: bilebag, name: Bilebag, category: material, stackSize: 20 }
-- { id: coal, name: Coal, category: material, stackSize: 50 }
-- { id: asksvin-hide, name: Asksvin Hide, category: material, stackSize: 50 }
-- { id: ashwood, name: Ashwood, category: material, stackSize: 50 }
-- { id: proustite-powder, name: Proustite Powder, category: material, stackSize: 50 }
-- { id: celestial-feather, name: Celestial Feather, category: material, stackSize: 20 }
-- { id: bloodstone, name: Bloodstone, category: material, stackSize: 20 }
-- { id: iolite, name: Iolite, category: material, stackSize: 20 }
-- { id: jade, name: Jade, category: material, stackSize: 20 }
-- { id: skeleton-trophy, name: Skeleton Trophy, category: material, stackSize: 20 }
-- { id: wolf-trophy, name: Wolf Trophy, category: material, stackSize: 20 }
+- { id: flametal, name: Flametal, category: material, stackSize: 30, biome: ashlands }
+- { id: charred-bone, name: Charred Bone, category: material, stackSize: 50, biome: ashlands }
+- { id: morgen-heart, name: Morgen Heart, category: material, stackSize: 20, biome: ashlands }
+- { id: morgen-sinew, name: Morgen Sinew, category: material, stackSize: 20, biome: ashlands }
+- { id: bilebag, name: Bilebag, category: material, stackSize: 20, biome: ashlands }
+- { id: coal, name: Coal, category: material, stackSize: 50, biome: ashlands }
+- { id: asksvin-hide, name: Asksvin Hide, category: material, stackSize: 50, biome: ashlands }
+- { id: ashwood, name: Ashwood, category: material, stackSize: 50, biome: ashlands }
+- { id: proustite-powder, name: Proustite Powder, category: material, stackSize: 50, biome: ashlands }
+- { id: celestial-feather, name: Celestial Feather, category: material, stackSize: 20, biome: ashlands }
+- { id: bloodstone, name: Bloodstone, category: material, stackSize: 20, biome: ashlands }
+- { id: iolite, name: Iolite, category: material, stackSize: 20, biome: ashlands }
+- { id: jade, name: Jade, category: material, stackSize: 20, biome: ashlands }
+- { id: skeleton-trophy, name: Skeleton Trophy, category: material, stackSize: 20, biome: meadows }
+- { id: wolf-trophy, name: Wolf Trophy, category: material, stackSize: 20, biome: mountain }
 
 # Plains materials (additions)
-- { id: flax, name: Flax, category: material, stackSize: 50 }
-- { id: barley, name: Barley, category: material, stackSize: 50 }
-- { id: bronze-nails, name: Bronze Nails, category: material, stackSize: 100 }
-- { id: iron-nails, name: Iron Nails, category: material, stackSize: 100 }
+- { id: flax, name: Flax, category: material, stackSize: 50, biome: plains }
+- { id: barley, name: Barley, category: material, stackSize: 50, biome: plains }
+- { id: bronze-nails, name: Bronze Nails, category: material, stackSize: 100, biome: black-forest }
+- { id: iron-nails, name: Iron Nails, category: material, stackSize: 100, biome: swamp }
 
 # Cooking ingredients
-- { id: raspberries, name: Raspberries, category: ingredient, stackSize: 50 }
-- { id: dandelion, name: Dandelion, category: ingredient, stackSize: 50 }
-- { id: blueberries, name: Blueberries, category: ingredient, stackSize: 50 }
-- { id: cloudberries, name: Cloudberries, category: ingredient, stackSize: 50 }
-- { id: honey, name: Honey, category: ingredient, stackSize: 50 }
-- { id: mushroom, name: Mushroom, category: ingredient, stackSize: 50 }
-- { id: yellow-mushroom, name: Yellow Mushroom, category: ingredient, stackSize: 50 }
-- { id: carrot, name: Carrot, category: ingredient, stackSize: 50 }
-- { id: turnip, name: Turnip, category: ingredient, stackSize: 50 }
-- { id: boar-meat, name: Boar Meat, category: ingredient, stackSize: 20 }
-- { id: deer-meat, name: Deer Meat, category: ingredient, stackSize: 20 }
-- { id: neck-tail, name: Neck Tail, category: ingredient, stackSize: 20 }
-- { id: fish-raw, name: Raw Fish, category: ingredient, stackSize: 20 }
-- { id: wolf-meat, name: Wolf Meat, category: ingredient, stackSize: 20 }
-- { id: serpent-meat, name: Serpent Meat, category: ingredient, stackSize: 20 }
-- { id: lox-meat, name: Lox Meat, category: ingredient, stackSize: 20 }
-- { id: onion, name: Onion, category: ingredient, stackSize: 50 }
-- { id: barley-flour, name: Barley Flour, category: ingredient, stackSize: 20 }
-- { id: bloodbag, name: Bloodbag, category: ingredient, stackSize: 50 }
-- { id: thistle, name: Thistle, category: ingredient, stackSize: 50 }
-- { id: entrails, name: Entrails, category: ingredient, stackSize: 50 }
+- { id: raspberries, name: Raspberries, category: ingredient, stackSize: 50, biome: meadows }
+- { id: dandelion, name: Dandelion, category: ingredient, stackSize: 50, biome: meadows }
+- { id: blueberries, name: Blueberries, category: ingredient, stackSize: 50, biome: black-forest }
+- { id: cloudberries, name: Cloudberries, category: ingredient, stackSize: 50, biome: plains }
+- { id: honey, name: Honey, category: ingredient, stackSize: 50, biome: meadows }
+- { id: mushroom, name: Mushroom, category: ingredient, stackSize: 50, biome: meadows }
+- { id: yellow-mushroom, name: Yellow Mushroom, category: ingredient, stackSize: 50, biome: black-forest }
+- { id: carrot, name: Carrot, category: ingredient, stackSize: 50, biome: black-forest }
+- { id: turnip, name: Turnip, category: ingredient, stackSize: 50, biome: swamp }
+- { id: boar-meat, name: Boar Meat, category: ingredient, stackSize: 20, biome: meadows }
+- { id: deer-meat, name: Deer Meat, category: ingredient, stackSize: 20, biome: meadows }
+- { id: neck-tail, name: Neck Tail, category: ingredient, stackSize: 20, biome: meadows }
+- { id: fish-raw, name: Raw Fish, category: ingredient, stackSize: 20, biome: meadows }
+- { id: wolf-meat, name: Wolf Meat, category: ingredient, stackSize: 20, biome: mountain }
+- { id: serpent-meat, name: Serpent Meat, category: ingredient, stackSize: 20, biome: plains }
+- { id: lox-meat, name: Lox Meat, category: ingredient, stackSize: 20, biome: plains }
+- { id: onion, name: Onion, category: ingredient, stackSize: 50, biome: mountain }
+- { id: barley-flour, name: Barley Flour, category: ingredient, stackSize: 20, biome: plains }
+- { id: bloodbag, name: Bloodbag, category: ingredient, stackSize: 50, biome: swamp }
+- { id: thistle, name: Thistle, category: ingredient, stackSize: 50, biome: black-forest }
+- { id: entrails, name: Entrails, category: ingredient, stackSize: 50, biome: swamp }
 
 # Mistlands cooking ingredients
-- { id: jotun-puffs, name: Jotun Puffs, category: ingredient, stackSize: 50 }
-- { id: seeker-meat, name: Seeker Meat, category: ingredient, stackSize: 20 }
-- { id: magecap, name: Magecap, category: ingredient, stackSize: 50 }
-- { id: fiddlehead, name: Fiddlehead, category: ingredient, stackSize: 50 }
-- { id: vineberry-cluster, name: Vineberry Cluster, category: ingredient, stackSize: 50 }
+- { id: jotun-puffs, name: Jotun Puffs, category: ingredient, stackSize: 50, biome: mistlands }
+- { id: seeker-meat, name: Seeker Meat, category: ingredient, stackSize: 20, biome: mistlands }
+- { id: magecap, name: Magecap, category: ingredient, stackSize: 50, biome: mistlands }
+- { id: fiddlehead, name: Fiddlehead, category: ingredient, stackSize: 50, biome: mistlands }
+- { id: vineberry-cluster, name: Vineberry Cluster, category: ingredient, stackSize: 50, biome: mistlands }
 
 # Mistlands cooking ingredients (additions)
-- { id: egg, name: Egg, category: ingredient, stackSize: 20 }
+- { id: egg, name: Egg, category: ingredient, stackSize: 20, biome: mistlands }
 
 # Ashlands cooking ingredients
-- { id: charred-meat, name: Charred Meat, category: ingredient, stackSize: 20 }
+- { id: charred-meat, name: Charred Meat, category: ingredient, stackSize: 20, biome: ashlands }
 
 # Crafted projectiles
 - { id: wood-arrow, name: Wood Arrow, category: weapon, stackSize: 100 }
@@ -148,36 +148,36 @@
 - { id: tasty-mead, name: Tasty Mead, category: food, stackSize: 10 }
 
 # New raw meats
-- { id: hare-meat, name: Hare Meat, category: ingredient, stackSize: 20 }
-- { id: chicken-meat, name: Chicken Meat, category: ingredient, stackSize: 20 }
-- { id: bonemaw-meat, name: Bonemaw Meat, category: ingredient, stackSize: 20 }
-- { id: asksvin-tail, name: Asksvin Tail, category: ingredient, stackSize: 20 }
-- { id: volture-meat, name: Volture Meat, category: ingredient, stackSize: 20 }
-- { id: anglerfish, name: Anglerfish, category: ingredient, stackSize: 20 }
+- { id: hare-meat, name: Hare Meat, category: ingredient, stackSize: 20, biome: mistlands }
+- { id: chicken-meat, name: Chicken Meat, category: ingredient, stackSize: 20, biome: mistlands }
+- { id: bonemaw-meat, name: Bonemaw Meat, category: ingredient, stackSize: 20, biome: ashlands }
+- { id: asksvin-tail, name: Asksvin Tail, category: ingredient, stackSize: 20, biome: ashlands }
+- { id: volture-meat, name: Volture Meat, category: ingredient, stackSize: 20, biome: ashlands }
+- { id: anglerfish, name: Anglerfish, category: ingredient, stackSize: 20, biome: ashlands }
 
 # New crafting/recipe ingredients
-- { id: blood-clot, name: Blood Clot, category: material, stackSize: 50 }
-- { id: greydwarf-eye, name: Greydwarf Eye, category: material, stackSize: 50 }
-- { id: smoke-puff, name: Smoke Puff, category: material, stackSize: 50 }
-- { id: fishing-bait, name: Fishing Bait, category: material, stackSize: 100 }
+- { id: blood-clot, name: Blood Clot, category: material, stackSize: 50, biome: black-forest }
+- { id: greydwarf-eye, name: Greydwarf Eye, category: material, stackSize: 50, biome: meadows }
+- { id: smoke-puff, name: Smoke Puff, category: material, stackSize: 50, biome: meadows }
+- { id: fishing-bait, name: Fishing Bait, category: material, stackSize: 100, biome: meadows }
 - { id: bread-dough, name: Bread Dough, category: food, stackSize: 10 }
 
 # Trophies (for bait recipes)
-- { id: ulv-trophy, name: Ulv Trophy, category: material, stackSize: 20 }
-- { id: serpent-trophy, name: Serpent Trophy, category: material, stackSize: 20 }
-- { id: surtling-trophy, name: Surtling Trophy, category: material, stackSize: 20 }
-- { id: lox-trophy, name: Lox Trophy, category: material, stackSize: 20 }
-- { id: troll-trophy, name: Troll Trophy, category: material, stackSize: 20 }
-- { id: abomination-trophy, name: Abomination Trophy, category: material, stackSize: 20 }
-- { id: fuling-trophy, name: Fuling Trophy, category: material, stackSize: 20 }
+- { id: ulv-trophy, name: Ulv Trophy, category: material, stackSize: 20, biome: mountain }
+- { id: serpent-trophy, name: Serpent Trophy, category: material, stackSize: 20, biome: plains }
+- { id: surtling-trophy, name: Surtling Trophy, category: material, stackSize: 20, biome: swamp }
+- { id: lox-trophy, name: Lox Trophy, category: material, stackSize: 20, biome: plains }
+- { id: troll-trophy, name: Troll Trophy, category: material, stackSize: 20, biome: black-forest }
+- { id: abomination-trophy, name: Abomination Trophy, category: material, stackSize: 20, biome: swamp }
+- { id: fuling-trophy, name: Fuling Trophy, category: material, stackSize: 20, biome: plains }
 
 # Bog Witch spices (purchasable)
-- { id: woodland-herb-blend, name: Woodland Herb Blend, category: ingredient, stackSize: 50 }
-- { id: seafarers-herbs, name: "Seafarer's Herbs", category: ingredient, stackSize: 50 }
-- { id: mountain-peak-pepper-powder, name: Mountain Peak Pepper Powder, category: ingredient, stackSize: 50 }
-- { id: grasslands-herbalist-harvest, name: Grasslands Herbalist Harvest, category: ingredient, stackSize: 50 }
-- { id: herbs-of-the-hidden-hills, name: Herbs of the Hidden Hills, category: ingredient, stackSize: 50 }
-- { id: fiery-spice-powder, name: Fiery Spice Powder, category: ingredient, stackSize: 50 }
+- { id: woodland-herb-blend, name: Woodland Herb Blend, category: ingredient, stackSize: 50, biome: meadows }
+- { id: seafarers-herbs, name: "Seafarer's Herbs", category: ingredient, stackSize: 50, biome: black-forest }
+- { id: mountain-peak-pepper-powder, name: Mountain Peak Pepper Powder, category: ingredient, stackSize: 50, biome: mountain }
+- { id: grasslands-herbalist-harvest, name: Grasslands Herbalist Harvest, category: ingredient, stackSize: 50, biome: meadows }
+- { id: herbs-of-the-hidden-hills, name: Herbs of the Hidden Hills, category: ingredient, stackSize: 50, biome: mistlands }
+- { id: fiery-spice-powder, name: Fiery Spice Powder, category: ingredient, stackSize: 50, biome: ashlands }
 
 # Cooked meats (spit outputs)
 - { id: grilled-neck-tail, name: Grilled Neck Tail, category: food, stackSize: 10 }

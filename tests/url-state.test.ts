@@ -13,6 +13,7 @@ describe('URL state', () => {
       query: 'sword',
       tags: [],
       stationCeilings: {},
+      biomes: [],
     });
     expect(params.get('type')).toBe('crafting');
     expect(params.get('station')).toBe('forge');
@@ -32,6 +33,7 @@ describe('URL state', () => {
       query: '',
       tags: [],
       stationCeilings: {},
+      biomes: [],
     });
     expect([...params.keys()]).toEqual([]);
   });
@@ -85,6 +87,7 @@ describe('URL state', () => {
       query: 'sword',
       tags: [],
       stationCeilings: {},
+      biomes: [],
     };
     expect(decodeFilterState(encodeFilterState(original))).toEqual(original);
   });
@@ -130,6 +133,26 @@ describe('URL state', () => {
       tags: ['sword'],
       stationCeilings: { forge: 5 },
     };
+    expect(decodeFilterState(encodeFilterState(original))).toEqual(original);
+  });
+
+  it('encodes biomes', () => {
+    const params = encodeFilterState({ ...emptyFilterState, biomes: ['swamp', 'mountain'] });
+    expect(params.get('biomes')).toBe('swamp,mountain');
+  });
+
+  it('omits empty biomes', () => {
+    const params = encodeFilterState({ ...emptyFilterState, biomes: [] });
+    expect(params.get('biomes')).toBeNull();
+  });
+
+  it('decodes biomes', () => {
+    const state = decodeFilterState(new URLSearchParams('biomes=swamp,mountain'));
+    expect(state.biomes).toEqual(['swamp', 'mountain']);
+  });
+
+  it('round-trips biomes', () => {
+    const original: FilterState = { ...emptyFilterState, biomes: ['plains', 'mistlands'] };
     expect(decodeFilterState(encodeFilterState(original))).toEqual(original);
   });
 });

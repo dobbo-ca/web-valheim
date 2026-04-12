@@ -11,6 +11,7 @@ import type {
   DamageStatsSchema,
   ItemStatsSchema,
   ItemUpgradeSchema,
+  BiomeSchema,
 } from './schema';
 
 export type Item = z.infer<typeof ItemSchema>;
@@ -24,3 +25,4 @@ export type ItemCategory = z.infer<typeof ItemCategorySchema>;
 export type DamageStats = z.infer<typeof DamageStatsSchema>;
 export type ItemStats = z.infer<typeof ItemStatsSchema>;
 export type ItemUpgrade = z.infer<typeof ItemUpgradeSchema>;
+export type Biome = z.infer<typeof BiomeSchema>;

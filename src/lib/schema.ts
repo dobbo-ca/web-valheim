@@ -9,11 +9,16 @@ export const ItemCategorySchema = z.enum([
   'tool',
 ]);
 
+export const BiomeSchema = z.enum([
+  'meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands',
+]);
+
 export const ItemSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
   category: ItemCategorySchema,
   stackSize: z.number().int().positive().optional(),
+  biome: BiomeSchema.optional(),
 });
 
 export const IngredientRefSchema = z.object({
@@ -93,6 +98,7 @@ export const RecipeSchema = z.object({
   secondaryStep: SecondaryStepSchema.optional(),
   stats: ItemStatsSchema.optional(),
   upgrades: z.array(ItemUpgradeSchema).optional(),
+  biome: BiomeSchema.optional(),
 });
 
 export const StationsFileSchema = z.array(StationSchema);

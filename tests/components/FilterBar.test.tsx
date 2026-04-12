@@ -18,6 +18,7 @@ const empty: FilterState = {
   query: '',
   tags: [],
   stationCeilings: {},
+  biomes: [],
 };
 
 describe('FilterBar', () => {

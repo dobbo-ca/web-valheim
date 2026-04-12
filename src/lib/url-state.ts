@@ -18,6 +18,9 @@ export function encodeFilterState(state: FilterState): URLSearchParams {
   if (state.tags.length > 0) {
     params.set('tags', state.tags.join(','));
   }
+  if (state.biomes.length > 0) {
+    params.set('biomes', state.biomes.join(','));
+  }
   for (const [stationId, level] of Object.entries(state.stationCeilings)) {
     params.set(`stn-${stationId}`, String(level));
   }
@@ -67,5 +70,10 @@ export function decodeFilterState(params: URLSearchParams): FilterState {
     }
   }
 
-  return { type, station, minStationLevel, maxStationLevel, ingredientIds, query, tags, stationCeilings };
+  const biomesRaw = params.get('biomes');
+  const biomes = biomesRaw
+    ? biomesRaw.split(',').map((s) => s.trim()).filter(Boolean)
+    : [];
+
+  return { type, station, minStationLevel, maxStationLevel, ingredientIds, query, tags, stationCeilings, biomes };
 }
