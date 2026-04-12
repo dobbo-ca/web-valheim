@@ -128,3 +128,35 @@
 - { id: frost-resistance-mead, name: Frost Resistance Mead, category: food, stackSize: 10 }
 - { id: fire-resistance-barley-wine, name: Fire Resistance Barley Wine, category: food, stackSize: 10 }
 - { id: tasty-mead, name: Tasty Mead, category: food, stackSize: 10 }
+
+# New raw meats
+- { id: hare-meat, name: Hare Meat, category: ingredient, stackSize: 20 }
+- { id: chicken-meat, name: Chicken Meat, category: ingredient, stackSize: 20 }
+- { id: bonemaw-meat, name: Bonemaw Meat, category: ingredient, stackSize: 20 }
+- { id: asksvin-tail, name: Asksvin Tail, category: ingredient, stackSize: 20 }
+- { id: volture-meat, name: Volture Meat, category: ingredient, stackSize: 20 }
+- { id: anglerfish, name: Anglerfish, category: ingredient, stackSize: 20 }
+
+# New crafting/recipe ingredients
+- { id: blood-clot, name: Blood Clot, category: material, stackSize: 50 }
+- { id: greydwarf-eye, name: Greydwarf Eye, category: material, stackSize: 50 }
+- { id: smoke-puff, name: Smoke Puff, category: material, stackSize: 50 }
+- { id: fishing-bait, name: Fishing Bait, category: material, stackSize: 100 }
+- { id: bread-dough, name: Bread Dough, category: food, stackSize: 10 }
+
+# Trophies (for bait recipes)
+- { id: ulv-trophy, name: Ulv Trophy, category: material, stackSize: 20 }
+- { id: serpent-trophy, name: Serpent Trophy, category: material, stackSize: 20 }
+- { id: surtling-trophy, name: Surtling Trophy, category: material, stackSize: 20 }
+- { id: lox-trophy, name: Lox Trophy, category: material, stackSize: 20 }
+- { id: troll-trophy, name: Troll Trophy, category: material, stackSize: 20 }
+- { id: abomination-trophy, name: Abomination Trophy, category: material, stackSize: 20 }
+- { id: fuling-trophy, name: Fuling Trophy, category: material, stackSize: 20 }
+
+# Bog Witch spices (purchasable)
+- { id: woodland-herb-blend, name: Woodland Herb Blend, category: ingredient, stackSize: 50 }
+- { id: seafarers-herbs, name: "Seafarer's Herbs", category: ingredient, stackSize: 50 }
+- { id: mountain-peak-pepper-powder, name: Mountain Peak Pepper Powder, category: ingredient, stackSize: 50 }
+- { id: grasslands-herbalist-harvest, name: Grasslands Herbalist Harvest, category: ingredient, stackSize: 50 }
+- { id: herbs-of-the-hidden-hills, name: Herbs of the Hidden Hills, category: ingredient, stackSize: 50 }
+- { id: fiery-spice-powder, name: Fiery Spice Powder, category: ingredient, stackSize: 50 }
