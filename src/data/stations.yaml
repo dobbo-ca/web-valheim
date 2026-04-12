@@ -1,15 +1,97 @@
 - id: workbench
   name: Workbench
   maxLevel: 5
-  upgrades: []
+  upgrades:
+    - level: 2
+      name: Chopping Block
+      requires:
+        - { itemId: wood, qty: 10 }
+        - { itemId: flint, qty: 10 }
+    - level: 3
+      name: Tanning Rack
+      requires:
+        - { itemId: wood, qty: 10 }
+        - { itemId: flint, qty: 15 }
+        - { itemId: leather-scraps, qty: 20 }
+        - { itemId: bronze-nails, qty: 5 }
+    - level: 4
+      name: Adze
+      requires:
+        - { itemId: fine-wood, qty: 10 }
+        - { itemId: bronze, qty: 3 }
+    - level: 5
+      name: Tool Shelf
+      requires:
+        - { itemId: iron, qty: 4 }
+        - { itemId: fine-wood, qty: 10 }
+        - { itemId: deer-hide, qty: 2 }
+        - { itemId: obsidian, qty: 4 }
 - id: forge
   name: Forge
   maxLevel: 7
-  upgrades: []
+  upgrades:
+    - level: 2
+      name: Forge Bellows
+      requires:
+        - { itemId: wood, qty: 5 }
+        - { itemId: deer-hide, qty: 5 }
+        - { itemId: chain, qty: 5 }
+    - level: 3
+      name: Anvils
+      requires:
+        - { itemId: bronze, qty: 5 }
+        - { itemId: wood, qty: 10 }
+    - level: 4
+      name: Smith's Anvil
+      requires:
+        - { itemId: iron, qty: 20 }
+        - { itemId: wood, qty: 5 }
+    - level: 5
+      name: Forge Cooler
+      requires:
+        - { itemId: iron, qty: 10 }
+        - { itemId: obsidian, qty: 4 }
+        - { itemId: wood, qty: 4 }
+    - level: 6
+      name: Forge Toolrack
+      requires:
+        - { itemId: iron, qty: 15 }
+        - { itemId: fine-wood, qty: 10 }
+    - level: 7
+      name: Forge Grindstone
+      requires:
+        - { itemId: wood, qty: 10 }
+        - { itemId: stone, qty: 3 }
+        - { itemId: iron, qty: 4 }
 - id: cauldron
   name: Cauldron
-  maxLevel: 5
-  upgrades: []
+  maxLevel: 6
+  upgrades:
+    - level: 2
+      name: Spice Rack
+      requires:
+        - { itemId: thistle, qty: 3 }
+        - { itemId: mushroom, qty: 3 }
+        - { itemId: carrot, qty: 3 }
+        - { itemId: turnip, qty: 3 }
+    - level: 3
+      name: Butcher's Table
+      requires:
+        - { itemId: iron, qty: 2 }
+        - { itemId: ancient-bark, qty: 4 }
+        - { itemId: fine-wood, qty: 10 }
+        - { itemId: leather-scraps, qty: 4 }
+    - level: 4
+      name: Pots and Pans
+      requires:
+        - { itemId: iron, qty: 5 }
+        - { itemId: silver, qty: 3 }
+    - level: 5
+      name: Maelstrom
+      requires:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: iron, qty: 5 }
+        - { itemId: refined-eitr, qty: 3 }
 - id: stonecutter
   name: Stonecutter
   maxLevel: 1
@@ -18,7 +100,36 @@
   name: Artisan Table
   maxLevel: 1
   upgrades: []
+- id: galdr-table
+  name: Galdr Table
+  maxLevel: 3
+  upgrades:
+    - level: 2
+      name: Rune Hat
+      requires:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: sap, qty: 5 }
+        - { itemId: refined-eitr, qty: 3 }
+    - level: 3
+      name: Eitr Weave
+      requires:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 10 }
+        - { itemId: mandible, qty: 5 }
 - id: black-forge
   name: Black Forge
   maxLevel: 3
-  upgrades: []
+  upgrades:
+    - level: 2
+      name: Black Forge Cooler
+      requires:
+        - { itemId: black-marble, qty: 10 }
+        - { itemId: yggdrasil-wood, qty: 5 }
+        - { itemId: refined-eitr, qty: 3 }
+    - level: 3
+      name: Black Forge Bellows
+      requires:
+        - { itemId: black-marble, qty: 10 }
+        - { itemId: yggdrasil-wood, qty: 5 }
+        - { itemId: refined-eitr, qty: 5 }
+        - { itemId: mandible, qty: 3 }

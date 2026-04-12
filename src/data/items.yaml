@@ -35,6 +35,28 @@
 - { id: draugr-elite-trophy, name: Draugr Elite Trophy, category: material }
 - { id: drake-trophy, name: Drake Trophy, category: material }
 
+# Mistlands materials
+- { id: carapace, name: Carapace, category: material }
+- { id: refined-eitr, name: Refined Eitr, category: material }
+- { id: dvergr-needle, name: Dvergr Needle, category: material }
+- { id: yggdrasil-wood, name: Yggdrasil Wood, category: material }
+- { id: black-marble, name: Black Marble, category: material }
+- { id: sap, name: Sap, category: material }
+- { id: royal-jelly, name: Royal Jelly, category: material }
+- { id: mandible, name: Mandible, category: material }
+
+# Ashlands materials
+- { id: flametal, name: Flametal, category: material }
+- { id: charred-bone, name: Charred Bone, category: material }
+- { id: morgen-heart, name: Morgen Heart, category: material }
+- { id: bilebag, name: Bilebag, category: material }
+
+# Plains materials (additions)
+- { id: flax, name: Flax, category: material }
+- { id: barley, name: Barley, category: material }
+- { id: bronze-nails, name: Bronze Nails, category: material }
+- { id: iron-nails, name: Iron Nails, category: material }
+
 # Cooking ingredients
 - { id: raspberries, name: Raspberries, category: ingredient }
 - { id: blueberries, name: Blueberries, category: ingredient }
@@ -56,3 +78,11 @@
 - { id: bloodbag, name: Bloodbag, category: ingredient }
 - { id: thistle, name: Thistle, category: ingredient }
 - { id: entrails, name: Entrails, category: ingredient }
+
+# Mistlands cooking ingredients
+- { id: jotun-puffs, name: Jotun Puffs, category: ingredient }
+- { id: seeker-meat, name: Seeker Meat, category: ingredient }
+- { id: magecap, name: Magecap, category: ingredient }
+
+# Ashlands cooking ingredients
+- { id: charred-meat, name: Charred Meat, category: ingredient }

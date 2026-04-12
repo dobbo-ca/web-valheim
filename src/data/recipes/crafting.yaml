@@ -838,3 +838,545 @@
     - { itemId: wood, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
   tags: [sword, one-handed, tier-4]
+
+# ── Black Forge ────────────────────────────────────────────────────────────────
+
+# Mistlands weapons (Black Forge level 1–2)
+- id: himminafl
+  name: Himminafl
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 10 }
+    - { itemId: yggdrasil-wood, qty: 8 }
+    - { itemId: refined-eitr, qty: 3 }
+  tags: [atgeir, two-handed, tier-6]
+
+- id: jotun-bane
+  name: Jotun Bane
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 5 }
+    - { itemId: yggdrasil-wood, qty: 5 }
+    - { itemId: refined-eitr, qty: 2 }
+  tags: [knife, one-handed, tier-6]
+
+- id: spinesnap
+  name: Spinesnap
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 10 }
+    - { itemId: yggdrasil-wood, qty: 4 }
+    - { itemId: mandible, qty: 4 }
+  tags: [crossbow, two-handed, tier-6]
+
+- id: arbalest
+  name: Arbalest
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 20 }
+    - { itemId: yggdrasil-wood, qty: 10 }
+    - { itemId: iron, qty: 5 }
+  tags: [crossbow, two-handed, tier-6]
+
+- id: krom
+  name: Krom
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 20 }
+    - { itemId: yggdrasil-wood, qty: 4 }
+    - { itemId: refined-eitr, qty: 5 }
+  tags: [sword, two-handed, tier-6]
+
+- id: mistwalker
+  name: Mistwalker
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 15 }
+    - { itemId: refined-eitr, qty: 3 }
+    - { itemId: freeze-gland, qty: 3 }
+  tags: [sword, one-handed, tier-6]
+
+- id: carapace-spear
+  name: Carapace Spear
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 10 }
+    - { itemId: yggdrasil-wood, qty: 5 }
+  tags: [spear, one-handed, tier-6]
+
+- id: ripper
+  name: Ripper
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 8 }
+    - { itemId: dvergr-needle, qty: 3 }
+    - { itemId: refined-eitr, qty: 2 }
+  tags: [knife, one-handed, tier-6]
+
+- id: skoll-and-hati
+  name: Skoll and Hati
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 20 }
+    - { itemId: yggdrasil-wood, qty: 8 }
+    - { itemId: refined-eitr, qty: 5 }
+  tags: [axe, one-handed, tier-6]
+
+- id: demolisher
+  name: Demolisher
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 20 }
+    - { itemId: black-marble, qty: 10 }
+    - { itemId: yggdrasil-wood, qty: 8 }
+  tags: [sledge, two-handed, tier-6]
+
+- id: splitnir
+  name: Splitnir
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 10 }
+    - { itemId: dvergr-needle, qty: 5 }
+    - { itemId: refined-eitr, qty: 3 }
+  tags: [spear, one-handed, tier-6]
+
+- id: berserkir
+  name: Berserkir
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 15 }
+    - { itemId: yggdrasil-wood, qty: 5 }
+    - { itemId: refined-eitr, qty: 4 }
+  tags: [axe, two-handed, tier-6]
+
+# Ashlands weapons (Black Forge level 3)
+- id: ash-fang
+  name: Ash Fang
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 10 }
+    - { itemId: refined-eitr, qty: 5 }
+    - { itemId: morgen-heart, qty: 1 }
+  tags: [bow, two-handed, tier-7]
+
+- id: flametal-mace
+  name: Flametal Mace
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 20 }
+    - { itemId: yggdrasil-wood, qty: 5 }
+    - { itemId: charred-bone, qty: 5 }
+  tags: [mace, one-handed, tier-7]
+
+- id: slayer
+  name: Slayer
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 30 }
+    - { itemId: bilebag, qty: 3 }
+    - { itemId: yggdrasil-wood, qty: 8 }
+  tags: [sledge, two-handed, tier-7]
+
+- id: dyrnwyn
+  name: Dyrnwyn
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 20 }
+    - { itemId: refined-eitr, qty: 5 }
+    - { itemId: morgen-heart, qty: 2 }
+  tags: [sword, one-handed, tier-7]
+
+- id: nidhogg
+  name: "Nidh\xF6gg"
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 20 }
+    - { itemId: charred-bone, qty: 5 }
+    - { itemId: bilebag, qty: 2 }
+  tags: [atgeir, two-handed, tier-7]
+
+# Black Forge armor — Mistlands (level 1)
+- id: carapace-helmet
+  name: Carapace Helmet
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 10 }
+    - { itemId: silver, qty: 5 }
+    - { itemId: black-metal, qty: 5 }
+  tags: [helmet, armor, tier-6]
+
+- id: carapace-breastplate
+  name: Carapace Breastplate
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 20 }
+    - { itemId: silver, qty: 5 }
+    - { itemId: black-metal, qty: 5 }
+  tags: [chest, armor, tier-6]
+
+- id: carapace-greaves
+  name: Carapace Greaves
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 15 }
+    - { itemId: silver, qty: 5 }
+    - { itemId: black-metal, qty: 5 }
+  tags: [legs, armor, tier-6]
+
+- id: hood-of-ask
+  name: Hood of Ask
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 10 }
+    - { itemId: refined-eitr, qty: 3 }
+    - { itemId: linen-thread, qty: 10 }
+  tags: [helmet, armor, tier-6]
+
+- id: breastplate-of-ask
+  name: Breastplate of Ask
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 20 }
+    - { itemId: refined-eitr, qty: 5 }
+    - { itemId: linen-thread, qty: 20 }
+  tags: [chest, armor, tier-6]
+
+- id: trousers-of-ask
+  name: Trousers of Ask
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: carapace, qty: 15 }
+    - { itemId: refined-eitr, qty: 4 }
+    - { itemId: linen-thread, qty: 15 }
+  tags: [legs, armor, tier-6]
+
+# Ashlands armor (Black Forge level 3)
+- id: flametal-helmet
+  name: Flametal Helmet
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 10 }
+    - { itemId: charred-bone, qty: 5 }
+    - { itemId: bilebag, qty: 1 }
+  tags: [helmet, armor, tier-7]
+
+- id: flametal-breastplate
+  name: Flametal Breastplate
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 20 }
+    - { itemId: charred-bone, qty: 5 }
+    - { itemId: bilebag, qty: 1 }
+  tags: [chest, armor, tier-7]
+
+- id: flametal-greaves
+  name: Flametal Greaves
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 15 }
+    - { itemId: charred-bone, qty: 5 }
+    - { itemId: bilebag, qty: 1 }
+  tags: [legs, armor, tier-7]
+
+# Black Forge shields
+- id: carapace-buckler
+  name: Carapace Buckler
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 10 }
+    - { itemId: yggdrasil-wood, qty: 4 }
+    - { itemId: black-metal, qty: 5 }
+  tags: [shield, tier-6]
+
+- id: carapace-shield
+  name: Carapace Shield
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 15 }
+    - { itemId: yggdrasil-wood, qty: 8 }
+    - { itemId: black-metal, qty: 5 }
+  tags: [shield, tier-6]
+
+- id: flametal-shield
+  name: Flametal Shield
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 10 }
+    - { itemId: yggdrasil-wood, qty: 5 }
+    - { itemId: charred-bone, qty: 3 }
+  tags: [shield, tier-7]
+
+- id: flametal-tower-shield
+  name: Flametal Tower Shield
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: flametal, qty: 15 }
+    - { itemId: yggdrasil-wood, qty: 8 }
+    - { itemId: charred-bone, qty: 5 }
+  tags: [shield, tower-shield, tier-7]
+
+# Black Forge arrows
+- id: carapace-arrow
+  name: Carapace Arrow
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 4 }
+    - { itemId: yggdrasil-wood, qty: 8 }
+    - { itemId: feathers, qty: 2 }
+  tags: [arrow, tier-6]
+
+- id: charred-arrow
+  name: Charred Arrow
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: charred-bone, qty: 4 }
+    - { itemId: yggdrasil-wood, qty: 8 }
+    - { itemId: feathers, qty: 2 }
+  tags: [arrow, elemental, tier-7]
+
+# Black Forge bolts (for crossbows)
+- id: iron-bolt
+  name: Iron Bolt
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: iron, qty: 2 }
+    - { itemId: wood, qty: 4 }
+    - { itemId: feathers, qty: 2 }
+  tags: [bolt, tier-3]
+
+- id: bone-bolt
+  name: Bone Bolt
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: bone-fragments, qty: 4 }
+    - { itemId: wood, qty: 4 }
+    - { itemId: feathers, qty: 2 }
+  tags: [bolt, tier-3]
+
+- id: black-metal-bolt
+  name: Black Metal Bolt
+  type: crafting
+  station: black-forge
+  stationLevel: 2
+  ingredients:
+    - { itemId: black-metal, qty: 2 }
+    - { itemId: wood, qty: 4 }
+    - { itemId: feathers, qty: 2 }
+  tags: [bolt, tier-5]
+
+- id: carapace-bolt
+  name: Carapace Bolt
+  type: crafting
+  station: black-forge
+  stationLevel: 1
+  ingredients:
+    - { itemId: carapace, qty: 4 }
+    - { itemId: yggdrasil-wood, qty: 4 }
+    - { itemId: feathers, qty: 2 }
+  tags: [bolt, tier-6]
+
+- id: charred-bolt
+  name: Charred Bolt
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: charred-bone, qty: 4 }
+    - { itemId: yggdrasil-wood, qty: 4 }
+    - { itemId: feathers, qty: 2 }
+  tags: [bolt, elemental, tier-7]
+
+# ── Galdr Table ────────────────────────────────────────────────────────────────
+
+# Staves (Galdr Table level 1–2)
+- id: staff-of-embers
+  name: Staff of Embers
+  type: crafting
+  station: galdr-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: yggdrasil-wood, qty: 10 }
+    - { itemId: sap, qty: 5 }
+    - { itemId: refined-eitr, qty: 10 }
+  tags: [staff, two-handed, magic, tier-6]
+
+- id: staff-of-frost
+  name: Staff of Frost
+  type: crafting
+  station: galdr-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: yggdrasil-wood, qty: 10 }
+    - { itemId: freeze-gland, qty: 4 }
+    - { itemId: refined-eitr, qty: 10 }
+  tags: [staff, two-handed, magic, tier-6]
+
+- id: staff-of-storms
+  name: Staff of Storms
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: yggdrasil-wood, qty: 10 }
+    - { itemId: dvergr-needle, qty: 5 }
+    - { itemId: refined-eitr, qty: 20 }
+  tags: [staff, two-handed, magic, tier-6]
+
+- id: staff-of-protection
+  name: Staff of Protection
+  type: crafting
+  station: galdr-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: yggdrasil-wood, qty: 10 }
+    - { itemId: carapace, qty: 5 }
+    - { itemId: refined-eitr, qty: 10 }
+  tags: [staff, two-handed, magic, tier-6]
+
+- id: staff-of-the-wild
+  name: Staff of the Wild
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: yggdrasil-wood, qty: 10 }
+    - { itemId: royal-jelly, qty: 4 }
+    - { itemId: refined-eitr, qty: 15 }
+  tags: [staff, two-handed, magic, tier-6]
+
+# Eitr-infused armor (Galdr Table level 1–2)
+- id: eitr-robe
+  name: Eitr-Weave Robe
+  type: crafting
+  station: galdr-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: refined-eitr, qty: 10 }
+    - { itemId: linen-thread, qty: 20 }
+    - { itemId: carapace, qty: 10 }
+  tags: [chest, armor, magic, tier-6]
+
+- id: eitr-weave-tunic
+  name: Eitr-Weave Tunic
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: refined-eitr, qty: 15 }
+    - { itemId: linen-thread, qty: 20 }
+    - { itemId: carapace, qty: 15 }
+  tags: [chest, armor, magic, tier-6]
+
+- id: eitr-weave-trousers
+  name: Eitr-Weave Trousers
+  type: crafting
+  station: galdr-table
+  stationLevel: 2
+  ingredients:
+    - { itemId: refined-eitr, qty: 10 }
+    - { itemId: linen-thread, qty: 15 }
+    - { itemId: carapace, qty: 10 }
+  tags: [legs, armor, magic, tier-6]
+
+# ── Artisan Table ──────────────────────────────────────────────────────────────
+
+- id: lox-saddle
+  name: Lox Saddle
+  type: crafting
+  station: artisan-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: lox-pelt, qty: 10 }
+    - { itemId: iron, qty: 15 }
+    - { itemId: linen-thread, qty: 20 }
+  tags: [utility, tier-5]
+  notes: Allows riding Lox.
+
+- id: ballista
+  name: Ballista
+  type: crafting
+  station: artisan-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: black-metal, qty: 20 }
+    - { itemId: fine-wood, qty: 10 }
+    - { itemId: iron, qty: 5 }
+  tags: [building, siege, tier-5]
+
+- id: ballista-bolt
+  name: Ballista Bolt
+  type: crafting
+  station: artisan-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: black-metal, qty: 2 }
+    - { itemId: wood, qty: 4 }
+  tags: [bolt, siege, tier-5]

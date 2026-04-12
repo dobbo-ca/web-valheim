@@ -22,6 +22,7 @@ export const IngredientRefSchema = z.object({
 
 export const StationUpgradeSchema = z.object({
   level: z.number().int().positive(),
+  name: z.string().optional(),
   requires: z.array(IngredientRefSchema),
 });
 

@@ -215,3 +215,177 @@
     duration: 2000
     regen: 4
   tags: [food, stamina, tier-5]
+
+# Cauldron level 5
+- id: fiery-svinstew
+  name: Fiery Svinstew
+  type: cooking
+  station: cauldron
+  stationLevel: 5
+  ingredients:
+    - { itemId: seeker-meat, qty: 1 }
+    - { itemId: magecap, qty: 1 }
+    - { itemId: carapace, qty: 2 }
+  food:
+    hp: 85
+    stamina: 23
+    duration: 2200
+    regen: 5
+  tags: [food, hp, tier-6]
+
+- id: mushroom-omelette
+  name: Mushroom Omelette
+  type: cooking
+  station: cauldron
+  stationLevel: 5
+  ingredients:
+    - { itemId: jotun-puffs, qty: 2 }
+    - { itemId: magecap, qty: 1 }
+    - { itemId: royal-jelly, qty: 1 }
+  food:
+    hp: 25
+    stamina: 90
+    duration: 2200
+    regen: 3
+  tags: [food, stamina, tier-6]
+
+- id: salad
+  name: Salad
+  type: cooking
+  station: cauldron
+  stationLevel: 5
+  ingredients:
+    - { itemId: jotun-puffs, qty: 2 }
+    - { itemId: magecap, qty: 2 }
+  food:
+    hp: 23
+    stamina: 70
+    duration: 2000
+    regen: 3
+  tags: [food, stamina, tier-6]
+
+- id: seeker-aspic
+  name: Seeker Aspic
+  type: cooking
+  station: cauldron
+  stationLevel: 5
+  ingredients:
+    - { itemId: seeker-meat, qty: 2 }
+    - { itemId: royal-jelly, qty: 2 }
+  food:
+    hp: 23
+    stamina: 23
+    duration: 2400
+    regen: 7
+  tags: [food, regen, tier-6]
+
+- id: sizzling-berry-broth
+  name: Sizzling Berry Broth
+  type: cooking
+  station: cauldron
+  stationLevel: 5
+  ingredients:
+    - { itemId: cloudberries, qty: 4 }
+    - { itemId: raspberries, qty: 4 }
+    - { itemId: blueberries, qty: 4 }
+  food:
+    hp: 55
+    stamina: 55
+    duration: 1500
+    regen: 4
+  tags: [food, balanced, tier-6]
+
+- id: spicy-marmalade
+  name: Spicy Marmalade
+  type: cooking
+  station: cauldron
+  stationLevel: 5
+  ingredients:
+    - { itemId: cloudberries, qty: 3 }
+    - { itemId: jotun-puffs, qty: 2 }
+  food:
+    hp: 30
+    stamina: 80
+    duration: 1500
+    regen: 3
+  tags: [food, stamina, tier-6]
+
+- id: yggdrasil-porridge
+  name: Yggdrasil Porridge
+  type: cooking
+  station: cauldron
+  stationLevel: 5
+  ingredients:
+    - { itemId: jotun-puffs, qty: 4 }
+    - { itemId: sap, qty: 2 }
+  food:
+    hp: 115
+    stamina: 35
+    duration: 2200
+    regen: 6
+  tags: [food, hp, tier-6]
+
+# Cauldron level 6
+- id: marinated-greens
+  name: Marinated Greens
+  type: cooking
+  station: cauldron
+  stationLevel: 6
+  ingredients:
+    - { itemId: jotun-puffs, qty: 2 }
+    - { itemId: magecap, qty: 2 }
+    - { itemId: sap, qty: 1 }
+  food:
+    hp: 25
+    stamina: 95
+    duration: 2200
+    regen: 3
+  tags: [food, stamina, tier-7]
+
+- id: mashed-meat
+  name: Mashed Meat
+  type: cooking
+  station: cauldron
+  stationLevel: 6
+  ingredients:
+    - { itemId: seeker-meat, qty: 2 }
+    - { itemId: carapace, qty: 2 }
+    - { itemId: royal-jelly, qty: 1 }
+  food:
+    hp: 95
+    stamina: 25
+    duration: 2200
+    regen: 6
+  tags: [food, hp, tier-7]
+
+- id: scorching-medley
+  name: Scorching Medley
+  type: cooking
+  station: cauldron
+  stationLevel: 6
+  ingredients:
+    - { itemId: charred-meat, qty: 2 }
+    - { itemId: magecap, qty: 1 }
+    - { itemId: seeker-meat, qty: 1 }
+  food:
+    hp: 70
+    stamina: 70
+    duration: 2000
+    regen: 5
+  tags: [food, balanced, tier-7]
+
+- id: sparkling-shroomshake
+  name: Sparkling Shroomshake
+  type: cooking
+  station: cauldron
+  stationLevel: 6
+  ingredients:
+    - { itemId: jotun-puffs, qty: 3 }
+    - { itemId: magecap, qty: 2 }
+    - { itemId: sap, qty: 2 }
+  food:
+    hp: 40
+    stamina: 40
+    duration: 2400
+    regen: 8
+  tags: [food, regen, tier-7]
