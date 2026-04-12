@@ -9,12 +9,14 @@ const options: { value: Theme; label: string; icon: string }[] = [
 ];
 
 function getStoredTheme(): Theme {
+  if (typeof window === 'undefined') return 'system';
   const stored = localStorage.getItem('theme');
   if (stored === 'light' || stored === 'dark') return stored;
   return 'system';
 }
 
 function applyTheme(theme: Theme): void {
+  if (typeof window === 'undefined') return;
   if (theme === 'light' || theme === 'dark') {
     document.documentElement.dataset.theme = theme;
   } else {
