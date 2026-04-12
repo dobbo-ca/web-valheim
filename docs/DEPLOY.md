@@ -21,8 +21,8 @@ repo serves it at `https://www.dobbo.ca/valheim/` via its existing CNAME.
    - `dobbo-ca/web-valheim` — select only this repo
    - `dobbo-ca/dobbo-ca.github.io` — select only this repo
 10. In `dobbo-ca/web-valheim` → Settings → Secrets and variables → Actions:
-    - Add `DEPLOY_APP_ID` = the App ID
-    - Add `DEPLOY_APP_PRIVATE_KEY` = the contents of the `.pem` file
+    - Add variable `GH_PUB_APP_CLIENT_ID` = the App's Client ID
+    - Add secret `GH_PUB_APP_PEM` = the contents of the `.pem` file
 
 ## How the workflow works
 
