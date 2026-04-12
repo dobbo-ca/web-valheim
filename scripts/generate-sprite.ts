@@ -24,16 +24,20 @@ for (const file of files) {
   const id = file.slice(0, -4); // strip .svg
   const raw = readFileSync(join(ICONS_DIR, file), 'utf8');
 
-  // Extract inner content (everything between <svg ...> and </svg>)
+  // Extract inner content, strip comments and collapse whitespace
   const inner = raw
     .replace(/<svg[^>]*>/, '')
     .replace(/<\/svg>\s*$/, '')
+    .replace(/<!--[\s\S]*?-->/g, '')   // strip comments
+    .replace(/\s+/g, ' ')              // collapse whitespace
+    .replace(/>\s+</g, '><')           // remove space between tags
     .trim();
 
   symbols.push(`<symbol id="${id}" viewBox="0 0 48 48">${inner}</symbol>`);
 }
 
-const sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${symbols.join('\n')}\n</svg>\n`;
+const sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">${symbols.join('')}</svg>`;
 
 writeFileSync(OUTPUT, sprite, 'utf8');
-console.log(`Sprite generated: ${files.length} icons → ${OUTPUT}`);
+const kb = (Buffer.byteLength(sprite) / 1024).toFixed(1);
+console.log(`Sprite generated: ${files.length} icons → ${kb}KB → ${OUTPUT}`);
