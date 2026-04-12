@@ -125,3 +125,102 @@ const EFFECTS: Record<WeatherType, WeatherEffect[]> = {
 export function getEffects(weather: WeatherType): WeatherEffect[] {
   return EFFECTS[weather];
 }
+
+// ---------------------------------------------------------------------------
+// RNG — ported from JereKuusela/valheim-weather (Unlicense)
+// https://github.com/JereKuusela/valheim-weather
+// ---------------------------------------------------------------------------
+
+function createRNG(seed: number): { random: () => number; randomRange: () => number } {
+  let a = seed >>> 0;
+  let b = Math.imul(a, 1812433253) + 1;
+  let c = Math.imul(b, 1812433253) + 1;
+  let d = Math.imul(c, 1812433253) + 1;
+
+  const next = (): number => {
+    const t1 = a ^ (a << 11);
+    const t2 = t1 ^ (t1 >>> 8);
+    a = b;
+    b = c;
+    c = d;
+    d = d ^ (d >>> 19) ^ t2;
+    return d;
+  };
+
+  const random = (): number => {
+    const value = (next() << 9) >>> 0;
+    return value / 4294967295;
+  };
+
+  const randomRange = (): number => {
+    return 1.0 - random();
+  };
+
+  return { random, randomRange };
+}
+
+// ---------------------------------------------------------------------------
+// Weather selection
+// ---------------------------------------------------------------------------
+
+function selectWeather(pool: WeatherEntry[], roll: number): WeatherType {
+  const total = pool.reduce((sum, entry) => sum + entry.weight, 0);
+  const target = total * roll;
+  let sum = 0;
+  for (const entry of pool) {
+    sum += entry.weight;
+    if (target < sum) return entry.name;
+  }
+  return pool[pool.length - 1].name;
+}
+
+// ---------------------------------------------------------------------------
+// Exported forecast functions
+// ---------------------------------------------------------------------------
+
+export function getWeatherForPeriod(periodSeed: number, biome: Biome): WeatherType {
+  const rng = createRNG(periodSeed);
+  const roll = rng.randomRange();
+  return selectWeather(BIOME_POOLS[biome], roll);
+}
+
+export function getForecast(startDay: number, biome: Biome, numDays: number): DayForecast[] {
+  const forecasts: DayForecast[] = [];
+
+  for (let i = 0; i < numDays; i++) {
+    const day = startDay + i;
+    const dayStartSec = (day - 1) * DAY_LENGTH;
+    const dayEndSec = day * DAY_LENGTH;
+    const firstPeriod = Math.floor(dayStartSec / WEATHER_PERIOD);
+    const lastPeriod = Math.ceil(dayEndSec / WEATHER_PERIOD);
+
+    const periods: WeatherPeriod[] = [];
+    const freq = new Map<WeatherType, number>();
+
+    for (let p = firstPeriod; p < lastPeriod; p++) {
+      const weather = getWeatherForPeriod(p, biome);
+      const effects = getEffects(weather);
+      periods.push({ periodIndex: p - firstPeriod, weather, effects });
+      freq.set(weather, (freq.get(weather) ?? 0) + 1);
+    }
+
+    // Dominant = most frequent weather across periods
+    let dominant = periods[0].weather;
+    let maxCount = 0;
+    for (const [weather, count] of freq) {
+      if (count > maxCount) {
+        maxCount = count;
+        dominant = weather;
+      }
+    }
+
+    forecasts.push({
+      day,
+      dominant,
+      dominantEffects: getEffects(dominant),
+      periods,
+    });
+  }
+
+  return forecasts;
+}
