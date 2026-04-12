@@ -151,18 +151,6 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.5px;
 }
-.site-header nav {
-  display: flex;
-  gap: 16px;
-  font-size: 13px;
-}
-.site-header nav a {
-  color: var(--text-soft);
-}
-.site-header nav a:hover,
-.site-header nav a[aria-current="page"] {
-  color: var(--accent);
-}
 
 .sr-only {
   position: absolute;
@@ -946,3 +934,200 @@ h3 {
   color: var(--accent);
   font-weight: 600;
 }
+
+/* ===== Advanced filter panel ===== */
+.filter-bar__adv-toggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-soft);
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.filter-bar__adv-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.filter-bar__adv-toggle--active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.filter-bar__adv-panel {
+  flex-basis: 100%;
+}
+
+.adv-filter {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.adv-filter__section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.adv-filter__label {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+.adv-filter select {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 12px;
+  max-width: 200px;
+}
+.adv-filter__level-range {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.adv-filter__level-input {
+  width: 40px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px;
+  -moz-appearance: textfield;
+}
+.adv-filter__level-input::-webkit-inner-spin-button,
+.adv-filter__level-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.adv-filter__level-sep {
+  color: var(--muted);
+}
+.adv-filter__tag-group {
+  margin-bottom: 4px;
+}
+.adv-filter__tag-group-label {
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+.adv-filter__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.filter-chip--sm {
+  padding: 4px 10px;
+  font-size: 11px;
+}
+.adv-filter__station-levels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.adv-filter__station-level {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.adv-filter__station-name {
+  color: var(--text);
+  font-weight: 500;
+  min-width: 80px;
+}
+.adv-filter__station-max {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* ===== Stats table (expanded row) ===== */
+.stats-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 4px 16px;
+}
+.stats-table__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.stats-table__key {
+  color: var(--muted);
+  text-transform: capitalize;
+}
+.stats-table__val {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ===== Stat badge (compact row) ===== */
+.recipe-row__stat-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  background: color-mix(in oklch, var(--info) 18%, transparent);
+  border: 1px solid var(--info);
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  color: var(--info);
+  font-weight: 500;
+}
+
+/* ===== Upgrade list (expanded row) ===== */
+.upgrade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.upgrade-list__entry {
+  padding: 8px;
+  background: color-mix(in oklch, var(--bg) 50%, var(--surface));
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+}
+.upgrade-list__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.upgrade-list__quality {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 12px;
+  min-width: 24px;
+}
+.upgrade-list__stats {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+  font-size: 11px;
+}
+.upgrade-list__stat {
+  color: var(--text-soft);
+}
+.add-to-cart-btn--sm {
+  padding: 2px 8px;
+  font-size: 11px;
+  min-width: 28px;
+  margin-left: auto;
+}
+.upgrade-list__max-btn {
+  align-self: flex-start;
+}
+

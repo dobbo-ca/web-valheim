@@ -55,6 +55,8 @@ describe('RecipeTable', () => {
 
   it('filters by type chip', () => {
     render(() => <RecipeTable data={data} baseHref="/valheim/" />);
+    // Open the advanced filter panel first, then click the type chip
+    fireEvent.click(screen.getByRole('button', { name: /Filters/ }));
     fireEvent.click(screen.getByRole('button', { name: 'Cooking' }));
     expect(screen.queryByText('Iron Sword')).toBeNull();
     expect(screen.getByText('Queens Jam')).toBeInTheDocument();
@@ -86,6 +88,8 @@ describe('RecipeTable', () => {
 
   it('syncs filter state to URL query params', () => {
     render(() => <RecipeTable data={data} baseHref="/valheim/" />);
+    // Open the advanced filter panel first, then click the type chip
+    fireEvent.click(screen.getByRole('button', { name: /Filters/ }));
     fireEvent.click(screen.getByRole('button', { name: 'Cooking' }));
     expect(window.location.search).toContain('type=cooking');
   });
