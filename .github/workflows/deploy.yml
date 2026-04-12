@@ -1,0 +1,72 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-web-valheim
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+
+      - name: Mint GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.DEPLOY_APP_ID }}
+          private-key: ${{ secrets.DEPLOY_APP_PRIVATE_KEY }}
+          owner: dobbo-ca
+          repositories: dobbo-ca.github.io
+
+      - name: Checkout Pages repo
+        uses: actions/checkout@v4
+        with:
+          repository: dobbo-ca/dobbo-ca.github.io
+          token: ${{ steps.app-token.outputs.token }}
+          path: pages-repo
+          fetch-depth: 1
+
+      - name: Sync dist/ into pages-repo/valheim/
+        run: |
+          set -euo pipefail
+          rm -rf pages-repo/valheim
+          mkdir -p pages-repo/valheim
+          cp -a dist/valheim/. pages-repo/valheim/
+
+      - name: Commit and push
+        working-directory: pages-repo
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          set -euo pipefail
+          git config user.name  "dobbo-ca-valheim-deploy[bot]"
+          git config user.email "dobbo-ca-valheim-deploy[bot]@users.noreply.github.com"
+          git add valheim
+          if git diff --cached --quiet; then
+            echo "No changes to deploy."
+            exit 0
+          fi
+          SHA=$(git -C .. rev-parse --short HEAD)
+          git commit -m "deploy: web-valheim @ ${SHA}"
+          git push origin HEAD
