@@ -4,7 +4,9 @@ test.describe('valheim helper smoke', () => {
   test('home page loads and shows recipes', async ({ page }) => {
     await page.goto('/valheim/');
     await expect(page.getByRole('heading', { name: 'Recipes' })).toBeVisible();
+    await page.goto('/valheim/?q=iron+sword');
     await expect(page.getByText('Iron Sword')).toBeVisible();
+    await page.goto('/valheim/?type=cooking');
     await expect(page.getByText('Queens Jam')).toBeVisible();
   });
 
@@ -16,13 +18,13 @@ test.describe('valheim helper smoke', () => {
   });
 
   test('expanding a row reveals ingredient chips', async ({ page }) => {
-    await page.goto('/valheim/');
+    await page.goto('/valheim/?q=iron+sword');
     await page.getByRole('button', { name: /Iron Sword/ }).click();
     await expect(page.getByRole('button', { name: /Iron ×60/ })).toBeVisible();
   });
 
   test('clicking an ingredient chip reverse-filters', async ({ page }) => {
-    await page.goto('/valheim/');
+    await page.goto('/valheim/?q=iron+sword');
     await page.getByRole('button', { name: /Iron Sword/ }).click();
     await page.getByRole('button', { name: /Iron ×60/ }).click();
     await expect(page.getByText('Uses ingredient:')).toBeVisible();
