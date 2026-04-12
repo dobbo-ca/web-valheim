@@ -175,6 +175,34 @@ describe('aggregateGroceryList', () => {
     const names = result.map((i) => i.name);
     expect(names).toEqual([...names].sort());
   });
+
+  it('divides by yield when recipe has yields > 1', () => {
+    const arrowRecipe: Recipe = {
+      ...makeRecipe('wood-arrow', [{ itemId: 'wood', qty: 8 }]),
+      yields: { itemId: 'wood-arrow', qty: 20 },
+    };
+    const recipesById = new Map<string, Recipe>([['wood-arrow', arrowRecipe]]);
+    const itemsById = new Map<string, Item>([['wood', makeItem('wood', 'Wood')]]);
+
+    // Want 60 arrows → 60/20 = 3 crafts → 3 × 8 wood = 24
+    const cart: Cart = { 'wood-arrow': 60 };
+    const result = aggregateGroceryList(cart, recipesById, itemsById);
+    expect(result).toEqual([{ itemId: 'wood', name: 'Wood', qty: 24 }]);
+  });
+
+  it('rounds up crafts when desired qty is not evenly divisible by yield', () => {
+    const arrowRecipe: Recipe = {
+      ...makeRecipe('wood-arrow', [{ itemId: 'wood', qty: 8 }]),
+      yields: { itemId: 'wood-arrow', qty: 20 },
+    };
+    const recipesById = new Map<string, Recipe>([['wood-arrow', arrowRecipe]]);
+    const itemsById = new Map<string, Item>([['wood', makeItem('wood', 'Wood')]]);
+
+    // Want 25 arrows → ceil(25/20) = 2 crafts → 2 × 8 wood = 16
+    const cart: Cart = { 'wood-arrow': 25 };
+    const result = aggregateGroceryList(cart, recipesById, itemsById);
+    expect(result).toEqual([{ itemId: 'wood', name: 'Wood', qty: 16 }]);
+  });
 });
 
 // ---- encodeCartUrl / decodeCartUrl ------------------------------------------
