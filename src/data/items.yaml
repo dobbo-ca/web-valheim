@@ -304,6 +304,11 @@
 - { id: iron-tower-shield, name: Iron Tower Shield, category: tool, stackSize: 1 }
 - { id: banded-shield, name: Banded Shield, category: tool, stackSize: 1 }
 - { id: ooze-bomb, name: Ooze Bomb, category: weapon, stackSize: 50 }
+- { id: blob-bomb-poison, name: "Blob Bomb: Poison", category: weapon, stackSize: 50 }
+- { id: blob-bomb-elite-poison, name: "Blob Bomb: Elite Poison", category: weapon, stackSize: 50 }
+- { id: blob-bomb-frost, name: "Blob Bomb: Frost", category: weapon, stackSize: 50 }
+- { id: blob-bomb-tar, name: "Blob Bomb: Tar", category: weapon, stackSize: 50 }
+- { id: blob-bomb-lava, name: "Blob Bomb: Lava", category: weapon, stackSize: 50 }
 - { id: iron-helmet, name: Iron Helmet, category: armor, stackSize: 1 }
 - { id: iron-scale-mail, name: Iron Scale Mail, category: armor, stackSize: 1 }
 - { id: iron-greaves, name: Iron Greaves, category: armor, stackSize: 1 }

@@ -8586,3 +8586,74 @@
       knockback: 60
       stagger: 140
 
+
+# Blob Bombs — summon creatures on impact, crafted at Workbench using Corked Vial from Bog Witch
+- id: blob-bomb-poison
+  name: "Blob Bomb: Poison"
+  type: crafting
+  biome: swamp
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: corked-vial, qty: 1 }
+    - { itemId: resin, qty: 3 }
+    - { itemId: blob-trophy, qty: 1 }
+  yields: { itemId: blob-bomb-poison, qty: 1 }
+  tags: [bomb, throwable, summon, tier-3]
+  notes: Summons a Blob on impact.
+
+- id: blob-bomb-elite-poison
+  name: "Blob Bomb: Elite Poison"
+  type: crafting
+  biome: swamp
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: corked-vial, qty: 1 }
+    - { itemId: resin, qty: 3 }
+    - { itemId: blob-trophy, qty: 3 }
+  yields: { itemId: blob-bomb-elite-poison, qty: 2 }
+  tags: [bomb, throwable, summon, tier-3]
+  notes: Summons an Oozer on impact.
+
+- id: blob-bomb-frost
+  name: "Blob Bomb: Frost"
+  type: crafting
+  biome: swamp
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: corked-vial, qty: 1 }
+    - { itemId: resin, qty: 3 }
+    - { itemId: drake-trophy, qty: 1 }
+  yields: { itemId: blob-bomb-frost, qty: 1 }
+  tags: [bomb, throwable, summon, tier-3]
+  notes: Summons a Frost Blob on impact.
+
+- id: blob-bomb-tar
+  name: "Blob Bomb: Tar"
+  type: crafting
+  biome: swamp
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: corked-vial, qty: 1 }
+    - { itemId: tar, qty: 3 }
+    - { itemId: growth-trophy, qty: 1 }
+  yields: { itemId: blob-bomb-tar, qty: 1 }
+  tags: [bomb, throwable, summon, tier-3]
+  notes: Summons a Growth on impact.
+
+- id: blob-bomb-lava
+  name: "Blob Bomb: Lava"
+  type: crafting
+  biome: ashlands
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: corked-vial, qty: 1 }
+    - { itemId: sulfur, qty: 10 }
+    - { itemId: proustite-powder, qty: 10 }
+  yields: { itemId: blob-bomb-lava, qty: 1 }
+  tags: [bomb, throwable, summon, tier-6]
+  notes: Summons a Lava Blob on impact.
