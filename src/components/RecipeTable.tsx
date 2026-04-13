@@ -21,10 +21,13 @@ import { CartDrawer } from './CartDrawer';
 
 type SortKey = 'name' | 'station' | 'level';
 type SortDir = 'asc' | 'desc';
+type ColumnId = 'station' | 'ingredients' | 'stats';
 
 const PAGE_SIZES = [10, 20, 50, 100] as const;
 const CART_STORAGE_KEY = 'valheim-cart';
 const PAGE_SIZE_KEY = 'valheim-page-size';
+const COLUMNS_KEY = 'valheim-columns';
+const DEFAULT_COLUMNS: ColumnId[] = ['station', 'ingredients', 'stats'];
 
 function readStoredPageSize(): number {
   try {
@@ -35,6 +38,14 @@ function readStoredPageSize(): number {
     }
   } catch {}
   return 20;
+}
+
+function readStoredColumns(): ColumnId[] {
+  try {
+    const stored = localStorage.getItem(COLUMNS_KEY);
+    if (stored) return JSON.parse(stored);
+  } catch {}
+  return DEFAULT_COLUMNS;
 }
 
 interface Props {
@@ -54,6 +65,8 @@ export const RecipeTable: Component<Props> = (props) => {
   const [cart, setCart] = createStore<Record<string, number>>({});
   const [drawerOpen, setDrawerOpen] = createSignal(false);
   const [mounted, setMounted] = createSignal(false);
+  const [visibleColumns, setVisibleColumns] = createSignal<ColumnId[]>(readStoredColumns());
+  const [colMenuOpen, setColMenuOpen] = createSignal(false);
 
   // Stable sorted recipe IDs used as the integer index for URL encoding
   const recipeIndex = createMemo(() =>
@@ -295,6 +308,26 @@ export const RecipeTable: Component<Props> = (props) => {
     setExpandedId((current) => (current === id ? null : id));
   };
 
+  const toggleColumn = (col: ColumnId) => {
+    const current = visibleColumns();
+    const next = current.includes(col)
+      ? current.filter((c) => c !== col)
+      : [...current, col];
+    setVisibleColumns(next);
+    try { localStorage.setItem(COLUMNS_KEY, JSON.stringify(next)); } catch {}
+  };
+
+  const isColVisible = (col: ColumnId) => visibleColumns().includes(col);
+
+  const gridColumns = () => {
+    const parts = ['2fr']; // Name always visible
+    if (isColVisible('station')) parts.push('1.5fr');
+    if (isColVisible('ingredients')) parts.push('3fr');
+    if (isColVisible('stats')) parts.push('auto');
+    parts.push('62px'); // Cart always visible
+    return parts.join(' ');
+  };
+
   const addIngredient = (itemId: string) => {
     const current = state().ingredientIds;
     if (current.includes(itemId)) return;
@@ -346,20 +379,52 @@ export const RecipeTable: Component<Props> = (props) => {
         </div>
       </Show>
 
-      <div class="recipe-table__grid" role="table">
-        <div class="recipe-table__header" role="row">
+      <div class="recipe-table__grid" role="table" style={{ '--grid-cols': gridColumns() }}>
+        <div class="recipe-table__header" role="row" style={{ 'grid-template-columns': gridColumns() }}>
           <span role="columnheader" aria-sort={sortKey() === 'name' ? (sortDir() === 'asc' ? 'ascending' : 'descending') : 'none'}>
             <button class="recipe-table__sort-btn" classList={{ 'recipe-table__sort-btn--active': sortKey() === 'name' }} onClick={() => toggleSort('name')}>
               Name{sortIndicator('name')}
             </button>
           </span>
-          <span role="columnheader" aria-sort={sortKey() === 'station' ? (sortDir() === 'asc' ? 'ascending' : 'descending') : 'none'}>
-            <button class="recipe-table__sort-btn" classList={{ 'recipe-table__sort-btn--active': sortKey() === 'station' }} onClick={() => toggleSort('station')}>
-              Station{sortIndicator('station')}
+          <Show when={isColVisible('station')}>
+            <span role="columnheader" aria-sort={sortKey() === 'station' ? (sortDir() === 'asc' ? 'ascending' : 'descending') : 'none'}>
+              <button class="recipe-table__sort-btn" classList={{ 'recipe-table__sort-btn--active': sortKey() === 'station' }} onClick={() => toggleSort('station')}>
+                Station{sortIndicator('station')}
+              </button>
+            </span>
+          </Show>
+          <Show when={isColVisible('ingredients')}>
+            <span role="columnheader">Ingredients</span>
+          </Show>
+          <Show when={isColVisible('stats')}>
+            <span role="columnheader">Stats</span>
+          </Show>
+          <span role="columnheader" class="recipe-table__col-toggle">
+            <button
+              type="button"
+              class="recipe-table__col-toggle-btn"
+              onClick={() => setColMenuOpen((o) => !o)}
+              aria-label="Toggle column visibility"
+            >
+              ⚙
             </button>
+            <Show when={colMenuOpen()}>
+              <div class="recipe-table__col-menu">
+                <For each={[
+                  { id: 'station' as ColumnId, label: 'Station' },
+                  { id: 'ingredients' as ColumnId, label: 'Ingredients' },
+                  { id: 'stats' as ColumnId, label: 'Stats' },
+                ]}>
+                  {(col) => (
+                    <label class="recipe-table__col-option">
+                      <input type="checkbox" checked={isColVisible(col.id)} onChange={() => toggleColumn(col.id)} />
+                      {col.label}
+                    </label>
+                  )}
+                </For>
+              </div>
+            </Show>
           </span>
-          <span role="columnheader">Ingredients</span>
-          <span role="columnheader" class="sr-only">Cart</span>
         </div>
 
         <For each={paginated()} fallback={<div class="recipe-table__empty">No recipes match these filters.</div>}>
@@ -380,6 +445,7 @@ export const RecipeTable: Component<Props> = (props) => {
               upgradeKeysInCart={upgradeKeysInCart()}
               onAddUpgradeToCart={handleAddUpgradeToCart}
               onAddMaxUpgrades={handleAddMaxUpgrades}
+              visibleColumns={visibleColumns()}
             />
           )}
         </For>

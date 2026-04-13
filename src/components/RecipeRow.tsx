@@ -20,6 +20,7 @@ interface Props {
   upgradeKeysInCart: Set<string>;
   onAddUpgradeToCart: (cartKey: string) => void;
   onAddMaxUpgrades: (recipeId: string) => void;
+  visibleColumns?: string[];
 }
 
 function formatStatSummary(recipe: Recipe): string | null {
@@ -49,6 +50,7 @@ export const RecipeRow: Component<Props> = (props) => {
   const detailId = () => `recipe-row-detail-${props.recipe.id}`;
   const spriteHref = () => props.spriteHref ?? '/icons/sprite.svg';
   const hasRecipeIcon = () => props.iconIds?.has(props.recipe.id) ?? false;
+  const isColVisible = (col: string) => (props.visibleColumns ?? ['station', 'ingredients', 'stats']).includes(col);
 
   return (
     <>
@@ -71,19 +73,25 @@ export const RecipeRow: Component<Props> = (props) => {
               <span class="recipe-row__yield">×{props.recipe.yields!.qty}</span>
             </Show>
           </span>
-          <span class="recipe-row__station">
-            {(() => {
-              const station = props.stationsById.get(props.recipe.station);
-              const stationName = station?.name ?? props.recipe.station;
-              if (props.recipe.stationLevel > 1) {
-                return <>{stationName}<span class="recipe-row__station-level"> (Lv {props.recipe.stationLevel})</span><span class="recipe-row__station-level-short"> +{props.recipe.stationLevel - 1}</span></>;
-              }
-              return stationName;
-            })()}
-          </span>
-          <Show when={!props.expanded}>
+          <Show when={isColVisible('station')}>
+            <span class="recipe-row__station">
+              {(() => {
+                const station = props.stationsById.get(props.recipe.station);
+                const stationName = station?.name ?? props.recipe.station;
+                if (props.recipe.stationLevel > 1) {
+                  return <>{stationName}<span class="recipe-row__station-level"> (Lv {props.recipe.stationLevel})</span><span class="recipe-row__station-level-short"> +{props.recipe.stationLevel - 1}</span></>;
+                }
+                return stationName;
+              })()}
+            </span>
+          </Show>
+          <Show when={!props.expanded && isColVisible('ingredients')}>
             <span class="recipe-row__ings">
               {formatIngredients(props.recipe, props.itemsById)}
+            </span>
+          </Show>
+          <Show when={!props.expanded && isColVisible('stats')}>
+            <span class="recipe-row__stats-cell">
               {formatStatSummary(props.recipe) && (
                 <span class="recipe-row__stat-badge">{formatStatSummary(props.recipe)}</span>
               )}
