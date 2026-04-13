@@ -13,6 +13,28 @@
     - { itemId: stone, qty: 2 }
   yields: { itemId: hammer, qty: 1 }
   tags: [tool, tier-0]
+  stats:
+    durability: 100
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 3 }
+        - { itemId: stone, qty: 2 }
+      stats:
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 6 }
+        - { itemId: stone, qty: 4 }
+      stats:
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 9 }
+        - { itemId: stone, qty: 6 }
+      stats:
+        durability: 250
 
 - id: hoe
   name: Hoe
@@ -24,6 +46,28 @@
     - { itemId: stone, qty: 2 }
   yields: { itemId: hoe, qty: 1 }
   tags: [tool, tier-0]
+  stats:
+    durability: 100
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 3 }
+        - { itemId: stone, qty: 2 }
+      stats:
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 6 }
+        - { itemId: stone, qty: 4 }
+      stats:
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 9 }
+        - { itemId: stone, qty: 6 }
+      stats:
+        durability: 250
 
 # Weapons
 - id: club
@@ -35,6 +79,31 @@
     - { itemId: wood, qty: 6 }
   yields: { itemId: club, qty: 1 }
   tags: [club, one-handed, tier-0]
+  stats:
+    damage: { blunt: 12 }
+    knockback: 20
+    backstab: 3
+    durability: 100
+    weight: 0.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 3 }
+      stats:
+        damage: { blunt: 18 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 6 }
+      stats:
+        damage: { blunt: 24 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 9 }
+      stats:
+        damage: { blunt: 30 }
+        durability: 250
 
 - id: crude-bow
   name: Crude Bow
@@ -46,6 +115,30 @@
     - { itemId: leather-scraps, qty: 8 }
   yields: { itemId: crude-bow, qty: 1 }
   tags: [bow, two-handed, tier-0]
+  stats:
+    damage: { pierce: 22 }
+    knockback: 10
+    durability: 100
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 10 }
+      stats:
+        damage: { pierce: 28 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 20 }
+      stats:
+        damage: { pierce: 34 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 30 }
+      stats:
+        damage: { pierce: 40 }
+        durability: 250
 
 - id: stone-axe
   name: Stone Axe
@@ -57,6 +150,33 @@
     - { itemId: stone, qty: 4 }
   yields: { itemId: stone-axe, qty: 1 }
   tags: [axe, one-handed, tier-0]
+  stats:
+    damage: { slash: 15 }
+    knockback: 20
+    durability: 100
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 2 }
+        - { itemId: stone, qty: 2 }
+      stats:
+        damage: { slash: 21 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 4 }
+        - { itemId: stone, qty: 4 }
+      stats:
+        damage: { slash: 27 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 6 }
+        - { itemId: stone, qty: 6 }
+      stats:
+        damage: { slash: 33 }
+        durability: 250
 
 - id: flint-axe
   name: Flint Axe
@@ -68,6 +188,34 @@
     - { itemId: flint, qty: 6 }
   yields: { itemId: flint-axe, qty: 1 }
   tags: [axe, one-handed, tier-1]
+  stats:
+    damage: { slash: 20 }
+    knockback: 20
+    backstab: 3
+    durability: 150
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 2 }
+        - { itemId: flint, qty: 4 }
+      stats:
+        damage: { slash: 26 }
+        durability: 200
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 4 }
+        - { itemId: flint, qty: 8 }
+      stats:
+        damage: { slash: 32 }
+        durability: 250
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 6 }
+        - { itemId: flint, qty: 12 }
+      stats:
+        damage: { slash: 38 }
+        durability: 300
 
 - id: flint-knife
   name: Flint Knife
@@ -80,6 +228,34 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: flint-knife, qty: 1 }
   tags: [knife, one-handed, tier-1]
+  stats:
+    damage: { slash: 8, pierce: 8 }
+    knockback: 10
+    backstab: 6
+    durability: 100
+    weight: 0.3
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 2 }
+        - { itemId: flint, qty: 4 }
+      stats:
+        damage: { slash: 14, pierce: 14 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 4 }
+        - { itemId: flint, qty: 8 }
+      stats:
+        damage: { slash: 20, pierce: 20 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 6 }
+        - { itemId: flint, qty: 12 }
+      stats:
+        damage: { slash: 26, pierce: 26 }
+        durability: 250
 
 - id: flint-spear
   name: Flint Spear
@@ -92,6 +268,34 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: flint-spear, qty: 1 }
   tags: [spear, one-handed, tier-1]
+  stats:
+    damage: { pierce: 20 }
+    knockback: 20
+    backstab: 3
+    durability: 100
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 2 }
+        - { itemId: flint, qty: 4 }
+      stats:
+        damage: { pierce: 26 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 4 }
+        - { itemId: flint, qty: 8 }
+      stats:
+        damage: { pierce: 32 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 6 }
+        - { itemId: flint, qty: 12 }
+      stats:
+        damage: { pierce: 38 }
+        durability: 250
 
 - id: antler-pickaxe
   name: Antler Pickaxe
@@ -103,6 +307,32 @@
     - { itemId: hard-antler, qty: 1 }
   yields: { itemId: antler-pickaxe, qty: 1 }
   tags: [pickaxe, tool, tier-1]
+  stats:
+    damage: { pierce: 18 }
+    durability: 100
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 3 }
+        - { itemId: hard-antler, qty: 1 }
+      stats:
+        damage: { pierce: 24 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 6 }
+        - { itemId: hard-antler, qty: 2 }
+      stats:
+        damage: { pierce: 30 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 9 }
+        - { itemId: hard-antler, qty: 3 }
+      stats:
+        damage: { pierce: 36 }
+        durability: 250
 
 - id: finewood-bow
   name: Finewood Bow
@@ -115,6 +345,33 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: finewood-bow, qty: 1 }
   tags: [bow, two-handed, tier-2]
+  stats:
+    damage: { pierce: 32 }
+    knockback: 10
+    durability: 100
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: fine-wood, qty: 10 }
+        - { itemId: deer-hide, qty: 2 }
+      stats:
+        damage: { pierce: 38 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: fine-wood, qty: 20 }
+        - { itemId: deer-hide, qty: 4 }
+      stats:
+        damage: { pierce: 44 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: fine-wood, qty: 30 }
+        - { itemId: deer-hide, qty: 6 }
+      stats:
+        damage: { pierce: 50 }
+        durability: 250
 
 - id: stagbreaker
   name: Stagbreaker
@@ -127,6 +384,31 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: stagbreaker, qty: 1 }
   tags: [sledge, two-handed, tier-1]
+  stats:
+    damage: { blunt: 20 }
+    knockback: 50
+    backstab: 3
+    durability: 100
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bone-fragments, qty: 10 }
+      stats:
+        damage: { blunt: 26 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: bone-fragments, qty: 20 }
+      stats:
+        damage: { blunt: 32 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: bone-fragments, qty: 30 }
+      stats:
+        damage: { blunt: 38 }
+        durability: 250
 
 # Armor
 - id: leather-helmet
@@ -139,6 +421,29 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: leather-helmet, qty: 1 }
   tags: [helmet, armor, tier-1]
+  stats:
+    armor: 2
+    durability: 400
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: deer-hide, qty: 5 }
+      stats:
+        armor: 4
+        durability: 600
+    - quality: 3
+      ingredients:
+        - { itemId: deer-hide, qty: 10 }
+      stats:
+        armor: 6
+        durability: 800
+    - quality: 4
+      ingredients:
+        - { itemId: deer-hide, qty: 15 }
+      stats:
+        armor: 8
+        durability: 1000
 
 - id: leather-tunic
   name: Leather Tunic
@@ -150,6 +455,29 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: leather-tunic, qty: 1 }
   tags: [chest, armor, tier-1]
+  stats:
+    armor: 2
+    durability: 400
+    weight: 5.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: deer-hide, qty: 5 }
+      stats:
+        armor: 4
+        durability: 600
+    - quality: 3
+      ingredients:
+        - { itemId: deer-hide, qty: 10 }
+      stats:
+        armor: 6
+        durability: 800
+    - quality: 4
+      ingredients:
+        - { itemId: deer-hide, qty: 15 }
+      stats:
+        armor: 8
+        durability: 1000
 
 - id: leather-pants
   name: Leather Pants
@@ -161,6 +489,29 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: leather-pants, qty: 1 }
   tags: [legs, armor, tier-1]
+  stats:
+    armor: 2
+    durability: 400
+    weight: 5.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: deer-hide, qty: 5 }
+      stats:
+        armor: 4
+        durability: 600
+    - quality: 3
+      ingredients:
+        - { itemId: deer-hide, qty: 10 }
+      stats:
+        armor: 6
+        durability: 800
+    - quality: 4
+      ingredients:
+        - { itemId: deer-hide, qty: 15 }
+      stats:
+        armor: 8
+        durability: 1000
 
 - id: deer-hide-cape
   name: Deer Hide Cape
@@ -172,6 +523,29 @@
     - { itemId: leather-scraps, qty: 3 }
   yields: { itemId: deer-hide-cape, qty: 1 }
   tags: [cape, armor, tier-1]
+  stats:
+    armor: 1
+    durability: 400
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: deer-hide, qty: 5 }
+      stats:
+        armor: 3
+        durability: 600
+    - quality: 3
+      ingredients:
+        - { itemId: deer-hide, qty: 10 }
+      stats:
+        armor: 5
+        durability: 800
+    - quality: 4
+      ingredients:
+        - { itemId: deer-hide, qty: 15 }
+      stats:
+        armor: 7
+        durability: 1000
 
 - id: wolf-fur-cape
   name: Wolf Fur Cape
@@ -185,6 +559,32 @@
   yields: { itemId: wolf-fur-cape, qty: 1 }
   tags: [cape, armor, tier-4]
   notes: Provides frost resistance.
+  stats:
+    armor: 1
+    durability: 1000
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wolf-pelt, qty: 5 }
+        - { itemId: silver, qty: 2 }
+      stats:
+        armor: 3
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: wolf-pelt, qty: 10 }
+        - { itemId: silver, qty: 4 }
+      stats:
+        armor: 5
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: wolf-pelt, qty: 15 }
+        - { itemId: silver, qty: 6 }
+      stats:
+        armor: 7
+        durability: 1600
 
 - id: lox-cape
   name: Lox Cape
@@ -197,6 +597,32 @@
   yields: { itemId: lox-cape, qty: 1 }
   tags: [cape, armor, tier-5]
   notes: Provides frost resistance.
+  stats:
+    armor: 1
+    durability: 1000
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: lox-pelt, qty: 5 }
+        - { itemId: silver, qty: 2 }
+      stats:
+        armor: 3
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: lox-pelt, qty: 10 }
+        - { itemId: silver, qty: 4 }
+      stats:
+        armor: 5
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: lox-pelt, qty: 15 }
+        - { itemId: silver, qty: 6 }
+      stats:
+        armor: 7
+        durability: 1600
 
 - id: troll-leather-helmet
   name: Troll Leather Helmet
@@ -208,6 +634,29 @@
     - { itemId: bone-fragments, qty: 3 }
   yields: { itemId: troll-leather-helmet, qty: 1 }
   tags: [helmet, armor, tier-2]
+  stats:
+    armor: 6
+    durability: 500
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: troll-hide, qty: 5 }
+      stats:
+        armor: 8
+        durability: 700
+    - quality: 3
+      ingredients:
+        - { itemId: troll-hide, qty: 10 }
+      stats:
+        armor: 10
+        durability: 900
+    - quality: 4
+      ingredients:
+        - { itemId: troll-hide, qty: 15 }
+      stats:
+        armor: 12
+        durability: 1100
 
 - id: troll-leather-tunic
   name: Troll Leather Tunic
@@ -219,6 +668,29 @@
     - { itemId: bone-fragments, qty: 4 }
   yields: { itemId: troll-leather-tunic, qty: 1 }
   tags: [chest, armor, tier-2]
+  stats:
+    armor: 6
+    durability: 500
+    weight: 5.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: troll-hide, qty: 5 }
+      stats:
+        armor: 8
+        durability: 700
+    - quality: 3
+      ingredients:
+        - { itemId: troll-hide, qty: 10 }
+      stats:
+        armor: 10
+        durability: 900
+    - quality: 4
+      ingredients:
+        - { itemId: troll-hide, qty: 15 }
+      stats:
+        armor: 12
+        durability: 1100
 
 - id: troll-leather-pants
   name: Troll Leather Pants
@@ -230,6 +702,29 @@
     - { itemId: bone-fragments, qty: 4 }
   yields: { itemId: troll-leather-pants, qty: 1 }
   tags: [legs, armor, tier-2]
+  stats:
+    armor: 6
+    durability: 500
+    weight: 5.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: troll-hide, qty: 5 }
+      stats:
+        armor: 8
+        durability: 700
+    - quality: 3
+      ingredients:
+        - { itemId: troll-hide, qty: 10 }
+      stats:
+        armor: 10
+        durability: 900
+    - quality: 4
+      ingredients:
+        - { itemId: troll-hide, qty: 15 }
+      stats:
+        armor: 12
+        durability: 1100
 
 - id: troll-hide-cape
   name: Troll Hide Cape
@@ -241,6 +736,29 @@
     - { itemId: bone-fragments, qty: 3 }
   yields: { itemId: troll-hide-cape, qty: 1 }
   tags: [cape, armor, tier-2]
+  stats:
+    armor: 1
+    durability: 500
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: troll-hide, qty: 5 }
+      stats:
+        armor: 3
+        durability: 700
+    - quality: 3
+      ingredients:
+        - { itemId: troll-hide, qty: 10 }
+      stats:
+        armor: 5
+        durability: 900
+    - quality: 4
+      ingredients:
+        - { itemId: troll-hide, qty: 15 }
+      stats:
+        armor: 7
+        durability: 1100
 
 # Shields
 - id: wood-shield
@@ -254,6 +772,29 @@
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: wood-shield, qty: 1 }
   tags: [shield, tier-0]
+  stats:
+    block: 20
+    durability: 200
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 5 }
+      stats:
+        block: 22
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 10 }
+      stats:
+        block: 24
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 15 }
+      stats:
+        block: 26
+        durability: 350
 
 - id: wood-tower-shield
   name: Wood Tower Shield
@@ -265,6 +806,29 @@
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: wood-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-0]
+  stats:
+    block: 30
+    durability: 200
+    weight: 10.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: wood, qty: 5 }
+      stats:
+        block: 33
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: wood, qty: 10 }
+      stats:
+        block: 36
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: wood, qty: 15 }
+      stats:
+        block: 39
+        durability: 350
 
 - id: bone-tower-shield
   name: Bone Tower Shield
@@ -277,6 +841,29 @@
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: bone-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-1]
+  stats:
+    block: 40
+    durability: 200
+    weight: 10.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bone-fragments, qty: 10 }
+      stats:
+        block: 44
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: bone-fragments, qty: 20 }
+      stats:
+        block: 48
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: bone-fragments, qty: 30 }
+      stats:
+        block: 52
+        durability: 350
 
 # Arrows
 - id: wood-arrow
@@ -374,6 +961,37 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: abyssal-razor, qty: 1 }
   tags: [knife, one-handed, tier-3]
+  stats:
+    damage: { slash: 15, pierce: 15 }
+    knockback: 10
+    backstab: 6
+    durability: 200
+    weight: 0.3
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: chitin, qty: 10 }
+      stats:
+        damage: { slash: 21, pierce: 21 }
+        knockback: 10
+        backstab: 6
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: chitin, qty: 20 }
+      stats:
+        damage: { slash: 27, pierce: 27 }
+        knockback: 10
+        backstab: 6
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: chitin, qty: 30 }
+      stats:
+        damage: { slash: 33, pierce: 33 }
+        knockback: 10
+        backstab: 6
+        durability: 350
 
 - id: abyssal-harpoon
   name: Abyssal Harpoon
@@ -387,6 +1005,33 @@
   yields: { itemId: abyssal-harpoon, qty: 1 }
   tags: [spear, tool, tier-3]
   notes: Used to drag creatures. Does not break on hit.
+  stats:
+    damage: { pierce: 10 }
+    knockback: 50
+    durability: 50
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: chitin, qty: 10 }
+      stats:
+        damage: { pierce: 16 }
+        knockback: 50
+        durability: 100
+    - quality: 3
+      ingredients:
+        - { itemId: chitin, qty: 20 }
+      stats:
+        damage: { pierce: 22 }
+        knockback: 50
+        durability: 150
+    - quality: 4
+      ingredients:
+        - { itemId: chitin, qty: 30 }
+      stats:
+        damage: { pierce: 28 }
+        knockback: 50
+        durability: 200
 
 # ── Forge ──────────────────────────────────────────────────────────────────────
 
@@ -401,6 +1046,31 @@
     - { itemId: copper, qty: 8 }
   yields: { itemId: copper-knife, qty: 1 }
   tags: [knife, one-handed, tier-1]
+  stats:
+    damage: { slash: 10, pierce: 10 }
+    knockback: 10
+    backstab: 6
+    durability: 100
+    weight: 0.3
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: copper, qty: 4 }
+      stats:
+        damage: { slash: 16, pierce: 16 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: copper, qty: 8 }
+      stats:
+        damage: { slash: 22, pierce: 22 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: copper, qty: 12 }
+      stats:
+        damage: { slash: 28, pierce: 28 }
+        durability: 250
 
 - id: bronze-axe
   name: Bronze Axe
@@ -413,6 +1083,34 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: bronze-axe, qty: 1 }
   tags: [axe, one-handed, tier-2]
+  stats:
+    damage: { slash: 25 }
+    knockback: 30
+    backstab: 3
+    durability: 175
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 4 }
+        - { itemId: wood, qty: 2 }
+      stats:
+        damage: { slash: 31 }
+        durability: 225
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 8 }
+        - { itemId: wood, qty: 4 }
+      stats:
+        damage: { slash: 37 }
+        durability: 275
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 12 }
+        - { itemId: wood, qty: 6 }
+      stats:
+        damage: { slash: 43 }
+        durability: 325
 
 - id: bronze-pickaxe
   name: Bronze Pickaxe
@@ -424,6 +1122,32 @@
     - { itemId: bronze, qty: 10 }
   yields: { itemId: bronze-pickaxe, qty: 1 }
   tags: [pickaxe, tool, tier-2]
+  stats:
+    damage: { pierce: 25 }
+    durability: 150
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 4 }
+        - { itemId: wood, qty: 2 }
+      stats:
+        damage: { pierce: 31 }
+        durability: 200
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 8 }
+        - { itemId: wood, qty: 4 }
+      stats:
+        damage: { pierce: 37 }
+        durability: 250
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 12 }
+        - { itemId: wood, qty: 6 }
+      stats:
+        damage: { pierce: 43 }
+        durability: 300
 
 - id: bronze-mace
   name: Bronze Mace
@@ -436,6 +1160,37 @@
     - { itemId: leather-scraps, qty: 3 }
   yields: { itemId: bronze-mace, qty: 1 }
   tags: [mace, one-handed, tier-2]
+  stats:
+    damage: { blunt: 35 }
+    knockback: 60
+    backstab: 3
+    durability: 200
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 4 }
+        - { itemId: wood, qty: 2 }
+        - { itemId: leather-scraps, qty: 2 }
+      stats:
+        damage: { blunt: 41 }
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 8 }
+        - { itemId: wood, qty: 4 }
+        - { itemId: leather-scraps, qty: 4 }
+      stats:
+        damage: { blunt: 47 }
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 12 }
+        - { itemId: wood, qty: 6 }
+        - { itemId: leather-scraps, qty: 6 }
+      stats:
+        damage: { blunt: 53 }
+        durability: 350
 
 - id: bronze-atgeir
   name: Bronze Atgeir
@@ -448,6 +1203,37 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: bronze-atgeir, qty: 1 }
   tags: [atgeir, two-handed, tier-2]
+  stats:
+    damage: { pierce: 35 }
+    knockback: 30
+    backstab: 3
+    durability: 175
+    weight: 2.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 4 }
+        - { itemId: wood, qty: 2 }
+        - { itemId: leather-scraps, qty: 2 }
+      stats:
+        damage: { pierce: 41 }
+        durability: 225
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 8 }
+        - { itemId: wood, qty: 4 }
+        - { itemId: leather-scraps, qty: 4 }
+      stats:
+        damage: { pierce: 47 }
+        durability: 275
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 12 }
+        - { itemId: wood, qty: 6 }
+        - { itemId: leather-scraps, qty: 6 }
+      stats:
+        damage: { pierce: 53 }
+        durability: 325
 
 - id: bronze-spear
   name: Bronze Spear
@@ -460,6 +1246,37 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: bronze-spear, qty: 1 }
   tags: [spear, one-handed, tier-2]
+  stats:
+    damage: { pierce: 35 }
+    knockback: 20
+    backstab: 3
+    durability: 100
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 4 }
+        - { itemId: wood, qty: 2 }
+        - { itemId: deer-hide, qty: 2 }
+      stats:
+        damage: { pierce: 41 }
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 8 }
+        - { itemId: wood, qty: 4 }
+        - { itemId: deer-hide, qty: 4 }
+      stats:
+        damage: { pierce: 47 }
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 12 }
+        - { itemId: wood, qty: 6 }
+        - { itemId: deer-hide, qty: 6 }
+      stats:
+        damage: { pierce: 53 }
+        durability: 250
 
 - id: bronze-sword
   name: Bronze Sword
@@ -472,6 +1289,45 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: bronze-sword, qty: 1 }
   tags: [sword, one-handed, tier-2]
+  stats:
+    damage: { slash: 35 }
+    block: 10
+    parry: 30
+    knockback: 40
+    backstab: 3
+    durability: 200
+    weight: 1.6
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 4 }
+        - { itemId: wood, qty: 2 }
+        - { itemId: leather-scraps, qty: 2 }
+      stats:
+        damage: { slash: 41 }
+        block: 10
+        parry: 30
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 8 }
+        - { itemId: wood, qty: 4 }
+        - { itemId: leather-scraps, qty: 4 }
+      stats:
+        damage: { slash: 47 }
+        block: 10
+        parry: 30
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 12 }
+        - { itemId: wood, qty: 6 }
+        - { itemId: leather-scraps, qty: 6 }
+      stats:
+        damage: { slash: 53 }
+        block: 10
+        parry: 30
+        durability: 350
 
 - id: bronze-buckler
   name: Bronze Buckler
@@ -483,6 +1339,36 @@
     - { itemId: wood, qty: 4 }
   yields: { itemId: bronze-buckler, qty: 1 }
   tags: [shield, tier-2]
+  stats:
+    block: 22
+    parry: 40
+    durability: 200
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 4 }
+        - { itemId: wood, qty: 2 }
+      stats:
+        block: 24
+        parry: 40
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 8 }
+        - { itemId: wood, qty: 4 }
+      stats:
+        block: 26
+        parry: 40
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 12 }
+        - { itemId: wood, qty: 6 }
+      stats:
+        block: 28
+        parry: 40
+        durability: 350
 
 - id: bronze-helmet
   name: Bronze Helmet
@@ -494,6 +1380,29 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: bronze-helmet, qty: 1 }
   tags: [helmet, armor, tier-2]
+  stats:
+    armor: 8
+    durability: 1000
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 5 }
+      stats:
+        armor: 10
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 10 }
+      stats:
+        armor: 12
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 15 }
+      stats:
+        armor: 14
+        durability: 1600
 
 - id: bronze-plate-cuirass
   name: Bronze Plate Cuirass
@@ -505,6 +1414,29 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: bronze-plate-cuirass, qty: 1 }
   tags: [chest, armor, tier-2]
+  stats:
+    armor: 8
+    durability: 1000
+    weight: 10.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 5 }
+      stats:
+        armor: 10
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 10 }
+      stats:
+        armor: 12
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 15 }
+      stats:
+        armor: 14
+        durability: 1600
 
 - id: bronze-plate-leggings
   name: Bronze Plate Leggings
@@ -516,6 +1448,29 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: bronze-plate-leggings, qty: 1 }
   tags: [legs, armor, tier-2]
+  stats:
+    armor: 8
+    durability: 1000
+    weight: 10.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 5 }
+      stats:
+        armor: 10
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 10 }
+      stats:
+        armor: 12
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 15 }
+      stats:
+        armor: 14
+        durability: 1600
 
 - id: bronzehead-arrow
   name: Bronzehead Arrow
@@ -562,6 +1517,28 @@
   yields: { itemId: cultivator, qty: 1 }
   tags: [tool, tier-2]
   notes: Used for farming — plant seeds and flatten terrain.
+  stats:
+    durability: 200
+    weight: 1.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: bronze, qty: 5 }
+        - { itemId: core-wood, qty: 5 }
+      stats:
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: bronze, qty: 10 }
+        - { itemId: core-wood, qty: 10 }
+      stats:
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: bronze, qty: 15 }
+        - { itemId: core-wood, qty: 15 }
+      stats:
+        durability: 350
 
 # Iron tier (forge level 2)
 - id: huntsman-bow
@@ -576,6 +1553,36 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: huntsman-bow, qty: 1 }
   tags: [bow, two-handed, tier-3]
+  stats:
+    damage: { pierce: 42 }
+    knockback: 20
+    durability: 150
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: fine-wood, qty: 5 }
+        - { itemId: iron, qty: 10 }
+      stats:
+        damage: { pierce: 48 }
+        knockback: 20
+        durability: 200
+    - quality: 3
+      ingredients:
+        - { itemId: fine-wood, qty: 10 }
+        - { itemId: iron, qty: 20 }
+      stats:
+        damage: { pierce: 54 }
+        knockback: 20
+        durability: 250
+    - quality: 4
+      ingredients:
+        - { itemId: fine-wood, qty: 15 }
+        - { itemId: iron, qty: 30 }
+      stats:
+        damage: { pierce: 60 }
+        knockback: 20
+        durability: 300
 
 - id: iron-sword
   name: Iron Sword
@@ -640,6 +1647,43 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: iron-mace, qty: 1 }
   tags: [mace, one-handed, tier-3]
+  stats:
+    damage: { blunt: 55 }
+    knockback: 80
+    backstab: 3
+    durability: 200
+    weight: 2.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: wood, qty: 2 }
+        - { itemId: leather-scraps, qty: 2 }
+      stats:
+        damage: { blunt: 61 }
+        knockback: 80
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+        - { itemId: wood, qty: 4 }
+        - { itemId: leather-scraps, qty: 4 }
+      stats:
+        damage: { blunt: 67 }
+        knockback: 80
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: wood, qty: 6 }
+        - { itemId: leather-scraps, qty: 6 }
+      stats:
+        damage: { blunt: 73 }
+        knockback: 80
+        backstab: 3
+        durability: 350
 
 - id: iron-atgeir
   name: Iron Atgeir
@@ -652,6 +1696,40 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: iron-atgeir, qty: 1 }
   tags: [atgeir, two-handed, tier-3]
+  stats:
+    damage: { pierce: 55 }
+    knockback: 30
+    backstab: 3
+    durability: 175
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: wood, qty: 5 }
+      stats:
+        damage: { pierce: 61 }
+        knockback: 30
+        backstab: 3
+        durability: 225
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+        - { itemId: wood, qty: 10 }
+      stats:
+        damage: { pierce: 67 }
+        knockback: 30
+        backstab: 3
+        durability: 275
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: wood, qty: 15 }
+      stats:
+        damage: { pierce: 73 }
+        knockback: 30
+        backstab: 3
+        durability: 325
 
 - id: iron-axe
   name: Iron Axe
@@ -664,6 +1742,40 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: iron-axe, qty: 1 }
   tags: [axe, one-handed, tier-3]
+  stats:
+    damage: { slash: 40 }
+    knockback: 30
+    backstab: 3
+    durability: 175
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: wood, qty: 2 }
+      stats:
+        damage: { slash: 46 }
+        knockback: 30
+        backstab: 3
+        durability: 225
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+        - { itemId: wood, qty: 4 }
+      stats:
+        damage: { slash: 52 }
+        knockback: 30
+        backstab: 3
+        durability: 275
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: wood, qty: 6 }
+      stats:
+        damage: { slash: 58 }
+        knockback: 30
+        backstab: 3
+        durability: 325
 
 - id: iron-pickaxe
   name: Iron Pickaxe
@@ -675,6 +1787,32 @@
     - { itemId: iron, qty: 20 }
   yields: { itemId: iron-pickaxe, qty: 1 }
   tags: [pickaxe, tool, tier-3]
+  stats:
+    damage: { pierce: 33 }
+    durability: 150
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: core-wood, qty: 2 }
+      stats:
+        damage: { pierce: 39 }
+        durability: 200
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+        - { itemId: core-wood, qty: 4 }
+      stats:
+        damage: { pierce: 45 }
+        durability: 250
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: core-wood, qty: 6 }
+      stats:
+        damage: { pierce: 51 }
+        durability: 300
 
 - id: iron-sledge
   name: Iron Sledge
@@ -689,6 +1827,40 @@
   yields: { itemId: iron-sledge, qty: 1 }
   tags: [sledge, two-handed, tier-3]
   notes: Massive AOE damage; knocks back groups of enemies.
+  stats:
+    damage: { blunt: 55 }
+    knockback: 100
+    backstab: 3
+    durability: 100
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 15 }
+        - { itemId: ancient-bark, qty: 5 }
+      stats:
+        damage: { blunt: 61 }
+        knockback: 100
+        backstab: 3
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: ancient-bark, qty: 10 }
+      stats:
+        damage: { blunt: 67 }
+        knockback: 100
+        backstab: 3
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 45 }
+        - { itemId: ancient-bark, qty: 15 }
+      stats:
+        damage: { blunt: 73 }
+        knockback: 100
+        backstab: 3
+        durability: 250
 
 - id: iron-buckler
   name: Iron Buckler
@@ -700,6 +1872,33 @@
     - { itemId: ancient-bark, qty: 4 }
   yields: { itemId: iron-buckler, qty: 1 }
   tags: [shield, tier-3]
+  stats:
+    block: 42
+    parry: 60
+    durability: 200
+    weight: 2.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 5 }
+      stats:
+        block: 45
+        parry: 60
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 10 }
+      stats:
+        block: 48
+        parry: 60
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 15 }
+      stats:
+        block: 51
+        parry: 60
+        durability: 350
 
 - id: iron-tower-shield
   name: Iron Tower Shield
@@ -711,6 +1910,32 @@
     - { itemId: iron, qty: 10 }
   yields: { itemId: iron-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-3]
+  stats:
+    block: 60
+    durability: 200
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 5 }
+        - { itemId: fine-wood, qty: 5 }
+      stats:
+        block: 63
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: fine-wood, qty: 10 }
+      stats:
+        block: 66
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 15 }
+        - { itemId: fine-wood, qty: 15 }
+      stats:
+        block: 69
+        durability: 350
 
 - id: banded-shield
   name: Banded Shield
@@ -722,6 +1947,36 @@
     - { itemId: iron, qty: 8 }
   yields: { itemId: banded-shield, qty: 1 }
   tags: [shield, tier-3]
+  stats:
+    block: 52
+    parry: 52
+    durability: 200
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 4 }
+        - { itemId: fine-wood, qty: 5 }
+      stats:
+        block: 55
+        parry: 52
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 8 }
+        - { itemId: fine-wood, qty: 10 }
+      stats:
+        block: 58
+        parry: 52
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 12 }
+        - { itemId: fine-wood, qty: 15 }
+      stats:
+        block: 61
+        parry: 52
+        durability: 350
 
 - id: iron-helmet
   name: Iron Helmet
@@ -733,6 +1988,29 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: iron-helmet, qty: 1 }
   tags: [helmet, armor, tier-3]
+  stats:
+    armor: 14
+    durability: 1000
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+      stats:
+        armor: 16
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+      stats:
+        armor: 18
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+      stats:
+        armor: 20
+        durability: 1600
 
 - id: iron-scale-mail
   name: Iron Scale Mail
@@ -744,6 +2022,29 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: iron-scale-mail, qty: 1 }
   tags: [chest, armor, tier-3]
+  stats:
+    armor: 14
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+      stats:
+        armor: 16
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+      stats:
+        armor: 18
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+      stats:
+        armor: 20
+        durability: 1600
 
 - id: iron-greaves
   name: Iron Greaves
@@ -755,6 +2056,29 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: iron-greaves, qty: 1 }
   tags: [legs, armor, tier-3]
+  stats:
+    armor: 14
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+      stats:
+        armor: 16
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+      stats:
+        armor: 18
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+      stats:
+        armor: 20
+        durability: 1600
 
 - id: ironhead-arrow
   name: Ironhead Arrow
@@ -789,6 +2113,43 @@
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: iron-battleaxe, qty: 1 }
   tags: [battleaxe, two-handed, tier-3]
+  stats:
+    damage: { slash: 60 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 15 }
+        - { itemId: ancient-bark, qty: 10 }
+        - { itemId: leather-scraps, qty: 2 }
+      stats:
+        damage: { slash: 66 }
+        knockback: 50
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: ancient-bark, qty: 20 }
+        - { itemId: leather-scraps, qty: 4 }
+      stats:
+        damage: { slash: 72 }
+        knockback: 50
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 45 }
+        - { itemId: ancient-bark, qty: 30 }
+        - { itemId: leather-scraps, qty: 6 }
+      stats:
+        damage: { slash: 78 }
+        knockback: 50
+        backstab: 3
+        durability: 350
 
 # Silver/Mountain tier (forge level 3)
 - id: ancient-bark-spear
@@ -802,6 +2163,40 @@
     - { itemId: troll-hide, qty: 4 }
   yields: { itemId: ancient-bark-spear, qty: 1 }
   tags: [spear, one-handed, tier-3]
+  stats:
+    damage: { pierce: 50 }
+    knockback: 20
+    backstab: 3
+    durability: 100
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 5 }
+        - { itemId: ancient-bark, qty: 5 }
+      stats:
+        damage: { pierce: 56 }
+        knockback: 20
+        backstab: 3
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: ancient-bark, qty: 10 }
+      stats:
+        damage: { pierce: 62 }
+        knockback: 20
+        backstab: 3
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 15 }
+        - { itemId: ancient-bark, qty: 15 }
+      stats:
+        damage: { pierce: 68 }
+        knockback: 20
+        backstab: 3
+        durability: 250
 
 - id: draugr-fang
   name: Draugr Fang
@@ -816,6 +2211,39 @@
   yields: { itemId: draugr-fang, qty: 1 }
   tags: [bow, two-handed, tier-4]
   notes: Shoots poison arrows; pairs well with Poison arrows for stacking DoT.
+  stats:
+    damage: { pierce: 47, poison: 5 }
+    knockback: 20
+    durability: 100
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: silver, qty: 10 }
+        - { itemId: ancient-bark, qty: 5 }
+        - { itemId: deer-hide, qty: 2 }
+      stats:
+        damage: { pierce: 53, poison: 5 }
+        knockback: 20
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: silver, qty: 20 }
+        - { itemId: ancient-bark, qty: 10 }
+        - { itemId: deer-hide, qty: 4 }
+      stats:
+        damage: { pierce: 59, poison: 5 }
+        knockback: 20
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: silver, qty: 30 }
+        - { itemId: ancient-bark, qty: 15 }
+        - { itemId: deer-hide, qty: 6 }
+      stats:
+        damage: { pierce: 65, poison: 5 }
+        knockback: 20
+        durability: 250
 
 - id: frostner
   name: Frostner
@@ -830,6 +2258,43 @@
   yields: { itemId: frostner, qty: 1 }
   tags: [mace, one-handed, tier-4]
   notes: Deals frost and spirit damage; slows enemies. Strong vs. undead.
+  stats:
+    damage: { blunt: 35, frost: 40, spirit: 20 }
+    knockback: 80
+    backstab: 3
+    durability: 200
+    weight: 2.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: silver, qty: 15 }
+        - { itemId: ancient-bark, qty: 5 }
+        - { itemId: ymir-flesh, qty: 3 }
+      stats:
+        damage: { blunt: 41, frost: 46, spirit: 26 }
+        knockback: 80
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: silver, qty: 30 }
+        - { itemId: ancient-bark, qty: 10 }
+        - { itemId: ymir-flesh, qty: 6 }
+      stats:
+        damage: { blunt: 47, frost: 52, spirit: 32 }
+        knockback: 80
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: silver, qty: 45 }
+        - { itemId: ancient-bark, qty: 15 }
+        - { itemId: ymir-flesh, qty: 9 }
+      stats:
+        damage: { blunt: 53, frost: 58, spirit: 38 }
+        knockback: 80
+        backstab: 3
+        durability: 350
 
 - id: fang-spear
   name: Fang Spear
@@ -843,6 +2308,40 @@
     - { itemId: silver, qty: 2 }
   yields: { itemId: fang-spear, qty: 1 }
   tags: [spear, one-handed, tier-4]
+  stats:
+    damage: { pierce: 55 }
+    knockback: 20
+    backstab: 3
+    durability: 100
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: silver, qty: 2 }
+        - { itemId: wolf-fang, qty: 2 }
+      stats:
+        damage: { pierce: 61 }
+        knockback: 20
+        backstab: 3
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: silver, qty: 4 }
+        - { itemId: wolf-fang, qty: 4 }
+      stats:
+        damage: { pierce: 67 }
+        knockback: 20
+        backstab: 3
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: silver, qty: 6 }
+        - { itemId: wolf-fang, qty: 6 }
+      stats:
+        damage: { pierce: 73 }
+        knockback: 20
+        backstab: 3
+        durability: 250
 
 - id: silver-knife
   name: Silver Knife
@@ -856,6 +2355,37 @@
     - { itemId: iron, qty: 2 }
   yields: { itemId: silver-knife, qty: 1 }
   tags: [knife, one-handed, tier-4]
+  stats:
+    damage: { slash: 20, spirit: 30 }
+    knockback: 10
+    backstab: 6
+    durability: 200
+    weight: 0.3
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: silver, qty: 10 }
+      stats:
+        damage: { slash: 26, spirit: 36 }
+        knockback: 10
+        backstab: 6
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: silver, qty: 20 }
+      stats:
+        damage: { slash: 32, spirit: 42 }
+        knockback: 10
+        backstab: 6
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: silver, qty: 30 }
+      stats:
+        damage: { slash: 38, spirit: 48 }
+        knockback: 10
+        backstab: 6
+        durability: 350
 
 - id: crystal-battleaxe
   name: Crystal Battleaxe
@@ -868,6 +2398,40 @@
     - { itemId: crystal, qty: 10 }
   yields: { itemId: crystal-battleaxe, qty: 1 }
   tags: [battleaxe, two-handed, tier-4]
+  stats:
+    damage: { slash: 60, spirit: 30 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: crystal, qty: 10 }
+        - { itemId: silver, qty: 10 }
+      stats:
+        damage: { slash: 66, spirit: 36 }
+        knockback: 50
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: crystal, qty: 20 }
+        - { itemId: silver, qty: 20 }
+      stats:
+        damage: { slash: 72, spirit: 42 }
+        knockback: 50
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: crystal, qty: 30 }
+        - { itemId: silver, qty: 30 }
+      stats:
+        damage: { slash: 78, spirit: 48 }
+        knockback: 50
+        backstab: 3
+        durability: 350
 
 - id: silver-shield
   name: Silver Shield
@@ -879,6 +2443,36 @@
     - { itemId: silver, qty: 8 }
   yields: { itemId: silver-shield, qty: 1 }
   tags: [shield, tier-4]
+  stats:
+    block: 75
+    parry: 60
+    durability: 200
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: silver, qty: 5 }
+        - { itemId: fine-wood, qty: 5 }
+      stats:
+        block: 78
+        parry: 60
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: silver, qty: 10 }
+        - { itemId: fine-wood, qty: 10 }
+      stats:
+        block: 81
+        parry: 60
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: silver, qty: 15 }
+        - { itemId: fine-wood, qty: 15 }
+      stats:
+        block: 84
+        parry: 60
+        durability: 350
 
 - id: serpent-scale-shield
   name: Serpent Scale Shield
@@ -892,6 +2486,39 @@
   yields: { itemId: serpent-scale-shield, qty: 1 }
   tags: [shield, tier-4]
   notes: High block power; excellent vs. staggered enemies.
+  stats:
+    block: 90
+    parry: 60
+    durability: 250
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: serpent-scale, qty: 4 }
+        - { itemId: fine-wood, qty: 4 }
+        - { itemId: iron, qty: 2 }
+      stats:
+        block: 93
+        parry: 60
+        durability: 300
+    - quality: 3
+      ingredients:
+        - { itemId: serpent-scale, qty: 8 }
+        - { itemId: fine-wood, qty: 8 }
+        - { itemId: iron, qty: 4 }
+      stats:
+        block: 96
+        parry: 60
+        durability: 350
+    - quality: 4
+      ingredients:
+        - { itemId: serpent-scale, qty: 12 }
+        - { itemId: fine-wood, qty: 12 }
+        - { itemId: iron, qty: 6 }
+      stats:
+        block: 99
+        parry: 60
+        durability: 400
 
 - id: wolf-armor-chest
   name: Wolf Armor Chest
@@ -904,6 +2531,32 @@
     - { itemId: chain, qty: 1 }
   yields: { itemId: wolf-armor-chest, qty: 1 }
   tags: [chest, armor, tier-4]
+  stats:
+    armor: 20
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: silver, qty: 5 }
+        - { itemId: wolf-pelt, qty: 2 }
+      stats:
+        armor: 22
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: silver, qty: 10 }
+        - { itemId: wolf-pelt, qty: 4 }
+      stats:
+        armor: 24
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: silver, qty: 15 }
+        - { itemId: wolf-pelt, qty: 6 }
+      stats:
+        armor: 26
+        durability: 1600
 
 - id: wolf-armor-legs
   name: Wolf Armor Legs
@@ -916,6 +2569,32 @@
     - { itemId: chain, qty: 1 }
   yields: { itemId: wolf-armor-legs, qty: 1 }
   tags: [legs, armor, tier-4]
+  stats:
+    armor: 20
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: silver, qty: 5 }
+        - { itemId: wolf-pelt, qty: 2 }
+      stats:
+        armor: 22
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: silver, qty: 10 }
+        - { itemId: wolf-pelt, qty: 4 }
+      stats:
+        armor: 24
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: silver, qty: 15 }
+        - { itemId: wolf-pelt, qty: 6 }
+      stats:
+        armor: 26
+        durability: 1600
 
 - id: drake-helmet
   name: Drake Helmet
@@ -928,6 +2607,32 @@
     - { itemId: drake-trophy, qty: 1 }
   yields: { itemId: drake-helmet, qty: 1 }
   tags: [helmet, armor, tier-4]
+  stats:
+    armor: 20
+    durability: 1000
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: silver, qty: 5 }
+        - { itemId: wolf-pelt, qty: 2 }
+      stats:
+        armor: 22
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: silver, qty: 10 }
+        - { itemId: wolf-pelt, qty: 4 }
+      stats:
+        armor: 24
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: silver, qty: 15 }
+        - { itemId: wolf-pelt, qty: 6 }
+      stats:
+        armor: 26
+        durability: 1600
 
 - id: silver-arrow
   name: Silver Arrow
@@ -953,6 +2658,43 @@
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-sword, qty: 1 }
   tags: [sword, one-handed, tier-5]
+  stats:
+    damage: { slash: 70 }
+    knockback: 40
+    backstab: 3
+    durability: 200
+    weight: 1.6
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: black-metal, qty: 10 }
+        - { itemId: fine-wood, qty: 2 }
+        - { itemId: linen-thread, qty: 2 }
+      stats:
+        damage: { slash: 76 }
+        knockback: 40
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: black-metal, qty: 20 }
+        - { itemId: fine-wood, qty: 4 }
+        - { itemId: linen-thread, qty: 4 }
+      stats:
+        damage: { slash: 82 }
+        knockback: 40
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: black-metal, qty: 30 }
+        - { itemId: fine-wood, qty: 6 }
+        - { itemId: linen-thread, qty: 6 }
+      stats:
+        damage: { slash: 88 }
+        knockback: 40
+        backstab: 3
+        durability: 350
 
 - id: black-metal-axe
   name: Black Metal Axe
@@ -965,6 +2707,40 @@
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-axe, qty: 1 }
   tags: [axe, one-handed, tier-5]
+  stats:
+    damage: { slash: 55 }
+    knockback: 30
+    backstab: 3
+    durability: 175
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: black-metal, qty: 10 }
+        - { itemId: fine-wood, qty: 2 }
+      stats:
+        damage: { slash: 61 }
+        knockback: 30
+        backstab: 3
+        durability: 225
+    - quality: 3
+      ingredients:
+        - { itemId: black-metal, qty: 20 }
+        - { itemId: fine-wood, qty: 4 }
+      stats:
+        damage: { slash: 67 }
+        knockback: 30
+        backstab: 3
+        durability: 275
+    - quality: 4
+      ingredients:
+        - { itemId: black-metal, qty: 30 }
+        - { itemId: fine-wood, qty: 6 }
+      stats:
+        damage: { slash: 73 }
+        knockback: 30
+        backstab: 3
+        durability: 325
 
 - id: black-metal-atgeir
   name: Black Metal Atgeir
@@ -977,6 +2753,40 @@
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-atgeir, qty: 1 }
   tags: [atgeir, two-handed, tier-5]
+  stats:
+    damage: { pierce: 70 }
+    knockback: 30
+    backstab: 3
+    durability: 175
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: black-metal, qty: 10 }
+        - { itemId: fine-wood, qty: 5 }
+      stats:
+        damage: { pierce: 76 }
+        knockback: 30
+        backstab: 3
+        durability: 225
+    - quality: 3
+      ingredients:
+        - { itemId: black-metal, qty: 20 }
+        - { itemId: fine-wood, qty: 10 }
+      stats:
+        damage: { pierce: 82 }
+        knockback: 30
+        backstab: 3
+        durability: 275
+    - quality: 4
+      ingredients:
+        - { itemId: black-metal, qty: 30 }
+        - { itemId: fine-wood, qty: 15 }
+      stats:
+        damage: { pierce: 88 }
+        knockback: 30
+        backstab: 3
+        durability: 325
 
 - id: black-metal-knife
   name: Black Metal Knife
@@ -989,6 +2799,40 @@
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-knife, qty: 1 }
   tags: [knife, one-handed, tier-5]
+  stats:
+    damage: { slash: 28, pierce: 28 }
+    knockback: 10
+    backstab: 6
+    durability: 200
+    weight: 0.3
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: black-metal, qty: 10 }
+        - { itemId: fine-wood, qty: 2 }
+      stats:
+        damage: { slash: 34, pierce: 34 }
+        knockback: 10
+        backstab: 6
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: black-metal, qty: 20 }
+        - { itemId: fine-wood, qty: 4 }
+      stats:
+        damage: { slash: 40, pierce: 40 }
+        knockback: 10
+        backstab: 6
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: black-metal, qty: 30 }
+        - { itemId: fine-wood, qty: 6 }
+      stats:
+        damage: { slash: 46, pierce: 46 }
+        knockback: 10
+        backstab: 6
+        durability: 350
 
 - id: porcupine
   name: Porcupine
@@ -1003,6 +2847,40 @@
   yields: { itemId: porcupine, qty: 1 }
   tags: [mace, one-handed, tier-5]
   notes: Deals pierce and blunt damage; one of the strongest one-handed weapons.
+  stats:
+    damage: { blunt: 40, pierce: 50 }
+    knockback: 60
+    backstab: 3
+    durability: 200
+    weight: 2.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: needle, qty: 5 }
+        - { itemId: linen-thread, qty: 5 }
+      stats:
+        damage: { blunt: 46, pierce: 56 }
+        knockback: 60
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: needle, qty: 10 }
+        - { itemId: linen-thread, qty: 10 }
+      stats:
+        damage: { blunt: 52, pierce: 62 }
+        knockback: 60
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: needle, qty: 15 }
+        - { itemId: linen-thread, qty: 15 }
+      stats:
+        damage: { blunt: 58, pierce: 68 }
+        knockback: 60
+        backstab: 3
+        durability: 350
 
 - id: black-metal-shield
   name: Black Metal Shield
@@ -1015,6 +2893,36 @@
     - { itemId: chain, qty: 5 }
   yields: { itemId: black-metal-shield, qty: 1 }
   tags: [shield, tier-5]
+  stats:
+    block: 105
+    parry: 60
+    durability: 200
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: black-metal, qty: 5 }
+        - { itemId: fine-wood, qty: 5 }
+      stats:
+        block: 108
+        parry: 60
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: black-metal, qty: 10 }
+        - { itemId: fine-wood, qty: 10 }
+      stats:
+        block: 111
+        parry: 60
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: black-metal, qty: 15 }
+        - { itemId: fine-wood, qty: 15 }
+      stats:
+        block: 114
+        parry: 60
+        durability: 350
 
 - id: black-metal-tower-shield
   name: Black Metal Tower Shield
@@ -1027,6 +2935,32 @@
     - { itemId: chain, qty: 7 }
   yields: { itemId: black-metal-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-5]
+  stats:
+    block: 120
+    durability: 200
+    weight: 18.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: black-metal, qty: 10 }
+        - { itemId: fine-wood, qty: 5 }
+      stats:
+        block: 123
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: black-metal, qty: 20 }
+        - { itemId: fine-wood, qty: 10 }
+      stats:
+        block: 126
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: black-metal, qty: 30 }
+        - { itemId: fine-wood, qty: 15 }
+      stats:
+        block: 129
+        durability: 350
 
 - id: padded-helmet
   name: Padded Helmet
@@ -1038,6 +2972,32 @@
     - { itemId: iron, qty: 5 }
   yields: { itemId: padded-helmet, qty: 1 }
   tags: [helmet, armor, tier-5]
+  stats:
+    armor: 26
+    durability: 1000
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: linen-thread, qty: 5 }
+      stats:
+        armor: 28
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+        - { itemId: linen-thread, qty: 10 }
+      stats:
+        armor: 30
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: linen-thread, qty: 15 }
+      stats:
+        armor: 32
+        durability: 1600
 
 - id: padded-cuirass
   name: Padded Cuirass
@@ -1049,6 +3009,32 @@
     - { itemId: iron, qty: 10 }
   yields: { itemId: padded-cuirass, qty: 1 }
   tags: [chest, armor, tier-5]
+  stats:
+    armor: 26
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: linen-thread, qty: 5 }
+      stats:
+        armor: 28
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+        - { itemId: linen-thread, qty: 10 }
+      stats:
+        armor: 30
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: linen-thread, qty: 15 }
+      stats:
+        armor: 32
+        durability: 1600
 
 - id: padded-greaves
   name: Padded Greaves
@@ -1060,6 +3046,32 @@
     - { itemId: iron, qty: 10 }
   yields: { itemId: padded-greaves, qty: 1 }
   tags: [legs, armor, tier-5]
+  stats:
+    armor: 26
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: iron, qty: 10 }
+        - { itemId: linen-thread, qty: 5 }
+      stats:
+        armor: 28
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: iron, qty: 20 }
+        - { itemId: linen-thread, qty: 10 }
+      stats:
+        armor: 30
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: iron, qty: 30 }
+        - { itemId: linen-thread, qty: 15 }
+      stats:
+        armor: 32
+        durability: 1600
 
 - id: silver-sword
   name: Silver Sword
@@ -1072,6 +3084,43 @@
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: silver-sword, qty: 1 }
   tags: [sword, one-handed, tier-4]
+  stats:
+    damage: { slash: 55, spirit: 30 }
+    knockback: 40
+    backstab: 3
+    durability: 200
+    weight: 1.6
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: silver, qty: 15 }
+        - { itemId: wood, qty: 2 }
+        - { itemId: leather-scraps, qty: 2 }
+      stats:
+        damage: { slash: 61, spirit: 36 }
+        knockback: 40
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: silver, qty: 30 }
+        - { itemId: wood, qty: 4 }
+        - { itemId: leather-scraps, qty: 4 }
+      stats:
+        damage: { slash: 67, spirit: 42 }
+        knockback: 40
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: silver, qty: 45 }
+        - { itemId: wood, qty: 6 }
+        - { itemId: leather-scraps, qty: 6 }
+      stats:
+        damage: { slash: 73, spirit: 48 }
+        knockback: 40
+        backstab: 3
+        durability: 350
 
 # ── Black Forge ────────────────────────────────────────────────────────────────
 
@@ -1087,6 +3136,40 @@
     - { itemId: refined-eitr, qty: 3 }
   yields: { itemId: himminafl, qty: 1 }
   tags: [atgeir, two-handed, tier-6]
+  stats:
+    damage: { blunt: 80, lightning: 10 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 5 }
+        - { itemId: refined-eitr, qty: 3 }
+      stats:
+        damage: { blunt: 86, lightning: 16 }
+        knockback: 100
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { blunt: 92, lightning: 22 }
+        knockback: 100
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 15 }
+        - { itemId: refined-eitr, qty: 9 }
+      stats:
+        damage: { blunt: 98, lightning: 28 }
+        knockback: 100
+        backstab: 3
+        durability: 350
 
 - id: jotun-bane
   name: Jotun Bane
@@ -1099,6 +3182,40 @@
     - { itemId: refined-eitr, qty: 2 }
   yields: { itemId: jotun-bane, qty: 1 }
   tags: [knife, one-handed, tier-6]
+  stats:
+    damage: { pierce: 85 }
+    knockback: 20
+    backstab: 3
+    durability: 100
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        damage: { pierce: 91 }
+        knockback: 20
+        backstab: 3
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        damage: { pierce: 97 }
+        knockback: 20
+        backstab: 3
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { pierce: 103 }
+        knockback: 20
+        backstab: 3
+        durability: 250
 
 - id: spinesnap
   name: Spinesnap
@@ -1111,6 +3228,36 @@
     - { itemId: mandible, qty: 4 }
   yields: { itemId: spinesnap, qty: 1 }
   tags: [crossbow, two-handed, tier-6]
+  stats:
+    damage: { pierce: 72 }
+    knockback: 20
+    durability: 150
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        damage: { pierce: 78 }
+        knockback: 20
+        durability: 200
+    - quality: 3
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        damage: { pierce: 84 }
+        knockback: 20
+        durability: 250
+    - quality: 4
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { pierce: 90 }
+        knockback: 20
+        durability: 300
 
 - id: arbalest
   name: Arbalest
@@ -1123,6 +3270,40 @@
     - { itemId: iron, qty: 5 }
   yields: { itemId: arbalest, qty: 1 }
   tags: [crossbow, two-handed, tier-6]
+  notes: Does 0 base damage; bolts provide damage.
+  stats:
+    damage: { pierce: 0 }
+    knockback: 50
+    durability: 100
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+        - { itemId: black-metal, qty: 5 }
+      stats:
+        damage: { pierce: 0 }
+        knockback: 50
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+        - { itemId: black-metal, qty: 10 }
+      stats:
+        damage: { pierce: 0 }
+        knockback: 50
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+        - { itemId: black-metal, qty: 15 }
+      stats:
+        damage: { pierce: 0 }
+        knockback: 50
+        durability: 250
 
 - id: krom
   name: Krom
@@ -1135,6 +3316,40 @@
     - { itemId: refined-eitr, qty: 5 }
   yields: { itemId: krom, qty: 1 }
   tags: [sword, two-handed, tier-6]
+  stats:
+    damage: { slash: 85 }
+    knockback: 40
+    backstab: 3
+    durability: 200
+    weight: 1.8
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: black-metal, qty: 10 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        damage: { slash: 91 }
+        knockback: 40
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: black-metal, qty: 20 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        damage: { slash: 97 }
+        knockback: 40
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: black-metal, qty: 30 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { slash: 103 }
+        knockback: 40
+        backstab: 3
+        durability: 350
 
 - id: mistwalker
   name: Mistwalker
@@ -1147,6 +3362,40 @@
     - { itemId: freeze-gland, qty: 3 }
   yields: { itemId: mistwalker, qty: 1 }
   tags: [sword, one-handed, tier-6]
+  stats:
+    damage: { slash: 80, frost: 20 }
+    knockback: 40
+    backstab: 3
+    durability: 200
+    weight: 1.8
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 5 }
+        - { itemId: refined-eitr, qty: 3 }
+      stats:
+        damage: { slash: 86, frost: 26 }
+        knockback: 40
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { slash: 92, frost: 32 }
+        knockback: 40
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 15 }
+        - { itemId: refined-eitr, qty: 9 }
+      stats:
+        damage: { slash: 98, frost: 38 }
+        knockback: 40
+        backstab: 3
+        durability: 350
 
 - id: carapace-spear
   name: Carapace Spear
@@ -1158,6 +3407,40 @@
     - { itemId: yggdrasil-wood, qty: 5 }
   yields: { itemId: carapace-spear, qty: 1 }
   tags: [spear, one-handed, tier-6]
+  stats:
+    damage: { pierce: 75 }
+    knockback: 20
+    backstab: 3
+    durability: 100
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        damage: { pierce: 81 }
+        knockback: 20
+        backstab: 3
+        durability: 150
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        damage: { pierce: 87 }
+        knockback: 20
+        backstab: 3
+        durability: 200
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { pierce: 93 }
+        knockback: 20
+        backstab: 3
+        durability: 250
 
 - id: ripper
   name: Ripper
@@ -1170,6 +3453,40 @@
     - { itemId: refined-eitr, qty: 2 }
   yields: { itemId: ripper, qty: 1 }
   tags: [knife, one-handed, tier-6]
+  stats:
+    damage: { slash: 35, pierce: 35 }
+    knockback: 10
+    backstab: 6
+    durability: 200
+    weight: 0.3
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: black-metal, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        damage: { slash: 41, pierce: 41 }
+        knockback: 10
+        backstab: 6
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: black-metal, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        damage: { slash: 47, pierce: 47 }
+        knockback: 10
+        backstab: 6
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: black-metal, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { slash: 53, pierce: 53 }
+        knockback: 10
+        backstab: 6
+        durability: 350
 
 - id: skoll-and-hati
   name: Skoll and Hati
@@ -1182,6 +3499,40 @@
     - { itemId: refined-eitr, qty: 5 }
   yields: { itemId: skoll-and-hati, qty: 1 }
   tags: [axe, one-handed, tier-6]
+  stats:
+    damage: { slash: 40, pierce: 40 }
+    knockback: 30
+    backstab: 3
+    durability: 200
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: black-metal, qty: 10 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        damage: { slash: 46, pierce: 46 }
+        knockback: 30
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: black-metal, qty: 20 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        damage: { slash: 52, pierce: 52 }
+        knockback: 30
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: black-metal, qty: 30 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { slash: 58, pierce: 58 }
+        knockback: 30
+        backstab: 3
+        durability: 350
 
 - id: demolisher
   name: Demolisher
@@ -1194,6 +3545,40 @@
     - { itemId: yggdrasil-wood, qty: 8 }
   yields: { itemId: demolisher, qty: 1 }
   tags: [sledge, two-handed, tier-6]
+  stats:
+    damage: { blunt: 88 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 4.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 3 }
+      stats:
+        damage: { blunt: 94 }
+        knockback: 100
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 20 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { blunt: 100 }
+        knockback: 100
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 30 }
+        - { itemId: refined-eitr, qty: 9 }
+      stats:
+        damage: { blunt: 106 }
+        knockback: 100
+        backstab: 3
+        durability: 350
 
 - id: splitnir
   name: Splitnir
@@ -1206,6 +3591,40 @@
     - { itemId: refined-eitr, qty: 3 }
   yields: { itemId: splitnir, qty: 1 }
   tags: [spear, one-handed, tier-6]
+  stats:
+    damage: { slash: 85 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 3 }
+      stats:
+        damage: { slash: 91 }
+        knockback: 50
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 20 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { slash: 97 }
+        knockback: 50
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 30 }
+        - { itemId: refined-eitr, qty: 9 }
+      stats:
+        damage: { slash: 103 }
+        knockback: 50
+        backstab: 3
+        durability: 350
 
 - id: berserkir
   name: Berserkir
@@ -1218,6 +3637,40 @@
     - { itemId: refined-eitr, qty: 4 }
   yields: { itemId: berserkir, qty: 1 }
   tags: [axe, two-handed, tier-6]
+  stats:
+    damage: { slash: 80, blunt: 20 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 3 }
+      stats:
+        damage: { slash: 86, blunt: 26 }
+        knockback: 50
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 20 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        damage: { slash: 92, blunt: 32 }
+        knockback: 50
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 30 }
+        - { itemId: refined-eitr, qty: 9 }
+      stats:
+        damage: { slash: 98, blunt: 38 }
+        knockback: 50
+        backstab: 3
+        durability: 350
 
 # Ashlands weapons (Black Forge level 3)
 - id: ash-fang
@@ -1231,6 +3684,36 @@
     - { itemId: morgen-heart, qty: 1 }
   yields: { itemId: ash-fang, qty: 1 }
   tags: [bow, two-handed, tier-7]
+  stats:
+    damage: { pierce: 92 }
+    knockback: 20
+    durability: 150
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: yggdrasil-wood, qty: 5 }
+      stats:
+        damage: { pierce: 98 }
+        knockback: 20
+        durability: 200
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: yggdrasil-wood, qty: 10 }
+      stats:
+        damage: { pierce: 104 }
+        knockback: 20
+        durability: 250
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 15 }
+        - { itemId: yggdrasil-wood, qty: 15 }
+      stats:
+        damage: { pierce: 110 }
+        knockback: 20
+        durability: 300
 
 - id: flametal-mace
   name: Flametal Mace
@@ -1243,6 +3726,40 @@
     - { itemId: charred-bone, qty: 5 }
   yields: { itemId: flametal-mace, qty: 1 }
   tags: [mace, one-handed, tier-7]
+  stats:
+    damage: { blunt: 95, fire: 20 }
+    knockback: 80
+    backstab: 3
+    durability: 200
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: charred-bone, qty: 5 }
+      stats:
+        damage: { blunt: 101, fire: 20 }
+        knockback: 80
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: charred-bone, qty: 10 }
+      stats:
+        damage: { blunt: 107, fire: 20 }
+        knockback: 80
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: charred-bone, qty: 15 }
+      stats:
+        damage: { blunt: 113, fire: 20 }
+        knockback: 80
+        backstab: 3
+        durability: 350
 
 - id: slayer
   name: Slayer
@@ -1255,6 +3772,40 @@
     - { itemId: yggdrasil-wood, qty: 8 }
   yields: { itemId: slayer, qty: 1 }
   tags: [sledge, two-handed, tier-7]
+  stats:
+    damage: { blunt: 100 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 5.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: yggdrasil-wood, qty: 5 }
+      stats:
+        damage: { blunt: 106 }
+        knockback: 100
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: yggdrasil-wood, qty: 10 }
+      stats:
+        damage: { blunt: 112 }
+        knockback: 100
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: yggdrasil-wood, qty: 15 }
+      stats:
+        damage: { blunt: 118 }
+        knockback: 100
+        backstab: 3
+        durability: 350
 
 - id: dyrnwyn
   name: Dyrnwyn
@@ -1267,6 +3818,40 @@
     - { itemId: morgen-heart, qty: 2 }
   yields: { itemId: dyrnwyn, qty: 1 }
   tags: [sword, one-handed, tier-7]
+  stats:
+    damage: { slash: 95, fire: 30 }
+    knockback: 40
+    backstab: 3
+    durability: 200
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 5 }
+      stats:
+        damage: { slash: 101, fire: 30 }
+        knockback: 40
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        damage: { slash: 107, fire: 30 }
+        knockback: 40
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: ashwood, qty: 15 }
+      stats:
+        damage: { slash: 113, fire: 30 }
+        knockback: 40
+        backstab: 3
+        durability: 350
 
 - id: nidhogg
   name: "Nidh\xF6gg"
@@ -1279,6 +3864,40 @@
     - { itemId: bilebag, qty: 2 }
   yields: { itemId: nidhogg, qty: 1 }
   tags: [atgeir, two-handed, tier-7]
+  stats:
+    damage: { slash: 90, pierce: 30 }
+    knockback: 30
+    backstab: 3
+    durability: 200
+    weight: 3.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 5 }
+      stats:
+        damage: { slash: 96, pierce: 30 }
+        knockback: 30
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        damage: { slash: 102, pierce: 30 }
+        knockback: 30
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: ashwood, qty: 15 }
+      stats:
+        damage: { slash: 108, pierce: 30 }
+        knockback: 30
+        backstab: 3
+        durability: 350
 
 # Black Forge armor — Mistlands (level 1)
 - id: carapace-helmet
@@ -1292,6 +3911,32 @@
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-helmet, qty: 1 }
   tags: [helmet, armor, tier-6]
+  stats:
+    armor: 30
+    durability: 1000
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        armor: 32
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        armor: 34
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        armor: 36
+        durability: 1600
 
 - id: carapace-breastplate
   name: Carapace Breastplate
@@ -1304,6 +3949,32 @@
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-breastplate, qty: 1 }
   tags: [chest, armor, tier-6]
+  stats:
+    armor: 30
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: scale-hide, qty: 2 }
+      stats:
+        armor: 32
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: scale-hide, qty: 4 }
+      stats:
+        armor: 34
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: scale-hide, qty: 6 }
+      stats:
+        armor: 36
+        durability: 1600
 
 - id: carapace-greaves
   name: Carapace Greaves
@@ -1316,6 +3987,32 @@
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-greaves, qty: 1 }
   tags: [legs, armor, tier-6]
+  stats:
+    armor: 30
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: scale-hide, qty: 2 }
+      stats:
+        armor: 32
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: scale-hide, qty: 4 }
+      stats:
+        armor: 34
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: scale-hide, qty: 6 }
+      stats:
+        armor: 36
+        durability: 1600
 
 - id: hood-of-ask
   name: Hood of Ask
@@ -1328,6 +4025,32 @@
     - { itemId: linen-thread, qty: 10 }
   yields: { itemId: hood-of-ask, qty: 1 }
   tags: [helmet, armor, tier-6]
+  stats:
+    armor: 28
+    durability: 1000
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: scale-hide, qty: 2 }
+      stats:
+        armor: 30
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: scale-hide, qty: 4 }
+      stats:
+        armor: 32
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: scale-hide, qty: 6 }
+      stats:
+        armor: 34
+        durability: 1600
 
 - id: breastplate-of-ask
   name: Breastplate of Ask
@@ -1340,6 +4063,32 @@
     - { itemId: linen-thread, qty: 20 }
   yields: { itemId: breastplate-of-ask, qty: 1 }
   tags: [chest, armor, tier-6]
+  stats:
+    armor: 28
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: scale-hide, qty: 2 }
+      stats:
+        armor: 30
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: scale-hide, qty: 4 }
+      stats:
+        armor: 32
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: scale-hide, qty: 6 }
+      stats:
+        armor: 34
+        durability: 1600
 
 - id: trousers-of-ask
   name: Trousers of Ask
@@ -1352,6 +4101,32 @@
     - { itemId: linen-thread, qty: 15 }
   yields: { itemId: trousers-of-ask, qty: 1 }
   tags: [legs, armor, tier-6]
+  stats:
+    armor: 28
+    durability: 1000
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: scale-hide, qty: 2 }
+      stats:
+        armor: 30
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: scale-hide, qty: 4 }
+      stats:
+        armor: 32
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: scale-hide, qty: 6 }
+      stats:
+        armor: 34
+        durability: 1600
 
 # Ashlands armor (Black Forge level 3)
 - id: flametal-helmet
@@ -1365,6 +4140,32 @@
     - { itemId: bilebag, qty: 1 }
   yields: { itemId: flametal-helmet, qty: 1 }
   tags: [helmet, armor, tier-7]
+  stats:
+    armor: 34
+    durability: 1200
+    weight: 2.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: ashwood, qty: 2 }
+      stats:
+        armor: 36
+        durability: 1400
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 4 }
+      stats:
+        armor: 38
+        durability: 1600
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 15 }
+        - { itemId: ashwood, qty: 6 }
+      stats:
+        armor: 40
+        durability: 1800
 
 - id: flametal-breastplate
   name: Flametal Breastplate
@@ -1377,6 +4178,32 @@
     - { itemId: bilebag, qty: 1 }
   yields: { itemId: flametal-breastplate, qty: 1 }
   tags: [chest, armor, tier-7]
+  stats:
+    armor: 34
+    durability: 1200
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: ashwood, qty: 5 }
+      stats:
+        armor: 36
+        durability: 1400
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        armor: 38
+        durability: 1600
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 15 }
+        - { itemId: ashwood, qty: 15 }
+      stats:
+        armor: 40
+        durability: 1800
 
 - id: flametal-greaves
   name: Flametal Greaves
@@ -1389,6 +4216,32 @@
     - { itemId: bilebag, qty: 1 }
   yields: { itemId: flametal-greaves, qty: 1 }
   tags: [legs, armor, tier-7]
+  stats:
+    armor: 34
+    durability: 1200
+    weight: 15.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: ashwood, qty: 5 }
+      stats:
+        armor: 36
+        durability: 1400
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        armor: 38
+        durability: 1600
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 15 }
+        - { itemId: ashwood, qty: 15 }
+      stats:
+        armor: 40
+        durability: 1800
 
 # Black Forge shields
 - id: carapace-buckler
@@ -1402,6 +4255,36 @@
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-buckler, qty: 1 }
   tags: [shield, tier-6]
+  stats:
+    block: 120
+    parry: 78
+    durability: 250
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        block: 123
+        parry: 78
+        durability: 300
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        block: 126
+        parry: 78
+        durability: 350
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        block: 129
+        parry: 78
+        durability: 400
 
 - id: carapace-shield
   name: Carapace Shield
@@ -1414,6 +4297,32 @@
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-shield, qty: 1 }
   tags: [shield, tier-6]
+  stats:
+    block: 150
+    durability: 250
+    weight: 20.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        block: 153
+        durability: 300
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 20 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        block: 156
+        durability: 350
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 30 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        block: 159
+        durability: 400
 
 - id: flametal-shield
   name: Flametal Shield
@@ -1426,6 +4335,36 @@
     - { itemId: charred-bone, qty: 3 }
   yields: { itemId: flametal-shield, qty: 1 }
   tags: [shield, tier-7]
+  stats:
+    block: 160
+    parry: 90
+    durability: 300
+    weight: 3.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: ashwood, qty: 5 }
+      stats:
+        block: 163
+        parry: 90
+        durability: 350
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        block: 166
+        parry: 90
+        durability: 400
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 15 }
+        - { itemId: ashwood, qty: 15 }
+      stats:
+        block: 169
+        parry: 90
+        durability: 450
 
 - id: flametal-tower-shield
   name: Flametal Tower Shield
@@ -1438,6 +4377,32 @@
     - { itemId: charred-bone, qty: 5 }
   yields: { itemId: flametal-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-7]
+  stats:
+    block: 180
+    durability: 300
+    weight: 22.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 5 }
+      stats:
+        block: 183
+        durability: 350
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        block: 186
+        durability: 400
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: ashwood, qty: 15 }
+      stats:
+        block: 189
+        durability: 450
 
 # Black Forge cape
 - id: ashen-cape
@@ -1452,6 +4417,32 @@
   yields: { itemId: ashen-cape, qty: 1 }
   tags: [cape, armor, tier-7]
   notes: -10% attack stamina, -20% block stamina.
+  stats:
+    armor: 1
+    durability: 1200
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: asksvin-hide, qty: 5 }
+        - { itemId: flametal, qty: 2 }
+      stats:
+        armor: 3
+        durability: 1400
+    - quality: 3
+      ingredients:
+        - { itemId: asksvin-hide, qty: 10 }
+        - { itemId: flametal, qty: 4 }
+      stats:
+        armor: 5
+        durability: 1600
+    - quality: 4
+      ingredients:
+        - { itemId: asksvin-hide, qty: 15 }
+        - { itemId: flametal, qty: 6 }
+      stats:
+        armor: 7
+        durability: 1800
 
 # Black Forge arrows
 - id: carapace-arrow
@@ -1551,6 +4542,40 @@
   yields: { itemId: bloodgeon, qty: 1 }
   tags: [mace, one-handed, tier-7]
   notes: Flametal Mace upgraded with Bloodstone. Bleed damage.
+  stats:
+    damage: { blunt: 80, fire: 30 }
+    knockback: 80
+    backstab: 3
+    durability: 200
+    weight: 2.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: charred-bone, qty: 5 }
+      stats:
+        damage: { blunt: 86, fire: 30 }
+        knockback: 80
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: charred-bone, qty: 10 }
+      stats:
+        damage: { blunt: 92, fire: 30 }
+        knockback: 80
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 15 }
+        - { itemId: charred-bone, qty: 15 }
+      stats:
+        damage: { blunt: 98, fire: 30 }
+        knockback: 80
+        backstab: 3
+        durability: 350
 
 - id: brutal-slayer
   name: Brutal Slayer
@@ -1563,6 +4588,40 @@
   yields: { itemId: brutal-slayer, qty: 1 }
   tags: [sledge, two-handed, tier-7]
   notes: Slayer upgraded with Bloodstone. Bleed damage.
+  stats:
+    damage: { blunt: 100, fire: 20 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 5.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: charred-bone, qty: 5 }
+      stats:
+        damage: { blunt: 106, fire: 20 }
+        knockback: 100
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: charred-bone, qty: 10 }
+      stats:
+        damage: { blunt: 112, fire: 20 }
+        knockback: 100
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: charred-bone, qty: 15 }
+      stats:
+        damage: { blunt: 118, fire: 20 }
+        knockback: 100
+        backstab: 3
+        durability: 350
 
 - id: scourging-slayer
   name: Scourging Slayer
@@ -1575,6 +4634,40 @@
   yields: { itemId: scourging-slayer, qty: 1 }
   tags: [sledge, two-handed, tier-7]
   notes: Slayer upgraded with Iolite. Lightning damage.
+  stats:
+    damage: { blunt: 100, lightning: 20 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 5.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: charred-bone, qty: 5 }
+      stats:
+        damage: { blunt: 106, lightning: 20 }
+        knockback: 100
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: charred-bone, qty: 10 }
+      stats:
+        damage: { blunt: 112, lightning: 20 }
+        knockback: 100
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: charred-bone, qty: 15 }
+      stats:
+        damage: { blunt: 118, lightning: 20 }
+        knockback: 100
+        backstab: 3
+        durability: 350
 
 - id: primal-slayer
   name: Primal Slayer
@@ -1587,6 +4680,40 @@
   yields: { itemId: primal-slayer, qty: 1 }
   tags: [sledge, two-handed, tier-7]
   notes: Slayer upgraded with Jade. Poison damage.
+  stats:
+    damage: { blunt: 100, poison: 20 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 5.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: charred-bone, qty: 5 }
+      stats:
+        damage: { blunt: 106, poison: 20 }
+        knockback: 100
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: charred-bone, qty: 10 }
+      stats:
+        damage: { blunt: 112, poison: 20 }
+        knockback: 100
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: charred-bone, qty: 15 }
+      stats:
+        damage: { blunt: 118, poison: 20 }
+        knockback: 100
+        backstab: 3
+        durability: 350
 
 - id: nidhogg-the-bleeding
   name: "Nidh\xF6gg the Bleeding"
@@ -1599,6 +4726,40 @@
   yields: { itemId: nidhogg-the-bleeding, qty: 1 }
   tags: [atgeir, two-handed, tier-7]
   notes: "Nidh\xF6gg upgraded with Bloodstone. Bleed damage."
+  stats:
+    damage: { slash: 90, pierce: 30, poison: 20 }
+    knockback: 30
+    backstab: 3
+    durability: 200
+    weight: 3.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 5 }
+      stats:
+        damage: { slash: 96, pierce: 30, poison: 20 }
+        knockback: 30
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        damage: { slash: 102, pierce: 30, poison: 20 }
+        knockback: 30
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: ashwood, qty: 15 }
+      stats:
+        damage: { slash: 108, pierce: 30, poison: 20 }
+        knockback: 30
+        backstab: 3
+        durability: 350
 
 - id: nidhogg-the-thundering
   name: "Nidh\xF6gg the Thundering"
@@ -1611,6 +4772,40 @@
   yields: { itemId: nidhogg-the-thundering, qty: 1 }
   tags: [atgeir, two-handed, tier-7]
   notes: "Nidh\xF6gg upgraded with Iolite. Lightning damage."
+  stats:
+    damage: { slash: 90, pierce: 30, lightning: 20 }
+    knockback: 30
+    backstab: 3
+    durability: 200
+    weight: 3.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 5 }
+      stats:
+        damage: { slash: 96, pierce: 30, lightning: 20 }
+        knockback: 30
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        damage: { slash: 102, pierce: 30, lightning: 20 }
+        knockback: 30
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: ashwood, qty: 15 }
+      stats:
+        damage: { slash: 108, pierce: 30, lightning: 20 }
+        knockback: 30
+        backstab: 3
+        durability: 350
 
 - id: nidhogg-the-primal
   name: "Nidh\xF6gg the Primal"
@@ -1623,6 +4818,40 @@
   yields: { itemId: nidhogg-the-primal, qty: 1 }
   tags: [atgeir, two-handed, tier-7]
   notes: "Nidh\xF6gg upgraded with Jade. Poison damage."
+  stats:
+    damage: { slash: 90, pierce: 30, fire: 20 }
+    knockback: 30
+    backstab: 3
+    durability: 200
+    weight: 3.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 5 }
+      stats:
+        damage: { slash: 96, pierce: 30, fire: 20 }
+        knockback: 30
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        damage: { slash: 102, pierce: 30, fire: 20 }
+        knockback: 30
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: ashwood, qty: 15 }
+      stats:
+        damage: { slash: 108, pierce: 30, fire: 20 }
+        knockback: 30
+        backstab: 3
+        durability: 350
 
 - id: storm-star
   name: Storm Star
@@ -1635,6 +4864,40 @@
   yields: { itemId: storm-star, qty: 1 }
   tags: [mace, one-handed, tier-7]
   notes: Flametal Mace upgraded with Iolite. Lightning damage.
+  stats:
+    damage: { blunt: 75, lightning: 30 }
+    knockback: 60
+    backstab: 3
+    durability: 200
+    weight: 3.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: charred-bone, qty: 5 }
+      stats:
+        damage: { blunt: 81, lightning: 30 }
+        knockback: 60
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: charred-bone, qty: 10 }
+      stats:
+        damage: { blunt: 87, lightning: 30 }
+        knockback: 60
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: charred-bone, qty: 15 }
+      stats:
+        damage: { blunt: 93, lightning: 30 }
+        knockback: 60
+        backstab: 3
+        durability: 350
 
 - id: klossen
   name: Klossen
@@ -1647,6 +4910,40 @@
   yields: { itemId: klossen, qty: 1 }
   tags: [mace, one-handed, tier-7]
   notes: Flametal Mace upgraded with Jade. Poison damage.
+  stats:
+    damage: { blunt: 85, fire: 25 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 4.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 10 }
+      stats:
+        damage: { blunt: 91, fire: 25 }
+        knockback: 100
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 20 }
+        - { itemId: ashwood, qty: 20 }
+      stats:
+        damage: { blunt: 97, fire: 25 }
+        knockback: 100
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 30 }
+        - { itemId: ashwood, qty: 30 }
+      stats:
+        damage: { blunt: 103, fire: 25 }
+        knockback: 100
+        backstab: 3
+        durability: 350
 
 # ── Galdr Table ────────────────────────────────────────────────────────────────
 
@@ -1723,6 +5020,32 @@
     - { itemId: iron, qty: 2 }
   yields: { itemId: eitr-weave-hood, qty: 1 }
   tags: [helmet, armor, magic, tier-6]
+  stats:
+    armor: 24
+    durability: 1000
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        armor: 26
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        armor: 28
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        armor: 30
+        durability: 1600
 
 - id: eitr-robe
   name: Eitr-Weave Robe
@@ -1735,6 +5058,32 @@
     - { itemId: carapace, qty: 10 }
   yields: { itemId: eitr-robe, qty: 1 }
   tags: [chest, armor, magic, tier-6]
+  stats:
+    armor: 24
+    durability: 1000
+    weight: 8.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: refined-eitr, qty: 3 }
+      stats:
+        armor: 26
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        armor: 28
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: refined-eitr, qty: 9 }
+      stats:
+        armor: 30
+        durability: 1600
 
 - id: eitr-weave-tunic
   name: Eitr-Weave Tunic
@@ -1747,6 +5096,32 @@
     - { itemId: carapace, qty: 15 }
   yields: { itemId: eitr-weave-tunic, qty: 1 }
   tags: [chest, armor, magic, tier-6]
+  stats:
+    armor: 24
+    durability: 1000
+    weight: 8.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        armor: 26
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        armor: 28
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        armor: 30
+        durability: 1600
 
 - id: eitr-weave-trousers
   name: Eitr-Weave Trousers
@@ -1759,6 +5134,32 @@
     - { itemId: carapace, qty: 10 }
   yields: { itemId: eitr-weave-trousers, qty: 1 }
   tags: [legs, armor, magic, tier-6]
+  stats:
+    armor: 24
+    durability: 1000
+    weight: 8.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: carapace, qty: 5 }
+        - { itemId: refined-eitr, qty: 2 }
+      stats:
+        armor: 26
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: carapace, qty: 10 }
+        - { itemId: refined-eitr, qty: 4 }
+      stats:
+        armor: 28
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: carapace, qty: 15 }
+        - { itemId: refined-eitr, qty: 6 }
+      stats:
+        armor: 30
+        durability: 1600
 
 # Sealbreaker (Galdr Table)
 - id: sealbreaker
@@ -1771,6 +5172,37 @@
   yields: { itemId: sealbreaker, qty: 1 }
   tags: [tool, tier-6]
   notes: Key item to unlock The Queen boss. Not consumed on use.
+  stats:
+    damage: { blunt: 90 }
+    knockback: 80
+    backstab: 3
+    durability: 200
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: sealbreaker-fragment, qty: 2 }
+      stats:
+        damage: { blunt: 96 }
+        knockback: 80
+        backstab: 3
+        durability: 250
+    - quality: 3
+      ingredients:
+        - { itemId: sealbreaker-fragment, qty: 4 }
+      stats:
+        damage: { blunt: 102 }
+        knockback: 80
+        backstab: 3
+        durability: 300
+    - quality: 4
+      ingredients:
+        - { itemId: sealbreaker-fragment, qty: 6 }
+      stats:
+        damage: { blunt: 108 }
+        knockback: 80
+        backstab: 3
+        durability: 350
 
 # Feather Cape (Galdr Table level 1)
 - id: feather-cape
@@ -1785,6 +5217,32 @@
   yields: { itemId: feather-cape, qty: 1 }
   tags: [cape, armor, magic, tier-6]
   notes: Provides 100% fall damage reduction.
+  stats:
+    armor: 1
+    durability: 1000
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: feathers, qty: 5 }
+        - { itemId: scale-hide, qty: 2 }
+      stats:
+        armor: 3
+        durability: 1200
+    - quality: 3
+      ingredients:
+        - { itemId: feathers, qty: 10 }
+        - { itemId: scale-hide, qty: 4 }
+      stats:
+        armor: 5
+        durability: 1400
+    - quality: 4
+      ingredients:
+        - { itemId: feathers, qty: 15 }
+        - { itemId: scale-hide, qty: 6 }
+      stats:
+        armor: 7
+        durability: 1600
 
 # Ashlands staves (Galdr Table level 2)
 - id: staff-of-fracturing
@@ -1852,6 +5310,32 @@
     - { itemId: asksvin-hide, qty: 2 }
   yields: { itemId: hood-of-embla, qty: 1 }
   tags: [helmet, armor, magic, tier-7]
+  stats:
+    armor: 28
+    durability: 1200
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: celestial-feather, qty: 1 }
+      stats:
+        armor: 30
+        durability: 1400
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: celestial-feather, qty: 2 }
+      stats:
+        armor: 32
+        durability: 1600
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 15 }
+        - { itemId: celestial-feather, qty: 3 }
+      stats:
+        armor: 34
+        durability: 1800
 
 - id: robes-of-embla
   name: Robes of Embla
@@ -1865,6 +5349,32 @@
     - { itemId: flametal, qty: 5 }
   yields: { itemId: robes-of-embla, qty: 1 }
   tags: [chest, armor, magic, tier-7]
+  stats:
+    armor: 28
+    durability: 1200
+    weight: 8.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: celestial-feather, qty: 1 }
+      stats:
+        armor: 30
+        durability: 1400
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: celestial-feather, qty: 2 }
+      stats:
+        armor: 32
+        durability: 1600
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 15 }
+        - { itemId: celestial-feather, qty: 3 }
+      stats:
+        armor: 34
+        durability: 1800
 
 - id: trousers-of-embla
   name: Trousers of Embla
@@ -1877,6 +5387,32 @@
     - { itemId: asksvin-hide, qty: 10 }
   yields: { itemId: trousers-of-embla, qty: 1 }
   tags: [legs, armor, magic, tier-7]
+  stats:
+    armor: 28
+    durability: 1200
+    weight: 8.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: celestial-feather, qty: 1 }
+      stats:
+        armor: 30
+        durability: 1400
+    - quality: 3
+      ingredients:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: celestial-feather, qty: 2 }
+      stats:
+        armor: 32
+        durability: 1600
+    - quality: 4
+      ingredients:
+        - { itemId: flametal, qty: 15 }
+        - { itemId: celestial-feather, qty: 3 }
+      stats:
+        armor: 34
+        durability: 1800
 
 # Asksvin Cloak (Galdr Table level 2)
 - id: asksvin-cloak
@@ -1890,6 +5426,29 @@
   yields: { itemId: asksvin-cloak, qty: 1 }
   tags: [cape, armor, tier-7]
   notes: Wind run effect, -15% dodge stamina.
+  stats:
+    armor: 1
+    durability: 1200
+    weight: 4.0
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: asksvin-hide, qty: 5 }
+      stats:
+        armor: 3
+        durability: 1400
+    - quality: 3
+      ingredients:
+        - { itemId: asksvin-hide, qty: 10 }
+      stats:
+        armor: 5
+        durability: 1600
+    - quality: 4
+      ingredients:
+        - { itemId: asksvin-hide, qty: 15 }
+      stats:
+        armor: 7
+        durability: 1800
 
 # ── Artisan Table ──────────────────────────────────────────────────────────────
 
