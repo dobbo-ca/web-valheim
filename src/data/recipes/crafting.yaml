@@ -4012,9 +4012,10 @@
 - id: ripper
   name: Ripper
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 1
-  repairLevel: 1
+  stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: carapace, qty: 8 }
     - { itemId: dvergr-needle, qty: 3 }
@@ -4022,46 +4023,40 @@
   yields: { itemId: ripper, qty: 1 }
   tags: [knife, one-handed, tier-6]
   stats:
-    damage: { slash: 35, pierce: 35 }
-    knockback: 10
-    backstab: 6
-    durability: 200
     weight: 0.3
+    durability: 50
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 220 }
+      knockback: 10
+      backstab: 3
+      stagger: 220
+      adrenaline: 2
+      recoilForce: 40
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      blockForce: 0
+      parryBonus: 1.5
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 2
-      repairLevel: 2
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: black-metal, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
       stats:
-        damage: { slash: 41, pierce: 41 }
-        knockback: 10
-        backstab: 6
-        durability: 250
+        durability: 100
     - quality: 3
-      stationLevel: 3
-      repairLevel: 3
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
       stats:
-        damage: { slash: 47, pierce: 47 }
-        knockback: 10
-        backstab: 6
-        durability: 300
-    - quality: 4
-      stationLevel: 4
-      repairLevel: 4
-      ingredients:
-        - { itemId: black-metal, qty: 15 }
-        - { itemId: refined-eitr, qty: 6 }
-      stats:
-        damage: { slash: 53, pierce: 53 }
-        knockback: 10
-        backstab: 6
-        durability: 350
-
+        durability: 150
 - id: skoll-and-hati
   name: Skoll and Hati
   type: crafting
@@ -4171,9 +4166,10 @@
 - id: splitnir
   name: Splitnir
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 2
-  repairLevel: 2
+  stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: dvergr-needle, qty: 5 }
@@ -4181,52 +4177,58 @@
   yields: { itemId: splitnir, qty: 1 }
   tags: [spear, one-handed, tier-6]
   stats:
-    damage: { slash: 85 }
-    knockback: 50
-    backstab: 3
-    durability: 200
     weight: 3.5
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 135 }
+      knockback: 20
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pierce: 202.5 }
+      knockback: 30
+      backstab: 3
+      stagger: 202.5
+      stamina: 18
+      adrenaline: 1
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 3
-      repairLevel: 3
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 3 }
       stats:
-        damage: { slash: 91 }
-        knockback: 50
-        backstab: 3
-        durability: 250
+        durability: 150
+        blocking:
+          blockForce: 25
     - quality: 3
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 20 }
         - { itemId: refined-eitr, qty: 6 }
       stats:
-        damage: { slash: 97 }
-        knockback: 50
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: yggdrasil-wood, qty: 30 }
-        - { itemId: refined-eitr, qty: 9 }
-      stats:
-        damage: { slash: 103 }
-        knockback: 50
-        backstab: 3
-        durability: 350
-
+        durability: 200
+        blocking:
+          blockForce: 30
 - id: berserkir
   name: Berserkir
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 2
-  repairLevel: 2
+  stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: charred-bone, qty: 15 }
     - { itemId: flametal, qty: 24 }
@@ -4234,50 +4236,67 @@
   yields: { itemId: berserkir, qty: 1 }
   tags: [axe, two-handed, tier-6]
   stats:
-    damage: { slash: 80, blunt: 20 }
-    knockback: 50
-    backstab: 3
-    durability: 200
-    weight: 3.5
+    weight: 2
+    durability: 175
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 140, chop: 80 }
+      knockback: 20
+      backstab: 3
+      stagger: 140
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 210, chop: 120 }
+      backstab: 3
+      stagger: 210
+      stamina: 32
+      adrenaline: 1
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 3
-      repairLevel: 3
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: asksvin-hide, qty: 1 }
       stats:
-        damage: { slash: 86, blunt: 26 }
-        knockback: 50
-        backstab: 3
-        durability: 250
+        durability: 225
+        primaryAttack:
+          damage: { slash: 145, chop: 83 }
+          stagger: 145
+        secondaryAttack:
+          damage: { slash: 217.5, chop: 124.5 }
+          stagger: 217.5
+        blocking:
+          blockForce: 25
     - quality: 3
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: asksvin-hide, qty: 2 }
       stats:
-        damage: { slash: 92, blunt: 32 }
-        knockback: 50
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 45 }
-        - { itemId: asksvin-hide, qty: 3 }
-      stats:
-        damage: { slash: 98, blunt: 38 }
-        knockback: 50
-        backstab: 3
-        durability: 350
-
+        durability: 275
+        primaryAttack:
+          damage: { slash: 150, chop: 86 }
+          stagger: 150
+        secondaryAttack:
+          damage: { slash: 225, chop: 129 }
+          stagger: 225
+        blocking:
+          blockForce: 30
 # Ashlands weapons (Black Forge level 3)
 - id: ash-fang
   name: Ash Fang
   type: crafting
+  biome: ashlands
   station: black-forge
   stationLevel: 3
   repairLevel: 3
@@ -4288,10 +4307,21 @@
   yields: { itemId: ash-fang, qty: 1 }
   tags: [bow, two-handed, tier-6]
   stats:
-    damage: { pierce: 92 }
-    knockback: 20
-    durability: 150
-    weight: 2.0
+    weight: 2
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 82 }
+      knockback: 25
+      backstab: 3
+      stagger: 82
+      adrenaline: 2
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -4300,9 +4330,10 @@
         - { itemId: flametal, qty: 5 }
         - { itemId: yggdrasil-wood, qty: 5 }
       stats:
-        damage: { pierce: 98 }
-        knockback: 20
-        durability: 200
+        durability: 150
+        primaryAttack:
+          damage: { pierce: 86 }
+          stagger: 86
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -4310,23 +4341,14 @@
         - { itemId: flametal, qty: 10 }
         - { itemId: yggdrasil-wood, qty: 10 }
       stats:
-        damage: { pierce: 104 }
-        knockback: 20
-        durability: 250
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 15 }
-        - { itemId: yggdrasil-wood, qty: 15 }
-      stats:
-        damage: { pierce: 110 }
-        knockback: 20
-        durability: 300
-
+        durability: 200
+        primaryAttack:
+          damage: { pierce: 90 }
+          stagger: 90
 - id: flametal-mace
   name: Flametal Mace
   type: crafting
+  biome: ashlands
   station: black-forge
   stationLevel: 3
   repairLevel: 3
@@ -4337,11 +4359,30 @@
   yields: { itemId: flametal-mace, qty: 1 }
   tags: [mace, one-handed, tier-6]
   stats:
-    damage: { blunt: 95, fire: 20 }
-    knockback: 80
-    backstab: 3
-    durability: 200
-    weight: 3.0
+    weight: 3
+    durability: 150
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 135 }
+      knockback: 100
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { blunt: 337.5 }
+      knockback: 200
+      backstab: 3
+      stagger: 675
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -4350,10 +4391,15 @@
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
       stats:
-        damage: { blunt: 101, fire: 20 }
-        knockback: 80
-        backstab: 3
-        durability: 250
+        durability: 200
+        primaryAttack:
+          damage: { blunt: 141 }
+          stagger: 141
+        secondaryAttack:
+          damage: { blunt: 352.5 }
+          stagger: 705
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -4361,25 +4407,19 @@
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
       stats:
-        damage: { blunt: 107, fire: 20 }
-        knockback: 80
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: charred-bone, qty: 15 }
-      stats:
-        damage: { blunt: 113, fire: 20 }
-        knockback: 80
-        backstab: 3
-        durability: 350
-
+        durability: 250
+        primaryAttack:
+          damage: { blunt: 147 }
+          stagger: 147
+        secondaryAttack:
+          damage: { blunt: 367.5 }
+          stagger: 735
+        blocking:
+          blockForce: 30
 - id: slayer
   name: Slayer
   type: crafting
+  biome: ashlands
   station: black-forge
   stationLevel: 3
   repairLevel: 3
@@ -4390,11 +4430,30 @@
   yields: { itemId: slayer, qty: 1 }
   tags: [sledge, two-handed, tier-6]
   stats:
-    damage: { blunt: 100 }
-    knockback: 100
-    backstab: 3
+    weight: 4
     durability: 200
-    weight: 5.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 170 }
+      knockback: 55
+      backstab: 3
+      stagger: 170
+      stamina: 20
+      adrenaline: 2
+    secondaryAttack:
+      damage: { slash: 510 }
+      knockback: 55
+      backstab: 3
+      stagger: 510
+      stamina: 40
+      adrenaline: 1
+    blocking:
+      blockArmor: 64
+      parryBlockArmor: 128
+      blockForce: 50
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -4403,10 +4462,15 @@
         - { itemId: flametal, qty: 10 }
         - { itemId: yggdrasil-wood, qty: 5 }
       stats:
-        damage: { blunt: 106 }
-        knockback: 100
-        backstab: 3
         durability: 250
+        primaryAttack:
+          damage: { slash: 176 }
+          stagger: 176
+        secondaryAttack:
+          damage: { slash: 528 }
+          stagger: 528
+        blocking:
+          blockForce: 60
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -4414,28 +4478,22 @@
         - { itemId: flametal, qty: 20 }
         - { itemId: yggdrasil-wood, qty: 10 }
       stats:
-        damage: { blunt: 112 }
-        knockback: 100
-        backstab: 3
         durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: yggdrasil-wood, qty: 15 }
-      stats:
-        damage: { blunt: 118 }
-        knockback: 100
-        backstab: 3
-        durability: 350
-
+        primaryAttack:
+          damage: { slash: 182 }
+          stagger: 182
+        secondaryAttack:
+          damage: { slash: 546 }
+          stagger: 546
+        blocking:
+          blockForce: 70
 - id: dyrnwyn
   name: Dyrnwyn
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: dyrnwyn-hilt-fragment, qty: 1 }
     - { itemId: dyrnwyn-blade-fragment, qty: 1 }
@@ -4446,49 +4504,51 @@
   tags: [sword, one-handed, tier-6]
   notes: Legendary sword reforged from fragments. Upgrades beyond quality 2 require Black Forge levels not yet available in game.
   stats:
-    damage: { slash: 95, fire: 30 }
-    knockback: 40
-    backstab: 3
+    weight: 0.8
     durability: 200
-    weight: 2.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 145, fire: 10 }
+      knockback: 40
+      backstab: 3
+      stagger: 145
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 435, fire: 30 }
+      knockback: 40
+      backstab: 3
+      stagger: 435
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: bloodstone, qty: 1 }
       stats:
-        damage: { slash: 101, fire: 30 }
-        knockback: 40
-        backstab: 3
         durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 20 }
-        - { itemId: bloodstone, qty: 2 }
-      stats:
-        damage: { slash: 107, fire: 30 }
-        knockback: 40
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: bloodstone, qty: 3 }
-      stats:
-        damage: { slash: 113, fire: 30 }
-        knockback: 40
-        backstab: 3
-        durability: 350
-
+        primaryAttack:
+          damage: { slash: 151, fire: 10 }
+          stagger: 151
+        secondaryAttack:
+          damage: { slash: 453, fire: 30 }
+          stagger: 453
+        blocking:
+          blockForce: 25
 - id: nidhogg
   name: "Nidh\xF6gg"
   type: crafting
+  biome: ashlands
   station: black-forge
   stationLevel: 3
   repairLevel: 3
@@ -4499,11 +4559,30 @@
   yields: { itemId: nidhogg, qty: 1 }
   tags: [atgeir, two-handed, tier-6]
   stats:
-    damage: { slash: 90, pierce: 30 }
-    knockback: 30
-    backstab: 3
-    durability: 200
     weight: 3.5
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 135 }
+      knockback: 40
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 405 }
+      knockback: 40
+      backstab: 3
+      stagger: 405
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -4512,10 +4591,9 @@
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
       stats:
-        damage: { slash: 96, pierce: 30 }
-        knockback: 30
-        backstab: 3
         durability: 250
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -4523,22 +4601,9 @@
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
       stats:
-        damage: { slash: 102, pierce: 30 }
-        knockback: 30
-        backstab: 3
         durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: ashwood, qty: 15 }
-      stats:
-        damage: { slash: 108, pierce: 30 }
-        knockback: 30
-        backstab: 3
-        durability: 350
-
+        blocking:
+          blockForce: 30
 # Black Forge armor — Mistlands (level 1)
 - id: carapace-helmet
   name: Carapace Helmet
@@ -5044,6 +5109,7 @@
 - id: flametal-shield
   name: Flametal Shield
   type: crafting
+  biome: ashlands
   station: black-forge
   stationLevel: 3
   repairLevel: 3
@@ -5054,10 +5120,16 @@
   yields: { itemId: flametal-shield, qty: 1 }
   tags: [shield, tier-6]
   stats:
-    block: 160
-    parry: 90
-    durability: 300
     weight: 3.5
+    durability: 200
+    movementPenalty: -5
+    blocking:
+      blockArmor: 114
+      parryBlockArmor: 171
+      blockForce: 50
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -5066,9 +5138,9 @@
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 5 }
       stats:
-        block: 163
-        parry: 90
-        durability: 350
+        durability: 250
+        blocking:
+          blockForce: 55
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -5076,23 +5148,13 @@
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
       stats:
-        block: 166
-        parry: 90
-        durability: 400
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 15 }
-        - { itemId: ashwood, qty: 15 }
-      stats:
-        block: 169
-        parry: 90
-        durability: 450
-
+        durability: 300
+        blocking:
+          blockForce: 60
 - id: flametal-tower-shield
   name: Flametal Tower Shield
   type: crafting
+  biome: ashlands
   station: black-forge
   stationLevel: 3
   repairLevel: 3
@@ -5103,9 +5165,14 @@
   yields: { itemId: flametal-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-6]
   stats:
-    block: 180
-    durability: 300
-    weight: 22.0
+    weight: 22
+    durability: 200
+    movementPenalty: -5
+    blocking:
+      blockArmor: 140
+      blockForce: 150
+      blockAdrenaline: 2
+      parryAdrenaline: 0
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -5114,8 +5181,9 @@
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
       stats:
-        block: 183
-        durability: 350
+        durability: 250
+        blocking:
+          blockForce: 155
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -5123,18 +5191,9 @@
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
       stats:
-        block: 186
-        durability: 400
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: ashwood, qty: 15 }
-      stats:
-        block: 189
-        durability: 450
-
+        durability: 300
+        blocking:
+          blockForce: 160
 # Black Forge cape
 - id: ashen-cape
   name: Ashen Cape
@@ -5272,9 +5331,10 @@
 - id: bloodgeon
   name: Bloodgeon
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: flametal-mace, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
@@ -5282,52 +5342,54 @@
   tags: [mace, one-handed, elemental, tier-6]
   notes: Flametal Mace upgraded with Bloodstone. Bleed damage.
   stats:
-    damage: { blunt: 80, fire: 30 }
-    knockback: 80
-    backstab: 3
-    durability: 200
     weight: 2.5
+    durability: 150
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 135 }
+      knockback: 100
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { blunt: 337.5 }
+      knockback: 200
+      backstab: 3
+      stagger: 675
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: charred-bone, qty: 5 }
       stats:
-        damage: { blunt: 86, fire: 30 }
-        knockback: 80
-        backstab: 3
-        durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 10 }
-        - { itemId: charred-bone, qty: 10 }
-      stats:
-        damage: { blunt: 92, fire: 30 }
-        knockback: 80
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 15 }
-        - { itemId: charred-bone, qty: 15 }
-      stats:
-        damage: { blunt: 98, fire: 30 }
-        knockback: 80
-        backstab: 3
-        durability: 350
-
+        durability: 200
+        primaryAttack:
+          damage: { blunt: 141 }
+          stagger: 141
+        secondaryAttack:
+          damage: { blunt: 352.5 }
+          stagger: 705
+        blocking:
+          blockForce: 25
 - id: brutal-slayer
   name: Brutal Slayer
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: slayer, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
@@ -5335,52 +5397,54 @@
   tags: [sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Bloodstone. Bleed damage.
   stats:
-    damage: { blunt: 100, fire: 20 }
-    knockback: 100
-    backstab: 3
+    weight: 4
     durability: 200
-    weight: 5.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 170 }
+      knockback: 55
+      backstab: 3
+      stagger: 170
+      stamina: 20
+      adrenaline: 2
+    secondaryAttack:
+      damage: { slash: 510 }
+      knockback: 55
+      backstab: 3
+      stagger: 510
+      stamina: 40
+      adrenaline: 1
+    blocking:
+      blockArmor: 64
+      parryBlockArmor: 128
+      blockForce: 50
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
       stats:
-        damage: { blunt: 106, fire: 20 }
-        knockback: 100
-        backstab: 3
         durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 20 }
-        - { itemId: charred-bone, qty: 10 }
-      stats:
-        damage: { blunt: 112, fire: 20 }
-        knockback: 100
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: charred-bone, qty: 15 }
-      stats:
-        damage: { blunt: 118, fire: 20 }
-        knockback: 100
-        backstab: 3
-        durability: 350
-
+        primaryAttack:
+          damage: { slash: 176 }
+          stagger: 176
+        secondaryAttack:
+          damage: { slash: 528 }
+          stagger: 528
+        blocking:
+          blockForce: 60
 - id: scourging-slayer
   name: Scourging Slayer
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: slayer, qty: 1 }
     - { itemId: iolite, qty: 1 }
@@ -5388,52 +5452,54 @@
   tags: [sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Iolite. Lightning damage.
   stats:
-    damage: { blunt: 100, lightning: 20 }
-    knockback: 100
-    backstab: 3
+    weight: 4
     durability: 200
-    weight: 5.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 170, lightning: 10 }
+      knockback: 55
+      backstab: 3
+      stagger: 180
+      stamina: 20
+      adrenaline: 2
+    secondaryAttack:
+      damage: { slash: 510, lightning: 30 }
+      knockback: 55
+      backstab: 3
+      stagger: 540
+      stamina: 40
+      adrenaline: 1
+    blocking:
+      blockArmor: 64
+      parryBlockArmor: 128
+      blockForce: 50
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
       stats:
-        damage: { blunt: 106, lightning: 20 }
-        knockback: 100
-        backstab: 3
         durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 20 }
-        - { itemId: charred-bone, qty: 10 }
-      stats:
-        damage: { blunt: 112, lightning: 20 }
-        knockback: 100
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: charred-bone, qty: 15 }
-      stats:
-        damage: { blunt: 118, lightning: 20 }
-        knockback: 100
-        backstab: 3
-        durability: 350
-
+        primaryAttack:
+          damage: { slash: 176, lightning: 10 }
+          stagger: 186
+        secondaryAttack:
+          damage: { slash: 528, lightning: 30 }
+          stagger: 558
+        blocking:
+          blockForce: 60
 - id: primal-slayer
   name: Primal Slayer
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: slayer, qty: 1 }
     - { itemId: jade, qty: 1 }
@@ -5441,52 +5507,54 @@
   tags: [sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Jade. Poison damage.
   stats:
-    damage: { blunt: 100, poison: 20 }
-    knockback: 100
-    backstab: 3
+    weight: 4
     durability: 200
-    weight: 5.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 170 }
+      knockback: 55
+      backstab: 3
+      stagger: 170
+      stamina: 20
+      adrenaline: 2
+    secondaryAttack:
+      damage: { slash: 510 }
+      knockback: 55
+      backstab: 3
+      stagger: 510
+      stamina: 40
+      adrenaline: 1
+    blocking:
+      blockArmor: 64
+      parryBlockArmor: 128
+      blockForce: 50
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
       stats:
-        damage: { blunt: 106, poison: 20 }
-        knockback: 100
-        backstab: 3
         durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 20 }
-        - { itemId: charred-bone, qty: 10 }
-      stats:
-        damage: { blunt: 112, poison: 20 }
-        knockback: 100
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: charred-bone, qty: 15 }
-      stats:
-        damage: { blunt: 118, poison: 20 }
-        knockback: 100
-        backstab: 3
-        durability: 350
-
+        primaryAttack:
+          damage: { slash: 176 }
+          stagger: 176
+        secondaryAttack:
+          damage: { slash: 528 }
+          stagger: 528
+        blocking:
+          blockForce: 60
 - id: nidhogg-the-bleeding
   name: "Nidh\xF6gg the Bleeding"
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: nidhogg, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
@@ -5494,52 +5562,48 @@
   tags: [atgeir, two-handed, elemental, tier-6]
   notes: "Nidh\xF6gg upgraded with Bloodstone. Bleed damage."
   stats:
-    damage: { slash: 90, pierce: 30, poison: 20 }
-    knockback: 30
-    backstab: 3
-    durability: 200
     weight: 3.5
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 135 }
+      knockback: 40
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 405 }
+      knockback: 40
+      backstab: 3
+      stagger: 405
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
       stats:
-        damage: { slash: 96, pierce: 30, poison: 20 }
-        knockback: 30
-        backstab: 3
         durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 20 }
-        - { itemId: ashwood, qty: 10 }
-      stats:
-        damage: { slash: 102, pierce: 30, poison: 20 }
-        knockback: 30
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: ashwood, qty: 15 }
-      stats:
-        damage: { slash: 108, pierce: 30, poison: 20 }
-        knockback: 30
-        backstab: 3
-        durability: 350
-
+        blocking:
+          blockForce: 25
 - id: nidhogg-the-thundering
   name: "Nidh\xF6gg the Thundering"
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: nidhogg, qty: 1 }
     - { itemId: iolite, qty: 1 }
@@ -5547,52 +5611,48 @@
   tags: [atgeir, two-handed, elemental, tier-6]
   notes: "Nidh\xF6gg upgraded with Iolite. Lightning damage."
   stats:
-    damage: { slash: 90, pierce: 30, lightning: 20 }
-    knockback: 30
-    backstab: 3
-    durability: 200
     weight: 3.5
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 135, lightning: 10 }
+      knockback: 40
+      backstab: 3
+      stagger: 145
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 405, lightning: 30 }
+      knockback: 40
+      backstab: 3
+      stagger: 435
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
       stats:
-        damage: { slash: 96, pierce: 30, lightning: 20 }
-        knockback: 30
-        backstab: 3
         durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 20 }
-        - { itemId: ashwood, qty: 10 }
-      stats:
-        damage: { slash: 102, pierce: 30, lightning: 20 }
-        knockback: 30
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: ashwood, qty: 15 }
-      stats:
-        damage: { slash: 108, pierce: 30, lightning: 20 }
-        knockback: 30
-        backstab: 3
-        durability: 350
-
+        blocking:
+          blockForce: 25
 - id: nidhogg-the-primal
   name: "Nidh\xF6gg the Primal"
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: nidhogg, qty: 1 }
     - { itemId: jade, qty: 1 }
@@ -5600,52 +5660,48 @@
   tags: [atgeir, two-handed, elemental, tier-6]
   notes: "Nidh\xF6gg upgraded with Jade. Poison damage."
   stats:
-    damage: { slash: 90, pierce: 30, fire: 20 }
-    knockback: 30
-    backstab: 3
-    durability: 200
     weight: 3.5
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 135, poison: 10 }
+      knockback: 40
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 405, poison: 30 }
+      knockback: 40
+      backstab: 3
+      stagger: 405
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
       stats:
-        damage: { slash: 96, pierce: 30, fire: 20 }
-        knockback: 30
-        backstab: 3
         durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 20 }
-        - { itemId: ashwood, qty: 10 }
-      stats:
-        damage: { slash: 102, pierce: 30, fire: 20 }
-        knockback: 30
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: ashwood, qty: 15 }
-      stats:
-        damage: { slash: 108, pierce: 30, fire: 20 }
-        knockback: 30
-        backstab: 3
-        durability: 350
-
+        blocking:
+          blockForce: 25
 - id: storm-star
   name: Storm Star
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: flametal, qty: 8 }
     - { itemId: iolite, qty: 1 }
@@ -5653,52 +5709,54 @@
   tags: [mace, one-handed, tier-6]
   notes: Flametal Mace upgraded with Iolite. Lightning damage.
   stats:
-    damage: { blunt: 75, lightning: 30 }
-    knockback: 60
-    backstab: 3
-    durability: 200
-    weight: 3.0
+    weight: 3
+    durability: 150
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 135, lightning: 10 }
+      knockback: 100
+      backstab: 3
+      stagger: 145
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { blunt: 337.5, lightning: 25 }
+      knockback: 200
+      backstab: 3
+      stagger: 725
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
       stats:
-        damage: { blunt: 81, lightning: 30 }
-        knockback: 60
-        backstab: 3
-        durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 20 }
-        - { itemId: charred-bone, qty: 10 }
-      stats:
-        damage: { blunt: 87, lightning: 30 }
-        knockback: 60
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: charred-bone, qty: 15 }
-      stats:
-        damage: { blunt: 93, lightning: 30 }
-        knockback: 60
-        backstab: 3
-        durability: 350
-
+        durability: 200
+        primaryAttack:
+          damage: { blunt: 141, lightning: 10 }
+          stagger: 151
+        secondaryAttack:
+          damage: { blunt: 352.5, lightning: 25 }
+          stagger: 755
+        blocking:
+          blockForce: 25
 - id: klossen
   name: Klossen
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: flametal, qty: 8 }
     - { itemId: jade, qty: 1 }
@@ -5706,309 +5764,482 @@
   tags: [mace, one-handed, tier-6]
   notes: Flametal Mace upgraded with Jade. Poison damage.
   stats:
-    damage: { blunt: 85, fire: 25 }
-    knockback: 100
-    backstab: 3
-    durability: 200
     weight: 4.5
+    durability: 150
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 135, poison: 10 }
+      knockback: 100
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { blunt: 337.5, poison: 25 }
+      knockback: 200
+      backstab: 3
+      stagger: 675
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
       stats:
-        damage: { blunt: 91, fire: 25 }
-        knockback: 100
-        backstab: 3
-        durability: 250
-    - quality: 3
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 20 }
-        - { itemId: ashwood, qty: 20 }
-      stats:
-        damage: { blunt: 97, fire: 25 }
-        knockback: 100
-        backstab: 3
-        durability: 300
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 30 }
-        - { itemId: ashwood, qty: 30 }
-      stats:
-        damage: { blunt: 103, fire: 25 }
-        knockback: 100
-        backstab: 3
-        durability: 350
-
-# Storm Star elemental variants
-- id: storm-star-the-bleeding
-  name: Storm Star the Bleeding
-  type: crafting
-  station: black-forge
-  stationLevel: 3
-  ingredients:
-    - { itemId: storm-star, qty: 1 }
-    - { itemId: bloodstone, qty: 1 }
-  yields: { itemId: storm-star-the-bleeding, qty: 1 }
-  tags: [mace, one-handed, elemental, tier-6]
-  stats:
-    damage: { blunt: 75, lightning: 30, poison: 15 }
-    knockback: 60
-    backstab: 3
-    durability: 200
-    weight: 3.0
-
-- id: storm-star-the-thundering
-  name: Storm Star the Thundering
-  type: crafting
-  station: black-forge
-  stationLevel: 3
-  ingredients:
-    - { itemId: storm-star, qty: 1 }
-    - { itemId: iolite, qty: 1 }
-  yields: { itemId: storm-star-the-thundering, qty: 1 }
-  tags: [mace, one-handed, elemental, tier-6]
-  stats:
-    damage: { blunt: 75, lightning: 45 }
-    knockback: 60
-    backstab: 3
-    durability: 200
-    weight: 3.0
-
-- id: storm-star-the-primal
-  name: Storm Star the Primal
-  type: crafting
-  station: black-forge
-  stationLevel: 3
-  ingredients:
-    - { itemId: storm-star, qty: 1 }
-    - { itemId: jade, qty: 1 }
-  yields: { itemId: storm-star-the-primal, qty: 1 }
-  tags: [mace, one-handed, elemental, tier-6]
-  stats:
-    damage: { blunt: 75, lightning: 30, spirit: 15 }
-    knockback: 60
-    backstab: 3
-    durability: 200
-    weight: 3.0
-
-# Klossen elemental variants
-- id: klossen-the-bleeding
-  name: Klossen the Bleeding
-  type: crafting
-  station: black-forge
-  stationLevel: 3
-  ingredients:
-    - { itemId: klossen, qty: 1 }
-    - { itemId: bloodstone, qty: 1 }
-  yields: { itemId: klossen-the-bleeding, qty: 1 }
-  tags: [sledge, two-handed, elemental, tier-6]
-  stats:
-    damage: { blunt: 85, fire: 25, poison: 15 }
-    knockback: 100
-    backstab: 3
-    durability: 200
-    weight: 4.5
-
-- id: klossen-the-thundering
-  name: Klossen the Thundering
-  type: crafting
-  station: black-forge
-  stationLevel: 3
-  ingredients:
-    - { itemId: klossen, qty: 1 }
-    - { itemId: iolite, qty: 1 }
-  yields: { itemId: klossen-the-thundering, qty: 1 }
-  tags: [sledge, two-handed, elemental, tier-6]
-  stats:
-    damage: { blunt: 85, fire: 25, lightning: 15 }
-    knockback: 100
-    backstab: 3
-    durability: 200
-    weight: 4.5
-
-- id: klossen-the-primal
-  name: Klossen the Primal
-  type: crafting
-  station: black-forge
-  stationLevel: 3
-  ingredients:
-    - { itemId: klossen, qty: 1 }
-    - { itemId: jade, qty: 1 }
-  yields: { itemId: klossen-the-primal, qty: 1 }
-  tags: [sledge, two-handed, elemental, tier-6]
-  stats:
-    damage: { blunt: 85, fire: 25, spirit: 15 }
-    knockback: 100
-    backstab: 3
-    durability: 200
-    weight: 4.5
+        durability: 200
+        primaryAttack:
+          damage: { blunt: 141, poison: 10 }
+          stagger: 141
+        secondaryAttack:
+          damage: { blunt: 352.5, poison: 25 }
+          stagger: 705
+        blocking:
+          blockForce: 25
 
 # Splitnir elemental variants
 - id: splitnir-the-bleeding
   name: Splitnir the Bleeding
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: splitnir, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: splitnir-the-bleeding, qty: 1 }
   tags: [battleaxe, two-handed, elemental, tier-6]
   stats:
-    damage: { slash: 85, poison: 20 }
-    knockback: 50
-    backstab: 3
-    durability: 200
     weight: 3.5
-
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 135 }
+      knockback: 20
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pierce: 202.5 }
+      knockback: 30
+      backstab: 3
+      stagger: 202.5
+      stamina: 18
+      adrenaline: 1
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 6 }
+        - { itemId: bloodstone, qty: 1 }
+      stats:
+        durability: 150
+        blocking:
+          blockForce: 25
 - id: splitnir-the-storming
   name: Splitnir the Storming
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: splitnir, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: splitnir-the-storming, qty: 1 }
   tags: [battleaxe, two-handed, elemental, tier-6]
   stats:
-    damage: { slash: 85, lightning: 20 }
-    knockback: 50
-    backstab: 3
-    durability: 200
     weight: 3.5
-
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 135 }
+      knockback: 20
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pierce: 202.5 }
+      knockback: 30
+      backstab: 3
+      stagger: 202.5
+      stamina: 18
+      adrenaline: 1
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 6 }
+        - { itemId: iolite, qty: 1 }
+      stats:
+        durability: 150
+        blocking:
+          blockForce: 25
 - id: splitnir-the-primal
   name: Splitnir the Primal
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: splitnir, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: splitnir-the-primal, qty: 1 }
   tags: [battleaxe, two-handed, elemental, tier-6]
   stats:
-    damage: { slash: 85, spirit: 20 }
-    knockback: 50
-    backstab: 3
-    durability: 200
     weight: 3.5
-
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 135, poison: 10 }
+      knockback: 20
+      backstab: 3
+      stagger: 135
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pierce: 202.5, poison: 15 }
+      knockback: 30
+      backstab: 3
+      stagger: 202.5
+      stamina: 18
+      adrenaline: 1
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
 # Berserkir elemental variants
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 6 }
+        - { itemId: jade, qty: 1 }
+      stats:
+        durability: 150
+        blocking:
+          blockForce: 25
 - id: bleeding-berserkir
   name: Bleeding Berserkir
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: berserkir, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: bleeding-berserkir, qty: 1 }
   tags: [axe, two-handed, elemental, tier-6]
   stats:
-    damage: { slash: 80, blunt: 20, poison: 15 }
-    knockback: 50
-    backstab: 3
-    durability: 200
-    weight: 3.5
-
+    weight: 2
+    durability: 175
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 140, chop: 80 }
+      knockback: 20
+      backstab: 3
+      stagger: 140
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 210, chop: 120 }
+      backstab: 3
+      stagger: 210
+      stamina: 32
+      adrenaline: 1
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: bloodstone, qty: 1 }
+      stats:
+        durability: 225
+        primaryAttack:
+          damage: { slash: 145, chop: 83 }
+          stagger: 145
+        secondaryAttack:
+          damage: { slash: 217.5, chop: 124.5 }
+          stagger: 217.5
+        blocking:
+          blockForce: 25
 - id: thundering-berserkir
   name: Thundering Berserkir
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: berserkir, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: thundering-berserkir, qty: 1 }
   tags: [axe, two-handed, elemental, tier-6]
   stats:
-    damage: { slash: 80, blunt: 20, lightning: 15 }
-    knockback: 50
-    backstab: 3
-    durability: 200
-    weight: 3.5
-
+    weight: 2
+    durability: 175
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 140, lightning: 10, chop: 80 }
+      knockback: 20
+      backstab: 3
+      stagger: 150
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 210, lightning: 15, chop: 120 }
+      backstab: 3
+      stagger: 225
+      stamina: 32
+      adrenaline: 1
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: iolite, qty: 1 }
+      stats:
+        durability: 225
+        primaryAttack:
+          damage: { slash: 145, lightning: 10, chop: 83 }
+          stagger: 155
+        secondaryAttack:
+          damage: { slash: 217.5, lightning: 15, chop: 124.5 }
+          stagger: 232.5
+        blocking:
+          blockForce: 25
 - id: primal-berserkir
   name: Primal Berserkir
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: berserkir, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: primal-berserkir, qty: 1 }
   tags: [axe, two-handed, elemental, tier-6]
   stats:
-    damage: { slash: 80, blunt: 20, spirit: 15 }
-    knockback: 50
-    backstab: 3
-    durability: 200
     weight: 3.5
-
+    durability: 175
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 140, poison: 10, chop: 80 }
+      knockback: 20
+      backstab: 3
+      stagger: 140
+      stamina: 16
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 210, poison: 15, chop: 120 }
+      backstab: 3
+      stagger: 210
+      stamina: 32
+      adrenaline: 1
+    blocking:
+      blockArmor: 57
+      parryBlockArmor: 114
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
 # Ash Fang elemental variants
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: jade, qty: 1 }
+      stats:
+        durability: 225
+        primaryAttack:
+          damage: { slash: 145, poison: 10, chop: 83 }
+          stagger: 145
+        secondaryAttack:
+          damage: { slash: 217.5, poison: 15, chop: 124.5 }
+          stagger: 217.5
+        blocking:
+          blockForce: 25
 - id: blood-fang
   name: Blood Fang
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: ash-fang, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: blood-fang, qty: 1 }
   tags: [bow, two-handed, elemental, tier-6]
   stats:
-    damage: { pierce: 92, poison: 15 }
-    knockback: 20
-    durability: 150
-    weight: 2.0
-
+    weight: 2
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 82 }
+      knockback: 25
+      backstab: 3
+      stagger: 82
+      adrenaline: 2
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: bloodstone, qty: 1 }
+      stats:
+        durability: 150
+        primaryAttack:
+          damage: { pierce: 86 }
+          stagger: 86
 - id: storm-fang
   name: Storm Fang
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: ash-fang, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: storm-fang, qty: 1 }
   tags: [bow, two-handed, elemental, tier-6]
   stats:
-    damage: { pierce: 92, lightning: 15 }
-    knockback: 20
-    durability: 150
-    weight: 2.0
-
+    weight: 2
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 82, lightning: 10 }
+      knockback: 25
+      backstab: 3
+      stagger: 92
+      adrenaline: 2
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: iolite, qty: 1 }
+      stats:
+        durability: 150
+        primaryAttack:
+          damage: { pierce: 86, lightning: 10 }
+          stagger: 96
 - id: root-fang
   name: Root Fang
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: ash-fang, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: root-fang, qty: 1 }
   tags: [bow, two-handed, elemental, tier-6]
   stats:
-    damage: { pierce: 92, spirit: 15 }
-    knockback: 20
-    durability: 150
-    weight: 2.0
-
+    weight: 2
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 82, poison: 10 }
+      knockback: 25
+      backstab: 3
+      stagger: 82
+      adrenaline: 2
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
 # Ripper elemental variants
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 5 }
+        - { itemId: jade, qty: 1 }
+      stats:
+        durability: 150
+        primaryAttack:
+          damage: { pierce: 86, poison: 10 }
+          stagger: 86
 - id: wound-ripper
   name: Wound Ripper
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: ripper, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
@@ -6016,16 +6247,39 @@
   tags: [crossbow, two-handed, elemental, tier-6]
   notes: Crossbow damage comes from bolts.
   stats:
-    damage: { pierce: 0, poison: 15 }
-    knockback: 50
-    durability: 100
-    weight: 3.0
-
+    weight: 3
+    durability: 50
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 220 }
+      knockback: 50
+      backstab: 3
+      stagger: 220
+      adrenaline: 2
+      recoilForce: 40
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      blockForce: 0
+      parryBonus: 1.5
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 8 }
+        - { itemId: bloodstone, qty: 1 }
+      stats:
+        durability: 100
 - id: storm-ripper
   name: Storm Ripper
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: ripper, qty: 1 }
     - { itemId: iolite, qty: 1 }
@@ -6033,16 +6287,39 @@
   tags: [crossbow, two-handed, elemental, tier-6]
   notes: Crossbow damage comes from bolts.
   stats:
-    damage: { pierce: 0, lightning: 15 }
-    knockback: 50
-    durability: 100
-    weight: 3.0
-
+    weight: 3
+    durability: 50
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 220, lightning: 10 }
+      knockback: 50
+      backstab: 3
+      stagger: 230
+      adrenaline: 2
+      recoilForce: 40
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      blockForce: 0
+      parryBonus: 1.5
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 8 }
+        - { itemId: iolite, qty: 1 }
+      stats:
+        durability: 100
 - id: root-ripper
   name: Root Ripper
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: ripper, qty: 1 }
     - { itemId: jade, qty: 1 }
@@ -6050,26 +6327,105 @@
   tags: [crossbow, two-handed, elemental, tier-6]
   notes: Crossbow damage comes from bolts.
   stats:
-    damage: { pierce: 0, spirit: 15 }
-    knockback: 50
-    durability: 100
-    weight: 3.0
-
+    weight: 3
+    durability: 50
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 220, poison: 10 }
+      knockback: 50
+      backstab: 3
+      stagger: 220
+      adrenaline: 2
+      recoilForce: 40
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      blockForce: 0
+      parryBonus: 1.5
+      blockAdrenaline: 2
+      parryAdrenaline: 5
 # ── Galdr Table ────────────────────────────────────────────────────────────────
 
 # Staves (Galdr Table level 1–2)
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: flametal, qty: 8 }
+        - { itemId: jade, qty: 1 }
+      stats:
+        durability: 100
 - id: staff-of-embers
   name: Staff of Embers
   type: crafting
   station: galdr-table
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: yggdrasil-wood, qty: 10 }
     - { itemId: sap, qty: 5 }
     - { itemId: refined-eitr, qty: 10 }
   yields: { itemId: staff-of-embers, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
+  stats:
+    weight: 0.3
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 120, fire: 120 }
+      knockback: 100
+      stagger: 120
+      eitr: 35
+      adrenaline: 3
+    blocking:
+      blockArmor: 48
+      parryBlockArmor: 96
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
 
+  upgrades:
+    - quality: 2
+      stationLevel: 2
+      repairLevel: 2
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: surtling-core, qty: 2 }
+        - { itemId: refined-eitr, qty: 8 }
+      stats:
+        durability: 250
+        primaryAttack:
+          damage: { blunt: 120, fire: 126 }
+        blocking:
+          blockForce: 25
+    - quality: 3
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 20 }
+        - { itemId: surtling-core, qty: 4 }
+        - { itemId: refined-eitr, qty: 16 }
+      stats:
+        durability: 300
+        primaryAttack:
+          damage: { blunt: 120, fire: 132 }
+        blocking:
+          blockForce: 30
+    - quality: 4
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 30 }
+        - { itemId: surtling-core, qty: 6 }
+        - { itemId: refined-eitr, qty: 24 }
+      stats:
+        durability: 350
+        primaryAttack:
+          damage: { blunt: 120, fire: 138 }
+        blocking:
+          blockForce: 35
 - id: staff-of-frost
   name: Staff of Frost
   type: crafting
@@ -6109,9 +6465,10 @@
 - id: staff-of-the-wild
   name: Staff of the Wild
   type: crafting
+  biome: ashlands
   station: galdr-table
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: yggdrasil-wood, qty: 20 }
     - { itemId: refined-eitr, qty: 16 }
@@ -6119,30 +6476,35 @@
   yields: { itemId: staff-of-the-wild, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
   stats:
-    damage: { spirit: 60 }
-    knockback: 30
-    durability: 100
-    weight: 1.5
+    weight: 0.3
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 20, poison: 20 }
+      knockback: 30
+      stagger: 20
+      eitr: 55
+      adrenaline: 3
+    blocking:
+      blockArmor: 48
+      parryBlockArmor: 96
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 4 }
     - quality: 3
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 8 }
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: yggdrasil-wood, qty: 15 }
-        - { itemId: refined-eitr, qty: 12 }
-
 # Eitr-infused armor (Galdr Table level 1–2)
 - id: eitr-weave-hood
   name: Eitr-Weave Hood
@@ -6425,20 +6787,68 @@
 - id: staff-of-fracturing
   name: Staff of Fracturing
   type: crafting
+  biome: ashlands
   station: galdr-table
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: charred-bone, qty: 15 }
     - { itemId: ashwood, qty: 5 }
     - { itemId: proustite-powder, qty: 8 }
   yields: { itemId: staff-of-fracturing, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
+  stats:
+    weight: 0.3
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 12, fire: 12 }
+      knockback: 100
+      stagger: 12
+      eitr: 30
+      adrenaline: 3
+    blocking:
+      blockArmor: 48
+      parryBlockArmor: 96
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
 
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: charred-bone, qty: 5 }
+        - { itemId: ashwood, qty: 3 }
+        - { itemId: proustite-powder, qty: 1 }
+      stats:
+        durability: 250
+        primaryAttack:
+          damage: { blunt: 12, fire: 18 }
+        blocking:
+          blockForce: 25
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: charred-bone, qty: 10 }
+        - { itemId: ashwood, qty: 6 }
+        - { itemId: proustite-powder, qty: 2 }
+      stats:
+        durability: 300
+        primaryAttack:
+          damage: { blunt: 12, fire: 24 }
+        blocking:
+          blockForce: 30
 - id: dundr
   name: Dundr
   type: crafting
+  biome: ashlands
   station: galdr-table
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: ashwood, qty: 10 }
     - { itemId: flametal, qty: 4 }
@@ -6447,12 +6857,33 @@
   yields: { itemId: dundr, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
   notes: Shoots grapeshot of 12 lightning bolts.
+  stats:
+    weight: 1.5
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { lightning: 20 }
+      knockback: 210
+      backstab: 1
+      stagger: 20
+      eitr: 25
+      adrenaline: 5
+      recoilForce: 40
+    blocking:
+      blockArmor: 48
+      parryBlockArmor: 96
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
 
 - id: trollstav
   name: Trollstav
   type: crafting
+  biome: ashlands
   station: galdr-table
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: charred-bone, qty: 15 }
     - { itemId: troll-trophy, qty: 1 }
@@ -6461,12 +6892,55 @@
   yields: { itemId: trollstav, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
   notes: Summons a large troll.
+  stats:
+    weight: 0.3
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { fire: 300, pure: 50, chop: 100, pickaxe: 100 }
+      eitr: 120
+      healthCost: 60
+      adrenaline: 12
+    blocking:
+      blockArmor: 48
+      parryBlockArmor: 96
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
 
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: charred-bone, qty: 5 }
+        - { itemId: troll-trophy, qty: 1 }
+        - { itemId: flametal, qty: 3 }
+        - { itemId: bloodstone, qty: 1 }
+      stats:
+        durability: 250
+        blocking:
+          blockForce: 25
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: charred-bone, qty: 10 }
+        - { itemId: troll-trophy, qty: 2 }
+        - { itemId: flametal, qty: 6 }
+        - { itemId: bloodstone, qty: 2 }
+      stats:
+        durability: 300
+        blocking:
+          blockForce: 30
 - id: dead-raiser
   name: Dead Raiser
   type: crafting
+  biome: ashlands
   station: galdr-table
-  stationLevel: 2
+  stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: bone-fragments, qty: 10 }
     - { itemId: refined-eitr, qty: 16 }
@@ -6475,7 +6949,34 @@
   tags: [staff, two-handed, magic, tier-6]
   notes: Blood magic staff — uses Eitr and Health.
 
+  stats:
+    weight: 0.3
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      eitr: 100
+      healthCost: 40
+      adrenaline: 10
+    blocking:
+      blockArmor: 48
+      parryBlockArmor: 96
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
 # Embla armor set (Galdr Table level 2)
+  upgrades:
+    - quality: 2
+      stationLevel: 2
+      repairLevel: 2
+      ingredients:
+        - { itemId: bone-fragments, qty: 5 }
+        - { itemId: refined-eitr, qty: 8 }
+        - { itemId: skeleton-trophy, qty: 2 }
+      stats:
+        durability: 250
+        blocking:
+          blockForce: 25
 - id: hood-of-embla
   name: Hood of Embla
   type: crafting
