@@ -10,7 +10,7 @@ export const ItemCategorySchema = z.enum([
 ]);
 
 export const BiomeSchema = z.enum([
-  'meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands',
+  'meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands', 'ocean',
 ]);
 
 export const ItemSchema = z.object({

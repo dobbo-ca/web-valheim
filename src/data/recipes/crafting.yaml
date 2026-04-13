@@ -129,6 +129,7 @@
 - id: crude-bow
   name: Crude Bow
   type: crafting
+  biome: meadows
   station: workbench
   stationLevel: 1
   repairLevel: 1
@@ -138,10 +139,21 @@
   yields: { itemId: crude-bow, qty: 1 }
   tags: [bow, two-handed, tier-0]
   stats:
-    damage: { pierce: 22 }
-    knockback: 10
-    durability: 100
-    weight: 1.0
+    weight: 1
+    durability: 50
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 22 }
+      knockback: 0
+      backstab: 3
+      stagger: 22
+      adrenaline: 2
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -149,28 +161,25 @@
       ingredients:
         - { itemId: wood, qty: 10 }
       stats:
-        damage: { pierce: 28 }
-        durability: 150
+        durability: 100
     - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 20 }
       stats:
-        damage: { pierce: 34 }
-        durability: 200
+        durability: 150
     - quality: 4
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 30 }
       stats:
-        damage: { pierce: 40 }
-        durability: 250
-
+        durability: 200
 - id: stone-axe
   name: Stone Axe
   type: crafting
+  biome: meadows
   station: workbench
   stationLevel: 1
   repairLevel: 1
@@ -180,10 +189,26 @@
   yields: { itemId: stone-axe, qty: 1 }
   tags: [axe, one-handed, tier-0]
   stats:
-    damage: { slash: 15 }
-    knockback: 20
+    weight: 1
     durability: 100
-    weight: 1.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 15 }
+      knockback: 50
+      backstab: 3
+      stagger: 15
+      stamina: 5
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 22.5 }
+      knockback: 75
+      backstab: 3
+      stagger: 22.5
+      stamina: 10
+      adrenaline: 1
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -192,8 +217,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: stone, qty: 2 }
       stats:
-        damage: { slash: 21 }
         durability: 150
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -201,8 +227,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: stone, qty: 4 }
       stats:
-        damage: { slash: 27 }
         durability: 200
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -210,12 +237,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: stone, qty: 6 }
       stats:
-        damage: { slash: 33 }
         durability: 250
-
+        blocking:
+          blockForce: 35
 - id: flint-axe
   name: Flint Axe
   type: crafting
+  biome: meadows
   station: workbench
   stationLevel: 1
   repairLevel: 1
@@ -225,11 +253,26 @@
   yields: { itemId: flint-axe, qty: 1 }
   tags: [axe, one-handed, tier-1]
   stats:
-    damage: { slash: 20 }
-    knockback: 20
-    backstab: 3
-    durability: 150
-    weight: 1.0
+    weight: 1
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 20, chop: 30 }
+      knockback: 50
+      backstab: 3
+      stagger: 20
+      stamina: 6
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 30, chop: 45 }
+      knockback: 75
+      backstab: 3
+      stagger: 30
+      stamina: 12
+      adrenaline: 1
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -238,8 +281,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: flint, qty: 4 }
       stats:
-        damage: { slash: 26 }
-        durability: 200
+        durability: 150
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -247,8 +291,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: flint, qty: 8 }
       stats:
-        damage: { slash: 32 }
-        durability: 250
+        durability: 200
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -256,12 +301,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: flint, qty: 12 }
       stats:
-        damage: { slash: 38 }
-        durability: 300
-
+        durability: 250
+        blocking:
+          blockForce: 35
 - id: flint-knife
   name: Flint Knife
   type: crafting
+  biome: meadows
   station: workbench
   stationLevel: 1
   repairLevel: 1
@@ -272,11 +318,26 @@
   yields: { itemId: flint-knife, qty: 1 }
   tags: [knife, one-handed, tier-1]
   stats:
-    damage: { slash: 8, pierce: 8 }
-    knockback: 10
-    backstab: 6
-    durability: 100
     weight: 0.3
+    durability: 200
+    primaryAttack:
+      damage: { slash: 5, pierce: 5 }
+      knockback: 10
+      backstab: 6
+      stagger: 10
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 15, pierce: 15 }
+      backstab: 6
+      stagger: 30
+      adrenaline: 1
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 8
+      blockForce: 10
+      parryBonus: 4
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -285,8 +346,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: flint, qty: 4 }
       stats:
-        damage: { slash: 14, pierce: 14 }
-        durability: 150
+        durability: 250
+        blocking:
+          blockForce: 15
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -294,8 +356,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: flint, qty: 8 }
       stats:
-        damage: { slash: 20, pierce: 20 }
-        durability: 200
+        durability: 300
+        blocking:
+          blockForce: 20
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -303,12 +366,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: flint, qty: 12 }
       stats:
-        damage: { slash: 26, pierce: 26 }
-        durability: 250
-
+        durability: 350
+        blocking:
+          blockForce: 25
 - id: flint-spear
   name: Flint Spear
   type: crafting
+  biome: meadows
   station: workbench
   stationLevel: 1
   repairLevel: 1
@@ -319,11 +383,23 @@
   yields: { itemId: flint-spear, qty: 1 }
   tags: [spear, one-handed, tier-1]
   stats:
-    damage: { pierce: 20 }
-    knockback: 20
-    backstab: 3
+    weight: 1
     durability: 100
-    weight: 1.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 20 }
+      knockback: 20
+      backstab: 3
+      stagger: 20
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pierce: 30 }
+      backstab: 3
+      stagger: 30
+      adrenaline: 1
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -332,8 +408,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: flint, qty: 4 }
       stats:
-        damage: { pierce: 26 }
         durability: 150
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -341,8 +418,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: flint, qty: 8 }
       stats:
-        damage: { pierce: 32 }
         durability: 200
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -350,12 +428,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: flint, qty: 12 }
       stats:
-        damage: { pierce: 38 }
         durability: 250
-
+        blocking:
+          blockForce: 35
 - id: antler-pickaxe
   name: Antler Pickaxe
   type: crafting
+  biome: meadows
   station: workbench
   stationLevel: 1
   repairLevel: 1
@@ -365,9 +444,19 @@
   yields: { itemId: antler-pickaxe, qty: 1 }
   tags: [pickaxe, tool, tier-1]
   stats:
-    damage: { pierce: 18 }
-    durability: 100
     weight: 1.5
+    durability: 100
+    primaryAttack:
+      damage: { pierce: 18, pickaxe: 18 }
+      backstab: 3
+      stagger: 18
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 4
+      blockForce: 10
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -376,8 +465,9 @@
         - { itemId: wood, qty: 3 }
         - { itemId: hard-antler, qty: 1 }
       stats:
-        damage: { pierce: 24 }
         durability: 150
+        blocking:
+          blockForce: 15
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -385,8 +475,9 @@
         - { itemId: wood, qty: 6 }
         - { itemId: hard-antler, qty: 2 }
       stats:
-        damage: { pierce: 30 }
         durability: 200
+        blocking:
+          blockForce: 20
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -394,12 +485,13 @@
         - { itemId: wood, qty: 9 }
         - { itemId: hard-antler, qty: 3 }
       stats:
-        damage: { pierce: 36 }
         durability: 250
-
+        blocking:
+          blockForce: 25
 - id: finewood-bow
   name: Finewood Bow
   type: crafting
+  biome: black-forest
   station: workbench
   stationLevel: 1
   repairLevel: 1
@@ -410,10 +502,21 @@
   yields: { itemId: finewood-bow, qty: 1 }
   tags: [bow, two-handed, tier-2]
   stats:
-    damage: { pierce: 32 }
-    knockback: 10
+    weight: 1
     durability: 100
-    weight: 1.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 32 }
+      knockback: 5
+      backstab: 3
+      stagger: 32
+      adrenaline: 2
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -422,7 +525,6 @@
         - { itemId: fine-wood, qty: 10 }
         - { itemId: deer-hide, qty: 2 }
       stats:
-        damage: { pierce: 38 }
         durability: 150
     - quality: 3
       stationLevel: 3
@@ -431,7 +533,6 @@
         - { itemId: fine-wood, qty: 20 }
         - { itemId: deer-hide, qty: 4 }
       stats:
-        damage: { pierce: 44 }
         durability: 200
     - quality: 4
       stationLevel: 4
@@ -440,12 +541,11 @@
         - { itemId: fine-wood, qty: 30 }
         - { itemId: deer-hide, qty: 6 }
       stats:
-        damage: { pierce: 50 }
         durability: 250
-
 - id: stagbreaker
   name: Stagbreaker
   type: crafting
+  biome: meadows
   station: workbench
   stationLevel: 2
   repairLevel: 2
@@ -456,11 +556,19 @@
   yields: { itemId: stagbreaker, qty: 1 }
   tags: [sledge, two-handed, tier-1]
   stats:
-    damage: { blunt: 20 }
-    knockback: 50
-    backstab: 3
+    weight: 3
     durability: 100
-    weight: 3.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 5, blunt: 20 }
+      knockback: 150
+      backstab: 2
+      stagger: 25
+      stamina: 12
+      adrenaline: 2
+    blocking:
+      blockForce: 30
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -468,25 +576,27 @@
       ingredients:
         - { itemId: bone-fragments, qty: 10 }
       stats:
-        damage: { blunt: 26 }
         durability: 150
+        blocking:
+          blockForce: 40
     - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: bone-fragments, qty: 20 }
       stats:
-        damage: { blunt: 32 }
         durability: 200
+        blocking:
+          blockForce: 50
     - quality: 4
       stationLevel: 5
       repairLevel: 5
       ingredients:
         - { itemId: bone-fragments, qty: 30 }
       stats:
-        damage: { blunt: 38 }
         durability: 250
-
+        blocking:
+          blockForce: 60
 # Armor
 - id: leather-helmet
   name: Leather Helmet
@@ -911,6 +1021,7 @@
 - id: wood-shield
   name: Wood Shield
   type: crafting
+  biome: meadows
   station: workbench
   stationLevel: 1
   repairLevel: 1
@@ -921,9 +1032,16 @@
   yields: { itemId: wood-shield, qty: 1 }
   tags: [shield, tier-0]
   stats:
-    block: 20
+    weight: 4
     durability: 200
-    weight: 3.0
+    movementPenalty: -5
+    blocking:
+      blockArmor: 6
+      parryBlockArmor: 9
+      blockForce: 20
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -931,25 +1049,27 @@
       ingredients:
         - { itemId: wood, qty: 5 }
       stats:
-        block: 22
         durability: 250
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 10 }
       stats:
-        block: 24
         durability: 300
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 15 }
       stats:
-        block: 26
         durability: 350
-
+        blocking:
+          blockForce: 35
 - id: wood-tower-shield
   name: Wood Tower Shield
   type: crafting
@@ -994,8 +1114,9 @@
 - id: bone-tower-shield
   name: Bone Tower Shield
   type: crafting
+  biome: meadows
   station: workbench
-  stationLevel: 1
+  stationLevel: 3
   repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 10 }
@@ -1004,87 +1125,111 @@
   yields: { itemId: bone-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-1]
   stats:
-    block: 40
+    weight: 4
     durability: 200
-    weight: 10.0
+    movementPenalty: -5
+    blocking:
+      blockArmor: 32
+      blockForce: 80
+      blockAdrenaline: 2
+      parryAdrenaline: 0
   upgrades:
     - quality: 2
-      stationLevel: 2
+      stationLevel: 4
       repairLevel: 2
       ingredients:
         - { itemId: bone-fragments, qty: 10 }
       stats:
-        block: 44
         durability: 250
+        blocking:
+          blockForce: 85
     - quality: 3
-      stationLevel: 3
+      stationLevel: 5
       repairLevel: 3
       ingredients:
         - { itemId: bone-fragments, qty: 20 }
       stats:
-        block: 48
         durability: 300
-    - quality: 4
-      stationLevel: 4
-      repairLevel: 4
-      ingredients:
-        - { itemId: bone-fragments, qty: 30 }
-      stats:
-        block: 52
-        durability: 350
-
+        blocking:
+          blockForce: 90
 # Arrows
 - id: wood-arrow
   name: Wood Arrow
   type: crafting
+  biome: meadows
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 8 }
   yields: { itemId: wood-arrow, qty: 20 }
   tags: [arrow, tier-0]
+  stats:
+    primaryAttack:
+      damage: { pierce: 22 }
+      stagger: 22
 
 - id: flinthead-arrow
   name: Flinthead Arrow
   type: crafting
+  biome: meadows
   station: workbench
-  stationLevel: 1
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: wood, qty: 8 }
     - { itemId: flint, qty: 2 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: flinthead-arrow, qty: 20 }
   tags: [arrow, tier-1]
+  stats:
+    primaryAttack:
+      damage: { pierce: 27 }
+      stagger: 27
 
 - id: fire-arrow
   name: Fire Arrow
   type: crafting
+  biome: meadows
   station: workbench
-  stationLevel: 1
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: wood, qty: 8 }
     - { itemId: resin, qty: 8 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: fire-arrow, qty: 20 }
   tags: [arrow, elemental, tier-1]
+  stats:
+    primaryAttack:
+      damage: { pierce: 11, fire: 22 }
+      stagger: 11
 
 - id: obsidian-arrow
   name: Obsidian Arrow
   type: crafting
+  biome: mountain
   station: workbench
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: wood, qty: 8 }
     - { itemId: obsidian, qty: 4 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: obsidian-arrow, qty: 20 }
   tags: [arrow, tier-4]
+  stats:
+    primaryAttack:
+      damage: { pierce: 52 }
+      stagger: 52
 
 - id: poison-arrow
   name: Poison Arrow
   type: crafting
+  biome: mountain
   station: workbench
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: wood, qty: 8 }
     - { itemId: obsidian, qty: 4 }
@@ -1092,12 +1237,18 @@
     - { itemId: ooze, qty: 2 }
   yields: { itemId: poison-arrow, qty: 20 }
   tags: [arrow, elemental, tier-4]
+  stats:
+    primaryAttack:
+      damage: { pierce: 26, poison: 52 }
+      stagger: 26
 
 - id: frost-arrow
   name: Frost Arrow
   type: crafting
+  biome: mountain
   station: workbench
-  stationLevel: 3
+  stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: wood, qty: 8 }
     - { itemId: obsidian, qty: 4 }
@@ -1105,6 +1256,10 @@
     - { itemId: freeze-gland, qty: 1 }
   yields: { itemId: frost-arrow, qty: 20 }
   tags: [arrow, elemental, tier-4]
+  stats:
+    primaryAttack:
+      damage: { pierce: 26, frost: 52 }
+      stagger: 26
 
 - id: needle-arrow
   name: Needle Arrow
@@ -1128,9 +1283,10 @@
 - id: abyssal-razor
   name: Abyssal Razor
   type: crafting
+  biome: ocean
   station: workbench
-  stationLevel: 4
-  repairLevel: 4
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: fine-wood, qty: 2 }
     - { itemId: chitin, qty: 4 }
@@ -1138,46 +1294,60 @@
   yields: { itemId: abyssal-razor, qty: 1 }
   tags: [knife, one-handed, tier-3]
   stats:
-    damage: { slash: 15, pierce: 15 }
-    knockback: 10
-    backstab: 6
-    durability: 200
     weight: 0.3
+    durability: 200
+    primaryAttack:
+      damage: { slash: 20, pierce: 20 }
+      knockback: 10
+      backstab: 6
+      stagger: 40
+      stamina: 8
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 60, pierce: 60 }
+      backstab: 6
+      stagger: 120
+      stamina: 24
+      adrenaline: 1
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 8
+      blockForce: 10
+      parryBonus: 4
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: chitin, qty: 10 }
       stats:
-        damage: { slash: 21, pierce: 21 }
-        knockback: 10
-        backstab: 6
         durability: 250
+        blocking:
+          blockForce: 15
     - quality: 3
-      stationLevel: 6
-      repairLevel: 6
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: chitin, qty: 20 }
       stats:
-        damage: { slash: 27, pierce: 27 }
-        knockback: 10
-        backstab: 6
         durability: 300
+        blocking:
+          blockForce: 20
     - quality: 4
-      stationLevel: 7
-      repairLevel: 7
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: chitin, qty: 30 }
       stats:
-        damage: { slash: 33, pierce: 33 }
-        knockback: 10
-        backstab: 6
         durability: 350
-
+        blocking:
+          blockForce: 25
 - id: abyssal-harpoon
   name: Abyssal Harpoon
   type: crafting
+  biome: ocean
   station: workbench
   stationLevel: 2
   repairLevel: 2
@@ -1189,10 +1359,23 @@
   tags: [spear, tool, tier-3]
   notes: Used to drag creatures. Does not break on hit.
   stats:
-    damage: { pierce: 10 }
-    knockback: 50
+    weight: 3
     durability: 50
-    weight: 3.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 10 }
+      knockback: 50
+      backstab: 1
+      stagger: 10
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pierce: 15 }
+      backstab: 1
+      stagger: 15
+      adrenaline: 1
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -1200,34 +1383,34 @@
       ingredients:
         - { itemId: chitin, qty: 10 }
       stats:
-        damage: { pierce: 16 }
-        knockback: 50
         durability: 100
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: chitin, qty: 20 }
       stats:
-        damage: { pierce: 22 }
-        knockback: 50
         durability: 150
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 5
       repairLevel: 5
       ingredients:
         - { itemId: chitin, qty: 30 }
       stats:
-        damage: { pierce: 28 }
-        knockback: 50
         durability: 200
-
+        blocking:
+          blockForce: 35
 # ── Forge ──────────────────────────────────────────────────────────────────────
 
 # Bronze tier (forge level 1)
 - id: copper-knife
   name: Copper Knife
   type: crafting
+  biome: black-forest
   station: forge
   stationLevel: 1
   repairLevel: 1
@@ -1237,11 +1420,26 @@
   yields: { itemId: copper-knife, qty: 1 }
   tags: [knife, one-handed, tier-1]
   stats:
-    damage: { slash: 10, pierce: 10 }
-    knockback: 10
-    backstab: 6
-    durability: 100
     weight: 0.3
+    durability: 200
+    primaryAttack:
+      damage: { slash: 12, pierce: 12 }
+      knockback: 10
+      backstab: 6
+      stagger: 24
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 36, pierce: 36 }
+      backstab: 6
+      stagger: 72
+      adrenaline: 1
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 8
+      blockForce: 10
+      parryBonus: 4
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -1249,28 +1447,31 @@
       ingredients:
         - { itemId: copper, qty: 4 }
       stats:
-        damage: { slash: 16, pierce: 16 }
-        durability: 150
+        durability: 250
+        blocking:
+          blockForce: 15
     - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: copper, qty: 8 }
       stats:
-        damage: { slash: 22, pierce: 22 }
-        durability: 200
+        durability: 300
+        blocking:
+          blockForce: 20
     - quality: 4
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: copper, qty: 12 }
       stats:
-        damage: { slash: 28, pierce: 28 }
-        durability: 250
-
+        durability: 350
+        blocking:
+          blockForce: 25
 - id: bronze-axe
   name: Bronze Axe
   type: crafting
+  biome: black-forest
   station: forge
   stationLevel: 1
   repairLevel: 1
@@ -1281,11 +1482,24 @@
   yields: { itemId: bronze-axe, qty: 1 }
   tags: [axe, one-handed, tier-2]
   stats:
-    damage: { slash: 25 }
-    knockback: 30
-    backstab: 3
-    durability: 175
     weight: 1.5
+    durability: 125
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 40, chop: 40 }
+      knockback: 50
+      backstab: 3
+      stagger: 40
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 60, chop: 60 }
+      knockback: 75
+      backstab: 3
+      stagger: 60
+      adrenaline: 1
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -1294,8 +1508,9 @@
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
       stats:
-        damage: { slash: 31 }
-        durability: 225
+        durability: 175
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -1303,8 +1518,9 @@
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
       stats:
-        damage: { slash: 37 }
-        durability: 275
+        durability: 225
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -1312,12 +1528,13 @@
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
       stats:
-        damage: { slash: 43 }
-        durability: 325
-
+        durability: 275
+        blocking:
+          blockForce: 35
 - id: bronze-pickaxe
   name: Bronze Pickaxe
   type: crafting
+  biome: black-forest
   station: forge
   stationLevel: 1
   repairLevel: 1
@@ -1327,9 +1544,19 @@
   yields: { itemId: bronze-pickaxe, qty: 1 }
   tags: [pickaxe, tool, tier-2]
   stats:
-    damage: { pierce: 25 }
-    durability: 150
     weight: 1.5
+    durability: 120
+    primaryAttack:
+      damage: { pierce: 25, pickaxe: 25 }
+      backstab: 3
+      stagger: 25
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 4
+      blockForce: 10
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -1338,8 +1565,9 @@
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
       stats:
-        damage: { pierce: 31 }
-        durability: 200
+        durability: 170
+        blocking:
+          blockForce: 15
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -1347,8 +1575,9 @@
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
       stats:
-        damage: { pierce: 37 }
-        durability: 250
+        durability: 220
+        blocking:
+          blockForce: 20
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -1356,12 +1585,13 @@
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
       stats:
-        damage: { pierce: 43 }
-        durability: 300
-
+        durability: 270
+        blocking:
+          blockForce: 25
 - id: bronze-mace
   name: Bronze Mace
   type: crafting
+  biome: black-forest
   station: forge
   stationLevel: 1
   repairLevel: 1
@@ -1372,11 +1602,26 @@
   yields: { itemId: bronze-mace, qty: 1 }
   tags: [mace, one-handed, tier-2]
   stats:
-    damage: { blunt: 35 }
-    knockback: 60
-    backstab: 3
+    weight: 2
     durability: 200
-    weight: 2.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 35 }
+      knockback: 80
+      backstab: 3
+      stagger: 35
+      stamina: 8
+      adrenaline: 1
+    secondaryAttack:
+      damage: { blunt: 87.5 }
+      knockback: 160
+      backstab: 3
+      stagger: 175
+      stamina: 16
+      adrenaline: 3
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -1386,8 +1631,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: leather-scraps, qty: 2 }
       stats:
-        damage: { blunt: 41 }
         durability: 250
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -1396,8 +1642,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: leather-scraps, qty: 4 }
       stats:
-        damage: { blunt: 47 }
         durability: 300
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -1406,12 +1653,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: leather-scraps, qty: 6 }
       stats:
-        damage: { blunt: 53 }
         durability: 350
-
+        blocking:
+          blockForce: 35
 - id: bronze-atgeir
   name: Bronze Atgeir
   type: crafting
+  biome: black-forest
   station: forge
   stationLevel: 1
   repairLevel: 1
@@ -1422,11 +1670,25 @@
   yields: { itemId: bronze-atgeir, qty: 1 }
   tags: [atgeir, two-handed, tier-2]
   stats:
-    damage: { pierce: 35 }
-    knockback: 30
-    backstab: 3
-    durability: 175
     weight: 2.5
+    durability: 125
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 45 }
+      knockback: 30
+      backstab: 3
+      stagger: 45
+      stamina: 12
+      adrenaline: 2
+    secondaryAttack:
+      damage: { pierce: 45 }
+      backstab: 3
+      stagger: 270
+      stamina: 24
+      adrenaline: 1
+    blocking:
+      blockForce: 30
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -1436,8 +1698,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: leather-scraps, qty: 2 }
       stats:
-        damage: { pierce: 41 }
-        durability: 225
+        durability: 175
+        blocking:
+          blockForce: 35
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -1446,8 +1709,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: leather-scraps, qty: 4 }
       stats:
-        damage: { pierce: 47 }
-        durability: 275
+        durability: 225
+        blocking:
+          blockForce: 40
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -1456,12 +1720,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: leather-scraps, qty: 6 }
       stats:
-        damage: { pierce: 53 }
-        durability: 325
-
+        durability: 275
+        blocking:
+          blockForce: 45
 - id: bronze-spear
   name: Bronze Spear
   type: crafting
+  biome: black-forest
   station: forge
   stationLevel: 1
   repairLevel: 1
@@ -1472,11 +1737,23 @@
   yields: { itemId: bronze-spear, qty: 1 }
   tags: [spear, one-handed, tier-2]
   stats:
-    damage: { pierce: 35 }
-    knockback: 20
-    backstab: 3
+    weight: 1
     durability: 100
-    weight: 1.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 35 }
+      knockback: 20
+      backstab: 3
+      stagger: 35
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pierce: 52.5 }
+      backstab: 3
+      stagger: 52.5
+      adrenaline: 1
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -1486,8 +1763,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: deer-hide, qty: 2 }
       stats:
-        damage: { pierce: 41 }
         durability: 150
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -1496,8 +1774,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: deer-hide, qty: 4 }
       stats:
-        damage: { pierce: 47 }
         durability: 200
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -1506,12 +1785,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: deer-hide, qty: 6 }
       stats:
-        damage: { pierce: 53 }
         durability: 250
-
+        blocking:
+          blockForce: 35
 - id: bronze-sword
   name: Bronze Sword
   type: crafting
+  biome: black-forest
   station: forge
   stationLevel: 1
   repairLevel: 1
@@ -1522,13 +1802,23 @@
   yields: { itemId: bronze-sword, qty: 1 }
   tags: [sword, one-handed, tier-2]
   stats:
-    damage: { slash: 35 }
-    block: 10
-    parry: 30
-    knockback: 40
-    backstab: 3
-    durability: 200
     weight: 1.6
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 35 }
+      knockback: 40
+      backstab: 3
+      stagger: 35
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 105 }
+      backstab: 3
+      stagger: 105
+      adrenaline: 3
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -1538,10 +1828,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: leather-scraps, qty: 2 }
       stats:
-        damage: { slash: 41 }
-        block: 10
-        parry: 30
         durability: 250
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -1550,10 +1839,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: leather-scraps, qty: 4 }
       stats:
-        damage: { slash: 47 }
-        block: 10
-        parry: 30
         durability: 300
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -1562,14 +1850,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: leather-scraps, qty: 6 }
       stats:
-        damage: { slash: 53 }
-        block: 10
-        parry: 30
         durability: 350
-
+        blocking:
+          blockForce: 35
 - id: bronze-buckler
   name: Bronze Buckler
   type: crafting
+  biome: black-forest
   station: forge
   stationLevel: 1
   repairLevel: 1
@@ -1579,10 +1866,12 @@
   yields: { itemId: bronze-buckler, qty: 1 }
   tags: [shield, tier-2]
   stats:
-    block: 22
-    parry: 40
+    weight: 3
     durability: 200
-    weight: 2.0
+    movementPenalty: -5
+    blocking:
+      blockForce: 20
+      parryBonus: 2.5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -1591,8 +1880,6 @@
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
       stats:
-        block: 24
-        parry: 40
         durability: 250
     - quality: 3
       stationLevel: 3
@@ -1601,8 +1888,6 @@
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
       stats:
-        block: 26
-        parry: 40
         durability: 300
     - quality: 4
       stationLevel: 4
@@ -1611,10 +1896,7 @@
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
       stats:
-        block: 28
-        parry: 40
         durability: 350
-
 - id: bronze-helmet
   name: Bronze Helmet
   type: crafting
@@ -1741,14 +2023,20 @@
 - id: bronzehead-arrow
   name: Bronzehead Arrow
   type: crafting
+  biome: black-forest
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 8 }
     - { itemId: bronze, qty: 1 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: bronzehead-arrow, qty: 20 }
   tags: [arrow, tier-2]
+  stats:
+    primaryAttack:
+      damage: { pierce: 32 }
+      stagger: 32
 
 - id: bronze
   name: Bronze
@@ -1817,6 +2105,7 @@
 - id: huntsman-bow
   name: Huntsman Bow
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 1
   repairLevel: 1
@@ -1828,10 +2117,21 @@
   yields: { itemId: huntsman-bow, qty: 1 }
   tags: [bow, two-handed, tier-3]
   stats:
-    damage: { pierce: 42 }
-    knockback: 20
-    durability: 150
     weight: 1.5
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 42 }
+      knockback: 10
+      backstab: 3
+      stagger: 42
+      adrenaline: 2
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -1840,9 +2140,7 @@
         - { itemId: fine-wood, qty: 5 }
         - { itemId: iron, qty: 10 }
       stats:
-        damage: { pierce: 48 }
-        knockback: 20
-        durability: 200
+        durability: 150
     - quality: 3
       stationLevel: 3
       repairLevel: 3
@@ -1850,9 +2148,7 @@
         - { itemId: fine-wood, qty: 10 }
         - { itemId: iron, qty: 20 }
       stats:
-        damage: { pierce: 54 }
-        knockback: 20
-        durability: 250
+        durability: 200
     - quality: 4
       stationLevel: 4
       repairLevel: 4
@@ -1860,13 +2156,11 @@
         - { itemId: fine-wood, qty: 15 }
         - { itemId: iron, qty: 30 }
       stats:
-        damage: { pierce: 60 }
-        knockback: 20
-        durability: 300
-
+        durability: 250
 - id: iron-sword
   name: Iron Sword
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -1878,13 +2172,23 @@
   tags: [sword, one-handed, tier-3]
   notes: Strong vs. skeletons and stonegolems.
   stats:
-    damage: { slash: 35 }
-    block: 15
-    parry: 30
-    knockback: 40
-    backstab: 3
-    durability: 200
     weight: 1.6
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 55 }
+      knockback: 40
+      backstab: 3
+      stagger: 55
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 165 }
+      backstab: 3
+      stagger: 165
+      adrenaline: 3
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -1894,10 +2198,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: leather-scraps, qty: 2 }
       stats:
-        damage: { slash: 41 }
-        block: 15
-        parry: 30
         durability: 250
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 4
       repairLevel: 4
@@ -1906,10 +2209,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: leather-scraps, qty: 4 }
       stats:
-        damage: { slash: 47 }
-        block: 15
-        parry: 30
         durability: 300
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 5
       repairLevel: 5
@@ -1918,14 +2220,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: leather-scraps, qty: 6 }
       stats:
-        damage: { slash: 53 }
-        block: 15
-        parry: 30
         durability: 350
-
+        blocking:
+          blockForce: 35
 - id: iron-mace
   name: Iron Mace
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -1936,11 +2237,26 @@
   yields: { itemId: iron-mace, qty: 1 }
   tags: [mace, one-handed, tier-3]
   stats:
-    damage: { blunt: 55 }
-    knockback: 80
-    backstab: 3
-    durability: 200
     weight: 2.5
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 55 }
+      knockback: 90
+      backstab: 3
+      stagger: 55
+      stamina: 10
+      adrenaline: 1
+    secondaryAttack:
+      damage: { blunt: 137.5 }
+      knockback: 180
+      backstab: 3
+      stagger: 275
+      stamina: 20
+      adrenaline: 3
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -1950,10 +2266,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: leather-scraps, qty: 2 }
       stats:
-        damage: { blunt: 61 }
-        knockback: 80
-        backstab: 3
         durability: 250
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 4
       repairLevel: 4
@@ -1962,10 +2277,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: leather-scraps, qty: 4 }
       stats:
-        damage: { blunt: 67 }
-        knockback: 80
-        backstab: 3
         durability: 300
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 5
       repairLevel: 5
@@ -1974,14 +2288,13 @@
         - { itemId: wood, qty: 6 }
         - { itemId: leather-scraps, qty: 6 }
       stats:
-        damage: { blunt: 73 }
-        knockback: 80
-        backstab: 3
         durability: 350
-
+        blocking:
+          blockForce: 35
 - id: iron-atgeir
   name: Iron Atgeir
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -1992,11 +2305,25 @@
   yields: { itemId: iron-atgeir, qty: 1 }
   tags: [atgeir, two-handed, tier-3]
   stats:
-    damage: { pierce: 55 }
-    knockback: 30
-    backstab: 3
+    weight: 3
     durability: 175
-    weight: 3.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 65 }
+      knockback: 30
+      backstab: 3
+      stagger: 65
+      stamina: 14
+      adrenaline: 2
+    secondaryAttack:
+      damage: { pierce: 65 }
+      backstab: 3
+      stagger: 390
+      stamina: 28
+      adrenaline: 1
+    blocking:
+      blockForce: 30
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -2005,10 +2332,9 @@
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 5 }
       stats:
-        damage: { pierce: 61 }
-        knockback: 30
-        backstab: 3
         durability: 225
+        blocking:
+          blockForce: 35
     - quality: 3
       stationLevel: 4
       repairLevel: 4
@@ -2016,10 +2342,9 @@
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 10 }
       stats:
-        damage: { pierce: 67 }
-        knockback: 30
-        backstab: 3
         durability: 275
+        blocking:
+          blockForce: 40
     - quality: 4
       stationLevel: 5
       repairLevel: 5
@@ -2027,14 +2352,13 @@
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 15 }
       stats:
-        damage: { pierce: 73 }
-        knockback: 30
-        backstab: 3
         durability: 325
-
+        blocking:
+          blockForce: 45
 - id: iron-axe
   name: Iron Axe
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -2045,11 +2369,24 @@
   yields: { itemId: iron-axe, qty: 1 }
   tags: [axe, one-handed, tier-3]
   stats:
-    damage: { slash: 40 }
-    knockback: 30
-    backstab: 3
-    durability: 175
     weight: 1.5
+    durability: 175
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 60, chop: 50 }
+      knockback: 50
+      backstab: 3
+      stagger: 60
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 90, chop: 75 }
+      knockback: 75
+      backstab: 3
+      stagger: 90
+      adrenaline: 1
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -2058,10 +2395,9 @@
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 2 }
       stats:
-        damage: { slash: 46 }
-        knockback: 30
-        backstab: 3
         durability: 225
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 4
       repairLevel: 4
@@ -2069,10 +2405,9 @@
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 4 }
       stats:
-        damage: { slash: 52 }
-        knockback: 30
-        backstab: 3
         durability: 275
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 5
       repairLevel: 5
@@ -2080,14 +2415,13 @@
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 6 }
       stats:
-        damage: { slash: 58 }
-        knockback: 30
-        backstab: 3
         durability: 325
-
+        blocking:
+          blockForce: 35
 - id: iron-pickaxe
   name: Iron Pickaxe
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -2097,9 +2431,19 @@
   yields: { itemId: iron-pickaxe, qty: 1 }
   tags: [pickaxe, tool, tier-3]
   stats:
-    damage: { pierce: 33 }
-    durability: 150
     weight: 1.5
+    durability: 150
+    primaryAttack:
+      damage: { pierce: 33 }
+      backstab: 3
+      stagger: 33
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 4
+      blockForce: 10
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -2108,8 +2452,9 @@
         - { itemId: iron, qty: 10 }
         - { itemId: core-wood, qty: 2 }
       stats:
-        damage: { pierce: 39 }
         durability: 200
+        blocking:
+          blockForce: 15
     - quality: 3
       stationLevel: 4
       repairLevel: 4
@@ -2117,8 +2462,9 @@
         - { itemId: iron, qty: 20 }
         - { itemId: core-wood, qty: 4 }
       stats:
-        damage: { pierce: 45 }
         durability: 250
+        blocking:
+          blockForce: 20
     - quality: 4
       stationLevel: 5
       repairLevel: 5
@@ -2126,12 +2472,13 @@
         - { itemId: iron, qty: 30 }
         - { itemId: core-wood, qty: 6 }
       stats:
-        damage: { pierce: 51 }
         durability: 300
-
+        blocking:
+          blockForce: 25
 - id: iron-sledge
   name: Iron Sledge
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -2144,11 +2491,18 @@
   tags: [sledge, two-handed, tier-3]
   notes: Massive AOE damage; knocks back groups of enemies.
   stats:
-    damage: { blunt: 55 }
-    knockback: 100
-    backstab: 3
+    weight: 4
     durability: 100
-    weight: 4.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 55 }
+      knockback: 200
+      backstab: 2
+      stagger: 55
+      adrenaline: 2
+    blocking:
+      blockForce: 30
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -2157,10 +2511,9 @@
         - { itemId: iron, qty: 15 }
         - { itemId: ancient-bark, qty: 5 }
       stats:
-        damage: { blunt: 61 }
-        knockback: 100
-        backstab: 3
         durability: 150
+        blocking:
+          blockForce: 40
     - quality: 3
       stationLevel: 4
       repairLevel: 4
@@ -2168,10 +2521,9 @@
         - { itemId: iron, qty: 30 }
         - { itemId: ancient-bark, qty: 10 }
       stats:
-        damage: { blunt: 67 }
-        knockback: 100
-        backstab: 3
         durability: 200
+        blocking:
+          blockForce: 50
     - quality: 4
       stationLevel: 5
       repairLevel: 5
@@ -2179,14 +2531,13 @@
         - { itemId: iron, qty: 45 }
         - { itemId: ancient-bark, qty: 15 }
       stats:
-        damage: { blunt: 73 }
-        knockback: 100
-        backstab: 3
         durability: 250
-
+        blocking:
+          blockForce: 60
 - id: iron-buckler
   name: Iron Buckler
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -2196,10 +2547,16 @@
   yields: { itemId: iron-buckler, qty: 1 }
   tags: [shield, tier-3]
   stats:
-    block: 42
-    parry: 60
+    weight: 4
     durability: 200
-    weight: 2.5
+    movementPenalty: -5
+    blocking:
+      blockArmor: 28
+      parryBlockArmor: 70
+      blockForce: 20
+      parryBonus: 2.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -2207,8 +2564,6 @@
       ingredients:
         - { itemId: iron, qty: 5 }
       stats:
-        block: 45
-        parry: 60
         durability: 250
     - quality: 3
       stationLevel: 4
@@ -2216,8 +2571,6 @@
       ingredients:
         - { itemId: iron, qty: 10 }
       stats:
-        block: 48
-        parry: 60
         durability: 300
     - quality: 4
       stationLevel: 5
@@ -2225,13 +2578,11 @@
       ingredients:
         - { itemId: iron, qty: 15 }
       stats:
-        block: 51
-        parry: 60
         durability: 350
-
 - id: iron-tower-shield
   name: Iron Tower Shield
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -2241,9 +2592,14 @@
   yields: { itemId: iron-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-3]
   stats:
-    block: 60
+    weight: 4
     durability: 200
-    weight: 15.0
+    movementPenalty: -5
+    blocking:
+      blockArmor: 52
+      blockForce: 80
+      blockAdrenaline: 2
+      parryAdrenaline: 0
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -2252,8 +2608,9 @@
         - { itemId: iron, qty: 5 }
         - { itemId: fine-wood, qty: 5 }
       stats:
-        block: 63
         durability: 250
+        blocking:
+          blockForce: 85
     - quality: 3
       stationLevel: 4
       repairLevel: 4
@@ -2261,8 +2618,9 @@
         - { itemId: iron, qty: 10 }
         - { itemId: fine-wood, qty: 10 }
       stats:
-        block: 66
         durability: 300
+        blocking:
+          blockForce: 90
     - quality: 4
       stationLevel: 5
       repairLevel: 5
@@ -2270,12 +2628,13 @@
         - { itemId: iron, qty: 15 }
         - { itemId: fine-wood, qty: 15 }
       stats:
-        block: 69
         durability: 350
-
+        blocking:
+          blockForce: 95
 - id: banded-shield
   name: Banded Shield
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -2285,10 +2644,16 @@
   yields: { itemId: banded-shield, qty: 1 }
   tags: [shield, tier-3]
   stats:
-    block: 52
-    parry: 52
+    weight: 3
     durability: 200
-    weight: 3.0
+    movementPenalty: -5
+    blocking:
+      blockArmor: 42
+      parryBlockArmor: 63
+      blockForce: 40
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -2297,9 +2662,11 @@
         - { itemId: iron, qty: 4 }
         - { itemId: fine-wood, qty: 5 }
       stats:
-        block: 55
-        parry: 52
         durability: 250
+        blocking:
+          blockArmor: 48
+          parryBlockArmor: 72
+          blockForce: 45
     - quality: 3
       stationLevel: 4
       repairLevel: 4
@@ -2307,9 +2674,11 @@
         - { itemId: iron, qty: 8 }
         - { itemId: fine-wood, qty: 10 }
       stats:
-        block: 58
-        parry: 52
         durability: 300
+        blocking:
+          blockArmor: 54
+          parryBlockArmor: 81
+          blockForce: 50
     - quality: 4
       stationLevel: 5
       repairLevel: 5
@@ -2317,10 +2686,11 @@
         - { itemId: iron, qty: 12 }
         - { itemId: fine-wood, qty: 15 }
       stats:
-        block: 61
-        parry: 52
         durability: 350
-
+        blocking:
+          blockArmor: 60
+          parryBlockArmor: 90
+          blockForce: 55
 - id: iron-helmet
   name: Iron Helmet
   type: crafting
@@ -2447,14 +2817,20 @@
 - id: ironhead-arrow
   name: Ironhead Arrow
   type: crafting
+  biome: swamp
   station: forge
-  stationLevel: 1
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: wood, qty: 8 }
     - { itemId: iron, qty: 1 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: ironhead-arrow, qty: 20 }
   tags: [arrow, tier-3]
+  stats:
+    primaryAttack:
+      damage: { pierce: 42 }
+      stagger: 42
 
 - id: iron-nails
   name: Iron Nails
@@ -2579,6 +2955,7 @@
 - id: draugr-fang
   name: Draugr Fang
   type: crafting
+  biome: mountain
   station: forge
   stationLevel: 2
   repairLevel: 2
@@ -2591,10 +2968,21 @@
   tags: [bow, two-handed, tier-4]
   notes: Shoots poison arrows; pairs well with Poison arrows for stacking DoT.
   stats:
-    damage: { pierce: 47, poison: 5 }
-    knockback: 20
-    durability: 100
     weight: 1.5
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 47, poison: 5 }
+      knockback: 20
+      backstab: 3
+      stagger: 47
+      adrenaline: 2
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 4.5
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -2604,9 +2992,9 @@
         - { itemId: ancient-bark, qty: 5 }
         - { itemId: deer-hide, qty: 2 }
       stats:
-        damage: { pierce: 53, poison: 5 }
-        knockback: 20
         durability: 150
+        primaryAttack:
+          damage: { pierce: 47, poison: 10 }
     - quality: 3
       stationLevel: 4
       repairLevel: 4
@@ -2615,9 +3003,9 @@
         - { itemId: ancient-bark, qty: 10 }
         - { itemId: deer-hide, qty: 4 }
       stats:
-        damage: { pierce: 59, poison: 5 }
-        knockback: 20
         durability: 200
+        primaryAttack:
+          damage: { pierce: 47, poison: 15 }
     - quality: 4
       stationLevel: 5
       repairLevel: 5
@@ -2626,13 +3014,13 @@
         - { itemId: ancient-bark, qty: 15 }
         - { itemId: deer-hide, qty: 6 }
       stats:
-        damage: { pierce: 65, poison: 5 }
-        knockback: 20
         durability: 250
-
+        primaryAttack:
+          damage: { pierce: 47, poison: 20 }
 - id: frostner
   name: Frostner
   type: crafting
+  biome: mountain
   station: forge
   stationLevel: 3
   repairLevel: 3
@@ -2645,11 +3033,24 @@
   tags: [mace, one-handed, tier-4]
   notes: Deals frost and spirit damage; slows enemies. Strong vs. undead.
   stats:
-    damage: { blunt: 35, frost: 40, spirit: 20 }
-    knockback: 80
-    backstab: 3
-    durability: 200
     weight: 2.5
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 35, frost: 40, spirit: 20 }
+      knockback: 100
+      backstab: 3
+      stagger: 35
+      adrenaline: 1
+    secondaryAttack:
+      damage: { blunt: 87.5, frost: 100, spirit: 50 }
+      knockback: 200
+      backstab: 3
+      stagger: 175
+      adrenaline: 3
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -2659,10 +3060,9 @@
         - { itemId: ancient-bark, qty: 5 }
         - { itemId: ymir-flesh, qty: 3 }
       stats:
-        damage: { blunt: 41, frost: 46, spirit: 26 }
-        knockback: 80
-        backstab: 3
         durability: 250
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -2671,10 +3071,9 @@
         - { itemId: ancient-bark, qty: 10 }
         - { itemId: ymir-flesh, qty: 6 }
       stats:
-        damage: { blunt: 47, frost: 52, spirit: 32 }
-        knockback: 80
-        backstab: 3
         durability: 300
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 6
       repairLevel: 6
@@ -2683,14 +3082,13 @@
         - { itemId: ancient-bark, qty: 15 }
         - { itemId: ymir-flesh, qty: 9 }
       stats:
-        damage: { blunt: 53, frost: 58, spirit: 38 }
-        knockback: 80
-        backstab: 3
         durability: 350
-
+        blocking:
+          blockForce: 35
 - id: fang-spear
   name: Fang Spear
   type: crafting
+  biome: mountain
   station: forge
   stationLevel: 3
   repairLevel: 3
@@ -2702,11 +3100,23 @@
   yields: { itemId: fang-spear, qty: 1 }
   tags: [spear, one-handed, tier-4]
   stats:
-    damage: { pierce: 55 }
-    knockback: 20
-    backstab: 3
-    durability: 100
     weight: 1.5
+    durability: 100
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 75 }
+      knockback: 20
+      backstab: 3
+      stagger: 75
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pierce: 112.5 }
+      backstab: 3
+      stagger: 112.5
+      adrenaline: 1
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -2715,10 +3125,9 @@
         - { itemId: silver, qty: 2 }
         - { itemId: wolf-fang, qty: 2 }
       stats:
-        damage: { pierce: 61 }
-        knockback: 20
-        backstab: 3
         durability: 150
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -2726,10 +3135,9 @@
         - { itemId: silver, qty: 4 }
         - { itemId: wolf-fang, qty: 4 }
       stats:
-        damage: { pierce: 67 }
-        knockback: 20
-        backstab: 3
         durability: 200
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 6
       repairLevel: 6
@@ -2737,14 +3145,13 @@
         - { itemId: silver, qty: 6 }
         - { itemId: wolf-fang, qty: 6 }
       stats:
-        damage: { pierce: 73 }
-        knockback: 20
-        backstab: 3
         durability: 250
-
+        blocking:
+          blockForce: 35
 - id: silver-knife
   name: Silver Knife
   type: crafting
+  biome: mountain
   station: forge
   stationLevel: 3
   repairLevel: 3
@@ -2756,11 +3163,28 @@
   yields: { itemId: silver-knife, qty: 1 }
   tags: [knife, one-handed, tier-4]
   stats:
-    damage: { slash: 20, spirit: 30 }
-    knockback: 10
-    backstab: 6
-    durability: 200
     weight: 0.3
+    durability: 200
+    primaryAttack:
+      damage: { slash: 25, pierce: 25, spirit: 12 }
+      knockback: 10
+      backstab: 6
+      stagger: 50
+      stamina: 10
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 75, pierce: 75, spirit: 36 }
+      backstab: 6
+      stagger: 150
+      stamina: 30
+      adrenaline: 1
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 8
+      blockForce: 10
+      parryBonus: 4
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -2768,34 +3192,31 @@
       ingredients:
         - { itemId: silver, qty: 10 }
       stats:
-        damage: { slash: 26, spirit: 36 }
-        knockback: 10
-        backstab: 6
         durability: 250
+        blocking:
+          blockForce: 15
     - quality: 3
       stationLevel: 5
       repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 20 }
       stats:
-        damage: { slash: 32, spirit: 42 }
-        knockback: 10
-        backstab: 6
         durability: 300
+        blocking:
+          blockForce: 20
     - quality: 4
       stationLevel: 6
       repairLevel: 6
       ingredients:
         - { itemId: silver, qty: 30 }
       stats:
-        damage: { slash: 38, spirit: 48 }
-        knockback: 10
-        backstab: 6
         durability: 350
-
+        blocking:
+          blockForce: 25
 - id: crystal-battleaxe
   name: Crystal Battleaxe
   type: crafting
+  biome: mountain
   station: forge
   stationLevel: 3
   repairLevel: 3
@@ -2806,11 +3227,28 @@
   yields: { itemId: crystal-battleaxe, qty: 1 }
   tags: [battleaxe, two-handed, tier-4]
   stats:
-    damage: { slash: 60, spirit: 30 }
-    knockback: 50
-    backstab: 3
-    durability: 200
     weight: 3.5
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 90, spirit: 30, chop: 50 }
+      knockback: 70
+      backstab: 3
+      stagger: 135
+      adrenaline: 2
+    secondaryAttack:
+      damage: { slash: 45, spirit: 15, chop: 25 }
+      knockback: 140
+      backstab: 3
+      stagger: 180
+      adrenaline: 1
+    blocking:
+      blockArmor: 40
+      parryBlockArmor: 80
+      blockForce: 30
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -2819,10 +3257,9 @@
         - { itemId: crystal, qty: 10 }
         - { itemId: silver, qty: 10 }
       stats:
-        damage: { slash: 66, spirit: 36 }
-        knockback: 50
-        backstab: 3
         durability: 250
+        blocking:
+          blockForce: 35
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -2830,10 +3267,9 @@
         - { itemId: crystal, qty: 20 }
         - { itemId: silver, qty: 20 }
       stats:
-        damage: { slash: 72, spirit: 42 }
-        knockback: 50
-        backstab: 3
         durability: 300
+        blocking:
+          blockForce: 40
     - quality: 4
       stationLevel: 6
       repairLevel: 6
@@ -2841,14 +3277,13 @@
         - { itemId: crystal, qty: 30 }
         - { itemId: silver, qty: 30 }
       stats:
-        damage: { slash: 78, spirit: 48 }
-        knockback: 50
-        backstab: 3
         durability: 350
-
+        blocking:
+          blockForce: 45
 - id: silver-shield
   name: Silver Shield
   type: crafting
+  biome: mountain
   station: forge
   stationLevel: 3
   repairLevel: 3
@@ -2858,10 +3293,16 @@
   yields: { itemId: silver-shield, qty: 1 }
   tags: [shield, tier-4]
   stats:
-    block: 75
-    parry: 60
+    weight: 3
     durability: 200
-    weight: 3.0
+    movementPenalty: -5
+    blocking:
+      blockArmor: 60
+      parryBlockArmor: 90
+      blockForce: 50
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -2870,9 +3311,9 @@
         - { itemId: silver, qty: 5 }
         - { itemId: fine-wood, qty: 5 }
       stats:
-        block: 78
-        parry: 60
         durability: 250
+        blocking:
+          blockForce: 55
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -2880,9 +3321,9 @@
         - { itemId: silver, qty: 10 }
         - { itemId: fine-wood, qty: 10 }
       stats:
-        block: 81
-        parry: 60
         durability: 300
+        blocking:
+          blockForce: 60
     - quality: 4
       stationLevel: 6
       repairLevel: 6
@@ -2890,14 +3331,13 @@
         - { itemId: silver, qty: 15 }
         - { itemId: fine-wood, qty: 15 }
       stats:
-        block: 84
-        parry: 60
         durability: 350
-
+        blocking:
+          blockForce: 65
 - id: serpent-scale-shield
   name: Serpent Scale Shield
   type: crafting
-  biome: swamp
+  biome: ocean
   station: forge
   stationLevel: 3
   repairLevel: 3
@@ -3089,8 +3529,10 @@
 - id: silver-arrow
   name: Silver Arrow
   type: crafting
+  biome: mountain
   station: forge
-  stationLevel: 1
+  stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: wood, qty: 8 }
     - { itemId: silver, qty: 1 }
@@ -3098,6 +3540,10 @@
   yields: { itemId: silver-arrow, qty: 20 }
   tags: [arrow, tier-4]
 
+  stats:
+    primaryAttack:
+      damage: { pierce: 52, spirit: 20 }
+      stagger: 52
 # Plains tier (forge level 4)
 - id: black-metal-sword
   name: Black Metal Sword
@@ -3802,6 +4248,7 @@
 - id: silver-sword
   name: Silver Sword
   type: crafting
+  biome: mountain
   station: forge
   stationLevel: 3
   repairLevel: 3
@@ -3812,11 +4259,23 @@
   yields: { itemId: silver-sword, qty: 1 }
   tags: [sword, one-handed, tier-4]
   stats:
-    damage: { slash: 55, spirit: 30 }
-    knockback: 40
-    backstab: 3
+    weight: 1
     durability: 200
-    weight: 1.6
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 75, spirit: 30 }
+      knockback: 40
+      backstab: 3
+      stagger: 75
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 225, spirit: 90 }
+      backstab: 3
+      stagger: 225
+      adrenaline: 3
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -3826,10 +4285,9 @@
         - { itemId: wood, qty: 2 }
         - { itemId: leather-scraps, qty: 2 }
       stats:
-        damage: { slash: 61, spirit: 36 }
-        knockback: 40
-        backstab: 3
         durability: 250
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -3838,10 +4296,9 @@
         - { itemId: wood, qty: 4 }
         - { itemId: leather-scraps, qty: 4 }
       stats:
-        damage: { slash: 67, spirit: 42 }
-        knockback: 40
-        backstab: 3
         durability: 300
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 6
       repairLevel: 6
@@ -3850,11 +4307,9 @@
         - { itemId: wood, qty: 6 }
         - { itemId: leather-scraps, qty: 6 }
       stats:
-        damage: { slash: 73, spirit: 48 }
-        knockback: 40
-        backstab: 3
         durability: 350
-
+        blocking:
+          blockForce: 35
 # ── Black Forge ────────────────────────────────────────────────────────────────
 
 # Mistlands weapons (Black Forge level 1–2)
@@ -5741,20 +6196,29 @@
 - id: carapace-arrow
   name: Carapace Arrow
   type: crafting
+  biome: mistlands
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 4 }
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: carapace-arrow, qty: 20 }
   tags: [arrow, tier-6]
+  stats:
+    primaryAttack:
+      damage: { pierce: 72 }
+      knockback: 15
+      stagger: 72
 
 - id: charred-arrow
   name: Charred Arrow
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: charred-bone, qty: 4 }
     - { itemId: yggdrasil-wood, qty: 8 }
@@ -5762,18 +6226,30 @@
   yields: { itemId: charred-arrow, qty: 20 }
   tags: [arrow, elemental, tier-6]
 
+  stats:
+    primaryAttack:
+      damage: { pierce: 82 }
+      knockback: 15
+      stagger: 82
 # Black Forge bolts (for crossbows)
 - id: iron-bolt
   name: Iron Bolt
   type: crafting
+  biome: swamp
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: iron, qty: 2 }
     - { itemId: wood, qty: 4 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: iron-bolt, qty: 20 }
   tags: [bolt, tier-3]
+  stats:
+    primaryAttack:
+      damage: { pierce: 42 }
+      knockback: 0
+      stagger: 42
 
 - id: bone-bolt
   name: Bone Bolt
@@ -5802,20 +6278,29 @@
 - id: carapace-bolt
   name: Carapace Bolt
   type: crafting
+  biome: mistlands
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 4 }
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: carapace-bolt, qty: 20 }
   tags: [bolt, tier-6]
+  stats:
+    primaryAttack:
+      damage: { pierce: 72 }
+      knockback: 0
+      stagger: 72
 
 - id: charred-bolt
   name: Charred Bolt
   type: crafting
+  biome: ashlands
   station: black-forge
-  stationLevel: 3
+  stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: charred-bone, qty: 4 }
     - { itemId: yggdrasil-wood, qty: 4 }
@@ -5823,6 +6308,11 @@
   yields: { itemId: charred-bolt, qty: 20 }
   tags: [bolt, elemental, tier-6]
 
+  stats:
+    primaryAttack:
+      damage: { pierce: 82 }
+      knockback: 0
+      stagger: 82
 # Black Forge gem-upgraded weapons (Ashlands)
 - id: bloodgeon
   name: Bloodgeon
@@ -7787,3 +8277,312 @@
     - { itemId: wood, qty: 4 }
   yields: { itemId: ballista-bolt, qty: 20 }
   tags: [bolt, siege, tier-5]
+
+- id: torch
+  name: Torch
+  type: crafting
+  biome: meadows
+  station: player-crafting
+  stationLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 1 }
+    - { itemId: resin, qty: 1 }
+  yields: { itemId: torch, qty: 1 }
+  tags: [club, one-handed, utility, tier-0]
+  stats:
+    weight: 1
+    durability: 20
+    movementPenalty: -5
+    primaryAttack:
+      damage: { blunt: 4, fire: 15 }
+      knockback: 30
+      backstab: 3
+      stagger: 4
+      stamina: 4
+      adrenaline: 1
+    secondaryAttack:
+      damage: { blunt: 10, fire: 37.5 }
+      knockback: 60
+      backstab: 3
+      stagger: 20
+      stamina: 8
+      adrenaline: 3
+    blocking:
+      blockForce: 20
+      parryBonus: 2
+
+- id: early-axes
+  name: Early Axes
+  type: crafting
+  biome: meadows
+  station: workbench
+  stationLevel: 1
+  repairLevel: 1
+  ingredients:
+    - { itemId: curious-axe-head, qty: 1 }
+    - { itemId: mysterious-axe-head, qty: 1 }
+    - { itemId: wood, qty: 4 }
+  yields: { itemId: early-axes, qty: 1 }
+  tags: [axe, dual-wield, tier-0]
+  stats:
+    weight: 2
+    durability: 175
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 30, chop: 35 }
+      knockback: 20
+      backstab: 3
+      stagger: 30
+      stamina: 6
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 45, chop: 52.5 }
+      backstab: 3
+      stagger: 45
+      stamina: 16
+      adrenaline: 1
+    blocking:
+      blockArmor: 4
+      parryBlockArmor: 8
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+
+  upgrades:
+    - quality: 2
+      stationLevel: 2
+      repairLevel: 2
+      ingredients:
+        - { itemId: wood, qty: 6 }
+        - { itemId: leather-scraps, qty: 2 }
+      stats:
+        durability: 225
+        primaryAttack:
+          damage: { slash: 35, chop: 38 }
+          stagger: 35
+        secondaryAttack:
+          damage: { slash: 52.5, chop: 57 }
+          stagger: 52.5
+        blocking:
+          blockForce: 25
+    - quality: 3
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: wood, qty: 8 }
+        - { itemId: leather-scraps, qty: 4 }
+      stats:
+        durability: 275
+        primaryAttack:
+          damage: { slash: 40, chop: 41 }
+          stagger: 40
+        secondaryAttack:
+          damage: { slash: 60, chop: 61.5 }
+          stagger: 60
+        blocking:
+          blockForce: 30
+    - quality: 4
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: wood, qty: 10 }
+        - { itemId: leather-scraps, qty: 6 }
+      stats:
+        durability: 325
+        primaryAttack:
+          damage: { slash: 45, chop: 44 }
+          stagger: 45
+        secondaryAttack:
+          damage: { slash: 67.5, chop: 66 }
+          stagger: 67.5
+        blocking:
+          blockForce: 35
+- id: butcher-knife
+  name: Butcher Knife
+  type: crafting
+  biome: black-forest
+  station: forge
+  stationLevel: 1
+  repairLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 2 }
+    - { itemId: tin, qty: 4 }
+  yields: { itemId: butcher-knife, qty: 1 }
+  tags: [knife, one-handed, tier-2]
+  stats:
+    primaryAttack:
+      damage: { pure: 1000 }
+      knockback: 0
+      backstab: 1
+      stamina: 5
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pure: 3000 }
+      backstab: 1
+      stagger: 0
+      stamina: 15
+      adrenaline: 1
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 8
+      blockForce: 10
+      parryBonus: 4
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+
+- id: paws-of-the-bear
+  name: Paws of the Bear
+  type: crafting
+  biome: black-forest
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 2 }
+    - { itemId: bear-paw, qty: 2 }
+    - { itemId: leather-scraps, qty: 4 }
+  yields: { itemId: paws-of-the-bear, qty: 1 }
+  tags: [fists, two-handed, tier-2]
+  stats:
+    durability: 300
+    primaryAttack:
+      damage: { slash: 25 }
+      backstab: 6
+      stagger: 25
+      stamina: 6
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 25 }
+      backstab: 6
+      stagger: 150
+      stamina: 12
+      adrenaline: 1
+    blocking:
+      blockArmor: 5
+      parryBlockArmor: 30
+      blockForce: 20
+      parryBonus: 6
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+
+- id: ooze-bomb
+  name: Ooze Bomb
+  type: crafting
+  biome: swamp
+  station: workbench
+  stationLevel: 1
+  ingredients:
+    - { itemId: leather-scraps, qty: 5 }
+    - { itemId: ooze, qty: 5 }
+    - { itemId: resin, qty: 3 }
+  yields: { itemId: ooze-bomb, qty: 5 }
+  tags: [bomb, throwable, tier-3]
+  stats:
+    weight: 0.3
+    primaryAttack:
+      damage: { blunt: 5 }
+      knockback: 40
+      backstab: 3
+      stagger: 5
+    blocking:
+      parryBonus: 1.5
+
+- id: flesh-rippers
+  name: Flesh Rippers
+  type: crafting
+  biome: mountain
+  station: forge
+  stationLevel: 3
+  repairLevel: 3
+  ingredients:
+    - { itemId: silver, qty: 6 }
+    - { itemId: wolf-fang, qty: 6 }
+    - { itemId: leather-scraps, qty: 6 }
+  yields: { itemId: flesh-rippers, qty: 1 }
+  tags: [fists, two-handed, tier-4]
+  stats:
+    durability: 300
+    primaryAttack:
+      damage: { slash: 60 }
+      backstab: 6
+      stagger: 60
+      stamina: 10
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 60 }
+      backstab: 6
+      stagger: 360
+      stamina: 20
+      adrenaline: 1
+    blocking:
+      blockArmor: 5
+      parryBlockArmor: 30
+      blockForce: 20
+      parryBonus: 6
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+
+- id: dvergr-lantern
+  name: Dvergr Lantern
+  type: crafting
+  biome: mistlands
+  station: black-forge
+  stationLevel: 1
+  repairLevel: 1
+  ingredients:
+    - { itemId: bronze, qty: 2 }
+    - { itemId: surtling-core, qty: 1 }
+    - { itemId: crystal, qty: 1 }
+  yields: { itemId: dvergr-lantern, qty: 1 }
+  tags: [utility, one-handed, tier-5]
+  stats:
+    weight: 2
+    durability: 0
+    movementPenalty: -5
+    primaryAttack:
+      stamina: 4
+    blocking:
+      blockArmor: 3
+      parryBlockArmor: 6
+      blockForce: 20
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+
+- id: wooden-missile
+  name: Wooden Missile
+  type: crafting
+  biome: mistlands
+  station: artisan-table
+  stationLevel: 1
+  repairLevel: 1
+  ingredients:
+    - { itemId: corewood, qty: 5 }
+    - { itemId: feathers, qty: 2 }
+  yields: { itemId: wooden-missile, qty: 20 }
+  tags: [missile, ammo, tier-5]
+  stats:
+    primaryAttack:
+      damage: { pierce: 75 }
+      knockback: 45
+      stagger: 75
+
+- id: flametal-missile
+  name: Flametal Missile
+  type: crafting
+  biome: mistlands
+  station: artisan-table
+  stationLevel: 1
+  repairLevel: 1
+  ingredients:
+    - { itemId: ashwood, qty: 10 }
+    - { itemId: flametal, qty: 1 }
+  yields: { itemId: flametal-missile, qty: 20 }
+  tags: [missile, ammo, tier-6]
+  stats:
+    primaryAttack:
+      damage: { pierce: 140 }
+      knockback: 60
+      stagger: 140
+

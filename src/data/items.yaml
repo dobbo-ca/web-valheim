@@ -254,6 +254,8 @@
 - { id: hammer, name: Hammer, category: tool, stackSize: 1 }
 - { id: hoe, name: Hoe, category: tool, stackSize: 1 }
 - { id: club, name: Club, category: tool, stackSize: 1 }
+- { id: torch, name: Torch, category: weapon, stackSize: 1 }
+- { id: early-axes, name: Early Axes, category: weapon, stackSize: 1 }
 - { id: crude-bow, name: Crude Bow, category: weapon, stackSize: 1 }
 - { id: stone-axe, name: Stone Axe, category: weapon, stackSize: 1 }
 - { id: flint-axe, name: Flint Axe, category: weapon, stackSize: 1 }
@@ -278,6 +280,8 @@
 - { id: abyssal-razor, name: Abyssal Razor, category: weapon, stackSize: 1 }
 - { id: abyssal-harpoon, name: Abyssal Harpoon, category: weapon, stackSize: 1 }
 - { id: copper-knife, name: Copper Knife, category: weapon, stackSize: 1 }
+- { id: butcher-knife, name: Butcher Knife, category: weapon, stackSize: 1 }
+- { id: paws-of-the-bear, name: Paws of the Bear, category: weapon, stackSize: 1 }
 - { id: bronze-axe, name: Bronze Axe, category: weapon, stackSize: 1 }
 - { id: bronze-pickaxe, name: Bronze Pickaxe, category: weapon, stackSize: 1 }
 - { id: bronze-mace, name: Bronze Mace, category: weapon, stackSize: 1 }
@@ -299,6 +303,7 @@
 - { id: iron-buckler, name: Iron Buckler, category: tool, stackSize: 1 }
 - { id: iron-tower-shield, name: Iron Tower Shield, category: tool, stackSize: 1 }
 - { id: banded-shield, name: Banded Shield, category: tool, stackSize: 1 }
+- { id: ooze-bomb, name: Ooze Bomb, category: weapon, stackSize: 50 }
 - { id: iron-helmet, name: Iron Helmet, category: armor, stackSize: 1 }
 - { id: iron-scale-mail, name: Iron Scale Mail, category: armor, stackSize: 1 }
 - { id: iron-greaves, name: Iron Greaves, category: armor, stackSize: 1 }
@@ -309,6 +314,7 @@
 - { id: fang-spear, name: Fang Spear, category: weapon, stackSize: 1 }
 - { id: silver-knife, name: Silver Knife, category: weapon, stackSize: 1 }
 - { id: crystal-battleaxe, name: Crystal Battleaxe, category: weapon, stackSize: 1 }
+- { id: flesh-rippers, name: Flesh Rippers, category: weapon, stackSize: 1 }
 - { id: silver-shield, name: Silver Shield, category: tool, stackSize: 1 }
 - { id: serpent-scale-shield, name: Serpent Scale Shield, category: tool, stackSize: 1 }
 - { id: wolf-armor-chest, name: Wolf Armor Chest, category: armor, stackSize: 1 }
@@ -339,6 +345,9 @@
 - { id: skoll-and-hati, name: Skoll and Hati, category: weapon, stackSize: 1 }
 - { id: demolisher, name: Demolisher, category: weapon, stackSize: 1 }
 - { id: skull-splittur, name: Skull Splittur, category: weapon, stackSize: 1 }
+- { id: dvergr-lantern, name: Dvergr Lantern, category: weapon, stackSize: 1 }
+- { id: wooden-missile, name: Wooden Missile, category: weapon, stackSize: 20 }
+- { id: flametal-missile, name: Flametal Missile, category: weapon, stackSize: 20 }
 - { id: bile-bomb, name: Bile Bomb, category: weapon, stackSize: 50 }
 - { id: splitnir, name: Splitnir, category: weapon, stackSize: 1 }
 - { id: berserkir, name: Berserkir, category: weapon, stackSize: 1 }

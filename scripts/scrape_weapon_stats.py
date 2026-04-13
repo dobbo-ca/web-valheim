@@ -296,7 +296,7 @@ def resolve_page_title(weapon_name: str) -> str | None:
 
 def extract_infobox_weapon(wikitext: str) -> dict[str, str]:
     # Find the start of {{Infobox weapon and then balance braces to find the real end
-    start_match = re.search(r'\{\{[Ii]nfobox weapon\s*\n', wikitext)
+    start_match = re.search(r'\{\{[Ii]nfobox[_ ]weapon\s*\n', wikitext)
     if not start_match:
         return {}
 
