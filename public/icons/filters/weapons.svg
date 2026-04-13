@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Sword blade (top-left to bottom-right) -->
+  <polygon points="10,6 8,10 32,36 34,32" fill="#B0B8C8"/>
+  <!-- Sword crossguard -->
+  <rect x="14" y="16" width="12" height="3" rx="1" transform="rotate(45,20,17.5)" fill="#C4A84A"/>
+  <!-- Sword grip -->
+  <rect x="31" y="31" width="3" height="10" rx="1" transform="rotate(45,32.5,36)" fill="#8B6D4A"/>
+
+  <!-- Axe handle (bottom-left to top-right) -->
+  <rect x="8" y="22" width="4" height="22" rx="2" transform="rotate(-45,10,33)" fill="#8B6D4A"/>
+  <!-- Axe head -->
+  <polygon points="30,8 40,4 42,16 30,16" fill="#B0B8C8"/>
+</svg>

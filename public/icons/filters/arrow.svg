@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Shaft -->
+  <rect x="23" y="10" width="2.5" height="30" fill="#8B6D4A"/>
+  <!-- Tip -->
+  <polygon points="24.25,4 21,10 27.5,10" fill="#B0B8C8"/>
+  <!-- Fletching left -->
+  <polygon points="23,40 18,44 22,36" fill="#A04040"/>
+  <!-- Fletching right -->
+  <polygon points="25.5,40 30,44 26,36" fill="#A04040"/>
+  <!-- Nock -->
+  <rect x="22.5" y="40" width="3.5" height="4" rx="1" fill="#6A5030"/>
+</svg>

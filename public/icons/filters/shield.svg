@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Metal rim -->
+  <circle cx="24" cy="24" r="20" fill="#B0B8C8"/>
+  <!-- Wood face -->
+  <circle cx="24" cy="24" r="17" fill="#8B6D4A"/>
+  <!-- Planks detail -->
+  <line x1="24" y1="7" x2="24" y2="41" stroke="#7A5C3A" stroke-width="2"/>
+  <line x1="7" y1="24" x2="41" y2="24" stroke="#7A5C3A" stroke-width="2"/>
+  <!-- Center boss -->
+  <circle cx="24" cy="24" r="5" fill="#C4A84A"/>
+  <!-- Boss rivet -->
+  <circle cx="24" cy="24" r="2" fill="#A08830"/>
+</svg>

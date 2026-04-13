@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Handle -->
+  <rect x="22" y="8" width="4" height="38" rx="2" fill="#8B6D4A"/>
+  <!-- Upper axe head (right) -->
+  <polygon points="24,10 36,6 38,18 26,18" fill="#B0B8C8"/>
+  <!-- Upper axe head (left) -->
+  <polygon points="24,10 12,6 10,18 22,18" fill="#B0B8C8"/>
+  <!-- Lower axe head (right) -->
+  <polygon points="24,38 36,34 38,42 26,42" fill="#B0B8C8"/>
+  <!-- Lower axe head (left) -->
+  <polygon points="24,38 12,34 10,42 22,42" fill="#B0B8C8"/>
+</svg>

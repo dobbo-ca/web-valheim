@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Sky -->
+  <rect x="0" y="0" width="48" height="32" fill="#87CEEB"/>
+  <!-- Sun -->
+  <circle cx="36" cy="10" r="6" fill="#F4D03F"/>
+  <!-- Rolling hills -->
+  <ellipse cx="12" cy="38" rx="18" ry="12" fill="#6AA84F"/>
+  <ellipse cx="38" cy="40" rx="16" ry="10" fill="#6AA84F"/>
+  <!-- Ground -->
+  <rect x="0" y="36" width="48" height="12" fill="#6AA84F"/>
+</svg>

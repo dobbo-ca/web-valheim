@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Center glow -->
+  <circle cx="24" cy="24" r="6" fill="#B08AEA"/>
+  <!-- Large star points -->
+  <polygon points="24,4 26,20 28,4" fill="#8A5ACA"/>
+  <polygon points="24,44 22,28 20,44" fill="#8A5ACA"/>
+  <polygon points="4,24 20,22 4,20" fill="#8A5ACA"/>
+  <polygon points="44,24 28,26 44,28" fill="#8A5ACA"/>
+  <!-- Diagonal star points -->
+  <polygon points="10,10 20,22 8,22" fill="#8A5ACA"/>
+  <polygon points="38,10 26,22 38,22" fill="#8A5ACA"/>
+  <polygon points="10,38 22,26 10,26" fill="#8A5ACA"/>
+  <polygon points="38,38 26,26 38,26" fill="#8A5ACA"/>
+  <!-- Small sparkle dots -->
+  <circle cx="24" cy="24" r="4" fill="#B08AEA"/>
+  <circle cx="14" cy="10" r="2" fill="#B08AEA"/>
+  <circle cx="34" cy="38" r="2" fill="#B08AEA"/>
+</svg>

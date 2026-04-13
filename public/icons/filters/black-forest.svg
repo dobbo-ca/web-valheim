@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Sky with purple hint -->
+  <rect x="0" y="0" width="48" height="48" fill="#3A3050"/>
+  <!-- Ground -->
+  <rect x="0" y="36" width="48" height="12" fill="#2D5A27"/>
+  <!-- Left pine tree -->
+  <polygon points="8,34 14,34 11,24" fill="#2D5A27"/>
+  <polygon points="6,28 16,28 11,16" fill="#2D5A27"/>
+  <rect x="10" y="34" width="2" height="4" fill="#1A1A2E"/>
+  <!-- Center pine tree (taller) -->
+  <polygon points="20,36 28,36 24,22" fill="#2D5A27"/>
+  <polygon points="18,28 30,28 24,12" fill="#2D5A27"/>
+  <rect x="23" y="36" width="2" height="4" fill="#1A1A2E"/>
+  <!-- Right pine tree -->
+  <polygon points="34,34 40,34 37,24" fill="#2D5A27"/>
+  <polygon points="32,28 42,28 37,16" fill="#2D5A27"/>
+  <rect x="36" y="34" width="2" height="4" fill="#1A1A2E"/>
+</svg>

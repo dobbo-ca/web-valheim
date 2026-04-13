@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Shaft diagonal -->
+  <rect x="21" y="3" width="6" height="42" rx="2" transform="rotate(15,24,24)" fill="#8B6D4A"/>
+  <!-- Tip -->
+  <polygon points="34,4 30,6 28,14 36,10" fill="#B0B8C8"/>
+</svg>

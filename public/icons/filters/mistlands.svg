@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Dark sky background -->
+  <rect x="0" y="0" width="48" height="48" fill="#2A1A3A"/>
+  <!-- Mist layers -->
+  <ellipse cx="24" cy="36" rx="26" ry="10" fill="#6A4A8A" opacity="0.7"/>
+  <ellipse cx="24" cy="30" rx="22" ry="8" fill="#6A4A8A" opacity="0.5"/>
+  <!-- Dark silhouette trees -->
+  <polygon points="10,38 16,38 13,24" fill="#2A1A3A"/>
+  <polygon points="8,32 18,32 13,18" fill="#2A1A3A"/>
+  <polygon points="30,40 38,40 34,22" fill="#2A1A3A"/>
+  <polygon points="28,32 40,32 34,14" fill="#2A1A3A"/>
+  <!-- Faint glow spot -->
+  <ellipse cx="24" cy="20" rx="8" ry="5" fill="#8A6AAA" opacity="0.4"/>
+</svg>

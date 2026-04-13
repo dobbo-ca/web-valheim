@@ -1104,6 +1104,16 @@ h3 {
 .filter-chip--sm {
   padding: 4px 10px;
   font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.filter-icon {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  flex-shrink: 0;
 }
 .filter-chip--group {
   font-weight: 600;

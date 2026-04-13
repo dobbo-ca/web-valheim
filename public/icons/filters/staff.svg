@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Staff shaft -->
+  <rect x="22" y="16" width="4" height="30" rx="2" fill="#8B6D4A"/>
+  <!-- Orb glow ring -->
+  <circle cx="24" cy="11" r="9" fill="#3A5A9C"/>
+  <!-- Orb -->
+  <circle cx="24" cy="11" r="7" fill="#6088CC"/>
+  <!-- Orb highlight -->
+  <circle cx="21" cy="8" r="2.5" fill="#90B0E8"/>
+</svg>

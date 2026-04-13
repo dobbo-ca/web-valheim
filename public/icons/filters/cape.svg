@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Cape main body -->
+  <polygon points="10,6 38,6 42,44 6,44" fill="#8B3030"/>
+  <!-- Fold highlight (lighter inner fold) -->
+  <polygon points="24,6 38,6 34,44 24,44" fill="#A04040"/>
+  <!-- Clasp/collar bar -->
+  <rect x="14" y="5" width="20" height="5" rx="2" fill="#C4A84A"/>
+</svg>

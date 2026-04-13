@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Shield (background, left-leaning) -->
+  <circle cx="18" cy="30" r="14" fill="#B0B8C8"/>
+  <circle cx="18" cy="30" r="11" fill="#8B6D4A"/>
+  <circle cx="18" cy="30" r="4" fill="#C4A84A"/>
+
+  <!-- Helmet (foreground, top-right) -->
+  <ellipse cx="34" cy="16" rx="11" ry="9" fill="#B0B8C8"/>
+  <!-- Brow band -->
+  <rect x="23" y="19" width="22" height="3" rx="1" fill="#5A6070"/>
+  <!-- Nose guard -->
+  <rect x="32" y="19" width="3" height="7" rx="1" fill="#5A6070"/>
+</svg>

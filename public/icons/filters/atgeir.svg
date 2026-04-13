@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Long shaft -->
+  <rect x="22" y="10" width="4" height="36" rx="2" fill="#8B6D4A"/>
+  <!-- Polearm blade -->
+  <polygon points="24,2 19,10 24,14 29,10" fill="#B0B8C8"/>
+  <!-- Side wings of blade -->
+  <polygon points="19,10 14,8 17,14" fill="#B0B8C8"/>
+  <polygon points="29,10 34,8 31,14" fill="#B0B8C8"/>
+</svg>

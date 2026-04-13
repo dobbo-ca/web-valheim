@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Steam wisps -->
+  <ellipse cx="18" cy="6" rx="2" ry="4" fill="#D0D0D0" opacity="0.8"/>
+  <ellipse cx="24" cy="4" rx="2" ry="5" fill="#D0D0D0" opacity="0.8"/>
+  <ellipse cx="30" cy="6" rx="2" ry="4" fill="#D0D0D0" opacity="0.8"/>
+  <!-- Cauldron rim -->
+  <rect x="8" y="16" width="32" height="4" rx="2" fill="#5A5A60"/>
+  <!-- Cauldron body -->
+  <ellipse cx="24" cy="30" rx="18" ry="14" fill="#4A4A50"/>
+  <!-- Cauldron legs -->
+  <rect x="12" y="38" width="4" height="8" rx="1" fill="#4A4A50"/>
+  <rect x="32" y="38" width="4" height="8" rx="1" fill="#4A4A50"/>
+  <!-- Fire -->
+  <polygon points="16,40 20,30 24,40" fill="#CC6622"/>
+  <polygon points="20,40 24,28 28,40" fill="#CC6622"/>
+  <polygon points="24,40 28,32 32,40" fill="#CC6622"/>
+</svg>

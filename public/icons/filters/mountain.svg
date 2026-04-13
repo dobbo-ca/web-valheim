@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Sky -->
+  <rect x="0" y="0" width="48" height="48" fill="#A0C0E0"/>
+  <!-- Mountain rock base -->
+  <polygon points="24,4 46,44 2,44" fill="#8090A0"/>
+  <!-- Snow cap -->
+  <polygon points="24,4 34,22 14,22" fill="#E8E8F0"/>
+  <!-- Ground -->
+  <rect x="0" y="40" width="48" height="8" fill="#8090A0"/>
+</svg>

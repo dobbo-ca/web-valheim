@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Blade -->
+  <polygon points="24,6 21,28 27,28" fill="#B0B8C8"/>
+  <!-- Guard -->
+  <rect x="19" y="28" width="10" height="3" rx="1" fill="#5A4A3A"/>
+  <!-- Hilt -->
+  <rect x="21" y="31" width="6" height="11" rx="2" fill="#5A4A3A"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Dome -->
+  <ellipse cx="24" cy="20" rx="16" ry="14" fill="#B0B8C8"/>
+  <!-- Cheek guards -->
+  <rect x="8" y="26" width="8" height="12" rx="3" fill="#B0B8C8"/>
+  <rect x="32" y="26" width="8" height="12" rx="3" fill="#B0B8C8"/>
+  <!-- Nose guard -->
+  <rect x="22" y="26" width="4" height="10" rx="2" fill="#5A6070"/>
+  <!-- Brow band -->
+  <rect x="8" y="28" width="32" height="4" rx="1" fill="#5A6070"/>
+  <!-- Nasal rivet -->
+  <circle cx="24" cy="26" r="2" fill="#5A6070"/>
+</svg>

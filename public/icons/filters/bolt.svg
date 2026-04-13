@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Shaft (shorter, horizontal-ish but vertical) -->
+  <rect x="23" y="14" width="2.5" height="22" fill="#8B6D4A"/>
+  <!-- Dark tip -->
+  <polygon points="24.25,8 21,14 27.5,14" fill="#5A6070"/>
+  <!-- Fletching left -->
+  <polygon points="23,36 19,40 22,30" fill="#A04040"/>
+  <!-- Fletching right -->
+  <polygon points="25.5,36 29,40 26,30" fill="#A04040"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Handle -->
+  <rect x="22" y="28" width="4" height="18" rx="2" fill="#8B6D4A"/>
+  <!-- Mace head body -->
+  <rect x="18" y="12" width="12" height="18" rx="3" fill="#5A6070"/>
+  <!-- Spikes -->
+  <polygon points="24,4 21,12 27,12" fill="#5A6070"/>
+  <polygon points="14,15 18,18 18,22" fill="#5A6070"/>
+  <polygon points="34,15 30,18 30,22" fill="#5A6070"/>
+  <polygon points="24,30 21,26 27,26" fill="#5A6070"/>
+</svg>

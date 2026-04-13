@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Handle -->
+  <rect x="30" y="28" width="6" height="18" rx="3" fill="#8B6D4A" transform="rotate(-45 33 37)"/>
+  <!-- Pickaxe head body -->
+  <rect x="8" y="16" width="26" height="8" rx="2" fill="#B0B8C8" transform="rotate(-45 21 20)"/>
+  <!-- Pick point (right) -->
+  <polygon points="32,8 40,14 36,18" fill="#B0B8C8"/>
+  <!-- Pick point (left/blunt end) -->
+  <polygon points="6,28 10,22 14,26" fill="#B0B8C8"/>
+</svg>

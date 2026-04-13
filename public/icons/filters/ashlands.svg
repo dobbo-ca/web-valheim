@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Dark sky -->
+  <rect x="0" y="0" width="48" height="48" fill="#3A2A2A"/>
+  <!-- Lava rivers -->
+  <rect x="0" y="32" width="48" height="16" fill="#3A2A2A"/>
+  <ellipse cx="12" cy="36" rx="14" ry="5" fill="#CC4422"/>
+  <ellipse cx="38" cy="38" rx="12" ry="4" fill="#CC4422"/>
+  <!-- Lava glow center -->
+  <ellipse cx="24" cy="40" rx="8" ry="3" fill="#FF6644"/>
+  <!-- Rocky terrain -->
+  <polygon points="0,36 10,22 20,36" fill="#3A2A2A"/>
+  <polygon points="28,36 38,18 48,36" fill="#3A2A2A"/>
+  <!-- Ember particles -->
+  <circle cx="18" cy="14" r="2" fill="#FF6644"/>
+  <circle cx="30" cy="10" r="1" fill="#FF6644"/>
+  <circle cx="24" cy="18" r="2" fill="#CC4422"/>
+</svg>

@@ -4,13 +4,16 @@ import type { Station } from '../lib/types';
 
 interface TagGroup {
   label: string;
+  icon: string;
   tags: string[];
 }
 
+const ICON_BASE = '/valheim/icons/filters';
+
 const tagGroups: TagGroup[] = [
-  { label: 'Weapons', tags: ['sword', 'axe', 'mace', 'spear', 'knife', 'atgeir', 'sledge', 'battleaxe', 'club'] },
-  { label: 'Projectiles', tags: ['bow', 'crossbow', 'arrow', 'bolt', 'staff'] },
-  { label: 'Armor', tags: ['helmet', 'chest', 'legs', 'cape', 'shield', 'tower-shield'] },
+  { label: 'Weapons', icon: 'weapons', tags: ['sword', 'axe', 'mace', 'spear', 'knife', 'atgeir', 'sledge', 'battleaxe', 'club'] },
+  { label: 'Projectiles', icon: 'projectiles', tags: ['bow', 'crossbow', 'arrow', 'bolt', 'staff'] },
+  { label: 'Armor', icon: 'armor', tags: ['helmet', 'chest', 'legs', 'cape', 'shield', 'tower-shield'] },
 ];
 
 const standaloneTags = ['tool', 'station-upgrade', 'utility', 'magic', 'elemental', 'building'];
@@ -25,11 +28,27 @@ const biomes: { label: string; value: string }[] = [
   { label: 'Ashlands', value: 'ashlands' },
 ];
 
+const typeIcons: Record<string, string> = {
+  crafting: 'crafting',
+  cooking: 'cooking',
+  building: 'building',
+};
+
 interface Props {
   state: FilterState;
   stations: Station[];
   onChange: (next: FilterState) => void;
 }
+
+const FilterIcon: Component<{ name: string }> = (props) => (
+  <img
+    class="filter-icon"
+    src={`${ICON_BASE}/${props.name}.svg`}
+    alt=""
+    width={16}
+    height={16}
+  />
+);
 
 export const AdvancedFilterPanel: Component<Props> = (props) => {
   const update = (patch: Partial<FilterState>) =>
@@ -103,6 +122,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                 classList={{ 'filter-chip--active': props.state.type === chip.value }}
                 onClick={() => update({ type: chip.value })}
               >
+                {typeIcons[chip.value] && <FilterIcon name={typeIcons[chip.value]} />}
                 {chip.label}
               </button>
             )}
@@ -140,6 +160,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                   onClick={() => toggleGroup(group)}
                   aria-label={`Toggle all ${group.label}`}
                 >
+                  <FilterIcon name={group.icon} />
                   {group.label}
                 </button>
                 <For each={group.tags}>
@@ -150,6 +171,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                       classList={{ 'filter-chip--active': props.state.tags.includes(tag) }}
                       onClick={() => toggleTag(tag)}
                     >
+                      <FilterIcon name={tag} />
                       {tag}
                     </button>
                   )}
@@ -167,6 +189,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                 classList={{ 'filter-chip--active': props.state.tags.includes(tag) }}
                 onClick={() => toggleTag(tag)}
               >
+                <FilterIcon name={tag} />
                 {tag}
               </button>
             )}
@@ -185,6 +208,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                 classList={{ 'filter-chip--active': props.state.biomes.includes(biome.value) }}
                 onClick={() => toggleBiome(biome.value)}
               >
+                <FilterIcon name={biome.value} />
                 {biome.label}
               </button>
             )}
