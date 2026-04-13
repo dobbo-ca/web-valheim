@@ -1296,3 +1296,20 @@ h3 {
   align-self: flex-start;
 }
 
+/* ===== Stat tooltip ===== */
+.stat-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.stat-tooltip {
+  color: var(--text-soft);
+  opacity: 0.4;
+  cursor: help;
+  font-size: 11px;
+  user-select: none;
+}
+.stat-tooltip:hover {
+  opacity: 0.8;
+}
+
