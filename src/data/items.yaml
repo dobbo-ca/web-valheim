@@ -27,6 +27,16 @@
 - { id: wolf-fang, name: Wolf Fang, category: material, stackSize: 20, biome: mountain }
 - { id: crystal, name: Crystal, category: material, stackSize: 50, biome: mountain }
 - { id: linen-thread, name: Linen Thread, category: material, stackSize: 50, biome: plains }
+- { id: surtling-core, name: Surtling Core, category: material, stackSize: 10, biome: swamp }
+- { id: bear-hide, name: Bear Hide, category: material, stackSize: 50, biome: black-forest }
+- { id: bear-paw, name: Bear Paw, category: material, stackSize: 20, biome: black-forest }
+- { id: tar, name: Tar, category: material, stackSize: 50, biome: plains }
+- { id: sulfur, name: Sulfur, category: material, stackSize: 50, biome: ashlands }
+- { id: corked-vial, name: Corked Vial, category: material, stackSize: 50, biome: swamp }
+- { id: blob-trophy, name: Blob Trophy, category: material, stackSize: 20, biome: swamp }
+- { id: growth-trophy, name: Growth Trophy, category: material, stackSize: 20, biome: plains }
+- { id: curious-axe-head, name: Curious Axe Head, category: material, stackSize: 1, biome: meadows }
+- { id: mysterious-axe-head, name: Mysterious Axe Head, category: material, stackSize: 1, biome: meadows }
 - { id: needle, name: Needle, category: material, stackSize: 20, biome: plains }
 - { id: chain, name: Chain, category: material, stackSize: 20, biome: swamp }
 - { id: serpent-scale, name: Serpent Scale, category: material, stackSize: 20, biome: plains }

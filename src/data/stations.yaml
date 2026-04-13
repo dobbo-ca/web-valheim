@@ -96,23 +96,29 @@
   upgrades: []
 - id: galdr-table
   name: Galdr Table
-  maxLevel: 3
+  maxLevel: 4
   upgrades:
     - level: 2
-      name: Rune Hat
+      name: Rune Table
       requires:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: sap, qty: 5 }
         - { itemId: refined-eitr, qty: 3 }
     - level: 3
-      name: Eitr Weave
+      name: Unfading Candles
       requires:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 10 }
         - { itemId: mandible, qty: 5 }
+    - level: 4
+      name: Feathery Wreath
+      requires:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 10 }
+        - { itemId: celestial-feather, qty: 5 }
 - id: black-forge
   name: Black Forge
-  maxLevel: 3
+  maxLevel: 5
   upgrades:
     - level: 2
       name: Black Forge Cooler
@@ -121,12 +127,24 @@
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 3 }
     - level: 3
-      name: Black Forge Bellows
+      name: Vice
       requires:
         - { itemId: black-marble, qty: 10 }
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 5 }
         - { itemId: mandible, qty: 3 }
+    - level: 4
+      name: Metal Cutter
+      requires:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 10 }
+        - { itemId: charred-bone, qty: 5 }
+    - level: 5
+      name: Gem Cutter
+      requires:
+        - { itemId: flametal, qty: 10 }
+        - { itemId: ashwood, qty: 10 }
+        - { itemId: sulfur, qty: 10 }
 - id: mead-ketill
   name: Mead Ketill
   maxLevel: 1
@@ -149,5 +167,9 @@
   upgrades: []
 - id: fermenter
   name: Fermenter
+  maxLevel: 1
+  upgrades: []
+- id: player-crafting
+  name: Inventory
   maxLevel: 1
   upgrades: []

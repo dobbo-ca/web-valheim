@@ -4007,7 +4007,7 @@
   stationLevel: 3
   repairLevel: 4
   ingredients:
-    - { itemId: linen, qty: 5 }
+    - { itemId: linen-thread, qty: 5 }
     - { itemId: black-metal, qty: 30 }
     - { itemId: fine-wood, qty: 10 }
   yields: { itemId: black-metal-battleaxe, qty: 1 }
@@ -4042,7 +4042,7 @@
       stationLevel: 4
       repairLevel: 5
       ingredients:
-        - { itemId: linen, qty: 5 }
+        - { itemId: linen-thread, qty: 5 }
         - { itemId: black-metal, qty: 15 }
       stats:
         durability: 250
@@ -4052,7 +4052,7 @@
       stationLevel: 5
       repairLevel: 6
       ingredients:
-        - { itemId: linen, qty: 10 }
+        - { itemId: linen-thread, qty: 10 }
         - { itemId: black-metal, qty: 30 }
       stats:
         durability: 300
@@ -4062,7 +4062,7 @@
       stationLevel: 6
       repairLevel: 7
       ingredients:
-        - { itemId: linen, qty: 15 }
+        - { itemId: linen-thread, qty: 15 }
         - { itemId: black-metal, qty: 45 }
       stats:
         durability: 350
@@ -8561,7 +8561,7 @@
   stationLevel: 1
   repairLevel: 1
   ingredients:
-    - { itemId: corewood, qty: 5 }
+    - { itemId: core-wood, qty: 5 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: wooden-missile, qty: 20 }
   tags: [missile, ammo, tier-5]
