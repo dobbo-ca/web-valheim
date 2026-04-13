@@ -10,12 +10,25 @@ import type { Item, Station, Recipe } from './types';
 
 const BIOME_ORDER: string[] = ['meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands'];
 
+// Some stations are only available in specific biomes
+const STATION_BIOME: Record<string, string> = {
+  'black-forge': 'ashlands',
+  'galdr-table': 'mistlands',
+};
+
 function computeRecipeBiome(
   recipe: Recipe,
   itemsById: Map<string, Item>,
   stationUpgradeBiomes: Map<string, Map<number, string>>,
 ): string | undefined {
   let maxIdx = -1;
+
+  // Check station biome (e.g., Black Forge = Ashlands)
+  const stationBiome = STATION_BIOME[recipe.station];
+  if (stationBiome) {
+    const idx = BIOME_ORDER.indexOf(stationBiome);
+    if (idx > maxIdx) maxIdx = idx;
+  }
 
   // Check ingredient biomes
   for (const ing of recipe.ingredients) {
@@ -29,7 +42,6 @@ function computeRecipeBiome(
   // Check station upgrade biome requirement
   const upgradeBiomes = stationUpgradeBiomes.get(recipe.station);
   if (upgradeBiomes) {
-    // Need all upgrades up to stationLevel
     for (let lvl = 2; lvl <= recipe.stationLevel; lvl++) {
       const biome = upgradeBiomes.get(lvl);
       if (biome) {
