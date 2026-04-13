@@ -77,6 +77,16 @@ export const RecipeTable: Component<Props> = (props) => {
     const params = new URLSearchParams(window.location.search);
     setState(decodeFilterState(params));
 
+    // Hydrate columns: URL param takes precedence over localStorage
+    const colsParam = params.get('cols');
+    if (colsParam) {
+      const cols = colsParam.split(',').filter((c): c is ColumnId =>
+        ['station', 'ingredients', 'stats'].includes(c),
+      );
+      setVisibleColumns(cols);
+      try { localStorage.setItem(COLUMNS_KEY, JSON.stringify(cols)); } catch {}
+    }
+
     // Hydrate cart: URL param takes precedence over localStorage
     const cartParam = params.get('cart');
     if (cartParam) {
@@ -277,10 +287,12 @@ export const RecipeTable: Component<Props> = (props) => {
     setState(next);
     setPage(1);
     const params = encodeFilterState(next);
-    // Preserve cart param across filter changes
+    // Preserve cart and cols params across filter changes
     const currentParams = new URLSearchParams(window.location.search);
     const cartParam = currentParams.get('cart');
     if (cartParam) params.set('cart', cartParam);
+    const colsParam = currentParams.get('cols');
+    if (colsParam) params.set('cols', colsParam);
     const qs = params.toString();
     const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
     window.history.replaceState({}, '', url);
@@ -315,6 +327,17 @@ export const RecipeTable: Component<Props> = (props) => {
       : [...current, col];
     setVisibleColumns(next);
     try { localStorage.setItem(COLUMNS_KEY, JSON.stringify(next)); } catch {}
+    // Update URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const sorted = [...next].sort();
+    const isDefault = sorted.length === DEFAULT_COLUMNS.length && sorted.every((c, i) => c === [...DEFAULT_COLUMNS].sort()[i]);
+    if (isDefault) {
+      urlParams.delete('cols');
+    } else {
+      urlParams.set('cols', next.join(','));
+    }
+    const qs = urlParams.toString();
+    window.history.replaceState({}, '', qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
   };
 
   const isColVisible = (col: ColumnId) => visibleColumns().includes(col);
