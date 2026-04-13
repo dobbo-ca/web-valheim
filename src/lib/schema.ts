@@ -79,6 +79,7 @@ export const ItemStatsSchema = z.object({
 
 export const ItemUpgradeSchema = z.object({
   quality: z.number().int().positive(),
+  stationLevel: z.number().int().positive(),
   ingredients: z.array(IngredientRefSchema),
   stats: ItemStatsSchema.optional(),
 });

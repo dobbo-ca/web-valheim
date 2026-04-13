@@ -18,18 +18,21 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 3 }
         - { itemId: stone, qty: 2 }
       stats:
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: stone, qty: 4 }
       stats:
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 9 }
         - { itemId: stone, qty: 6 }
@@ -51,18 +54,21 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 3 }
         - { itemId: stone, qty: 2 }
       stats:
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: stone, qty: 4 }
       stats:
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 9 }
         - { itemId: stone, qty: 6 }
@@ -87,18 +93,21 @@
     weight: 0.5
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 3 }
       stats:
         damage: { blunt: 18 }
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 6 }
       stats:
         damage: { blunt: 24 }
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 9 }
       stats:
@@ -122,18 +131,21 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 10 }
       stats:
         damage: { pierce: 28 }
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 20 }
       stats:
         damage: { pierce: 34 }
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 30 }
       stats:
@@ -157,6 +169,7 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 2 }
         - { itemId: stone, qty: 2 }
@@ -164,6 +177,7 @@
         damage: { slash: 21 }
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 4 }
         - { itemId: stone, qty: 4 }
@@ -171,6 +185,7 @@
         damage: { slash: 27 }
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: stone, qty: 6 }
@@ -196,6 +211,7 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 2 }
         - { itemId: flint, qty: 4 }
@@ -203,6 +219,7 @@
         damage: { slash: 26 }
         durability: 200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 4 }
         - { itemId: flint, qty: 8 }
@@ -210,6 +227,7 @@
         damage: { slash: 32 }
         durability: 250
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: flint, qty: 12 }
@@ -236,6 +254,7 @@
     weight: 0.3
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 2 }
         - { itemId: flint, qty: 4 }
@@ -243,6 +262,7 @@
         damage: { slash: 14, pierce: 14 }
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 4 }
         - { itemId: flint, qty: 8 }
@@ -250,6 +270,7 @@
         damage: { slash: 20, pierce: 20 }
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: flint, qty: 12 }
@@ -276,6 +297,7 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 2 }
         - { itemId: flint, qty: 4 }
@@ -283,6 +305,7 @@
         damage: { pierce: 26 }
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 4 }
         - { itemId: flint, qty: 8 }
@@ -290,6 +313,7 @@
         damage: { pierce: 32 }
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: flint, qty: 12 }
@@ -313,6 +337,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 3 }
         - { itemId: hard-antler, qty: 1 }
@@ -320,6 +345,7 @@
         damage: { pierce: 24 }
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: hard-antler, qty: 2 }
@@ -327,6 +353,7 @@
         damage: { pierce: 30 }
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 9 }
         - { itemId: hard-antler, qty: 3 }
@@ -352,6 +379,7 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: fine-wood, qty: 10 }
         - { itemId: deer-hide, qty: 2 }
@@ -359,6 +387,7 @@
         damage: { pierce: 38 }
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: fine-wood, qty: 20 }
         - { itemId: deer-hide, qty: 4 }
@@ -366,6 +395,7 @@
         damage: { pierce: 44 }
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: fine-wood, qty: 30 }
         - { itemId: deer-hide, qty: 6 }
@@ -392,18 +422,21 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: bone-fragments, qty: 10 }
       stats:
         damage: { blunt: 26 }
         durability: 150
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: bone-fragments, qty: 20 }
       stats:
         damage: { blunt: 32 }
         durability: 200
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: bone-fragments, qty: 30 }
       stats:
@@ -427,18 +460,21 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: deer-hide, qty: 5 }
       stats:
         armor: 4
         durability: 600
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: deer-hide, qty: 10 }
       stats:
         armor: 6
         durability: 800
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: deer-hide, qty: 15 }
       stats:
@@ -461,18 +497,21 @@
     weight: 5.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: deer-hide, qty: 5 }
       stats:
         armor: 4
         durability: 600
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: deer-hide, qty: 10 }
       stats:
         armor: 6
         durability: 800
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: deer-hide, qty: 15 }
       stats:
@@ -495,18 +534,21 @@
     weight: 5.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: deer-hide, qty: 5 }
       stats:
         armor: 4
         durability: 600
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: deer-hide, qty: 10 }
       stats:
         armor: 6
         durability: 800
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: deer-hide, qty: 15 }
       stats:
@@ -529,18 +571,21 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: deer-hide, qty: 5 }
       stats:
         armor: 3
         durability: 600
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: deer-hide, qty: 10 }
       stats:
         armor: 5
         durability: 800
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: deer-hide, qty: 15 }
       stats:
@@ -565,6 +610,7 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: wolf-pelt, qty: 5 }
         - { itemId: silver, qty: 2 }
@@ -572,6 +618,7 @@
         armor: 3
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: wolf-pelt, qty: 10 }
         - { itemId: silver, qty: 4 }
@@ -579,6 +626,7 @@
         armor: 5
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: wolf-pelt, qty: 15 }
         - { itemId: silver, qty: 6 }
@@ -603,6 +651,7 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: lox-pelt, qty: 5 }
         - { itemId: silver, qty: 2 }
@@ -610,6 +659,7 @@
         armor: 3
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: lox-pelt, qty: 10 }
         - { itemId: silver, qty: 4 }
@@ -617,6 +667,7 @@
         armor: 5
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: lox-pelt, qty: 15 }
         - { itemId: silver, qty: 6 }
@@ -640,18 +691,21 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
       stats:
         armor: 8
         durability: 700
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
       stats:
         armor: 10
         durability: 900
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
       stats:
@@ -674,18 +728,21 @@
     weight: 5.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
       stats:
         armor: 8
         durability: 700
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
       stats:
         armor: 10
         durability: 900
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
       stats:
@@ -708,18 +765,21 @@
     weight: 5.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
       stats:
         armor: 8
         durability: 700
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
       stats:
         armor: 10
         durability: 900
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
       stats:
@@ -742,18 +802,21 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
       stats:
         armor: 3
         durability: 700
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
       stats:
         armor: 5
         durability: 900
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
       stats:
@@ -778,18 +841,21 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 5 }
       stats:
         block: 22
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 10 }
       stats:
         block: 24
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 15 }
       stats:
@@ -812,18 +878,21 @@
     weight: 10.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: wood, qty: 5 }
       stats:
         block: 33
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: wood, qty: 10 }
       stats:
         block: 36
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: wood, qty: 15 }
       stats:
@@ -847,18 +916,21 @@
     weight: 10.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bone-fragments, qty: 10 }
       stats:
         block: 44
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bone-fragments, qty: 20 }
       stats:
         block: 48
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bone-fragments, qty: 30 }
       stats:
@@ -969,6 +1041,7 @@
     weight: 0.3
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: chitin, qty: 10 }
       stats:
@@ -977,6 +1050,7 @@
         backstab: 6
         durability: 250
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: chitin, qty: 20 }
       stats:
@@ -985,6 +1059,7 @@
         backstab: 6
         durability: 300
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: chitin, qty: 30 }
       stats:
@@ -1012,6 +1087,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: chitin, qty: 10 }
       stats:
@@ -1019,6 +1095,7 @@
         knockback: 50
         durability: 100
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: chitin, qty: 20 }
       stats:
@@ -1026,6 +1103,7 @@
         knockback: 50
         durability: 150
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: chitin, qty: 30 }
       stats:
@@ -1054,18 +1132,21 @@
     weight: 0.3
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: copper, qty: 4 }
       stats:
         damage: { slash: 16, pierce: 16 }
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: copper, qty: 8 }
       stats:
         damage: { slash: 22, pierce: 22 }
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: copper, qty: 12 }
       stats:
@@ -1091,6 +1172,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1098,6 +1180,7 @@
         damage: { slash: 31 }
         durability: 225
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1105,6 +1188,7 @@
         damage: { slash: 37 }
         durability: 275
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1128,6 +1212,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1135,6 +1220,7 @@
         damage: { pierce: 31 }
         durability: 200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1142,6 +1228,7 @@
         damage: { pierce: 37 }
         durability: 250
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1168,6 +1255,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1176,6 +1264,7 @@
         damage: { blunt: 41 }
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1184,6 +1273,7 @@
         damage: { blunt: 47 }
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1211,6 +1301,7 @@
     weight: 2.5
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1219,6 +1310,7 @@
         damage: { pierce: 41 }
         durability: 225
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1227,6 +1319,7 @@
         damage: { pierce: 47 }
         durability: 275
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1254,6 +1347,7 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1262,6 +1356,7 @@
         damage: { pierce: 41 }
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1270,6 +1365,7 @@
         damage: { pierce: 47 }
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1299,6 +1395,7 @@
     weight: 1.6
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1309,6 +1406,7 @@
         parry: 30
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1319,6 +1417,7 @@
         parry: 30
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1346,6 +1445,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1354,6 +1454,7 @@
         parry: 40
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1362,6 +1463,7 @@
         parry: 40
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1386,18 +1488,21 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
       stats:
         armor: 10
         durability: 1200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
       stats:
         armor: 12
         durability: 1400
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
       stats:
@@ -1420,18 +1525,21 @@
     weight: 10.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
       stats:
         armor: 10
         durability: 1200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
       stats:
         armor: 12
         durability: 1400
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
       stats:
@@ -1454,18 +1562,21 @@
     weight: 10.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
       stats:
         armor: 10
         durability: 1200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
       stats:
         armor: 12
         durability: 1400
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
       stats:
@@ -1522,18 +1633,21 @@
     weight: 1.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
         - { itemId: core-wood, qty: 5 }
       stats:
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
         - { itemId: core-wood, qty: 10 }
       stats:
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
         - { itemId: core-wood, qty: 15 }
@@ -1560,6 +1674,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: fine-wood, qty: 5 }
         - { itemId: iron, qty: 10 }
@@ -1568,6 +1683,7 @@
         knockback: 20
         durability: 200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: fine-wood, qty: 10 }
         - { itemId: iron, qty: 20 }
@@ -1576,6 +1692,7 @@
         knockback: 20
         durability: 250
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: fine-wood, qty: 15 }
         - { itemId: iron, qty: 30 }
@@ -1606,6 +1723,7 @@
     weight: 1.6
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 2 }
@@ -1616,6 +1734,7 @@
         parry: 30
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 4 }
@@ -1626,6 +1745,7 @@
         parry: 30
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 6 }
@@ -1655,6 +1775,7 @@
     weight: 2.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 2 }
@@ -1665,6 +1786,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 4 }
@@ -1675,6 +1797,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 6 }
@@ -1704,6 +1827,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 5 }
@@ -1713,6 +1837,7 @@
         backstab: 3
         durability: 225
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 10 }
@@ -1722,6 +1847,7 @@
         backstab: 3
         durability: 275
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 15 }
@@ -1750,6 +1876,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 2 }
@@ -1759,6 +1886,7 @@
         backstab: 3
         durability: 225
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 4 }
@@ -1768,6 +1896,7 @@
         backstab: 3
         durability: 275
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 6 }
@@ -1793,6 +1922,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: core-wood, qty: 2 }
@@ -1800,6 +1930,7 @@
         damage: { pierce: 39 }
         durability: 200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: core-wood, qty: 4 }
@@ -1807,6 +1938,7 @@
         damage: { pierce: 45 }
         durability: 250
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: core-wood, qty: 6 }
@@ -1835,6 +1967,7 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 15 }
         - { itemId: ancient-bark, qty: 5 }
@@ -1844,6 +1977,7 @@
         backstab: 3
         durability: 150
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: ancient-bark, qty: 10 }
@@ -1853,6 +1987,7 @@
         backstab: 3
         durability: 200
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 45 }
         - { itemId: ancient-bark, qty: 15 }
@@ -1879,6 +2014,7 @@
     weight: 2.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 5 }
       stats:
@@ -1886,6 +2022,7 @@
         parry: 60
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 10 }
       stats:
@@ -1893,6 +2030,7 @@
         parry: 60
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 15 }
       stats:
@@ -1916,6 +2054,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 5 }
         - { itemId: fine-wood, qty: 5 }
@@ -1923,6 +2062,7 @@
         block: 63
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: fine-wood, qty: 10 }
@@ -1930,6 +2070,7 @@
         block: 66
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 15 }
         - { itemId: fine-wood, qty: 15 }
@@ -1954,6 +2095,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 4 }
         - { itemId: fine-wood, qty: 5 }
@@ -1962,6 +2104,7 @@
         parry: 52
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 8 }
         - { itemId: fine-wood, qty: 10 }
@@ -1970,6 +2113,7 @@
         parry: 52
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 12 }
         - { itemId: fine-wood, qty: 15 }
@@ -1994,18 +2138,21 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
       stats:
         armor: 16
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
       stats:
         armor: 18
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
       stats:
@@ -2028,18 +2175,21 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
       stats:
         armor: 16
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
       stats:
         armor: 18
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
       stats:
@@ -2062,18 +2212,21 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
       stats:
         armor: 16
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
       stats:
         armor: 18
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
       stats:
@@ -2121,6 +2274,7 @@
     weight: 3.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: iron, qty: 15 }
         - { itemId: ancient-bark, qty: 10 }
@@ -2131,6 +2285,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: ancient-bark, qty: 20 }
@@ -2141,6 +2296,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 45 }
         - { itemId: ancient-bark, qty: 30 }
@@ -2171,6 +2327,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: iron, qty: 5 }
         - { itemId: ancient-bark, qty: 5 }
@@ -2180,6 +2337,7 @@
         backstab: 3
         durability: 150
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: ancient-bark, qty: 10 }
@@ -2189,6 +2347,7 @@
         backstab: 3
         durability: 200
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: iron, qty: 15 }
         - { itemId: ancient-bark, qty: 15 }
@@ -2218,6 +2377,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: ancient-bark, qty: 5 }
@@ -2227,6 +2387,7 @@
         knockback: 20
         durability: 150
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: silver, qty: 20 }
         - { itemId: ancient-bark, qty: 10 }
@@ -2236,6 +2397,7 @@
         knockback: 20
         durability: 200
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: silver, qty: 30 }
         - { itemId: ancient-bark, qty: 15 }
@@ -2266,6 +2428,7 @@
     weight: 2.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: ancient-bark, qty: 5 }
@@ -2276,6 +2439,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: silver, qty: 30 }
         - { itemId: ancient-bark, qty: 10 }
@@ -2286,6 +2450,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: silver, qty: 45 }
         - { itemId: ancient-bark, qty: 15 }
@@ -2316,6 +2481,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: silver, qty: 2 }
         - { itemId: wolf-fang, qty: 2 }
@@ -2325,6 +2491,7 @@
         backstab: 3
         durability: 150
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: silver, qty: 4 }
         - { itemId: wolf-fang, qty: 4 }
@@ -2334,6 +2501,7 @@
         backstab: 3
         durability: 200
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: silver, qty: 6 }
         - { itemId: wolf-fang, qty: 6 }
@@ -2363,6 +2531,7 @@
     weight: 0.3
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: silver, qty: 10 }
       stats:
@@ -2371,6 +2540,7 @@
         backstab: 6
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: silver, qty: 20 }
       stats:
@@ -2379,6 +2549,7 @@
         backstab: 6
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: silver, qty: 30 }
       stats:
@@ -2406,6 +2577,7 @@
     weight: 3.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: crystal, qty: 10 }
         - { itemId: silver, qty: 10 }
@@ -2415,6 +2587,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: crystal, qty: 20 }
         - { itemId: silver, qty: 20 }
@@ -2424,6 +2597,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: crystal, qty: 30 }
         - { itemId: silver, qty: 30 }
@@ -2450,6 +2624,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: fine-wood, qty: 5 }
@@ -2458,6 +2633,7 @@
         parry: 60
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: fine-wood, qty: 10 }
@@ -2466,6 +2642,7 @@
         parry: 60
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: fine-wood, qty: 15 }
@@ -2493,6 +2670,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: serpent-scale, qty: 4 }
         - { itemId: fine-wood, qty: 4 }
@@ -2502,6 +2680,7 @@
         parry: 60
         durability: 300
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: serpent-scale, qty: 8 }
         - { itemId: fine-wood, qty: 8 }
@@ -2511,6 +2690,7 @@
         parry: 60
         durability: 350
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: serpent-scale, qty: 12 }
         - { itemId: fine-wood, qty: 12 }
@@ -2537,6 +2717,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: wolf-pelt, qty: 2 }
@@ -2544,6 +2725,7 @@
         armor: 22
         durability: 1200
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: wolf-pelt, qty: 4 }
@@ -2551,6 +2733,7 @@
         armor: 24
         durability: 1400
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wolf-pelt, qty: 6 }
@@ -2575,6 +2758,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: wolf-pelt, qty: 2 }
@@ -2582,6 +2766,7 @@
         armor: 22
         durability: 1200
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: wolf-pelt, qty: 4 }
@@ -2589,6 +2774,7 @@
         armor: 24
         durability: 1400
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wolf-pelt, qty: 6 }
@@ -2613,6 +2799,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: wolf-pelt, qty: 2 }
@@ -2620,6 +2807,7 @@
         armor: 22
         durability: 1200
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: wolf-pelt, qty: 4 }
@@ -2627,6 +2815,7 @@
         armor: 24
         durability: 1400
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wolf-pelt, qty: 6 }
@@ -2666,6 +2855,7 @@
     weight: 1.6
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 2 }
@@ -2676,6 +2866,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 4 }
@@ -2686,6 +2877,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 6 }
@@ -2715,6 +2907,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 2 }
@@ -2724,6 +2917,7 @@
         backstab: 3
         durability: 225
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 4 }
@@ -2733,6 +2927,7 @@
         backstab: 3
         durability: 275
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 6 }
@@ -2761,6 +2956,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 5 }
@@ -2770,6 +2966,7 @@
         backstab: 3
         durability: 225
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 10 }
@@ -2779,6 +2976,7 @@
         backstab: 3
         durability: 275
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 15 }
@@ -2807,6 +3005,7 @@
     weight: 0.3
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 2 }
@@ -2816,6 +3015,7 @@
         backstab: 6
         durability: 250
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 4 }
@@ -2825,6 +3025,7 @@
         backstab: 6
         durability: 300
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 6 }
@@ -2855,6 +3056,7 @@
     weight: 2.5
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: needle, qty: 5 }
         - { itemId: linen-thread, qty: 5 }
@@ -2864,6 +3066,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: needle, qty: 10 }
         - { itemId: linen-thread, qty: 10 }
@@ -2873,6 +3076,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: needle, qty: 15 }
         - { itemId: linen-thread, qty: 15 }
@@ -2900,6 +3104,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 5 }
         - { itemId: fine-wood, qty: 5 }
@@ -2908,6 +3113,7 @@
         parry: 60
         durability: 250
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 10 }
@@ -2916,6 +3122,7 @@
         parry: 60
         durability: 300
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 15 }
         - { itemId: fine-wood, qty: 15 }
@@ -2941,6 +3148,7 @@
     weight: 18.0
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 5 }
@@ -2948,6 +3156,7 @@
         block: 123
         durability: 250
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 10 }
@@ -2955,6 +3164,7 @@
         block: 126
         durability: 300
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 15 }
@@ -2978,6 +3188,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: linen-thread, qty: 5 }
@@ -2985,6 +3196,7 @@
         armor: 28
         durability: 1200
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: linen-thread, qty: 10 }
@@ -2992,6 +3204,7 @@
         armor: 30
         durability: 1400
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: linen-thread, qty: 15 }
@@ -3015,6 +3228,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: linen-thread, qty: 5 }
@@ -3022,6 +3236,7 @@
         armor: 28
         durability: 1200
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: linen-thread, qty: 10 }
@@ -3029,6 +3244,7 @@
         armor: 30
         durability: 1400
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: linen-thread, qty: 15 }
@@ -3052,6 +3268,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 5
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: linen-thread, qty: 5 }
@@ -3059,6 +3276,7 @@
         armor: 28
         durability: 1200
     - quality: 3
+      stationLevel: 6
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: linen-thread, qty: 10 }
@@ -3066,6 +3284,7 @@
         armor: 30
         durability: 1400
     - quality: 4
+      stationLevel: 7
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: linen-thread, qty: 15 }
@@ -3092,6 +3311,7 @@
     weight: 1.6
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wood, qty: 2 }
@@ -3102,6 +3322,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: silver, qty: 30 }
         - { itemId: wood, qty: 4 }
@@ -3112,6 +3333,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: silver, qty: 45 }
         - { itemId: wood, qty: 6 }
@@ -3144,6 +3366,7 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 3 }
@@ -3153,6 +3376,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3162,6 +3386,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 9 }
@@ -3190,6 +3415,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3199,6 +3425,7 @@
         backstab: 3
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3208,6 +3435,7 @@
         backstab: 3
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3235,6 +3463,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3243,6 +3472,7 @@
         knockback: 20
         durability: 200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3251,6 +3481,7 @@
         knockback: 20
         durability: 250
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3278,6 +3509,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3287,6 +3519,7 @@
         knockback: 50
         durability: 150
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3296,6 +3529,7 @@
         knockback: 50
         durability: 200
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3324,6 +3558,7 @@
     weight: 1.8
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3333,6 +3568,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3342,6 +3578,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3370,6 +3607,7 @@
     weight: 1.8
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 3 }
@@ -3379,6 +3617,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3388,6 +3627,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 9 }
@@ -3415,6 +3655,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3424,6 +3665,7 @@
         backstab: 3
         durability: 150
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3433,6 +3675,7 @@
         backstab: 3
         durability: 200
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3461,6 +3704,7 @@
     weight: 0.3
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: black-metal, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3470,6 +3714,7 @@
         backstab: 6
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3479,6 +3724,7 @@
         backstab: 6
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: black-metal, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3507,6 +3753,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3516,6 +3763,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3525,6 +3773,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3553,6 +3802,7 @@
     weight: 4.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 3 }
@@ -3562,6 +3812,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 20 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3571,6 +3822,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 30 }
         - { itemId: refined-eitr, qty: 9 }
@@ -3599,6 +3851,7 @@
     weight: 3.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 3 }
@@ -3608,6 +3861,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 20 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3617,6 +3871,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 30 }
         - { itemId: refined-eitr, qty: 9 }
@@ -3632,9 +3887,9 @@
   station: black-forge
   stationLevel: 2
   ingredients:
-    - { itemId: carapace, qty: 15 }
-    - { itemId: yggdrasil-wood, qty: 5 }
-    - { itemId: refined-eitr, qty: 4 }
+    - { itemId: charred-bone, qty: 15 }
+    - { itemId: flametal, qty: 24 }
+    - { itemId: asksvin-hide, qty: 3 }
   yields: { itemId: berserkir, qty: 1 }
   tags: [axe, two-handed, tier-6]
   stats:
@@ -3645,27 +3900,30 @@
     weight: 3.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
-        - { itemId: yggdrasil-wood, qty: 10 }
-        - { itemId: refined-eitr, qty: 3 }
+        - { itemId: flametal, qty: 15 }
+        - { itemId: asksvin-hide, qty: 1 }
       stats:
         damage: { slash: 86, blunt: 26 }
         knockback: 50
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 4
       ingredients:
-        - { itemId: yggdrasil-wood, qty: 20 }
-        - { itemId: refined-eitr, qty: 6 }
+        - { itemId: flametal, qty: 30 }
+        - { itemId: asksvin-hide, qty: 2 }
       stats:
         damage: { slash: 92, blunt: 32 }
         knockback: 50
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 5
       ingredients:
-        - { itemId: yggdrasil-wood, qty: 30 }
-        - { itemId: refined-eitr, qty: 9 }
+        - { itemId: flametal, qty: 45 }
+        - { itemId: asksvin-hide, qty: 3 }
       stats:
         damage: { slash: 98, blunt: 38 }
         knockback: 50
@@ -3691,6 +3949,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: yggdrasil-wood, qty: 5 }
@@ -3699,6 +3958,7 @@
         knockback: 20
         durability: 200
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: yggdrasil-wood, qty: 10 }
@@ -3707,6 +3967,7 @@
         knockback: 20
         durability: 250
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: yggdrasil-wood, qty: 15 }
@@ -3734,6 +3995,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -3743,6 +4005,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -3752,6 +4015,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -3780,6 +4044,7 @@
     weight: 5.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: yggdrasil-wood, qty: 5 }
@@ -3789,6 +4054,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: yggdrasil-wood, qty: 10 }
@@ -3798,6 +4064,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: yggdrasil-wood, qty: 15 }
@@ -3829,6 +4096,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: bloodstone, qty: 1 }
@@ -3838,6 +4106,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: bloodstone, qty: 2 }
@@ -3847,6 +4116,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: bloodstone, qty: 3 }
@@ -3875,6 +4145,7 @@
     weight: 3.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -3884,6 +4155,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -3893,6 +4165,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -3920,6 +4193,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3927,6 +4201,7 @@
         armor: 32
         durability: 1200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3934,6 +4209,7 @@
         armor: 34
         durability: 1400
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3958,6 +4234,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -3965,6 +4242,7 @@
         armor: 32
         durability: 1200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -3972,6 +4250,7 @@
         armor: 34
         durability: 1400
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -3996,6 +4275,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -4003,6 +4283,7 @@
         armor: 32
         durability: 1200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -4010,6 +4291,7 @@
         armor: 34
         durability: 1400
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -4034,6 +4316,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -4041,6 +4324,7 @@
         armor: 30
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -4048,6 +4332,7 @@
         armor: 32
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -4072,6 +4357,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -4079,6 +4365,7 @@
         armor: 30
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -4086,6 +4373,7 @@
         armor: 32
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -4110,6 +4398,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -4117,6 +4406,7 @@
         armor: 30
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -4124,6 +4414,7 @@
         armor: 32
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -4149,6 +4440,7 @@
     weight: 2.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 2 }
@@ -4156,6 +4448,7 @@
         armor: 36
         durability: 1400
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 4 }
@@ -4163,6 +4456,7 @@
         armor: 38
         durability: 1600
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: ashwood, qty: 6 }
@@ -4187,6 +4481,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 5 }
@@ -4194,6 +4489,7 @@
         armor: 36
         durability: 1400
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
@@ -4201,6 +4497,7 @@
         armor: 38
         durability: 1600
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: ashwood, qty: 15 }
@@ -4225,6 +4522,7 @@
     weight: 15.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 5 }
@@ -4232,6 +4530,7 @@
         armor: 36
         durability: 1400
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
@@ -4239,6 +4538,7 @@
         armor: 38
         durability: 1600
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: ashwood, qty: 15 }
@@ -4265,6 +4565,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -4273,6 +4574,7 @@
         parry: 78
         durability: 300
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -4281,6 +4583,7 @@
         parry: 78
         durability: 350
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -4306,6 +4609,7 @@
     weight: 20.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 2 }
@@ -4313,6 +4617,7 @@
         block: 153
         durability: 300
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 20 }
         - { itemId: refined-eitr, qty: 4 }
@@ -4320,6 +4625,7 @@
         block: 156
         durability: 350
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 30 }
         - { itemId: refined-eitr, qty: 6 }
@@ -4345,6 +4651,7 @@
     weight: 3.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 5 }
@@ -4353,6 +4660,7 @@
         parry: 90
         durability: 350
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
@@ -4361,6 +4669,7 @@
         parry: 90
         durability: 400
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: ashwood, qty: 15 }
@@ -4386,6 +4695,7 @@
     weight: 22.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -4393,6 +4703,7 @@
         block: 183
         durability: 350
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -4400,6 +4711,7 @@
         block: 186
         durability: 400
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -4426,6 +4738,7 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: asksvin-hide, qty: 5 }
         - { itemId: flametal, qty: 2 }
@@ -4433,6 +4746,7 @@
         armor: 3
         durability: 1400
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: asksvin-hide, qty: 10 }
         - { itemId: flametal, qty: 4 }
@@ -4440,6 +4754,7 @@
         armor: 5
         durability: 1600
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: asksvin-hide, qty: 15 }
         - { itemId: flametal, qty: 6 }
@@ -4553,6 +4868,7 @@
     weight: 2.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: charred-bone, qty: 5 }
@@ -4562,6 +4878,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 10 }
@@ -4571,6 +4888,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: charred-bone, qty: 15 }
@@ -4599,6 +4917,7 @@
     weight: 5.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -4608,6 +4927,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -4617,6 +4937,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -4645,6 +4966,7 @@
     weight: 5.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -4654,6 +4976,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -4663,6 +4986,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -4691,6 +5015,7 @@
     weight: 5.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -4700,6 +5025,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -4709,6 +5035,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -4737,6 +5064,7 @@
     weight: 3.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -4746,6 +5074,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -4755,6 +5084,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -4783,6 +5113,7 @@
     weight: 3.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -4792,6 +5123,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -4801,6 +5133,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -4829,6 +5162,7 @@
     weight: 3.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -4838,6 +5172,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -4847,6 +5182,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -4875,6 +5211,7 @@
     weight: 3.0
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -4884,6 +5221,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -4893,6 +5231,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -4921,6 +5260,7 @@
     weight: 4.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
@@ -4930,6 +5270,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 20 }
@@ -4939,6 +5280,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 30 }
@@ -5326,14 +5668,17 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 4 }
     - quality: 3
+      stationLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 8 }
     - quality: 4
+      stationLevel: 6
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 12 }
@@ -5356,6 +5701,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -5363,6 +5709,7 @@
         armor: 26
         durability: 1200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -5370,6 +5717,7 @@
         armor: 28
         durability: 1400
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -5394,6 +5742,7 @@
     weight: 8.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 3 }
@@ -5401,6 +5750,7 @@
         armor: 26
         durability: 1200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 6 }
@@ -5408,6 +5758,7 @@
         armor: 28
         durability: 1400
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 9 }
@@ -5432,6 +5783,7 @@
     weight: 8.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -5439,6 +5791,7 @@
         armor: 26
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -5446,6 +5799,7 @@
         armor: 28
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -5470,6 +5824,7 @@
     weight: 8.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -5477,6 +5832,7 @@
         armor: 26
         durability: 1200
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -5484,6 +5840,7 @@
         armor: 28
         durability: 1400
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -5510,6 +5867,7 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: sealbreaker-fragment, qty: 2 }
       stats:
@@ -5518,6 +5876,7 @@
         backstab: 3
         durability: 250
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: sealbreaker-fragment, qty: 4 }
       stats:
@@ -5526,6 +5885,7 @@
         backstab: 3
         durability: 300
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: sealbreaker-fragment, qty: 6 }
       stats:
@@ -5553,6 +5913,7 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 2
       ingredients:
         - { itemId: feathers, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -5560,6 +5921,7 @@
         armor: 3
         durability: 1200
     - quality: 3
+      stationLevel: 3
       ingredients:
         - { itemId: feathers, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -5567,6 +5929,7 @@
         armor: 5
         durability: 1400
     - quality: 4
+      stationLevel: 4
       ingredients:
         - { itemId: feathers, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -5646,6 +6009,7 @@
     weight: 1.5
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: celestial-feather, qty: 1 }
@@ -5653,6 +6017,7 @@
         armor: 30
         durability: 1400
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: celestial-feather, qty: 2 }
@@ -5660,6 +6025,7 @@
         armor: 32
         durability: 1600
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: celestial-feather, qty: 3 }
@@ -5685,6 +6051,7 @@
     weight: 8.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: celestial-feather, qty: 1 }
@@ -5692,6 +6059,7 @@
         armor: 30
         durability: 1400
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: celestial-feather, qty: 2 }
@@ -5699,6 +6067,7 @@
         armor: 32
         durability: 1600
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: celestial-feather, qty: 3 }
@@ -5723,6 +6092,7 @@
     weight: 8.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: celestial-feather, qty: 1 }
@@ -5730,6 +6100,7 @@
         armor: 30
         durability: 1400
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: celestial-feather, qty: 2 }
@@ -5737,6 +6108,7 @@
         armor: 32
         durability: 1600
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: celestial-feather, qty: 3 }
@@ -5762,18 +6134,21 @@
     weight: 4.0
   upgrades:
     - quality: 2
+      stationLevel: 3
       ingredients:
         - { itemId: asksvin-hide, qty: 5 }
       stats:
         armor: 3
         durability: 1400
     - quality: 3
+      stationLevel: 4
       ingredients:
         - { itemId: asksvin-hide, qty: 10 }
       stats:
         armor: 5
         durability: 1600
     - quality: 4
+      stationLevel: 5
       ingredients:
         - { itemId: asksvin-hide, qty: 15 }
       stats:
