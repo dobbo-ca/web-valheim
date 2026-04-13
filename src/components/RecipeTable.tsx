@@ -28,6 +28,18 @@ const CART_STORAGE_KEY = 'valheim-cart';
 const PAGE_SIZE_KEY = 'valheim-page-size';
 const COLUMNS_KEY = 'valheim-columns';
 const DEFAULT_COLUMNS: ColumnId[] = ['station', 'ingredients', 'stats'];
+const COL_BITS: Record<ColumnId, number> = { station: 1, ingredients: 2, stats: 4 };
+const DEFAULT_COL_MASK = 7; // all visible
+
+function encodeColumns(cols: ColumnId[]): number {
+  let mask = 0;
+  for (const c of cols) mask |= COL_BITS[c];
+  return mask;
+}
+
+function decodeColumns(mask: number): ColumnId[] {
+  return (Object.keys(COL_BITS) as ColumnId[]).filter(c => mask & COL_BITS[c]);
+}
 
 function readStoredPageSize(): number {
   try {
@@ -43,7 +55,10 @@ function readStoredPageSize(): number {
 function readStoredColumns(): ColumnId[] {
   try {
     const stored = localStorage.getItem(COLUMNS_KEY);
-    if (stored) return JSON.parse(stored);
+    if (stored) {
+      const mask = Number.parseInt(stored, 10);
+      if (Number.isFinite(mask)) return decodeColumns(mask);
+    }
   } catch {}
   return DEFAULT_COLUMNS;
 }
@@ -80,11 +95,12 @@ export const RecipeTable: Component<Props> = (props) => {
     // Hydrate columns: URL param takes precedence over localStorage
     const colsParam = params.get('cols');
     if (colsParam) {
-      const cols = colsParam.split(',').filter((c): c is ColumnId =>
-        ['station', 'ingredients', 'stats'].includes(c),
-      );
-      setVisibleColumns(cols);
-      try { localStorage.setItem(COLUMNS_KEY, JSON.stringify(cols)); } catch {}
+      const mask = Number.parseInt(colsParam, 10);
+      if (Number.isFinite(mask)) {
+        const cols = decodeColumns(mask);
+        setVisibleColumns(cols);
+        try { localStorage.setItem(COLUMNS_KEY, String(mask)); } catch {}
+      }
     }
 
     // Hydrate cart: URL param takes precedence over localStorage
@@ -326,15 +342,13 @@ export const RecipeTable: Component<Props> = (props) => {
       ? current.filter((c) => c !== col)
       : [...current, col];
     setVisibleColumns(next);
-    try { localStorage.setItem(COLUMNS_KEY, JSON.stringify(next)); } catch {}
-    // Update URL
+    const mask = encodeColumns(next);
+    try { localStorage.setItem(COLUMNS_KEY, String(mask)); } catch {}
     const urlParams = new URLSearchParams(window.location.search);
-    const sorted = [...next].sort();
-    const isDefault = sorted.length === DEFAULT_COLUMNS.length && sorted.every((c, i) => c === [...DEFAULT_COLUMNS].sort()[i]);
-    if (isDefault) {
+    if (mask === DEFAULT_COL_MASK) {
       urlParams.delete('cols');
     } else {
-      urlParams.set('cols', next.join(','));
+      urlParams.set('cols', String(mask));
     }
     const qs = urlParams.toString();
     window.history.replaceState({}, '', qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
