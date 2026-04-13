@@ -56,7 +56,7 @@
 - { id: morgen-heart, name: Morgen Heart, category: material, stackSize: 20, biome: ashlands }
 - { id: morgen-sinew, name: Morgen Sinew, category: material, stackSize: 20, biome: ashlands }
 - { id: bilebag, name: Bilebag, category: material, stackSize: 20, biome: ashlands }
-- { id: coal, name: Coal, category: material, stackSize: 50, biome: ashlands }
+- { id: coal, name: Coal, category: material, stackSize: 50, biome: meadows }
 - { id: asksvin-hide, name: Asksvin Hide, category: material, stackSize: 50, biome: ashlands }
 - { id: ashwood, name: Ashwood, category: material, stackSize: 50, biome: ashlands }
 - { id: proustite-powder, name: Proustite Powder, category: material, stackSize: 50, biome: ashlands }
