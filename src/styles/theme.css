@@ -597,6 +597,12 @@ h3 {
   gap: 4px;
   margin-left: auto;
 }
+@media (max-width: 480px) {
+  .recipe-table__page-size {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+}
 .recipe-table__page-btn {
   background: transparent;
   border: 1px solid var(--border-muted);
