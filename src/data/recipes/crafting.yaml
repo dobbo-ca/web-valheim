@@ -1109,14 +1109,21 @@
 - id: needle-arrow
   name: Needle Arrow
   type: crafting
+  biome: plains
   station: workbench
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: needle, qty: 4 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: needle-arrow, qty: 20 }
   tags: [arrow, tier-5]
 
+  stats:
+    primaryAttack:
+      damage: { pierce: 62 }
+      knockback: 15
+      stagger: 62
 # Abyssal weapons
 - id: abyssal-razor
   name: Abyssal Razor
@@ -2890,6 +2897,7 @@
 - id: serpent-scale-shield
   name: Serpent Scale Shield
   type: crafting
+  biome: swamp
   station: forge
   stationLevel: 3
   repairLevel: 3
@@ -2901,10 +2909,14 @@
   tags: [shield, tier-4]
   notes: High block power; excellent vs. staggered enemies.
   stats:
-    block: 90
-    parry: 60
+    weight: 3
     durability: 250
-    weight: 3.0
+    movementPenalty: -10
+    blocking:
+      blockArmor: 60
+      blockForce: 100
+      blockAdrenaline: 1
+      parryAdrenaline: 0
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -2914,9 +2926,9 @@
         - { itemId: fine-wood, qty: 4 }
         - { itemId: iron, qty: 2 }
       stats:
-        block: 93
-        parry: 60
         durability: 300
+        blocking:
+          blockForce: 105
     - quality: 3
       stationLevel: 5
       repairLevel: 5
@@ -2925,9 +2937,9 @@
         - { itemId: fine-wood, qty: 8 }
         - { itemId: iron, qty: 4 }
       stats:
-        block: 96
-        parry: 60
         durability: 350
+        blocking:
+          blockForce: 110
     - quality: 4
       stationLevel: 6
       repairLevel: 6
@@ -2936,10 +2948,9 @@
         - { itemId: fine-wood, qty: 12 }
         - { itemId: iron, qty: 6 }
       stats:
-        block: 99
-        parry: 60
         durability: 400
-
+        blocking:
+          blockForce: 115
 - id: wolf-armor-chest
   name: Wolf Armor Chest
   type: crafting
@@ -3091,6 +3102,7 @@
 - id: black-metal-sword
   name: Black Metal Sword
   type: crafting
+  biome: plains
   station: forge
   stationLevel: 4
   repairLevel: 4
@@ -3101,11 +3113,25 @@
   yields: { itemId: black-metal-sword, qty: 1 }
   tags: [sword, one-handed, tier-5]
   stats:
-    damage: { slash: 70 }
-    knockback: 40
-    backstab: 3
-    durability: 200
     weight: 1.6
+    durability: 200
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 95 }
+      knockback: 40
+      backstab: 3
+      stagger: 95
+      stamina: 14
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 285 }
+      backstab: 3
+      stagger: 285
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 5
@@ -3115,10 +3141,9 @@
         - { itemId: fine-wood, qty: 2 }
         - { itemId: linen-thread, qty: 2 }
       stats:
-        damage: { slash: 76 }
-        knockback: 40
-        backstab: 3
         durability: 250
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 6
       repairLevel: 6
@@ -3127,10 +3152,9 @@
         - { itemId: fine-wood, qty: 4 }
         - { itemId: linen-thread, qty: 4 }
       stats:
-        damage: { slash: 82 }
-        knockback: 40
-        backstab: 3
         durability: 300
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 7
       repairLevel: 7
@@ -3139,14 +3163,13 @@
         - { itemId: fine-wood, qty: 6 }
         - { itemId: linen-thread, qty: 6 }
       stats:
-        damage: { slash: 88 }
-        knockback: 40
-        backstab: 3
         durability: 350
-
+        blocking:
+          blockForce: 35
 - id: black-metal-axe
   name: Black Metal Axe
   type: crafting
+  biome: plains
   station: forge
   stationLevel: 4
   repairLevel: 4
@@ -3157,11 +3180,24 @@
   yields: { itemId: black-metal-axe, qty: 1 }
   tags: [axe, one-handed, tier-5]
   stats:
-    damage: { slash: 55 }
-    knockback: 30
-    backstab: 3
-    durability: 175
     weight: 1.5
+    durability: 175
+    movementPenalty: -5
+    primaryAttack:
+      damage: { slash: 100, chop: 60 }
+      knockback: 60
+      backstab: 3
+      stagger: 100
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 150, chop: 90 }
+      knockback: 90
+      backstab: 3
+      stagger: 150
+      adrenaline: 1
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 5
@@ -3170,10 +3206,9 @@
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 2 }
       stats:
-        damage: { slash: 61 }
-        knockback: 30
-        backstab: 3
         durability: 225
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 6
       repairLevel: 6
@@ -3181,10 +3216,9 @@
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 4 }
       stats:
-        damage: { slash: 67 }
-        knockback: 30
-        backstab: 3
         durability: 275
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 7
       repairLevel: 7
@@ -3192,14 +3226,13 @@
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 6 }
       stats:
-        damage: { slash: 73 }
-        knockback: 30
-        backstab: 3
         durability: 325
-
+        blocking:
+          blockForce: 35
 - id: black-metal-atgeir
   name: Black Metal Atgeir
   type: crafting
+  biome: plains
   station: forge
   stationLevel: 4
   repairLevel: 4
@@ -3210,11 +3243,25 @@
   yields: { itemId: black-metal-atgeir, qty: 1 }
   tags: [atgeir, two-handed, tier-5]
   stats:
-    damage: { pierce: 70 }
-    knockback: 30
-    backstab: 3
+    weight: 3
     durability: 175
-    weight: 3.0
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 105 }
+      knockback: 30
+      backstab: 3
+      stagger: 105
+      stamina: 18
+      adrenaline: 2
+    secondaryAttack:
+      damage: { pierce: 105 }
+      backstab: 3
+      stagger: 630
+      stamina: 36
+      adrenaline: 1
+    blocking:
+      blockForce: 30
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 5
@@ -3223,10 +3270,9 @@
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 5 }
       stats:
-        damage: { pierce: 76 }
-        knockback: 30
-        backstab: 3
         durability: 225
+        blocking:
+          blockForce: 35
     - quality: 3
       stationLevel: 6
       repairLevel: 6
@@ -3234,10 +3280,9 @@
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 10 }
       stats:
-        damage: { pierce: 82 }
-        knockback: 30
-        backstab: 3
         durability: 275
+        blocking:
+          blockForce: 40
     - quality: 4
       stationLevel: 7
       repairLevel: 7
@@ -3245,14 +3290,13 @@
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 15 }
       stats:
-        damage: { pierce: 88 }
-        knockback: 30
-        backstab: 3
         durability: 325
-
+        blocking:
+          blockForce: 45
 - id: black-metal-knife
   name: Black Metal Knife
   type: crafting
+  biome: plains
   station: forge
   stationLevel: 4
   repairLevel: 4
@@ -3263,11 +3307,28 @@
   yields: { itemId: black-metal-knife, qty: 1 }
   tags: [knife, one-handed, tier-5]
   stats:
-    damage: { slash: 28, pierce: 28 }
-    knockback: 10
-    backstab: 6
-    durability: 200
     weight: 0.3
+    durability: 200
+    primaryAttack:
+      damage: { slash: 34, pierce: 34 }
+      knockback: 10
+      backstab: 6
+      stagger: 68
+      stamina: 12
+      adrenaline: 1
+    secondaryAttack:
+      damage: { slash: 102, pierce: 102 }
+      backstab: 6
+      stagger: 204
+      stamina: 36
+      adrenaline: 1
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 8
+      blockForce: 10
+      parryBonus: 4
+      blockAdrenaline: 2
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
       stationLevel: 5
@@ -3276,10 +3337,9 @@
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 2 }
       stats:
-        damage: { slash: 34, pierce: 34 }
-        knockback: 10
-        backstab: 6
         durability: 250
+        blocking:
+          blockForce: 15
     - quality: 3
       stationLevel: 6
       repairLevel: 6
@@ -3287,10 +3347,9 @@
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 4 }
       stats:
-        damage: { slash: 40, pierce: 40 }
-        knockback: 10
-        backstab: 6
         durability: 300
+        blocking:
+          blockForce: 20
     - quality: 4
       stationLevel: 7
       repairLevel: 7
@@ -3298,14 +3357,13 @@
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 6 }
       stats:
-        damage: { slash: 46, pierce: 46 }
-        knockback: 10
-        backstab: 6
         durability: 350
-
+        blocking:
+          blockForce: 25
 - id: porcupine
   name: Porcupine
   type: crafting
+  biome: plains
   station: forge
   stationLevel: 4
   repairLevel: 4
@@ -3318,11 +3376,26 @@
   tags: [mace, one-handed, tier-5]
   notes: Deals pierce and blunt damage; one of the strongest one-handed weapons.
   stats:
-    damage: { blunt: 40, pierce: 50 }
-    knockback: 60
-    backstab: 3
-    durability: 200
     weight: 2.5
+    durability: 150
+    movementPenalty: -5
+    primaryAttack:
+      damage: { pierce: 45, blunt: 50 }
+      knockback: 100
+      backstab: 3
+      stagger: 95
+      stamina: 14
+      adrenaline: 1
+    secondaryAttack:
+      damage: { pierce: 112.5, blunt: 125 }
+      knockback: 200
+      backstab: 3
+      stagger: 475
+      stamina: 28
+      adrenaline: 3
+    blocking:
+      blockForce: 20
+      parryBonus: 2
   upgrades:
     - quality: 2
       stationLevel: 5
@@ -3331,10 +3404,15 @@
         - { itemId: needle, qty: 5 }
         - { itemId: linen-thread, qty: 5 }
       stats:
-        damage: { blunt: 46, pierce: 56 }
-        knockback: 60
-        backstab: 3
-        durability: 250
+        durability: 200
+        primaryAttack:
+          damage: { pierce: 51, blunt: 50 }
+          stagger: 101
+        secondaryAttack:
+          damage: { pierce: 127.5, blunt: 125 }
+          stagger: 505
+        blocking:
+          blockForce: 25
     - quality: 3
       stationLevel: 6
       repairLevel: 6
@@ -3342,10 +3420,15 @@
         - { itemId: needle, qty: 10 }
         - { itemId: linen-thread, qty: 10 }
       stats:
-        damage: { blunt: 52, pierce: 62 }
-        knockback: 60
-        backstab: 3
-        durability: 300
+        durability: 250
+        primaryAttack:
+          damage: { pierce: 57, blunt: 50 }
+          stagger: 107
+        secondaryAttack:
+          damage: { pierce: 142.5, blunt: 125 }
+          stagger: 535
+        blocking:
+          blockForce: 30
     - quality: 4
       stationLevel: 7
       repairLevel: 7
@@ -3353,17 +3436,22 @@
         - { itemId: needle, qty: 15 }
         - { itemId: linen-thread, qty: 15 }
       stats:
-        damage: { blunt: 58, pierce: 68 }
-        knockback: 60
-        backstab: 3
-        durability: 350
-
+        durability: 300
+        primaryAttack:
+          damage: { pierce: 63, blunt: 50 }
+          stagger: 113
+        secondaryAttack:
+          damage: { pierce: 157.5, blunt: 125 }
+          stagger: 565
+        blocking:
+          blockForce: 35
 - id: black-metal-shield
   name: Black Metal Shield
   type: crafting
+  biome: plains
   station: forge
-  stationLevel: 4
-  repairLevel: 4
+  stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: black-metal, qty: 8 }
@@ -3371,48 +3459,54 @@
   yields: { itemId: black-metal-shield, qty: 1 }
   tags: [shield, tier-5]
   stats:
-    block: 105
-    parry: 60
+    weight: 3
     durability: 200
-    weight: 3.0
+    movementPenalty: -5
+    blocking:
+      blockArmor: 78
+      parryBlockArmor: 117
+      blockForce: 50
+      parryBonus: 1.5
+      blockAdrenaline: 1
+      parryAdrenaline: 5
   upgrades:
     - quality: 2
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: black-metal, qty: 5 }
         - { itemId: fine-wood, qty: 5 }
       stats:
-        block: 108
-        parry: 60
         durability: 250
+        blocking:
+          blockForce: 55
     - quality: 3
-      stationLevel: 6
-      repairLevel: 6
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 10 }
       stats:
-        block: 111
-        parry: 60
         durability: 300
+        blocking:
+          blockForce: 60
     - quality: 4
-      stationLevel: 7
-      repairLevel: 7
+      stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 15 }
         - { itemId: fine-wood, qty: 15 }
       stats:
-        block: 114
-        parry: 60
         durability: 350
-
+        blocking:
+          blockForce: 65
 - id: black-metal-tower-shield
   name: Black Metal Tower Shield
   type: crafting
+  biome: plains
   station: forge
-  stationLevel: 4
-  repairLevel: 4
+  stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: fine-wood, qty: 15 }
     - { itemId: black-metal, qty: 10 }
@@ -3420,37 +3514,158 @@
   yields: { itemId: black-metal-tower-shield, qty: 1 }
   tags: [shield, tower-shield, tier-5]
   stats:
-    block: 120
+    weight: 18
     durability: 200
-    weight: 18.0
+    movementPenalty: -5
+    blocking:
+      blockArmor: 104
+      blockForce: 80
+      blockAdrenaline: 2
+      parryAdrenaline: 0
   upgrades:
     - quality: 2
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 5 }
       stats:
-        block: 123
         durability: 250
+        blocking:
+          blockForce: 85
     - quality: 3
-      stationLevel: 6
-      repairLevel: 6
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 10 }
       stats:
-        block: 126
         durability: 300
+        blocking:
+          blockForce: 90
     - quality: 4
-      stationLevel: 7
-      repairLevel: 7
+      stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 15 }
       stats:
-        block: 129
         durability: 350
+        blocking:
+          blockForce: 95
+- id: black-metal-battleaxe
+  name: Black Metal Battleaxe
+  type: crafting
+  biome: plains
+  station: forge
+  stationLevel: 3
+  repairLevel: 4
+  ingredients:
+    - { itemId: linen, qty: 5 }
+    - { itemId: black-metal, qty: 30 }
+    - { itemId: fine-wood, qty: 10 }
+  yields: { itemId: black-metal-battleaxe, qty: 1 }
+  tags: [battleaxe, two-handed, tier-4]
+  stats:
+    durability: 200
+    movementPenalty: -15
+    primaryAttack:
+      damage: { slash: 110, chop: 60 }
+      knockback: 70
+      backstab: 3
+      stagger: 165
+      stamina: 20
+      adrenaline: 2
+    secondaryAttack:
+      damage: { slash: 55, chop: 30 }
+      knockback: 140
+      backstab: 3
+      stagger: 220
+      stamina: 10
+      adrenaline: 1
+    blocking:
+      blockArmor: 52
+      parryBlockArmor: 104
+      blockForce: 30
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
+
+  upgrades:
+    - quality: 2
+      stationLevel: 4
+      repairLevel: 5
+      ingredients:
+        - { itemId: linen, qty: 5 }
+        - { itemId: black-metal, qty: 15 }
+      stats:
+        durability: 250
+        blocking:
+          blockForce: 35
+    - quality: 3
+      stationLevel: 5
+      repairLevel: 6
+      ingredients:
+        - { itemId: linen, qty: 10 }
+        - { itemId: black-metal, qty: 30 }
+      stats:
+        durability: 300
+        blocking:
+          blockForce: 40
+    - quality: 4
+      stationLevel: 6
+      repairLevel: 7
+      ingredients:
+        - { itemId: linen, qty: 15 }
+        - { itemId: black-metal, qty: 45 }
+      stats:
+        durability: 350
+        blocking:
+          blockForce: 45
+- id: black-metal-missile
+  name: Black Metal Missile
+  type: crafting
+  biome: plains
+  station: artisan-table
+  stationLevel: 1
+  repairLevel: 1
+  ingredients:
+    - { itemId: wood, qty: 10 }
+    - { itemId: black-metal, qty: 1 }
+  yields: { itemId: black-metal-missile, qty: 20 }
+  tags: [missile, ammo, tier-4]
+  stats:
+    primaryAttack:
+      damage: { pierce: 120 }
+      knockback: 60
+      stagger: 120
+
+- id: black-metal-pickaxe
+  name: Black Metal Pickaxe
+  type: crafting
+  biome: mistlands
+  station: forge
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: yggdrasil-wood, qty: 3 }
+    - { itemId: black-metal, qty: 25 }
+  yields: { itemId: black-metal-pickaxe, qty: 1 }
+  tags: [pickaxe, two-handed, tier-5]
+  stats:
+    durability: 210
+    primaryAttack:
+      damage: { pierce: 49, pickaxe: 49 }
+      backstab: 3
+      stagger: 49
+      stamina: 14
+    blocking:
+      blockArmor: 2
+      parryBlockArmor: 4
+      blockForce: 10
+      parryBonus: 2
+      blockAdrenaline: 2
+      parryAdrenaline: 5
 
 - id: padded-helmet
   name: Padded Helmet

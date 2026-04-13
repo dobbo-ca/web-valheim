@@ -319,6 +319,9 @@
 - { id: black-metal-atgeir, name: Black Metal Atgeir, category: weapon, stackSize: 1 }
 - { id: black-metal-knife, name: Black Metal Knife, category: weapon, stackSize: 1 }
 - { id: porcupine, name: Porcupine, category: weapon, stackSize: 1 }
+- { id: black-metal-battleaxe, name: Black Metal Battleaxe, category: weapon, stackSize: 1 }
+- { id: black-metal-missile, name: Black Metal Missile, category: weapon, stackSize: 20 }
+- { id: black-metal-pickaxe, name: Black Metal Pickaxe, category: weapon, stackSize: 1 }
 - { id: black-metal-shield, name: Black Metal Shield, category: tool, stackSize: 1 }
 - { id: black-metal-tower-shield, name: Black Metal Tower Shield, category: tool, stackSize: 1 }
 - { id: padded-helmet, name: Padded Helmet, category: armor, stackSize: 1 }
