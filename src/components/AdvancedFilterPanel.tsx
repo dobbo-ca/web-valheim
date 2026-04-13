@@ -26,6 +26,7 @@ const biomes: { label: string; value: string }[] = [
   { label: 'Plains', value: 'plains' },
   { label: 'Mistlands', value: 'mistlands' },
   { label: 'Ashlands', value: 'ashlands' },
+  { label: 'Deep North', value: 'deep-north' },
 ];
 
 const typeIcons: Record<string, string> = {
