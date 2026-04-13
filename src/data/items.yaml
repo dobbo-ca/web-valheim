@@ -361,7 +361,25 @@
 - { id: nidhogg-the-thundering, name: Nidhögg the Thundering, category: weapon, stackSize: 1 }
 - { id: nidhogg-the-primal, name: Nidhögg the Primal, category: weapon, stackSize: 1 }
 - { id: storm-star, name: Storm Star, category: weapon, stackSize: 1 }
+- { id: storm-star-the-bleeding, name: Storm Star the Bleeding, category: weapon, stackSize: 1 }
+- { id: storm-star-the-thundering, name: Storm Star the Thundering, category: weapon, stackSize: 1 }
+- { id: storm-star-the-primal, name: Storm Star the Primal, category: weapon, stackSize: 1 }
 - { id: klossen, name: Klossen, category: weapon, stackSize: 1 }
+- { id: klossen-the-bleeding, name: Klossen the Bleeding, category: weapon, stackSize: 1 }
+- { id: klossen-the-thundering, name: Klossen the Thundering, category: weapon, stackSize: 1 }
+- { id: klossen-the-primal, name: Klossen the Primal, category: weapon, stackSize: 1 }
+- { id: splitnir-the-bleeding, name: Splitnir the Bleeding, category: weapon, stackSize: 1 }
+- { id: splitnir-the-storming, name: Splitnir the Storming, category: weapon, stackSize: 1 }
+- { id: splitnir-the-primal, name: Splitnir the Primal, category: weapon, stackSize: 1 }
+- { id: bleeding-berserkir, name: Bleeding Berserkir, category: weapon, stackSize: 1 }
+- { id: thundering-berserkir, name: Thundering Berserkir, category: weapon, stackSize: 1 }
+- { id: primal-berserkir, name: Primal Berserkir, category: weapon, stackSize: 1 }
+- { id: blood-fang, name: Blood Fang, category: weapon, stackSize: 1 }
+- { id: storm-fang, name: Storm Fang, category: weapon, stackSize: 1 }
+- { id: root-fang, name: Root Fang, category: weapon, stackSize: 1 }
+- { id: wound-ripper, name: Wound Ripper, category: weapon, stackSize: 1 }
+- { id: storm-ripper, name: Storm Ripper, category: weapon, stackSize: 1 }
+- { id: root-ripper, name: Root Ripper, category: weapon, stackSize: 1 }
 - { id: staff-of-embers, name: Staff of Embers, category: weapon, stackSize: 1 }
 - { id: staff-of-frost, name: Staff of Frost, category: weapon, stackSize: 1 }
 - { id: staff-of-storms, name: Staff of Storms, category: weapon, stackSize: 1 }

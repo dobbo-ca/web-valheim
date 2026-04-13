@@ -3683,7 +3683,7 @@
     - { itemId: refined-eitr, qty: 5 }
     - { itemId: morgen-heart, qty: 1 }
   yields: { itemId: ash-fang, qty: 1 }
-  tags: [bow, two-handed, tier-7]
+  tags: [bow, two-handed, tier-6]
   stats:
     damage: { pierce: 92 }
     knockback: 20
@@ -3725,7 +3725,7 @@
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: charred-bone, qty: 5 }
   yields: { itemId: flametal-mace, qty: 1 }
-  tags: [mace, one-handed, tier-7]
+  tags: [mace, one-handed, tier-6]
   stats:
     damage: { blunt: 95, fire: 20 }
     knockback: 80
@@ -3771,7 +3771,7 @@
     - { itemId: bilebag, qty: 3 }
     - { itemId: yggdrasil-wood, qty: 8 }
   yields: { itemId: slayer, qty: 1 }
-  tags: [sledge, two-handed, tier-7]
+  tags: [sledge, two-handed, tier-6]
   stats:
     damage: { blunt: 100 }
     knockback: 100
@@ -3817,7 +3817,7 @@
     - { itemId: refined-eitr, qty: 5 }
     - { itemId: morgen-heart, qty: 2 }
   yields: { itemId: dyrnwyn, qty: 1 }
-  tags: [sword, one-handed, tier-7]
+  tags: [sword, one-handed, tier-6]
   stats:
     damage: { slash: 95, fire: 30 }
     knockback: 40
@@ -3863,7 +3863,7 @@
     - { itemId: charred-bone, qty: 5 }
     - { itemId: bilebag, qty: 2 }
   yields: { itemId: nidhogg, qty: 1 }
-  tags: [atgeir, two-handed, tier-7]
+  tags: [atgeir, two-handed, tier-6]
   stats:
     damage: { slash: 90, pierce: 30 }
     knockback: 30
@@ -4139,7 +4139,7 @@
     - { itemId: charred-bone, qty: 5 }
     - { itemId: bilebag, qty: 1 }
   yields: { itemId: flametal-helmet, qty: 1 }
-  tags: [helmet, armor, tier-7]
+  tags: [helmet, armor, tier-6]
   stats:
     armor: 34
     durability: 1200
@@ -4177,7 +4177,7 @@
     - { itemId: charred-bone, qty: 5 }
     - { itemId: bilebag, qty: 1 }
   yields: { itemId: flametal-breastplate, qty: 1 }
-  tags: [chest, armor, tier-7]
+  tags: [chest, armor, tier-6]
   stats:
     armor: 34
     durability: 1200
@@ -4215,7 +4215,7 @@
     - { itemId: charred-bone, qty: 5 }
     - { itemId: bilebag, qty: 1 }
   yields: { itemId: flametal-greaves, qty: 1 }
-  tags: [legs, armor, tier-7]
+  tags: [legs, armor, tier-6]
   stats:
     armor: 34
     durability: 1200
@@ -4334,7 +4334,7 @@
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: charred-bone, qty: 3 }
   yields: { itemId: flametal-shield, qty: 1 }
-  tags: [shield, tier-7]
+  tags: [shield, tier-6]
   stats:
     block: 160
     parry: 90
@@ -4376,7 +4376,7 @@
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: charred-bone, qty: 5 }
   yields: { itemId: flametal-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-7]
+  tags: [shield, tower-shield, tier-6]
   stats:
     block: 180
     durability: 300
@@ -4415,7 +4415,7 @@
     - { itemId: morgen-sinew, qty: 2 }
     - { itemId: flametal, qty: 5 }
   yields: { itemId: ashen-cape, qty: 1 }
-  tags: [cape, armor, tier-7]
+  tags: [cape, armor, tier-6]
   notes: -10% attack stamina, -20% block stamina.
   stats:
     armor: 1
@@ -4467,7 +4467,7 @@
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: charred-arrow, qty: 20 }
-  tags: [arrow, elemental, tier-7]
+  tags: [arrow, elemental, tier-6]
 
 # Black Forge bolts (for crossbows)
 - id: iron-bolt
@@ -4528,7 +4528,7 @@
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: feathers, qty: 2 }
   yields: { itemId: charred-bolt, qty: 20 }
-  tags: [bolt, elemental, tier-7]
+  tags: [bolt, elemental, tier-6]
 
 # Black Forge gem-upgraded weapons (Ashlands)
 - id: bloodgeon
@@ -4537,10 +4537,10 @@
   station: black-forge
   stationLevel: 3
   ingredients:
-    - { itemId: flametal, qty: 8 }
+    - { itemId: flametal-mace, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: bloodgeon, qty: 1 }
-  tags: [mace, one-handed, tier-7]
+  tags: [mace, one-handed, elemental, tier-6]
   notes: Flametal Mace upgraded with Bloodstone. Bleed damage.
   stats:
     damage: { blunt: 80, fire: 30 }
@@ -4583,10 +4583,10 @@
   station: black-forge
   stationLevel: 3
   ingredients:
-    - { itemId: flametal, qty: 15 }
+    - { itemId: slayer, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: brutal-slayer, qty: 1 }
-  tags: [sledge, two-handed, tier-7]
+  tags: [sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Bloodstone. Bleed damage.
   stats:
     damage: { blunt: 100, fire: 20 }
@@ -4629,10 +4629,10 @@
   station: black-forge
   stationLevel: 3
   ingredients:
-    - { itemId: flametal, qty: 15 }
+    - { itemId: slayer, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: scourging-slayer, qty: 1 }
-  tags: [sledge, two-handed, tier-7]
+  tags: [sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Iolite. Lightning damage.
   stats:
     damage: { blunt: 100, lightning: 20 }
@@ -4675,10 +4675,10 @@
   station: black-forge
   stationLevel: 3
   ingredients:
-    - { itemId: flametal, qty: 15 }
+    - { itemId: slayer, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: primal-slayer, qty: 1 }
-  tags: [sledge, two-handed, tier-7]
+  tags: [sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Jade. Poison damage.
   stats:
     damage: { blunt: 100, poison: 20 }
@@ -4721,10 +4721,10 @@
   station: black-forge
   stationLevel: 3
   ingredients:
-    - { itemId: flametal, qty: 6 }
+    - { itemId: nidhogg, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: nidhogg-the-bleeding, qty: 1 }
-  tags: [atgeir, two-handed, tier-7]
+  tags: [atgeir, two-handed, elemental, tier-6]
   notes: "Nidh\xF6gg upgraded with Bloodstone. Bleed damage."
   stats:
     damage: { slash: 90, pierce: 30, poison: 20 }
@@ -4767,10 +4767,10 @@
   station: black-forge
   stationLevel: 3
   ingredients:
-    - { itemId: flametal, qty: 6 }
+    - { itemId: nidhogg, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: nidhogg-the-thundering, qty: 1 }
-  tags: [atgeir, two-handed, tier-7]
+  tags: [atgeir, two-handed, elemental, tier-6]
   notes: "Nidh\xF6gg upgraded with Iolite. Lightning damage."
   stats:
     damage: { slash: 90, pierce: 30, lightning: 20 }
@@ -4813,10 +4813,10 @@
   station: black-forge
   stationLevel: 3
   ingredients:
-    - { itemId: flametal, qty: 6 }
+    - { itemId: nidhogg, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: nidhogg-the-primal, qty: 1 }
-  tags: [atgeir, two-handed, tier-7]
+  tags: [atgeir, two-handed, elemental, tier-6]
   notes: "Nidh\xF6gg upgraded with Jade. Poison damage."
   stats:
     damage: { slash: 90, pierce: 30, fire: 20 }
@@ -4862,7 +4862,7 @@
     - { itemId: flametal, qty: 8 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: storm-star, qty: 1 }
-  tags: [mace, one-handed, tier-7]
+  tags: [mace, one-handed, tier-6]
   notes: Flametal Mace upgraded with Iolite. Lightning damage.
   stats:
     damage: { blunt: 75, lightning: 30 }
@@ -4908,7 +4908,7 @@
     - { itemId: flametal, qty: 8 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: klossen, qty: 1 }
-  tags: [mace, one-handed, tier-7]
+  tags: [mace, one-handed, tier-6]
   notes: Flametal Mace upgraded with Jade. Poison damage.
   stats:
     damage: { blunt: 85, fire: 25 }
@@ -4944,6 +4944,315 @@
         knockback: 100
         backstab: 3
         durability: 350
+
+# Storm Star elemental variants
+- id: storm-star-the-bleeding
+  name: Storm Star the Bleeding
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: storm-star, qty: 1 }
+    - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: storm-star-the-bleeding, qty: 1 }
+  tags: [mace, one-handed, elemental, tier-6]
+  stats:
+    damage: { blunt: 75, lightning: 30, poison: 15 }
+    knockback: 60
+    backstab: 3
+    durability: 200
+    weight: 3.0
+
+- id: storm-star-the-thundering
+  name: Storm Star the Thundering
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: storm-star, qty: 1 }
+    - { itemId: iolite, qty: 1 }
+  yields: { itemId: storm-star-the-thundering, qty: 1 }
+  tags: [mace, one-handed, elemental, tier-6]
+  stats:
+    damage: { blunt: 75, lightning: 45 }
+    knockback: 60
+    backstab: 3
+    durability: 200
+    weight: 3.0
+
+- id: storm-star-the-primal
+  name: Storm Star the Primal
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: storm-star, qty: 1 }
+    - { itemId: jade, qty: 1 }
+  yields: { itemId: storm-star-the-primal, qty: 1 }
+  tags: [mace, one-handed, elemental, tier-6]
+  stats:
+    damage: { blunt: 75, lightning: 30, spirit: 15 }
+    knockback: 60
+    backstab: 3
+    durability: 200
+    weight: 3.0
+
+# Klossen elemental variants
+- id: klossen-the-bleeding
+  name: Klossen the Bleeding
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: klossen, qty: 1 }
+    - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: klossen-the-bleeding, qty: 1 }
+  tags: [sledge, two-handed, elemental, tier-6]
+  stats:
+    damage: { blunt: 85, fire: 25, poison: 15 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 4.5
+
+- id: klossen-the-thundering
+  name: Klossen the Thundering
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: klossen, qty: 1 }
+    - { itemId: iolite, qty: 1 }
+  yields: { itemId: klossen-the-thundering, qty: 1 }
+  tags: [sledge, two-handed, elemental, tier-6]
+  stats:
+    damage: { blunt: 85, fire: 25, lightning: 15 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 4.5
+
+- id: klossen-the-primal
+  name: Klossen the Primal
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: klossen, qty: 1 }
+    - { itemId: jade, qty: 1 }
+  yields: { itemId: klossen-the-primal, qty: 1 }
+  tags: [sledge, two-handed, elemental, tier-6]
+  stats:
+    damage: { blunt: 85, fire: 25, spirit: 15 }
+    knockback: 100
+    backstab: 3
+    durability: 200
+    weight: 4.5
+
+# Splitnir elemental variants
+- id: splitnir-the-bleeding
+  name: Splitnir the Bleeding
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: splitnir, qty: 1 }
+    - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: splitnir-the-bleeding, qty: 1 }
+  tags: [battleaxe, two-handed, elemental, tier-6]
+  stats:
+    damage: { slash: 85, poison: 20 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+
+- id: splitnir-the-storming
+  name: Splitnir the Storming
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: splitnir, qty: 1 }
+    - { itemId: iolite, qty: 1 }
+  yields: { itemId: splitnir-the-storming, qty: 1 }
+  tags: [battleaxe, two-handed, elemental, tier-6]
+  stats:
+    damage: { slash: 85, lightning: 20 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+
+- id: splitnir-the-primal
+  name: Splitnir the Primal
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: splitnir, qty: 1 }
+    - { itemId: jade, qty: 1 }
+  yields: { itemId: splitnir-the-primal, qty: 1 }
+  tags: [battleaxe, two-handed, elemental, tier-6]
+  stats:
+    damage: { slash: 85, spirit: 20 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+
+# Berserkir elemental variants
+- id: bleeding-berserkir
+  name: Bleeding Berserkir
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: berserkir, qty: 1 }
+    - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: bleeding-berserkir, qty: 1 }
+  tags: [axe, two-handed, elemental, tier-6]
+  stats:
+    damage: { slash: 80, blunt: 20, poison: 15 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+
+- id: thundering-berserkir
+  name: Thundering Berserkir
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: berserkir, qty: 1 }
+    - { itemId: iolite, qty: 1 }
+  yields: { itemId: thundering-berserkir, qty: 1 }
+  tags: [axe, two-handed, elemental, tier-6]
+  stats:
+    damage: { slash: 80, blunt: 20, lightning: 15 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+
+- id: primal-berserkir
+  name: Primal Berserkir
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: berserkir, qty: 1 }
+    - { itemId: jade, qty: 1 }
+  yields: { itemId: primal-berserkir, qty: 1 }
+  tags: [axe, two-handed, elemental, tier-6]
+  stats:
+    damage: { slash: 80, blunt: 20, spirit: 15 }
+    knockback: 50
+    backstab: 3
+    durability: 200
+    weight: 3.5
+
+# Ash Fang elemental variants
+- id: blood-fang
+  name: Blood Fang
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ash-fang, qty: 1 }
+    - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: blood-fang, qty: 1 }
+  tags: [bow, two-handed, elemental, tier-6]
+  stats:
+    damage: { pierce: 92, poison: 15 }
+    knockback: 20
+    durability: 150
+    weight: 2.0
+
+- id: storm-fang
+  name: Storm Fang
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ash-fang, qty: 1 }
+    - { itemId: iolite, qty: 1 }
+  yields: { itemId: storm-fang, qty: 1 }
+  tags: [bow, two-handed, elemental, tier-6]
+  stats:
+    damage: { pierce: 92, lightning: 15 }
+    knockback: 20
+    durability: 150
+    weight: 2.0
+
+- id: root-fang
+  name: Root Fang
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ash-fang, qty: 1 }
+    - { itemId: jade, qty: 1 }
+  yields: { itemId: root-fang, qty: 1 }
+  tags: [bow, two-handed, elemental, tier-6]
+  stats:
+    damage: { pierce: 92, spirit: 15 }
+    knockback: 20
+    durability: 150
+    weight: 2.0
+
+# Ripper elemental variants
+- id: wound-ripper
+  name: Wound Ripper
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ripper, qty: 1 }
+    - { itemId: bloodstone, qty: 1 }
+  yields: { itemId: wound-ripper, qty: 1 }
+  tags: [crossbow, two-handed, elemental, tier-6]
+  notes: Crossbow damage comes from bolts.
+  stats:
+    damage: { pierce: 0, poison: 15 }
+    knockback: 50
+    durability: 100
+    weight: 3.0
+
+- id: storm-ripper
+  name: Storm Ripper
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ripper, qty: 1 }
+    - { itemId: iolite, qty: 1 }
+  yields: { itemId: storm-ripper, qty: 1 }
+  tags: [crossbow, two-handed, elemental, tier-6]
+  notes: Crossbow damage comes from bolts.
+  stats:
+    damage: { pierce: 0, lightning: 15 }
+    knockback: 50
+    durability: 100
+    weight: 3.0
+
+- id: root-ripper
+  name: Root Ripper
+  type: crafting
+  station: black-forge
+  stationLevel: 3
+  ingredients:
+    - { itemId: ripper, qty: 1 }
+    - { itemId: jade, qty: 1 }
+  yields: { itemId: root-ripper, qty: 1 }
+  tags: [crossbow, two-handed, elemental, tier-6]
+  notes: Crossbow damage comes from bolts.
+  stats:
+    damage: { pierce: 0, spirit: 15 }
+    knockback: 50
+    durability: 100
+    weight: 3.0
 
 # ── Galdr Table ────────────────────────────────────────────────────────────────
 
@@ -5000,13 +5309,31 @@
   name: Staff of the Wild
   type: crafting
   station: galdr-table
-  stationLevel: 2
+  stationLevel: 3
   ingredients:
-    - { itemId: yggdrasil-wood, qty: 10 }
-    - { itemId: royal-jelly, qty: 4 }
-    - { itemId: refined-eitr, qty: 15 }
+    - { itemId: yggdrasil-wood, qty: 20 }
+    - { itemId: refined-eitr, qty: 16 }
+    - { itemId: jade, qty: 4 }
   yields: { itemId: staff-of-the-wild, qty: 1 }
   tags: [staff, two-handed, magic, tier-6]
+  stats:
+    damage: { spirit: 60 }
+    knockback: 30
+    durability: 100
+    weight: 1.5
+  upgrades:
+    - quality: 2
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 5 }
+        - { itemId: refined-eitr, qty: 4 }
+    - quality: 3
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 10 }
+        - { itemId: refined-eitr, qty: 8 }
+    - quality: 4
+      ingredients:
+        - { itemId: yggdrasil-wood, qty: 15 }
+        - { itemId: refined-eitr, qty: 12 }
 
 # Eitr-infused armor (Galdr Table level 1–2)
 - id: eitr-weave-hood
@@ -5255,7 +5582,7 @@
     - { itemId: ashwood, qty: 5 }
     - { itemId: proustite-powder, qty: 8 }
   yields: { itemId: staff-of-fracturing, qty: 1 }
-  tags: [staff, two-handed, magic, tier-7]
+  tags: [staff, two-handed, magic, tier-6]
 
 - id: dundr
   name: Dundr
@@ -5268,7 +5595,7 @@
     - { itemId: celestial-feather, qty: 3 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: dundr, qty: 1 }
-  tags: [staff, two-handed, magic, tier-7]
+  tags: [staff, two-handed, magic, tier-6]
   notes: Shoots grapeshot of 12 lightning bolts.
 
 - id: trollstav
@@ -5282,7 +5609,7 @@
     - { itemId: flametal, qty: 3 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: trollstav, qty: 1 }
-  tags: [staff, two-handed, magic, tier-7]
+  tags: [staff, two-handed, magic, tier-6]
   notes: Summons a large troll.
 
 - id: dead-raiser
@@ -5309,7 +5636,7 @@
     - { itemId: refined-eitr, qty: 15 }
     - { itemId: asksvin-hide, qty: 2 }
   yields: { itemId: hood-of-embla, qty: 1 }
-  tags: [helmet, armor, magic, tier-7]
+  tags: [helmet, armor, magic, tier-6]
   stats:
     armor: 28
     durability: 1200
@@ -5348,7 +5675,7 @@
     - { itemId: asksvin-hide, qty: 10 }
     - { itemId: flametal, qty: 5 }
   yields: { itemId: robes-of-embla, qty: 1 }
-  tags: [chest, armor, magic, tier-7]
+  tags: [chest, armor, magic, tier-6]
   stats:
     armor: 28
     durability: 1200
@@ -5386,7 +5713,7 @@
     - { itemId: refined-eitr, qty: 20 }
     - { itemId: asksvin-hide, qty: 10 }
   yields: { itemId: trousers-of-embla, qty: 1 }
-  tags: [legs, armor, magic, tier-7]
+  tags: [legs, armor, magic, tier-6]
   stats:
     armor: 28
     durability: 1200
@@ -5424,7 +5751,7 @@
     - { itemId: asksvin-hide, qty: 6 }
     - { itemId: morgen-sinew, qty: 2 }
   yields: { itemId: asksvin-cloak, qty: 1 }
-  tags: [cape, armor, tier-7]
+  tags: [cape, armor, tier-6]
   notes: Wind run effect, -15% dodge stamina.
   stats:
     armor: 1
