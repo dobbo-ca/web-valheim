@@ -374,7 +374,6 @@ h3 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
 }
 .recipe-table__header {
   display: grid;
@@ -1320,6 +1319,27 @@ h3 {
   border-radius: var(--radius);
   overflow: hidden;
 }
+.hero-bar__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.hero-bar__item-icon {
+  image-rendering: pixelated;
+  border-radius: var(--radius-sm);
+  background: var(--accent-bg);
+  padding: 4px;
+}
+.hero-bar__name {
+  font-size: 20px;
+  font-weight: 700;
+}
+.hero-bar__subtitle {
+  font-size: 12px;
+  color: var(--text-soft);
+}
 .hero-bar__tabs {
   display: flex;
   border-bottom: 1px solid var(--border-soft);
@@ -1462,7 +1482,28 @@ h3 {
   color: var(--text-soft);
 }
 
-/* ===== Comparison table ===== */
+/* ===== Comparison table (grid layout) ===== */
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+}
+@media (max-width: 640px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.ct__section {
+  min-width: 0;
+}
+.ct__section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0 0 4px;
+}
 .ct {
   width: 100%;
   border-collapse: collapse;
@@ -1485,16 +1526,6 @@ h3 {
   width: 60px;
   color: var(--accent);
 }
-.ct__section-header th {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--accent);
-  font-weight: 700;
-  padding-top: 16px;
-  padding-bottom: 4px;
-  border-bottom: none;
-}
 .ct__stat-name {
   color: var(--text-soft);
   text-align: left;
@@ -1510,5 +1541,11 @@ h3 {
 }
 .ct tr {
   border-bottom: 1px solid color-mix(in oklch, var(--border-soft) 30%, transparent);
+}
+.compact-upgrades__ing--clickable {
+  cursor: pointer;
+}
+.compact-upgrades__ing--clickable:hover {
+  color: var(--accent);
 }
 

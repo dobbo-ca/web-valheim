@@ -35,75 +35,55 @@ const biomeLabel = recipe.biome
   : null;
 
 const tags = recipe.tags ?? [];
+const isWeapon = tags.some((t: string) => ['sword', 'axe', 'mace', 'polearm', 'bow', 'crossbow', 'knife', 'spear', 'staff', 'fists', 'shield', 'tower-shield', 'bomb', 'battleaxe', 'sledge', 'pickaxe', 'club', 'missile', 'arrow', 'bolt', 'throwable', 'utility', 'dual-wield'].includes(t));
 ---
 <Base title={`${recipe.name} — Valheim Helper`}>
   <p><a href={base}>← Back to all recipes</a></p>
 
-  <div class="detail-header">
-    {iconIds.has(recipe.id) && (
-      <svg class="detail-header__icon" width="48" height="48">
-        <use href={`${spriteHref}#${recipe.id}`} />
-      </svg>
-    )}
-    <div>
-      <h1>{recipe.name}</h1>
-      <p class="subtitle">
-        {tags.length > 0 && <>{tags[0].charAt(0).toUpperCase() + tags[0].slice(1)} · </>}
-        {(() => {
-          const stationName = station?.name ?? recipe.station;
-          if (recipe.stationLevel > 1) return `${stationName} (Lv ${recipe.stationLevel})`;
-          return stationName;
-        })()}
-        {biomeLabel && <span class="detail-header__biome"> · {biomeLabel}</span>}
-      </p>
+  <div class="detail-card">
+    {/* ── Header ── */}
+    <div class="detail-card__header">
+      {iconIds.has(recipe.id) && (
+        <svg class="detail-card__icon" width="48" height="48">
+          <use href={`${spriteHref}#${recipe.id}`} />
+        </svg>
+      )}
+      <div>
+        <h1 class="detail-card__name">{recipe.name}</h1>
+        <p class="detail-card__subtitle">
+          {tags.length > 0 && <>{tags[0].charAt(0).toUpperCase() + tags[0].slice(1)} · </>}
+          {(() => {
+            const stationName = station?.name ?? recipe.station;
+            if (recipe.stationLevel > 1) return `${stationName} (Lv ${recipe.stationLevel})`;
+            return stationName;
+          })()}
+          {biomeLabel && <span class="detail-card__biome"> · {biomeLabel}</span>}
+        </p>
+      </div>
     </div>
-  </div>
 
-  {recipe.stats && (
-    <section class="detail-section">
-      <HeroDamageBar
-        client:load
-        baseStats={recipe.stats}
-        upgrades={recipe.upgrades}
-        baseHref={base}
-      />
-    </section>
-  )}
-
-  {recipe.stats && (
-    <section class="detail-section">
-      <ComparisonTable
-        client:load
-        baseStats={recipe.stats}
-        upgrades={recipe.upgrades}
-        baseHref={base}
-      />
-    </section>
-  )}
-
-  <section class="detail-section">
-    <h2>Ingredients</h2>
-    <ul class="detail-list">
-      {recipe.ingredients.map((i) => (
-        <li class="detail-ingredient">
-          {iconIds.has(i.itemId) && (
-            <svg class="detail-ingredient__icon" width="20" height="20">
-              <use href={`${spriteHref}#${i.itemId}`} />
-            </svg>
-          )}
-          <a href={`${base}?ing=${i.itemId}`}>
-            {itemsById.get(i.itemId)?.name ?? i.itemId}
-          </a>
-          {' '}× {i.qty}
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  {recipe.upgrades && recipe.upgrades.length > 0 && (
-    <section class="detail-section">
-      <h2>Upgrade Materials</h2>
-      {recipe.upgrades.map((u) => (
+    {/* ── Crafting ── */}
+    <div class="detail-card__section">
+      <h2 class="detail-card__section-title">Crafting</h2>
+      <div class="detail-upgrade-row">
+        <span class="detail-upgrade-row__q">Q1</span>
+        <span class="detail-upgrade-row__station">
+          {station?.name ?? recipe.station} {recipe.stationLevel}
+        </span>
+        <div class="detail-upgrade-row__ings">
+          {recipe.ingredients.map((i) => (
+            <span class="detail-upgrade-row__ing">
+              {iconIds.has(i.itemId) && (
+                <svg width="16" height="16" style="image-rendering:pixelated;vertical-align:middle;">
+                  <use href={`${spriteHref}#${i.itemId}`} />
+                </svg>
+              )}
+              {' '}<a href={`${base}?ing=${i.itemId}`}>{itemsById.get(i.itemId)?.name ?? i.itemId}</a> ×{i.qty}
+            </span>
+          ))}
+        </div>
+      </div>
+      {(recipe.upgrades ?? []).map((u) => (
         <div class="detail-upgrade-row">
           <span class="detail-upgrade-row__q">Q{u.quality}</span>
           <span class="detail-upgrade-row__station">
@@ -123,84 +103,132 @@ const tags = recipe.tags ?? [];
           </div>
         </div>
       ))}
-    </section>
-  )}
+    </div>
 
-  {(() => {
-    const yieldItemId = recipe.yields?.itemId ?? recipe.id;
-    const item = itemsById.get(yieldItemId);
-    return item?.stackSize ? (
-      <section class="detail-section">
-        <h2>Stack size</h2>
-        <p>{item.stackSize}</p>
-      </section>
-    ) : null;
-  })()}
+    {/* ── Stats ── */}
+    {recipe.stats && (
+      <div class="detail-card__section">
+        <h2 class="detail-card__section-title">Stats</h2>
+        <ComparisonTable
+          client:load
+          baseStats={recipe.stats}
+          upgrades={recipe.upgrades}
+          baseHref={base}
+        />
+      </div>
+    )}
 
-  {recipe.food && (
-    <section class="detail-section">
-      <h2>Food stats</h2>
-      <ul class="detail-list">
-        <li>HP: {recipe.food.hp}</li>
-        <li>Stamina: {recipe.food.stamina}</li>
-        <li>Regen: {recipe.food.regen}</li>
-        <li>Duration: {Math.round(recipe.food.duration / 60)} min</li>
-        {recipe.food.eitr && <li>Eitr: {recipe.food.eitr}</li>}
-      </ul>
-    </section>
-  )}
+    {/* ── Food stats ── */}
+    {recipe.food && (
+      <div class="detail-card__section">
+        <h2 class="detail-card__section-title">Food stats</h2>
+        <ul class="detail-list">
+          <li>HP: {recipe.food.hp}</li>
+          <li>Stamina: {recipe.food.stamina}</li>
+          <li>Regen: {recipe.food.regen}</li>
+          <li>Duration: {Math.round(recipe.food.duration / 60)} min</li>
+          {recipe.food.eitr && <li>Eitr: {recipe.food.eitr}</li>}
+        </ul>
+      </div>
+    )}
 
-  {recipe.notes && (
-    <section class="detail-section">
-      <h2>Notes</h2>
-      <p>{recipe.notes}</p>
-    </section>
-  )}
+    {/* ── Stack size (non-weapons only) ── */}
+    {!isWeapon && (() => {
+      const yieldItemId = recipe.yields?.itemId ?? recipe.id;
+      const item = itemsById.get(yieldItemId);
+      return item?.stackSize ? (
+        <div class="detail-card__section">
+          <h2 class="detail-card__section-title">Stack size</h2>
+          <p>{item.stackSize}</p>
+        </div>
+      ) : null;
+    })()}
 
-  {usedIn.length > 0 && (
-    <section class="detail-section">
-      <h2>Used as ingredient in</h2>
-      <ul class="detail-list">
-        {usedIn.map((r) => (
-          <li>
-            <a href={`${base}recipes/${r.id}/`}>{r.name}</a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
+    {/* ── Notes ── */}
+    {recipe.notes && (
+      <div class="detail-card__section">
+        <h2 class="detail-card__section-title">Notes</h2>
+        <p class="detail-card__notes">{recipe.notes}</p>
+      </div>
+    )}
+
+    {/* ── Used in ── */}
+    {usedIn.length > 0 && (
+      <div class="detail-card__section">
+        <h2 class="detail-card__section-title">Used as ingredient in</h2>
+        <ul class="detail-list">
+          {usedIn.map((r) => (
+            <li>
+              <a href={`${base}recipes/${r.id}/`}>{r.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
 </Base>
 
 <style>
-  .detail-section { margin: 24px 0; }
-  .detail-list { list-style: disc; padding-left: 24px; }
-  .detail-list li { margin: 4px 0; }
-  .subtitle { color: var(--muted); margin-top: -4px; }
+  /* ── Card container ── */
+  .detail-card {
+    background: color-mix(in oklch, var(--bg) 50%, var(--surface));
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
 
-  .detail-header {
+  /* ── Header ── */
+  .detail-card__header {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 16px;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-soft);
   }
-  .detail-header__icon {
+  .detail-card__icon {
     image-rendering: pixelated;
-    border-radius: var(--radius);
+    border-radius: var(--radius-sm);
     background: var(--accent-bg);
     padding: 4px;
+    flex-shrink: 0;
   }
-  .detail-header__biome {
-    opacity: 0.7;
+  .detail-card__name {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .detail-card__subtitle {
+    font-size: 12px;
+    color: var(--text-soft);
+    margin: 2px 0 0;
+  }
+  .detail-card__biome { opacity: 0.7; }
+
+  /* ── Sections ── */
+  .detail-card__section {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .detail-card__section:last-child {
+    border-bottom: none;
+  }
+  .detail-card__section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  .detail-card__notes {
+    color: var(--text-soft);
+    font-size: 13px;
+    margin: 0;
   }
 
-  .detail-ingredient {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .detail-ingredient__icon {
-    image-rendering: pixelated;
-  }
+  /* ── Shared ── */
+  .detail-list { list-style: disc; padding-left: 24px; margin: 0; }
+  .detail-list li { margin: 4px 0; }
 
   .detail-upgrade-row {
     display: flex;

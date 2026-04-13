@@ -1,9 +1,7 @@
-import { For, Show, type Component } from 'solid-js';
+import { Show, type Component } from 'solid-js';
 import type { Recipe, Item, Station } from '../lib/types';
-import { IngredientChip } from './IngredientChip';
 import { AddToCartButton } from './AddToCartButton';
 import { ItemIcon } from './ItemIcon';
-import { HeroDamageBar } from './HeroDamageBar';
 import { CompactUpgradeGrid } from './CompactUpgradeGrid';
 
 interface Props {
@@ -66,7 +64,6 @@ export const RecipeRow: Component<Props> = (props) => {
           onClick={() => props.onToggle(props.recipe.id)}
         >
           <span class="recipe-row__name">
-            {props.expanded ? '▾ ' : ''}
             <Show when={hasRecipeIcon()}>
               <ItemIcon id={props.recipe.id} size="md" spriteHref={spriteHref()} />
             </Show>
@@ -87,12 +84,12 @@ export const RecipeRow: Component<Props> = (props) => {
               })()}
             </span>
           </Show>
-          <Show when={!props.expanded && isColVisible('ingredients')}>
+          <Show when={isColVisible('ingredients')}>
             <span class="recipe-row__ings">
               {formatIngredients(props.recipe, props.itemsById)}
             </span>
           </Show>
-          <Show when={!props.expanded && isColVisible('stats')}>
+          <Show when={isColVisible('stats')}>
             <span class="recipe-row__stats-cell">
               {formatStatSummary(props.recipe) && (
                 <span class="recipe-row__stat-badge">{formatStatSummary(props.recipe)}</span>
@@ -111,22 +108,21 @@ export const RecipeRow: Component<Props> = (props) => {
 
       <Show when={props.expanded}>
         <div class="recipe-row__detail" id={detailId()}>
+          {/* Combined crafting: Q1 ingredients + upgrades */}
           <div class="recipe-row__section">
-            <span class="label">Ingredients</span>
-            <div class="chips">
-              <For each={props.recipe.ingredients}>
-                {(ing) => (
-                  <IngredientChip
-                    itemId={ing.itemId}
-                    label={props.itemsById.get(ing.itemId)?.name ?? ing.itemId}
-                    qty={ing.qty}
-                    onClick={props.onIngredientClick}
-                    hasIcon={props.iconIds?.has(ing.itemId) ?? false}
-                    spriteHref={spriteHref()}
-                  />
-                )}
-              </For>
-            </div>
+            <CompactUpgradeGrid
+              recipe={props.recipe}
+              itemsById={props.itemsById}
+              stationsById={props.stationsById}
+              upgradeKeysInCart={props.upgradeKeysInCart}
+              onAddUpgradeToCart={props.onAddUpgradeToCart}
+              onAddMaxUpgrades={props.onAddMaxUpgrades}
+              onOpenCart={props.onOpenCart}
+              iconIds={props.iconIds}
+              spriteHref={props.spriteHref}
+              onIngredientClick={props.onIngredientClick}
+              showBaseIngredients
+            />
           </div>
 
           <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
@@ -136,7 +132,8 @@ export const RecipeRow: Component<Props> = (props) => {
             </div>
           </Show>
 
-          <Show when={(() => {
+          {/* Stack size only for non-weapons */}
+          <Show when={!props.recipe.stats && (() => {
             const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
             const item = props.itemsById.get(yieldItemId);
             return item?.stackSize;
@@ -162,49 +159,6 @@ export const RecipeRow: Component<Props> = (props) => {
                     <span>Eitr {food().eitr}</span>
                   </Show>
                 </div>
-              </div>
-            )}
-          </Show>
-
-          <Show when={props.recipe.stats}>
-            {(stats) => (
-              <div class="recipe-row__section">
-                <HeroDamageBar
-                  baseStats={stats()}
-                  upgrades={props.recipe.upgrades}
-                  baseHref={props.baseHref}
-                />
-              </div>
-            )}
-          </Show>
-
-          <Show when={props.recipe.upgrades && props.recipe.upgrades.length > 0}>
-            <div class="recipe-row__section">
-              <CompactUpgradeGrid
-                recipe={props.recipe}
-                itemsById={props.itemsById}
-                stationsById={props.stationsById}
-                upgradeKeysInCart={props.upgradeKeysInCart}
-                onAddUpgradeToCart={props.onAddUpgradeToCart}
-                onAddMaxUpgrades={props.onAddMaxUpgrades}
-                onOpenCart={props.onOpenCart}
-                iconIds={props.iconIds}
-                spriteHref={props.spriteHref}
-              />
-            </div>
-          </Show>
-
-          <Show when={props.recipe.notes}>
-            <div class="recipe-row__section recipe-row__notes">
-              {props.recipe.notes}
-            </div>
-          </Show>
-
-          <Show when={props.recipe.secondaryStep}>
-            {(step) => (
-              <div class="recipe-row__section">
-                <span class="label">Next step</span>
-                <p>{step().description}</p>
               </div>
             )}
           </Show>

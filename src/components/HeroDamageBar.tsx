@@ -7,6 +7,12 @@ interface Props {
   baseStats: WeaponStats;
   upgrades?: ItemUpgrade[];
   baseHref?: string;
+  /** Item name for inline header */
+  name?: string;
+  /** Subtitle text (e.g. "Sword · Ashlands") */
+  subtitle?: string;
+  /** Sprite href for item icon */
+  iconHref?: string;
 }
 
 export const HeroDamageBar: Component<Props> = (props) => {
@@ -34,6 +40,21 @@ export const HeroDamageBar: Component<Props> = (props) => {
 
   return (
     <div class="hero-bar">
+      <Show when={props.name}>
+        <div class="hero-bar__header">
+          <Show when={props.iconHref}>
+            <svg class="hero-bar__item-icon" width="48" height="48">
+              <use href={props.iconHref} />
+            </svg>
+          </Show>
+          <div>
+            <div class="hero-bar__name">{props.name}</div>
+            <Show when={props.subtitle}>
+              <div class="hero-bar__subtitle">{props.subtitle}</div>
+            </Show>
+          </div>
+        </div>
+      </Show>
       <Show when={qualities().length > 1}>
         <div class="hero-bar__tabs">
           <For each={qualities()}>
