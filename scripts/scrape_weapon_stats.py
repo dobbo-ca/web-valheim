@@ -159,6 +159,7 @@ WIKI_TYPE_MAP = {
     "bolt": "bolt",
     "bomb": "bomb",
     "missile": "missile",
+    "bomb": "bomb",
 }
 
 # Station max levels (base level 1 + number of upgrades)

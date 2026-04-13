@@ -335,6 +335,8 @@
 - { id: ripper, name: Ripper, category: weapon, stackSize: 1 }
 - { id: skoll-and-hati, name: Skoll and Hati, category: weapon, stackSize: 1 }
 - { id: demolisher, name: Demolisher, category: weapon, stackSize: 1 }
+- { id: skull-splittur, name: Skull Splittur, category: weapon, stackSize: 1 }
+- { id: bile-bomb, name: Bile Bomb, category: weapon, stackSize: 50 }
 - { id: splitnir, name: Splitnir, category: weapon, stackSize: 1 }
 - { id: berserkir, name: Berserkir, category: weapon, stackSize: 1 }
 - { id: ash-fang, name: Ash Fang, category: weapon, stackSize: 1 }
