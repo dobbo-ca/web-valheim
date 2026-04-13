@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Blade middle section -->
+  <polygon points="18,4 30,4 28,44 20,44" fill="#B0B8C8"/>
+  <polygon points="18,4 24,4 22,44 20,44" fill="#C8D0D8"/>
+  <!-- Fuller (groove) -->
+  <rect x="22" y="8" width="4" height="32" fill="#8090A0"/>
+  <!-- Fire runes -->
+  <rect x="23" y="12" width="2" height="4" fill="#CC4400" opacity="0.6"/>
+  <rect x="23" y="24" width="2" height="4" fill="#CC4400" opacity="0.6"/>
+  <rect x="23" y="36" width="2" height="4" fill="#CC4400" opacity="0.6"/>
+</svg>

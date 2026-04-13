@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Hilt crossguard -->
+  <rect x="12" y="18" width="24" height="4" fill="#C4A84A"/>
+  <rect x="12" y="18" width="24" height="1" fill="#D4B85A"/>
+  <!-- Grip -->
+  <rect x="20" y="22" width="8" height="20" fill="#8B6D4A"/>
+  <rect x="20" y="26" width="8" height="2" fill="#A08060"/>
+  <rect x="20" y="32" width="8" height="2" fill="#A08060"/>
+  <!-- Pommel -->
+  <rect x="18" y="42" width="12" height="4" fill="#C4A84A"/>
+  <!-- Fire glow on crossguard -->
+  <rect x="14" y="19" width="4" height="2" fill="#CC4400" opacity="0.5"/>
+  <rect x="30" y="19" width="4" height="2" fill="#CC4400" opacity="0.5"/>
+</svg>

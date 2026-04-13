@@ -3813,11 +3813,14 @@
   station: black-forge
   stationLevel: 3
   ingredients:
+    - { itemId: dyrnwyn-hilt-fragment, qty: 1 }
+    - { itemId: dyrnwyn-blade-fragment, qty: 1 }
+    - { itemId: dyrnwyn-tip-fragment, qty: 1 }
     - { itemId: flametal, qty: 20 }
-    - { itemId: refined-eitr, qty: 5 }
-    - { itemId: morgen-heart, qty: 2 }
+    - { itemId: bloodstone, qty: 1 }
   yields: { itemId: dyrnwyn, qty: 1 }
   tags: [sword, one-handed, tier-6]
+  notes: Legendary sword reforged from fragments. Upgrades beyond quality 2 require Black Forge levels not yet available in game.
   stats:
     damage: { slash: 95, fire: 30 }
     knockback: 40
@@ -3828,7 +3831,7 @@
     - quality: 2
       ingredients:
         - { itemId: flametal, qty: 10 }
-        - { itemId: ashwood, qty: 5 }
+        - { itemId: bloodstone, qty: 1 }
       stats:
         damage: { slash: 101, fire: 30 }
         knockback: 40
@@ -3837,7 +3840,7 @@
     - quality: 3
       ingredients:
         - { itemId: flametal, qty: 20 }
-        - { itemId: ashwood, qty: 10 }
+        - { itemId: bloodstone, qty: 2 }
       stats:
         damage: { slash: 107, fire: 30 }
         knockback: 40
@@ -3846,7 +3849,7 @@
     - quality: 4
       ingredients:
         - { itemId: flametal, qty: 30 }
-        - { itemId: ashwood, qty: 15 }
+        - { itemId: bloodstone, qty: 3 }
       stats:
         damage: { slash: 113, fire: 30 }
         knockback: 40

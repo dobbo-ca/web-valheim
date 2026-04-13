@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Blade tip -->
+  <polygon points="24,2 32,32 16,32" fill="#B0B8C8"/>
+  <polygon points="24,2 28,32 16,32" fill="#C8D0D8"/>
+  <!-- Fuller -->
+  <rect x="22" y="10" width="4" height="20" fill="#8090A0"/>
+  <!-- Fire glow at tip -->
+  <circle cx="24" cy="6" r="3" fill="#CC4400" opacity="0.5"/>
+  <!-- Broken edge at bottom -->
+  <polygon points="16,32 18,36 22,33 26,37 30,32 32,32" fill="#9098A8"/>
+</svg>

@@ -64,6 +64,9 @@
 - { id: bloodstone, name: Bloodstone, category: material, stackSize: 20, biome: ashlands }
 - { id: iolite, name: Iolite, category: material, stackSize: 20, biome: ashlands }
 - { id: jade, name: Jade, category: material, stackSize: 20, biome: ashlands }
+- { id: dyrnwyn-hilt-fragment, name: Dyrnwyn Hilt Fragment, category: material, stackSize: 10, biome: ashlands }
+- { id: dyrnwyn-blade-fragment, name: Dyrnwyn Blade Fragment, category: material, stackSize: 10, biome: ashlands }
+- { id: dyrnwyn-tip-fragment, name: Dyrnwyn Tip Fragment, category: material, stackSize: 10, biome: ashlands }
 - { id: skeleton-trophy, name: Skeleton Trophy, category: material, stackSize: 20, biome: meadows }
 - { id: wolf-trophy, name: Wolf Trophy, category: material, stackSize: 20, biome: mountain }
 
