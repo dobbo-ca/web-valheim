@@ -24,13 +24,15 @@ interface Props {
 
 function formatStatSummary(recipe: Recipe): string | null {
   if (!recipe.stats) return null;
-  if (recipe.stats.damage) {
-    const parts = Object.entries(recipe.stats.damage)
+  const dmg = recipe.stats.primaryAttack?.damage;
+  if (dmg) {
+    const parts = Object.entries(dmg)
       .filter(([, v]) => v != null && v > 0)
       .map(([type, val]) => `${val} ${type}`);
     if (parts.length > 0) return parts.join(' / ');
   }
-  if (recipe.stats.armor != null) return `${recipe.stats.armor} armor`;
+  const blockArmor = recipe.stats.blocking?.blockArmor;
+  if (blockArmor != null) return `${blockArmor} block`;
   return null;
 }
 
@@ -159,34 +161,10 @@ export const RecipeRow: Component<Props> = (props) => {
               <div class="recipe-row__section">
                 <span class="label">Stats</span>
                 <div class="stats-table">
-                  <Show when={stats().damage}>
-                    {(dmg) => (
-                      <For each={Object.entries(dmg()).filter(([, v]) => v != null && v > 0)}>
-                        {([type, val]) => (
-                          <div class="stats-table__row">
-                            <span class="stats-table__key">{type}</span>
-                            <span class="stats-table__val">{val}</span>
-                          </div>
-                        )}
-                      </For>
-                    )}
-                  </Show>
-                  <Show when={stats().armor != null}>
+                  <Show when={stats().weight != null}>
                     <div class="stats-table__row">
-                      <span class="stats-table__key">armor</span>
-                      <span class="stats-table__val">{stats().armor}</span>
-                    </div>
-                  </Show>
-                  <Show when={stats().block != null}>
-                    <div class="stats-table__row">
-                      <span class="stats-table__key">block</span>
-                      <span class="stats-table__val">{stats().block}</span>
-                    </div>
-                  </Show>
-                  <Show when={stats().parry != null}>
-                    <div class="stats-table__row">
-                      <span class="stats-table__key">parry</span>
-                      <span class="stats-table__val">{stats().parry}</span>
+                      <span class="stats-table__key">weight</span>
+                      <span class="stats-table__val">{stats().weight}</span>
                     </div>
                   </Show>
                   <Show when={stats().durability != null}>
@@ -195,13 +173,105 @@ export const RecipeRow: Component<Props> = (props) => {
                       <span class="stats-table__val">{stats().durability}</span>
                     </div>
                   </Show>
-                  <Show when={stats().weight != null}>
+                  <Show when={stats().movementPenalty != null}>
                     <div class="stats-table__row">
-                      <span class="stats-table__key">weight</span>
-                      <span class="stats-table__val">{stats().weight}</span>
+                      <span class="stats-table__key">movement</span>
+                      <span class="stats-table__val">{stats().movementPenalty}%</span>
                     </div>
                   </Show>
                 </div>
+
+                <Show when={stats().primaryAttack}>
+                  {(atk) => (
+                    <div class="stats-table" style="margin-top: 8px">
+                      <Show when={atk().damage}>
+                        {(dmg) => (
+                          <For each={Object.entries(dmg()).filter(([, v]) => v != null && v > 0)}>
+                            {([type, val]) => (
+                              <div class="stats-table__row">
+                                <span class="stats-table__key">{type}</span>
+                                <span class="stats-table__val">{val}</span>
+                              </div>
+                            )}
+                          </For>
+                        )}
+                      </Show>
+                      <Show when={atk().backstab != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">backstab</span>
+                          <span class="stats-table__val">×{atk().backstab}</span>
+                        </div>
+                      </Show>
+                      <Show when={atk().stagger != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">stagger</span>
+                          <span class="stats-table__val">{atk().stagger}</span>
+                        </div>
+                      </Show>
+                      <Show when={atk().knockback != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">knockback</span>
+                          <span class="stats-table__val">{atk().knockback}</span>
+                        </div>
+                      </Show>
+                      <Show when={atk().stamina != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">stamina</span>
+                          <span class="stats-table__val">{atk().stamina}</span>
+                        </div>
+                      </Show>
+                      <Show when={atk().staminaPerSecond != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">stamina/s</span>
+                          <span class="stats-table__val">{atk().staminaPerSecond}/s</span>
+                        </div>
+                      </Show>
+                      <Show when={atk().eitr != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">eitr</span>
+                          <span class="stats-table__val">{atk().eitr}</span>
+                        </div>
+                      </Show>
+                      <Show when={atk().healthCost != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">health cost</span>
+                          <span class="stats-table__val">{atk().healthCost}%</span>
+                        </div>
+                      </Show>
+                    </div>
+                  )}
+                </Show>
+
+                <Show when={stats().blocking}>
+                  {(blk) => (
+                    <div class="stats-table" style="margin-top: 8px">
+                      <Show when={blk().blockArmor != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">block</span>
+                          <span class="stats-table__val">{blk().blockArmor}</span>
+                        </div>
+                      </Show>
+                      <Show when={blk().parryBlockArmor != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">parry</span>
+                          <span class="stats-table__val">{blk().parryBlockArmor}</span>
+                        </div>
+                      </Show>
+                      <Show when={blk().blockForce != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">block force</span>
+                          <span class="stats-table__val">{blk().blockForce}</span>
+                        </div>
+                      </Show>
+                      <Show when={blk().parryBonus != null}>
+                        <div class="stats-table__row">
+                          <span class="stats-table__key">parry bonus</span>
+                          <span class="stats-table__val">×{blk().parryBonus}</span>
+                        </div>
+                      </Show>
+                    </div>
+                  )}
+                </Show>
               </div>
             )}
           </Show>
@@ -252,15 +322,12 @@ export const RecipeRow: Component<Props> = (props) => {
                         <Show when={upgrade.stats}>
                           {(uStats) => (
                             <div class="upgrade-list__stats">
-                              <Show when={uStats().damage}>
+                              <Show when={uStats().primaryAttack?.damage}>
                                 {(dmg) => (
                                   <For each={Object.entries(dmg()).filter(([, v]) => v != null && v > 0)}>
                                     {([type, val]) => <span class="upgrade-list__stat">{val} {type}</span>}
                                   </For>
                                 )}
-                              </Show>
-                              <Show when={uStats().armor != null}>
-                                <span class="upgrade-list__stat">{uStats().armor} armor</span>
                               </Show>
                               <Show when={uStats().durability != null}>
                                 <span class="upgrade-list__stat">{uStats().durability} dur</span>

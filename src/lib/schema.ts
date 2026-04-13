@@ -54,7 +54,8 @@ export const SecondaryStepSchema = z.object({
 
 export const RecipeTypeSchema = z.enum(['crafting', 'cooking', 'building']);
 
-export const DamageStatsSchema = z.object({
+// ── Damage types ──────────────────────────────────────────────────────────────
+export const DamageSchema = z.object({
   slash: z.number().nonnegative().optional(),
   pierce: z.number().nonnegative().optional(),
   blunt: z.number().nonnegative().optional(),
@@ -65,26 +66,54 @@ export const DamageStatsSchema = z.object({
   spirit: z.number().nonnegative().optional(),
 });
 
-export const ItemStatsSchema = z.object({
-  damage: DamageStatsSchema.optional(),
-  armor: z.number().nonnegative().optional(),
-  block: z.number().nonnegative().optional(),
-  parry: z.number().nonnegative().optional(),
-  knockback: z.number().nonnegative().optional(),
+// ── Attack data (primary or secondary) ────────────────────────────────────────
+export const AttackSchema = z.object({
+  damage: DamageSchema.optional(),
   backstab: z.number().nonnegative().optional(),
-  durability: z.number().nonnegative().optional(),
-  weight: z.number().nonnegative().optional(),
-  movementPenalty: z.number().optional(),
+  stagger: z.number().nonnegative().optional(),
+  knockback: z.number().nonnegative().optional(),
+  stamina: z.number().nonnegative().optional(),          // melee / bombs
+  staminaPerSecond: z.number().nonnegative().optional(),  // bows (drain while drawn)
+  eitr: z.number().nonnegative().optional(),              // staffs
+  healthCost: z.number().nonnegative().optional(),        // blood magic (% of health)
+  reloadTime: z.number().nonnegative().optional(),        // crossbows
+  recoilForce: z.number().nonnegative().optional(),       // crossbows
+  adrenaline: z.number().nonnegative().optional(),
+  projectile: z.string().optional(),                      // staffs / description of what it fires
+  effect: z.string().optional(),                          // bombs — DoT or special effect
 });
 
+// ── Blocking data ─────────────────────────────────────────────────────────────
+export const BlockingSchema = z.object({
+  blockArmor: z.number().nonnegative().optional(),
+  parryBlockArmor: z.number().nonnegative().optional(),
+  blockForce: z.number().nonnegative().optional(),        // melee only
+  parryBonus: z.number().nonnegative().optional(),
+  blockAdrenaline: z.number().nonnegative().optional(),
+  parryAdrenaline: z.number().nonnegative().optional(),
+});
+
+// ── Weapon stats (base or upgrade overlay) ────────────────────────────────────
+// All fields optional so upgrades can specify only what changes.
+export const WeaponStatsSchema = z.object({
+  weight: z.number().nonnegative().optional(),
+  durability: z.number().nonnegative().optional(),
+  movementPenalty: z.number().optional(),                 // percentage, e.g. -5
+  primaryAttack: AttackSchema.optional(),
+  secondaryAttack: AttackSchema.optional(),               // melee only, not all weapons
+  blocking: BlockingSchema.optional(),
+});
+
+// ── Item upgrade ──────────────────────────────────────────────────────────────
 export const ItemUpgradeSchema = z.object({
   quality: z.number().int().positive(),
   stationLevel: z.number().int().positive(),
   repairLevel: z.number().int().positive(),
   ingredients: z.array(IngredientRefSchema),
-  stats: ItemStatsSchema.optional(),
+  stats: WeaponStatsSchema.optional(),                    // sparse overlay on base stats
 });
 
+// ── Recipe ────────────────────────────────────────────────────────────────────
 export const RecipeSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
@@ -99,7 +128,7 @@ export const RecipeSchema = z.object({
   notes: z.string().optional(),
   food: FoodStatsSchema.optional(),
   secondaryStep: SecondaryStepSchema.optional(),
-  stats: ItemStatsSchema.optional(),
+  stats: WeaponStatsSchema.optional(),                    // base weapon stats
   upgrades: z.array(ItemUpgradeSchema).optional(),
   biome: BiomeSchema.optional(),
 });

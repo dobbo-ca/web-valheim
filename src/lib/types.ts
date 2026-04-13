@@ -8,8 +8,10 @@ import type {
   IngredientRefSchema,
   RecipeTypeSchema,
   ItemCategorySchema,
-  DamageStatsSchema,
-  ItemStatsSchema,
+  DamageSchema,
+  AttackSchema,
+  BlockingSchema,
+  WeaponStatsSchema,
   ItemUpgradeSchema,
   BiomeSchema,
 } from './schema';
@@ -22,7 +24,9 @@ export type SecondaryStep = z.infer<typeof SecondaryStepSchema>;
 export type IngredientRef = z.infer<typeof IngredientRefSchema>;
 export type RecipeType = z.infer<typeof RecipeTypeSchema>;
 export type ItemCategory = z.infer<typeof ItemCategorySchema>;
-export type DamageStats = z.infer<typeof DamageStatsSchema>;
-export type ItemStats = z.infer<typeof ItemStatsSchema>;
+export type Damage = z.infer<typeof DamageSchema>;
+export type Attack = z.infer<typeof AttackSchema>;
+export type Blocking = z.infer<typeof BlockingSchema>;
+export type WeaponStats = z.infer<typeof WeaponStatsSchema>;
 export type ItemUpgrade = z.infer<typeof ItemUpgradeSchema>;
 export type Biome = z.infer<typeof BiomeSchema>;
