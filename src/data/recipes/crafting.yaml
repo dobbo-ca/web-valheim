@@ -6254,6 +6254,7 @@
 - id: bone-bolt
   name: Bone Bolt
   type: crafting
+  biome: mistlands
   station: black-forge
   stationLevel: 1
   ingredients:
@@ -6266,6 +6267,7 @@
 - id: black-metal-bolt
   name: Black Metal Bolt
   type: crafting
+  biome: mistlands
   station: black-forge
   stationLevel: 2
   ingredients:
@@ -8270,6 +8272,7 @@
 - id: ballista-bolt
   name: Ballista Bolt
   type: crafting
+  biome: mistlands
   station: artisan-table
   stationLevel: 1
   ingredients:
