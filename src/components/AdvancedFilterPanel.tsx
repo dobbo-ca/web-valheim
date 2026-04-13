@@ -1,5 +1,6 @@
 import { For, type Component } from 'solid-js';
 import type { FilterState } from '../lib/filter';
+import { emptyFilterState } from '../lib/filter';
 import type { Station } from '../lib/types';
 
 interface TagGroup {
@@ -110,8 +111,25 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
   const getCeiling = (station: Station): number =>
     props.state.stationCeilings[station.id] ?? station.maxLevel;
 
+  const hasAnyFilter = () =>
+    props.state.type !== 'all' ||
+    props.state.station !== 'all' ||
+    props.state.tags.length > 0 ||
+    props.state.biomes.length > 0 ||
+    Object.keys(props.state.stationCeilings).length > 0 ||
+    props.state.query.length > 0;
+
   return (
     <div class="adv-filter">
+      {hasAnyFilter() && (
+        <button
+          type="button"
+          class="adv-filter__clear"
+          onClick={() => props.onChange({ ...emptyFilterState })}
+        >
+          Clear All Filters
+        </button>
+      )}
       <div class="adv-filter__section">
         <span class="adv-filter__label">Type</span>
         <div class="adv-filter__tags" role="group" aria-label="Recipe type">

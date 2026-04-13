@@ -1038,6 +1038,21 @@ h3 {
   flex-direction: column;
   gap: 12px;
 }
+.adv-filter__clear {
+  align-self: flex-end;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+  font: inherit;
+  font-size: 11px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.adv-filter__clear:hover {
+  border-color: var(--danger);
+  background: color-mix(in oklch, var(--danger) 12%, transparent);
+}
 .adv-filter__section {
   display: flex;
   flex-direction: column;
