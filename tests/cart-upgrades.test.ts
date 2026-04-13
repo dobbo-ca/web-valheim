@@ -14,8 +14,8 @@ const recipes: Recipe[] = [
       { itemId: 'wood', qty: 2 },
     ],
     upgrades: [
-      { quality: 2, stationLevel: 3, ingredients: [{ itemId: 'iron', qty: 10 }, { itemId: 'wood', qty: 2 }] },
-      { quality: 3, stationLevel: 4, ingredients: [{ itemId: 'iron', qty: 20 }, { itemId: 'wood', qty: 4 }] },
+      { quality: 2, stationLevel: 3, repairLevel: 3, ingredients: [{ itemId: 'iron', qty: 10 }, { itemId: 'wood', qty: 2 }] },
+      { quality: 3, stationLevel: 4, repairLevel: 4, ingredients: [{ itemId: 'iron', qty: 20 }, { itemId: 'wood', qty: 4 }] },
     ],
   },
 ];

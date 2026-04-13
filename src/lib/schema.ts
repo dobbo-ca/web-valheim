@@ -80,6 +80,7 @@ export const ItemStatsSchema = z.object({
 export const ItemUpgradeSchema = z.object({
   quality: z.number().int().positive(),
   stationLevel: z.number().int().positive(),
+  repairLevel: z.number().int().positive(),
   ingredients: z.array(IngredientRefSchema),
   stats: ItemStatsSchema.optional(),
 });
@@ -90,6 +91,7 @@ export const RecipeSchema = z.object({
   type: RecipeTypeSchema,
   station: z.string().min(1),
   stationLevel: z.number().int().positive(),
+  repairLevel: z.number().int().positive().optional(),
   ingredients: z.array(IngredientRefSchema),
   yields: IngredientRefSchema.optional(),
   skill: z.string().optional(),

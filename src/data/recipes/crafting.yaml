@@ -8,6 +8,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 3 }
     - { itemId: stone, qty: 2 }
@@ -19,6 +20,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 3 }
         - { itemId: stone, qty: 2 }
@@ -26,6 +28,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: stone, qty: 4 }
@@ -33,6 +36,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 9 }
         - { itemId: stone, qty: 6 }
@@ -44,6 +48,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 5 }
     - { itemId: stone, qty: 2 }
@@ -55,6 +60,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 3 }
         - { itemId: stone, qty: 2 }
@@ -62,6 +68,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: stone, qty: 4 }
@@ -69,6 +76,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 9 }
         - { itemId: stone, qty: 6 }
@@ -81,6 +89,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 6 }
   yields: { itemId: club, qty: 1 }
@@ -94,6 +103,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 3 }
       stats:
@@ -101,6 +111,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 6 }
       stats:
@@ -108,6 +119,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 9 }
       stats:
@@ -119,6 +131,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: leather-scraps, qty: 8 }
@@ -132,6 +145,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 10 }
       stats:
@@ -139,6 +153,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 20 }
       stats:
@@ -146,6 +161,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 30 }
       stats:
@@ -157,6 +173,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 5 }
     - { itemId: stone, qty: 4 }
@@ -170,6 +187,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 2 }
         - { itemId: stone, qty: 2 }
@@ -178,6 +196,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 4 }
         - { itemId: stone, qty: 4 }
@@ -186,6 +205,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: stone, qty: 6 }
@@ -198,6 +218,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 5 }
     - { itemId: flint, qty: 6 }
@@ -212,6 +233,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 2 }
         - { itemId: flint, qty: 4 }
@@ -220,6 +242,7 @@
         durability: 200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 4 }
         - { itemId: flint, qty: 8 }
@@ -228,6 +251,7 @@
         durability: 250
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: flint, qty: 12 }
@@ -240,6 +264,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 2 }
     - { itemId: flint, qty: 4 }
@@ -255,6 +280,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 2 }
         - { itemId: flint, qty: 4 }
@@ -263,6 +289,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 4 }
         - { itemId: flint, qty: 8 }
@@ -271,6 +298,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: flint, qty: 12 }
@@ -283,6 +311,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 5 }
     - { itemId: flint, qty: 10 }
@@ -298,6 +327,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 2 }
         - { itemId: flint, qty: 4 }
@@ -306,6 +336,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 4 }
         - { itemId: flint, qty: 8 }
@@ -314,6 +345,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: flint, qty: 12 }
@@ -326,6 +358,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: hard-antler, qty: 1 }
@@ -338,6 +371,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 3 }
         - { itemId: hard-antler, qty: 1 }
@@ -346,6 +380,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 6 }
         - { itemId: hard-antler, qty: 2 }
@@ -354,6 +389,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 9 }
         - { itemId: hard-antler, qty: 3 }
@@ -366,6 +402,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: core-wood, qty: 10 }
@@ -380,6 +417,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: fine-wood, qty: 10 }
         - { itemId: deer-hide, qty: 2 }
@@ -388,6 +426,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: fine-wood, qty: 20 }
         - { itemId: deer-hide, qty: 4 }
@@ -396,6 +435,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: fine-wood, qty: 30 }
         - { itemId: deer-hide, qty: 6 }
@@ -408,6 +448,7 @@
   type: crafting
   station: workbench
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: core-wood, qty: 20 }
     - { itemId: deer-trophy, qty: 5 }
@@ -423,6 +464,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bone-fragments, qty: 10 }
       stats:
@@ -430,6 +472,7 @@
         durability: 150
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bone-fragments, qty: 20 }
       stats:
@@ -437,6 +480,7 @@
         durability: 200
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: bone-fragments, qty: 30 }
       stats:
@@ -449,6 +493,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: deer-hide, qty: 6 }
     - { itemId: leather-scraps, qty: 2 }
@@ -461,6 +506,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: deer-hide, qty: 5 }
       stats:
@@ -468,6 +514,7 @@
         durability: 600
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: deer-hide, qty: 10 }
       stats:
@@ -475,6 +522,7 @@
         durability: 800
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: deer-hide, qty: 15 }
       stats:
@@ -486,6 +534,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: deer-hide, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
@@ -498,6 +547,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: deer-hide, qty: 5 }
       stats:
@@ -505,6 +555,7 @@
         durability: 600
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: deer-hide, qty: 10 }
       stats:
@@ -512,6 +563,7 @@
         durability: 800
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: deer-hide, qty: 15 }
       stats:
@@ -523,6 +575,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: deer-hide, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
@@ -535,6 +588,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: deer-hide, qty: 5 }
       stats:
@@ -542,6 +596,7 @@
         durability: 600
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: deer-hide, qty: 10 }
       stats:
@@ -549,6 +604,7 @@
         durability: 800
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: deer-hide, qty: 15 }
       stats:
@@ -560,6 +616,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: deer-hide, qty: 4 }
     - { itemId: leather-scraps, qty: 3 }
@@ -572,6 +629,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: deer-hide, qty: 5 }
       stats:
@@ -579,6 +637,7 @@
         durability: 600
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: deer-hide, qty: 10 }
       stats:
@@ -586,6 +645,7 @@
         durability: 800
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: deer-hide, qty: 15 }
       stats:
@@ -597,6 +657,7 @@
   type: crafting
   station: workbench
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: wolf-pelt, qty: 6 }
     - { itemId: wolf-trophy, qty: 1 }
@@ -611,6 +672,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wolf-pelt, qty: 5 }
         - { itemId: silver, qty: 2 }
@@ -619,6 +681,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wolf-pelt, qty: 10 }
         - { itemId: silver, qty: 4 }
@@ -627,6 +690,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: wolf-pelt, qty: 15 }
         - { itemId: silver, qty: 6 }
@@ -639,6 +703,7 @@
   type: crafting
   station: workbench
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: lox-pelt, qty: 6 }
     - { itemId: silver, qty: 2 }
@@ -652,6 +717,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: lox-pelt, qty: 5 }
         - { itemId: silver, qty: 2 }
@@ -660,6 +726,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: lox-pelt, qty: 10 }
         - { itemId: silver, qty: 4 }
@@ -668,6 +735,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: lox-pelt, qty: 15 }
         - { itemId: silver, qty: 6 }
@@ -680,6 +748,7 @@
   type: crafting
   station: workbench
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: troll-hide, qty: 5 }
     - { itemId: bone-fragments, qty: 3 }
@@ -692,6 +761,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
       stats:
@@ -699,6 +769,7 @@
         durability: 700
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
       stats:
@@ -706,6 +777,7 @@
         durability: 900
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
       stats:
@@ -717,6 +789,7 @@
   type: crafting
   station: workbench
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: troll-hide, qty: 10 }
     - { itemId: bone-fragments, qty: 4 }
@@ -729,6 +802,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
       stats:
@@ -736,6 +810,7 @@
         durability: 700
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
       stats:
@@ -743,6 +818,7 @@
         durability: 900
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
       stats:
@@ -754,6 +830,7 @@
   type: crafting
   station: workbench
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: troll-hide, qty: 10 }
     - { itemId: bone-fragments, qty: 4 }
@@ -766,6 +843,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
       stats:
@@ -773,6 +851,7 @@
         durability: 700
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
       stats:
@@ -780,6 +859,7 @@
         durability: 900
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
       stats:
@@ -791,6 +871,7 @@
   type: crafting
   station: workbench
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: troll-hide, qty: 5 }
     - { itemId: bone-fragments, qty: 3 }
@@ -803,6 +884,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
       stats:
@@ -810,6 +892,7 @@
         durability: 700
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
       stats:
@@ -817,6 +900,7 @@
         durability: 900
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
       stats:
@@ -829,6 +913,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: resin, qty: 4 }
@@ -842,6 +927,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 5 }
       stats:
@@ -849,6 +935,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 10 }
       stats:
@@ -856,6 +943,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 15 }
       stats:
@@ -867,6 +955,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: leather-scraps, qty: 4 }
@@ -879,6 +968,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: wood, qty: 5 }
       stats:
@@ -886,6 +976,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: wood, qty: 10 }
       stats:
@@ -893,6 +984,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: wood, qty: 15 }
       stats:
@@ -904,6 +996,7 @@
   type: crafting
   station: workbench
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: bone-fragments, qty: 4 }
@@ -917,6 +1010,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bone-fragments, qty: 10 }
       stats:
@@ -924,6 +1018,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bone-fragments, qty: 20 }
       stats:
@@ -931,6 +1026,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bone-fragments, qty: 30 }
       stats:
@@ -1027,6 +1123,7 @@
   type: crafting
   station: workbench
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: fine-wood, qty: 2 }
     - { itemId: chitin, qty: 4 }
@@ -1042,6 +1139,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: chitin, qty: 10 }
       stats:
@@ -1051,6 +1149,7 @@
         durability: 250
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: chitin, qty: 20 }
       stats:
@@ -1060,6 +1159,7 @@
         durability: 300
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: chitin, qty: 30 }
       stats:
@@ -1073,6 +1173,7 @@
   type: crafting
   station: workbench
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: fine-wood, qty: 8 }
     - { itemId: chitin, qty: 30 }
@@ -1088,6 +1189,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: chitin, qty: 10 }
       stats:
@@ -1096,6 +1198,7 @@
         durability: 100
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: chitin, qty: 20 }
       stats:
@@ -1104,6 +1207,7 @@
         durability: 150
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: chitin, qty: 30 }
       stats:
@@ -1119,6 +1223,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 2 }
     - { itemId: copper, qty: 8 }
@@ -1133,6 +1238,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: copper, qty: 4 }
       stats:
@@ -1140,6 +1246,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: copper, qty: 8 }
       stats:
@@ -1147,6 +1254,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: copper, qty: 12 }
       stats:
@@ -1158,6 +1266,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 4 }
     - { itemId: bronze, qty: 8 }
@@ -1173,6 +1282,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1181,6 +1291,7 @@
         durability: 225
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1189,6 +1300,7 @@
         durability: 275
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1201,6 +1313,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: core-wood, qty: 3 }
     - { itemId: bronze, qty: 10 }
@@ -1213,6 +1326,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1221,6 +1335,7 @@
         durability: 200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1229,6 +1344,7 @@
         durability: 250
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1241,6 +1357,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 4 }
     - { itemId: bronze, qty: 8 }
@@ -1256,6 +1373,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1265,6 +1383,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1274,6 +1393,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1287,6 +1407,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: bronze, qty: 8 }
@@ -1302,6 +1423,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1311,6 +1433,7 @@
         durability: 225
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1320,6 +1443,7 @@
         durability: 275
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1333,6 +1457,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: wood, qty: 5 }
     - { itemId: bronze, qty: 6 }
@@ -1348,6 +1473,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1357,6 +1483,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1366,6 +1493,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1379,6 +1507,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: bronze, qty: 8 }
     - { itemId: wood, qty: 2 }
@@ -1396,6 +1525,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1407,6 +1537,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1418,6 +1549,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1433,6 +1565,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: bronze, qty: 10 }
     - { itemId: wood, qty: 4 }
@@ -1446,6 +1579,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 4 }
         - { itemId: wood, qty: 2 }
@@ -1455,6 +1589,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 8 }
         - { itemId: wood, qty: 4 }
@@ -1464,6 +1599,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 12 }
         - { itemId: wood, qty: 6 }
@@ -1477,6 +1613,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: bronze, qty: 5 }
     - { itemId: deer-hide, qty: 2 }
@@ -1489,6 +1626,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
       stats:
@@ -1496,6 +1634,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
       stats:
@@ -1503,6 +1642,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
       stats:
@@ -1514,6 +1654,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: bronze, qty: 10 }
     - { itemId: deer-hide, qty: 2 }
@@ -1526,6 +1667,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
       stats:
@@ -1533,6 +1675,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
       stats:
@@ -1540,6 +1683,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
       stats:
@@ -1551,6 +1695,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: bronze, qty: 5 }
     - { itemId: deer-hide, qty: 2 }
@@ -1563,6 +1708,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
       stats:
@@ -1570,6 +1716,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
       stats:
@@ -1577,6 +1724,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
       stats:
@@ -1622,6 +1770,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: core-wood, qty: 5 }
     - { itemId: bronze, qty: 5 }
@@ -1634,6 +1783,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
         - { itemId: core-wood, qty: 5 }
@@ -1641,6 +1791,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
         - { itemId: core-wood, qty: 10 }
@@ -1648,6 +1799,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
         - { itemId: core-wood, qty: 15 }
@@ -1660,6 +1812,7 @@
   type: crafting
   station: forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: iron, qty: 20 }
@@ -1675,6 +1828,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: fine-wood, qty: 5 }
         - { itemId: iron, qty: 10 }
@@ -1684,6 +1838,7 @@
         durability: 200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: fine-wood, qty: 10 }
         - { itemId: iron, qty: 20 }
@@ -1693,6 +1848,7 @@
         durability: 250
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: fine-wood, qty: 15 }
         - { itemId: iron, qty: 30 }
@@ -1706,6 +1862,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: iron, qty: 60 }
     - { itemId: wood, qty: 2 }
@@ -1724,6 +1881,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 2 }
@@ -1735,6 +1893,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 4 }
@@ -1746,6 +1905,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 6 }
@@ -1761,6 +1921,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: iron, qty: 20 }
     - { itemId: wood, qty: 4 }
@@ -1776,6 +1937,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 2 }
@@ -1787,6 +1949,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 4 }
@@ -1798,6 +1961,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 6 }
@@ -1813,6 +1977,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: wood, qty: 10 }
     - { itemId: iron, qty: 30 }
@@ -1828,6 +1993,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 5 }
@@ -1838,6 +2004,7 @@
         durability: 225
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 10 }
@@ -1848,6 +2015,7 @@
         durability: 275
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 15 }
@@ -1862,6 +2030,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: wood, qty: 4 }
     - { itemId: iron, qty: 20 }
@@ -1877,6 +2046,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: wood, qty: 2 }
@@ -1887,6 +2057,7 @@
         durability: 225
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: wood, qty: 4 }
@@ -1897,6 +2068,7 @@
         durability: 275
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: wood, qty: 6 }
@@ -1911,6 +2083,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: core-wood, qty: 3 }
     - { itemId: iron, qty: 20 }
@@ -1923,6 +2096,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: core-wood, qty: 2 }
@@ -1931,6 +2105,7 @@
         durability: 200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: core-wood, qty: 4 }
@@ -1939,6 +2114,7 @@
         durability: 250
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: core-wood, qty: 6 }
@@ -1951,6 +2127,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: ancient-bark, qty: 10 }
     - { itemId: iron, qty: 30 }
@@ -1968,6 +2145,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 15 }
         - { itemId: ancient-bark, qty: 5 }
@@ -1978,6 +2156,7 @@
         durability: 150
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: ancient-bark, qty: 10 }
@@ -1988,6 +2167,7 @@
         durability: 200
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 45 }
         - { itemId: ancient-bark, qty: 15 }
@@ -2002,6 +2182,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: iron, qty: 10 }
     - { itemId: ancient-bark, qty: 4 }
@@ -2015,6 +2196,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 5 }
       stats:
@@ -2023,6 +2205,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 10 }
       stats:
@@ -2031,6 +2214,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 15 }
       stats:
@@ -2043,6 +2227,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: fine-wood, qty: 15 }
     - { itemId: iron, qty: 10 }
@@ -2055,6 +2240,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 5 }
         - { itemId: fine-wood, qty: 5 }
@@ -2063,6 +2249,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: fine-wood, qty: 10 }
@@ -2071,6 +2258,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 15 }
         - { itemId: fine-wood, qty: 15 }
@@ -2083,6 +2271,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: iron, qty: 8 }
@@ -2096,6 +2285,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 4 }
         - { itemId: fine-wood, qty: 5 }
@@ -2105,6 +2295,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 8 }
         - { itemId: fine-wood, qty: 10 }
@@ -2114,6 +2305,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 12 }
         - { itemId: fine-wood, qty: 15 }
@@ -2127,6 +2319,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: iron, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
@@ -2139,6 +2332,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
       stats:
@@ -2146,6 +2340,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
       stats:
@@ -2153,6 +2348,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
       stats:
@@ -2164,6 +2360,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: iron, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
@@ -2176,6 +2373,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
       stats:
@@ -2183,6 +2381,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
       stats:
@@ -2190,6 +2389,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
       stats:
@@ -2201,6 +2401,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: iron, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
@@ -2213,6 +2414,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
       stats:
@@ -2220,6 +2422,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
       stats:
@@ -2227,6 +2430,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
       stats:
@@ -2260,6 +2464,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: ancient-bark, qty: 30 }
     - { itemId: iron, qty: 35 }
@@ -2275,6 +2480,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 15 }
         - { itemId: ancient-bark, qty: 10 }
@@ -2286,6 +2492,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: ancient-bark, qty: 20 }
@@ -2297,6 +2504,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 45 }
         - { itemId: ancient-bark, qty: 30 }
@@ -2313,6 +2521,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: ancient-bark, qty: 10 }
     - { itemId: iron, qty: 10 }
@@ -2328,6 +2537,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 5 }
         - { itemId: ancient-bark, qty: 5 }
@@ -2338,6 +2548,7 @@
         durability: 150
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: ancient-bark, qty: 10 }
@@ -2348,6 +2559,7 @@
         durability: 200
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: iron, qty: 15 }
         - { itemId: ancient-bark, qty: 15 }
@@ -2362,6 +2574,7 @@
   type: crafting
   station: forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: ancient-bark, qty: 10 }
     - { itemId: silver, qty: 20 }
@@ -2378,6 +2591,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: ancient-bark, qty: 5 }
@@ -2388,6 +2602,7 @@
         durability: 150
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 20 }
         - { itemId: ancient-bark, qty: 10 }
@@ -2398,6 +2613,7 @@
         durability: 200
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 30 }
         - { itemId: ancient-bark, qty: 15 }
@@ -2412,6 +2628,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: ancient-bark, qty: 10 }
     - { itemId: silver, qty: 30 }
@@ -2429,6 +2646,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: ancient-bark, qty: 5 }
@@ -2440,6 +2658,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 30 }
         - { itemId: ancient-bark, qty: 10 }
@@ -2451,6 +2670,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: silver, qty: 45 }
         - { itemId: ancient-bark, qty: 15 }
@@ -2466,6 +2686,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: ancient-bark, qty: 10 }
     - { itemId: wolf-fang, qty: 4 }
@@ -2482,6 +2703,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 2 }
         - { itemId: wolf-fang, qty: 2 }
@@ -2492,6 +2714,7 @@
         durability: 150
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 4 }
         - { itemId: wolf-fang, qty: 4 }
@@ -2502,6 +2725,7 @@
         durability: 200
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: silver, qty: 6 }
         - { itemId: wolf-fang, qty: 6 }
@@ -2516,6 +2740,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: wood, qty: 2 }
     - { itemId: silver, qty: 10 }
@@ -2532,6 +2757,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 10 }
       stats:
@@ -2541,6 +2767,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 20 }
       stats:
@@ -2550,6 +2777,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: silver, qty: 30 }
       stats:
@@ -2563,6 +2791,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: ancient-bark, qty: 40 }
     - { itemId: silver, qty: 30 }
@@ -2578,6 +2807,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: crystal, qty: 10 }
         - { itemId: silver, qty: 10 }
@@ -2588,6 +2818,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: crystal, qty: 20 }
         - { itemId: silver, qty: 20 }
@@ -2598,6 +2829,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: crystal, qty: 30 }
         - { itemId: silver, qty: 30 }
@@ -2612,6 +2844,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: silver, qty: 8 }
@@ -2625,6 +2858,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: fine-wood, qty: 5 }
@@ -2634,6 +2868,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: fine-wood, qty: 10 }
@@ -2643,6 +2878,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: fine-wood, qty: 15 }
@@ -2656,6 +2892,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: iron, qty: 4 }
@@ -2671,6 +2908,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: serpent-scale, qty: 4 }
         - { itemId: fine-wood, qty: 4 }
@@ -2681,6 +2919,7 @@
         durability: 300
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: serpent-scale, qty: 8 }
         - { itemId: fine-wood, qty: 8 }
@@ -2691,6 +2930,7 @@
         durability: 350
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: serpent-scale, qty: 12 }
         - { itemId: fine-wood, qty: 12 }
@@ -2705,6 +2945,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: silver, qty: 20 }
     - { itemId: wolf-pelt, qty: 5 }
@@ -2718,6 +2959,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: wolf-pelt, qty: 2 }
@@ -2726,6 +2968,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: wolf-pelt, qty: 4 }
@@ -2734,6 +2977,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wolf-pelt, qty: 6 }
@@ -2746,6 +2990,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: silver, qty: 10 }
     - { itemId: wolf-pelt, qty: 4 }
@@ -2759,6 +3004,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: wolf-pelt, qty: 2 }
@@ -2767,6 +3013,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: wolf-pelt, qty: 4 }
@@ -2775,6 +3022,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wolf-pelt, qty: 6 }
@@ -2787,6 +3035,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: silver, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
@@ -2800,6 +3049,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: wolf-pelt, qty: 2 }
@@ -2808,6 +3058,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: wolf-pelt, qty: 4 }
@@ -2816,6 +3067,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wolf-pelt, qty: 6 }
@@ -2841,6 +3093,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: fine-wood, qty: 2 }
     - { itemId: black-metal, qty: 20 }
@@ -2856,6 +3109,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 2 }
@@ -2867,6 +3121,7 @@
         durability: 250
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 4 }
@@ -2878,6 +3133,7 @@
         durability: 300
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 6 }
@@ -2893,6 +3149,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: fine-wood, qty: 6 }
     - { itemId: black-metal, qty: 20 }
@@ -2908,6 +3165,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 2 }
@@ -2918,6 +3176,7 @@
         durability: 225
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 4 }
@@ -2928,6 +3187,7 @@
         durability: 275
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 6 }
@@ -2942,6 +3202,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: black-metal, qty: 30 }
@@ -2957,6 +3218,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 5 }
@@ -2967,6 +3229,7 @@
         durability: 225
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 10 }
@@ -2977,6 +3240,7 @@
         durability: 275
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 15 }
@@ -2991,6 +3255,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: fine-wood, qty: 4 }
     - { itemId: black-metal, qty: 10 }
@@ -3006,6 +3271,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 2 }
@@ -3016,6 +3282,7 @@
         durability: 250
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 4 }
@@ -3026,6 +3293,7 @@
         durability: 300
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 6 }
@@ -3040,6 +3308,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: fine-wood, qty: 5 }
     - { itemId: iron, qty: 20 }
@@ -3057,6 +3326,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: needle, qty: 5 }
         - { itemId: linen-thread, qty: 5 }
@@ -3067,6 +3337,7 @@
         durability: 250
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: needle, qty: 10 }
         - { itemId: linen-thread, qty: 10 }
@@ -3077,6 +3348,7 @@
         durability: 300
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: needle, qty: 15 }
         - { itemId: linen-thread, qty: 15 }
@@ -3091,6 +3363,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: fine-wood, qty: 10 }
     - { itemId: black-metal, qty: 8 }
@@ -3105,6 +3378,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 5 }
         - { itemId: fine-wood, qty: 5 }
@@ -3114,6 +3388,7 @@
         durability: 250
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 10 }
@@ -3123,6 +3398,7 @@
         durability: 300
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 15 }
         - { itemId: fine-wood, qty: 15 }
@@ -3136,6 +3412,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: fine-wood, qty: 15 }
     - { itemId: black-metal, qty: 10 }
@@ -3149,6 +3426,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: fine-wood, qty: 5 }
@@ -3157,6 +3435,7 @@
         durability: 250
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: fine-wood, qty: 10 }
@@ -3165,6 +3444,7 @@
         durability: 300
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: fine-wood, qty: 15 }
@@ -3177,6 +3457,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: linen-thread, qty: 10 }
     - { itemId: iron, qty: 5 }
@@ -3189,6 +3470,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: linen-thread, qty: 5 }
@@ -3197,6 +3479,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: linen-thread, qty: 10 }
@@ -3205,6 +3488,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: linen-thread, qty: 15 }
@@ -3217,6 +3501,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: linen-thread, qty: 20 }
     - { itemId: iron, qty: 10 }
@@ -3229,6 +3514,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: linen-thread, qty: 5 }
@@ -3237,6 +3523,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: linen-thread, qty: 10 }
@@ -3245,6 +3532,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: linen-thread, qty: 15 }
@@ -3257,6 +3545,7 @@
   type: crafting
   station: forge
   stationLevel: 4
+  repairLevel: 4
   ingredients:
     - { itemId: linen-thread, qty: 10 }
     - { itemId: iron, qty: 10 }
@@ -3269,6 +3558,7 @@
   upgrades:
     - quality: 2
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: linen-thread, qty: 5 }
@@ -3277,6 +3567,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: linen-thread, qty: 10 }
@@ -3285,6 +3576,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 7
+      repairLevel: 7
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: linen-thread, qty: 15 }
@@ -3297,6 +3589,7 @@
   type: crafting
   station: forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: silver, qty: 40 }
     - { itemId: wood, qty: 4 }
@@ -3312,6 +3605,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wood, qty: 2 }
@@ -3323,6 +3617,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: silver, qty: 30 }
         - { itemId: wood, qty: 4 }
@@ -3334,6 +3629,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: silver, qty: 45 }
         - { itemId: wood, qty: 6 }
@@ -3352,6 +3648,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 8 }
@@ -3367,6 +3664,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 3 }
@@ -3377,6 +3675,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3387,6 +3686,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 9 }
@@ -3401,6 +3701,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 5 }
     - { itemId: yggdrasil-wood, qty: 5 }
@@ -3416,6 +3717,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3426,6 +3728,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3436,6 +3739,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3450,6 +3754,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 4 }
@@ -3464,6 +3769,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3473,6 +3779,7 @@
         durability: 200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3482,6 +3789,7 @@
         durability: 250
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3495,6 +3803,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: carapace, qty: 20 }
     - { itemId: yggdrasil-wood, qty: 10 }
@@ -3510,6 +3819,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3520,6 +3830,7 @@
         durability: 150
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3530,6 +3841,7 @@
         durability: 200
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3544,6 +3856,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: carapace, qty: 20 }
     - { itemId: yggdrasil-wood, qty: 4 }
@@ -3559,6 +3872,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3569,6 +3883,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3579,6 +3894,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3593,6 +3909,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: carapace, qty: 15 }
     - { itemId: refined-eitr, qty: 3 }
@@ -3608,6 +3925,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 3 }
@@ -3618,6 +3936,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3628,6 +3947,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 9 }
@@ -3642,6 +3962,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 5 }
@@ -3656,6 +3977,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3666,6 +3988,7 @@
         durability: 150
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3676,6 +3999,7 @@
         durability: 200
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3690,6 +4014,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 8 }
     - { itemId: dvergr-needle, qty: 3 }
@@ -3705,6 +4030,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: black-metal, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3715,6 +4041,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3725,6 +4052,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: black-metal, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3739,6 +4067,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: carapace, qty: 20 }
     - { itemId: yggdrasil-wood, qty: 8 }
@@ -3754,6 +4083,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: black-metal, qty: 10 }
         - { itemId: refined-eitr, qty: 2 }
@@ -3764,6 +4094,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: black-metal, qty: 20 }
         - { itemId: refined-eitr, qty: 4 }
@@ -3774,6 +4105,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: black-metal, qty: 30 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3788,6 +4120,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: carapace, qty: 20 }
     - { itemId: black-marble, qty: 10 }
@@ -3803,6 +4136,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 3 }
@@ -3813,6 +4147,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 20 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3823,6 +4158,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 30 }
         - { itemId: refined-eitr, qty: 9 }
@@ -3837,6 +4173,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: dvergr-needle, qty: 5 }
@@ -3852,6 +4189,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 3 }
@@ -3862,6 +4200,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 20 }
         - { itemId: refined-eitr, qty: 6 }
@@ -3872,6 +4211,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 30 }
         - { itemId: refined-eitr, qty: 9 }
@@ -3886,6 +4226,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: charred-bone, qty: 15 }
     - { itemId: flametal, qty: 24 }
@@ -3901,6 +4242,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: asksvin-hide, qty: 1 }
@@ -3911,6 +4253,7 @@
         durability: 250
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: asksvin-hide, qty: 2 }
@@ -3921,6 +4264,7 @@
         durability: 300
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 45 }
         - { itemId: asksvin-hide, qty: 3 }
@@ -3936,6 +4280,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 10 }
     - { itemId: refined-eitr, qty: 5 }
@@ -3950,6 +4295,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: yggdrasil-wood, qty: 5 }
@@ -3959,6 +4305,7 @@
         durability: 200
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: yggdrasil-wood, qty: 10 }
@@ -3968,6 +4315,7 @@
         durability: 250
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: yggdrasil-wood, qty: 15 }
@@ -3981,6 +4329,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 20 }
     - { itemId: yggdrasil-wood, qty: 5 }
@@ -3996,6 +4345,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -4006,6 +4356,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -4016,6 +4367,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -4030,6 +4382,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 30 }
     - { itemId: bilebag, qty: 3 }
@@ -4045,6 +4398,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: yggdrasil-wood, qty: 5 }
@@ -4055,6 +4409,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: yggdrasil-wood, qty: 10 }
@@ -4065,6 +4420,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: yggdrasil-wood, qty: 15 }
@@ -4079,6 +4435,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: dyrnwyn-hilt-fragment, qty: 1 }
     - { itemId: dyrnwyn-blade-fragment, qty: 1 }
@@ -4097,6 +4454,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: bloodstone, qty: 1 }
@@ -4107,6 +4465,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: bloodstone, qty: 2 }
@@ -4117,6 +4476,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: bloodstone, qty: 3 }
@@ -4131,6 +4491,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 20 }
     - { itemId: charred-bone, qty: 5 }
@@ -4146,6 +4507,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -4156,6 +4518,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -4166,6 +4529,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -4181,6 +4545,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: silver, qty: 5 }
@@ -4194,6 +4559,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -4202,6 +4568,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -4210,6 +4577,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -4222,6 +4590,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 20 }
     - { itemId: silver, qty: 5 }
@@ -4235,6 +4604,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -4243,6 +4613,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -4251,6 +4622,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -4263,6 +4635,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 15 }
     - { itemId: silver, qty: 5 }
@@ -4276,6 +4649,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -4284,6 +4658,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -4292,6 +4667,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -4304,6 +4680,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: refined-eitr, qty: 3 }
@@ -4317,6 +4694,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -4325,6 +4703,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -4333,6 +4712,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -4345,6 +4725,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: carapace, qty: 20 }
     - { itemId: refined-eitr, qty: 5 }
@@ -4358,6 +4739,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -4366,6 +4748,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -4374,6 +4757,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -4386,6 +4770,7 @@
   type: crafting
   station: black-forge
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: carapace, qty: 15 }
     - { itemId: refined-eitr, qty: 4 }
@@ -4399,6 +4784,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -4407,6 +4793,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -4415,6 +4802,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -4428,6 +4816,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 10 }
     - { itemId: charred-bone, qty: 5 }
@@ -4441,6 +4830,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 2 }
@@ -4449,6 +4839,7 @@
         durability: 1400
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 4 }
@@ -4457,6 +4848,7 @@
         durability: 1600
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: ashwood, qty: 6 }
@@ -4469,6 +4861,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 20 }
     - { itemId: charred-bone, qty: 5 }
@@ -4482,6 +4875,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 5 }
@@ -4490,6 +4884,7 @@
         durability: 1400
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
@@ -4498,6 +4893,7 @@
         durability: 1600
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: ashwood, qty: 15 }
@@ -4510,6 +4906,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 15 }
     - { itemId: charred-bone, qty: 5 }
@@ -4523,6 +4920,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 5 }
@@ -4531,6 +4929,7 @@
         durability: 1400
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
@@ -4539,6 +4938,7 @@
         durability: 1600
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: ashwood, qty: 15 }
@@ -4552,6 +4952,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 4 }
@@ -4566,6 +4967,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -4575,6 +4977,7 @@
         durability: 300
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -4584,6 +4987,7 @@
         durability: 350
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -4597,6 +5001,7 @@
   type: crafting
   station: black-forge
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: carapace, qty: 15 }
     - { itemId: yggdrasil-wood, qty: 8 }
@@ -4610,6 +5015,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 2 }
@@ -4618,6 +5024,7 @@
         durability: 300
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 20 }
         - { itemId: refined-eitr, qty: 4 }
@@ -4626,6 +5033,7 @@
         durability: 350
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 30 }
         - { itemId: refined-eitr, qty: 6 }
@@ -4638,6 +5046,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 5 }
@@ -4652,6 +5061,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 5 }
@@ -4661,6 +5071,7 @@
         durability: 350
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
@@ -4670,6 +5081,7 @@
         durability: 400
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: ashwood, qty: 15 }
@@ -4683,6 +5095,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 15 }
     - { itemId: yggdrasil-wood, qty: 8 }
@@ -4696,6 +5109,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -4704,6 +5118,7 @@
         durability: 350
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -4712,6 +5127,7 @@
         durability: 400
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -4725,6 +5141,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: asksvin-hide, qty: 6 }
     - { itemId: morgen-sinew, qty: 2 }
@@ -4739,6 +5156,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: asksvin-hide, qty: 5 }
         - { itemId: flametal, qty: 2 }
@@ -4747,6 +5165,7 @@
         durability: 1400
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: asksvin-hide, qty: 10 }
         - { itemId: flametal, qty: 4 }
@@ -4755,6 +5174,7 @@
         durability: 1600
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: asksvin-hide, qty: 15 }
         - { itemId: flametal, qty: 6 }
@@ -4854,6 +5274,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal-mace, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
@@ -4869,6 +5290,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: charred-bone, qty: 5 }
@@ -4879,6 +5301,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 10 }
@@ -4889,6 +5312,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: charred-bone, qty: 15 }
@@ -4903,6 +5327,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: slayer, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
@@ -4918,6 +5343,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -4928,6 +5354,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -4938,6 +5365,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -4952,6 +5380,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: slayer, qty: 1 }
     - { itemId: iolite, qty: 1 }
@@ -4967,6 +5396,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -4977,6 +5407,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -4987,6 +5418,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -5001,6 +5433,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: slayer, qty: 1 }
     - { itemId: jade, qty: 1 }
@@ -5016,6 +5449,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -5026,6 +5460,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -5036,6 +5471,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -5050,6 +5486,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: nidhogg, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
@@ -5065,6 +5502,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -5075,6 +5513,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -5085,6 +5524,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -5099,6 +5539,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: nidhogg, qty: 1 }
     - { itemId: iolite, qty: 1 }
@@ -5114,6 +5555,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -5124,6 +5566,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -5134,6 +5577,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -5148,6 +5592,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: nidhogg, qty: 1 }
     - { itemId: jade, qty: 1 }
@@ -5163,6 +5608,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 5 }
@@ -5173,6 +5619,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 10 }
@@ -5183,6 +5630,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 15 }
@@ -5197,6 +5645,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 8 }
     - { itemId: iolite, qty: 1 }
@@ -5212,6 +5661,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: charred-bone, qty: 5 }
@@ -5222,6 +5672,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: charred-bone, qty: 10 }
@@ -5232,6 +5683,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: charred-bone, qty: 15 }
@@ -5246,6 +5698,7 @@
   type: crafting
   station: black-forge
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: flametal, qty: 8 }
     - { itemId: jade, qty: 1 }
@@ -5261,6 +5714,7 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
@@ -5271,6 +5725,7 @@
         durability: 250
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 20 }
         - { itemId: ashwood, qty: 20 }
@@ -5281,6 +5736,7 @@
         durability: 300
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: flametal, qty: 30 }
         - { itemId: ashwood, qty: 30 }
@@ -5655,6 +6111,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: yggdrasil-wood, qty: 20 }
     - { itemId: refined-eitr, qty: 16 }
@@ -5669,16 +6126,19 @@
   upgrades:
     - quality: 2
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: yggdrasil-wood, qty: 5 }
         - { itemId: refined-eitr, qty: 4 }
     - quality: 3
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: yggdrasil-wood, qty: 10 }
         - { itemId: refined-eitr, qty: 8 }
     - quality: 4
       stationLevel: 6
+      repairLevel: 6
       ingredients:
         - { itemId: yggdrasil-wood, qty: 15 }
         - { itemId: refined-eitr, qty: 12 }
@@ -5689,6 +6149,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: linen-thread, qty: 15 }
     - { itemId: refined-eitr, qty: 15 }
@@ -5702,6 +6163,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -5710,6 +6172,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -5718,6 +6181,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -5730,6 +6194,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: refined-eitr, qty: 10 }
     - { itemId: linen-thread, qty: 20 }
@@ -5743,6 +6208,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 3 }
@@ -5751,6 +6217,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 6 }
@@ -5759,6 +6226,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 9 }
@@ -5771,6 +6239,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: refined-eitr, qty: 15 }
     - { itemId: linen-thread, qty: 20 }
@@ -5784,6 +6253,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -5792,6 +6262,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -5800,6 +6271,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -5812,6 +6284,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: refined-eitr, qty: 10 }
     - { itemId: linen-thread, qty: 15 }
@@ -5825,6 +6298,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
@@ -5833,6 +6307,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
@@ -5841,6 +6316,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
@@ -5854,6 +6330,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: sealbreaker-fragment, qty: 9 }
   yields: { itemId: sealbreaker, qty: 1 }
@@ -5868,6 +6345,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: sealbreaker-fragment, qty: 2 }
       stats:
@@ -5877,6 +6355,7 @@
         durability: 250
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: sealbreaker-fragment, qty: 4 }
       stats:
@@ -5886,6 +6365,7 @@
         durability: 300
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: sealbreaker-fragment, qty: 6 }
       stats:
@@ -5900,6 +6380,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: feathers, qty: 10 }
     - { itemId: scale-hide, qty: 5 }
@@ -5914,6 +6395,7 @@
   upgrades:
     - quality: 2
       stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: feathers, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
@@ -5922,6 +6404,7 @@
         durability: 1200
     - quality: 3
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: feathers, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
@@ -5930,6 +6413,7 @@
         durability: 1400
     - quality: 4
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: feathers, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
@@ -5997,6 +6481,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: linen-thread, qty: 16 }
     - { itemId: refined-eitr, qty: 15 }
@@ -6010,6 +6495,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: celestial-feather, qty: 1 }
@@ -6018,6 +6504,7 @@
         durability: 1400
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: celestial-feather, qty: 2 }
@@ -6026,6 +6513,7 @@
         durability: 1600
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: celestial-feather, qty: 3 }
@@ -6038,6 +6526,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: linen-thread, qty: 20 }
     - { itemId: refined-eitr, qty: 20 }
@@ -6052,6 +6541,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: celestial-feather, qty: 1 }
@@ -6060,6 +6550,7 @@
         durability: 1400
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: celestial-feather, qty: 2 }
@@ -6068,6 +6559,7 @@
         durability: 1600
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: celestial-feather, qty: 3 }
@@ -6080,6 +6572,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: linen-thread, qty: 20 }
     - { itemId: refined-eitr, qty: 20 }
@@ -6093,6 +6586,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: celestial-feather, qty: 1 }
@@ -6101,6 +6595,7 @@
         durability: 1400
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: celestial-feather, qty: 2 }
@@ -6109,6 +6604,7 @@
         durability: 1600
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 15 }
         - { itemId: celestial-feather, qty: 3 }
@@ -6122,6 +6618,7 @@
   type: crafting
   station: galdr-table
   stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: asksvin-hide, qty: 6 }
     - { itemId: morgen-sinew, qty: 2 }
@@ -6135,6 +6632,7 @@
   upgrades:
     - quality: 2
       stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: asksvin-hide, qty: 5 }
       stats:
@@ -6142,6 +6640,7 @@
         durability: 1400
     - quality: 3
       stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: asksvin-hide, qty: 10 }
       stats:
@@ -6149,6 +6648,7 @@
         durability: 1600
     - quality: 4
       stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: asksvin-hide, qty: 15 }
       stats:
