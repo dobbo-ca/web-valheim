@@ -564,6 +564,47 @@ h3 {
   gap: 14px;
   color: var(--text);
 }
+
+/* ── Food/mead expanded row grid ── */
+.food-detail-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.food-detail-grid__col {
+  min-width: 0;
+}
+.food-detail-grid__col--narrow {
+  min-width: 40px;
+}
+.food-detail-grid__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+.food-stat {
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+.food-stat__val {
+  color: var(--text);
+  font-weight: 600;
+}
+.food-stat--debuff .food-stat__val {
+  color: var(--danger, #e55);
+}
+.food-detail-grid__ings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.food-detail-grid__ing {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
 .recipe-table__sort-btn {
   background: none;
   border: none;
