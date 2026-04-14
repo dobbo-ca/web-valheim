@@ -381,6 +381,7 @@ h3 {
   gap: 12px;
   padding: 10px 14px;
   align-items: center;
+  justify-items: start;
   border-bottom: 1px solid var(--border-soft);
   color: var(--muted);
   text-transform: uppercase;
@@ -411,7 +412,7 @@ h3 {
   padding: 0;
 }
 .recipe-row__cart-cell {
-  grid-column: -1;
+  grid-column: -2 / -1;
   justify-self: end;
 }
 .recipe-row__wrapper:hover {

@@ -431,7 +431,9 @@ export const RecipeTable: Component<Props> = (props) => {
       </Show>
 
       <div class="recipe-table__grid" role="table" style={{ '--grid-cols': gridColumns() }}>
-        <div class="recipe-table__header" role="row" style={{ 'grid-template-columns': gridColumns() }}>
+        <div class="recipe-table__header" role="row" ref={(el: HTMLDivElement) => {
+          createEffect(() => { el.style.gridTemplateColumns = gridColumns(); });
+        }}>
           <span role="columnheader" aria-sort={sortKey() === 'name' ? (sortDir() === 'asc' ? 'ascending' : 'descending') : 'none'}>
             <button class="recipe-table__sort-btn" classList={{ 'recipe-table__sort-btn--active': sortKey() === 'name' }} onClick={() => toggleSort('name')}>
               Name{sortIndicator('name')}
@@ -450,7 +452,7 @@ export const RecipeTable: Component<Props> = (props) => {
           <Show when={isColVisible('stats')}>
             <span role="columnheader">Stats</span>
           </Show>
-          <span ref={colToggleRef} role="columnheader" class="recipe-table__col-toggle">
+          <span ref={colToggleRef} class="recipe-table__col-toggle">
             <button
               type="button"
               class="recipe-table__col-toggle-btn"
