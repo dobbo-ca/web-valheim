@@ -263,6 +263,80 @@ describe('FoodStatsSchema — sparse fields', () => {
   });
 });
 
+describe('MeadStatsSchema', () => {
+  it('accepts an instant heal mead', () => {
+    const result = RecipeSchema.parse({
+      id: 'minor-healing-mead',
+      name: 'Minor Healing Mead',
+      type: 'cooking',
+      station: 'mead-ketill',
+      stationLevel: 1,
+      ingredients: [{ itemId: 'honey', qty: 10 }],
+      mead: {
+        effect: { health: 50 },
+        duration: 10,
+        cooldown: 120,
+        cooldownGroup: 'healing',
+      },
+    });
+    expect(result.mead?.effect.health).toBe(50);
+    expect(result.mead?.cooldownGroup).toBe('healing');
+  });
+
+  it('accepts a resistance mead', () => {
+    const result = RecipeSchema.parse({
+      id: 'frost-resistance-mead',
+      name: 'Frost Resistance Mead',
+      type: 'cooking',
+      station: 'mead-ketill',
+      stationLevel: 1,
+      ingredients: [{ itemId: 'honey', qty: 10 }],
+      mead: {
+        effect: { resist: 'frost' },
+        duration: 600,
+        cooldown: 600,
+      },
+    });
+    expect(result.mead?.effect.resist).toBe('frost');
+  });
+
+  it('accepts a mead with freeform effects', () => {
+    const result = RecipeSchema.parse({
+      id: 'berserkir-mead',
+      name: 'Berserkir Mead',
+      type: 'cooking',
+      station: 'mead-ketill',
+      stationLevel: 1,
+      ingredients: [{ itemId: 'mushroom', qty: 10 }],
+      mead: {
+        effect: {
+          effects: [
+            'Attack, Block and Dodge Stamina use -80%',
+            'Weak (×1.5) against Slash, Blunt and Pierce damage',
+          ],
+        },
+        duration: 20,
+        cooldown: 120,
+      },
+    });
+    expect(result.mead?.effect.effects).toHaveLength(2);
+  });
+
+  it('rejects mead missing duration', () => {
+    expect(() =>
+      RecipeSchema.parse({
+        id: 'bad',
+        name: 'Bad',
+        type: 'cooking',
+        station: 'mead-ketill',
+        stationLevel: 1,
+        ingredients: [],
+        mead: { effect: { health: 50 }, cooldown: 120 },
+      }),
+    ).toThrow();
+  });
+});
+
 describe('mergeArmorStats', () => {
   const base = {
     armor: 20,

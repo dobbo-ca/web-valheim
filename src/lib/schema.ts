@@ -49,6 +49,25 @@ export const FoodStatsSchema = z.object({
   regenModifier: z.number().optional(),
 });
 
+export const MeadEffectSchema = z.object({
+  health: z.number().optional(),
+  stamina: z.number().optional(),
+  eitr: z.number().optional(),
+  resist: z.string().optional(),
+  healthRegen: z.number().optional(),
+  staminaRegen: z.number().optional(),
+  eitrRegen: z.number().optional(),
+  effects: z.array(z.string()).optional(),
+});
+
+export const MeadStatsSchema = z.object({
+  effect: MeadEffectSchema,
+  duration: z.number(),
+  cooldown: z.number(),
+  weight: z.number().optional(),
+  cooldownGroup: z.string().optional(),
+});
+
 export const SecondaryStepSchema = z.object({
   station: z.string().min(1),
   description: z.string().min(1),
@@ -158,6 +177,7 @@ export const RecipeSchema = z.object({
   tags: z.array(z.string()).optional(),
   notes: z.string().optional(),
   food: FoodStatsSchema.optional(),
+  mead: MeadStatsSchema.optional(),
   secondaryStep: SecondaryStepSchema.optional(),
   stats: WeaponStatsSchema.optional(),                    // base weapon stats
   armorStats: ArmorStatsSchema.optional(),
