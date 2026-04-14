@@ -10,7 +10,7 @@ export const ItemCategorySchema = z.enum([
 ]);
 
 export const BiomeSchema = z.enum([
-  'meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands',
+  'meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands', 'ocean',
 ]);
 
 export const ItemSchema = z.object({
@@ -64,6 +64,9 @@ export const DamageSchema = z.object({
   lightning: z.number().nonnegative().optional(),
   poison: z.number().nonnegative().optional(),
   spirit: z.number().nonnegative().optional(),
+  pure: z.number().nonnegative().optional(),              // unmitigable damage
+  chop: z.number().nonnegative().optional(),              // tree/greydwarf vulnerability
+  pickaxe: z.number().nonnegative().optional(),           // rock/golem vulnerability
 });
 
 // ── Attack data (primary or secondary) ────────────────────────────────────────

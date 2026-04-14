@@ -1,8 +1,8 @@
-import { For, Show, type Component } from 'solid-js';
+import { Show, type Component } from 'solid-js';
 import type { Recipe, Item, Station } from '../lib/types';
-import { IngredientChip } from './IngredientChip';
 import { AddToCartButton } from './AddToCartButton';
 import { ItemIcon } from './ItemIcon';
+import { CompactUpgradeGrid } from './CompactUpgradeGrid';
 
 interface Props {
   recipe: Recipe;
@@ -12,7 +12,6 @@ interface Props {
   baseHref: string;
   inCart: boolean;
   onToggle: (recipeId: string) => void;
-  onIngredientClick: (itemId: string) => void;
   onAddToCart: (recipeId: string) => void;
   onOpenCart: () => void;
   iconIds?: Set<string>;
@@ -64,7 +63,6 @@ export const RecipeRow: Component<Props> = (props) => {
           onClick={() => props.onToggle(props.recipe.id)}
         >
           <span class="recipe-row__name">
-            {props.expanded ? '▾ ' : ''}
             <Show when={hasRecipeIcon()}>
               <ItemIcon id={props.recipe.id} size="md" spriteHref={spriteHref()} />
             </Show>
@@ -85,12 +83,12 @@ export const RecipeRow: Component<Props> = (props) => {
               })()}
             </span>
           </Show>
-          <Show when={!props.expanded && isColVisible('ingredients')}>
+          <Show when={isColVisible('ingredients')}>
             <span class="recipe-row__ings">
               {formatIngredients(props.recipe, props.itemsById)}
             </span>
           </Show>
-          <Show when={!props.expanded && isColVisible('stats')}>
+          <Show when={isColVisible('stats')}>
             <span class="recipe-row__stats-cell">
               {formatStatSummary(props.recipe) && (
                 <span class="recipe-row__stat-badge">{formatStatSummary(props.recipe)}</span>
@@ -109,22 +107,19 @@ export const RecipeRow: Component<Props> = (props) => {
 
       <Show when={props.expanded}>
         <div class="recipe-row__detail" id={detailId()}>
+          {/* Combined crafting: Q1 ingredients + upgrades */}
           <div class="recipe-row__section">
-            <span class="label">Ingredients</span>
-            <div class="chips">
-              <For each={props.recipe.ingredients}>
-                {(ing) => (
-                  <IngredientChip
-                    itemId={ing.itemId}
-                    label={props.itemsById.get(ing.itemId)?.name ?? ing.itemId}
-                    qty={ing.qty}
-                    onClick={props.onIngredientClick}
-                    hasIcon={props.iconIds?.has(ing.itemId) ?? false}
-                    spriteHref={spriteHref()}
-                  />
-                )}
-              </For>
-            </div>
+            <CompactUpgradeGrid
+              recipe={props.recipe}
+              itemsById={props.itemsById}
+              stationsById={props.stationsById}
+              upgradeKeysInCart={props.upgradeKeysInCart}
+              onAddUpgradeToCart={props.onAddUpgradeToCart}
+              onAddMaxUpgrades={props.onAddMaxUpgrades}
+              onOpenCart={props.onOpenCart}
+              iconIds={props.iconIds}
+              spriteHref={props.spriteHref}
+            />
           </div>
 
           <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
@@ -134,7 +129,8 @@ export const RecipeRow: Component<Props> = (props) => {
             </div>
           </Show>
 
-          <Show when={(() => {
+          {/* Stack size only for non-weapons */}
+          <Show when={!props.recipe.stats && (() => {
             const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
             const item = props.itemsById.get(yieldItemId);
             return item?.stackSize;
@@ -160,219 +156,6 @@ export const RecipeRow: Component<Props> = (props) => {
                     <span>Eitr {food().eitr}</span>
                   </Show>
                 </div>
-              </div>
-            )}
-          </Show>
-
-          <Show when={props.recipe.stats}>
-            {(stats) => (
-              <div class="recipe-row__section">
-                <span class="label">Stats</span>
-                <div class="stats-table">
-                  <Show when={stats().weight != null}>
-                    <div class="stats-table__row">
-                      <span class="stats-table__key">weight</span>
-                      <span class="stats-table__val">{stats().weight}</span>
-                    </div>
-                  </Show>
-                  <Show when={stats().durability != null}>
-                    <div class="stats-table__row">
-                      <span class="stats-table__key">durability</span>
-                      <span class="stats-table__val">{stats().durability}</span>
-                    </div>
-                  </Show>
-                  <Show when={stats().movementPenalty != null}>
-                    <div class="stats-table__row">
-                      <span class="stats-table__key">movement</span>
-                      <span class="stats-table__val">{stats().movementPenalty}%</span>
-                    </div>
-                  </Show>
-                </div>
-
-                <Show when={stats().primaryAttack}>
-                  {(atk) => (
-                    <div class="stats-table" style="margin-top: 8px">
-                      <Show when={atk().damage}>
-                        {(dmg) => (
-                          <For each={Object.entries(dmg()).filter(([, v]) => v != null && v > 0)}>
-                            {([type, val]) => (
-                              <div class="stats-table__row">
-                                <span class="stats-table__key">{type}</span>
-                                <span class="stats-table__val">{val}</span>
-                              </div>
-                            )}
-                          </For>
-                        )}
-                      </Show>
-                      <Show when={atk().backstab != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">backstab</span>
-                          <span class="stats-table__val">×{atk().backstab}</span>
-                        </div>
-                      </Show>
-                      <Show when={atk().stagger != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">stagger</span>
-                          <span class="stats-table__val">{atk().stagger}</span>
-                        </div>
-                      </Show>
-                      <Show when={atk().knockback != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">knockback</span>
-                          <span class="stats-table__val">{atk().knockback}</span>
-                        </div>
-                      </Show>
-                      <Show when={atk().stamina != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">stamina</span>
-                          <span class="stats-table__val">{atk().stamina}</span>
-                        </div>
-                      </Show>
-                      <Show when={atk().staminaPerSecond != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">stamina/s</span>
-                          <span class="stats-table__val">{atk().staminaPerSecond}/s</span>
-                        </div>
-                      </Show>
-                      <Show when={atk().eitr != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">eitr</span>
-                          <span class="stats-table__val">{atk().eitr}</span>
-                        </div>
-                      </Show>
-                      <Show when={atk().healthCost != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">health cost</span>
-                          <span class="stats-table__val">{atk().healthCost}%</span>
-                        </div>
-                      </Show>
-                    </div>
-                  )}
-                </Show>
-
-                <Show when={stats().blocking}>
-                  {(blk) => (
-                    <div class="stats-table" style="margin-top: 8px">
-                      <Show when={blk().blockArmor != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">block</span>
-                          <span class="stats-table__val">{blk().blockArmor}</span>
-                        </div>
-                      </Show>
-                      <Show when={blk().parryBlockArmor != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">parry</span>
-                          <span class="stats-table__val">{blk().parryBlockArmor}</span>
-                        </div>
-                      </Show>
-                      <Show when={blk().blockForce != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">block force</span>
-                          <span class="stats-table__val">{blk().blockForce}</span>
-                        </div>
-                      </Show>
-                      <Show when={blk().parryBonus != null}>
-                        <div class="stats-table__row">
-                          <span class="stats-table__key">parry bonus</span>
-                          <span class="stats-table__val">×{blk().parryBonus}</span>
-                        </div>
-                      </Show>
-                    </div>
-                  )}
-                </Show>
-              </div>
-            )}
-          </Show>
-
-          <Show when={props.recipe.upgrades && props.recipe.upgrades.length > 0}>
-            <div class="recipe-row__section">
-              <span class="label">Upgrades</span>
-              <div class="upgrade-list">
-                <For each={props.recipe.upgrades!}>
-                  {(upgrade) => {
-                    const cartKey = `${props.recipe.id}+${upgrade.quality}`;
-                    const inCart = () => props.upgradeKeysInCart.has(cartKey);
-                    return (
-                      <div class="upgrade-list__entry">
-                        <div class="upgrade-list__header">
-                          <span class="upgrade-list__quality">★{upgrade.quality}</span>
-                          <div class="chips">
-                            <For each={upgrade.ingredients}>
-                              {(ing) => (
-                                <IngredientChip
-                                  itemId={ing.itemId}
-                                  label={props.itemsById.get(ing.itemId)?.name ?? ing.itemId}
-                                  qty={ing.qty}
-                                  onClick={props.onIngredientClick}
-                                  hasIcon={props.iconIds?.has(ing.itemId) ?? false}
-                                  spriteHref={props.spriteHref}
-                                />
-                              )}
-                            </For>
-                          </div>
-                          <button
-                            type="button"
-                            class="add-to-cart-btn add-to-cart-btn--sm"
-                            classList={{ 'add-to-cart-btn--in-cart': inCart() }}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (inCart()) {
-                                props.onOpenCart();
-                              } else {
-                                props.onAddUpgradeToCart(cartKey);
-                              }
-                            }}
-                            aria-label={inCart() ? `${props.recipe.name} +${upgrade.quality - 1} in cart` : `Add ${props.recipe.name} +${upgrade.quality - 1} to cart`}
-                          >
-                            {inCart() ? '✓' : '+'}
-                          </button>
-                        </div>
-                        <Show when={upgrade.stats}>
-                          {(uStats) => (
-                            <div class="upgrade-list__stats">
-                              <Show when={uStats().primaryAttack?.damage}>
-                                {(dmg) => (
-                                  <For each={Object.entries(dmg()).filter(([, v]) => v != null && v > 0)}>
-                                    {([type, val]) => <span class="upgrade-list__stat">{val} {type}</span>}
-                                  </For>
-                                )}
-                              </Show>
-                              <Show when={uStats().durability != null}>
-                                <span class="upgrade-list__stat">{uStats().durability} dur</span>
-                              </Show>
-                            </div>
-                          )}
-                        </Show>
-                      </div>
-                    );
-                  }}
-                </For>
-                <button
-                  type="button"
-                  class="add-to-cart-btn upgrade-list__max-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    props.onAddMaxUpgrades(props.recipe.id);
-                  }}
-                  aria-label={`Add all upgrades for ${props.recipe.name}`}
-                >
-                  + Max Upgrades
-                </button>
-              </div>
-            </div>
-          </Show>
-
-          <Show when={props.recipe.notes}>
-            <div class="recipe-row__section recipe-row__notes">
-              {props.recipe.notes}
-            </div>
-          </Show>
-
-          <Show when={props.recipe.secondaryStep}>
-            {(step) => (
-              <div class="recipe-row__section">
-                <span class="label">Next step</span>
-                <p>{step().description}</p>
               </div>
             )}
           </Show>

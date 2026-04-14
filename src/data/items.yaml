@@ -27,6 +27,16 @@
 - { id: wolf-fang, name: Wolf Fang, category: material, stackSize: 20, biome: mountain }
 - { id: crystal, name: Crystal, category: material, stackSize: 50, biome: mountain }
 - { id: linen-thread, name: Linen Thread, category: material, stackSize: 50, biome: plains }
+- { id: surtling-core, name: Surtling Core, category: material, stackSize: 10, biome: swamp }
+- { id: bear-hide, name: Bear Hide, category: material, stackSize: 50, biome: black-forest }
+- { id: bear-paw, name: Bear Paw, category: material, stackSize: 20, biome: black-forest }
+- { id: tar, name: Tar, category: material, stackSize: 50, biome: plains }
+- { id: sulfur, name: Sulfur, category: material, stackSize: 50, biome: ashlands }
+- { id: corked-vial, name: Corked Vial, category: material, stackSize: 50, biome: swamp }
+- { id: blob-trophy, name: Blob Trophy, category: material, stackSize: 20, biome: swamp }
+- { id: growth-trophy, name: Growth Trophy, category: material, stackSize: 20, biome: plains }
+- { id: curious-axe-head, name: Curious Axe Head, category: material, stackSize: 1, biome: meadows }
+- { id: mysterious-axe-head, name: Mysterious Axe Head, category: material, stackSize: 1, biome: meadows }
 - { id: needle, name: Needle, category: material, stackSize: 20, biome: plains }
 - { id: chain, name: Chain, category: material, stackSize: 20, biome: swamp }
 - { id: serpent-scale, name: Serpent Scale, category: material, stackSize: 20, biome: plains }
@@ -254,6 +264,8 @@
 - { id: hammer, name: Hammer, category: tool, stackSize: 1 }
 - { id: hoe, name: Hoe, category: tool, stackSize: 1 }
 - { id: club, name: Club, category: tool, stackSize: 1 }
+- { id: torch, name: Torch, category: weapon, stackSize: 1 }
+- { id: early-axes, name: Early Axes, category: weapon, stackSize: 1 }
 - { id: crude-bow, name: Crude Bow, category: weapon, stackSize: 1 }
 - { id: stone-axe, name: Stone Axe, category: weapon, stackSize: 1 }
 - { id: flint-axe, name: Flint Axe, category: weapon, stackSize: 1 }
@@ -278,6 +290,8 @@
 - { id: abyssal-razor, name: Abyssal Razor, category: weapon, stackSize: 1 }
 - { id: abyssal-harpoon, name: Abyssal Harpoon, category: weapon, stackSize: 1 }
 - { id: copper-knife, name: Copper Knife, category: weapon, stackSize: 1 }
+- { id: butcher-knife, name: Butcher Knife, category: weapon, stackSize: 1 }
+- { id: paws-of-the-bear, name: Paws of the Bear, category: weapon, stackSize: 1 }
 - { id: bronze-axe, name: Bronze Axe, category: weapon, stackSize: 1 }
 - { id: bronze-pickaxe, name: Bronze Pickaxe, category: weapon, stackSize: 1 }
 - { id: bronze-mace, name: Bronze Mace, category: weapon, stackSize: 1 }
@@ -299,6 +313,12 @@
 - { id: iron-buckler, name: Iron Buckler, category: tool, stackSize: 1 }
 - { id: iron-tower-shield, name: Iron Tower Shield, category: tool, stackSize: 1 }
 - { id: banded-shield, name: Banded Shield, category: tool, stackSize: 1 }
+- { id: ooze-bomb, name: Ooze Bomb, category: weapon, stackSize: 50 }
+- { id: blob-bomb-poison, name: "Blob Bomb: Poison", category: weapon, stackSize: 50 }
+- { id: blob-bomb-elite-poison, name: "Blob Bomb: Elite Poison", category: weapon, stackSize: 50 }
+- { id: blob-bomb-frost, name: "Blob Bomb: Frost", category: weapon, stackSize: 50 }
+- { id: blob-bomb-tar, name: "Blob Bomb: Tar", category: weapon, stackSize: 50 }
+- { id: blob-bomb-lava, name: "Blob Bomb: Lava", category: weapon, stackSize: 50 }
 - { id: iron-helmet, name: Iron Helmet, category: armor, stackSize: 1 }
 - { id: iron-scale-mail, name: Iron Scale Mail, category: armor, stackSize: 1 }
 - { id: iron-greaves, name: Iron Greaves, category: armor, stackSize: 1 }
@@ -309,6 +329,7 @@
 - { id: fang-spear, name: Fang Spear, category: weapon, stackSize: 1 }
 - { id: silver-knife, name: Silver Knife, category: weapon, stackSize: 1 }
 - { id: crystal-battleaxe, name: Crystal Battleaxe, category: weapon, stackSize: 1 }
+- { id: flesh-rippers, name: Flesh Rippers, category: weapon, stackSize: 1 }
 - { id: silver-shield, name: Silver Shield, category: tool, stackSize: 1 }
 - { id: serpent-scale-shield, name: Serpent Scale Shield, category: tool, stackSize: 1 }
 - { id: wolf-armor-chest, name: Wolf Armor Chest, category: armor, stackSize: 1 }
@@ -319,6 +340,9 @@
 - { id: black-metal-atgeir, name: Black Metal Atgeir, category: weapon, stackSize: 1 }
 - { id: black-metal-knife, name: Black Metal Knife, category: weapon, stackSize: 1 }
 - { id: porcupine, name: Porcupine, category: weapon, stackSize: 1 }
+- { id: black-metal-battleaxe, name: Black Metal Battleaxe, category: weapon, stackSize: 1 }
+- { id: black-metal-missile, name: Black Metal Missile, category: weapon, stackSize: 20 }
+- { id: black-metal-pickaxe, name: Black Metal Pickaxe, category: weapon, stackSize: 1 }
 - { id: black-metal-shield, name: Black Metal Shield, category: tool, stackSize: 1 }
 - { id: black-metal-tower-shield, name: Black Metal Tower Shield, category: tool, stackSize: 1 }
 - { id: padded-helmet, name: Padded Helmet, category: armor, stackSize: 1 }
@@ -335,6 +359,11 @@
 - { id: ripper, name: Ripper, category: weapon, stackSize: 1 }
 - { id: skoll-and-hati, name: Skoll and Hati, category: weapon, stackSize: 1 }
 - { id: demolisher, name: Demolisher, category: weapon, stackSize: 1 }
+- { id: skull-splittur, name: Skull Splittur, category: weapon, stackSize: 1 }
+- { id: dvergr-lantern, name: Dvergr Lantern, category: weapon, stackSize: 1 }
+- { id: wooden-missile, name: Wooden Missile, category: weapon, stackSize: 20 }
+- { id: flametal-missile, name: Flametal Missile, category: weapon, stackSize: 20 }
+- { id: bile-bomb, name: Bile Bomb, category: weapon, stackSize: 50 }
 - { id: splitnir, name: Splitnir, category: weapon, stackSize: 1 }
 - { id: berserkir, name: Berserkir, category: weapon, stackSize: 1 }
 - { id: ash-fang, name: Ash Fang, category: weapon, stackSize: 1 }
@@ -364,13 +393,7 @@
 - { id: nidhogg-the-thundering, name: Nidhögg the Thundering, category: weapon, stackSize: 1 }
 - { id: nidhogg-the-primal, name: Nidhögg the Primal, category: weapon, stackSize: 1 }
 - { id: storm-star, name: Storm Star, category: weapon, stackSize: 1 }
-- { id: storm-star-the-bleeding, name: Storm Star the Bleeding, category: weapon, stackSize: 1 }
-- { id: storm-star-the-thundering, name: Storm Star the Thundering, category: weapon, stackSize: 1 }
-- { id: storm-star-the-primal, name: Storm Star the Primal, category: weapon, stackSize: 1 }
 - { id: klossen, name: Klossen, category: weapon, stackSize: 1 }
-- { id: klossen-the-bleeding, name: Klossen the Bleeding, category: weapon, stackSize: 1 }
-- { id: klossen-the-thundering, name: Klossen the Thundering, category: weapon, stackSize: 1 }
-- { id: klossen-the-primal, name: Klossen the Primal, category: weapon, stackSize: 1 }
 - { id: splitnir-the-bleeding, name: Splitnir the Bleeding, category: weapon, stackSize: 1 }
 - { id: splitnir-the-storming, name: Splitnir the Storming, category: weapon, stackSize: 1 }
 - { id: splitnir-the-primal, name: Splitnir the Primal, category: weapon, stackSize: 1 }

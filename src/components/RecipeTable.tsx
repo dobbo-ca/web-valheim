@@ -365,11 +365,6 @@ export const RecipeTable: Component<Props> = (props) => {
     return parts.join(' ');
   };
 
-  const addIngredient = (itemId: string) => {
-    const current = state().ingredientIds;
-    if (current.includes(itemId)) return;
-    commit({ ...state(), ingredientIds: [...current, itemId] });
-  };
 
   const removeIngredient = (itemId: string) => {
     const current = state();
@@ -474,7 +469,6 @@ export const RecipeTable: Component<Props> = (props) => {
               baseHref={props.baseHref}
               inCart={recipe.id in cart}
               onToggle={toggleRow}
-              onIngredientClick={addIngredient}
               onAddToCart={handleAddToCart}
               onOpenCart={() => setDrawerOpen(true)}
               iconIds={iconSet()}

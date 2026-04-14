@@ -73,17 +73,10 @@ describe('RecipeTable', () => {
   it('expands a row when clicked', () => {
     render(() => <RecipeTable data={data} baseHref="/valheim/" />);
     fireEvent.click(screen.getByRole('button', { name: /Iron Sword/ }));
-    expect(screen.getByRole('button', { name: /Iron ×60/ })).toBeInTheDocument();
-  });
-
-  it('filters by ingredient chip click', () => {
-    render(() => <RecipeTable data={data} baseHref="/valheim/" />);
-    fireEvent.click(screen.getByRole('button', { name: /Iron Sword/ }));
-    fireEvent.click(screen.getByRole('button', { name: /Iron ×60/ }));
-    // After filtering to recipes that use Iron, Queens Jam should be gone.
-    expect(screen.queryByText('Queens Jam')).toBeNull();
-    // The active ingredient chip should appear in the reverse-lookup strip.
-    expect(screen.getByText(/Uses ingredient/)).toBeInTheDocument();
+    expect(screen.getByText('Upgrades')).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: /open detail page/ }),
+    ).toBeInTheDocument();
   });
 
   it('syncs filter state to URL query params', () => {
@@ -112,18 +105,4 @@ describe('RecipeTable', () => {
     expect(row).toHaveAttribute('aria-expanded', 'false');
   });
 
-  it('removes an ingredient from the filter when the strip chip is clicked', () => {
-    render(() => <RecipeTable data={data} baseHref="/valheim/" />);
-    // Expand and add iron as an active filter
-    fireEvent.click(screen.getByRole('button', { name: /Iron Sword/ }));
-    fireEvent.click(screen.getByRole('button', { name: /Iron ×60/ }));
-    expect(screen.queryByText('Queens Jam')).toBeNull();
-    // Click the remove chip in the reverse-lookup strip
-    fireEvent.click(
-      screen.getByRole('button', { name: /Remove Iron from ingredient filter/ }),
-    );
-    // Strip should be gone and cooking recipe should reappear
-    expect(screen.queryByText(/Uses ingredient/)).toBeNull();
-    expect(screen.getByText('Queens Jam')).toBeInTheDocument();
-  });
 });
