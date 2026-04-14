@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Fist -->
+  <rect x="10" y="18" width="28" height="20" rx="6" fill="#D4A574"/>
+  <!-- Knuckles -->
+  <rect x="10" y="16" width="7" height="10" rx="3" fill="#C89660"/>
+  <rect x="18" y="14" width="7" height="12" rx="3" fill="#C89660"/>
+  <rect x="26" y="16" width="7" height="10" rx="3" fill="#C89660"/>
+  <rect x="34" y="18" width="5" height="8" rx="2" fill="#C89660"/>
+  <!-- Thumb -->
+  <rect x="8" y="28" width="8" height="6" rx="3" fill="#C89660"/>
+</svg>

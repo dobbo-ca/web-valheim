@@ -1,4 +1,4 @@
-import { For, type Component } from 'solid-js';
+import { For, createSignal, onMount, type Component } from 'solid-js';
 import type { FilterState } from '../lib/filter';
 import { emptyFilterState } from '../lib/filter';
 import type { Station } from '../lib/types';
@@ -8,8 +8,6 @@ interface TagGroup {
   icon: string;
   tags: string[];
 }
-
-const ICON_BASE = '/valheim/icons/filters';
 
 const tagGroups: TagGroup[] = [
   { label: 'Weapons', icon: 'weapons', tags: ['sword', 'axe', 'mace', 'spear', 'knife', 'atgeir', 'sledge', 'battleaxe', 'club', 'fists'] },
@@ -42,17 +40,22 @@ interface Props {
   onChange: (next: FilterState) => void;
 }
 
-const FilterIcon: Component<{ name: string }> = (props) => (
-  <img
-    class="filter-icon"
-    src={`${ICON_BASE}/${props.name}.svg`}
-    alt=""
-    width={16}
-    height={16}
-  />
-);
-
 export const AdvancedFilterPanel: Component<Props> = (props) => {
+  const [spriteHref, setSpriteHref] = createSignal('/valheim/icons/sprite.svg');
+
+  onMount(async () => {
+    try {
+      const resp = await fetch('/valheim/icons/sprite-manifest.json');
+      const manifest = await resp.json();
+      setSpriteHref(`/valheim/icons/${manifest.filename}`);
+    } catch { /* fall back to default */ }
+  });
+
+  const FilterIcon: Component<{ name: string }> = (iconProps) => (
+    <svg class="filter-icon" width={16} height={16} style={{ "image-rendering": "pixelated" }}>
+      <use href={`${spriteHref()}#filter-${iconProps.name}`} />
+    </svg>
+  );
   const update = (patch: Partial<FilterState>) =>
     props.onChange({ ...props.state, ...patch });
 

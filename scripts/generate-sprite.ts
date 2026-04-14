@@ -13,30 +13,42 @@ import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync, writeFileSync, unlinkSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 
-const ICONS_DIR = resolve(import.meta.dirname, '../public/icons/items');
+const ITEMS_DIR = resolve(import.meta.dirname, '../public/icons/items');
+const FILTERS_DIR = resolve(import.meta.dirname, '../public/icons/filters');
 const OUTPUT_DIR = resolve(import.meta.dirname, '../public/icons');
 const MANIFEST = join(OUTPUT_DIR, 'sprite-manifest.json');
 
-const files = readdirSync(ICONS_DIR)
-  .filter((f) => f.endsWith('.svg'))
-  .sort();
+// Collect icons from multiple directories with optional ID prefix
+const iconSources: { dir: string; prefix: string }[] = [
+  { dir: ITEMS_DIR, prefix: '' },
+  { dir: FILTERS_DIR, prefix: 'filter-' },
+];
 
 const symbols: string[] = [];
+let totalCount = 0;
 
-for (const file of files) {
-  const id = file.slice(0, -4); // strip .svg
-  const raw = readFileSync(join(ICONS_DIR, file), 'utf8');
+for (const { dir, prefix } of iconSources) {
+  const files = readdirSync(dir).filter((f) => f.endsWith('.svg')).sort();
+  for (const file of files) {
+    const id = prefix + file.slice(0, -4); // strip .svg, add prefix
+    const raw = readFileSync(join(dir, file), 'utf8');
 
-  // Extract inner content, strip comments and collapse whitespace
-  const inner = raw
-    .replace(/<svg[^>]*>/, '')
-    .replace(/<\/svg>\s*$/, '')
-    .replace(/<!--[\s\S]*?-->/g, '')   // strip comments
-    .replace(/\s+/g, ' ')              // collapse whitespace
-    .replace(/>\s+</g, '><')           // remove space between tags
-    .trim();
+    // Extract viewBox or default to 48x48
+    const vbMatch = raw.match(/viewBox="([^"]+)"/);
+    const viewBox = vbMatch ? vbMatch[1] : '0 0 48 48';
 
-  symbols.push(`<symbol id="${id}" viewBox="0 0 48 48">${inner}</symbol>`);
+    // Extract inner content, strip comments and collapse whitespace
+    const inner = raw
+      .replace(/<svg[^>]*>/, '')
+      .replace(/<\/svg>\s*$/, '')
+      .replace(/<!--[\s\S]*?-->/g, '')
+      .replace(/\s+/g, ' ')
+      .replace(/>\s+</g, '><')
+      .trim();
+
+    symbols.push(`<symbol id="${id}" viewBox="${viewBox}">${inner}</symbol>`);
+    totalCount++;
+  }
 }
 
 const sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">${symbols.join('')}</svg>`;
@@ -57,4 +69,4 @@ writeFileSync(outputPath, sprite, 'utf8');
 writeFileSync(MANIFEST, JSON.stringify({ filename }), 'utf8');
 
 const kb = (Buffer.byteLength(sprite) / 1024).toFixed(1);
-console.log(`Sprite generated: ${files.length} icons → ${kb}KB → ${filename}`);
+console.log(`Sprite generated: ${totalCount} icons → ${kb}KB → ${filename}`);
