@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Undead ribcage material -->
+  <!-- Spine -->
+  <rect x="22" y="4" width="4" height="40" rx="1" fill="#D8D0B8"/>
+  <!-- Ribs -->
+  <path d="M22,10 Q10,12 8,18" stroke="#C8C0A8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M26,10 Q38,12 40,18" stroke="#C8C0A8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M22,18 Q12,20 10,26" stroke="#C8C0A8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M26,18 Q36,20 38,26" stroke="#C8C0A8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M22,26 Q14,28 12,32" stroke="#C8C0A8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M26,26 Q34,28 36,32" stroke="#C8C0A8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Green marrow glow -->
+  <rect x="23" y="8" width="2" height="3" fill="#5A8A3A"/>
+  <rect x="23" y="16" width="2" height="3" fill="#5A8A3A"/>
+  <rect x="23" y="24" width="2" height="3" fill="#5A8A3A"/>
+</svg>

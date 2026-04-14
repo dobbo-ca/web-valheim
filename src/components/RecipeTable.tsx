@@ -1,4 +1,4 @@
-import { For, Show, createEffect, createMemo, createSignal, onMount, type Component } from 'solid-js';
+import { For, Show, createEffect, createMemo, createSignal, onMount, onCleanup, type Component } from 'solid-js';
 import { createStore, reconcile } from 'solid-js/store';
 import type { DataSet } from '../lib/loader';
 import type { FilterState } from '../lib/filter';
@@ -82,6 +82,25 @@ export const RecipeTable: Component<Props> = (props) => {
   const [mounted, setMounted] = createSignal(false);
   const [visibleColumns, setVisibleColumns] = createSignal<ColumnId[]>(readStoredColumns());
   const [colMenuOpen, setColMenuOpen] = createSignal(false);
+  let colToggleRef: HTMLSpanElement | undefined;
+
+  // Close column menu on click-outside or Escape
+  const handleClickOutside = (e: MouseEvent) => {
+    if (colMenuOpen() && colToggleRef && !colToggleRef.contains(e.target as Node)) {
+      setColMenuOpen(false);
+    }
+  };
+  const handleEscape = (e: KeyboardEvent) => {
+    if (e.key === 'Escape' && colMenuOpen()) setColMenuOpen(false);
+  };
+  onMount(() => {
+    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('keydown', handleEscape);
+    onCleanup(() => {
+      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    });
+  });
 
   // Stable sorted recipe IDs used as the integer index for URL encoding
   const recipeIndex = createMemo(() =>
@@ -360,7 +379,7 @@ export const RecipeTable: Component<Props> = (props) => {
     const parts = ['2fr']; // Name always visible
     if (isColVisible('station')) parts.push('1.5fr');
     if (isColVisible('ingredients')) parts.push('3fr');
-    if (isColVisible('stats')) parts.push('auto');
+    if (isColVisible('stats')) parts.push('minmax(80px, auto)');
     parts.push('62px'); // Cart always visible
     return parts.join(' ');
   };
@@ -412,7 +431,9 @@ export const RecipeTable: Component<Props> = (props) => {
       </Show>
 
       <div class="recipe-table__grid" role="table" style={{ '--grid-cols': gridColumns() }}>
-        <div class="recipe-table__header" role="row" style={{ 'grid-template-columns': gridColumns() }}>
+        <div class="recipe-table__header" role="row" ref={(el: HTMLDivElement) => {
+          createEffect(() => { el.style.gridTemplateColumns = gridColumns(); });
+        }}>
           <span role="columnheader" aria-sort={sortKey() === 'name' ? (sortDir() === 'asc' ? 'ascending' : 'descending') : 'none'}>
             <button class="recipe-table__sort-btn" classList={{ 'recipe-table__sort-btn--active': sortKey() === 'name' }} onClick={() => toggleSort('name')}>
               Name{sortIndicator('name')}
@@ -431,33 +452,34 @@ export const RecipeTable: Component<Props> = (props) => {
           <Show when={isColVisible('stats')}>
             <span role="columnheader">Stats</span>
           </Show>
-          <span role="columnheader" class="recipe-table__col-toggle">
-            <button
-              type="button"
-              class="recipe-table__col-toggle-btn"
-              onClick={() => setColMenuOpen((o) => !o)}
-              aria-label="Toggle column visibility"
-            >
-              ⚙
-            </button>
-            <Show when={colMenuOpen()}>
-              <div class="recipe-table__col-menu">
-                <For each={[
-                  { id: 'station' as ColumnId, label: 'Station' },
-                  { id: 'ingredients' as ColumnId, label: 'Ingredients' },
-                  { id: 'stats' as ColumnId, label: 'Stats' },
-                ]}>
-                  {(col) => (
-                    <label class="recipe-table__col-option">
-                      <input type="checkbox" checked={isColVisible(col.id)} onChange={() => toggleColumn(col.id)} />
-                      {col.label}
-                    </label>
-                  )}
-                </For>
-              </div>
-            </Show>
-          </span>
+          <span />
         </div>
+        <span ref={colToggleRef} class="recipe-table__col-toggle">
+          <button
+            type="button"
+            class="recipe-table__col-toggle-btn"
+            onClick={() => setColMenuOpen((o) => !o)}
+            aria-label="Toggle column visibility"
+          >
+            ⚙
+          </button>
+          <Show when={colMenuOpen()}>
+            <div class="recipe-table__col-menu">
+              <For each={[
+                { id: 'station' as ColumnId, label: 'Station' },
+                { id: 'ingredients' as ColumnId, label: 'Ingredients' },
+                { id: 'stats' as ColumnId, label: 'Stats' },
+              ]}>
+                {(col) => (
+                  <label class="recipe-table__col-option">
+                    <input type="checkbox" checked={isColVisible(col.id)} onChange={() => toggleColumn(col.id)} />
+                    {col.label}
+                  </label>
+                )}
+              </For>
+            </div>
+          </Show>
+        </span>
 
         <For each={paginated()} fallback={<div class="recipe-table__empty">No recipes match these filters.</div>}>
           {(recipe) => (

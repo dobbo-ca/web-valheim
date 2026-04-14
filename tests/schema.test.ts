@@ -3,7 +3,9 @@ import {
   StationSchema,
   ItemSchema,
   RecipeSchema,
+  ArmorStatsSchema,
 } from '../src/lib/schema';
+import { mergeArmorStats } from '../src/lib/merge-stats';
 
 describe('StationSchema', () => {
   it('accepts a valid station', () => {
@@ -146,6 +148,77 @@ describe('RecipeSchema — secondaryStep field', () => {
   });
 });
 
+describe('ArmorStatsSchema', () => {
+  it('accepts full armor stats with resistances and set bonus', () => {
+    const input = {
+      armor: 8,
+      durability: 800,
+      weight: 10.0,
+      movementPenalty: -2,
+      resistances: { poison: 'resistant', fire: 'weak' },
+      effects: ['+15 Bows'],
+      setBonus: { name: 'Root Set', pieces: 3, effect: 'Improved archery — +15 Bows' },
+    };
+    expect(() => ArmorStatsSchema.parse(input)).not.toThrow();
+  });
+
+  it('accepts minimal armor stats (no resistances, effects, or set bonus)', () => {
+    const input = { armor: 2, durability: 400, weight: 1.0 };
+    const parsed = ArmorStatsSchema.parse(input);
+    expect(parsed.resistances).toBeUndefined();
+    expect(parsed.effects).toBeUndefined();
+    expect(parsed.setBonus).toBeUndefined();
+    expect(parsed.movementPenalty).toBeUndefined();
+  });
+
+  it('rejects invalid resistance level', () => {
+    expect(() => ArmorStatsSchema.parse({
+      armor: 10, durability: 1000, weight: 5,
+      resistances: { fire: 'immune' },
+    })).toThrow();
+  });
+
+  it('rejects invalid resistance damage type key', () => {
+    expect(() => ArmorStatsSchema.parse({
+      armor: 10, durability: 1000, weight: 5,
+      resistances: { arcane: 'resistant' },
+    })).toThrow();
+  });
+
+  it('rejects negative armor value', () => {
+    expect(() => ArmorStatsSchema.parse({
+      armor: -1, durability: 400, weight: 1.0,
+    })).toThrow();
+  });
+});
+
+describe('RecipeSchema — armorStats field', () => {
+  it('accepts a recipe with armorStats', () => {
+    const result = RecipeSchema.parse({
+      id: 'leather-helmet',
+      name: 'Leather Helmet',
+      type: 'crafting',
+      station: 'workbench',
+      stationLevel: 1,
+      ingredients: [{ itemId: 'deer-hide', qty: 6 }],
+      armorStats: { armor: 2, durability: 400, weight: 1.0 },
+    });
+    expect(result.armorStats?.armor).toBe(2);
+  });
+
+  it('accepts a recipe without armorStats', () => {
+    const result = RecipeSchema.parse({
+      id: 'iron-sword',
+      name: 'Iron Sword',
+      type: 'crafting',
+      station: 'forge',
+      stationLevel: 2,
+      ingredients: [{ itemId: 'iron', qty: 60 }],
+    });
+    expect(result.armorStats).toBeUndefined();
+  });
+});
+
 describe('RecipeSchema — food with eitr', () => {
   it('accepts food stats with eitr', () => {
     const result = RecipeSchema.parse({
@@ -171,5 +244,36 @@ describe('RecipeSchema — food with eitr', () => {
       food: { hp: 23, stamina: 70, duration: 1500, regen: 2 },
     });
     expect(result.food?.eitr).toBeUndefined();
+  });
+});
+
+describe('mergeArmorStats', () => {
+  const base = {
+    armor: 20,
+    durability: 1000,
+    weight: 15,
+    movementPenalty: -5,
+    resistances: { poison: 'resistant' as const },
+    effects: ['+25 Eitr'],
+    setBonus: { name: 'Test Set', pieces: 3, effect: 'Test effect' },
+  };
+
+  it('returns base when overlay is undefined', () => {
+    expect(mergeArmorStats(base, undefined)).toEqual(base);
+  });
+
+  it('merges armor and durability from overlay', () => {
+    const result = mergeArmorStats(base, { armor: 22, durability: 1200 });
+    expect(result.armor).toBe(22);
+    expect(result.durability).toBe(1200);
+    expect(result.weight).toBe(15);
+    expect(result.movementPenalty).toBe(-5);
+  });
+
+  it('preserves base resistances, effects, and setBonus (upgrades never change them)', () => {
+    const result = mergeArmorStats(base, { armor: 22, durability: 1200 });
+    expect(result.resistances).toEqual({ poison: 'resistant' });
+    expect(result.effects).toEqual(['+25 Eitr']);
+    expect(result.setBonus).toEqual(base.setBonus);
   });
 });

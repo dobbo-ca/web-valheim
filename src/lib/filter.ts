@@ -38,10 +38,10 @@ export function filterRecipes(recipes: Recipe[], state: FilterState): Recipe[] {
       : state.maxStationLevel;
     if (r.stationLevel > effectiveMax) return false;
 
-    // Tag filtering: OR logic — recipe must have at least one of the selected tags
+    // Tag filtering: AND logic — recipe must have all selected tags
     if (state.tags.length > 0) {
       const recipeTags = r.tags ?? [];
-      if (!state.tags.some((t) => recipeTags.includes(t))) return false;
+      if (!state.tags.every((t) => recipeTags.includes(t))) return false;
     }
 
     // Biome filter: recipe must match one of the selected biomes

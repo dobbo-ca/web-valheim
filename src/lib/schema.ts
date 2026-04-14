@@ -96,6 +96,31 @@ export const BlockingSchema = z.object({
   parryAdrenaline: z.number().nonnegative().optional(),
 });
 
+// ── Armor stats ──────────────────────────────────────────────────────────────
+export const ResistanceLevelSchema = z.enum(['weak', 'resistant']);
+
+export const DamageTypeKeySchema = z.enum([
+  'slash', 'pierce', 'blunt', 'fire', 'frost', 'lightning', 'poison', 'spirit',
+]);
+
+export const ResistancesSchema = z.partialRecord(DamageTypeKeySchema, ResistanceLevelSchema);
+
+export const SetBonusSchema = z.object({
+  name: z.string().min(1),
+  pieces: z.number().int().positive(),
+  effect: z.string().min(1),
+});
+
+export const ArmorStatsSchema = z.object({
+  armor: z.number().nonnegative(),
+  durability: z.number().nonnegative(),
+  weight: z.number().nonnegative(),
+  movementPenalty: z.number().optional(),
+  resistances: ResistancesSchema.optional(),
+  effects: z.array(z.string()).optional(),
+  setBonus: SetBonusSchema.optional(),
+});
+
 // ── Weapon stats (base or upgrade overlay) ────────────────────────────────────
 // All fields optional so upgrades can specify only what changes.
 export const WeaponStatsSchema = z.object({
@@ -114,6 +139,7 @@ export const ItemUpgradeSchema = z.object({
   repairLevel: z.number().int().positive(),
   ingredients: z.array(IngredientRefSchema),
   stats: WeaponStatsSchema.optional(),                    // sparse overlay on base stats
+  armorStats: ArmorStatsSchema.partial().optional(),
 });
 
 // ── Recipe ────────────────────────────────────────────────────────────────────
@@ -132,6 +158,7 @@ export const RecipeSchema = z.object({
   food: FoodStatsSchema.optional(),
   secondaryStep: SecondaryStepSchema.optional(),
   stats: WeaponStatsSchema.optional(),                    // base weapon stats
+  armorStats: ArmorStatsSchema.optional(),
   upgrades: z.array(ItemUpgradeSchema).optional(),
   biome: BiomeSchema.optional(),
 });

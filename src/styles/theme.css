@@ -374,6 +374,7 @@ h3 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  position: relative;
 }
 .recipe-table__header {
   display: grid;
@@ -381,6 +382,7 @@ h3 {
   gap: 12px;
   padding: 10px 14px;
   align-items: center;
+  justify-items: start;
   border-bottom: 1px solid var(--border-soft);
   color: var(--muted);
   text-transform: uppercase;
@@ -411,7 +413,7 @@ h3 {
   padding: 0;
 }
 .recipe-row__cart-cell {
-  grid-column: -1;
+  grid-column: -2 / -1;
   justify-self: end;
 }
 .recipe-row__wrapper:hover {
@@ -437,6 +439,8 @@ h3 {
 .recipe-row__stats-cell {
   display: flex;
   align-items: center;
+  font-size: 12px;
+  color: var(--text-soft);
 }
 .recipe-row__station-level-short {
   display: none;
@@ -580,10 +584,12 @@ h3 {
 }
 
 .recipe-table__col-toggle {
-  position: relative;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 5;
   display: inline-flex;
   align-items: center;
-  justify-content: flex-end;
 }
 .recipe-table__col-toggle-btn {
   background: var(--surface);

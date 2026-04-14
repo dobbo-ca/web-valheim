@@ -425,5 +425,18 @@
 - { id: robes-of-embla, name: Robes of Embla, category: armor, stackSize: 1 }
 - { id: trousers-of-embla, name: Trousers of Embla, category: armor, stackSize: 1 }
 - { id: asksvin-cloak, name: Asksvin Cloak, category: armor, stackSize: 1 }
+- { id: root-mask, name: Root Mask, category: armor, stackSize: 1 }
+- { id: root-harnesk, name: Root Harnesk, category: armor, stackSize: 1 }
+- { id: root-leggings, name: Root Leggings, category: armor, stackSize: 1 }
+- { id: headdress-of-the-bear, name: Headdress of the Bear, category: armor, stackSize: 1 }
+- { id: patterns-of-the-bear, name: Patterns of the Bear, category: armor, stackSize: 1 }
+- { id: loincloth-of-the-bear, name: Loincloth of the Bear, category: armor, stackSize: 1 }
+- { id: bear-trophy, name: Bear Trophy, category: material, stackSize: 20, biome: black-forest }
 - { id: lox-saddle, name: Lox Saddle, category: tool, stackSize: 1 }
 - { id: ballista, name: Ballista, category: tool, stackSize: 1 }
+- { id: vile-trophy, name: Vile Trophy, category: material, stackSize: 20, biome: plains }
+- { id: vile-ribcage, name: Vile Ribcage, category: material, stackSize: 20, biome: plains }
+- { id: vilebone-visage, name: Vilebone Visage, category: armor, stackSize: 1, biome: plains }
+- { id: vilebone-cage, name: Vilebone Cage, category: armor, stackSize: 1, biome: plains }
+- { id: vilebone-drapes, name: Vilebone Drapes, category: armor, stackSize: 1, biome: plains }
+- { id: vilebone-maulclaws, name: Vilebone Maulclaws, category: weapon, stackSize: 1, biome: plains }

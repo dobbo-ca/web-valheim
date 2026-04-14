@@ -23,16 +23,24 @@ interface Props {
 }
 
 function formatStatSummary(recipe: Recipe): string | null {
-  if (!recipe.stats) return null;
-  const dmg = recipe.stats.primaryAttack?.damage;
-  if (dmg) {
-    const parts = Object.entries(dmg)
-      .filter(([, v]) => v != null && v > 0)
-      .map(([type, val]) => `${val} ${type}`);
-    if (parts.length > 0) return parts.join(' / ');
+  // Weapon stats
+  if (recipe.stats) {
+    const dmg = recipe.stats.primaryAttack?.damage;
+    if (dmg) {
+      const parts = Object.entries(dmg)
+        .filter(([, v]) => v != null && v > 0)
+        .map(([type, val]) => `${val} ${type}`);
+      if (parts.length > 0) return parts.join(' / ');
+    }
+    const blockArmor = recipe.stats.blocking?.blockArmor;
+    if (blockArmor != null) return `${blockArmor} block`;
   }
-  const blockArmor = recipe.stats.blocking?.blockArmor;
-  if (blockArmor != null) return `${blockArmor} block`;
+
+  // Armor stats
+  if (recipe.armorStats) {
+    return `${recipe.armorStats.armor} armor`;
+  }
+
   return null;
 }
 
@@ -90,9 +98,7 @@ export const RecipeRow: Component<Props> = (props) => {
           </Show>
           <Show when={isColVisible('stats')}>
             <span class="recipe-row__stats-cell">
-              {formatStatSummary(props.recipe) && (
-                <span class="recipe-row__stat-badge">{formatStatSummary(props.recipe)}</span>
-              )}
+              {formatStatSummary(props.recipe) ?? ''}
             </span>
           </Show>
         </button>
@@ -129,8 +135,8 @@ export const RecipeRow: Component<Props> = (props) => {
             </div>
           </Show>
 
-          {/* Stack size only for non-weapons */}
-          <Show when={!props.recipe.stats && (() => {
+          {/* Stack size only for non-weapons/armor */}
+          <Show when={!props.recipe.stats && !props.recipe.armorStats && (() => {
             const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
             const item = props.itemsById.get(yieldItemId);
             return item?.stackSize;

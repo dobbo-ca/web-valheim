@@ -93,7 +93,7 @@
   ingredients:
     - { itemId: wood, qty: 6 }
   yields: { itemId: club, qty: 1 }
-  tags: [club, one-handed, tier-0]
+  tags: [weapon, club, one-handed, tier-0]
   stats:
     damage: { blunt: 12 }
     knockback: 20
@@ -137,7 +137,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: leather-scraps, qty: 8 }
   yields: { itemId: crude-bow, qty: 1 }
-  tags: [bow, two-handed, tier-0]
+  tags: [weapon, bow, two-handed, tier-0]
   stats:
     weight: 1
     durability: 50
@@ -187,7 +187,7 @@
     - { itemId: wood, qty: 5 }
     - { itemId: stone, qty: 4 }
   yields: { itemId: stone-axe, qty: 1 }
-  tags: [axe, one-handed, tier-0]
+  tags: [weapon, axe, one-handed, tier-0]
   stats:
     weight: 1
     durability: 100
@@ -251,7 +251,7 @@
     - { itemId: wood, qty: 5 }
     - { itemId: flint, qty: 6 }
   yields: { itemId: flint-axe, qty: 1 }
-  tags: [axe, one-handed, tier-1]
+  tags: [weapon, axe, one-handed, tier-1]
   stats:
     weight: 1
     durability: 100
@@ -316,7 +316,7 @@
     - { itemId: flint, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: flint-knife, qty: 1 }
-  tags: [knife, one-handed, tier-1]
+  tags: [weapon, knife, one-handed, tier-1]
   stats:
     weight: 0.3
     durability: 200
@@ -381,7 +381,7 @@
     - { itemId: flint, qty: 10 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: flint-spear, qty: 1 }
-  tags: [spear, one-handed, tier-1]
+  tags: [weapon, spear, one-handed, tier-1]
   stats:
     weight: 1
     durability: 100
@@ -442,7 +442,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: hard-antler, qty: 1 }
   yields: { itemId: antler-pickaxe, qty: 1 }
-  tags: [pickaxe, tool, tier-1]
+  tags: [weapon, pickaxe, tool, tier-1]
   stats:
     weight: 1.5
     durability: 100
@@ -500,7 +500,7 @@
     - { itemId: core-wood, qty: 10 }
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: finewood-bow, qty: 1 }
-  tags: [bow, two-handed, tier-2]
+  tags: [weapon, bow, two-handed, tier-2]
   stats:
     weight: 1
     durability: 100
@@ -554,7 +554,7 @@
     - { itemId: deer-trophy, qty: 5 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: stagbreaker, qty: 1 }
-  tags: [sledge, two-handed, tier-1]
+  tags: [weapon, sledge, two-handed, tier-1]
   stats:
     weight: 3
     durability: 100
@@ -602,166 +602,162 @@
   name: Leather Helmet
   type: crafting
   station: workbench
-  stationLevel: 1
-  repairLevel: 1
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: deer-hide, qty: 6 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: leather-helmet, qty: 1 }
   tags: [helmet, armor, tier-1]
-  stats:
+  armorStats:
     armor: 2
     durability: 400
-    weight: 1.0
+    weight: 1
   upgrades:
     - quality: 2
-      stationLevel: 2
-      repairLevel: 2
-      ingredients:
-        - { itemId: deer-hide, qty: 5 }
-      stats:
-        armor: 4
-        durability: 600
-    - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
-        - { itemId: deer-hide, qty: 10 }
-      stats:
-        armor: 6
-        durability: 800
-    - quality: 4
+        - { itemId: deer-hide, qty: 5 }
+      armorStats:
+        armor: 4
+        durability: 500
+    - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
+        - { itemId: deer-hide, qty: 10 }
+      armorStats:
+        armor: 6
+        durability: 600
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
         - { itemId: deer-hide, qty: 15 }
-      stats:
+      armorStats:
         armor: 8
-        durability: 1000
-
+        durability: 700
 - id: leather-tunic
   name: Leather Tunic
   type: crafting
   station: workbench
-  stationLevel: 1
-  repairLevel: 1
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: deer-hide, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: leather-tunic, qty: 1 }
   tags: [chest, armor, tier-1]
-  stats:
+  armorStats:
     armor: 2
     durability: 400
-    weight: 5.0
+    weight: 5
   upgrades:
     - quality: 2
-      stationLevel: 2
-      repairLevel: 2
-      ingredients:
-        - { itemId: deer-hide, qty: 5 }
-      stats:
-        armor: 4
-        durability: 600
-    - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
-        - { itemId: deer-hide, qty: 10 }
-      stats:
-        armor: 6
-        durability: 800
-    - quality: 4
+        - { itemId: deer-hide, qty: 5 }
+      armorStats:
+        armor: 4
+        durability: 500
+    - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
+        - { itemId: deer-hide, qty: 10 }
+      armorStats:
+        armor: 6
+        durability: 600
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
         - { itemId: deer-hide, qty: 15 }
-      stats:
+      armorStats:
         armor: 8
-        durability: 1000
-
+        durability: 700
 - id: leather-pants
   name: Leather Pants
   type: crafting
   station: workbench
-  stationLevel: 1
-  repairLevel: 1
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: deer-hide, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: leather-pants, qty: 1 }
   tags: [legs, armor, tier-1]
-  stats:
+  armorStats:
     armor: 2
     durability: 400
-    weight: 5.0
+    weight: 5
   upgrades:
     - quality: 2
-      stationLevel: 2
-      repairLevel: 2
-      ingredients:
-        - { itemId: deer-hide, qty: 5 }
-      stats:
-        armor: 4
-        durability: 600
-    - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
-        - { itemId: deer-hide, qty: 10 }
-      stats:
-        armor: 6
-        durability: 800
-    - quality: 4
+        - { itemId: deer-hide, qty: 5 }
+      armorStats:
+        armor: 4
+        durability: 500
+    - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
+        - { itemId: deer-hide, qty: 10 }
+      armorStats:
+        armor: 6
+        durability: 600
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
         - { itemId: deer-hide, qty: 15 }
-      stats:
+      armorStats:
         armor: 8
-        durability: 1000
-
+        durability: 700
 - id: deer-hide-cape
   name: Deer Hide Cape
   type: crafting
   station: workbench
-  stationLevel: 1
-  repairLevel: 1
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: deer-hide, qty: 4 }
     - { itemId: leather-scraps, qty: 3 }
   yields: { itemId: deer-hide-cape, qty: 1 }
   tags: [cape, armor, tier-1]
-  stats:
+  armorStats:
     armor: 1
     durability: 400
-    weight: 4.0
+    weight: 2
   upgrades:
     - quality: 2
-      stationLevel: 2
-      repairLevel: 2
-      ingredients:
-        - { itemId: deer-hide, qty: 5 }
-      stats:
-        armor: 3
-        durability: 600
-    - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
-        - { itemId: deer-hide, qty: 10 }
-      stats:
-        armor: 5
-        durability: 800
-    - quality: 4
+        - { itemId: deer-hide, qty: 5 }
+      armorStats:
+        armor: 3
+        durability: 600
+    - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
+        - { itemId: deer-hide, qty: 10 }
+      armorStats:
+        armor: 5
+        durability: 800
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
         - { itemId: deer-hide, qty: 15 }
-      stats:
+      armorStats:
         armor: 7
         durability: 1000
-
 - id: wolf-fur-cape
   name: Wolf Fur Cape
   type: crafting
@@ -775,10 +771,11 @@
   yields: { itemId: wolf-fur-cape, qty: 1 }
   tags: [cape, armor, tier-4]
   notes: Provides frost resistance.
-  stats:
+  armorStats:
     armor: 1
     durability: 1000
     weight: 4.0
+    resistances: { frost: resistant }
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -786,7 +783,7 @@
       ingredients:
         - { itemId: wolf-pelt, qty: 5 }
         - { itemId: silver, qty: 2 }
-      stats:
+      armorStats:
         armor: 3
         durability: 1200
     - quality: 3
@@ -795,7 +792,7 @@
       ingredients:
         - { itemId: wolf-pelt, qty: 10 }
         - { itemId: silver, qty: 4 }
-      stats:
+      armorStats:
         armor: 5
         durability: 1400
     - quality: 4
@@ -804,10 +801,9 @@
       ingredients:
         - { itemId: wolf-pelt, qty: 15 }
         - { itemId: silver, qty: 6 }
-      stats:
+      armorStats:
         armor: 7
         durability: 1600
-
 - id: lox-cape
   name: Lox Cape
   type: crafting
@@ -820,10 +816,11 @@
   yields: { itemId: lox-cape, qty: 1 }
   tags: [cape, armor, tier-5]
   notes: Provides frost resistance.
-  stats:
+  armorStats:
     armor: 1
     durability: 1000
     weight: 4.0
+    resistances: { frost: resistant }
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -831,28 +828,24 @@
       ingredients:
         - { itemId: lox-pelt, qty: 5 }
         - { itemId: silver, qty: 2 }
-      stats:
+      armorStats:
         armor: 3
-        durability: 1200
     - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: lox-pelt, qty: 10 }
         - { itemId: silver, qty: 4 }
-      stats:
+      armorStats:
         armor: 5
-        durability: 1400
     - quality: 4
       stationLevel: 5
       repairLevel: 5
       ingredients:
         - { itemId: lox-pelt, qty: 15 }
         - { itemId: silver, qty: 6 }
-      stats:
+      armorStats:
         armor: 7
-        durability: 1600
-
 - id: troll-leather-helmet
   name: Troll Leather Helmet
   type: crafting
@@ -864,17 +857,17 @@
     - { itemId: bone-fragments, qty: 3 }
   yields: { itemId: troll-leather-helmet, qty: 1 }
   tags: [helmet, armor, tier-2]
-  stats:
+  armorStats:
     armor: 6
     durability: 500
-    weight: 1.0
+    weight: 1
   upgrades:
     - quality: 2
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
-      stats:
+      armorStats:
         armor: 8
         durability: 700
     - quality: 3
@@ -882,7 +875,7 @@
       repairLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
-      stats:
+      armorStats:
         armor: 10
         durability: 900
     - quality: 4
@@ -890,10 +883,9 @@
       repairLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
-      stats:
+      armorStats:
         armor: 12
         durability: 1100
-
 - id: troll-leather-tunic
   name: Troll Leather Tunic
   type: crafting
@@ -905,17 +897,17 @@
     - { itemId: bone-fragments, qty: 4 }
   yields: { itemId: troll-leather-tunic, qty: 1 }
   tags: [chest, armor, tier-2]
-  stats:
+  armorStats:
     armor: 6
     durability: 500
-    weight: 5.0
+    weight: 5
   upgrades:
     - quality: 2
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
-      stats:
+      armorStats:
         armor: 8
         durability: 700
     - quality: 3
@@ -923,7 +915,7 @@
       repairLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
-      stats:
+      armorStats:
         armor: 10
         durability: 900
     - quality: 4
@@ -931,10 +923,9 @@
       repairLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
-      stats:
+      armorStats:
         armor: 12
         durability: 1100
-
 - id: troll-leather-pants
   name: Troll Leather Pants
   type: crafting
@@ -946,17 +937,17 @@
     - { itemId: bone-fragments, qty: 4 }
   yields: { itemId: troll-leather-pants, qty: 1 }
   tags: [legs, armor, tier-2]
-  stats:
+  armorStats:
     armor: 6
     durability: 500
-    weight: 5.0
+    weight: 1
   upgrades:
     - quality: 2
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
-      stats:
+      armorStats:
         armor: 8
         durability: 700
     - quality: 3
@@ -964,7 +955,7 @@
       repairLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
-      stats:
+      armorStats:
         armor: 10
         durability: 900
     - quality: 4
@@ -972,10 +963,9 @@
       repairLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
-      stats:
+      armorStats:
         armor: 12
         durability: 1100
-
 - id: troll-hide-cape
   name: Troll Hide Cape
   type: crafting
@@ -987,36 +977,36 @@
     - { itemId: bone-fragments, qty: 3 }
   yields: { itemId: troll-hide-cape, qty: 1 }
   tags: [cape, armor, tier-2]
-  stats:
+  armorStats:
     armor: 1
     durability: 500
     weight: 4.0
+    setBonus:
+      name: "Troll Set"
+      pieces: 4
+      effect: "Sneaky — reduces enemy awareness"
   upgrades:
     - quality: 2
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: troll-hide, qty: 5 }
-      stats:
+      armorStats:
         armor: 3
-        durability: 700
     - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: troll-hide, qty: 10 }
-      stats:
+      armorStats:
         armor: 5
-        durability: 900
     - quality: 4
       stationLevel: 5
       repairLevel: 5
       ingredients:
         - { itemId: troll-hide, qty: 15 }
-      stats:
+      armorStats:
         armor: 7
-        durability: 1100
-
 # Shields
 - id: wood-shield
   name: Wood Shield
@@ -1030,7 +1020,7 @@
     - { itemId: resin, qty: 4 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: wood-shield, qty: 1 }
-  tags: [shield, tier-0]
+  tags: [armor, shield, tier-0]
   stats:
     weight: 4
     durability: 200
@@ -1080,7 +1070,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: wood-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-0]
+  tags: [armor, shield, tower-shield, tier-0]
   stats:
     block: 30
     durability: 200
@@ -1123,7 +1113,7 @@
     - { itemId: bone-fragments, qty: 4 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: bone-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-1]
+  tags: [armor, shield, tower-shield, tier-1]
   stats:
     weight: 4
     durability: 200
@@ -1292,7 +1282,7 @@
     - { itemId: chitin, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: abyssal-razor, qty: 1 }
-  tags: [knife, one-handed, tier-3]
+  tags: [weapon, knife, one-handed, tier-3]
   stats:
     weight: 0.3
     durability: 200
@@ -1356,7 +1346,7 @@
     - { itemId: chitin, qty: 30 }
     - { itemId: leather-scraps, qty: 3 }
   yields: { itemId: abyssal-harpoon, qty: 1 }
-  tags: [spear, tool, tier-3]
+  tags: [weapon, spear, tool, tier-3]
   notes: Used to drag creatures. Does not break on hit.
   stats:
     weight: 3
@@ -1418,7 +1408,7 @@
     - { itemId: wood, qty: 2 }
     - { itemId: copper, qty: 8 }
   yields: { itemId: copper-knife, qty: 1 }
-  tags: [knife, one-handed, tier-1]
+  tags: [weapon, knife, one-handed, tier-1]
   stats:
     weight: 0.3
     durability: 200
@@ -1480,7 +1470,7 @@
     - { itemId: bronze, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: bronze-axe, qty: 1 }
-  tags: [axe, one-handed, tier-2]
+  tags: [weapon, axe, one-handed, tier-2]
   stats:
     weight: 1.5
     durability: 125
@@ -1542,7 +1532,7 @@
     - { itemId: core-wood, qty: 3 }
     - { itemId: bronze, qty: 10 }
   yields: { itemId: bronze-pickaxe, qty: 1 }
-  tags: [pickaxe, tool, tier-2]
+  tags: [weapon, pickaxe, tool, tier-2]
   stats:
     weight: 1.5
     durability: 120
@@ -1600,7 +1590,7 @@
     - { itemId: bronze, qty: 8 }
     - { itemId: leather-scraps, qty: 3 }
   yields: { itemId: bronze-mace, qty: 1 }
-  tags: [mace, one-handed, tier-2]
+  tags: [weapon, mace, one-handed, tier-2]
   stats:
     weight: 2
     durability: 200
@@ -1735,7 +1725,7 @@
     - { itemId: bronze, qty: 6 }
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: bronze-spear, qty: 1 }
-  tags: [spear, one-handed, tier-2]
+  tags: [weapon, spear, one-handed, tier-2]
   stats:
     weight: 1
     durability: 100
@@ -1800,7 +1790,7 @@
     - { itemId: wood, qty: 2 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: bronze-sword, qty: 1 }
-  tags: [sword, one-handed, tier-2]
+  tags: [weapon, sword, one-handed, tier-2]
   stats:
     weight: 1.6
     durability: 200
@@ -1864,7 +1854,7 @@
     - { itemId: bronze, qty: 10 }
     - { itemId: wood, qty: 4 }
   yields: { itemId: bronze-buckler, qty: 1 }
-  tags: [shield, tier-2]
+  tags: [armor, shield, tier-2]
   stats:
     weight: 3
     durability: 200
@@ -1908,17 +1898,17 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: bronze-helmet, qty: 1 }
   tags: [helmet, armor, tier-2]
-  stats:
+  armorStats:
     armor: 8
     durability: 1000
-    weight: 2.0
+    weight: 3
   upgrades:
     - quality: 2
       stationLevel: 2
       repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
-      stats:
+      armorStats:
         armor: 10
         durability: 1200
     - quality: 3
@@ -1926,7 +1916,7 @@
       repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
-      stats:
+      armorStats:
         armor: 12
         durability: 1400
     - quality: 4
@@ -1934,10 +1924,9 @@
       repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
-      stats:
+      armorStats:
         armor: 14
         durability: 1600
-
 - id: bronze-plate-cuirass
   name: Bronze Plate Cuirass
   type: crafting
@@ -1949,17 +1938,18 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: bronze-plate-cuirass, qty: 1 }
   tags: [chest, armor, tier-2]
-  stats:
+  armorStats:
     armor: 8
     durability: 1000
     weight: 10.0
+    movementPenalty: -5
   upgrades:
     - quality: 2
       stationLevel: 2
       repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
-      stats:
+      armorStats:
         armor: 10
         durability: 1200
     - quality: 3
@@ -1967,7 +1957,7 @@
       repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
-      stats:
+      armorStats:
         armor: 12
         durability: 1400
     - quality: 4
@@ -1975,10 +1965,9 @@
       repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
-      stats:
+      armorStats:
         armor: 14
         durability: 1600
-
 - id: bronze-plate-leggings
   name: Bronze Plate Leggings
   type: crafting
@@ -1990,17 +1979,18 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: bronze-plate-leggings, qty: 1 }
   tags: [legs, armor, tier-2]
-  stats:
+  armorStats:
     armor: 8
     durability: 1000
     weight: 10.0
+    movementPenalty: -5
   upgrades:
     - quality: 2
       stationLevel: 2
       repairLevel: 2
       ingredients:
         - { itemId: bronze, qty: 5 }
-      stats:
+      armorStats:
         armor: 10
         durability: 1200
     - quality: 3
@@ -2008,7 +1998,7 @@
       repairLevel: 3
       ingredients:
         - { itemId: bronze, qty: 10 }
-      stats:
+      armorStats:
         armor: 12
         durability: 1400
     - quality: 4
@@ -2016,10 +2006,9 @@
       repairLevel: 4
       ingredients:
         - { itemId: bronze, qty: 15 }
-      stats:
+      armorStats:
         armor: 14
         durability: 1600
-
 - id: bronzehead-arrow
   name: Bronzehead Arrow
   type: crafting
@@ -2115,7 +2104,7 @@
     - { itemId: feathers, qty: 10 }
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: huntsman-bow, qty: 1 }
-  tags: [bow, two-handed, tier-3]
+  tags: [weapon, bow, two-handed, tier-3]
   stats:
     weight: 1.5
     durability: 100
@@ -2169,7 +2158,7 @@
     - { itemId: wood, qty: 2 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: iron-sword, qty: 1 }
-  tags: [sword, one-handed, tier-3]
+  tags: [weapon, sword, one-handed, tier-3]
   notes: Strong vs. skeletons and stonegolems.
   stats:
     weight: 1.6
@@ -2235,7 +2224,7 @@
     - { itemId: wood, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: iron-mace, qty: 1 }
-  tags: [mace, one-handed, tier-3]
+  tags: [weapon, mace, one-handed, tier-3]
   stats:
     weight: 2.5
     durability: 200
@@ -2367,7 +2356,7 @@
     - { itemId: iron, qty: 20 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: iron-axe, qty: 1 }
-  tags: [axe, one-handed, tier-3]
+  tags: [weapon, axe, one-handed, tier-3]
   stats:
     weight: 1.5
     durability: 175
@@ -2429,7 +2418,7 @@
     - { itemId: core-wood, qty: 3 }
     - { itemId: iron, qty: 20 }
   yields: { itemId: iron-pickaxe, qty: 1 }
-  tags: [pickaxe, tool, tier-3]
+  tags: [weapon, pickaxe, tool, tier-3]
   stats:
     weight: 1.5
     durability: 150
@@ -2488,7 +2477,7 @@
     - { itemId: ymir-flesh, qty: 4 }
     - { itemId: draugr-elite-trophy, qty: 1 }
   yields: { itemId: iron-sledge, qty: 1 }
-  tags: [sledge, two-handed, tier-3]
+  tags: [weapon, sledge, two-handed, tier-3]
   notes: Massive AOE damage; knocks back groups of enemies.
   stats:
     weight: 4
@@ -2545,7 +2534,7 @@
     - { itemId: iron, qty: 10 }
     - { itemId: ancient-bark, qty: 4 }
   yields: { itemId: iron-buckler, qty: 1 }
-  tags: [shield, tier-3]
+  tags: [armor, shield, tier-3]
   stats:
     weight: 4
     durability: 200
@@ -2590,7 +2579,7 @@
     - { itemId: fine-wood, qty: 15 }
     - { itemId: iron, qty: 10 }
   yields: { itemId: iron-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-3]
+  tags: [armor, shield, tower-shield, tier-3]
   stats:
     weight: 4
     durability: 200
@@ -2642,7 +2631,7 @@
     - { itemId: fine-wood, qty: 10 }
     - { itemId: iron, qty: 8 }
   yields: { itemId: banded-shield, qty: 1 }
-  tags: [shield, tier-3]
+  tags: [armor, shield, tier-3]
   stats:
     weight: 3
     durability: 200
@@ -2695,43 +2684,42 @@
   name: Iron Helmet
   type: crafting
   station: forge
-  stationLevel: 2
-  repairLevel: 2
+  stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: iron, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: iron-helmet, qty: 1 }
   tags: [helmet, armor, tier-3]
-  stats:
+  armorStats:
     armor: 14
     durability: 1000
-    weight: 2.0
+    weight: 3
   upgrades:
     - quality: 2
-      stationLevel: 3
-      repairLevel: 3
+      stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: iron, qty: 10 }
-      stats:
+      armorStats:
         armor: 16
         durability: 1200
     - quality: 3
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 20 }
-      stats:
+      armorStats:
         armor: 18
         durability: 1400
     - quality: 4
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 30 }
-      stats:
+      armorStats:
         armor: 20
         durability: 1600
-
 - id: iron-scale-mail
   name: Iron Scale Mail
   type: crafting
@@ -2743,17 +2731,18 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: iron-scale-mail, qty: 1 }
   tags: [chest, armor, tier-3]
-  stats:
+  armorStats:
     armor: 14
     durability: 1000
-    weight: 15.0
+    weight: 15
+    movementPenalty: -5
   upgrades:
     - quality: 2
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
-      stats:
+      armorStats:
         armor: 16
         durability: 1200
     - quality: 3
@@ -2761,7 +2750,7 @@
       repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
-      stats:
+      armorStats:
         armor: 18
         durability: 1400
     - quality: 4
@@ -2769,10 +2758,9 @@
       repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
-      stats:
+      armorStats:
         armor: 20
         durability: 1600
-
 - id: iron-greaves
   name: Iron Greaves
   type: crafting
@@ -2784,17 +2772,18 @@
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: iron-greaves, qty: 1 }
   tags: [legs, armor, tier-3]
-  stats:
+  armorStats:
     armor: 14
     durability: 1000
-    weight: 15.0
+    weight: 15
+    movementPenalty: -5
   upgrades:
     - quality: 2
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
-      stats:
+      armorStats:
         armor: 16
         durability: 1200
     - quality: 3
@@ -2802,7 +2791,7 @@
       repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
-      stats:
+      armorStats:
         armor: 18
         durability: 1400
     - quality: 4
@@ -2810,10 +2799,9 @@
       repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
-      stats:
+      armorStats:
         armor: 20
         durability: 1600
-
 - id: ironhead-arrow
   name: Ironhead Arrow
   type: crafting
@@ -2853,7 +2841,7 @@
     - { itemId: iron, qty: 35 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: iron-battleaxe, qty: 1 }
-  tags: [battleaxe, two-handed, tier-3]
+  tags: [weapon, battleaxe, two-handed, tier-3]
   stats:
     damage: { slash: 60 }
     knockback: 50
@@ -2910,7 +2898,7 @@
     - { itemId: iron, qty: 10 }
     - { itemId: troll-hide, qty: 4 }
   yields: { itemId: ancient-bark-spear, qty: 1 }
-  tags: [spear, one-handed, tier-3]
+  tags: [weapon, spear, one-handed, tier-3]
   stats:
     damage: { pierce: 50 }
     knockback: 20
@@ -2965,7 +2953,7 @@
     - { itemId: deer-hide, qty: 2 }
     - { itemId: guck, qty: 10 }
   yields: { itemId: draugr-fang, qty: 1 }
-  tags: [bow, two-handed, tier-4]
+  tags: [weapon, bow, two-handed, tier-4]
   notes: Shoots poison arrows; pairs well with Poison arrows for stacking DoT.
   stats:
     weight: 1.5
@@ -3030,7 +3018,7 @@
     - { itemId: ymir-flesh, qty: 5 }
     - { itemId: freeze-gland, qty: 5 }
   yields: { itemId: frostner, qty: 1 }
-  tags: [mace, one-handed, tier-4]
+  tags: [weapon, mace, one-handed, tier-4]
   notes: Deals frost and spirit damage; slows enemies. Strong vs. undead.
   stats:
     weight: 2.5
@@ -3098,7 +3086,7 @@
     - { itemId: leather-scraps, qty: 2 }
     - { itemId: silver, qty: 2 }
   yields: { itemId: fang-spear, qty: 1 }
-  tags: [spear, one-handed, tier-4]
+  tags: [weapon, spear, one-handed, tier-4]
   stats:
     weight: 1.5
     durability: 100
@@ -3161,7 +3149,7 @@
     - { itemId: leather-scraps, qty: 3 }
     - { itemId: iron, qty: 2 }
   yields: { itemId: silver-knife, qty: 1 }
-  tags: [knife, one-handed, tier-4]
+  tags: [weapon, knife, one-handed, tier-4]
   stats:
     weight: 0.3
     durability: 200
@@ -3225,7 +3213,7 @@
     - { itemId: silver, qty: 30 }
     - { itemId: crystal, qty: 10 }
   yields: { itemId: crystal-battleaxe, qty: 1 }
-  tags: [battleaxe, two-handed, tier-4]
+  tags: [weapon, battleaxe, two-handed, tier-4]
   stats:
     weight: 3.5
     durability: 200
@@ -3291,7 +3279,7 @@
     - { itemId: fine-wood, qty: 10 }
     - { itemId: silver, qty: 8 }
   yields: { itemId: silver-shield, qty: 1 }
-  tags: [shield, tier-4]
+  tags: [armor, shield, tier-4]
   stats:
     weight: 3
     durability: 200
@@ -3346,7 +3334,7 @@
     - { itemId: iron, qty: 4 }
     - { itemId: serpent-scale, qty: 8 }
   yields: { itemId: serpent-scale-shield, qty: 1 }
-  tags: [shield, tier-4]
+  tags: [armor, shield, tier-4]
   notes: High block power; excellent vs. staggered enemies.
   stats:
     weight: 3
@@ -3395,137 +3383,134 @@
   name: Wolf Armor Chest
   type: crafting
   station: forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: silver, qty: 20 }
     - { itemId: wolf-pelt, qty: 5 }
     - { itemId: chain, qty: 1 }
   yields: { itemId: wolf-armor-chest, qty: 1 }
   tags: [chest, armor, tier-4]
-  stats:
+  armorStats:
     armor: 20
     durability: 1000
-    weight: 15.0
+    weight: 3
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: wolf-pelt, qty: 2 }
-      stats:
+      armorStats:
         armor: 22
         durability: 1200
     - quality: 3
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: wolf-pelt, qty: 4 }
-      stats:
+      armorStats:
         armor: 24
         durability: 1400
     - quality: 4
-      stationLevel: 6
-      repairLevel: 6
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wolf-pelt, qty: 6 }
-      stats:
+      armorStats:
         armor: 26
         durability: 1600
-
 - id: wolf-armor-legs
   name: Wolf Armor Legs
   type: crafting
   station: forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: silver, qty: 10 }
     - { itemId: wolf-pelt, qty: 4 }
     - { itemId: chain, qty: 1 }
   yields: { itemId: wolf-armor-legs, qty: 1 }
   tags: [legs, armor, tier-4]
-  stats:
+  armorStats:
     armor: 20
     durability: 1000
-    weight: 15.0
+    weight: 3
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: wolf-pelt, qty: 2 }
-      stats:
+      armorStats:
         armor: 22
         durability: 1200
     - quality: 3
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: wolf-pelt, qty: 4 }
-      stats:
+      armorStats:
         armor: 24
         durability: 1400
     - quality: 4
-      stationLevel: 6
-      repairLevel: 6
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wolf-pelt, qty: 6 }
-      stats:
+      armorStats:
         armor: 26
         durability: 1600
-
 - id: drake-helmet
   name: Drake Helmet
   type: crafting
   station: forge
-  stationLevel: 3
-  repairLevel: 3
+  stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: silver, qty: 20 }
     - { itemId: deer-hide, qty: 2 }
     - { itemId: drake-trophy, qty: 1 }
   yields: { itemId: drake-helmet, qty: 1 }
   tags: [helmet, armor, tier-4]
-  stats:
+  armorStats:
     armor: 20
     durability: 1000
-    weight: 2.0
+    weight: 3
   upgrades:
     - quality: 2
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: silver, qty: 5 }
         - { itemId: wolf-pelt, qty: 2 }
-      stats:
+      armorStats:
         armor: 22
         durability: 1200
     - quality: 3
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: silver, qty: 10 }
         - { itemId: wolf-pelt, qty: 4 }
-      stats:
+      armorStats:
         armor: 24
         durability: 1400
     - quality: 4
-      stationLevel: 6
-      repairLevel: 6
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: silver, qty: 15 }
         - { itemId: wolf-pelt, qty: 6 }
-      stats:
+      armorStats:
         armor: 26
         durability: 1600
-
 - id: silver-arrow
   name: Silver Arrow
   type: crafting
@@ -3557,7 +3542,7 @@
     - { itemId: black-metal, qty: 20 }
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-sword, qty: 1 }
-  tags: [sword, one-handed, tier-5]
+  tags: [weapon, sword, one-handed, tier-5]
   stats:
     weight: 1.6
     durability: 200
@@ -3624,7 +3609,7 @@
     - { itemId: black-metal, qty: 20 }
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-axe, qty: 1 }
-  tags: [axe, one-handed, tier-5]
+  tags: [weapon, axe, one-handed, tier-5]
   stats:
     weight: 1.5
     durability: 175
@@ -3751,7 +3736,7 @@
     - { itemId: black-metal, qty: 10 }
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-knife, qty: 1 }
-  tags: [knife, one-handed, tier-5]
+  tags: [weapon, knife, one-handed, tier-5]
   stats:
     weight: 0.3
     durability: 200
@@ -3819,7 +3804,7 @@
     - { itemId: needle, qty: 5 }
     - { itemId: linen-thread, qty: 10 }
   yields: { itemId: porcupine, qty: 1 }
-  tags: [mace, one-handed, tier-5]
+  tags: [weapon, mace, one-handed, tier-5]
   notes: Deals pierce and blunt damage; one of the strongest one-handed weapons.
   stats:
     weight: 2.5
@@ -3903,7 +3888,7 @@
     - { itemId: black-metal, qty: 8 }
     - { itemId: chain, qty: 5 }
   yields: { itemId: black-metal-shield, qty: 1 }
-  tags: [shield, tier-5]
+  tags: [armor, shield, tier-5]
   stats:
     weight: 3
     durability: 200
@@ -3958,7 +3943,7 @@
     - { itemId: black-metal, qty: 10 }
     - { itemId: chain, qty: 7 }
   yields: { itemId: black-metal-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-5]
+  tags: [armor, shield, tower-shield, tier-5]
   stats:
     weight: 18
     durability: 200
@@ -4011,7 +3996,7 @@
     - { itemId: black-metal, qty: 30 }
     - { itemId: fine-wood, qty: 10 }
   yields: { itemId: black-metal-battleaxe, qty: 1 }
-  tags: [battleaxe, two-handed, tier-4]
+  tags: [weapon, battleaxe, two-handed, tier-4]
   stats:
     durability: 200
     movementPenalty: -15
@@ -4097,7 +4082,7 @@
     - { itemId: yggdrasil-wood, qty: 3 }
     - { itemId: black-metal, qty: 25 }
   yields: { itemId: black-metal-pickaxe, qty: 1 }
-  tags: [pickaxe, two-handed, tier-5]
+  tags: [weapon, pickaxe, two-handed, tier-5]
   stats:
     durability: 210
     primaryAttack:
@@ -4117,134 +4102,133 @@
   name: Padded Helmet
   type: crafting
   station: forge
-  stationLevel: 4
-  repairLevel: 4
+  stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: linen-thread, qty: 10 }
     - { itemId: iron, qty: 5 }
   yields: { itemId: padded-helmet, qty: 1 }
   tags: [helmet, armor, tier-5]
-  stats:
+  armorStats:
     armor: 26
     durability: 1000
-    weight: 2.0
+    weight: 3
   upgrades:
     - quality: 2
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: linen-thread, qty: 5 }
-      stats:
+      armorStats:
         armor: 28
         durability: 1200
     - quality: 3
-      stationLevel: 6
-      repairLevel: 6
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: linen-thread, qty: 10 }
-      stats:
+      armorStats:
         armor: 30
         durability: 1400
     - quality: 4
-      stationLevel: 7
-      repairLevel: 7
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: linen-thread, qty: 15 }
-      stats:
+      armorStats:
         armor: 32
         durability: 1600
-
 - id: padded-cuirass
   name: Padded Cuirass
   type: crafting
   station: forge
-  stationLevel: 4
-  repairLevel: 4
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: linen-thread, qty: 20 }
     - { itemId: iron, qty: 10 }
   yields: { itemId: padded-cuirass, qty: 1 }
   tags: [chest, armor, tier-5]
-  stats:
+  armorStats:
     armor: 26
     durability: 1000
-    weight: 15.0
+    weight: 10
+    movementPenalty: -5
   upgrades:
     - quality: 2
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: linen-thread, qty: 5 }
-      stats:
+      armorStats:
         armor: 28
         durability: 1200
     - quality: 3
-      stationLevel: 6
-      repairLevel: 6
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: linen-thread, qty: 10 }
-      stats:
+      armorStats:
         armor: 30
         durability: 1400
     - quality: 4
-      stationLevel: 7
-      repairLevel: 7
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: linen-thread, qty: 15 }
-      stats:
+      armorStats:
         armor: 32
         durability: 1600
-
 - id: padded-greaves
   name: Padded Greaves
   type: crafting
   station: forge
-  stationLevel: 4
-  repairLevel: 4
+  stationLevel: 2
+  repairLevel: 2
   ingredients:
     - { itemId: linen-thread, qty: 10 }
     - { itemId: iron, qty: 10 }
   yields: { itemId: padded-greaves, qty: 1 }
   tags: [legs, armor, tier-5]
-  stats:
+  armorStats:
     armor: 26
     durability: 1000
-    weight: 15.0
+    weight: 10
+    movementPenalty: -5
   upgrades:
     - quality: 2
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: iron, qty: 10 }
         - { itemId: linen-thread, qty: 5 }
-      stats:
+      armorStats:
         armor: 28
         durability: 1200
     - quality: 3
-      stationLevel: 6
-      repairLevel: 6
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: iron, qty: 20 }
         - { itemId: linen-thread, qty: 10 }
-      stats:
+      armorStats:
         armor: 30
         durability: 1400
     - quality: 4
-      stationLevel: 7
-      repairLevel: 7
+      stationLevel: 5
+      repairLevel: 5
       ingredients:
         - { itemId: iron, qty: 30 }
         - { itemId: linen-thread, qty: 15 }
-      stats:
+      armorStats:
         armor: 32
         durability: 1600
-
 - id: silver-sword
   name: Silver Sword
   type: crafting
@@ -4257,7 +4241,7 @@
     - { itemId: wood, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: silver-sword, qty: 1 }
-  tags: [sword, one-handed, tier-4]
+  tags: [weapon, sword, one-handed, tier-4]
   stats:
     weight: 1
     durability: 200
@@ -4411,7 +4395,7 @@
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: refined-eitr, qty: 2 }
   yields: { itemId: jotun-bane, qty: 1 }
-  tags: [knife, one-handed, tier-6]
+  tags: [weapon, knife, one-handed, tier-6]
   stats:
     weight: 2
     durability: 175
@@ -4497,7 +4481,7 @@
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: mandible, qty: 4 }
   yields: { itemId: spinesnap, qty: 1 }
-  tags: [crossbow, two-handed, tier-6]
+  tags: [weapon, crossbow, two-handed, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -4560,7 +4544,7 @@
     - { itemId: yggdrasil-wood, qty: 10 }
     - { itemId: iron, qty: 5 }
   yields: { itemId: arbalest, qty: 1 }
-  tags: [crossbow, two-handed, tier-6]
+  tags: [weapon, crossbow, two-handed, tier-6]
   notes: Does 0 base damage; bolts provide damage.
   stats:
     weight: 3
@@ -4620,7 +4604,7 @@
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: refined-eitr, qty: 5 }
   yields: { itemId: krom, qty: 1 }
-  tags: [sword, two-handed, tier-6]
+  tags: [weapon, sword, two-handed, tier-6]
   stats:
     weight: 1.8
     durability: 200
@@ -4689,7 +4673,7 @@
     - { itemId: refined-eitr, qty: 3 }
     - { itemId: freeze-gland, qty: 3 }
   yields: { itemId: mistwalker, qty: 1 }
-  tags: [sword, one-handed, tier-6]
+  tags: [weapon, sword, one-handed, tier-6]
   stats:
     weight: 1.8
     durability: 200
@@ -4768,7 +4752,7 @@
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 5 }
   yields: { itemId: carapace-spear, qty: 1 }
-  tags: [spear, one-handed, tier-6]
+  tags: [weapon, spear, one-handed, tier-6]
   stats:
     weight: 1.5
     durability: 100
@@ -4836,7 +4820,7 @@
     - { itemId: dvergr-needle, qty: 3 }
     - { itemId: refined-eitr, qty: 2 }
   yields: { itemId: ripper, qty: 1 }
-  tags: [knife, one-handed, tier-6]
+  tags: [weapon, knife, one-handed, tier-6]
   stats:
     weight: 0.3
     durability: 50
@@ -4884,7 +4868,7 @@
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: refined-eitr, qty: 5 }
   yields: { itemId: skoll-and-hati, qty: 1 }
-  tags: [axe, one-handed, tier-6]
+  tags: [weapon, axe, one-handed, tier-6]
   stats:
     weight: 1.5
     durability: 200
@@ -4952,7 +4936,7 @@
     - { itemId: black-marble, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 8 }
   yields: { itemId: demolisher, qty: 1 }
-  tags: [sledge, two-handed, tier-6]
+  tags: [weapon, sledge, two-handed, tier-6]
   stats:
     weight: 4.5
     durability: 100
@@ -5014,7 +4998,7 @@
     - { itemId: iron, qty: 30 }
     - { itemId: refined-eitr, qty: 10 }
   yields: { itemId: skull-splittur, qty: 1 }
-  tags: [battleaxe, two-handed, tier-5]
+  tags: [weapon, battleaxe, two-handed, tier-5]
   stats:
     durability: 200
     movementPenalty: -5
@@ -5110,7 +5094,7 @@
     - { itemId: dvergr-needle, qty: 5 }
     - { itemId: refined-eitr, qty: 3 }
   yields: { itemId: splitnir, qty: 1 }
-  tags: [spear, one-handed, tier-6]
+  tags: [weapon, spear, one-handed, tier-6]
   stats:
     weight: 3.5
     durability: 100
@@ -5169,7 +5153,7 @@
     - { itemId: flametal, qty: 24 }
     - { itemId: asksvin-hide, qty: 3 }
   yields: { itemId: berserkir, qty: 1 }
-  tags: [axe, two-handed, tier-6]
+  tags: [weapon, axe, two-handed, tier-6]
   stats:
     weight: 2
     durability: 175
@@ -5240,7 +5224,7 @@
     - { itemId: refined-eitr, qty: 5 }
     - { itemId: morgen-heart, qty: 1 }
   yields: { itemId: ash-fang, qty: 1 }
-  tags: [bow, two-handed, tier-6]
+  tags: [weapon, bow, two-handed, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -5292,7 +5276,7 @@
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: charred-bone, qty: 5 }
   yields: { itemId: flametal-mace, qty: 1 }
-  tags: [mace, one-handed, tier-6]
+  tags: [weapon, mace, one-handed, tier-6]
   stats:
     weight: 3
     durability: 150
@@ -5363,7 +5347,7 @@
     - { itemId: bilebag, qty: 3 }
     - { itemId: yggdrasil-wood, qty: 8 }
   yields: { itemId: slayer, qty: 1 }
-  tags: [sledge, two-handed, tier-6]
+  tags: [weapon, sledge, two-handed, tier-6]
   stats:
     weight: 4
     durability: 200
@@ -5436,7 +5420,7 @@
     - { itemId: flametal, qty: 20 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: dyrnwyn, qty: 1 }
-  tags: [sword, one-handed, tier-6]
+  tags: [weapon, sword, one-handed, tier-6]
   notes: Legendary sword reforged from fragments. Upgrades beyond quality 2 require Black Forge levels not yet available in game.
   stats:
     weight: 0.8
@@ -5552,10 +5536,10 @@
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-helmet, qty: 1 }
   tags: [helmet, armor, tier-6]
-  stats:
-    armor: 30
-    durability: 1000
-    weight: 2.0
+  armorStats:
+    armor: 32
+    durability: 1200
+    weight: 3
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -5563,28 +5547,27 @@
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
-      stats:
-        armor: 32
-        durability: 1200
+      armorStats:
+        armor: 34
+        durability: 1400
     - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
-      stats:
-        armor: 34
-        durability: 1400
+      armorStats:
+        armor: 36
+        durability: 1600
     - quality: 4
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
-      stats:
-        armor: 36
-        durability: 1600
-
+      armorStats:
+        armor: 38
+        durability: 1800
 - id: carapace-breastplate
   name: Carapace Breastplate
   type: crafting
@@ -5597,10 +5580,11 @@
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-breastplate, qty: 1 }
   tags: [chest, armor, tier-6]
-  stats:
-    armor: 30
-    durability: 1000
-    weight: 15.0
+  armorStats:
+    armor: 32
+    durability: 1200
+    weight: 10
+    movementPenalty: -5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -5608,28 +5592,27 @@
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
-      stats:
-        armor: 32
-        durability: 1200
+      armorStats:
+        armor: 34
+        durability: 1400
     - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
-      stats:
-        armor: 34
-        durability: 1400
+      armorStats:
+        armor: 36
+        durability: 1600
     - quality: 4
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
-      stats:
-        armor: 36
-        durability: 1600
-
+      armorStats:
+        armor: 38
+        durability: 1800
 - id: carapace-greaves
   name: Carapace Greaves
   type: crafting
@@ -5642,10 +5625,11 @@
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-greaves, qty: 1 }
   tags: [legs, armor, tier-6]
-  stats:
-    armor: 30
-    durability: 1000
-    weight: 15.0
+  armorStats:
+    armor: 32
+    durability: 1200
+    weight: 10
+    movementPenalty: -5
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -5653,163 +5637,132 @@
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: scale-hide, qty: 2 }
-      stats:
-        armor: 32
-        durability: 1200
+      armorStats:
+        armor: 34
+        durability: 1400
     - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: scale-hide, qty: 4 }
-      stats:
-        armor: 34
-        durability: 1400
+      armorStats:
+        armor: 36
+        durability: 1600
     - quality: 4
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: scale-hide, qty: 6 }
-      stats:
-        armor: 36
-        durability: 1600
-
+      armorStats:
+        armor: 38
+        durability: 1800
 - id: hood-of-ask
   name: Hood of Ask
   type: crafting
   station: black-forge
-  stationLevel: 2
-  repairLevel: 2
+  stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: carapace, qty: 10 }
     - { itemId: refined-eitr, qty: 3 }
     - { itemId: linen-thread, qty: 10 }
   yields: { itemId: hood-of-ask, qty: 1 }
   tags: [helmet, armor, tier-6]
-  stats:
+  armorStats:
     armor: 28
     durability: 1000
-    weight: 2.0
+    weight: 1
   upgrades:
     - quality: 2
-      stationLevel: 3
-      repairLevel: 3
-      ingredients:
-        - { itemId: carapace, qty: 5 }
-        - { itemId: scale-hide, qty: 2 }
-      stats:
-        armor: 30
-        durability: 1200
-    - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
-        - { itemId: carapace, qty: 10 }
-        - { itemId: scale-hide, qty: 4 }
-      stats:
-        armor: 32
-        durability: 1400
-    - quality: 4
+        - { itemId: carapace, qty: 5 }
+        - { itemId: scale-hide, qty: 2 }
+      armorStats:
+        armor: 30
+        durability: 1200
+    - quality: 3
       stationLevel: 5
       repairLevel: 5
       ingredients:
-        - { itemId: carapace, qty: 15 }
-        - { itemId: scale-hide, qty: 6 }
-      stats:
-        armor: 34
-        durability: 1600
-
+        - { itemId: carapace, qty: 10 }
+        - { itemId: scale-hide, qty: 4 }
+      armorStats:
+        armor: 32
+        durability: 1400
 - id: breastplate-of-ask
   name: Breastplate of Ask
   type: crafting
   station: black-forge
-  stationLevel: 2
-  repairLevel: 2
+  stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: carapace, qty: 20 }
     - { itemId: refined-eitr, qty: 5 }
     - { itemId: linen-thread, qty: 20 }
   yields: { itemId: breastplate-of-ask, qty: 1 }
   tags: [chest, armor, tier-6]
-  stats:
+  armorStats:
     armor: 28
     durability: 1000
-    weight: 15.0
+    weight: 5
   upgrades:
     - quality: 2
-      stationLevel: 3
-      repairLevel: 3
-      ingredients:
-        - { itemId: carapace, qty: 5 }
-        - { itemId: scale-hide, qty: 2 }
-      stats:
-        armor: 30
-        durability: 1200
-    - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
-        - { itemId: carapace, qty: 10 }
-        - { itemId: scale-hide, qty: 4 }
-      stats:
-        armor: 32
-        durability: 1400
-    - quality: 4
+        - { itemId: carapace, qty: 5 }
+        - { itemId: scale-hide, qty: 2 }
+      armorStats:
+        armor: 30
+        durability: 1200
+    - quality: 3
       stationLevel: 5
       repairLevel: 5
       ingredients:
-        - { itemId: carapace, qty: 15 }
-        - { itemId: scale-hide, qty: 6 }
-      stats:
-        armor: 34
-        durability: 1600
-
+        - { itemId: carapace, qty: 10 }
+        - { itemId: scale-hide, qty: 4 }
+      armorStats:
+        armor: 32
+        durability: 1400
 - id: trousers-of-ask
   name: Trousers of Ask
   type: crafting
   station: black-forge
-  stationLevel: 2
-  repairLevel: 2
+  stationLevel: 3
+  repairLevel: 3
   ingredients:
     - { itemId: carapace, qty: 15 }
     - { itemId: refined-eitr, qty: 4 }
     - { itemId: linen-thread, qty: 15 }
   yields: { itemId: trousers-of-ask, qty: 1 }
   tags: [legs, armor, tier-6]
-  stats:
+  armorStats:
     armor: 28
     durability: 1000
-    weight: 15.0
+    weight: 5
   upgrades:
     - quality: 2
-      stationLevel: 3
-      repairLevel: 3
-      ingredients:
-        - { itemId: carapace, qty: 5 }
-        - { itemId: scale-hide, qty: 2 }
-      stats:
-        armor: 30
-        durability: 1200
-    - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
-        - { itemId: carapace, qty: 10 }
-        - { itemId: scale-hide, qty: 4 }
-      stats:
-        armor: 32
-        durability: 1400
-    - quality: 4
+        - { itemId: carapace, qty: 5 }
+        - { itemId: scale-hide, qty: 2 }
+      armorStats:
+        armor: 30
+        durability: 1200
+    - quality: 3
       stationLevel: 5
       repairLevel: 5
       ingredients:
-        - { itemId: carapace, qty: 15 }
-        - { itemId: scale-hide, qty: 6 }
-      stats:
-        armor: 34
-        durability: 1600
-
+        - { itemId: carapace, qty: 10 }
+        - { itemId: scale-hide, qty: 4 }
+      armorStats:
+        armor: 32
+        durability: 1400
 # Ashlands armor (Black Forge level 3)
 - id: flametal-helmet
   name: Flametal Helmet
@@ -5823,10 +5776,10 @@
     - { itemId: bilebag, qty: 1 }
   yields: { itemId: flametal-helmet, qty: 1 }
   tags: [helmet, armor, tier-6]
-  stats:
-    armor: 34
-    durability: 1200
-    weight: 2.0
+  armorStats:
+    armor: 38
+    durability: 800
+    weight: 3
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -5834,28 +5787,18 @@
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 2 }
-      stats:
-        armor: 36
-        durability: 1400
+      armorStats:
+        armor: 40
+        durability: 1000
     - quality: 3
       stationLevel: 5
       repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 4 }
-      stats:
-        armor: 38
-        durability: 1600
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 15 }
-        - { itemId: ashwood, qty: 6 }
-      stats:
-        armor: 40
-        durability: 1800
-
+      armorStats:
+        armor: 42
+        durability: 1200
 - id: flametal-breastplate
   name: Flametal Breastplate
   type: crafting
@@ -5868,10 +5811,11 @@
     - { itemId: bilebag, qty: 1 }
   yields: { itemId: flametal-breastplate, qty: 1 }
   tags: [chest, armor, tier-6]
-  stats:
-    armor: 34
-    durability: 1200
-    weight: 15.0
+  armorStats:
+    armor: 38
+    durability: 1000
+    weight: 10
+    movementPenalty: -5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -5879,28 +5823,18 @@
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 5 }
-      stats:
-        armor: 36
-        durability: 1400
+      armorStats:
+        armor: 40
+        durability: 1200
     - quality: 3
       stationLevel: 5
       repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
-      stats:
-        armor: 38
-        durability: 1600
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 15 }
-        - { itemId: ashwood, qty: 15 }
-      stats:
-        armor: 40
-        durability: 1800
-
+      armorStats:
+        armor: 42
+        durability: 1400
 - id: flametal-greaves
   name: Flametal Greaves
   type: crafting
@@ -5913,10 +5847,11 @@
     - { itemId: bilebag, qty: 1 }
   yields: { itemId: flametal-greaves, qty: 1 }
   tags: [legs, armor, tier-6]
-  stats:
-    armor: 34
-    durability: 1200
-    weight: 15.0
+  armorStats:
+    armor: 38
+    durability: 1000
+    weight: 10
+    movementPenalty: -5
   upgrades:
     - quality: 2
       stationLevel: 4
@@ -5924,28 +5859,18 @@
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: ashwood, qty: 5 }
-      stats:
-        armor: 36
-        durability: 1400
+      armorStats:
+        armor: 40
+        durability: 1200
     - quality: 3
       stationLevel: 5
       repairLevel: 5
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: ashwood, qty: 10 }
-      stats:
-        armor: 38
-        durability: 1600
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: flametal, qty: 15 }
-        - { itemId: ashwood, qty: 15 }
-      stats:
-        armor: 40
-        durability: 1800
-
+      armorStats:
+        armor: 42
+        durability: 1400
 # Black Forge shields
 - id: carapace-buckler
   name: Carapace Buckler
@@ -5959,7 +5884,7 @@
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-buckler, qty: 1 }
-  tags: [shield, tier-6]
+  tags: [armor, shield, tier-6]
   stats:
     weight: 5
     durability: 200
@@ -6014,7 +5939,7 @@
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-shield, qty: 1 }
-  tags: [shield, tier-6]
+  tags: [armor, shield, tier-6]
   stats:
     weight: 20
     durability: 200
@@ -6069,7 +5994,7 @@
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: charred-bone, qty: 3 }
   yields: { itemId: flametal-shield, qty: 1 }
-  tags: [shield, tier-6]
+  tags: [armor, shield, tier-6]
   stats:
     weight: 3.5
     durability: 200
@@ -6114,7 +6039,7 @@
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: charred-bone, qty: 5 }
   yields: { itemId: flametal-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-6]
+  tags: [armor, shield, tower-shield, tier-6]
   stats:
     weight: 22
     durability: 200
@@ -6159,39 +6084,27 @@
   yields: { itemId: ashen-cape, qty: 1 }
   tags: [cape, armor, tier-6]
   notes: -10% attack stamina, -20% block stamina.
-  stats:
-    armor: 1
+  armorStats:
+    armor: 12
     durability: 1200
-    weight: 4.0
+    weight: 4
   upgrades:
     - quality: 2
       stationLevel: 4
       repairLevel: 4
       ingredients:
-        - { itemId: asksvin-hide, qty: 5 }
-        - { itemId: flametal, qty: 2 }
-      stats:
-        armor: 3
+        - { itemId: asksvin-hide, qty: 2 }
+      armorStats:
+        armor: 14
         durability: 1400
     - quality: 3
       stationLevel: 5
       repairLevel: 5
       ingredients:
-        - { itemId: asksvin-hide, qty: 10 }
-        - { itemId: flametal, qty: 4 }
-      stats:
-        armor: 5
+        - { itemId: asksvin-hide, qty: 4 }
+      armorStats:
+        armor: 16
         durability: 1600
-    - quality: 4
-      stationLevel: 6
-      repairLevel: 6
-      ingredients:
-        - { itemId: asksvin-hide, qty: 15 }
-        - { itemId: flametal, qty: 6 }
-      stats:
-        armor: 7
-        durability: 1800
-
 # Black Forge arrows
 - id: carapace-arrow
   name: Carapace Arrow
@@ -6327,7 +6240,7 @@
     - { itemId: flametal-mace, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: bloodgeon, qty: 1 }
-  tags: [mace, one-handed, elemental, tier-6]
+  tags: [weapon, mace, one-handed, elemental, tier-6]
   notes: Flametal Mace upgraded with Bloodstone. Bleed damage.
   stats:
     weight: 2.5
@@ -6382,7 +6295,7 @@
     - { itemId: slayer, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: brutal-slayer, qty: 1 }
-  tags: [sledge, two-handed, elemental, tier-6]
+  tags: [weapon, sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Bloodstone. Bleed damage.
   stats:
     weight: 4
@@ -6437,7 +6350,7 @@
     - { itemId: slayer, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: scourging-slayer, qty: 1 }
-  tags: [sledge, two-handed, elemental, tier-6]
+  tags: [weapon, sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Iolite. Lightning damage.
   stats:
     weight: 4
@@ -6492,7 +6405,7 @@
     - { itemId: slayer, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: primal-slayer, qty: 1 }
-  tags: [sledge, two-handed, elemental, tier-6]
+  tags: [weapon, sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Jade. Poison damage.
   stats:
     weight: 4
@@ -6694,7 +6607,7 @@
     - { itemId: flametal, qty: 8 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: storm-star, qty: 1 }
-  tags: [mace, one-handed, tier-6]
+  tags: [weapon, mace, one-handed, tier-6]
   notes: Flametal Mace upgraded with Iolite. Lightning damage.
   stats:
     weight: 3
@@ -6749,7 +6662,7 @@
     - { itemId: flametal, qty: 8 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: klossen, qty: 1 }
-  tags: [mace, one-handed, tier-6]
+  tags: [weapon, mace, one-handed, tier-6]
   notes: Flametal Mace upgraded with Jade. Poison damage.
   stats:
     weight: 4.5
@@ -6806,7 +6719,7 @@
     - { itemId: splitnir, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: splitnir-the-bleeding, qty: 1 }
-  tags: [battleaxe, two-handed, elemental, tier-6]
+  tags: [weapon, battleaxe, two-handed, elemental, tier-6]
   stats:
     weight: 3.5
     durability: 100
@@ -6854,7 +6767,7 @@
     - { itemId: splitnir, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: splitnir-the-storming, qty: 1 }
-  tags: [battleaxe, two-handed, elemental, tier-6]
+  tags: [weapon, battleaxe, two-handed, elemental, tier-6]
   stats:
     weight: 3.5
     durability: 100
@@ -6902,7 +6815,7 @@
     - { itemId: splitnir, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: splitnir-the-primal, qty: 1 }
-  tags: [battleaxe, two-handed, elemental, tier-6]
+  tags: [weapon, battleaxe, two-handed, elemental, tier-6]
   stats:
     weight: 3.5
     durability: 100
@@ -6951,7 +6864,7 @@
     - { itemId: berserkir, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: bleeding-berserkir, qty: 1 }
-  tags: [axe, two-handed, elemental, tier-6]
+  tags: [weapon, axe, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 175
@@ -7004,7 +6917,7 @@
     - { itemId: berserkir, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: thundering-berserkir, qty: 1 }
-  tags: [axe, two-handed, elemental, tier-6]
+  tags: [weapon, axe, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 175
@@ -7057,7 +6970,7 @@
     - { itemId: berserkir, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: primal-berserkir, qty: 1 }
-  tags: [axe, two-handed, elemental, tier-6]
+  tags: [weapon, axe, two-handed, elemental, tier-6]
   stats:
     weight: 3.5
     durability: 175
@@ -7111,7 +7024,7 @@
     - { itemId: ash-fang, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: blood-fang, qty: 1 }
-  tags: [bow, two-handed, elemental, tier-6]
+  tags: [weapon, bow, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -7151,7 +7064,7 @@
     - { itemId: ash-fang, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: storm-fang, qty: 1 }
-  tags: [bow, two-handed, elemental, tier-6]
+  tags: [weapon, bow, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -7191,7 +7104,7 @@
     - { itemId: ash-fang, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: root-fang, qty: 1 }
-  tags: [bow, two-handed, elemental, tier-6]
+  tags: [weapon, bow, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -7232,7 +7145,7 @@
     - { itemId: ripper, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: wound-ripper, qty: 1 }
-  tags: [crossbow, two-handed, elemental, tier-6]
+  tags: [weapon, crossbow, two-handed, elemental, tier-6]
   notes: Crossbow damage comes from bolts.
   stats:
     weight: 3
@@ -7272,7 +7185,7 @@
     - { itemId: ripper, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: storm-ripper, qty: 1 }
-  tags: [crossbow, two-handed, elemental, tier-6]
+  tags: [weapon, crossbow, two-handed, elemental, tier-6]
   notes: Crossbow damage comes from bolts.
   stats:
     weight: 3
@@ -7312,7 +7225,7 @@
     - { itemId: ripper, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: root-ripper, qty: 1 }
-  tags: [crossbow, two-handed, elemental, tier-6]
+  tags: [weapon, crossbow, two-handed, elemental, tier-6]
   notes: Crossbow damage comes from bolts.
   stats:
     weight: 3
@@ -7356,7 +7269,7 @@
     - { itemId: sap, qty: 5 }
     - { itemId: refined-eitr, qty: 10 }
   yields: { itemId: staff-of-embers, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7426,7 +7339,7 @@
     - { itemId: freeze-gland, qty: 4 }
     - { itemId: refined-eitr, qty: 10 }
   yields: { itemId: staff-of-frost, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7494,7 +7407,7 @@
     - { itemId: dvergr-needle, qty: 5 }
     - { itemId: refined-eitr, qty: 20 }
   yields: { itemId: staff-of-storms, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
 
 - id: staff-of-protection
   name: Staff of Protection
@@ -7508,7 +7421,7 @@
     - { itemId: carapace, qty: 5 }
     - { itemId: refined-eitr, qty: 10 }
   yields: { itemId: staff-of-protection, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7560,7 +7473,7 @@
     - { itemId: refined-eitr, qty: 16 }
     - { itemId: jade, qty: 4 }
   yields: { itemId: staff-of-the-wild, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7604,10 +7517,10 @@
     - { itemId: iron, qty: 2 }
   yields: { itemId: eitr-weave-hood, qty: 1 }
   tags: [helmet, armor, magic, tier-6]
-  stats:
-    armor: 24
+  armorStats:
+    armor: 16
     durability: 1000
-    weight: 1.5
+    weight: 1
   upgrades:
     - quality: 2
       stationLevel: 2
@@ -7615,8 +7528,8 @@
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
-      stats:
-        armor: 26
+      armorStats:
+        armor: 18
         durability: 1200
     - quality: 3
       stationLevel: 3
@@ -7624,8 +7537,8 @@
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
-      stats:
-        armor: 28
+      armorStats:
+        armor: 20
         durability: 1400
     - quality: 4
       stationLevel: 4
@@ -7633,10 +7546,9 @@
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
-      stats:
-        armor: 30
+      armorStats:
+        armor: 22
         durability: 1600
-
 - id: eitr-robe
   name: Eitr-Weave Robe
   type: crafting
@@ -7694,10 +7606,14 @@
     - { itemId: carapace, qty: 15 }
   yields: { itemId: eitr-weave-tunic, qty: 1 }
   tags: [chest, armor, magic, tier-6]
-  stats:
+  armorStats:
     armor: 24
     durability: 1000
     weight: 8.0
+    setBonus:
+      name: "Eitr-weave Set"
+      pieces: 3
+      effect: "Eitr regeneration"
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -7705,8 +7621,7 @@
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
-      stats:
-        armor: 26
+      armorStats:
         durability: 1200
     - quality: 3
       stationLevel: 4
@@ -7714,8 +7629,7 @@
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
-      stats:
-        armor: 28
+      armorStats:
         durability: 1400
     - quality: 4
       stationLevel: 5
@@ -7723,55 +7637,53 @@
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
-      stats:
-        armor: 30
+      armorStats:
         durability: 1600
-
 - id: eitr-weave-trousers
   name: Eitr-Weave Trousers
   type: crafting
   station: galdr-table
-  stationLevel: 2
-  repairLevel: 2
+  stationLevel: 1
+  repairLevel: 1
   ingredients:
     - { itemId: refined-eitr, qty: 10 }
     - { itemId: linen-thread, qty: 15 }
     - { itemId: carapace, qty: 10 }
   yields: { itemId: eitr-weave-trousers, qty: 1 }
   tags: [legs, armor, magic, tier-6]
-  stats:
-    armor: 24
+  armorStats:
+    armor: 16
     durability: 1000
-    weight: 8.0
+    weight: 5
+    movementPenalty: -2
   upgrades:
     - quality: 2
-      stationLevel: 3
-      repairLevel: 3
+      stationLevel: 2
+      repairLevel: 2
       ingredients:
         - { itemId: carapace, qty: 5 }
         - { itemId: refined-eitr, qty: 2 }
-      stats:
-        armor: 26
+      armorStats:
+        armor: 18
         durability: 1200
     - quality: 3
-      stationLevel: 4
-      repairLevel: 4
+      stationLevel: 3
+      repairLevel: 3
       ingredients:
         - { itemId: carapace, qty: 10 }
         - { itemId: refined-eitr, qty: 4 }
-      stats:
-        armor: 28
+      armorStats:
+        armor: 20
         durability: 1400
     - quality: 4
-      stationLevel: 5
-      repairLevel: 5
+      stationLevel: 4
+      repairLevel: 4
       ingredients:
         - { itemId: carapace, qty: 15 }
         - { itemId: refined-eitr, qty: 6 }
-      stats:
-        armor: 30
+      armorStats:
+        armor: 22
         durability: 1600
-
 # Sealbreaker (Galdr Table)
 - id: sealbreaker
   name: Sealbreaker
@@ -7836,39 +7748,41 @@
   yields: { itemId: feather-cape, qty: 1 }
   tags: [cape, armor, magic, tier-6]
   notes: Provides 100% fall damage reduction.
-  stats:
+  armorStats:
     armor: 1
-    durability: 1000
-    weight: 4.0
+    durability: 1200
+    weight: 4
   upgrades:
     - quality: 2
       stationLevel: 2
       repairLevel: 2
       ingredients:
-        - { itemId: feathers, qty: 5 }
-        - { itemId: scale-hide, qty: 2 }
-      stats:
+        - { itemId: feather, qty: 2 }
+        - { itemId: scale-hide, qty: 5 }
+        - { itemId: refined-eitr, qty: 3 }
+      armorStats:
         armor: 3
-        durability: 1200
+        durability: 1400
     - quality: 3
       stationLevel: 3
       repairLevel: 3
       ingredients:
-        - { itemId: feathers, qty: 10 }
-        - { itemId: scale-hide, qty: 4 }
-      stats:
+        - { itemId: feather, qty: 4 }
+        - { itemId: scale-hide, qty: 10 }
+        - { itemId: refined-eitr, qty: 6 }
+      armorStats:
         armor: 5
-        durability: 1400
+        durability: 1600
     - quality: 4
       stationLevel: 4
       repairLevel: 4
       ingredients:
-        - { itemId: feathers, qty: 15 }
-        - { itemId: scale-hide, qty: 6 }
-      stats:
+        - { itemId: feather, qty: 6 }
+        - { itemId: scale-hide, qty: 15 }
+        - { itemId: refined-eitr, qty: 9 }
+      armorStats:
         armor: 7
-        durability: 1600
-
+        durability: 1800
 # Ashlands staves (Galdr Table level 2)
 - id: staff-of-fracturing
   name: Staff of Fracturing
@@ -7882,7 +7796,7 @@
     - { itemId: ashwood, qty: 5 }
     - { itemId: proustite-powder, qty: 8 }
   yields: { itemId: staff-of-fracturing, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7941,7 +7855,7 @@
     - { itemId: celestial-feather, qty: 3 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: dundr, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   notes: Shoots grapeshot of 12 lightning bolts.
   stats:
     weight: 1.5
@@ -7976,7 +7890,7 @@
     - { itemId: flametal, qty: 3 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: trollstav, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   notes: Summons a large troll.
   stats:
     weight: 0.3
@@ -8032,7 +7946,7 @@
     - { itemId: refined-eitr, qty: 16 }
     - { itemId: skeleton-trophy, qty: 4 }
   yields: { itemId: dead-raiser, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   notes: Blood magic staff — uses Eitr and Health.
 
   stats:
@@ -8075,10 +7989,10 @@
     - { itemId: asksvin-hide, qty: 2 }
   yields: { itemId: hood-of-embla, qty: 1 }
   tags: [helmet, armor, magic, tier-6]
-  stats:
-    armor: 28
-    durability: 1200
-    weight: 1.5
+  armorStats:
+    armor: 19
+    durability: 1000
+    weight: 1
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -8086,28 +8000,18 @@
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: celestial-feather, qty: 1 }
-      stats:
-        armor: 30
-        durability: 1400
+      armorStats:
+        armor: 21
+        durability: 1200
     - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: celestial-feather, qty: 2 }
-      stats:
-        armor: 32
-        durability: 1600
-    - quality: 4
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 15 }
-        - { itemId: celestial-feather, qty: 3 }
-      stats:
-        armor: 34
-        durability: 1800
-
+      armorStats:
+        armor: 23
+        durability: 1400
 - id: robes-of-embla
   name: Robes of Embla
   type: crafting
@@ -8121,10 +8025,11 @@
     - { itemId: flametal, qty: 5 }
   yields: { itemId: robes-of-embla, qty: 1 }
   tags: [chest, armor, magic, tier-6]
-  stats:
-    armor: 28
-    durability: 1200
-    weight: 8.0
+  armorStats:
+    armor: 19
+    durability: 1000
+    weight: 5
+    movementPenalty: -2
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -8132,28 +8037,18 @@
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: celestial-feather, qty: 1 }
-      stats:
-        armor: 30
-        durability: 1400
+      armorStats:
+        armor: 21
+        durability: 1200
     - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: celestial-feather, qty: 2 }
-      stats:
-        armor: 32
-        durability: 1600
-    - quality: 4
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 15 }
-        - { itemId: celestial-feather, qty: 3 }
-      stats:
-        armor: 34
-        durability: 1800
-
+      armorStats:
+        armor: 23
+        durability: 1400
 - id: trousers-of-embla
   name: Trousers of Embla
   type: crafting
@@ -8166,10 +8061,11 @@
     - { itemId: asksvin-hide, qty: 10 }
   yields: { itemId: trousers-of-embla, qty: 1 }
   tags: [legs, armor, magic, tier-6]
-  stats:
-    armor: 28
-    durability: 1200
-    weight: 8.0
+  armorStats:
+    armor: 19
+    durability: 1000
+    weight: 5
+    movementPenalty: -2
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -8177,28 +8073,18 @@
       ingredients:
         - { itemId: flametal, qty: 5 }
         - { itemId: celestial-feather, qty: 1 }
-      stats:
-        armor: 30
-        durability: 1400
+      armorStats:
+        armor: 21
+        durability: 1200
     - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
         - { itemId: flametal, qty: 10 }
         - { itemId: celestial-feather, qty: 2 }
-      stats:
-        armor: 32
-        durability: 1600
-    - quality: 4
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: flametal, qty: 15 }
-        - { itemId: celestial-feather, qty: 3 }
-      stats:
-        armor: 34
-        durability: 1800
-
+      armorStats:
+        armor: 23
+        durability: 1400
 # Asksvin Cloak (Galdr Table level 2)
 - id: asksvin-cloak
   name: Asksvin Cloak
@@ -8212,36 +8098,25 @@
   yields: { itemId: asksvin-cloak, qty: 1 }
   tags: [cape, armor, tier-6]
   notes: Wind run effect, -15% dodge stamina.
-  stats:
+  armorStats:
     armor: 1
-    durability: 1200
-    weight: 4.0
+    durability: 1500
+    weight: 4
   upgrades:
     - quality: 2
       stationLevel: 3
       repairLevel: 3
       ingredients:
-        - { itemId: asksvin-hide, qty: 5 }
-      stats:
-        armor: 3
-        durability: 1400
+        - { itemId: asksvin-hide, qty: 2 }
+      armorStats:
+        durability: 1700
     - quality: 3
       stationLevel: 4
       repairLevel: 4
       ingredients:
-        - { itemId: asksvin-hide, qty: 10 }
-      stats:
-        armor: 5
-        durability: 1600
-    - quality: 4
-      stationLevel: 5
-      repairLevel: 5
-      ingredients:
-        - { itemId: asksvin-hide, qty: 15 }
-      stats:
-        armor: 7
-        durability: 1800
-
+        - { itemId: asksvin-hide, qty: 4 }
+      armorStats:
+        durability: 1900
 # ── Artisan Table ──────────────────────────────────────────────────────────────
 
 - id: lox-saddle
@@ -8291,7 +8166,7 @@
     - { itemId: wood, qty: 1 }
     - { itemId: resin, qty: 1 }
   yields: { itemId: torch, qty: 1 }
-  tags: [club, one-handed, utility, tier-0]
+  tags: [weapon, club, one-handed, utility, tier-0]
   stats:
     weight: 1
     durability: 20
@@ -8326,7 +8201,7 @@
     - { itemId: mysterious-axe-head, qty: 1 }
     - { itemId: wood, qty: 4 }
   yields: { itemId: early-axes, qty: 1 }
-  tags: [axe, dual-wield, tier-0]
+  tags: [weapon, axe, dual-wield, tier-0]
   stats:
     weight: 2
     durability: 175
@@ -8412,7 +8287,7 @@
     - { itemId: wood, qty: 2 }
     - { itemId: tin, qty: 4 }
   yields: { itemId: butcher-knife, qty: 1 }
-  tags: [knife, one-handed, tier-2]
+  tags: [weapon, knife, one-handed, tier-2]
   stats:
     primaryAttack:
       damage: { pure: 1000 }
@@ -8446,7 +8321,7 @@
     - { itemId: bear-paw, qty: 2 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: paws-of-the-bear, qty: 1 }
-  tags: [fists, two-handed, tier-2]
+  tags: [weapon, fists, two-handed, tier-2]
   stats:
     durability: 300
     primaryAttack:
@@ -8503,7 +8378,7 @@
     - { itemId: wolf-fang, qty: 6 }
     - { itemId: leather-scraps, qty: 6 }
   yields: { itemId: flesh-rippers, qty: 1 }
-  tags: [fists, two-handed, tier-4]
+  tags: [weapon, fists, two-handed, tier-4]
   stats:
     durability: 300
     primaryAttack:
@@ -8660,3 +8535,433 @@
   yields: { itemId: blob-bomb-lava, qty: 1 }
   tags: [bomb, throwable, summon, tier-6]
   notes: Summons a Lava Blob on impact.
+
+- id: root-mask
+  name: Root mask
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients: []
+  yields: { itemId: root-mask, qty: 1 }
+  tags: [helmet, armor, tier-1]
+  armorStats:
+    armor: 8
+    durability: 800
+    weight: 3
+    resistances: { poison: resistant, fire: weak }
+
+- id: root-harnesk
+  name: Root harnesk
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients: []
+  yields: { itemId: root-harnesk, qty: 1 }
+  tags: [chest, armor, tier-1]
+  armorStats:
+    armor: 8
+    durability: 800
+    weight: 10
+    movementPenalty: -2
+    resistances: { poison: resistant, fire: weak }
+    setBonus:
+      name: "Root Set"
+      pieces: 3
+      effect: "Improved archery — +15 Bows (skill)"
+
+- id: root-leggings
+  name: Root leggings
+  type: crafting
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients: []
+  yields: { itemId: root-leggings, qty: 1 }
+  tags: [legs, armor, tier-1]
+  armorStats:
+    armor: 8
+    durability: 800
+    weight: 10
+    movementPenalty: -2
+    resistances: { fire: weak }
+    setBonus:
+      name: "Root Set"
+      pieces: 3
+      effect: "Improved archery — +15 Bows (skill)"
+
+- id: headdress-of-the-bear
+  name: Headdress of the Bear
+  type: crafting
+  biome: black-forest
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 5 }
+    - { itemId: bear-trophy, qty: 1 }
+  yields: { itemId: headdress-of-the-bear, qty: 1 }
+  tags: [helmet, armor, tier-2]
+  armorStats:
+    armor: 7
+    durability: 1000
+    weight: 1
+    setBonus:
+      name: "Bear Set"
+      pieces: 3
+      effect: "Berserk — +30% Health regen, +15% Stamina regen, +10% Slash, +10% Chop. Slightly weak (+25%) vs Blunt, Slash and Pierce"
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+      armorStats:
+        armor: 9
+        durability: 1200
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+      armorStats:
+        armor: 11
+        durability: 1400
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+      armorStats:
+        armor: 13
+        durability: 1600
+
+- id: patterns-of-the-bear
+  name: Patterns of the Bear
+  type: crafting
+  biome: black-forest
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 5 }
+    - { itemId: bear-paw, qty: 2 }
+    - { itemId: blueberries, qty: 4 }
+  yields: { itemId: patterns-of-the-bear, qty: 1 }
+  tags: [chest, armor, tier-2]
+  armorStats:
+    armor: 7
+    durability: 1000
+    weight: 5
+    setBonus:
+      name: "Bear Set"
+      pieces: 3
+      effect: "Berserk — +30% Health regen, +15% Stamina regen, +10% Slash, +10% Chop. Slightly weak (+25%) vs Blunt, Slash and Pierce"
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+        - { itemId: blueberries, qty: 1 }
+      armorStats:
+        armor: 9
+        durability: 1200
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+        - { itemId: blueberries, qty: 2 }
+      armorStats:
+        armor: 11
+        durability: 1400
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+        - { itemId: blueberries, qty: 3 }
+      armorStats:
+        armor: 13
+        durability: 1600
+
+- id: loincloth-of-the-bear
+  name: Loincloth of the Bear
+  type: crafting
+  biome: black-forest
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 5 }
+    - { itemId: blueberries, qty: 4 }
+  yields: { itemId: loincloth-of-the-bear, qty: 1 }
+  tags: [legs, armor, tier-2]
+  armorStats:
+    armor: 7
+    durability: 1000
+    weight: 5
+    setBonus:
+      name: "Bear Set"
+      pieces: 3
+      effect: "Berserk — +30% Health regen, +15% Stamina regen, +10% Slash, +10% Chop. Slightly weak (+25%) vs Blunt, Slash and Pierce"
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+        - { itemId: blueberries, qty: 1 }
+      armorStats:
+        armor: 9
+        durability: 1200
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+        - { itemId: blueberries, qty: 2 }
+      armorStats:
+        armor: 11
+        durability: 1400
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+        - { itemId: blueberries, qty: 3 }
+      armorStats:
+        armor: 13
+        durability: 1600
+
+- id: vilebone-visage
+  name: Vilebone Visage
+  type: crafting
+  biome: plains
+  station: forge
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 5 }
+    - { itemId: vile-trophy, qty: 1 }
+  yields: { itemId: vilebone-visage, qty: 1 }
+  tags: [helmet, armor, tier-5]
+  armorStats:
+    armor: 12
+    durability: 1000
+    weight: 1
+    setBonus:
+      name: "Vilebone Set"
+      pieces: 3
+      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce. Slightly weak (+25%) vs Blunt, Slash and Pierce"
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+      armorStats:
+        armor: 14
+        durability: 1000
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+      armorStats:
+        armor: 16
+        durability: 1000
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+      armorStats:
+        armor: 18
+        durability: 1000
+
+- id: vilebone-cage
+  name: Vilebone Cage
+  type: crafting
+  biome: plains
+  station: forge
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 4 }
+    - { itemId: vile-ribcage, qty: 3 }
+    - { itemId: linen-thread, qty: 4 }
+  yields: { itemId: vilebone-cage, qty: 1 }
+  tags: [chest, armor, tier-5]
+  armorStats:
+    armor: 18
+    durability: 1000
+    weight: 5
+    setBonus:
+      name: "Vilebone Set"
+      pieces: 3
+      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce. Slightly weak (+25%) vs Blunt, Slash and Pierce"
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+        - { itemId: vile-ribcage, qty: 1 }
+        - { itemId: linen-thread, qty: 1 }
+      armorStats:
+        armor: 20
+        durability: 1000
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+        - { itemId: vile-ribcage, qty: 2 }
+        - { itemId: linen-thread, qty: 2 }
+      armorStats:
+        armor: 22
+        durability: 1000
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+        - { itemId: vile-ribcage, qty: 3 }
+        - { itemId: linen-thread, qty: 3 }
+      armorStats:
+        armor: 24
+        durability: 1000
+
+- id: vilebone-drapes
+  name: Vilebone Drapes
+  type: crafting
+  biome: plains
+  station: forge
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 10 }
+    - { itemId: vile-ribcage, qty: 1 }
+    - { itemId: linen-thread, qty: 4 }
+  yields: { itemId: vilebone-drapes, qty: 1 }
+  tags: [legs, armor, tier-5]
+  armorStats:
+    armor: 18
+    durability: 1000
+    weight: 5
+    setBonus:
+      name: "Vilebone Set"
+      pieces: 3
+      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce. Slightly weak (+25%) vs Blunt, Slash and Pierce"
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 5 }
+        - { itemId: vile-ribcage, qty: 1 }
+        - { itemId: linen-thread, qty: 1 }
+      armorStats:
+        armor: 20
+        durability: 1000
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 10 }
+        - { itemId: vile-ribcage, qty: 2 }
+        - { itemId: linen-thread, qty: 2 }
+      armorStats:
+        armor: 22
+        durability: 1000
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 15 }
+        - { itemId: vile-ribcage, qty: 3 }
+        - { itemId: linen-thread, qty: 3 }
+      armorStats:
+        armor: 24
+        durability: 1000
+
+- id: vilebone-maulclaws
+  name: Vilebone Maulclaws
+  type: crafting
+  biome: plains
+  station: forge
+  stationLevel: 4
+  repairLevel: 4
+  ingredients:
+    - { itemId: bear-hide, qty: 2 }
+    - { itemId: vile-ribcage, qty: 2 }
+    - { itemId: black-metal, qty: 2 }
+    - { itemId: linen-thread, qty: 4 }
+  yields: { itemId: vilebone-maulclaws, qty: 1 }
+  tags: [weapon, fists, two-handed, tier-5]
+  stats:
+    durability: 300
+    primaryAttack:
+      damage: { slash: 20, pierce: 60 }
+      backstab: 6
+      stagger: 20
+      stamina: 12
+      knockback: 30
+    secondaryAttack:
+      damage: { slash: 20, pierce: 60 }
+      backstab: 6
+      stagger: 120
+      stamina: 24
+      knockback: 120
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 1 }
+        - { itemId: vile-ribcage, qty: 1 }
+        - { itemId: black-metal, qty: 1 }
+        - { itemId: linen-thread, qty: 2 }
+      stats:
+        primaryAttack:
+          damage: { slash: 24, pierce: 60 }
+          stagger: 24
+        secondaryAttack:
+          damage: { slash: 24, pierce: 60 }
+          stagger: 144
+        durability: 350
+    - quality: 3
+      stationLevel: 6
+      repairLevel: 6
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+        - { itemId: vile-ribcage, qty: 2 }
+        - { itemId: black-metal, qty: 2 }
+        - { itemId: linen-thread, qty: 4 }
+      stats:
+        primaryAttack:
+          damage: { slash: 28, pierce: 60 }
+          stagger: 28
+        secondaryAttack:
+          damage: { slash: 28, pierce: 60 }
+          stagger: 168
+        durability: 400
+    - quality: 4
+      stationLevel: 7
+      repairLevel: 7
+      ingredients:
+        - { itemId: bear-hide, qty: 3 }
+        - { itemId: vile-ribcage, qty: 3 }
+        - { itemId: black-metal, qty: 3 }
+        - { itemId: linen-thread, qty: 6 }
+      stats:
+        primaryAttack:
+          damage: { slash: 32, pierce: 60 }
+          stagger: 32
+        secondaryAttack:
+          damage: { slash: 32, pierce: 60 }
+          stagger: 192
+        durability: 450

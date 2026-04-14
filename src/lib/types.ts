@@ -14,6 +14,10 @@ import type {
   WeaponStatsSchema,
   ItemUpgradeSchema,
   BiomeSchema,
+  ArmorStatsSchema,
+  ResistanceLevelSchema,
+  ResistancesSchema,
+  SetBonusSchema,
 } from './schema';
 
 export type Item = z.infer<typeof ItemSchema>;
@@ -30,3 +34,7 @@ export type Blocking = z.infer<typeof BlockingSchema>;
 export type WeaponStats = z.infer<typeof WeaponStatsSchema>;
 export type ItemUpgrade = z.infer<typeof ItemUpgradeSchema>;
 export type Biome = z.infer<typeof BiomeSchema>;
+export type ArmorStats = z.infer<typeof ArmorStatsSchema>;
+export type ResistanceLevel = z.infer<typeof ResistanceLevelSchema>;
+export type Resistances = z.infer<typeof ResistancesSchema>;
+export type SetBonus = z.infer<typeof SetBonusSchema>;

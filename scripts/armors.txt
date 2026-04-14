@@ -1,0 +1,44 @@
+Leather helmet
+Leather tunic
+Leather pants
+Deer hide cape
+Troll leather helmet
+Troll leather tunic
+Troll leather pants
+Troll hide cape
+Bronze helmet
+Bronze plate cuirass
+Bronze plate leggings
+Iron helmet
+Iron scale mail
+Iron greaves
+Root mask
+Root harnesk
+Root leggings
+Wolf armor chest
+Wolf armor legs
+Drake helmet
+Padded helmet
+Padded cuirass
+Padded greaves
+Wolf fur cape
+Lox cape
+Carapace helmet
+Carapace breastplate
+Carapace greaves
+Hood of Ask
+Breastplate of Ask
+Trousers of Ask
+Flametal helmet
+Flametal breastplate
+Flametal greaves
+Ashen cape
+Eitr-weave hood
+Eitr robe
+Eitr-weave tunic
+Eitr-weave trousers
+Feather cape
+Hood of Embla
+Robes of Embla
+Trousers of Embla
+Asksvin cloak

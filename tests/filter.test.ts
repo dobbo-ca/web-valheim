@@ -144,16 +144,24 @@ describe('filterRecipes', () => {
     ).toEqual(['upgrade-forge-2']);
   });
 
-  it('filters by tags (OR within selection)', () => {
+  it('filters by single tag', () => {
     expect(
       filterRecipes(sample, { ...empty, tags: ['sword'] }).map((r) => r.id),
     ).toEqual(['iron-sword', 'bronze-sword']);
   });
 
-  it('filters by multiple tags (OR — matches any)', () => {
+  it('filters by multiple tags (AND — must have all)', () => {
+    // Both swords have ['sword', 'one-handed'], so AND matches both
+    expect(
+      filterRecipes(sample, { ...empty, tags: ['sword', 'one-handed'] }).map((r) => r.id),
+    ).toEqual(['iron-sword', 'bronze-sword']);
+  });
+
+  it('multiple tags with no overlap returns empty', () => {
+    // No recipe has both 'sword' and 'station-upgrade'
     expect(
       filterRecipes(sample, { ...empty, tags: ['sword', 'station-upgrade'] }).map((r) => r.id),
-    ).toEqual(['iron-sword', 'bronze-sword', 'upgrade-forge-2']);
+    ).toEqual([]);
   });
 
   it('filters by per-station ceiling', () => {
