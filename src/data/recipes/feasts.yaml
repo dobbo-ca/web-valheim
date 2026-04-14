@@ -1,5 +1,4 @@
 # ── Feasts (Food Table) ──────────────────────────────────────────────────────
-# Feasts are placed on a Serving Tray (10 servings per placement, 50-min buff).
 
 - id: whole-roasted-meadow-boar
   name: Whole Roasted Meadow Boar
@@ -15,10 +14,10 @@
   food:
     hp: 35
     stamina: 35
+    healPerTick: 2
     duration: 3000
-    regen: 2
-  tags: [feast, tier-1]
-  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+    weight: 10.0
+  tags: [feast, tier-3, swamp]
 
 - id: black-forest-buffet-platter
   name: Black Forest Buffet Platter
@@ -34,29 +33,10 @@
   food:
     hp: 35
     stamina: 35
+    healPerTick: 3
     duration: 3000
-    regen: 3
-  tags: [feast, tier-2]
-  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
-
-- id: sailors-bounty
-  name: "Sailor's Bounty"
-  type: cooking
-  station: food-table
-  stationLevel: 1
-  ingredients:
-    - { itemId: cooked-fish, qty: 5 }
-    - { itemId: thistle, qty: 4 }
-    - { itemId: cooked-serpent-meat, qty: 2 }
-    - { itemId: seafarers-herbs, qty: 1 }
-  yields: { itemId: sailors-bounty, qty: 10 }
-  food:
-    hp: 45
-    stamina: 45
-    duration: 3000
-    regen: 3
-  tags: [feast, tier-4]
-  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+    weight: 10.0
+  tags: [feast, tier-3, swamp]
 
 - id: swamp-dwellers-delight
   name: "Swamp Dweller's Delight"
@@ -72,10 +52,29 @@
   food:
     hp: 35
     stamina: 35
+    healPerTick: 3
     duration: 3000
-    regen: 3
-  tags: [feast, tier-3]
-  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+    weight: 10.0
+  tags: [feast, tier-3, swamp]
+
+- id: sailors-bounty
+  name: "Sailor's Bounty"
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: cooked-fish, qty: 5 }
+    - { itemId: thistle, qty: 4 }
+    - { itemId: cooked-serpent-meat, qty: 2 }
+    - { itemId: seafarers-herbs, qty: 1 }
+  yields: { itemId: sailors-bounty, qty: 10 }
+  food:
+    hp: 45
+    stamina: 45
+    healPerTick: 3
+    duration: 3000
+    weight: 10.0
+  tags: [feast, tier-3, swamp]
 
 - id: hearty-mountain-loggers-stew
   name: "Hearty Mountain Logger's Stew"
@@ -91,10 +90,10 @@
   food:
     hp: 45
     stamina: 45
+    healPerTick: 3
     duration: 3000
-    regen: 3
-  tags: [feast, tier-4]
-  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+    weight: 10.0
+  tags: [feast, tier-4, mountain]
 
 - id: plains-pie-picnic
   name: Plains Pie Picnic
@@ -110,10 +109,10 @@
   food:
     hp: 55
     stamina: 55
+    healPerTick: 4
     duration: 3000
-    regen: 4
-  tags: [feast, tier-5]
-  notes: "Place on a Serving Tray for 10 servings. 50-minute buff."
+    weight: 10.0
+  tags: [feast, tier-5, plains]
 
 - id: mushrooms-galore
   name: "Mushrooms Galore à la Mistlands"
@@ -129,11 +128,11 @@
   food:
     hp: 65
     stamina: 65
-    duration: 3000
-    regen: 5
     eitr: 33
-  tags: [feast, tier-6]
-  notes: "Place on a Serving Tray for 10 servings. 50-minute buff. Grants Eitr."
+    healPerTick: 5
+    duration: 3000
+    weight: 10.0
+  tags: [feast, eitr, tier-6, mistlands]
 
 - id: ashlands-gourmet-bowl
   name: Ashlands Gourmet Bowl
@@ -149,8 +148,8 @@
   food:
     hp: 75
     stamina: 75
-    duration: 3000
-    regen: 6
     eitr: 38
-  tags: [feast, tier-7]
-  notes: "Place on a Serving Tray for 10 servings. 50-minute buff. Grants Eitr."
+    healPerTick: 6
+    duration: 3000
+    weight: 10.0
+  tags: [feast, eitr, tier-7, ashlands]
