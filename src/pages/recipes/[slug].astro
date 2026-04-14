@@ -21,7 +21,7 @@ const station = data.stations.find((s) => s.id === recipe.station);
 
 const yieldsId = recipe.yields?.itemId ?? recipe.id;
 const usedIn = data.recipes.filter(
-  (r) => r.id !== recipe.id && r.ingredients.some((i) => i.itemId === yieldsId),
+  (r) => r.id !== recipe.id && (r.ingredients ?? []).some((i) => i.itemId === yieldsId),
 );
 
 const base = import.meta.env.BASE_URL;
@@ -72,7 +72,7 @@ const isArmor = tags.includes('armor');
           {station?.name ?? recipe.station} {recipe.stationLevel}
         </span>
         <div class="detail-upgrade-row__ings">
-          {recipe.ingredients.map((i) => (
+          {(recipe.ingredients ?? []).map((i) => (
             <span class="detail-upgrade-row__ing">
               {iconIds.has(i.itemId) && (
                 <svg width="16" height="16" style="image-rendering:pixelated;vertical-align:middle;">
