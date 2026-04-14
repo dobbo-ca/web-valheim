@@ -36,6 +36,7 @@ const biomeLabel = recipe.biome
 
 const tags = recipe.tags ?? [];
 const isWeapon = tags.some((t: string) => ['sword', 'axe', 'mace', 'polearm', 'bow', 'crossbow', 'knife', 'spear', 'staff', 'fists', 'shield', 'tower-shield', 'bomb', 'battleaxe', 'sledge', 'pickaxe', 'club', 'missile', 'arrow', 'bolt', 'throwable', 'utility', 'dual-wield'].includes(t));
+const isArmor = tags.includes('armor');
 ---
 <Base title={`${recipe.name} — Valheim Helper`}>
   <p><a href={base}>← Back to all recipes</a></p>
