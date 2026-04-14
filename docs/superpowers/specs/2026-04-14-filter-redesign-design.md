@@ -31,6 +31,13 @@ New mutually exclusive classification tags (every recipe gets exactly one):
 | `two-handed` | `2h` | Shorter tag, UI displays "Two-Handed" |
 | `weapon` | removed | Replaced by `melee` / `ranged` |
 
+### Additional data fixes
+
+- **Butcher knife**: reclassify from `melee` to `tool` (it's a tool, not a combat weapon)
+- **Ocean biome**: add `ocean` to the biome tag values (for ocean-sourced items like Abyssal Razor, Chitin)
+- **Elemental tag cleanup**: remove the `elemental` tag from any items that are not actually elemental variants (audit all items currently tagged `elemental` and remove false positives)
+- **Buckler tag**: items currently tagged only `shield` that are bucklers should get `buckler` tag instead. Buckler is a distinct sub-type under Armor, not a synonym for shield.
+
 ### Biome field → tag
 
 The `biome` field on recipes is converted to a tag. Remove the `biome` field from `RecipeSchema` and add the biome value (e.g. `plains`, `meadows`) as a tag on each recipe. The `BiomeSchema` enum values become valid tags. Update `filterRecipes` to filter biomes via tags instead of the dedicated `biomes` field on `FilterState`.
@@ -50,7 +57,7 @@ No `greatsword` tag. Two-handed swords are filtered by selecting "Sword" + "2h" 
 
 ── Sub-filters (always visible, AND with above) ───────────
   Handedness:  [1h]  [2h]                    (single-select, mutually exclusive)
-  Biome:       [Meadows] [Black Forest] ...  (single-select)
+  Biome:       [Meadows] [Black Forest] [Swamp] [Mountain] [Plains] [Mistlands] [Ashlands] [Ocean]  (single-select)
   Modifiers:   [Elemental] [Magic]           (multi-select)
 
 ▸ Advanced ────────────────────────────────────────────────
