@@ -6,6 +6,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { Recipe, Item } from '../../lib/types';
 import { ComparisonTable } from '../../components/ComparisonTable';
+import { ArmorStatsTable } from '../../components/ArmorStatsTable';
 
 export async function getStaticPaths() {
   const data = await getDataSet();
@@ -111,6 +112,19 @@ const isWeapon = tags.some((t: string) => ['sword', 'axe', 'mace', 'polearm', 'b
         <ComparisonTable
           client:load
           baseStats={recipe.stats}
+          upgrades={recipe.upgrades}
+          baseHref={base}
+        />
+      </div>
+    )}
+
+    {/* ── Armor stats ── */}
+    {recipe.armorStats && (
+      <div class="detail-card__section">
+        <h2 class="detail-card__section-title">Armor Stats</h2>
+        <ArmorStatsTable
+          client:load
+          baseStats={recipe.armorStats}
           upgrades={recipe.upgrades}
           baseHref={base}
         />
