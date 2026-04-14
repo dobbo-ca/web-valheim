@@ -150,6 +150,7 @@ export const FilterBar: Component<Props> = (props) => {
               <AdvancedFilterPanel
                 state={props.state}
                 stations={props.stations}
+                spriteHref={props.spriteHref}
                 onChange={props.onChange}
               />
             </div>
