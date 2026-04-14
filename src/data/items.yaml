@@ -425,5 +425,8 @@
 - { id: robes-of-embla, name: Robes of Embla, category: armor, stackSize: 1 }
 - { id: trousers-of-embla, name: Trousers of Embla, category: armor, stackSize: 1 }
 - { id: asksvin-cloak, name: Asksvin Cloak, category: armor, stackSize: 1 }
+- { id: root-mask, name: Root Mask, category: armor, stackSize: 1 }
+- { id: root-harnesk, name: Root Harnesk, category: armor, stackSize: 1 }
+- { id: root-leggings, name: Root Leggings, category: armor, stackSize: 1 }
 - { id: lox-saddle, name: Lox Saddle, category: tool, stackSize: 1 }
 - { id: ballista, name: Ballista, category: tool, stackSize: 1 }
