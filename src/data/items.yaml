@@ -440,3 +440,43 @@
 - { id: vilebone-cage, name: Vilebone Cage, category: armor, stackSize: 1, biome: plains }
 - { id: vilebone-drapes, name: Vilebone Drapes, category: armor, stackSize: 1, biome: plains }
 - { id: vilebone-maulclaws, name: Vilebone Maulclaws, category: weapon, stackSize: 1, biome: plains }
+
+# Raw edibles (new)
+- { id: bukeperries, name: Bukeperries, category: food, stackSize: 50 }
+- { id: rotten-meat, name: Rotten Meat, category: food, stackSize: 20 }
+
+# Missing cooked/crafted foods
+- { id: cooked-bear-meat, name: Cooked Bear Meat, category: food, stackSize: 20 }
+- { id: cooked-egg, name: Cooked Egg, category: food, stackSize: 10 }
+- { id: muckshake, name: Muckshake, category: food, stackSize: 10 }
+- { id: black-soup, name: Black Soup, category: food, stackSize: 10 }
+- { id: frosted-sweetbread, name: Frosted Sweetbread, category: food, stackSize: 10 }
+- { id: piquant-pie, name: Piquant Pie, category: food, stackSize: 10 }
+- { id: roasted-crust-pie, name: Roasted Crust Pie, category: food, stackSize: 10 }
+
+# Missing meads
+- { id: minor-eitr-mead, name: Minor Eitr Mead, category: food, stackSize: 10 }
+- { id: lingering-eitr-mead, name: Lingering Eitr Mead, category: food, stackSize: 10 }
+- { id: love-potion, name: Love Potion, category: food, stackSize: 5 }
+- { id: berserkir-mead, name: Berserkir Mead, category: food, stackSize: 10 }
+- { id: anti-sting-concoction, name: Anti-Sting Concoction, category: food, stackSize: 10 }
+- { id: draught-of-vananidir, name: Draught of Vananidir, category: food, stackSize: 10 }
+- { id: tonic-of-ratatosk, name: Tonic of Ratatosk, category: food, stackSize: 10 }
+- { id: mead-of-troll-endurance, name: Mead of Troll Endurance, category: food, stackSize: 10 }
+- { id: brew-of-animal-whispers, name: Brew of Animal Whispers, category: food, stackSize: 10 }
+- { id: lightfoot-mead, name: Lightfoot Mead, category: food, stackSize: 10 }
+
+# Missing ingredients referenced by new mead recipes
+- { id: bear-meat, name: Bear Meat, category: ingredient, stackSize: 20, biome: black-forest }
+- { id: toadstool, name: Toadstool, category: ingredient, stackSize: 50, biome: swamp }
+- { id: grouper, name: Grouper, category: ingredient, stackSize: 20, biome: plains }
+- { id: fragrant-bundle, name: Fragrant Bundle, category: ingredient, stackSize: 50, biome: plains }
+- { id: perch, name: Perch, category: ingredient, stackSize: 20, biome: meadows }
+- { id: fresh-seaweed, name: Fresh Seaweed, category: ingredient, stackSize: 50, biome: meadows }
+- { id: cured-squirrel-hamstring, name: Cured Squirrel Hamstring, category: ingredient, stackSize: 20, biome: black-forest }
+- { id: trollfish, name: Trollfish, category: ingredient, stackSize: 20, biome: black-forest }
+- { id: powdered-dragon-eggshells, name: Powdered Dragon Eggshells, category: ingredient, stackSize: 20, biome: mountain }
+- { id: pungent-pebbles, name: Pungent Pebbles, category: ingredient, stackSize: 20, biome: plains }
+- { id: coins, name: Coins, category: material, stackSize: 999 }
+- { id: volture-egg, name: Volture Egg, category: ingredient, stackSize: 20, biome: ashlands }
+- { id: unbaked-sweetbread, name: Unbaked Sweetbread, category: food, stackSize: 10 }
