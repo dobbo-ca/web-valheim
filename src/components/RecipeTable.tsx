@@ -408,7 +408,7 @@ export const RecipeTable: Component<Props> = (props) => {
     <Show when={mounted()} fallback={<div class="recipe-table__loading" />}>
     <div class="recipe-table">
       <div class="recipe-table__toolbar">
-        <FilterBar state={state()} stations={props.data.stations} onChange={commit} />
+        <FilterBar state={state()} stations={props.data.stations} spriteHref={props.spriteHref} onChange={commit} />
         <CartButton count={cartCount()} onClick={() => setDrawerOpen(true)} />
       </div>
 
@@ -494,7 +494,7 @@ export const RecipeTable: Component<Props> = (props) => {
               onAddToCart={handleAddToCart}
               onOpenCart={() => setDrawerOpen(true)}
               iconIds={iconSet()}
-              spriteHref={props.spriteHref ?? `${props.baseHref}icons/sprite.svg`}
+              spriteHref={props.spriteHref}
               upgradeKeysInCart={upgradeKeysInCart()}
               onAddUpgradeToCart={handleAddUpgradeToCart}
               onAddMaxUpgrades={handleAddMaxUpgrades}
@@ -580,7 +580,7 @@ export const RecipeTable: Component<Props> = (props) => {
         onRemove={handleRemoveFromCart}
         onClear={handleClearCart}
         iconIds={iconSet()}
-        spriteHref={props.spriteHref ?? `${props.baseHref}icons/sprite.svg`}
+        spriteHref={props.spriteHref}
       />
     </div>
     </Show>

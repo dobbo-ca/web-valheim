@@ -15,7 +15,7 @@ interface Props {
 }
 
 export const CompactUpgradeGrid: Component<Props> = (props) => {
-  const spriteHref = () => props.spriteHref ?? '/icons/sprite.svg';
+  const spriteHref = () => props.spriteHref ?? '';
   const stationName = () => {
     const s = props.stationsById.get(props.recipe.station);
     return s?.name ?? props.recipe.station;

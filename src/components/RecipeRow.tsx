@@ -55,7 +55,7 @@ function formatIngredients(
 
 export const RecipeRow: Component<Props> = (props) => {
   const detailId = () => `recipe-row-detail-${props.recipe.id}`;
-  const spriteHref = () => props.spriteHref ?? '/icons/sprite.svg';
+  const spriteHref = () => props.spriteHref ?? '';
   const hasRecipeIcon = () => props.iconIds?.has(props.recipe.id) ?? false;
   const isColVisible = (col: string) => (props.visibleColumns ?? ['station', 'ingredients', 'stats']).includes(col);
 

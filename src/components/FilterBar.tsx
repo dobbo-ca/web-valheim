@@ -6,6 +6,7 @@ import { AdvancedFilterPanel } from './AdvancedFilterPanel';
 interface Props {
   state: FilterState;
   stations: Station[];
+  spriteHref?: string;
   onChange: (next: FilterState) => void;
 }
 
@@ -113,6 +114,7 @@ export const FilterBar: Component<Props> = (props) => {
           <AdvancedFilterPanel
             state={props.state}
             stations={props.stations}
+            spriteHref={props.spriteHref}
             onChange={props.onChange}
           />
         </div>

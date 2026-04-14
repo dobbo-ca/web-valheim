@@ -1,4 +1,4 @@
-import { For, createSignal, onMount, type Component } from 'solid-js';
+import { For, type Component } from 'solid-js';
 import type { FilterState } from '../lib/filter';
 import { emptyFilterState } from '../lib/filter';
 import type { Station } from '../lib/types';
@@ -37,23 +37,14 @@ const typeIcons: Record<string, string> = {
 interface Props {
   state: FilterState;
   stations: Station[];
+  spriteHref?: string;
   onChange: (next: FilterState) => void;
 }
 
 export const AdvancedFilterPanel: Component<Props> = (props) => {
-  const [spriteHref, setSpriteHref] = createSignal('/valheim/icons/sprite.svg');
-
-  onMount(async () => {
-    try {
-      const resp = await fetch('/valheim/icons/sprite-manifest.json');
-      const manifest = await resp.json();
-      setSpriteHref(`/valheim/icons/${manifest.filename}`);
-    } catch { /* fall back to default */ }
-  });
-
   const FilterIcon: Component<{ name: string }> = (iconProps) => (
     <svg class="filter-icon" width={16} height={16} style={{ "image-rendering": "pixelated" }}>
-      <use href={`${spriteHref()}#filter-${iconProps.name}`} />
+      <use href={`${props.spriteHref ?? ''}#filter-${iconProps.name}`} />
     </svg>
   );
   const update = (patch: Partial<FilterState>) =>

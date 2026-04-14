@@ -10,7 +10,7 @@ const sizes = { sm: 16, md: 24 } as const;
 
 export const ItemIcon: Component<Props> = (props) => {
   const s = () => sizes[props.size ?? 'md'];
-  const href = () => `${props.spriteHref ?? '/icons/sprite.svg'}#${props.id}`;
+  const href = () => `${props.spriteHref ?? ''}#${props.id}`;
 
   return (
     <svg
