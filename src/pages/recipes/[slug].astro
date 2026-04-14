@@ -137,11 +137,33 @@ const isArmor = tags.includes('armor');
       <div class="detail-card__section">
         <h2 class="detail-card__section-title">Food stats</h2>
         <ul class="detail-list">
-          <li>HP: {recipe.food.hp}</li>
-          <li>Stamina: {recipe.food.stamina}</li>
-          <li>Regen: {recipe.food.regen}</li>
-          <li>Duration: {Math.round(recipe.food.duration / 60)} min</li>
-          {recipe.food.eitr && <li>Eitr: {recipe.food.eitr}</li>}
+          {recipe.food.hp != null && <li>Health: {recipe.food.hp}</li>}
+          {recipe.food.stamina != null && <li>Stamina: {recipe.food.stamina}</li>}
+          {recipe.food.eitr != null && <li>Eitr: {recipe.food.eitr}</li>}
+          {recipe.food.healPerTick != null && <li>Healing: {recipe.food.healPerTick} hp/tick</li>}
+          {recipe.food.duration != null && <li>Duration: {Math.round(recipe.food.duration / 60)} min</li>}
+          {recipe.food.weight != null && <li>Weight: {recipe.food.weight}</li>}
+          {recipe.food.regenModifier != null && <li>Regen modifier: {recipe.food.regenModifier > 0 ? '+' : ''}{recipe.food.regenModifier * 100}%</li>}
+        </ul>
+      </div>
+    )}
+
+    {/* ── Mead stats ── */}
+    {recipe.mead && (
+      <div class="detail-card__section">
+        <h2 class="detail-card__section-title">Mead effect</h2>
+        <ul class="detail-list">
+          {recipe.mead.effect.health != null && <li>Restores {recipe.mead.effect.health} health</li>}
+          {recipe.mead.effect.stamina != null && <li>Restores {recipe.mead.effect.stamina} stamina</li>}
+          {recipe.mead.effect.eitr != null && <li>Restores {recipe.mead.effect.eitr} eitr</li>}
+          {recipe.mead.effect.resist && <li>{recipe.mead.effect.resist.charAt(0).toUpperCase() + recipe.mead.effect.resist.slice(1)} resistance</li>}
+          {recipe.mead.effect.healthRegen != null && <li>{recipe.mead.effect.healthRegen > 0 ? '+' : ''}{recipe.mead.effect.healthRegen * 100}% health regen</li>}
+          {recipe.mead.effect.staminaRegen != null && <li>{recipe.mead.effect.staminaRegen > 0 ? '+' : ''}{recipe.mead.effect.staminaRegen * 100}% stamina regen</li>}
+          {recipe.mead.effect.eitrRegen != null && <li>{recipe.mead.effect.eitrRegen > 0 ? '+' : ''}{recipe.mead.effect.eitrRegen * 100}% eitr regen</li>}
+          {(recipe.mead.effect.effects ?? []).map((e) => <li>{e}</li>)}
+          <li>Duration: {recipe.mead.duration >= 60 ? `${Math.round(recipe.mead.duration / 60)} min` : `${recipe.mead.duration}s`}</li>
+          <li>Cooldown: {recipe.mead.cooldown >= 60 ? `${Math.round(recipe.mead.cooldown / 60)} min` : `${recipe.mead.cooldown}s`}</li>
+          {recipe.mead.cooldownGroup && <li>Cooldown group: {recipe.mead.cooldownGroup}</li>}
         </ul>
       </div>
     )}
