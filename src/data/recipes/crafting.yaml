@@ -8607,6 +8607,10 @@
     armor: 7
     durability: 1000
     weight: 1
+    setBonus:
+      name: "Bear Set"
+      pieces: 3
+      effect: "Berserk — +30% Health regen, +15% Stamina regen, +10% Slash, +10% Chop. Slightly weak (+25%) vs Blunt, Slash and Pierce"
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -8650,6 +8654,10 @@
     armor: 7
     durability: 1000
     weight: 5
+    setBonus:
+      name: "Bear Set"
+      pieces: 3
+      effect: "Berserk — +30% Health regen, +15% Stamina regen, +10% Slash, +10% Chop. Slightly weak (+25%) vs Blunt, Slash and Pierce"
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -8695,6 +8703,10 @@
     armor: 7
     durability: 1000
     weight: 5
+    setBonus:
+      name: "Bear Set"
+      pieces: 3
+      effect: "Berserk — +30% Health regen, +15% Stamina regen, +10% Slash, +10% Chop. Slightly weak (+25%) vs Blunt, Slash and Pierce"
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -8743,7 +8755,7 @@
     setBonus:
       name: "Vilebone Set"
       pieces: 3
-      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce"
+      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce. Slightly weak (+25%) vs Blunt, Slash and Pierce"
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -8790,7 +8802,7 @@
     setBonus:
       name: "Vilebone Set"
       pieces: 3
-      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce"
+      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce. Slightly weak (+25%) vs Blunt, Slash and Pierce"
   upgrades:
     - quality: 2
       stationLevel: 3
@@ -8843,7 +8855,7 @@
     setBonus:
       name: "Vilebone Set"
       pieces: 3
-      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce"
+      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce. Slightly weak (+25%) vs Blunt, Slash and Pierce"
   upgrades:
     - quality: 2
       stationLevel: 3
