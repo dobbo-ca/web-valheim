@@ -37,7 +37,6 @@ describe('RecipeRow', () => {
         baseHref="/valheim/"
         inCart={false}
         onToggle={() => {}}
-        onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
         upgradeKeysInCart={new Set()}
@@ -52,7 +51,7 @@ describe('RecipeRow', () => {
     expect(screen.queryByText(/Strong vs skeletons/)).toBeNull();
   });
 
-  it('shows notes and ingredient chips when expanded', () => {
+  it('shows CompactUpgradeGrid and permalink when expanded', () => {
     render(() => (
       <RecipeRow
         recipe={recipe}
@@ -62,7 +61,6 @@ describe('RecipeRow', () => {
         baseHref="/valheim/"
         inCart={false}
         onToggle={() => {}}
-        onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
         upgradeKeysInCart={new Set()}
@@ -70,8 +68,11 @@ describe('RecipeRow', () => {
         onAddMaxUpgrades={() => {}}
       />
     ));
-    expect(screen.getByText(/Strong vs skeletons/)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Iron ×60/ })).toBeInTheDocument();
+    expect(screen.getByText('Upgrades')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Add Max/ })).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: /open detail page/ }),
+    ).toBeInTheDocument();
   });
 
   it('calls onToggle when the summary is clicked', () => {
@@ -85,7 +86,6 @@ describe('RecipeRow', () => {
         baseHref="/valheim/"
         inCart={false}
         onToggle={onToggle}
-        onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
         upgradeKeysInCart={new Set()}
@@ -95,56 +95,6 @@ describe('RecipeRow', () => {
     ));
     fireEvent.click(screen.getByRole('button', { name: /Iron Sword/ }));
     expect(onToggle).toHaveBeenCalledWith('iron-sword');
-  });
-
-  it('calls onIngredientClick when an ingredient chip is clicked (expanded)', () => {
-    const onIngredientClick = vi.fn();
-    render(() => (
-      <RecipeRow
-        recipe={recipe}
-        itemsById={itemsById}
-        stationsById={stationsById}
-        expanded={true}
-        baseHref="/valheim/"
-        inCart={false}
-        onToggle={() => {}}
-        onIngredientClick={onIngredientClick}
-        onAddToCart={() => {}}
-        onOpenCart={() => {}}
-        upgradeKeysInCart={new Set()}
-        onAddUpgradeToCart={() => {}}
-        onAddMaxUpgrades={() => {}}
-      />
-    ));
-    fireEvent.click(screen.getByRole('button', { name: /Iron ×60/ }));
-    expect(onIngredientClick).toHaveBeenCalledWith('iron');
-  });
-
-  it('row button accessible name does not include ingredient list when expanded', () => {
-    render(() => (
-      <RecipeRow
-        recipe={recipe}
-        itemsById={itemsById}
-        stationsById={stationsById}
-        expanded={true}
-        baseHref="/valheim/"
-        inCart={false}
-        onToggle={() => {}}
-        onIngredientClick={() => {}}
-        onAddToCart={() => {}}
-        onOpenCart={() => {}}
-        upgradeKeysInCart={new Set()}
-        onAddUpgradeToCart={() => {}}
-        onAddMaxUpgrades={() => {}}
-      />
-    ));
-    // Row button is the one with aria-expanded="true"
-    const rowBtn = screen
-      .getAllByRole('button')
-      .find((el) => el.getAttribute('aria-expanded') === 'true');
-    expect(rowBtn).toBeDefined();
-    expect(rowBtn!.textContent ?? '').not.toMatch(/Iron ×60/);
-    expect(rowBtn!.textContent ?? '').not.toMatch(/Wood ×2/);
   });
 
   it('renders permalink anchor with the correct href', () => {
@@ -157,7 +107,6 @@ describe('RecipeRow', () => {
         baseHref="/valheim/"
         inCart={false}
         onToggle={() => {}}
-        onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
         upgradeKeysInCart={new Set()}
@@ -181,7 +130,6 @@ describe('RecipeRow', () => {
         baseHref="/valheim/"
         inCart={false}
         onToggle={() => {}}
-        onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
         upgradeKeysInCart={new Set()}
@@ -206,7 +154,6 @@ describe('RecipeRow', () => {
         baseHref="/valheim/"
         inCart={false}
         onToggle={() => {}}
-        onIngredientClick={() => {}}
         onAddToCart={() => {}}
         onOpenCart={() => {}}
         upgradeKeysInCart={new Set()}
@@ -215,29 +162,5 @@ describe('RecipeRow', () => {
       />
     ));
     expect(document.querySelector('.item-icon--md')).toBeNull();
-  });
-
-  it('renders ingredient chip icons when expanded and iconIds provided', () => {
-    const iconIds = new Set(['iron', 'wood']);
-    render(() => (
-      <RecipeRow
-        recipe={recipe}
-        itemsById={itemsById}
-        stationsById={stationsById}
-        expanded={true}
-        baseHref="/valheim/"
-        inCart={false}
-        onToggle={() => {}}
-        onIngredientClick={() => {}}
-        onAddToCart={() => {}}
-        onOpenCart={() => {}}
-        upgradeKeysInCart={new Set()}
-        onAddUpgradeToCart={() => {}}
-        onAddMaxUpgrades={() => {}}
-        iconIds={iconIds}
-      />
-    ));
-    const smIcons = document.querySelectorAll('.item-icon--sm');
-    expect(smIcons.length).toBe(2);
   });
 });

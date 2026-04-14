@@ -12,7 +12,6 @@ interface Props {
   baseHref: string;
   inCart: boolean;
   onToggle: (recipeId: string) => void;
-  onIngredientClick: (itemId: string) => void;
   onAddToCart: (recipeId: string) => void;
   onOpenCart: () => void;
   iconIds?: Set<string>;
