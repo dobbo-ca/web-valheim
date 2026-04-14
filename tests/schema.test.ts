@@ -5,6 +5,7 @@ import {
   RecipeSchema,
   ArmorStatsSchema,
 } from '../src/lib/schema';
+import { mergeArmorStats } from '../src/lib/merge-stats';
 
 describe('StationSchema', () => {
   it('accepts a valid station', () => {
@@ -243,5 +244,36 @@ describe('RecipeSchema — food with eitr', () => {
       food: { hp: 23, stamina: 70, duration: 1500, regen: 2 },
     });
     expect(result.food?.eitr).toBeUndefined();
+  });
+});
+
+describe('mergeArmorStats', () => {
+  const base = {
+    armor: 20,
+    durability: 1000,
+    weight: 15,
+    movementPenalty: -5,
+    resistances: { poison: 'resistant' as const },
+    effects: ['+25 Eitr'],
+    setBonus: { name: 'Test Set', pieces: 3, effect: 'Test effect' },
+  };
+
+  it('returns base when overlay is undefined', () => {
+    expect(mergeArmorStats(base, undefined)).toEqual(base);
+  });
+
+  it('merges armor and durability from overlay', () => {
+    const result = mergeArmorStats(base, { armor: 22, durability: 1200 });
+    expect(result.armor).toBe(22);
+    expect(result.durability).toBe(1200);
+    expect(result.weight).toBe(15);
+    expect(result.movementPenalty).toBe(-5);
+  });
+
+  it('preserves base resistances, effects, and setBonus (upgrades never change them)', () => {
+    const result = mergeArmorStats(base, { armor: 22, durability: 1200 });
+    expect(result.resistances).toEqual({ poison: 'resistant' });
+    expect(result.effects).toEqual(['+25 Eitr']);
+    expect(result.setBonus).toEqual(base.setBonus);
   });
 });

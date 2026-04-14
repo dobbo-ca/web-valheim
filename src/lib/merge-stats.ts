@@ -1,4 +1,4 @@
-import type { WeaponStats } from './types';
+import type { ArmorStats, WeaponStats } from './types';
 
 /** Merge base weapon stats with a sparse upgrade overlay. */
 export function mergeStats(base: WeaponStats, overlay?: WeaponStats): WeaponStats {
@@ -25,4 +25,17 @@ export function mergeStats(base: WeaponStats, overlay?: WeaponStats): WeaponStat
     merged.blocking = { ...base.blocking, ...overlay.blocking };
   }
   return merged;
+}
+
+/** Merge base armor stats with a sparse upgrade overlay. */
+export function mergeArmorStats(
+  base: ArmorStats,
+  overlay?: Partial<ArmorStats>,
+): ArmorStats {
+  if (!overlay) return base;
+  return {
+    ...base,
+    ...(overlay.armor != null && { armor: overlay.armor }),
+    ...(overlay.durability != null && { durability: overlay.durability }),
+  };
 }
