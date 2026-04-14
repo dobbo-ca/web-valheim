@@ -23,16 +23,24 @@ interface Props {
 }
 
 function formatStatSummary(recipe: Recipe): string | null {
-  if (!recipe.stats) return null;
-  const dmg = recipe.stats.primaryAttack?.damage;
-  if (dmg) {
-    const parts = Object.entries(dmg)
-      .filter(([, v]) => v != null && v > 0)
-      .map(([type, val]) => `${val} ${type}`);
-    if (parts.length > 0) return parts.join(' / ');
+  // Weapon stats
+  if (recipe.stats) {
+    const dmg = recipe.stats.primaryAttack?.damage;
+    if (dmg) {
+      const parts = Object.entries(dmg)
+        .filter(([, v]) => v != null && v > 0)
+        .map(([type, val]) => `${val} ${type}`);
+      if (parts.length > 0) return parts.join(' / ');
+    }
+    const blockArmor = recipe.stats.blocking?.blockArmor;
+    if (blockArmor != null) return `${blockArmor} block`;
   }
-  const blockArmor = recipe.stats.blocking?.blockArmor;
-  if (blockArmor != null) return `${blockArmor} block`;
+
+  // Armor stats
+  if (recipe.armorStats) {
+    return `${recipe.armorStats.armor} armor`;
+  }
+
   return null;
 }
 
