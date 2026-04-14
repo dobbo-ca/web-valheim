@@ -67,7 +67,7 @@ const isArmor = tags.includes('armor');
     <div class="detail-card__section">
       <h2 class="detail-card__section-title">Crafting</h2>
       <div class="detail-upgrade-row">
-        <span class="detail-upgrade-row__q">Q1</span>
+        <span class="detail-upgrade-row__q">★1</span>
         <span class="detail-upgrade-row__station">
           {station?.name ?? recipe.station} {recipe.stationLevel}
         </span>
@@ -86,7 +86,7 @@ const isArmor = tags.includes('armor');
       </div>
       {(recipe.upgrades ?? []).map((u) => (
         <div class="detail-upgrade-row">
-          <span class="detail-upgrade-row__q">Q{u.quality}</span>
+          <span class="detail-upgrade-row__q">★{u.quality}</span>
           <span class="detail-upgrade-row__station">
             {station?.name ?? recipe.station} {u.stationLevel}
           </span>

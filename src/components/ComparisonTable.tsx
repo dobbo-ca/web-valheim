@@ -65,7 +65,7 @@ export const ComparisonTable: Component<Props> = (props) => {
         <tr>
           <th class="ct__stat-name">Stat</th>
           <For each={rows()}>
-            {(q) => <th class="ct__q-header">Q{q.quality}</th>}
+            {(q) => <th class="ct__q-header">★{q.quality}</th>}
           </For>
         </tr>
       </thead>
