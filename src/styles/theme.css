@@ -374,6 +374,7 @@ h3 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  position: relative;
 }
 .recipe-table__header {
   display: grid;
@@ -583,10 +584,12 @@ h3 {
 }
 
 .recipe-table__col-toggle {
-  position: relative;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 5;
   display: inline-flex;
   align-items: center;
-  justify-content: flex-end;
 }
 .recipe-table__col-toggle-btn {
   background: var(--surface);

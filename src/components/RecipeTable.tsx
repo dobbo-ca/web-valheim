@@ -452,33 +452,34 @@ export const RecipeTable: Component<Props> = (props) => {
           <Show when={isColVisible('stats')}>
             <span role="columnheader">Stats</span>
           </Show>
-          <span ref={colToggleRef} class="recipe-table__col-toggle">
-            <button
-              type="button"
-              class="recipe-table__col-toggle-btn"
-              onClick={() => setColMenuOpen((o) => !o)}
-              aria-label="Toggle column visibility"
-            >
-              ⚙
-            </button>
-            <Show when={colMenuOpen()}>
-              <div class="recipe-table__col-menu">
-                <For each={[
-                  { id: 'station' as ColumnId, label: 'Station' },
-                  { id: 'ingredients' as ColumnId, label: 'Ingredients' },
-                  { id: 'stats' as ColumnId, label: 'Stats' },
-                ]}>
-                  {(col) => (
-                    <label class="recipe-table__col-option">
-                      <input type="checkbox" checked={isColVisible(col.id)} onChange={() => toggleColumn(col.id)} />
-                      {col.label}
-                    </label>
-                  )}
-                </For>
-              </div>
-            </Show>
-          </span>
+          <span />
         </div>
+        <span ref={colToggleRef} class="recipe-table__col-toggle">
+          <button
+            type="button"
+            class="recipe-table__col-toggle-btn"
+            onClick={() => setColMenuOpen((o) => !o)}
+            aria-label="Toggle column visibility"
+          >
+            ⚙
+          </button>
+          <Show when={colMenuOpen()}>
+            <div class="recipe-table__col-menu">
+              <For each={[
+                { id: 'station' as ColumnId, label: 'Station' },
+                { id: 'ingredients' as ColumnId, label: 'Ingredients' },
+                { id: 'stats' as ColumnId, label: 'Stats' },
+              ]}>
+                {(col) => (
+                  <label class="recipe-table__col-option">
+                    <input type="checkbox" checked={isColVisible(col.id)} onChange={() => toggleColumn(col.id)} />
+                    {col.label}
+                  </label>
+                )}
+              </For>
+            </div>
+          </Show>
+        </span>
 
         <For each={paginated()} fallback={<div class="recipe-table__empty">No recipes match these filters.</div>}>
           {(recipe) => (
