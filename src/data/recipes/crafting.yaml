@@ -93,7 +93,7 @@
   ingredients:
     - { itemId: wood, qty: 6 }
   yields: { itemId: club, qty: 1 }
-  tags: [club, one-handed, tier-0]
+  tags: [weapon, club, one-handed, tier-0]
   stats:
     damage: { blunt: 12 }
     knockback: 20
@@ -137,7 +137,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: leather-scraps, qty: 8 }
   yields: { itemId: crude-bow, qty: 1 }
-  tags: [bow, two-handed, tier-0]
+  tags: [weapon, bow, two-handed, tier-0]
   stats:
     weight: 1
     durability: 50
@@ -187,7 +187,7 @@
     - { itemId: wood, qty: 5 }
     - { itemId: stone, qty: 4 }
   yields: { itemId: stone-axe, qty: 1 }
-  tags: [axe, one-handed, tier-0]
+  tags: [weapon, axe, one-handed, tier-0]
   stats:
     weight: 1
     durability: 100
@@ -251,7 +251,7 @@
     - { itemId: wood, qty: 5 }
     - { itemId: flint, qty: 6 }
   yields: { itemId: flint-axe, qty: 1 }
-  tags: [axe, one-handed, tier-1]
+  tags: [weapon, axe, one-handed, tier-1]
   stats:
     weight: 1
     durability: 100
@@ -316,7 +316,7 @@
     - { itemId: flint, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: flint-knife, qty: 1 }
-  tags: [knife, one-handed, tier-1]
+  tags: [weapon, knife, one-handed, tier-1]
   stats:
     weight: 0.3
     durability: 200
@@ -381,7 +381,7 @@
     - { itemId: flint, qty: 10 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: flint-spear, qty: 1 }
-  tags: [spear, one-handed, tier-1]
+  tags: [weapon, spear, one-handed, tier-1]
   stats:
     weight: 1
     durability: 100
@@ -442,7 +442,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: hard-antler, qty: 1 }
   yields: { itemId: antler-pickaxe, qty: 1 }
-  tags: [pickaxe, tool, tier-1]
+  tags: [weapon, pickaxe, tool, tier-1]
   stats:
     weight: 1.5
     durability: 100
@@ -500,7 +500,7 @@
     - { itemId: core-wood, qty: 10 }
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: finewood-bow, qty: 1 }
-  tags: [bow, two-handed, tier-2]
+  tags: [weapon, bow, two-handed, tier-2]
   stats:
     weight: 1
     durability: 100
@@ -554,7 +554,7 @@
     - { itemId: deer-trophy, qty: 5 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: stagbreaker, qty: 1 }
-  tags: [sledge, two-handed, tier-1]
+  tags: [weapon, sledge, two-handed, tier-1]
   stats:
     weight: 3
     durability: 100
@@ -1020,7 +1020,7 @@
     - { itemId: resin, qty: 4 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: wood-shield, qty: 1 }
-  tags: [shield, tier-0]
+  tags: [armor, shield, tier-0]
   stats:
     weight: 4
     durability: 200
@@ -1070,7 +1070,7 @@
     - { itemId: wood, qty: 10 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: wood-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-0]
+  tags: [armor, shield, tower-shield, tier-0]
   stats:
     block: 30
     durability: 200
@@ -1113,7 +1113,7 @@
     - { itemId: bone-fragments, qty: 4 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: bone-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-1]
+  tags: [armor, shield, tower-shield, tier-1]
   stats:
     weight: 4
     durability: 200
@@ -1282,7 +1282,7 @@
     - { itemId: chitin, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: abyssal-razor, qty: 1 }
-  tags: [knife, one-handed, tier-3]
+  tags: [weapon, knife, one-handed, tier-3]
   stats:
     weight: 0.3
     durability: 200
@@ -1346,7 +1346,7 @@
     - { itemId: chitin, qty: 30 }
     - { itemId: leather-scraps, qty: 3 }
   yields: { itemId: abyssal-harpoon, qty: 1 }
-  tags: [spear, tool, tier-3]
+  tags: [weapon, spear, tool, tier-3]
   notes: Used to drag creatures. Does not break on hit.
   stats:
     weight: 3
@@ -1408,7 +1408,7 @@
     - { itemId: wood, qty: 2 }
     - { itemId: copper, qty: 8 }
   yields: { itemId: copper-knife, qty: 1 }
-  tags: [knife, one-handed, tier-1]
+  tags: [weapon, knife, one-handed, tier-1]
   stats:
     weight: 0.3
     durability: 200
@@ -1470,7 +1470,7 @@
     - { itemId: bronze, qty: 8 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: bronze-axe, qty: 1 }
-  tags: [axe, one-handed, tier-2]
+  tags: [weapon, axe, one-handed, tier-2]
   stats:
     weight: 1.5
     durability: 125
@@ -1532,7 +1532,7 @@
     - { itemId: core-wood, qty: 3 }
     - { itemId: bronze, qty: 10 }
   yields: { itemId: bronze-pickaxe, qty: 1 }
-  tags: [pickaxe, tool, tier-2]
+  tags: [weapon, pickaxe, tool, tier-2]
   stats:
     weight: 1.5
     durability: 120
@@ -1590,7 +1590,7 @@
     - { itemId: bronze, qty: 8 }
     - { itemId: leather-scraps, qty: 3 }
   yields: { itemId: bronze-mace, qty: 1 }
-  tags: [mace, one-handed, tier-2]
+  tags: [weapon, mace, one-handed, tier-2]
   stats:
     weight: 2
     durability: 200
@@ -1725,7 +1725,7 @@
     - { itemId: bronze, qty: 6 }
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: bronze-spear, qty: 1 }
-  tags: [spear, one-handed, tier-2]
+  tags: [weapon, spear, one-handed, tier-2]
   stats:
     weight: 1
     durability: 100
@@ -1790,7 +1790,7 @@
     - { itemId: wood, qty: 2 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: bronze-sword, qty: 1 }
-  tags: [sword, one-handed, tier-2]
+  tags: [weapon, sword, one-handed, tier-2]
   stats:
     weight: 1.6
     durability: 200
@@ -1854,7 +1854,7 @@
     - { itemId: bronze, qty: 10 }
     - { itemId: wood, qty: 4 }
   yields: { itemId: bronze-buckler, qty: 1 }
-  tags: [shield, tier-2]
+  tags: [armor, shield, tier-2]
   stats:
     weight: 3
     durability: 200
@@ -2104,7 +2104,7 @@
     - { itemId: feathers, qty: 10 }
     - { itemId: deer-hide, qty: 2 }
   yields: { itemId: huntsman-bow, qty: 1 }
-  tags: [bow, two-handed, tier-3]
+  tags: [weapon, bow, two-handed, tier-3]
   stats:
     weight: 1.5
     durability: 100
@@ -2158,7 +2158,7 @@
     - { itemId: wood, qty: 2 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: iron-sword, qty: 1 }
-  tags: [sword, one-handed, tier-3]
+  tags: [weapon, sword, one-handed, tier-3]
   notes: Strong vs. skeletons and stonegolems.
   stats:
     weight: 1.6
@@ -2224,7 +2224,7 @@
     - { itemId: wood, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: iron-mace, qty: 1 }
-  tags: [mace, one-handed, tier-3]
+  tags: [weapon, mace, one-handed, tier-3]
   stats:
     weight: 2.5
     durability: 200
@@ -2356,7 +2356,7 @@
     - { itemId: iron, qty: 20 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: iron-axe, qty: 1 }
-  tags: [axe, one-handed, tier-3]
+  tags: [weapon, axe, one-handed, tier-3]
   stats:
     weight: 1.5
     durability: 175
@@ -2418,7 +2418,7 @@
     - { itemId: core-wood, qty: 3 }
     - { itemId: iron, qty: 20 }
   yields: { itemId: iron-pickaxe, qty: 1 }
-  tags: [pickaxe, tool, tier-3]
+  tags: [weapon, pickaxe, tool, tier-3]
   stats:
     weight: 1.5
     durability: 150
@@ -2477,7 +2477,7 @@
     - { itemId: ymir-flesh, qty: 4 }
     - { itemId: draugr-elite-trophy, qty: 1 }
   yields: { itemId: iron-sledge, qty: 1 }
-  tags: [sledge, two-handed, tier-3]
+  tags: [weapon, sledge, two-handed, tier-3]
   notes: Massive AOE damage; knocks back groups of enemies.
   stats:
     weight: 4
@@ -2534,7 +2534,7 @@
     - { itemId: iron, qty: 10 }
     - { itemId: ancient-bark, qty: 4 }
   yields: { itemId: iron-buckler, qty: 1 }
-  tags: [shield, tier-3]
+  tags: [armor, shield, tier-3]
   stats:
     weight: 4
     durability: 200
@@ -2579,7 +2579,7 @@
     - { itemId: fine-wood, qty: 15 }
     - { itemId: iron, qty: 10 }
   yields: { itemId: iron-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-3]
+  tags: [armor, shield, tower-shield, tier-3]
   stats:
     weight: 4
     durability: 200
@@ -2631,7 +2631,7 @@
     - { itemId: fine-wood, qty: 10 }
     - { itemId: iron, qty: 8 }
   yields: { itemId: banded-shield, qty: 1 }
-  tags: [shield, tier-3]
+  tags: [armor, shield, tier-3]
   stats:
     weight: 3
     durability: 200
@@ -2841,7 +2841,7 @@
     - { itemId: iron, qty: 35 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: iron-battleaxe, qty: 1 }
-  tags: [battleaxe, two-handed, tier-3]
+  tags: [weapon, battleaxe, two-handed, tier-3]
   stats:
     damage: { slash: 60 }
     knockback: 50
@@ -2898,7 +2898,7 @@
     - { itemId: iron, qty: 10 }
     - { itemId: troll-hide, qty: 4 }
   yields: { itemId: ancient-bark-spear, qty: 1 }
-  tags: [spear, one-handed, tier-3]
+  tags: [weapon, spear, one-handed, tier-3]
   stats:
     damage: { pierce: 50 }
     knockback: 20
@@ -2953,7 +2953,7 @@
     - { itemId: deer-hide, qty: 2 }
     - { itemId: guck, qty: 10 }
   yields: { itemId: draugr-fang, qty: 1 }
-  tags: [bow, two-handed, tier-4]
+  tags: [weapon, bow, two-handed, tier-4]
   notes: Shoots poison arrows; pairs well with Poison arrows for stacking DoT.
   stats:
     weight: 1.5
@@ -3018,7 +3018,7 @@
     - { itemId: ymir-flesh, qty: 5 }
     - { itemId: freeze-gland, qty: 5 }
   yields: { itemId: frostner, qty: 1 }
-  tags: [mace, one-handed, tier-4]
+  tags: [weapon, mace, one-handed, tier-4]
   notes: Deals frost and spirit damage; slows enemies. Strong vs. undead.
   stats:
     weight: 2.5
@@ -3086,7 +3086,7 @@
     - { itemId: leather-scraps, qty: 2 }
     - { itemId: silver, qty: 2 }
   yields: { itemId: fang-spear, qty: 1 }
-  tags: [spear, one-handed, tier-4]
+  tags: [weapon, spear, one-handed, tier-4]
   stats:
     weight: 1.5
     durability: 100
@@ -3149,7 +3149,7 @@
     - { itemId: leather-scraps, qty: 3 }
     - { itemId: iron, qty: 2 }
   yields: { itemId: silver-knife, qty: 1 }
-  tags: [knife, one-handed, tier-4]
+  tags: [weapon, knife, one-handed, tier-4]
   stats:
     weight: 0.3
     durability: 200
@@ -3213,7 +3213,7 @@
     - { itemId: silver, qty: 30 }
     - { itemId: crystal, qty: 10 }
   yields: { itemId: crystal-battleaxe, qty: 1 }
-  tags: [battleaxe, two-handed, tier-4]
+  tags: [weapon, battleaxe, two-handed, tier-4]
   stats:
     weight: 3.5
     durability: 200
@@ -3279,7 +3279,7 @@
     - { itemId: fine-wood, qty: 10 }
     - { itemId: silver, qty: 8 }
   yields: { itemId: silver-shield, qty: 1 }
-  tags: [shield, tier-4]
+  tags: [armor, shield, tier-4]
   stats:
     weight: 3
     durability: 200
@@ -3334,7 +3334,7 @@
     - { itemId: iron, qty: 4 }
     - { itemId: serpent-scale, qty: 8 }
   yields: { itemId: serpent-scale-shield, qty: 1 }
-  tags: [shield, tier-4]
+  tags: [armor, shield, tier-4]
   notes: High block power; excellent vs. staggered enemies.
   stats:
     weight: 3
@@ -3542,7 +3542,7 @@
     - { itemId: black-metal, qty: 20 }
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-sword, qty: 1 }
-  tags: [sword, one-handed, tier-5]
+  tags: [weapon, sword, one-handed, tier-5]
   stats:
     weight: 1.6
     durability: 200
@@ -3609,7 +3609,7 @@
     - { itemId: black-metal, qty: 20 }
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-axe, qty: 1 }
-  tags: [axe, one-handed, tier-5]
+  tags: [weapon, axe, one-handed, tier-5]
   stats:
     weight: 1.5
     durability: 175
@@ -3736,7 +3736,7 @@
     - { itemId: black-metal, qty: 10 }
     - { itemId: linen-thread, qty: 5 }
   yields: { itemId: black-metal-knife, qty: 1 }
-  tags: [knife, one-handed, tier-5]
+  tags: [weapon, knife, one-handed, tier-5]
   stats:
     weight: 0.3
     durability: 200
@@ -3804,7 +3804,7 @@
     - { itemId: needle, qty: 5 }
     - { itemId: linen-thread, qty: 10 }
   yields: { itemId: porcupine, qty: 1 }
-  tags: [mace, one-handed, tier-5]
+  tags: [weapon, mace, one-handed, tier-5]
   notes: Deals pierce and blunt damage; one of the strongest one-handed weapons.
   stats:
     weight: 2.5
@@ -3888,7 +3888,7 @@
     - { itemId: black-metal, qty: 8 }
     - { itemId: chain, qty: 5 }
   yields: { itemId: black-metal-shield, qty: 1 }
-  tags: [shield, tier-5]
+  tags: [armor, shield, tier-5]
   stats:
     weight: 3
     durability: 200
@@ -3943,7 +3943,7 @@
     - { itemId: black-metal, qty: 10 }
     - { itemId: chain, qty: 7 }
   yields: { itemId: black-metal-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-5]
+  tags: [armor, shield, tower-shield, tier-5]
   stats:
     weight: 18
     durability: 200
@@ -3996,7 +3996,7 @@
     - { itemId: black-metal, qty: 30 }
     - { itemId: fine-wood, qty: 10 }
   yields: { itemId: black-metal-battleaxe, qty: 1 }
-  tags: [battleaxe, two-handed, tier-4]
+  tags: [weapon, battleaxe, two-handed, tier-4]
   stats:
     durability: 200
     movementPenalty: -15
@@ -4082,7 +4082,7 @@
     - { itemId: yggdrasil-wood, qty: 3 }
     - { itemId: black-metal, qty: 25 }
   yields: { itemId: black-metal-pickaxe, qty: 1 }
-  tags: [pickaxe, two-handed, tier-5]
+  tags: [weapon, pickaxe, two-handed, tier-5]
   stats:
     durability: 210
     primaryAttack:
@@ -4241,7 +4241,7 @@
     - { itemId: wood, qty: 4 }
     - { itemId: leather-scraps, qty: 2 }
   yields: { itemId: silver-sword, qty: 1 }
-  tags: [sword, one-handed, tier-4]
+  tags: [weapon, sword, one-handed, tier-4]
   stats:
     weight: 1
     durability: 200
@@ -4395,7 +4395,7 @@
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: refined-eitr, qty: 2 }
   yields: { itemId: jotun-bane, qty: 1 }
-  tags: [knife, one-handed, tier-6]
+  tags: [weapon, knife, one-handed, tier-6]
   stats:
     weight: 2
     durability: 175
@@ -4481,7 +4481,7 @@
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: mandible, qty: 4 }
   yields: { itemId: spinesnap, qty: 1 }
-  tags: [crossbow, two-handed, tier-6]
+  tags: [weapon, crossbow, two-handed, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -4544,7 +4544,7 @@
     - { itemId: yggdrasil-wood, qty: 10 }
     - { itemId: iron, qty: 5 }
   yields: { itemId: arbalest, qty: 1 }
-  tags: [crossbow, two-handed, tier-6]
+  tags: [weapon, crossbow, two-handed, tier-6]
   notes: Does 0 base damage; bolts provide damage.
   stats:
     weight: 3
@@ -4604,7 +4604,7 @@
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: refined-eitr, qty: 5 }
   yields: { itemId: krom, qty: 1 }
-  tags: [sword, two-handed, tier-6]
+  tags: [weapon, sword, two-handed, tier-6]
   stats:
     weight: 1.8
     durability: 200
@@ -4673,7 +4673,7 @@
     - { itemId: refined-eitr, qty: 3 }
     - { itemId: freeze-gland, qty: 3 }
   yields: { itemId: mistwalker, qty: 1 }
-  tags: [sword, one-handed, tier-6]
+  tags: [weapon, sword, one-handed, tier-6]
   stats:
     weight: 1.8
     durability: 200
@@ -4752,7 +4752,7 @@
     - { itemId: carapace, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 5 }
   yields: { itemId: carapace-spear, qty: 1 }
-  tags: [spear, one-handed, tier-6]
+  tags: [weapon, spear, one-handed, tier-6]
   stats:
     weight: 1.5
     durability: 100
@@ -4820,7 +4820,7 @@
     - { itemId: dvergr-needle, qty: 3 }
     - { itemId: refined-eitr, qty: 2 }
   yields: { itemId: ripper, qty: 1 }
-  tags: [knife, one-handed, tier-6]
+  tags: [weapon, knife, one-handed, tier-6]
   stats:
     weight: 0.3
     durability: 50
@@ -4868,7 +4868,7 @@
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: refined-eitr, qty: 5 }
   yields: { itemId: skoll-and-hati, qty: 1 }
-  tags: [axe, one-handed, tier-6]
+  tags: [weapon, axe, one-handed, tier-6]
   stats:
     weight: 1.5
     durability: 200
@@ -4936,7 +4936,7 @@
     - { itemId: black-marble, qty: 10 }
     - { itemId: yggdrasil-wood, qty: 8 }
   yields: { itemId: demolisher, qty: 1 }
-  tags: [sledge, two-handed, tier-6]
+  tags: [weapon, sledge, two-handed, tier-6]
   stats:
     weight: 4.5
     durability: 100
@@ -4998,7 +4998,7 @@
     - { itemId: iron, qty: 30 }
     - { itemId: refined-eitr, qty: 10 }
   yields: { itemId: skull-splittur, qty: 1 }
-  tags: [battleaxe, two-handed, tier-5]
+  tags: [weapon, battleaxe, two-handed, tier-5]
   stats:
     durability: 200
     movementPenalty: -5
@@ -5094,7 +5094,7 @@
     - { itemId: dvergr-needle, qty: 5 }
     - { itemId: refined-eitr, qty: 3 }
   yields: { itemId: splitnir, qty: 1 }
-  tags: [spear, one-handed, tier-6]
+  tags: [weapon, spear, one-handed, tier-6]
   stats:
     weight: 3.5
     durability: 100
@@ -5153,7 +5153,7 @@
     - { itemId: flametal, qty: 24 }
     - { itemId: asksvin-hide, qty: 3 }
   yields: { itemId: berserkir, qty: 1 }
-  tags: [axe, two-handed, tier-6]
+  tags: [weapon, axe, two-handed, tier-6]
   stats:
     weight: 2
     durability: 175
@@ -5224,7 +5224,7 @@
     - { itemId: refined-eitr, qty: 5 }
     - { itemId: morgen-heart, qty: 1 }
   yields: { itemId: ash-fang, qty: 1 }
-  tags: [bow, two-handed, tier-6]
+  tags: [weapon, bow, two-handed, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -5276,7 +5276,7 @@
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: charred-bone, qty: 5 }
   yields: { itemId: flametal-mace, qty: 1 }
-  tags: [mace, one-handed, tier-6]
+  tags: [weapon, mace, one-handed, tier-6]
   stats:
     weight: 3
     durability: 150
@@ -5347,7 +5347,7 @@
     - { itemId: bilebag, qty: 3 }
     - { itemId: yggdrasil-wood, qty: 8 }
   yields: { itemId: slayer, qty: 1 }
-  tags: [sledge, two-handed, tier-6]
+  tags: [weapon, sledge, two-handed, tier-6]
   stats:
     weight: 4
     durability: 200
@@ -5420,7 +5420,7 @@
     - { itemId: flametal, qty: 20 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: dyrnwyn, qty: 1 }
-  tags: [sword, one-handed, tier-6]
+  tags: [weapon, sword, one-handed, tier-6]
   notes: Legendary sword reforged from fragments. Upgrades beyond quality 2 require Black Forge levels not yet available in game.
   stats:
     weight: 0.8
@@ -5884,7 +5884,7 @@
     - { itemId: yggdrasil-wood, qty: 4 }
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-buckler, qty: 1 }
-  tags: [shield, tier-6]
+  tags: [armor, shield, tier-6]
   stats:
     weight: 5
     durability: 200
@@ -5939,7 +5939,7 @@
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: black-metal, qty: 5 }
   yields: { itemId: carapace-shield, qty: 1 }
-  tags: [shield, tier-6]
+  tags: [armor, shield, tier-6]
   stats:
     weight: 20
     durability: 200
@@ -5994,7 +5994,7 @@
     - { itemId: yggdrasil-wood, qty: 5 }
     - { itemId: charred-bone, qty: 3 }
   yields: { itemId: flametal-shield, qty: 1 }
-  tags: [shield, tier-6]
+  tags: [armor, shield, tier-6]
   stats:
     weight: 3.5
     durability: 200
@@ -6039,7 +6039,7 @@
     - { itemId: yggdrasil-wood, qty: 8 }
     - { itemId: charred-bone, qty: 5 }
   yields: { itemId: flametal-tower-shield, qty: 1 }
-  tags: [shield, tower-shield, tier-6]
+  tags: [armor, shield, tower-shield, tier-6]
   stats:
     weight: 22
     durability: 200
@@ -6240,7 +6240,7 @@
     - { itemId: flametal-mace, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: bloodgeon, qty: 1 }
-  tags: [mace, one-handed, elemental, tier-6]
+  tags: [weapon, mace, one-handed, elemental, tier-6]
   notes: Flametal Mace upgraded with Bloodstone. Bleed damage.
   stats:
     weight: 2.5
@@ -6295,7 +6295,7 @@
     - { itemId: slayer, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: brutal-slayer, qty: 1 }
-  tags: [sledge, two-handed, elemental, tier-6]
+  tags: [weapon, sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Bloodstone. Bleed damage.
   stats:
     weight: 4
@@ -6350,7 +6350,7 @@
     - { itemId: slayer, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: scourging-slayer, qty: 1 }
-  tags: [sledge, two-handed, elemental, tier-6]
+  tags: [weapon, sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Iolite. Lightning damage.
   stats:
     weight: 4
@@ -6405,7 +6405,7 @@
     - { itemId: slayer, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: primal-slayer, qty: 1 }
-  tags: [sledge, two-handed, elemental, tier-6]
+  tags: [weapon, sledge, two-handed, elemental, tier-6]
   notes: Slayer upgraded with Jade. Poison damage.
   stats:
     weight: 4
@@ -6607,7 +6607,7 @@
     - { itemId: flametal, qty: 8 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: storm-star, qty: 1 }
-  tags: [mace, one-handed, tier-6]
+  tags: [weapon, mace, one-handed, tier-6]
   notes: Flametal Mace upgraded with Iolite. Lightning damage.
   stats:
     weight: 3
@@ -6662,7 +6662,7 @@
     - { itemId: flametal, qty: 8 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: klossen, qty: 1 }
-  tags: [mace, one-handed, tier-6]
+  tags: [weapon, mace, one-handed, tier-6]
   notes: Flametal Mace upgraded with Jade. Poison damage.
   stats:
     weight: 4.5
@@ -6719,7 +6719,7 @@
     - { itemId: splitnir, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: splitnir-the-bleeding, qty: 1 }
-  tags: [battleaxe, two-handed, elemental, tier-6]
+  tags: [weapon, battleaxe, two-handed, elemental, tier-6]
   stats:
     weight: 3.5
     durability: 100
@@ -6767,7 +6767,7 @@
     - { itemId: splitnir, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: splitnir-the-storming, qty: 1 }
-  tags: [battleaxe, two-handed, elemental, tier-6]
+  tags: [weapon, battleaxe, two-handed, elemental, tier-6]
   stats:
     weight: 3.5
     durability: 100
@@ -6815,7 +6815,7 @@
     - { itemId: splitnir, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: splitnir-the-primal, qty: 1 }
-  tags: [battleaxe, two-handed, elemental, tier-6]
+  tags: [weapon, battleaxe, two-handed, elemental, tier-6]
   stats:
     weight: 3.5
     durability: 100
@@ -6864,7 +6864,7 @@
     - { itemId: berserkir, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: bleeding-berserkir, qty: 1 }
-  tags: [axe, two-handed, elemental, tier-6]
+  tags: [weapon, axe, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 175
@@ -6917,7 +6917,7 @@
     - { itemId: berserkir, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: thundering-berserkir, qty: 1 }
-  tags: [axe, two-handed, elemental, tier-6]
+  tags: [weapon, axe, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 175
@@ -6970,7 +6970,7 @@
     - { itemId: berserkir, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: primal-berserkir, qty: 1 }
-  tags: [axe, two-handed, elemental, tier-6]
+  tags: [weapon, axe, two-handed, elemental, tier-6]
   stats:
     weight: 3.5
     durability: 175
@@ -7024,7 +7024,7 @@
     - { itemId: ash-fang, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: blood-fang, qty: 1 }
-  tags: [bow, two-handed, elemental, tier-6]
+  tags: [weapon, bow, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -7064,7 +7064,7 @@
     - { itemId: ash-fang, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: storm-fang, qty: 1 }
-  tags: [bow, two-handed, elemental, tier-6]
+  tags: [weapon, bow, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -7104,7 +7104,7 @@
     - { itemId: ash-fang, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: root-fang, qty: 1 }
-  tags: [bow, two-handed, elemental, tier-6]
+  tags: [weapon, bow, two-handed, elemental, tier-6]
   stats:
     weight: 2
     durability: 100
@@ -7145,7 +7145,7 @@
     - { itemId: ripper, qty: 1 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: wound-ripper, qty: 1 }
-  tags: [crossbow, two-handed, elemental, tier-6]
+  tags: [weapon, crossbow, two-handed, elemental, tier-6]
   notes: Crossbow damage comes from bolts.
   stats:
     weight: 3
@@ -7185,7 +7185,7 @@
     - { itemId: ripper, qty: 1 }
     - { itemId: iolite, qty: 1 }
   yields: { itemId: storm-ripper, qty: 1 }
-  tags: [crossbow, two-handed, elemental, tier-6]
+  tags: [weapon, crossbow, two-handed, elemental, tier-6]
   notes: Crossbow damage comes from bolts.
   stats:
     weight: 3
@@ -7225,7 +7225,7 @@
     - { itemId: ripper, qty: 1 }
     - { itemId: jade, qty: 1 }
   yields: { itemId: root-ripper, qty: 1 }
-  tags: [crossbow, two-handed, elemental, tier-6]
+  tags: [weapon, crossbow, two-handed, elemental, tier-6]
   notes: Crossbow damage comes from bolts.
   stats:
     weight: 3
@@ -7269,7 +7269,7 @@
     - { itemId: sap, qty: 5 }
     - { itemId: refined-eitr, qty: 10 }
   yields: { itemId: staff-of-embers, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7339,7 +7339,7 @@
     - { itemId: freeze-gland, qty: 4 }
     - { itemId: refined-eitr, qty: 10 }
   yields: { itemId: staff-of-frost, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7407,7 +7407,7 @@
     - { itemId: dvergr-needle, qty: 5 }
     - { itemId: refined-eitr, qty: 20 }
   yields: { itemId: staff-of-storms, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
 
 - id: staff-of-protection
   name: Staff of Protection
@@ -7421,7 +7421,7 @@
     - { itemId: carapace, qty: 5 }
     - { itemId: refined-eitr, qty: 10 }
   yields: { itemId: staff-of-protection, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7473,7 +7473,7 @@
     - { itemId: refined-eitr, qty: 16 }
     - { itemId: jade, qty: 4 }
   yields: { itemId: staff-of-the-wild, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7796,7 +7796,7 @@
     - { itemId: ashwood, qty: 5 }
     - { itemId: proustite-powder, qty: 8 }
   yields: { itemId: staff-of-fracturing, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   stats:
     weight: 0.3
     durability: 200
@@ -7855,7 +7855,7 @@
     - { itemId: celestial-feather, qty: 3 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: dundr, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   notes: Shoots grapeshot of 12 lightning bolts.
   stats:
     weight: 1.5
@@ -7890,7 +7890,7 @@
     - { itemId: flametal, qty: 3 }
     - { itemId: bloodstone, qty: 1 }
   yields: { itemId: trollstav, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   notes: Summons a large troll.
   stats:
     weight: 0.3
@@ -7946,7 +7946,7 @@
     - { itemId: refined-eitr, qty: 16 }
     - { itemId: skeleton-trophy, qty: 4 }
   yields: { itemId: dead-raiser, qty: 1 }
-  tags: [staff, two-handed, magic, tier-6]
+  tags: [weapon, staff, two-handed, magic, tier-6]
   notes: Blood magic staff — uses Eitr and Health.
 
   stats:
@@ -8166,7 +8166,7 @@
     - { itemId: wood, qty: 1 }
     - { itemId: resin, qty: 1 }
   yields: { itemId: torch, qty: 1 }
-  tags: [club, one-handed, utility, tier-0]
+  tags: [weapon, club, one-handed, utility, tier-0]
   stats:
     weight: 1
     durability: 20
@@ -8201,7 +8201,7 @@
     - { itemId: mysterious-axe-head, qty: 1 }
     - { itemId: wood, qty: 4 }
   yields: { itemId: early-axes, qty: 1 }
-  tags: [axe, dual-wield, tier-0]
+  tags: [weapon, axe, dual-wield, tier-0]
   stats:
     weight: 2
     durability: 175
@@ -8287,7 +8287,7 @@
     - { itemId: wood, qty: 2 }
     - { itemId: tin, qty: 4 }
   yields: { itemId: butcher-knife, qty: 1 }
-  tags: [knife, one-handed, tier-2]
+  tags: [weapon, knife, one-handed, tier-2]
   stats:
     primaryAttack:
       damage: { pure: 1000 }
@@ -8321,7 +8321,7 @@
     - { itemId: bear-paw, qty: 2 }
     - { itemId: leather-scraps, qty: 4 }
   yields: { itemId: paws-of-the-bear, qty: 1 }
-  tags: [fists, two-handed, tier-2]
+  tags: [weapon, fists, two-handed, tier-2]
   stats:
     durability: 300
     primaryAttack:
@@ -8378,7 +8378,7 @@
     - { itemId: wolf-fang, qty: 6 }
     - { itemId: leather-scraps, qty: 6 }
   yields: { itemId: flesh-rippers, qty: 1 }
-  tags: [fists, two-handed, tier-4]
+  tags: [weapon, fists, two-handed, tier-4]
   stats:
     durability: 300
     primaryAttack:
