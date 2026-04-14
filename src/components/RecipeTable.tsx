@@ -71,6 +71,9 @@ interface Props {
 }
 
 export const RecipeTable: Component<Props> = (props) => {
+  const [fullData, setFullData] = createSignal<DataSet | null>(null);
+  const data = () => fullData() ?? props.data;
+
   const [state, setState] = createSignal<FilterState>(emptyFilterState);
   const [expandedId, setExpandedId] = createSignal<string | null>(null);
   const [sortKey, setSortKey] = createSignal<SortKey | null>(null);
@@ -104,7 +107,7 @@ export const RecipeTable: Component<Props> = (props) => {
 
   // Stable sorted recipe IDs used as the integer index for URL encoding
   const recipeIndex = createMemo(() =>
-    [...props.data.recipes].map((r) => r.id).sort(),
+    [...data().recipes].map((r) => r.id).sort(),
   );
 
   onMount(() => {
@@ -141,6 +144,12 @@ export const RecipeTable: Component<Props> = (props) => {
     }
 
     setMounted(true);
+
+    // Lazy-load full dataset (inline data is stripped to reduce HTML size)
+    fetch(`${props.baseHref}data/recipes-full.json`)
+      .then((r) => r.json())
+      .then((full) => setFullData(full))
+      .catch(() => {}); // fall back to inline slim data
   });
 
   createEffect(() => {
@@ -172,11 +181,11 @@ export const RecipeTable: Component<Props> = (props) => {
   });
 
   const itemsById = createMemo(
-    () => new Map(props.data.items.map((i) => [i.id, i])),
+    () => new Map(data().items.map((i) => [i.id, i])),
   );
 
   const stationsById = createMemo(
-    () => new Map(props.data.stations.map((s) => [s.id, s])),
+    () => new Map(data().stations.map((s) => [s.id, s])),
   );
 
   const iconSet = createMemo(
@@ -184,7 +193,7 @@ export const RecipeTable: Component<Props> = (props) => {
   );
 
   const recipesById = createMemo(
-    () => new Map(props.data.recipes.map((r) => [r.id, r])),
+    () => new Map(data().recipes.map((r) => [r.id, r])),
   );
 
   const cartKeys = createMemo(() => Object.keys(cart));
@@ -263,7 +272,7 @@ export const RecipeTable: Component<Props> = (props) => {
     setDrawerOpen(false);
   };
 
-  const filtered = createMemo(() => filterRecipes(props.data.recipes, state()));
+  const filtered = createMemo(() => filterRecipes(data().recipes, state()));
 
   const sorted = createMemo(() => {
     const key = sortKey();
@@ -408,7 +417,7 @@ export const RecipeTable: Component<Props> = (props) => {
     <Show when={mounted()} fallback={<div class="recipe-table__loading" />}>
     <div class="recipe-table">
       <div class="recipe-table__toolbar">
-        <FilterBar state={state()} stations={props.data.stations} spriteHref={props.spriteHref} onChange={commit} />
+        <FilterBar state={state()} stations={data().stations} spriteHref={props.spriteHref} onChange={commit} />
         <CartButton count={cartCount()} onClick={() => setDrawerOpen(true)} />
       </div>
 
