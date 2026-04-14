@@ -120,8 +120,6 @@ export const RecipeRow: Component<Props> = (props) => {
               onOpenCart={props.onOpenCart}
               iconIds={props.iconIds}
               spriteHref={props.spriteHref}
-              onIngredientClick={props.onIngredientClick}
-              showBaseIngredients
             />
           </div>
 
