@@ -75,7 +75,7 @@ describe('RecipeSchema', () => {
   it('accepts a cooking recipe with food stats', () => {
     const input = {
       id: 'queens-jam',
-      name: 'Queens Jam',
+      name: "Queen's Jam",
       type: 'cooking' as const,
       station: 'cauldron',
       stationLevel: 1,
@@ -83,7 +83,7 @@ describe('RecipeSchema', () => {
         { itemId: 'raspberries', qty: 8 },
         { itemId: 'blueberries', qty: 6 },
       ],
-      food: { hp: 32, stamina: 44, duration: 1800, regen: 2 },
+      food: { hp: 14, stamina: 40, healPerTick: 2, duration: 1200, weight: 1.0 },
     };
     expect(() => RecipeSchema.parse(input)).not.toThrow();
   });
@@ -219,31 +219,47 @@ describe('RecipeSchema — armorStats field', () => {
   });
 });
 
-describe('RecipeSchema — food with eitr', () => {
-  it('accepts food stats with eitr', () => {
+describe('FoodStatsSchema — sparse fields', () => {
+  it('accepts food with all fields', () => {
     const result = RecipeSchema.parse({
-      id: 'mushrooms-galore',
-      name: 'Mushrooms Galore',
+      id: 'stuffed-mushroom',
+      name: 'Stuffed Mushroom',
       type: 'cooking',
       station: 'food-table',
       stationLevel: 1,
       ingredients: [{ itemId: 'magecap', qty: 3 }],
-      food: { hp: 65, stamina: 65, duration: 3000, regen: 5, eitr: 33 },
+      food: { hp: 25, stamina: 12, eitr: 75, healPerTick: 3, duration: 1500, weight: 1.0 },
     });
-    expect(result.food?.eitr).toBe(33);
+    expect(result.food?.eitr).toBe(75);
+    expect(result.food?.healPerTick).toBe(3);
+    expect(result.food?.weight).toBe(1.0);
   });
 
-  it('accepts food stats without eitr', () => {
+  it('accepts food with only some fields (sparse)', () => {
     const result = RecipeSchema.parse({
-      id: 'bread',
-      name: 'Bread',
+      id: 'bukeperries',
+      name: 'Bukeperries',
       type: 'cooking',
-      station: 'food-table',
+      station: 'found',
       stationLevel: 1,
-      ingredients: [{ itemId: 'barley-flour', qty: 10 }],
-      food: { hp: 23, stamina: 70, duration: 1500, regen: 2 },
+      ingredients: [],
+      food: { regenModifier: -1.0, duration: 15, weight: 0.1 },
     });
-    expect(result.food?.eitr).toBeUndefined();
+    expect(result.food?.hp).toBeUndefined();
+    expect(result.food?.regenModifier).toBe(-1.0);
+  });
+
+  it('accepts empty food object', () => {
+    const result = RecipeSchema.parse({
+      id: 'test',
+      name: 'Test',
+      type: 'cooking',
+      station: 'cauldron',
+      stationLevel: 1,
+      ingredients: [],
+      food: {},
+    });
+    expect(result.food).toBeDefined();
   });
 });
 

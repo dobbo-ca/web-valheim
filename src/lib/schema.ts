@@ -40,11 +40,13 @@ export const StationSchema = z.object({
 });
 
 export const FoodStatsSchema = z.object({
-  hp: z.number().nonnegative(),
-  stamina: z.number().nonnegative(),
-  duration: z.number().nonnegative(),
-  regen: z.number().nonnegative(),
-  eitr: z.number().nonnegative().optional(),
+  hp: z.number().optional(),
+  stamina: z.number().optional(),
+  eitr: z.number().optional(),
+  healPerTick: z.number().optional(),
+  duration: z.number().optional(),
+  weight: z.number().optional(),
+  regenModifier: z.number().optional(),
 });
 
 export const SecondaryStepSchema = z.object({
