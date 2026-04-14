@@ -1,4 +1,4 @@
-import { For, Show, createEffect, createMemo, createSignal, onMount, type Component } from 'solid-js';
+import { For, Show, createEffect, createMemo, createSignal, onMount, onCleanup, type Component } from 'solid-js';
 import { createStore, reconcile } from 'solid-js/store';
 import type { DataSet } from '../lib/loader';
 import type { FilterState } from '../lib/filter';
@@ -82,6 +82,25 @@ export const RecipeTable: Component<Props> = (props) => {
   const [mounted, setMounted] = createSignal(false);
   const [visibleColumns, setVisibleColumns] = createSignal<ColumnId[]>(readStoredColumns());
   const [colMenuOpen, setColMenuOpen] = createSignal(false);
+  let colToggleRef: HTMLSpanElement | undefined;
+
+  // Close column menu on click-outside or Escape
+  const handleClickOutside = (e: MouseEvent) => {
+    if (colMenuOpen() && colToggleRef && !colToggleRef.contains(e.target as Node)) {
+      setColMenuOpen(false);
+    }
+  };
+  const handleEscape = (e: KeyboardEvent) => {
+    if (e.key === 'Escape' && colMenuOpen()) setColMenuOpen(false);
+  };
+  onMount(() => {
+    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('keydown', handleEscape);
+    onCleanup(() => {
+      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    });
+  });
 
   // Stable sorted recipe IDs used as the integer index for URL encoding
   const recipeIndex = createMemo(() =>
@@ -431,7 +450,7 @@ export const RecipeTable: Component<Props> = (props) => {
           <Show when={isColVisible('stats')}>
             <span role="columnheader">Stats</span>
           </Show>
-          <span role="columnheader" class="recipe-table__col-toggle">
+          <span ref={colToggleRef} role="columnheader" class="recipe-table__col-toggle">
             <button
               type="button"
               class="recipe-table__col-toggle-btn"
