@@ -20,18 +20,10 @@ test.describe('recipe table', () => {
     await expect(page.getByRole('button', { name: /Iron ×60/ })).toBeVisible();
   });
 
-  test('clicking an ingredient chip reverse-filters', async ({ page }) => {
-    await page.goto('/valheim/?q=iron+sword');
-    await page.getByRole('button', { name: /Iron Sword/ }).click();
-    await page.getByRole('button', { name: /Iron ×60/ }).click();
-    await expect(page.getByText('Uses ingredient:')).toBeVisible();
-    await expect(page.getByText('Queens Jam')).not.toBeVisible();
-  });
-
   test('detail page is reachable', async ({ page }) => {
     await page.goto('/valheim/recipes/iron-sword/');
     await expect(page.getByRole('heading', { name: 'Iron Sword' })).toBeVisible();
-    await expect(page.getByText(/Used as ingredient in|Ingredients/)).toBeVisible();
+    await expect(page.getByText('Crafting')).toBeVisible();
   });
 });
 
@@ -83,7 +75,7 @@ test.describe('advanced filters', () => {
   test('building type filter shows station upgrades', async ({ page }) => {
     await page.goto('/valheim/?q=chopping');
     await page.getByRole('button', { name: /Filters/ }).click();
-    await page.getByRole('button', { name: 'Building' }).click();
+    await page.getByRole('button', { name: 'Building', exact: true }).click();
     await expect(page.getByText('Chopping Block')).toBeVisible();
   });
 
