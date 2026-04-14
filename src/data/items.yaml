@@ -434,3 +434,9 @@
 - { id: bear-trophy, name: Bear Trophy, category: material, stackSize: 20, biome: black-forest }
 - { id: lox-saddle, name: Lox Saddle, category: tool, stackSize: 1 }
 - { id: ballista, name: Ballista, category: tool, stackSize: 1 }
+- { id: vile-trophy, name: Vile Trophy, category: material, stackSize: 20, biome: plains }
+- { id: vile-ribcage, name: Vile Ribcage, category: material, stackSize: 20, biome: plains }
+- { id: vilebone-visage, name: Vilebone Visage, category: armor, stackSize: 1, biome: plains }
+- { id: vilebone-cage, name: Vilebone Cage, category: armor, stackSize: 1, biome: plains }
+- { id: vilebone-drapes, name: Vilebone Drapes, category: armor, stackSize: 1, biome: plains }
+- { id: vilebone-maulclaws, name: Vilebone Maulclaws, category: weapon, stackSize: 1, biome: plains }

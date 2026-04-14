@@ -8723,3 +8723,233 @@
       armorStats:
         armor: 13
         durability: 1600
+
+- id: vilebone-visage
+  name: Vilebone Visage
+  type: crafting
+  biome: plains
+  station: forge
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 5 }
+    - { itemId: vile-trophy, qty: 1 }
+  yields: { itemId: vilebone-visage, qty: 1 }
+  tags: [helmet, armor, tier-5]
+  armorStats:
+    armor: 12
+    durability: 1000
+    weight: 1
+    setBonus:
+      name: "Vilebone Set"
+      pieces: 3
+      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce"
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+      armorStats:
+        armor: 14
+        durability: 1000
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+      armorStats:
+        armor: 16
+        durability: 1000
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+      armorStats:
+        armor: 18
+        durability: 1000
+
+- id: vilebone-cage
+  name: Vilebone Cage
+  type: crafting
+  biome: plains
+  station: forge
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 4 }
+    - { itemId: vile-ribcage, qty: 3 }
+    - { itemId: linen-thread, qty: 4 }
+  yields: { itemId: vilebone-cage, qty: 1 }
+  tags: [chest, armor, tier-5]
+  armorStats:
+    armor: 18
+    durability: 1000
+    weight: 5
+    setBonus:
+      name: "Vilebone Set"
+      pieces: 3
+      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce"
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+        - { itemId: vile-ribcage, qty: 1 }
+        - { itemId: linen-thread, qty: 1 }
+      armorStats:
+        armor: 20
+        durability: 1000
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+        - { itemId: vile-ribcage, qty: 2 }
+        - { itemId: linen-thread, qty: 2 }
+      armorStats:
+        armor: 22
+        durability: 1000
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+        - { itemId: vile-ribcage, qty: 3 }
+        - { itemId: linen-thread, qty: 3 }
+      armorStats:
+        armor: 24
+        durability: 1000
+
+- id: vilebone-drapes
+  name: Vilebone Drapes
+  type: crafting
+  biome: plains
+  station: forge
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 10 }
+    - { itemId: vile-ribcage, qty: 1 }
+    - { itemId: linen-thread, qty: 4 }
+  yields: { itemId: vilebone-drapes, qty: 1 }
+  tags: [legs, armor, tier-5]
+  armorStats:
+    armor: 18
+    durability: 1000
+    weight: 5
+    setBonus:
+      name: "Vilebone Set"
+      pieces: 3
+      effect: "Vilebone wrath — +20% Health regen, +40% Stamina regen, +20% Blunt, +20% Pierce"
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 5 }
+        - { itemId: vile-ribcage, qty: 1 }
+        - { itemId: linen-thread, qty: 1 }
+      armorStats:
+        armor: 20
+        durability: 1000
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 10 }
+        - { itemId: vile-ribcage, qty: 2 }
+        - { itemId: linen-thread, qty: 2 }
+      armorStats:
+        armor: 22
+        durability: 1000
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 15 }
+        - { itemId: vile-ribcage, qty: 3 }
+        - { itemId: linen-thread, qty: 3 }
+      armorStats:
+        armor: 24
+        durability: 1000
+
+- id: vilebone-maulclaws
+  name: Vilebone Maulclaws
+  type: crafting
+  biome: plains
+  station: forge
+  stationLevel: 4
+  repairLevel: 4
+  ingredients:
+    - { itemId: bear-hide, qty: 2 }
+    - { itemId: vile-ribcage, qty: 2 }
+    - { itemId: black-metal, qty: 2 }
+    - { itemId: linen-thread, qty: 4 }
+  yields: { itemId: vilebone-maulclaws, qty: 1 }
+  tags: [weapon, fists, two-handed, tier-5]
+  stats:
+    durability: 300
+    primaryAttack:
+      damage: { slash: 20, pierce: 60 }
+      backstab: 6
+      stagger: 20
+      stamina: 12
+      knockback: 30
+    secondaryAttack:
+      damage: { slash: 20, pierce: 60 }
+      backstab: 6
+      stagger: 120
+      stamina: 24
+      knockback: 120
+  upgrades:
+    - quality: 2
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 1 }
+        - { itemId: vile-ribcage, qty: 1 }
+        - { itemId: black-metal, qty: 1 }
+        - { itemId: linen-thread, qty: 2 }
+      stats:
+        primaryAttack:
+          damage: { slash: 24, pierce: 60 }
+          stagger: 24
+        secondaryAttack:
+          damage: { slash: 24, pierce: 60 }
+          stagger: 144
+        durability: 350
+    - quality: 3
+      stationLevel: 6
+      repairLevel: 6
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+        - { itemId: vile-ribcage, qty: 2 }
+        - { itemId: black-metal, qty: 2 }
+        - { itemId: linen-thread, qty: 4 }
+      stats:
+        primaryAttack:
+          damage: { slash: 28, pierce: 60 }
+          stagger: 28
+        secondaryAttack:
+          damage: { slash: 28, pierce: 60 }
+          stagger: 168
+        durability: 400
+    - quality: 4
+      stationLevel: 7
+      repairLevel: 7
+      ingredients:
+        - { itemId: bear-hide, qty: 3 }
+        - { itemId: vile-ribcage, qty: 3 }
+        - { itemId: black-metal, qty: 3 }
+        - { itemId: linen-thread, qty: 6 }
+      stats:
+        primaryAttack:
+          damage: { slash: 32, pierce: 60 }
+          stagger: 32
+        secondaryAttack:
+          damage: { slash: 32, pierce: 60 }
+          stagger: 192
+        durability: 450
