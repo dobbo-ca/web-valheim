@@ -12,7 +12,7 @@ interface TagGroup {
 const ICON_BASE = '/valheim/icons/filters';
 
 const tagGroups: TagGroup[] = [
-  { label: 'Weapons', icon: 'weapons', tags: ['sword', 'axe', 'mace', 'spear', 'knife', 'atgeir', 'sledge', 'battleaxe', 'club'] },
+  { label: 'Weapons', icon: 'weapons', tags: ['sword', 'axe', 'mace', 'spear', 'knife', 'atgeir', 'sledge', 'battleaxe', 'club', 'fists'] },
   { label: 'Projectiles', icon: 'projectiles', tags: ['bow', 'crossbow', 'arrow', 'bolt', 'staff'] },
   { label: 'Armor', icon: 'armor', tags: ['helmet', 'chest', 'legs', 'cape', 'shield', 'tower-shield'] },
 ];

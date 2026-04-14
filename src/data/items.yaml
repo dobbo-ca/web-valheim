@@ -428,5 +428,9 @@
 - { id: root-mask, name: Root Mask, category: armor, stackSize: 1 }
 - { id: root-harnesk, name: Root Harnesk, category: armor, stackSize: 1 }
 - { id: root-leggings, name: Root Leggings, category: armor, stackSize: 1 }
+- { id: headdress-of-the-bear, name: Headdress of the Bear, category: armor, stackSize: 1 }
+- { id: patterns-of-the-bear, name: Patterns of the Bear, category: armor, stackSize: 1 }
+- { id: loincloth-of-the-bear, name: Loincloth of the Bear, category: armor, stackSize: 1 }
+- { id: bear-trophy, name: Bear Trophy, category: material, stackSize: 20, biome: black-forest }
 - { id: lox-saddle, name: Lox Saddle, category: tool, stackSize: 1 }
 - { id: ballista, name: Ballista, category: tool, stackSize: 1 }

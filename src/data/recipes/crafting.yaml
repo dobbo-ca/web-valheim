@@ -8590,3 +8590,136 @@
       name: "Root Set"
       pieces: 3
       effect: "Improved archery — +15 Bows (skill)"
+
+- id: headdress-of-the-bear
+  name: Headdress of the Bear
+  type: crafting
+  biome: black-forest
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 5 }
+    - { itemId: bear-trophy, qty: 1 }
+  yields: { itemId: headdress-of-the-bear, qty: 1 }
+  tags: [helmet, armor, tier-2]
+  armorStats:
+    armor: 7
+    durability: 1000
+    weight: 1
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+      armorStats:
+        armor: 9
+        durability: 1200
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+      armorStats:
+        armor: 11
+        durability: 1400
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+      armorStats:
+        armor: 13
+        durability: 1600
+
+- id: patterns-of-the-bear
+  name: Patterns of the Bear
+  type: crafting
+  biome: black-forest
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 5 }
+    - { itemId: bear-paw, qty: 2 }
+    - { itemId: blueberries, qty: 4 }
+  yields: { itemId: patterns-of-the-bear, qty: 1 }
+  tags: [chest, armor, tier-2]
+  armorStats:
+    armor: 7
+    durability: 1000
+    weight: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+        - { itemId: blueberries, qty: 1 }
+      armorStats:
+        armor: 9
+        durability: 1200
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+        - { itemId: blueberries, qty: 2 }
+      armorStats:
+        armor: 11
+        durability: 1400
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+        - { itemId: blueberries, qty: 3 }
+      armorStats:
+        armor: 13
+        durability: 1600
+
+- id: loincloth-of-the-bear
+  name: Loincloth of the Bear
+  type: crafting
+  biome: black-forest
+  station: workbench
+  stationLevel: 2
+  repairLevel: 2
+  ingredients:
+    - { itemId: bear-hide, qty: 5 }
+    - { itemId: blueberries, qty: 4 }
+  yields: { itemId: loincloth-of-the-bear, qty: 1 }
+  tags: [legs, armor, tier-2]
+  armorStats:
+    armor: 7
+    durability: 1000
+    weight: 5
+  upgrades:
+    - quality: 2
+      stationLevel: 3
+      repairLevel: 3
+      ingredients:
+        - { itemId: bear-hide, qty: 2 }
+        - { itemId: blueberries, qty: 1 }
+      armorStats:
+        armor: 9
+        durability: 1200
+    - quality: 3
+      stationLevel: 4
+      repairLevel: 4
+      ingredients:
+        - { itemId: bear-hide, qty: 4 }
+        - { itemId: blueberries, qty: 2 }
+      armorStats:
+        armor: 11
+        durability: 1400
+    - quality: 4
+      stationLevel: 5
+      repairLevel: 5
+      ingredients:
+        - { itemId: bear-hide, qty: 6 }
+        - { itemId: blueberries, qty: 3 }
+      armorStats:
+        armor: 13
+        durability: 1600
