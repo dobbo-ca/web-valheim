@@ -122,40 +122,104 @@ def resolve_page_title(armor_name: str) -> str | None:
 # ── Infobox parser ───────────────────────────────────────────────────────────
 
 
-def extract_infobox_armor(wikitext: str) -> dict[str, str]:
-    """Extract fields from {{Infobox armor}} using brace-balancing."""
-    start_match = re.search(r'\{\{[Ii]nfobox[_ ]armor\s*\n', wikitext)
-    if not start_match:
-        return {}
+def _find_all_infobox_armor_blocks(wikitext: str) -> list[str]:
+    """Find all {{infobox armor ...}} blocks using brace-balancing.
 
-    depth = 1
-    i = start_match.end()
-    content_start = i
-    while i < len(wikitext) - 1:
-        if wikitext[i:i+2] == '{{':
-            depth += 1
-            i += 2
-        elif wikitext[i:i+2] == '}}':
-            depth -= 1
-            if depth == 0:
-                break
-            i += 2
-        else:
-            i += 1
+    Returns list of content strings (between opening and closing braces).
+    Handles {{InfoboxTabber}} pages with multiple armor infoboxes.
+    """
+    blocks = []
+    for start_match in re.finditer(r'\{\{[Ii]nfobox[_ ]armor\s*\n', wikitext):
+        depth = 1
+        i = start_match.end()
+        content_start = i
+        while i < len(wikitext) - 1:
+            if wikitext[i:i+2] == '{{':
+                depth += 1
+                i += 2
+            elif wikitext[i:i+2] == '}}':
+                depth -= 1
+                if depth == 0:
+                    break
+                i += 2
+            else:
+                i += 1
+        blocks.append(wikitext[content_start:i])
+    return blocks
 
-    content = wikitext[content_start:i]
+
+def _parse_infobox_fields(content: str, include_title: bool = False) -> dict[str, str]:
+    """Parse key=value fields from infobox content.
+
+    Handles multi-line values (e.g. resistance field with bullet points on
+    continuation lines).
+    """
     fields = {}
-    skip_keys = {"image", "title", "id", "description", "source", "usage"}
+    skip_keys = {"image", "id", "description", "usage", "appearance"}
+    if not include_title:
+        skip_keys.add("title")
 
-    for line_match in re.finditer(r'^\|\s*([^=\n]+?)\s*=\s*([^\n|]*)', content, re.MULTILINE):
+    # Match field start: | key = value
+    # Then capture continuation lines (lines not starting with |) as part of the value
+    for line_match in re.finditer(
+        r'^\|\s*([^=\n]+?)\s*=\s*(.*?)(?=\n\|\s*[a-z]|\n\}\}|\Z)',
+        content, re.MULTILINE | re.DOTALL
+    ):
         key = line_match.group(1).strip().lower()
-        value = line_match.group(2).strip()
+        # Join multi-line value into single string, preserving bullet points
+        raw_value = line_match.group(2).strip()
         if key.startswith("materials") or key in skip_keys:
             continue
-        if value:
-            fields[key] = value
+        if raw_value:
+            fields[key] = raw_value
 
     return fields
+
+
+def _extract_title(content: str) -> str:
+    """Extract the title field from an infobox content block."""
+    m = re.search(r'^\|\s*title\s*=\s*(.+)', content, re.MULTILINE)
+    return m.group(1).strip() if m else ""
+
+
+def _select_block_for_name(blocks: list[str], armor_name: str) -> str | None:
+    """Select the correct infobox block by matching title to armor name."""
+    if not blocks:
+        return None
+    if len(blocks) == 1:
+        return blocks[0]
+
+    # Match by title
+    for block in blocks:
+        title = _extract_title(block)
+        if title.lower() == armor_name.lower():
+            return block
+
+    # Fuzzy: check if armor name is contained in title or vice versa
+    for block in blocks:
+        title = _extract_title(block)
+        if armor_name.lower() in title.lower() or title.lower() in armor_name.lower():
+            return block
+
+    # Fall back to first block
+    return blocks[0]
+
+
+def extract_infobox_armor(wikitext: str, armor_name: str = "") -> dict[str, str]:
+    """Extract fields from {{Infobox armor}} using brace-balancing.
+
+    Handles tabbed pages ({{InfoboxTabber}}) by matching armor_name to the
+    title field when multiple infobox blocks exist.
+    """
+    blocks = _find_all_infobox_armor_blocks(wikitext)
+    if not blocks:
+        return {}
+
+    block = _select_block_for_name(blocks, armor_name)
+    if block is None:
+        return {}
+
+    return _parse_infobox_fields(block)
 
 
 def name_to_item_id(name: str) -> str:
@@ -165,13 +229,17 @@ def name_to_item_id(name: str) -> str:
     return item_id
 
 
-def extract_materials(wikitext: str) -> dict[int, list[dict]]:
+def extract_materials(wikitext: str, armor_name: str = "") -> dict[int, list[dict]]:
     """Extract materials for each quality level from the infobox."""
-    match = re.search(r'\{\{[Ii]nfobox armor\s*\n(.*?)(?:\}\})', wikitext, re.DOTALL)
-    if not match:
+    blocks = _find_all_infobox_armor_blocks(wikitext)
+    if not blocks:
         return {}
 
-    content = match.group(1)
+    block = _select_block_for_name(blocks, armor_name)
+    if block is None:
+        return {}
+
+    content = block
     materials = {}
 
     for mat_match in re.finditer(
@@ -395,8 +463,12 @@ def parse_set_bonus(fields: dict[str, str], wikitext: str) -> dict | None:
     if not set_effect:
         set_effect = fields.get("set bonus", "").strip()
     if set_effect:
-        set_effect = re.sub(r'\[\[|\]\]', '', set_effect).strip()
+        # Clean wiki links: [[Page|Display]] → Display, [[Page]] → Page
+        set_effect = re.sub(r'\[\[(?:[^\]|]*\|)?([^\]]+)\]\]', r'\1', set_effect)
         set_effect = re.sub(r'<[^>]+>', '', set_effect).strip()
+        # Join multi-line bullet items: "Improved archery\n* +15 Bows" → "Improved archery — +15 Bows"
+        lines = [l.strip().lstrip('*').strip() for l in set_effect.splitlines() if l.strip()]
+        set_effect = " — ".join(lines) if len(lines) > 1 else lines[0] if lines else set_name
         set_bonus["effect"] = set_effect
 
     return set_bonus
@@ -841,7 +913,7 @@ def scrape_armor(armor_name: str, dry_run: bool = False) -> bool:
         print(f"  ERROR: Could not fetch wikitext for \"{page_title}\"")
         return False
 
-    fields = extract_infobox_armor(wikitext)
+    fields = extract_infobox_armor(wikitext, armor_name)
     if not fields:
         print(f"  ERROR: No {{{{Infobox armor}}}} found in \"{page_title}\"")
         return False
@@ -860,7 +932,7 @@ def scrape_armor(armor_name: str, dry_run: bool = False) -> bool:
         print(f"  {line}")
 
     # Extract materials
-    wiki_materials = extract_materials(wikitext)
+    wiki_materials = extract_materials(wikitext, armor_name)
     if wiki_materials:
         print(f"\n  Materials from wiki:")
         for q, ings in sorted(wiki_materials.items()):
@@ -887,7 +959,9 @@ def scrape_armor(armor_name: str, dry_run: bool = False) -> bool:
         item_id = name_to_item_id(armor_name)
 
         # Resolve station
-        station_wiki = fields.get("crafting station", "").strip().lower()
+        # "source" field contains wiki link like "[[Black forge]]"
+        source_raw = fields.get("source", "")
+        station_wiki = re.sub(r'\[+|\]+', '', source_raw).strip().lower()
         station_id = STATION_NAME_TO_ID.get(station_wiki, "workbench")
 
         if not station_info:
