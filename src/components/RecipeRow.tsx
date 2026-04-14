@@ -137,8 +137,8 @@ export const RecipeRow: Component<Props> = (props) => {
             </div>
           </Show>
 
-          {/* Stack size only for non-weapons */}
-          <Show when={!props.recipe.stats && (() => {
+          {/* Stack size only for non-weapons/armor */}
+          <Show when={!props.recipe.stats && !props.recipe.armorStats && (() => {
             const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
             const item = props.itemsById.get(yieldItemId);
             return item?.stackSize;

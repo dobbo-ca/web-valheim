@@ -145,8 +145,8 @@ const isWeapon = tags.some((t: string) => ['sword', 'axe', 'mace', 'polearm', 'b
       </div>
     )}
 
-    {/* ── Stack size (non-weapons only) ── */}
-    {!isWeapon && (() => {
+    {/* ── Stack size (non-weapons/armor) ── */}
+    {!isWeapon && !isArmor && (() => {
       const yieldItemId = recipe.yields?.itemId ?? recipe.id;
       const item = itemsById.get(yieldItemId);
       return item?.stackSize ? (
