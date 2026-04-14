@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "icons": "node --import tsx scripts/generate-sprite.ts",
-    "build": "node --import tsx scripts/generate-sprite.ts && astro build",
+    "build": "node --import tsx scripts/generate-sprite.ts && node --import tsx scripts/generate-data-json.ts && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",

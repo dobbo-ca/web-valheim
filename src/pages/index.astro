@@ -5,7 +5,7 @@ import { getIconSet } from '../lib/icons';
 import { slimDataSet } from '../lib/slim-data';
 import { RecipeTable } from '../components/RecipeTable';
 import { resolve } from 'node:path';
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 
 const data = await getDataSet();
 const base = import.meta.env.BASE_URL;
@@ -13,11 +13,6 @@ const iconDir = resolve(process.cwd(), 'public/icons/items');
 const iconIds = [...getIconSet(iconDir)];
 const manifest = JSON.parse(readFileSync(resolve(process.cwd(), 'public/icons/sprite-manifest.json'), 'utf8'));
 const spriteHref = `${base}icons/${manifest.filename}`;
-
-// Write full dataset as static JSON for lazy loading
-const dataDir = resolve(process.cwd(), 'public/data');
-mkdirSync(dataDir, { recursive: true });
-writeFileSync(resolve(dataDir, 'recipes-full.json'), JSON.stringify(data), 'utf8');
 
 // Inline only the minimal data needed for initial list render
 const slimData = slimDataSet(data);
