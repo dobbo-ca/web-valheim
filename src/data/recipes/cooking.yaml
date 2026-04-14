@@ -503,9 +503,7 @@
   tags: [food, eitr, tier-7, ashlands]
 
 # ── Meads ─────────────────────────────────────────────────────────────────────
-# Meads are brewed at the Mead Ketill, then fermented.
 
-# Mead Ketill level 1
 - id: minor-healing-mead
   name: Minor Healing Mead
   type: cooking
@@ -520,7 +518,77 @@
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, heal, tier-1]
+  mead:
+    effect:
+      health: 50
+    duration: 10
+    cooldown: 120
+    cooldownGroup: healing
+  tags: [mead, instant-heal, tier-1, meadows]
+
+- id: medium-healing-mead
+  name: Medium Healing Mead
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: bloodbag, qty: 4 }
+    - { itemId: raspberries, qty: 10 }
+    - { itemId: dandelion, qty: 1 }
+  yields: { itemId: medium-healing-mead, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      health: 75
+    duration: 10
+    cooldown: 120
+    cooldownGroup: healing
+  tags: [mead, instant-heal, tier-3, swamp]
+
+- id: major-healing-mead
+  name: Major Healing Mead
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: blood-clot, qty: 4 }
+    - { itemId: royal-jelly, qty: 5 }
+  yields: { itemId: major-healing-mead, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      health: 125
+    duration: 10
+    cooldown: 120
+    cooldownGroup: healing
+  tags: [mead, instant-heal, tier-6, mistlands]
+
+- id: lingering-healing-mead
+  name: Lingering Healing Mead
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: sap, qty: 10 }
+    - { itemId: vineberry-cluster, qty: 10 }
+    - { itemId: smoke-puff, qty: 10 }
+  yields: { itemId: lingering-healing-mead, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      healthRegen: 0.25
+    duration: 300
+    cooldown: 300
+    cooldownGroup: healing
+  tags: [mead, regen, tier-7, ashlands]
 
 - id: minor-stamina-mead
   name: Minor Stamina Mead
@@ -535,7 +603,98 @@
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, stamina, tier-1]
+  mead:
+    effect:
+      stamina: 80
+    duration: 2
+    cooldown: 120
+    cooldownGroup: stamina
+  tags: [mead, instant-stamina, tier-1, meadows]
+
+- id: medium-stamina-mead
+  name: Medium Stamina Mead
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: cloudberries, qty: 10 }
+    - { itemId: yellow-mushroom, qty: 10 }
+  yields: { itemId: medium-stamina-mead, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      stamina: 160
+    duration: 2
+    cooldown: 120
+    cooldownGroup: stamina
+  tags: [mead, instant-stamina, tier-5, plains]
+
+- id: lingering-stamina-mead
+  name: Lingering Stamina Mead
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: sap, qty: 10 }
+    - { itemId: cloudberries, qty: 10 }
+    - { itemId: jotun-puffs, qty: 10 }
+  yields: { itemId: lingering-stamina-mead, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      staminaRegen: 0.25
+    duration: 300
+    cooldown: 300
+    cooldownGroup: stamina
+  tags: [mead, regen, tier-6, mistlands]
+
+- id: minor-eitr-mead
+  name: Minor Eitr Mead
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: sap, qty: 5 }
+    - { itemId: jotun-puffs, qty: 2 }
+    - { itemId: magecap, qty: 5 }
+  yields: { itemId: minor-eitr-mead, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      eitr: 125
+    duration: 10
+    cooldown: 120
+    cooldownGroup: eitr
+  tags: [mead, instant-eitr, tier-6, mistlands]
+
+- id: lingering-eitr-mead
+  name: Lingering Eitr Mead
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: sap, qty: 10 }
+    - { itemId: vineberry-cluster, qty: 10 }
+    - { itemId: magecap, qty: 10 }
+  yields: { itemId: lingering-eitr-mead, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      eitrRegen: 0.25
+    duration: 300
+    cooldown: 300
+    cooldownGroup: eitr
+  tags: [mead, regen, tier-7, ashlands]
 
 - id: poison-resistance-mead
   name: Poison Resistance Mead
@@ -551,84 +710,12 @@
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, resistance, tier-1]
-
-- id: tasty-mead
-  name: Tasty Mead
-  type: cooking
-  station: mead-ketill
-  stationLevel: 1
-  ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: raspberries, qty: 10 }
-    - { itemId: blueberries, qty: 5 }
-  yields: { itemId: tasty-mead, qty: 6 }
-  secondaryStep:
-    station: fermenter
-    description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, rested, tier-1]
-
-- id: lingering-healing-mead
-  name: Lingering Healing Mead
-  type: cooking
-  station: mead-ketill
-  stationLevel: 1
-  ingredients:
-    - { itemId: sap, qty: 10 }
-    - { itemId: vineberry-cluster, qty: 10 }
-    - { itemId: smoke-puff, qty: 10 }
-  yields: { itemId: lingering-healing-mead, qty: 6 }
-  secondaryStep:
-    station: fermenter
-    description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, heal, tier-6]
-
-- id: lingering-stamina-mead
-  name: Lingering Stamina Mead
-  type: cooking
-  station: mead-ketill
-  stationLevel: 1
-  ingredients:
-    - { itemId: sap, qty: 10 }
-    - { itemId: cloudberries, qty: 10 }
-    - { itemId: jotun-puffs, qty: 10 }
-  yields: { itemId: lingering-stamina-mead, qty: 6 }
-  secondaryStep:
-    station: fermenter
-    description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, stamina, tier-6]
-
-# Mead Ketill level 2 (requires Spice Rack equivalent)
-- id: medium-healing-mead
-  name: Medium Healing Mead
-  type: cooking
-  station: mead-ketill
-  stationLevel: 1
-  ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: bloodbag, qty: 4 }
-    - { itemId: raspberries, qty: 10 }
-    - { itemId: dandelion, qty: 1 }
-  yields: { itemId: medium-healing-mead, qty: 6 }
-  secondaryStep:
-    station: fermenter
-    description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, heal, tier-3]
-
-- id: medium-stamina-mead
-  name: Medium Stamina Mead
-  type: cooking
-  station: mead-ketill
-  stationLevel: 1
-  ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: cloudberries, qty: 10 }
-    - { itemId: yellow-mushroom, qty: 10 }
-  yields: { itemId: medium-stamina-mead, qty: 6 }
-  secondaryStep:
-    station: fermenter
-    description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, stamina, tier-3]
+  mead:
+    effect:
+      resist: poison
+    duration: 600
+    cooldown: 600
+  tags: [mead, resistance, tier-1, meadows]
 
 - id: frost-resistance-mead
   name: Frost Resistance Mead
@@ -644,7 +731,12 @@
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, resistance, tier-3]
+  mead:
+    effect:
+      resist: frost
+    duration: 600
+    cooldown: 600
+  tags: [mead, resistance, tier-3, swamp]
 
 - id: fire-resistance-barley-wine
   name: Fire Resistance Barley Wine
@@ -658,19 +750,195 @@
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, resistance, tier-5]
+  mead:
+    effect:
+      resist: fire
+    duration: 600
+    cooldown: 600
+  tags: [mead, resistance, tier-5, plains]
 
-- id: major-healing-mead
-  name: Major Healing Mead
+- id: tasty-mead
+  name: Tasty Mead
   type: cooking
   station: mead-ketill
   stationLevel: 1
   ingredients:
     - { itemId: honey, qty: 10 }
-    - { itemId: blood-clot, qty: 4 }
-    - { itemId: royal-jelly, qty: 5 }
-  yields: { itemId: major-healing-mead, qty: 6 }
+    - { itemId: raspberries, qty: 10 }
+    - { itemId: blueberries, qty: 5 }
+  yields: { itemId: tasty-mead, qty: 6 }
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
-  tags: [mead, heal, tier-6]
+  mead:
+    effect:
+      healthRegen: -0.5
+      staminaRegen: 1.0
+    duration: 10
+    cooldown: 10
+  tags: [mead, utility, tier-1, meadows]
+
+- id: berserkir-mead
+  name: Berserkir Mead
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: mushroom, qty: 10 }
+    - { itemId: yellow-mushroom, qty: 10 }
+    - { itemId: toadstool, qty: 1 }
+  yields: { itemId: berserkir-mead, qty: 3 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×3."
+  mead:
+    effect:
+      effects:
+        - "Attack, Block and Dodge Stamina use -80%"
+        - "Weak (×1.5) against Slash, Blunt and Pierce damage"
+    duration: 20
+    cooldown: 120
+  tags: [mead, utility, tier-3, swamp]
+
+- id: anti-sting-concoction
+  name: Anti-Sting Concoction
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: cloudberries, qty: 10 }
+    - { itemId: grouper, qty: 3 }
+    - { itemId: fragrant-bundle, qty: 1 }
+  yields: { itemId: anti-sting-concoction, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      effects:
+        - "Prevent Deathsquito attacks"
+    duration: 600
+    cooldown: 0
+  tags: [mead, utility, tier-5, plains]
+
+- id: draught-of-vananidir
+  name: Draught of Vananidir
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: dandelion, qty: 10 }
+    - { itemId: perch, qty: 2 }
+    - { itemId: fresh-seaweed, qty: 1 }
+  yields: { itemId: draught-of-vananidir, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      effects:
+        - "-50% swimming stamina consumption"
+    duration: 300
+    cooldown: 0
+  tags: [mead, utility, tier-1, meadows]
+
+- id: tonic-of-ratatosk
+  name: Tonic of Ratatosk
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: honey, qty: 10 }
+    - { itemId: blueberries, qty: 10 }
+    - { itemId: cured-squirrel-hamstring, qty: 1 }
+  yields: { itemId: tonic-of-ratatosk, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      effects:
+        - "+15% walking and running speed"
+        - "+7.5% swimming speed"
+    duration: 600
+    cooldown: 0
+  tags: [mead, utility, tier-2, black-forest]
+
+- id: mead-of-troll-endurance
+  name: Mead of Troll Endurance
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: trollfish, qty: 2 }
+    - { itemId: honey, qty: 10 }
+    - { itemId: powdered-dragon-eggshells, qty: 1 }
+  yields: { itemId: mead-of-troll-endurance, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      effects:
+        - "+250 carry weight"
+    duration: 300
+    cooldown: 120
+  tags: [mead, utility, tier-4, mountain]
+
+- id: brew-of-animal-whispers
+  name: Brew of Animal Whispers
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: onion, qty: 5 }
+    - { itemId: carrot, qty: 10 }
+    - { itemId: pungent-pebbles, qty: 1 }
+  yields: { itemId: brew-of-animal-whispers, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      effects:
+        - "×2 Taming speed"
+    duration: 600
+    cooldown: 0
+  tags: [mead, utility, tier-5, plains]
+
+- id: lightfoot-mead
+  name: Lightfoot Mead
+  type: cooking
+  station: mead-ketill
+  stationLevel: 1
+  ingredients:
+    - { itemId: scale-hide, qty: 2 }
+    - { itemId: feathers, qty: 5 }
+    - { itemId: magecap, qty: 5 }
+  yields: { itemId: lightfoot-mead, qty: 6 }
+  secondaryStep:
+    station: fermenter
+    description: "Ferment for 2 in-game days. Produces ×6."
+  mead:
+    effect:
+      effects:
+        - "-30% jump stamina cost"
+        - "+20% jump height"
+    duration: 600
+    cooldown: 0
+  tags: [mead, utility, tier-6, mistlands]
+
+- id: love-potion
+  name: Love Potion
+  type: cooking
+  station: found
+  stationLevel: 1
+  yields: { itemId: love-potion, qty: 5 }
+  mead:
+    effect:
+      effects:
+        - "Increases Troll spawning"
+    duration: 300
+    cooldown: 0
+  tags: [mead, utility, tier-2, black-forest]
+  notes: "Purchased from Haldor for 110 Coins."

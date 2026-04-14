@@ -171,7 +171,7 @@ export const RecipeSchema = z.object({
   station: z.string().min(1),
   stationLevel: z.number().int().positive(),
   repairLevel: z.number().int().positive().optional(),
-  ingredients: z.array(IngredientRefSchema),
+  ingredients: z.array(IngredientRefSchema).optional(),
   yields: IngredientRefSchema.optional(),
   skill: z.string().optional(),
   tags: z.array(z.string()).optional(),
