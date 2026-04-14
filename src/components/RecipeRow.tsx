@@ -98,9 +98,7 @@ export const RecipeRow: Component<Props> = (props) => {
           </Show>
           <Show when={isColVisible('stats')}>
             <span class="recipe-row__stats-cell">
-              {formatStatSummary(props.recipe) && (
-                <span class="recipe-row__stat-badge">{formatStatSummary(props.recipe)}</span>
-              )}
+              {formatStatSummary(props.recipe) ?? ''}
             </span>
           </Show>
         </button>

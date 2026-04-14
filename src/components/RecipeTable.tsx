@@ -379,7 +379,7 @@ export const RecipeTable: Component<Props> = (props) => {
     const parts = ['2fr']; // Name always visible
     if (isColVisible('station')) parts.push('1.5fr');
     if (isColVisible('ingredients')) parts.push('3fr');
-    if (isColVisible('stats')) parts.push('auto');
+    if (isColVisible('stats')) parts.push('minmax(80px, auto)');
     parts.push('62px'); // Cart always visible
     return parts.join(' ');
   };

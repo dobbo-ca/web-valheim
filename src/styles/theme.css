@@ -437,6 +437,8 @@ h3 {
 .recipe-row__stats-cell {
   display: flex;
   align-items: center;
+  font-size: 12px;
+  color: var(--text-soft);
 }
 .recipe-row__station-level-short {
   display: none;
