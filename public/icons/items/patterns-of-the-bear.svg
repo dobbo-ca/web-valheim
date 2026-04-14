@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Bear hide chest piece -->
+  <polygon points="6,10 42,10 44,42 4,42" fill="#8B5A3A"/>
+  <polygon points="6,10 42,10 40,16 8,16" fill="#A0722A"/>
+  <!-- Shoulders -->
+  <rect x="4" y="10" width="10" height="12" rx="2" fill="#6B4226"/>
+  <rect x="34" y="10" width="10" height="12" rx="2" fill="#6B4226"/>
+  <!-- Fur pattern -->
+  <rect x="12" y="18" width="8" height="6" fill="#6B4226"/>
+  <rect x="22" y="18" width="8" height="6" fill="#6B4226"/>
+  <rect x="32" y="18" width="6" height="6" fill="#6B4226"/>
+  <rect x="16" y="28" width="8" height="6" fill="#6B4226"/>
+  <rect x="26" y="28" width="8" height="6" fill="#6B4226"/>
+  <!-- Belt -->
+  <rect x="8" y="36" width="32" height="4" fill="#4A2A16"/>
+</svg>
