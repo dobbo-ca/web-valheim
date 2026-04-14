@@ -6,13 +6,14 @@ import type { Station } from '../lib/types';
 interface TagGroup {
   label: string;
   icon: string;
-  tags: string[];
+  classTag: string;       // classification tag toggled by the group chip (e.g. 'weapon')
+  subtags: string[];      // individual sub-type chips
 }
 
 const tagGroups: TagGroup[] = [
-  { label: 'Weapons', icon: 'weapons', tags: ['sword', 'axe', 'mace', 'spear', 'knife', 'atgeir', 'sledge', 'battleaxe', 'club', 'fists'] },
-  { label: 'Projectiles', icon: 'projectiles', tags: ['bow', 'crossbow', 'arrow', 'bolt', 'staff'] },
-  { label: 'Armor', icon: 'armor', tags: ['helmet', 'chest', 'legs', 'cape', 'shield', 'tower-shield'] },
+  { label: 'Weapons', icon: 'weapons', classTag: 'weapon', subtags: ['sword', 'axe', 'mace', 'spear', 'knife', 'atgeir', 'sledge', 'battleaxe', 'club', 'fists'] },
+  { label: 'Projectiles', icon: 'projectiles', classTag: 'weapon', subtags: ['bow', 'crossbow', 'arrow', 'bolt', 'staff'] },
+  { label: 'Armor', icon: 'armor', classTag: 'armor', subtags: ['helmet', 'chest', 'legs', 'cape', 'shield', 'tower-shield'] },
 ];
 
 const standaloneTags = ['tool', 'station-upgrade', 'utility', 'magic', 'elemental', 'building'];
@@ -75,18 +76,24 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
 
   const toggleGroup = (group: TagGroup) => {
     const current = props.state.tags;
-    const allSelected = group.tags.every((t) => current.includes(t));
-    const next = allSelected
-      ? current.filter((t) => !group.tags.includes(t))
-      : [...new Set([...current, ...group.tags])];
+    const active = current.includes(group.classTag);
+    let next: string[];
+    if (active) {
+      // Remove the classification tag and any of its subtags
+      const remove = new Set([group.classTag, ...group.subtags]);
+      next = current.filter((t) => !remove.has(t));
+    } else {
+      // Add just the classification tag (remove any subtags that would AND-conflict)
+      next = [...current.filter((t) => !group.subtags.includes(t)), group.classTag];
+    }
     update({ tags: next });
   };
 
   const isGroupActive = (group: TagGroup) =>
-    group.tags.every((t) => props.state.tags.includes(t));
+    props.state.tags.includes(group.classTag);
 
   const isGroupPartial = (group: TagGroup) =>
-    !isGroupActive(group) && group.tags.some((t) => props.state.tags.includes(t));
+    !isGroupActive(group) && group.subtags.some((t) => props.state.tags.includes(t));
 
   const stationsWithUpgrades = () =>
     props.stations.filter((s) => s.upgrades.length > 0);
@@ -176,7 +183,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                   <FilterIcon name={group.icon} />
                   {group.label}
                 </button>
-                <For each={group.tags}>
+                <For each={group.subtags}>
                   {(tag) => (
                     <button
                       type="button"
