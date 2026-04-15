@@ -1375,8 +1375,8 @@ h3 {
 .adv-filter__label { font-size: calc(9px * var(--text-scale)); }
 .adv-filter__clear { font-size: calc(11px * var(--text-scale)); padding: calc(4px * var(--text-scale)) calc(10px * var(--text-scale)); }
 .adv-filter select { font-size: calc(12px * var(--text-scale)); padding: calc(6px * var(--text-scale)) calc(10px * var(--text-scale)); }
-.filter-chip--sm { font-size: calc(11px * var(--text-scale)); padding: calc(4px * var(--text-scale)) calc(10px * var(--text-scale)); }
-.filter-chip { font-size: calc(12px * var(--text-scale)); padding: calc(8px * var(--text-scale)) calc(14px * var(--text-scale)); }
+.filter-chip--sm { font-size: calc(11px * var(--text-scale)); padding: calc(3px * var(--text-scale)) calc(6px * var(--text-scale)); }
+.filter-chip { font-size: calc(12px * var(--text-scale)); padding: calc(5px * var(--text-scale)) calc(8px * var(--text-scale)); }
 .filter-icon { width: calc(16px * var(--text-scale)); height: calc(16px * var(--text-scale)); }
 .adv-filter__tag-group-label { font-size: calc(11px * var(--text-scale)); }
 .adv-filter__station-level { font-size: calc(12px * var(--text-scale)); }
