@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Crossed swords -->
+  <!-- Sword 1 (top-left to bottom-right) -->
+  <polygon points="8,4 12,4 38,30 42,34 38,38 34,34 8,8" fill="#C0C0C0"/>
+  <polygon points="8,4 12,4 14,6 10,6" fill="#E0E0E0"/>
+  <rect x="32" y="32" width="4" height="8" fill="#8B6D4A"/>
+  <!-- Sword 2 (top-right to bottom-left) -->
+  <polygon points="40,4 36,4 10,30 6,34 10,38 14,34 40,8" fill="#A0A0A0"/>
+  <polygon points="40,4 36,4 34,6 38,6" fill="#D0D0D0"/>
+  <rect x="12" y="32" width="4" height="8" fill="#8B6D4A"/>
+  <!-- Crossguards -->
+  <rect x="28" y="28" width="10" height="3" fill="#A0602A"/>
+  <rect x="10" y="28" width="10" height="3" fill="#A0602A"/>
+</svg>

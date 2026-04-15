@@ -2,6 +2,12 @@ import { describe, it, expect } from 'vitest';
 import { resolve } from 'node:path';
 import { loadAll } from '../src/lib/loader';
 
+const CLASSIFICATION_TAGS = ['melee', 'ranged', 'ammo', 'armor', 'tool', 'build', 'food', 'mead'] as const;
+const REMOVED_TAGS = ['weapon', 'club', 'battleaxe', 'sledge', 'tower-shield', 'building', 'one-handed', 'two-handed'] as const;
+const BIOME_TAGS = ['meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands', 'ocean', 'deep-north'] as const;
+const FOOD_STAT_TAGS = ['hp', 'balanced', 'stamina', 'eitr'] as const;
+const MEAD_SUBTYPE_TAGS = ['healing', 'stamina', 'eitr', 'resistance', 'utility'] as const;
+
 describe('real src/data', () => {
   it('loads without errors', async () => {
     const data = await loadAll(resolve(__dirname, '../src/data'));
@@ -10,47 +16,99 @@ describe('real src/data', () => {
     expect(data.recipes.length).toBeGreaterThan(0);
   });
 
-  it('every item has at most one classification tag (weapon, armor, ammo)', async () => {
+  it('every recipe has exactly one classification tag', async () => {
     const data = await loadAll(resolve(__dirname, '../src/data'));
-    const classifications = ['weapon', 'armor', 'ammo'] as const;
-
     const violations: string[] = [];
     for (const recipe of data.recipes) {
       const tags = recipe.tags ?? [];
-      const found = classifications.filter((c) => tags.includes(c));
-      if (found.length > 1) {
-        violations.push(`${recipe.id} has multiple classifications: ${found.join(', ')}`);
+      const found = CLASSIFICATION_TAGS.filter((c) => tags.includes(c));
+      if (found.length !== 1) {
+        violations.push(`${recipe.id} has ${found.length} classifications: [${found.join(', ')}]`);
       }
     }
     expect(violations).toEqual([]);
   });
 
-  it('armor-type items have the armor tag', async () => {
+  it('no recipe has removed tags', async () => {
     const data = await loadAll(resolve(__dirname, '../src/data'));
-    const armorTypes = ['helmet', 'chest', 'legs', 'cape', 'buckler', 'shield', 'tower-shield'];
-
-    const missing: string[] = [];
+    const violations: string[] = [];
     for (const recipe of data.recipes) {
       const tags = recipe.tags ?? [];
-      if (tags.some((t) => armorTypes.includes(t)) && !tags.includes('armor')) {
-        missing.push(recipe.id);
+      const found = REMOVED_TAGS.filter((t) => tags.includes(t));
+      if (found.length > 0) {
+        violations.push(`${recipe.id} has removed tags: [${found.join(', ')}]`);
       }
     }
-    expect(missing).toEqual([]);
+    expect(violations).toEqual([]);
   });
 
-  it('weapon-type items have the weapon tag', async () => {
+  it('every melee or ranged item has exactly one handedness tag', async () => {
     const data = await loadAll(resolve(__dirname, '../src/data'));
-    const weaponTypes = ['sword', 'axe', 'mace', 'polearm', 'bow', 'crossbow', 'knife', 'spear', 'staff', 'fists', 'club', 'battleaxe', 'sledge', 'pickaxe', 'dual-wield'];
-
-    const missing: string[] = [];
+    const violations: string[] = [];
     for (const recipe of data.recipes) {
       const tags = recipe.tags ?? [];
-      if (tags.some((t) => weaponTypes.includes(t)) && !tags.includes('weapon')) {
-        missing.push(recipe.id);
+      if (!tags.includes('melee') && !tags.includes('ranged')) continue;
+      const hand = ['1h', '2h'].filter((h) => tags.includes(h));
+      if (hand.length !== 1) {
+        violations.push(`${recipe.id} has ${hand.length} handedness tags: [${hand.join(', ')}]`);
       }
     }
-    expect(missing).toEqual([]);
+    expect(violations).toEqual([]);
+  });
+
+  it('every recipe has at most one biome tag', async () => {
+    const data = await loadAll(resolve(__dirname, '../src/data'));
+    const violations: string[] = [];
+    for (const recipe of data.recipes) {
+      const tags = recipe.tags ?? [];
+      const found = BIOME_TAGS.filter((b) => tags.includes(b));
+      if (found.length > 1) {
+        violations.push(`${recipe.id} has ${found.length} biome tags: [${found.join(', ')}]`);
+      }
+    }
+    expect(violations).toEqual([]);
+  });
+
+  it('every food item has exactly one stat focus tag', async () => {
+    const data = await loadAll(resolve(__dirname, '../src/data'));
+    const violations: string[] = [];
+    for (const recipe of data.recipes) {
+      const tags = recipe.tags ?? [];
+      if (!tags.includes('food')) continue;
+      const found = FOOD_STAT_TAGS.filter((s) => tags.includes(s));
+      if (found.length !== 1) {
+        violations.push(`${recipe.id} has ${found.length} stat focus tags: [${found.join(', ')}]`);
+      }
+    }
+    expect(violations).toEqual([]);
+  });
+
+  it('every mead item has exactly one mead subtype tag', async () => {
+    const data = await loadAll(resolve(__dirname, '../src/data'));
+    const violations: string[] = [];
+    for (const recipe of data.recipes) {
+      const tags = recipe.tags ?? [];
+      if (!tags.includes('mead')) continue;
+      const found = MEAD_SUBTYPE_TAGS.filter((s) => tags.includes(s));
+      if (found.length !== 1) {
+        violations.push(`${recipe.id} has ${found.length} mead subtype tags: [${found.join(', ')}]`);
+      }
+    }
+    expect(violations).toEqual([]);
+  });
+
+  it('every found item also has a classification tag', async () => {
+    const data = await loadAll(resolve(__dirname, '../src/data'));
+    const violations: string[] = [];
+    for (const recipe of data.recipes) {
+      const tags = recipe.tags ?? [];
+      if (!tags.includes('found')) continue;
+      const cls = CLASSIFICATION_TAGS.filter((c) => tags.includes(c));
+      if (cls.length !== 1) {
+        violations.push(`${recipe.id} is found but has ${cls.length} classifications`);
+      }
+    }
+    expect(violations).toEqual([]);
   });
 
   it('food and mead are mutually exclusive on a recipe', async () => {
@@ -59,20 +117,6 @@ describe('real src/data', () => {
     for (const recipe of data.recipes) {
       if (recipe.food && recipe.mead) {
         violations.push(`${recipe.id} has both food and mead`);
-      }
-    }
-    expect(violations).toEqual([]);
-  });
-
-  it('every food recipe has a biome tag', async () => {
-    const data = await loadAll(resolve(__dirname, '../src/data'));
-    const biomes = ['meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands', 'ocean'];
-    const violations: string[] = [];
-    for (const recipe of data.recipes) {
-      if (!recipe.food && !recipe.mead) continue;
-      const tags = recipe.tags ?? [];
-      if (!tags.some((t) => biomes.includes(t))) {
-        violations.push(recipe.id);
       }
     }
     expect(violations).toEqual([]);
@@ -90,12 +134,12 @@ describe('real src/data', () => {
     expect(violations).toEqual([]);
   });
 
-  it('no recipe has removed food field "regen" (renamed to healPerTick)', async () => {
+  it('no recipe has biome field (migrated to tag)', async () => {
     const data = await loadAll(resolve(__dirname, '../src/data'));
     const violations: string[] = [];
     for (const recipe of data.recipes) {
-      if (recipe.food && 'regen' in recipe.food) {
-        violations.push(recipe.id);
+      if ('biome' in recipe && recipe.biome != null) {
+        violations.push(`${recipe.id} still has biome field: ${recipe.biome}`);
       }
     }
     expect(violations).toEqual([]);

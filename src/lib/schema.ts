@@ -10,7 +10,7 @@ export const ItemCategorySchema = z.enum([
 ]);
 
 export const BiomeSchema = z.enum([
-  'meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands', 'ocean',
+  'meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands', 'ocean', 'deep-north',
 ]);
 
 export const ItemSchema = z.object({
@@ -182,7 +182,6 @@ export const RecipeSchema = z.object({
   stats: WeaponStatsSchema.optional(),                    // base weapon stats
   armorStats: ArmorStatsSchema.optional(),
   upgrades: z.array(ItemUpgradeSchema).optional(),
-  biome: BiomeSchema.optional(),
 });
 
 export const StationsFileSchema = z.array(StationSchema);

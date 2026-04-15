@@ -6,18 +6,18 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: cooked-deer-meat, qty: 2 }
-    - { itemId: cooked-boar-meat, qty: 5 }
-    - { itemId: dandelion, qty: 4 }
-    - { itemId: woodland-herb-blend, qty: 1 }
-  yields: { itemId: whole-roasted-meadow-boar, qty: 10 }
+  - {itemId: cooked-deer-meat, qty: 2}
+  - {itemId: cooked-boar-meat, qty: 5}
+  - {itemId: dandelion, qty: 4}
+  - {itemId: woodland-herb-blend, qty: 1}
+  yields: {itemId: whole-roasted-meadow-boar, qty: 10}
   food:
     hp: 35
     stamina: 35
     healPerTick: 2
     duration: 3000
     weight: 10.0
-  tags: [feast, tier-3, swamp]
+  tags: [food, feast, tier-3, swamp, balanced]
 
 - id: black-forest-buffet-platter
   name: Black Forest Buffet Platter
@@ -25,18 +25,18 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: deer-stew, qty: 3 }
-    - { itemId: thistle, qty: 5 }
-    - { itemId: queens-jam, qty: 4 }
-    - { itemId: woodland-herb-blend, qty: 1 }
-  yields: { itemId: black-forest-buffet-platter, qty: 10 }
+  - {itemId: deer-stew, qty: 3}
+  - {itemId: thistle, qty: 5}
+  - {itemId: queens-jam, qty: 4}
+  - {itemId: woodland-herb-blend, qty: 1}
+  yields: {itemId: black-forest-buffet-platter, qty: 10}
   food:
     hp: 35
     stamina: 35
     healPerTick: 3
     duration: 3000
     weight: 10.0
-  tags: [feast, tier-3, swamp]
+  tags: [food, feast, tier-3, swamp, balanced]
 
 - id: swamp-dwellers-delight
   name: "Swamp Dweller's Delight"
@@ -44,18 +44,18 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: sausages, qty: 8 }
-    - { itemId: bloodbag, qty: 4 }
-    - { itemId: turnip-stew, qty: 2 }
-    - { itemId: woodland-herb-blend, qty: 1 }
-  yields: { itemId: swamp-dwellers-delight, qty: 10 }
+  - {itemId: sausages, qty: 8}
+  - {itemId: bloodbag, qty: 4}
+  - {itemId: turnip-stew, qty: 2}
+  - {itemId: woodland-herb-blend, qty: 1}
+  yields: {itemId: swamp-dwellers-delight, qty: 10}
   food:
     hp: 35
     stamina: 35
     healPerTick: 3
     duration: 3000
     weight: 10.0
-  tags: [feast, tier-3, swamp]
+  tags: [food, feast, tier-3, swamp, balanced]
 
 - id: sailors-bounty
   name: "Sailor's Bounty"
@@ -63,18 +63,18 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: cooked-fish, qty: 5 }
-    - { itemId: thistle, qty: 4 }
-    - { itemId: cooked-serpent-meat, qty: 2 }
-    - { itemId: seafarers-herbs, qty: 1 }
-  yields: { itemId: sailors-bounty, qty: 10 }
+  - {itemId: cooked-fish, qty: 5}
+  - {itemId: thistle, qty: 4}
+  - {itemId: cooked-serpent-meat, qty: 2}
+  - {itemId: seafarers-herbs, qty: 1}
+  yields: {itemId: sailors-bounty, qty: 10}
   food:
     hp: 45
     stamina: 45
     healPerTick: 3
     duration: 3000
     weight: 10.0
-  tags: [feast, tier-3, swamp]
+  tags: [food, feast, tier-3, swamp, balanced]
 
 - id: hearty-mountain-loggers-stew
   name: "Hearty Mountain Logger's Stew"
@@ -82,18 +82,18 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: wolf-skewer, qty: 2 }
-    - { itemId: onion-soup, qty: 3 }
-    - { itemId: carrot, qty: 4 }
-    - { itemId: mountain-peak-pepper-powder, qty: 1 }
-  yields: { itemId: hearty-mountain-loggers-stew, qty: 10 }
+  - {itemId: wolf-skewer, qty: 2}
+  - {itemId: onion-soup, qty: 3}
+  - {itemId: carrot, qty: 4}
+  - {itemId: mountain-peak-pepper-powder, qty: 1}
+  yields: {itemId: hearty-mountain-loggers-stew, qty: 10}
   food:
     hp: 45
     stamina: 45
     healPerTick: 3
     duration: 3000
     weight: 10.0
-  tags: [feast, tier-4, mountain]
+  tags: [food, feast, tier-4, mountain, balanced]
 
 - id: plains-pie-picnic
   name: Plains Pie Picnic
@@ -101,18 +101,18 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: bread, qty: 3 }
-    - { itemId: lox-meat-pie, qty: 2 }
-    - { itemId: cloudberries, qty: 5 }
-    - { itemId: grasslands-herbalist-harvest, qty: 1 }
-  yields: { itemId: plains-pie-picnic, qty: 10 }
+  - {itemId: bread, qty: 3}
+  - {itemId: lox-meat-pie, qty: 2}
+  - {itemId: cloudberries, qty: 5}
+  - {itemId: grasslands-herbalist-harvest, qty: 1}
+  yields: {itemId: plains-pie-picnic, qty: 10}
   food:
     hp: 55
     stamina: 55
     healPerTick: 4
     duration: 3000
     weight: 10.0
-  tags: [feast, tier-5, plains]
+  tags: [food, feast, tier-5, plains, balanced]
 
 - id: mushrooms-galore
   name: "Mushrooms Galore à la Mistlands"
@@ -120,11 +120,11 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: misthare-supreme, qty: 1 }
-    - { itemId: cooked-seeker-meat, qty: 3 }
-    - { itemId: yggdrasil-porridge, qty: 1 }
-    - { itemId: herbs-of-the-hidden-hills, qty: 1 }
-  yields: { itemId: mushrooms-galore, qty: 10 }
+  - {itemId: misthare-supreme, qty: 1}
+  - {itemId: cooked-seeker-meat, qty: 3}
+  - {itemId: yggdrasil-porridge, qty: 1}
+  - {itemId: herbs-of-the-hidden-hills, qty: 1}
+  yields: {itemId: mushrooms-galore, qty: 10}
   food:
     hp: 65
     stamina: 65
@@ -132,7 +132,7 @@
     healPerTick: 5
     duration: 3000
     weight: 10.0
-  tags: [feast, eitr, tier-6, mistlands]
+  tags: [food, feast, eitr, tier-6, mistlands]
 
 - id: ashlands-gourmet-bowl
   name: Ashlands Gourmet Bowl
@@ -140,11 +140,11 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: cooked-asksvin-tail, qty: 3 }
-    - { itemId: vineberry-cluster, qty: 5 }
-    - { itemId: scorching-medley, qty: 2 }
-    - { itemId: fiery-spice-powder, qty: 1 }
-  yields: { itemId: ashlands-gourmet-bowl, qty: 10 }
+  - {itemId: cooked-asksvin-tail, qty: 3}
+  - {itemId: vineberry-cluster, qty: 5}
+  - {itemId: scorching-medley, qty: 2}
+  - {itemId: fiery-spice-powder, qty: 1}
+  yields: {itemId: ashlands-gourmet-bowl, qty: 10}
   food:
     hp: 75
     stamina: 75
@@ -152,4 +152,4 @@
     healPerTick: 6
     duration: 3000
     weight: 10.0
-  tags: [feast, eitr, tier-7, ashlands]
+  tags: [food, feast, eitr, tier-7, ashlands]

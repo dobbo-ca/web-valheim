@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Three arrows bundled -->
+  <!-- Arrow 1 (center) -->
+  <rect x="22" y="12" width="4" height="28" fill="#A0722A"/>
+  <polygon points="24,2 30,14 24,12 18,14" fill="#808080"/>
+  <polygon points="18,40 22,36 22,44" fill="#E8E8E8"/>
+  <polygon points="30,40 26,36 26,44" fill="#E8E8E8"/>
+  <!-- Arrow 2 (left, slight offset) -->
+  <rect x="12" y="16" width="3" height="24" fill="#8B6914"/>
+  <polygon points="13.5,8 17,18 13,16 10,18" fill="#696969"/>
+  <polygon points="10,40 12,36 12,42" fill="#D8D8D8"/>
+  <!-- Arrow 3 (right, slight offset) -->
+  <rect x="33" y="16" width="3" height="24" fill="#8B6914"/>
+  <polygon points="34.5,8 38,18 35,16 31,18" fill="#696969"/>
+  <polygon points="38,40 36,36 36,42" fill="#D8D8D8"/>
+</svg>

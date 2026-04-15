@@ -27,9 +27,9 @@ const PAGE_SIZES = [10, 20, 50, 100] as const;
 const CART_STORAGE_KEY = 'valheim-cart';
 const PAGE_SIZE_KEY = 'valheim-page-size';
 const COLUMNS_KEY = 'valheim-columns';
-const DEFAULT_COLUMNS: ColumnId[] = ['station', 'ingredients', 'stats'];
+const DEFAULT_COLUMNS: ColumnId[] = ['station', 'ingredients'];
 const COL_BITS: Record<ColumnId, number> = { station: 1, ingredients: 2, stats: 4 };
-const DEFAULT_COL_MASK = 7; // all visible
+const DEFAULT_COL_MASK = 3; // station + ingredients visible
 
 function encodeColumns(cols: ColumnId[]): number {
   let mask = 0;

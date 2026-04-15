@@ -6,15 +6,15 @@
   station: cooking-spit
   stationLevel: 1
   ingredients:
-    - { itemId: neck-tail, qty: 1 }
-  yields: { itemId: grilled-neck-tail, qty: 1 }
+  - {itemId: neck-tail, qty: 1}
+  yields: {itemId: grilled-neck-tail, qty: 1}
   food:
     hp: 25
     stamina: 8
     healPerTick: 2
     duration: 1200
     weight: 0.5
-  tags: [food, tier-1, meadows]
+  tags: [food, tier-1, meadows, hp, cooked]
 
 - id: cooked-boar-meat
   name: Cooked Boar Meat
@@ -22,15 +22,15 @@
   station: cooking-spit
   stationLevel: 1
   ingredients:
-    - { itemId: boar-meat, qty: 1 }
-  yields: { itemId: cooked-boar-meat, qty: 1 }
+  - {itemId: boar-meat, qty: 1}
+  yields: {itemId: cooked-boar-meat, qty: 1}
   food:
     hp: 30
     stamina: 10
     healPerTick: 2
     duration: 1200
     weight: 1.0
-  tags: [food, tier-1, meadows]
+  tags: [food, tier-1, meadows, hp, cooked]
 
 - id: cooked-deer-meat
   name: Cooked Deer Meat
@@ -38,15 +38,15 @@
   station: cooking-spit
   stationLevel: 1
   ingredients:
-    - { itemId: deer-meat, qty: 1 }
-  yields: { itemId: cooked-deer-meat, qty: 1 }
+  - {itemId: deer-meat, qty: 1}
+  yields: {itemId: cooked-deer-meat, qty: 1}
   food:
     hp: 35
     stamina: 12
     healPerTick: 2
     duration: 1200
     weight: 1.0
-  tags: [food, tier-1, meadows]
+  tags: [food, tier-1, meadows, hp, cooked]
 
 - id: cooked-fish
   name: Cooked Fish
@@ -54,15 +54,15 @@
   station: cooking-spit
   stationLevel: 1
   ingredients:
-    - { itemId: fish-raw, qty: 1 }
-  yields: { itemId: cooked-fish, qty: 1 }
+  - {itemId: fish-raw, qty: 1}
+  yields: {itemId: cooked-fish, qty: 1}
   food:
     hp: 45
     stamina: 15
     healPerTick: 2
     duration: 1200
     weight: 0.5
-  tags: [food, tier-2, swamp]
+  tags: [food, tier-2, swamp, hp, cooked]
 
 - id: cooked-wolf-meat
   name: Cooked Wolf Meat
@@ -70,15 +70,15 @@
   station: cooking-spit
   stationLevel: 1
   ingredients:
-    - { itemId: wolf-meat, qty: 1 }
-  yields: { itemId: cooked-wolf-meat, qty: 1 }
+  - {itemId: wolf-meat, qty: 1}
+  yields: {itemId: cooked-wolf-meat, qty: 1}
   food:
     hp: 45
     stamina: 15
     healPerTick: 3
     duration: 1200
     weight: 1.0
-  tags: [food, tier-4, mountain]
+  tags: [food, tier-4, mountain, hp, cooked]
 
 - id: cooked-bear-meat
   name: Cooked Bear Meat
@@ -86,15 +86,15 @@
   station: cooking-spit
   stationLevel: 1
   ingredients:
-    - { itemId: bear-meat, qty: 1 }
-  yields: { itemId: cooked-bear-meat, qty: 1 }
+  - {itemId: bear-meat, qty: 1}
+  yields: {itemId: cooked-bear-meat, qty: 1}
   food:
     hp: 40
     stamina: 13
     healPerTick: 2
     duration: 1200
     weight: 1.0
-  tags: [food, tier-2, black-forest]
+  tags: [food, tier-2, black-forest, hp, cooked]
 
 - id: cooked-hare-meat
   name: Cooked Hare Meat
@@ -102,15 +102,15 @@
   station: iron-spit
   stationLevel: 1
   ingredients:
-    - { itemId: hare-meat, qty: 1 }
-  yields: { itemId: cooked-hare-meat, qty: 1 }
+  - {itemId: hare-meat, qty: 1}
+  yields: {itemId: cooked-hare-meat, qty: 1}
   food:
     hp: 60
     stamina: 20
     healPerTick: 5
     duration: 1200
     weight: 1.0
-  tags: [food, tier-6, mistlands]
+  tags: [food, tier-6, mistlands, hp, cooked]
 
 - id: cooked-chicken-meat
   name: Cooked Chicken Meat
@@ -118,15 +118,15 @@
   station: iron-spit
   stationLevel: 1
   ingredients:
-    - { itemId: chicken-meat, qty: 1 }
-  yields: { itemId: cooked-chicken-meat, qty: 1 }
+  - {itemId: chicken-meat, qty: 1}
+  yields: {itemId: cooked-chicken-meat, qty: 1}
   food:
     hp: 60
     stamina: 20
     healPerTick: 5
     duration: 1200
     weight: 1.0
-  tags: [food, tier-5, plains]
+  tags: [food, tier-5, plains, hp, cooked]
 
 # ── Iron Spit ─────────────────────────────────────────────────────────────────
 
@@ -136,15 +136,15 @@
   station: iron-spit
   stationLevel: 1
   ingredients:
-    - { itemId: serpent-meat, qty: 1 }
-  yields: { itemId: cooked-serpent-meat, qty: 1 }
+  - {itemId: serpent-meat, qty: 1}
+  yields: {itemId: cooked-serpent-meat, qty: 1}
   food:
     hp: 70
     stamina: 23
     healPerTick: 3
     duration: 1500
     weight: 10.0
-  tags: [food, tier-3, swamp]
+  tags: [food, tier-3, swamp, hp, cooked]
 
 - id: cooked-lox-meat
   name: Cooked Lox Meat
@@ -152,15 +152,15 @@
   station: iron-spit
   stationLevel: 1
   ingredients:
-    - { itemId: lox-meat, qty: 1 }
-  yields: { itemId: cooked-lox-meat, qty: 1 }
+  - {itemId: lox-meat, qty: 1}
+  yields: {itemId: cooked-lox-meat, qty: 1}
   food:
     hp: 50
     stamina: 16
     healPerTick: 4
     duration: 1200
     weight: 1.0
-  tags: [food, tier-5, plains]
+  tags: [food, tier-5, plains, hp, cooked]
 
 - id: cooked-seeker-meat
   name: Cooked Seeker Meat
@@ -168,15 +168,15 @@
   station: iron-spit
   stationLevel: 1
   ingredients:
-    - { itemId: seeker-meat, qty: 1 }
-  yields: { itemId: cooked-seeker-meat, qty: 1 }
+  - {itemId: seeker-meat, qty: 1}
+  yields: {itemId: cooked-seeker-meat, qty: 1}
   food:
     hp: 60
     stamina: 20
     healPerTick: 5
     duration: 1200
     weight: 1.0
-  tags: [food, tier-6, mistlands]
+  tags: [food, tier-6, mistlands, hp, cooked]
 
 - id: cooked-bonemaw-meat
   name: Cooked Bonemaw Meat
@@ -184,15 +184,15 @@
   station: iron-spit
   stationLevel: 1
   ingredients:
-    - { itemId: bonemaw-meat, qty: 1 }
-  yields: { itemId: cooked-bonemaw-meat, qty: 1 }
+  - {itemId: bonemaw-meat, qty: 1}
+  yields: {itemId: cooked-bonemaw-meat, qty: 1}
   food:
     hp: 90
     stamina: 30
     healPerTick: 6
     duration: 1500
     weight: 10.0
-  tags: [food, tier-7, ashlands]
+  tags: [food, tier-7, ashlands, hp, cooked]
 
 - id: cooked-asksvin-tail
   name: Cooked Asksvin Tail
@@ -200,15 +200,15 @@
   station: iron-spit
   stationLevel: 1
   ingredients:
-    - { itemId: asksvin-tail, qty: 1 }
-  yields: { itemId: cooked-asksvin-tail, qty: 1 }
+  - {itemId: asksvin-tail, qty: 1}
+  yields: {itemId: cooked-asksvin-tail, qty: 1}
   food:
     hp: 70
     stamina: 24
     healPerTick: 6
     duration: 1200
     weight: 1.0
-  tags: [food, tier-7, ashlands]
+  tags: [food, tier-7, ashlands, hp, cooked]
 
 - id: cooked-volture-meat
   name: Cooked Volture Meat
@@ -216,12 +216,12 @@
   station: iron-spit
   stationLevel: 1
   ingredients:
-    - { itemId: volture-meat, qty: 1 }
-  yields: { itemId: cooked-volture-meat, qty: 1 }
+  - {itemId: volture-meat, qty: 1}
+  yields: {itemId: cooked-volture-meat, qty: 1}
   food:
     hp: 70
     stamina: 24
     healPerTick: 6
     duration: 1200
     weight: 1.0
-  tags: [food, tier-7, ashlands]
+  tags: [food, tier-7, ashlands, hp, cooked]

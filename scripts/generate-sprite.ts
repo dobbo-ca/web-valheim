@@ -15,6 +15,7 @@ import { resolve, join } from 'node:path';
 
 const ITEMS_DIR = resolve(import.meta.dirname, '../public/icons/items');
 const FILTERS_DIR = resolve(import.meta.dirname, '../public/icons/filters');
+const DAMAGE_DIR = resolve(import.meta.dirname, '../public/icons/damage');
 const OUTPUT_DIR = resolve(import.meta.dirname, '../public/icons');
 const MANIFEST = join(OUTPUT_DIR, 'sprite-manifest.json');
 
@@ -22,6 +23,7 @@ const MANIFEST = join(OUTPUT_DIR, 'sprite-manifest.json');
 const iconSources: { dir: string; prefix: string }[] = [
   { dir: ITEMS_DIR, prefix: '' },
   { dir: FILTERS_DIR, prefix: 'filter-' },
+  { dir: DAMAGE_DIR, prefix: 'filter-' },
 ];
 
 const symbols: string[] = [];

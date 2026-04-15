@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Small round shield -->
+  <circle cx="24" cy="24" r="16" fill="#CD7F32"/>
+  <circle cx="24" cy="24" r="13" fill="#DAA06D"/>
+  <!-- Cross bands -->
+  <rect x="22" y="10" width="4" height="28" fill="#CD7F32"/>
+  <rect x="10" y="22" width="28" height="4" fill="#CD7F32"/>
+  <!-- Center boss -->
+  <circle cx="24" cy="24" r="4" fill="#C4A84A"/>
+  <circle cx="24" cy="24" r="2" fill="#A08830"/>
+</svg>

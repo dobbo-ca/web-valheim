@@ -25,7 +25,7 @@ const data: DataSet = {
         { itemId: 'iron', qty: 60 },
         { itemId: 'wood', qty: 2 },
       ],
-      tags: ['sword'],
+      tags: ['melee', 'sword'],
     },
     {
       id: 'queens-jam',
@@ -37,6 +37,7 @@ const data: DataSet = {
         { itemId: 'raspberries', qty: 8 },
         { itemId: 'blueberries', qty: 6 },
       ],
+      tags: ['food', 'cooked'],
     },
   ],
 };
@@ -50,15 +51,6 @@ describe('RecipeTable', () => {
   it('renders all recipes by default', () => {
     render(() => <RecipeTable data={data} baseHref="/valheim/" />);
     expect(screen.getByText('Iron Sword')).toBeInTheDocument();
-    expect(screen.getByText('Queens Jam')).toBeInTheDocument();
-  });
-
-  it('filters by type chip', () => {
-    render(() => <RecipeTable data={data} baseHref="/valheim/" />);
-    // Open the advanced filter panel first, then click the type chip
-    fireEvent.click(screen.getByRole('button', { name: /Filters/ }));
-    fireEvent.click(screen.getByRole('button', { name: 'Cooking' }));
-    expect(screen.queryByText('Iron Sword')).toBeNull();
     expect(screen.getByText('Queens Jam')).toBeInTheDocument();
   });
 
@@ -81,14 +73,13 @@ describe('RecipeTable', () => {
 
   it('syncs filter state to URL query params', () => {
     render(() => <RecipeTable data={data} baseHref="/valheim/" />);
-    // Open the advanced filter panel first, then click the type chip
-    fireEvent.click(screen.getByRole('button', { name: /Filters/ }));
-    fireEvent.click(screen.getByRole('button', { name: 'Cooking' }));
-    expect(window.location.search).toContain('type=cooking');
+    const input = screen.getByRole('searchbox') as HTMLInputElement;
+    fireEvent.input(input, { target: { value: 'jam' } });
+    expect(window.location.search).toContain('q=jam');
   });
 
   it('reads initial state from URL query params', () => {
-    window.history.replaceState({}, '', '/valheim/?type=cooking');
+    window.history.replaceState({}, '', '/valheim/?q=jam');
     render(() => <RecipeTable data={data} baseHref="/valheim/" />);
     expect(screen.queryByText('Iron Sword')).toBeNull();
     expect(screen.getByText('Queens Jam')).toBeInTheDocument();

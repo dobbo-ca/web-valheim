@@ -4,16 +4,16 @@
   station: cauldron
   stationLevel: 1
   ingredients:
-    - { itemId: raspberries, qty: 8 }
-    - { itemId: blueberries, qty: 6 }
-  yields: { itemId: queens-jam, qty: 4 }
+  - {itemId: raspberries, qty: 8}
+  - {itemId: blueberries, qty: 6}
+  yields: {itemId: queens-jam, qty: 4}
   food:
     hp: 14
     stamina: 40
     healPerTick: 2
     duration: 1200
     weight: 1.0
-  tags: [food, tier-2, black-forest]
+  tags: [food, tier-2, black-forest, stamina, cooked]
 
 - id: carrot-soup
   name: Carrot Soup
@@ -21,16 +21,16 @@
   station: cauldron
   stationLevel: 1
   ingredients:
-    - { itemId: mushroom, qty: 1 }
-    - { itemId: carrot, qty: 3 }
-  yields: { itemId: carrot-soup, qty: 1 }
+  - {itemId: mushroom, qty: 1}
+  - {itemId: carrot, qty: 3}
+  yields: {itemId: carrot-soup, qty: 1}
   food:
     hp: 15
     stamina: 45
     healPerTick: 2
     duration: 1500
     weight: 1.0
-  tags: [food, stamina, tier-2, black-forest]
+  tags: [food, stamina, tier-2, black-forest, cooked]
 
 - id: minced-meat-sauce
   name: Minced Meat Sauce
@@ -38,17 +38,17 @@
   station: cauldron
   stationLevel: 1
   ingredients:
-    - { itemId: boar-meat, qty: 1 }
-    - { itemId: neck-tail, qty: 1 }
-    - { itemId: carrot, qty: 1 }
-  yields: { itemId: minced-meat-sauce, qty: 1 }
+  - {itemId: boar-meat, qty: 1}
+  - {itemId: neck-tail, qty: 1}
+  - {itemId: carrot, qty: 1}
+  yields: {itemId: minced-meat-sauce, qty: 1}
   food:
     hp: 40
     stamina: 13
     healPerTick: 3
     duration: 1500
     weight: 1.0
-  tags: [food, hp, tier-2, black-forest]
+  tags: [food, hp, tier-2, black-forest, cooked]
 
 - id: deer-stew
   name: Deer Stew
@@ -56,17 +56,17 @@
   station: cauldron
   stationLevel: 1
   ingredients:
-    - { itemId: blueberries, qty: 1 }
-    - { itemId: carrot, qty: 1 }
-    - { itemId: cooked-deer-meat, qty: 1 }
-  yields: { itemId: deer-stew, qty: 1 }
+  - {itemId: blueberries, qty: 1}
+  - {itemId: carrot, qty: 1}
+  - {itemId: cooked-deer-meat, qty: 1}
+  yields: {itemId: deer-stew, qty: 1}
   food:
     hp: 45
     stamina: 15
     healPerTick: 3
     duration: 1500
     weight: 1.0
-  tags: [food, hp, tier-2, black-forest]
+  tags: [food, hp, tier-2, black-forest, cooked]
 
 - id: cooked-egg
   name: Cooked Egg
@@ -74,15 +74,15 @@
   station: cauldron
   stationLevel: 1
   ingredients:
-    - { itemId: egg, qty: 1 }
-  yields: { itemId: cooked-egg, qty: 1 }
+  - {itemId: egg, qty: 1}
+  yields: {itemId: cooked-egg, qty: 1}
   food:
     hp: 35
     stamina: 12
     healPerTick: 2
     duration: 1200
     weight: 1.0
-  tags: [food, tier-5, plains]
+  tags: [food, tier-5, plains, hp, cooked]
 
 - id: boar-jerky
   name: Boar Jerky
@@ -90,16 +90,16 @@
   station: cauldron
   stationLevel: 1
   ingredients:
-    - { itemId: boar-meat, qty: 1 }
-    - { itemId: honey, qty: 1 }
-  yields: { itemId: boar-jerky, qty: 2 }
+  - {itemId: boar-meat, qty: 1}
+  - {itemId: honey, qty: 1}
+  yields: {itemId: boar-jerky, qty: 2}
   food:
     hp: 23
     stamina: 23
     healPerTick: 2
     duration: 1800
     weight: 0.5
-  tags: [food, sustain, tier-2, black-forest]
+  tags: [food, tier-2, black-forest, balanced, cooked]
 
 # Cauldron level 2
 - id: turnip-stew
@@ -108,16 +108,16 @@
   station: cauldron
   stationLevel: 2
   ingredients:
-    - { itemId: boar-meat, qty: 1 }
-    - { itemId: turnip, qty: 3 }
-  yields: { itemId: turnip-stew, qty: 1 }
+  - {itemId: boar-meat, qty: 1}
+  - {itemId: turnip, qty: 3}
+  yields: {itemId: turnip-stew, qty: 1}
   food:
     hp: 18
     stamina: 55
     healPerTick: 2
     duration: 1500
     weight: 1.0
-  tags: [food, stamina, tier-3, swamp]
+  tags: [food, stamina, tier-3, swamp, cooked]
 
 - id: sausages
   name: Sausages
@@ -125,17 +125,17 @@
   station: cauldron
   stationLevel: 2
   ingredients:
-    - { itemId: entrails, qty: 4 }
-    - { itemId: boar-meat, qty: 1 }
-    - { itemId: thistle, qty: 1 }
-  yields: { itemId: sausages, qty: 4 }
+  - {itemId: entrails, qty: 4}
+  - {itemId: boar-meat, qty: 1}
+  - {itemId: thistle, qty: 1}
+  yields: {itemId: sausages, qty: 4}
   food:
     hp: 55
     stamina: 18
     healPerTick: 3
     duration: 1500
     weight: 0.5
-  tags: [food, hp, tier-3, swamp]
+  tags: [food, hp, tier-3, swamp, cooked]
 
 - id: muckshake
   name: Muckshake
@@ -143,17 +143,17 @@
   station: cauldron
   stationLevel: 2
   ingredients:
-    - { itemId: ooze, qty: 1 }
-    - { itemId: raspberries, qty: 2 }
-    - { itemId: blueberries, qty: 2 }
-  yields: { itemId: muckshake, qty: 1 }
+  - {itemId: ooze, qty: 1}
+  - {itemId: raspberries, qty: 2}
+  - {itemId: blueberries, qty: 2}
+  yields: {itemId: muckshake, qty: 1}
   food:
     hp: 16
     stamina: 50
     healPerTick: 1
     duration: 1200
     weight: 1.0
-  tags: [food, stamina, tier-3, swamp]
+  tags: [food, stamina, tier-3, swamp, cooked]
 
 - id: black-soup
   name: Black Soup
@@ -161,17 +161,17 @@
   station: cauldron
   stationLevel: 2
   ingredients:
-    - { itemId: bloodbag, qty: 1 }
-    - { itemId: honey, qty: 1 }
-    - { itemId: turnip, qty: 1 }
-  yields: { itemId: black-soup, qty: 1 }
+  - {itemId: bloodbag, qty: 1}
+  - {itemId: honey, qty: 1}
+  - {itemId: turnip, qty: 1}
+  yields: {itemId: black-soup, qty: 1}
   food:
     hp: 50
     stamina: 17
     healPerTick: 3
     duration: 1200
     weight: 1.0
-  tags: [food, hp, tier-3, swamp]
+  tags: [food, hp, tier-3, swamp, cooked]
 
 - id: serpent-stew
   name: Serpent Stew
@@ -179,17 +179,17 @@
   station: cauldron
   stationLevel: 2
   ingredients:
-    - { itemId: mushroom, qty: 1 }
-    - { itemId: cooked-serpent-meat, qty: 1 }
-    - { itemId: honey, qty: 2 }
-  yields: { itemId: serpent-stew, qty: 1 }
+  - {itemId: mushroom, qty: 1}
+  - {itemId: cooked-serpent-meat, qty: 1}
+  - {itemId: honey, qty: 2}
+  yields: {itemId: serpent-stew, qty: 1}
   food:
     hp: 80
     stamina: 26
     healPerTick: 4
     duration: 1800
     weight: 1.0
-  tags: [food, hp, tier-3, swamp]
+  tags: [food, hp, tier-3, swamp, cooked]
 
 - id: onion-soup
   name: Onion Soup
@@ -197,15 +197,15 @@
   station: cauldron
   stationLevel: 2
   ingredients:
-    - { itemId: onion, qty: 3 }
-  yields: { itemId: onion-soup, qty: 1 }
+  - {itemId: onion, qty: 3}
+  yields: {itemId: onion-soup, qty: 1}
   food:
     hp: 20
     stamina: 60
     healPerTick: 1
     duration: 1200
     weight: 1.0
-  tags: [food, stamina, tier-4, mountain]
+  tags: [food, stamina, tier-4, mountain, cooked]
 
 # Cauldron level 3
 - id: wolf-jerky
@@ -214,16 +214,16 @@
   station: cauldron
   stationLevel: 3
   ingredients:
-    - { itemId: wolf-meat, qty: 1 }
-    - { itemId: honey, qty: 1 }
-  yields: { itemId: wolf-jerky, qty: 2 }
+  - {itemId: wolf-meat, qty: 1}
+  - {itemId: honey, qty: 1}
+  yields: {itemId: wolf-jerky, qty: 2}
   food:
     hp: 33
     stamina: 33
     healPerTick: 3
     duration: 1800
     weight: 0.5
-  tags: [food, sustain, tier-4, mountain]
+  tags: [food, tier-4, mountain, balanced, cooked]
 
 - id: wolf-skewer
   name: Wolf Skewer
@@ -231,17 +231,17 @@
   station: cauldron
   stationLevel: 3
   ingredients:
-    - { itemId: wolf-meat, qty: 1 }
-    - { itemId: mushroom, qty: 2 }
-    - { itemId: onion, qty: 1 }
-  yields: { itemId: wolf-skewer, qty: 1 }
+  - {itemId: wolf-meat, qty: 1}
+  - {itemId: mushroom, qty: 2}
+  - {itemId: onion, qty: 1}
+  yields: {itemId: wolf-skewer, qty: 1}
   food:
     hp: 65
     stamina: 21
     healPerTick: 3
     duration: 1500
     weight: 0.5
-  tags: [food, hp, tier-4, mountain]
+  tags: [food, hp, tier-4, mountain, cooked]
 
 - id: eyescream
   name: Eyescream
@@ -249,16 +249,16 @@
   station: cauldron
   stationLevel: 3
   ingredients:
-    - { itemId: greydwarf-eye, qty: 3 }
-    - { itemId: freeze-gland, qty: 1 }
-  yields: { itemId: eyescream, qty: 1 }
+  - {itemId: greydwarf-eye, qty: 3}
+  - {itemId: freeze-gland, qty: 1}
+  yields: {itemId: eyescream, qty: 1}
   food:
     hp: 21
     stamina: 65
     healPerTick: 1
     duration: 1500
     weight: 0.5
-  tags: [food, stamina, tier-4, mountain]
+  tags: [food, stamina, tier-4, mountain, cooked]
 
 # Cauldron level 4
 - id: blood-pudding
@@ -267,17 +267,17 @@
   station: cauldron
   stationLevel: 4
   ingredients:
-    - { itemId: thistle, qty: 2 }
-    - { itemId: bloodbag, qty: 2 }
-    - { itemId: barley-flour, qty: 4 }
-  yields: { itemId: blood-pudding, qty: 1 }
+  - {itemId: thistle, qty: 2}
+  - {itemId: bloodbag, qty: 2}
+  - {itemId: barley-flour, qty: 4}
+  yields: {itemId: blood-pudding, qty: 1}
   food:
     hp: 25
     stamina: 75
     healPerTick: 2
     duration: 1800
     weight: 1.0
-  tags: [food, stamina, tier-5, plains]
+  tags: [food, stamina, tier-5, plains, cooked]
 
 - id: fish-wraps
   name: Fish Wraps
@@ -285,16 +285,16 @@
   station: cauldron
   stationLevel: 4
   ingredients:
-    - { itemId: cooked-fish, qty: 2 }
-    - { itemId: barley-flour, qty: 4 }
-  yields: { itemId: fish-wraps, qty: 1 }
+  - {itemId: cooked-fish, qty: 2}
+  - {itemId: barley-flour, qty: 4}
+  yields: {itemId: fish-wraps, qty: 1}
   food:
     hp: 70
     stamina: 23
     healPerTick: 4
     duration: 1500
     weight: 1.0
-  tags: [food, hp, tier-5, plains]
+  tags: [food, hp, tier-5, plains, cooked]
 
 # Cauldron level 5
 - id: salad
@@ -303,17 +303,17 @@
   station: cauldron
   stationLevel: 5
   ingredients:
-    - { itemId: jotun-puffs, qty: 3 }
-    - { itemId: onion, qty: 3 }
-    - { itemId: cloudberries, qty: 3 }
-  yields: { itemId: salad, qty: 3 }
+  - {itemId: jotun-puffs, qty: 3}
+  - {itemId: onion, qty: 3}
+  - {itemId: cloudberries, qty: 3}
+  yields: {itemId: salad, qty: 3}
   food:
     hp: 26
     stamina: 80
     healPerTick: 3
     duration: 1500
     weight: 1.0
-  tags: [food, stamina, tier-6, mistlands]
+  tags: [food, stamina, tier-6, mistlands, cooked]
 
 - id: mushroom-omelette
   name: Mushroom Omelette
@@ -321,16 +321,16 @@
   station: cauldron
   stationLevel: 5
   ingredients:
-    - { itemId: egg, qty: 3 }
-    - { itemId: jotun-puffs, qty: 3 }
-  yields: { itemId: mushroom-omelette, qty: 1 }
+  - {itemId: egg, qty: 3}
+  - {itemId: jotun-puffs, qty: 3}
+  yields: {itemId: mushroom-omelette, qty: 1}
   food:
     hp: 28
     stamina: 85
     healPerTick: 3
     duration: 1500
     weight: 1.0
-  tags: [food, stamina, tier-6, mistlands]
+  tags: [food, stamina, tier-6, mistlands, cooked]
 
 - id: yggdrasil-porridge
   name: Yggdrasil Porridge
@@ -338,10 +338,10 @@
   station: cauldron
   stationLevel: 5
   ingredients:
-    - { itemId: sap, qty: 4 }
-    - { itemId: barley, qty: 3 }
-    - { itemId: royal-jelly, qty: 2 }
-  yields: { itemId: yggdrasil-porridge, qty: 1 }
+  - {itemId: sap, qty: 4}
+  - {itemId: barley, qty: 3}
+  - {itemId: royal-jelly, qty: 2}
+  yields: {itemId: yggdrasil-porridge, qty: 1}
   food:
     hp: 27
     stamina: 13
@@ -349,7 +349,7 @@
     healPerTick: 3
     duration: 1500
     weight: 1.0
-  tags: [food, eitr, tier-6, mistlands]
+  tags: [food, eitr, tier-6, mistlands, cooked]
 
 - id: seeker-aspic
   name: Seeker Aspic
@@ -357,10 +357,10 @@
   station: cauldron
   stationLevel: 5
   ingredients:
-    - { itemId: seeker-meat, qty: 2 }
-    - { itemId: magecap, qty: 2 }
-    - { itemId: royal-jelly, qty: 2 }
-  yields: { itemId: seeker-aspic, qty: 2 }
+  - {itemId: seeker-meat, qty: 2}
+  - {itemId: magecap, qty: 2}
+  - {itemId: royal-jelly, qty: 2}
+  yields: {itemId: seeker-aspic, qty: 2}
   food:
     hp: 28
     stamina: 14
@@ -368,7 +368,7 @@
     healPerTick: 3
     duration: 1800
     weight: 1.0
-  tags: [food, eitr, tier-6, mistlands]
+  tags: [food, eitr, tier-6, mistlands, cooked]
 
 - id: fiery-svinstew
   name: Fiery Svinstew
@@ -376,17 +376,17 @@
   station: cauldron
   stationLevel: 5
   ingredients:
-    - { itemId: asksvin-tail, qty: 1 }
-    - { itemId: vineberry-cluster, qty: 2 }
-    - { itemId: smoke-puff, qty: 1 }
-  yields: { itemId: fiery-svinstew, qty: 1 }
+  - {itemId: asksvin-tail, qty: 1}
+  - {itemId: vineberry-cluster, qty: 2}
+  - {itemId: smoke-puff, qty: 1}
+  yields: {itemId: fiery-svinstew, qty: 1}
   food:
     hp: 95
     stamina: 32
     healPerTick: 6
     duration: 1500
     weight: 1.0
-  tags: [food, hp, tier-7, ashlands]
+  tags: [food, hp, tier-7, ashlands, cooked]
 
 - id: spicy-marmalade
   name: Spicy Marmalade
@@ -394,17 +394,17 @@
   station: cauldron
   stationLevel: 5
   ingredients:
-    - { itemId: vineberry-cluster, qty: 3 }
-    - { itemId: honey, qty: 1 }
-    - { itemId: fiddlehead, qty: 1 }
-  yields: { itemId: spicy-marmalade, qty: 1 }
+  - {itemId: vineberry-cluster, qty: 3}
+  - {itemId: honey, qty: 1}
+  - {itemId: fiddlehead, qty: 1}
+  yields: {itemId: spicy-marmalade, qty: 1}
   food:
     hp: 30
     stamina: 90
     healPerTick: 4
     duration: 1500
     weight: 1.0
-  tags: [food, stamina, tier-7, ashlands]
+  tags: [food, stamina, tier-7, ashlands, cooked]
 
 - id: sizzling-berry-broth
   name: Sizzling Berry Broth
@@ -412,10 +412,10 @@
   station: cauldron
   stationLevel: 5
   ingredients:
-    - { itemId: sap, qty: 3 }
-    - { itemId: vineberry-cluster, qty: 2 }
-    - { itemId: fiddlehead, qty: 2 }
-  yields: { itemId: sizzling-berry-broth, qty: 1 }
+  - {itemId: sap, qty: 3}
+  - {itemId: vineberry-cluster, qty: 2}
+  - {itemId: fiddlehead, qty: 2}
+  yields: {itemId: sizzling-berry-broth, qty: 1}
   food:
     hp: 28
     stamina: 14
@@ -423,7 +423,7 @@
     healPerTick: 4
     duration: 1500
     weight: 1.0
-  tags: [food, eitr, tier-7, ashlands]
+  tags: [food, eitr, tier-7, ashlands, cooked]
 
 # Cauldron level 6
 - id: scorching-medley
@@ -432,17 +432,17 @@
   station: cauldron
   stationLevel: 6
   ingredients:
-    - { itemId: jotun-puffs, qty: 3 }
-    - { itemId: onion, qty: 3 }
-    - { itemId: fiddlehead, qty: 3 }
-  yields: { itemId: scorching-medley, qty: 3 }
+  - {itemId: jotun-puffs, qty: 3}
+  - {itemId: onion, qty: 3}
+  - {itemId: fiddlehead, qty: 3}
+  yields: {itemId: scorching-medley, qty: 3}
   food:
     hp: 32
     stamina: 95
     healPerTick: 4
     duration: 1500
     weight: 1.0
-  tags: [food, stamina, tier-7, ashlands]
+  tags: [food, stamina, tier-7, ashlands, cooked]
 
 - id: mashed-meat
   name: Mashed Meat
@@ -450,17 +450,17 @@
   station: cauldron
   stationLevel: 6
   ingredients:
-    - { itemId: asksvin-tail, qty: 1 }
-    - { itemId: volture-meat, qty: 1 }
-    - { itemId: fiddlehead, qty: 1 }
-  yields: { itemId: mashed-meat, qty: 1 }
+  - {itemId: asksvin-tail, qty: 1}
+  - {itemId: volture-meat, qty: 1}
+  - {itemId: fiddlehead, qty: 1}
+  yields: {itemId: mashed-meat, qty: 1}
   food:
     hp: 100
     stamina: 34
     healPerTick: 6
     duration: 1500
     weight: 1.0
-  tags: [food, hp, tier-7, ashlands]
+  tags: [food, hp, tier-7, ashlands, cooked]
 
 - id: sparkling-shroomshake
   name: Sparkling Shroomshake
@@ -468,11 +468,11 @@
   station: cauldron
   stationLevel: 6
   ingredients:
-    - { itemId: sap, qty: 4 }
-    - { itemId: magecap, qty: 2 }
-    - { itemId: vineberry-cluster, qty: 2 }
-    - { itemId: smoke-puff, qty: 2 }
-  yields: { itemId: sparkling-shroomshake, qty: 1 }
+  - {itemId: sap, qty: 4}
+  - {itemId: magecap, qty: 2}
+  - {itemId: vineberry-cluster, qty: 2}
+  - {itemId: smoke-puff, qty: 2}
+  yields: {itemId: sparkling-shroomshake, qty: 1}
   food:
     hp: 30
     stamina: 15
@@ -480,7 +480,7 @@
     healPerTick: 4
     duration: 1500
     weight: 1.0
-  tags: [food, eitr, tier-7, ashlands]
+  tags: [food, eitr, tier-7, ashlands, cooked]
 
 - id: marinated-greens
   name: Marinated Greens
@@ -488,11 +488,11 @@
   station: cauldron
   stationLevel: 6
   ingredients:
-    - { itemId: sap, qty: 3 }
-    - { itemId: magecap, qty: 2 }
-    - { itemId: fiddlehead, qty: 2 }
-    - { itemId: smoke-puff, qty: 2 }
-  yields: { itemId: marinated-greens, qty: 1 }
+  - {itemId: sap, qty: 3}
+  - {itemId: magecap, qty: 2}
+  - {itemId: fiddlehead, qty: 2}
+  - {itemId: smoke-puff, qty: 2}
+  yields: {itemId: marinated-greens, qty: 1}
   food:
     hp: 32
     stamina: 16
@@ -500,7 +500,7 @@
     healPerTick: 4
     duration: 1800
     weight: 1.0
-  tags: [food, eitr, tier-7, ashlands]
+  tags: [food, eitr, tier-7, ashlands, cooked]
 
 # ── Meads ─────────────────────────────────────────────────────────────────────
 
@@ -510,11 +510,11 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: blueberries, qty: 5 }
-    - { itemId: raspberries, qty: 10 }
-    - { itemId: dandelion, qty: 1 }
-  yields: { itemId: minor-healing-mead, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: blueberries, qty: 5}
+  - {itemId: raspberries, qty: 10}
+  - {itemId: dandelion, qty: 1}
+  yields: {itemId: minor-healing-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -524,7 +524,7 @@
     duration: 10
     cooldown: 120
     cooldownGroup: healing
-  tags: [mead, instant-heal, tier-1, meadows]
+  tags: [mead, tier-1, meadows, healing]
 
 - id: medium-healing-mead
   name: Medium Healing Mead
@@ -532,11 +532,11 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: bloodbag, qty: 4 }
-    - { itemId: raspberries, qty: 10 }
-    - { itemId: dandelion, qty: 1 }
-  yields: { itemId: medium-healing-mead, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: bloodbag, qty: 4}
+  - {itemId: raspberries, qty: 10}
+  - {itemId: dandelion, qty: 1}
+  yields: {itemId: medium-healing-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -546,7 +546,7 @@
     duration: 10
     cooldown: 120
     cooldownGroup: healing
-  tags: [mead, instant-heal, tier-3, swamp]
+  tags: [mead, tier-3, swamp, healing]
 
 - id: major-healing-mead
   name: Major Healing Mead
@@ -554,10 +554,10 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: blood-clot, qty: 4 }
-    - { itemId: royal-jelly, qty: 5 }
-  yields: { itemId: major-healing-mead, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: blood-clot, qty: 4}
+  - {itemId: royal-jelly, qty: 5}
+  yields: {itemId: major-healing-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -567,7 +567,7 @@
     duration: 10
     cooldown: 120
     cooldownGroup: healing
-  tags: [mead, instant-heal, tier-6, mistlands]
+  tags: [mead, tier-6, mistlands, healing]
 
 - id: lingering-healing-mead
   name: Lingering Healing Mead
@@ -575,10 +575,10 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: sap, qty: 10 }
-    - { itemId: vineberry-cluster, qty: 10 }
-    - { itemId: smoke-puff, qty: 10 }
-  yields: { itemId: lingering-healing-mead, qty: 6 }
+  - {itemId: sap, qty: 10}
+  - {itemId: vineberry-cluster, qty: 10}
+  - {itemId: smoke-puff, qty: 10}
+  yields: {itemId: lingering-healing-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -588,7 +588,7 @@
     duration: 300
     cooldown: 300
     cooldownGroup: healing
-  tags: [mead, regen, tier-7, ashlands]
+  tags: [mead, tier-7, ashlands, healing]
 
 - id: minor-stamina-mead
   name: Minor Stamina Mead
@@ -596,10 +596,10 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: raspberries, qty: 10 }
-    - { itemId: yellow-mushroom, qty: 10 }
-  yields: { itemId: minor-stamina-mead, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: raspberries, qty: 10}
+  - {itemId: yellow-mushroom, qty: 10}
+  yields: {itemId: minor-stamina-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -609,7 +609,7 @@
     duration: 2
     cooldown: 120
     cooldownGroup: stamina
-  tags: [mead, instant-stamina, tier-1, meadows]
+  tags: [mead, tier-1, meadows, stamina]
 
 - id: medium-stamina-mead
   name: Medium Stamina Mead
@@ -617,10 +617,10 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: cloudberries, qty: 10 }
-    - { itemId: yellow-mushroom, qty: 10 }
-  yields: { itemId: medium-stamina-mead, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: cloudberries, qty: 10}
+  - {itemId: yellow-mushroom, qty: 10}
+  yields: {itemId: medium-stamina-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -630,7 +630,7 @@
     duration: 2
     cooldown: 120
     cooldownGroup: stamina
-  tags: [mead, instant-stamina, tier-5, plains]
+  tags: [mead, tier-5, plains, stamina]
 
 - id: lingering-stamina-mead
   name: Lingering Stamina Mead
@@ -638,10 +638,10 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: sap, qty: 10 }
-    - { itemId: cloudberries, qty: 10 }
-    - { itemId: jotun-puffs, qty: 10 }
-  yields: { itemId: lingering-stamina-mead, qty: 6 }
+  - {itemId: sap, qty: 10}
+  - {itemId: cloudberries, qty: 10}
+  - {itemId: jotun-puffs, qty: 10}
+  yields: {itemId: lingering-stamina-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -651,7 +651,7 @@
     duration: 300
     cooldown: 300
     cooldownGroup: stamina
-  tags: [mead, regen, tier-6, mistlands]
+  tags: [mead, tier-6, mistlands, stamina]
 
 - id: minor-eitr-mead
   name: Minor Eitr Mead
@@ -659,11 +659,11 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: sap, qty: 5 }
-    - { itemId: jotun-puffs, qty: 2 }
-    - { itemId: magecap, qty: 5 }
-  yields: { itemId: minor-eitr-mead, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: sap, qty: 5}
+  - {itemId: jotun-puffs, qty: 2}
+  - {itemId: magecap, qty: 5}
+  yields: {itemId: minor-eitr-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -673,7 +673,7 @@
     duration: 10
     cooldown: 120
     cooldownGroup: eitr
-  tags: [mead, instant-eitr, tier-6, mistlands]
+  tags: [mead, tier-6, mistlands, eitr]
 
 - id: lingering-eitr-mead
   name: Lingering Eitr Mead
@@ -681,10 +681,10 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: sap, qty: 10 }
-    - { itemId: vineberry-cluster, qty: 10 }
-    - { itemId: magecap, qty: 10 }
-  yields: { itemId: lingering-eitr-mead, qty: 6 }
+  - {itemId: sap, qty: 10}
+  - {itemId: vineberry-cluster, qty: 10}
+  - {itemId: magecap, qty: 10}
+  yields: {itemId: lingering-eitr-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -694,7 +694,7 @@
     duration: 300
     cooldown: 300
     cooldownGroup: eitr
-  tags: [mead, regen, tier-7, ashlands]
+  tags: [mead, tier-7, ashlands, eitr]
 
 - id: poison-resistance-mead
   name: Poison Resistance Mead
@@ -702,11 +702,11 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: thistle, qty: 5 }
-    - { itemId: neck-tail, qty: 1 }
-    - { itemId: coal, qty: 10 }
-  yields: { itemId: poison-resistance-mead, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: thistle, qty: 5}
+  - {itemId: neck-tail, qty: 1}
+  - {itemId: coal, qty: 10}
+  yields: {itemId: poison-resistance-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -715,7 +715,7 @@
       resist: poison
     duration: 600
     cooldown: 600
-  tags: [mead, resistance, tier-1, meadows]
+  tags: [mead, tier-1, meadows, resistance]
 
 - id: frost-resistance-mead
   name: Frost Resistance Mead
@@ -723,11 +723,11 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: thistle, qty: 5 }
-    - { itemId: bloodbag, qty: 2 }
-    - { itemId: greydwarf-eye, qty: 1 }
-  yields: { itemId: frost-resistance-mead, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: thistle, qty: 5}
+  - {itemId: bloodbag, qty: 2}
+  - {itemId: greydwarf-eye, qty: 1}
+  yields: {itemId: frost-resistance-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -736,7 +736,7 @@
       resist: frost
     duration: 600
     cooldown: 600
-  tags: [mead, resistance, tier-3, swamp]
+  tags: [mead, tier-3, swamp, resistance]
 
 - id: fire-resistance-barley-wine
   name: Fire Resistance Barley Wine
@@ -744,9 +744,9 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: barley, qty: 10 }
-    - { itemId: cloudberries, qty: 10 }
-  yields: { itemId: fire-resistance-barley-wine, qty: 6 }
+  - {itemId: barley, qty: 10}
+  - {itemId: cloudberries, qty: 10}
+  yields: {itemId: fire-resistance-barley-wine, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -755,7 +755,7 @@
       resist: fire
     duration: 600
     cooldown: 600
-  tags: [mead, resistance, tier-5, plains]
+  tags: [mead, tier-5, plains, resistance]
 
 - id: tasty-mead
   name: Tasty Mead
@@ -763,10 +763,10 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: raspberries, qty: 10 }
-    - { itemId: blueberries, qty: 5 }
-  yields: { itemId: tasty-mead, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: raspberries, qty: 10}
+  - {itemId: blueberries, qty: 5}
+  yields: {itemId: tasty-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
@@ -776,7 +776,7 @@
       staminaRegen: 1.0
     duration: 10
     cooldown: 10
-  tags: [mead, utility, tier-1, meadows]
+  tags: [mead, tier-1, meadows, utility]
 
 - id: berserkir-mead
   name: Berserkir Mead
@@ -784,21 +784,21 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: mushroom, qty: 10 }
-    - { itemId: yellow-mushroom, qty: 10 }
-    - { itemId: toadstool, qty: 1 }
-  yields: { itemId: berserkir-mead, qty: 3 }
+  - {itemId: mushroom, qty: 10}
+  - {itemId: yellow-mushroom, qty: 10}
+  - {itemId: toadstool, qty: 1}
+  yields: {itemId: berserkir-mead, qty: 3}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×3."
   mead:
     effect:
       effects:
-        - "Attack, Block and Dodge Stamina use -80%"
-        - "Weak (×1.5) against Slash, Blunt and Pierce damage"
+      - "Attack, Block and Dodge Stamina use -80%"
+      - "Weak (×1.5) against Slash, Blunt and Pierce damage"
     duration: 20
     cooldown: 120
-  tags: [mead, utility, tier-3, swamp]
+  tags: [mead, tier-3, swamp, utility]
 
 - id: anti-sting-concoction
   name: Anti-Sting Concoction
@@ -806,20 +806,20 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: cloudberries, qty: 10 }
-    - { itemId: grouper, qty: 3 }
-    - { itemId: fragrant-bundle, qty: 1 }
-  yields: { itemId: anti-sting-concoction, qty: 6 }
+  - {itemId: cloudberries, qty: 10}
+  - {itemId: grouper, qty: 3}
+  - {itemId: fragrant-bundle, qty: 1}
+  yields: {itemId: anti-sting-concoction, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
   mead:
     effect:
       effects:
-        - "Prevent Deathsquito attacks"
+      - "Prevent Deathsquito attacks"
     duration: 600
     cooldown: 0
-  tags: [mead, utility, tier-5, plains]
+  tags: [mead, tier-5, plains, utility]
 
 - id: draught-of-vananidir
   name: Draught of Vananidir
@@ -827,20 +827,20 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: dandelion, qty: 10 }
-    - { itemId: perch, qty: 2 }
-    - { itemId: fresh-seaweed, qty: 1 }
-  yields: { itemId: draught-of-vananidir, qty: 6 }
+  - {itemId: dandelion, qty: 10}
+  - {itemId: perch, qty: 2}
+  - {itemId: fresh-seaweed, qty: 1}
+  yields: {itemId: draught-of-vananidir, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
   mead:
     effect:
       effects:
-        - "-50% swimming stamina consumption"
+      - "-50% swimming stamina consumption"
     duration: 300
     cooldown: 0
-  tags: [mead, utility, tier-1, meadows]
+  tags: [mead, tier-1, meadows, utility]
 
 - id: tonic-of-ratatosk
   name: Tonic of Ratatosk
@@ -848,21 +848,21 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: honey, qty: 10 }
-    - { itemId: blueberries, qty: 10 }
-    - { itemId: cured-squirrel-hamstring, qty: 1 }
-  yields: { itemId: tonic-of-ratatosk, qty: 6 }
+  - {itemId: honey, qty: 10}
+  - {itemId: blueberries, qty: 10}
+  - {itemId: cured-squirrel-hamstring, qty: 1}
+  yields: {itemId: tonic-of-ratatosk, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
   mead:
     effect:
       effects:
-        - "+15% walking and running speed"
-        - "+7.5% swimming speed"
+      - "+15% walking and running speed"
+      - "+7.5% swimming speed"
     duration: 600
     cooldown: 0
-  tags: [mead, utility, tier-2, black-forest]
+  tags: [mead, tier-2, black-forest, utility]
 
 - id: mead-of-troll-endurance
   name: Mead of Troll Endurance
@@ -870,20 +870,20 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: trollfish, qty: 2 }
-    - { itemId: honey, qty: 10 }
-    - { itemId: powdered-dragon-eggshells, qty: 1 }
-  yields: { itemId: mead-of-troll-endurance, qty: 6 }
+  - {itemId: trollfish, qty: 2}
+  - {itemId: honey, qty: 10}
+  - {itemId: powdered-dragon-eggshells, qty: 1}
+  yields: {itemId: mead-of-troll-endurance, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
   mead:
     effect:
       effects:
-        - "+250 carry weight"
+      - "+250 carry weight"
     duration: 300
     cooldown: 120
-  tags: [mead, utility, tier-4, mountain]
+  tags: [mead, tier-4, mountain, utility]
 
 - id: brew-of-animal-whispers
   name: Brew of Animal Whispers
@@ -891,20 +891,20 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: onion, qty: 5 }
-    - { itemId: carrot, qty: 10 }
-    - { itemId: pungent-pebbles, qty: 1 }
-  yields: { itemId: brew-of-animal-whispers, qty: 6 }
+  - {itemId: onion, qty: 5}
+  - {itemId: carrot, qty: 10}
+  - {itemId: pungent-pebbles, qty: 1}
+  yields: {itemId: brew-of-animal-whispers, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
   mead:
     effect:
       effects:
-        - "×2 Taming speed"
+      - "×2 Taming speed"
     duration: 600
     cooldown: 0
-  tags: [mead, utility, tier-5, plains]
+  tags: [mead, tier-5, plains, utility]
 
 - id: lightfoot-mead
   name: Lightfoot Mead
@@ -912,33 +912,33 @@
   station: mead-ketill
   stationLevel: 1
   ingredients:
-    - { itemId: scale-hide, qty: 2 }
-    - { itemId: feathers, qty: 5 }
-    - { itemId: magecap, qty: 5 }
-  yields: { itemId: lightfoot-mead, qty: 6 }
+  - {itemId: scale-hide, qty: 2}
+  - {itemId: feathers, qty: 5}
+  - {itemId: magecap, qty: 5}
+  yields: {itemId: lightfoot-mead, qty: 6}
   secondaryStep:
     station: fermenter
     description: "Ferment for 2 in-game days. Produces ×6."
   mead:
     effect:
       effects:
-        - "-30% jump stamina cost"
-        - "+20% jump height"
+      - "-30% jump stamina cost"
+      - "+20% jump height"
     duration: 600
     cooldown: 0
-  tags: [mead, utility, tier-6, mistlands]
+  tags: [mead, tier-6, mistlands, utility]
 
 - id: love-potion
   name: Love Potion
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: love-potion, qty: 5 }
+  yields: {itemId: love-potion, qty: 5}
   mead:
     effect:
       effects:
-        - "Increases Troll spawning"
+      - "Increases Troll spawning"
     duration: 300
     cooldown: 0
-  tags: [mead, utility, tier-2, black-forest]
+  tags: [mead, tier-2, black-forest, utility]
   notes: "Purchased from Haldor for 110 Coins."

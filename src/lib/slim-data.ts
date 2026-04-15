@@ -3,7 +3,7 @@ import type { DataSet } from './loader';
 
 /**
  * Fields needed for the initial list render:
- * - id, name, type, station, stationLevel, ingredients, tags, biome, yields
+ * - id, name, type, station, stationLevel, ingredients, tags, yields
  * - food stats (shown in list expansion)
  * - armorStats.armor (shown as "X armor" in stats column)
  * - stats.primaryAttack.damage (shown as damage summary in stats column)
@@ -19,7 +19,6 @@ export function slimRecipe(r: Recipe): Recipe {
     ingredients: r.ingredients ?? [],
   };
   if (r.tags) slim.tags = r.tags;
-  if (r.biome) slim.biome = r.biome;
   if (r.yields) slim.yields = r.yields;
   if (r.food) slim.food = r.food;
   if (r.notes) slim.notes = r.notes;

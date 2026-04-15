@@ -25,7 +25,7 @@ describe('loadAll', () => {
       type: 'building',
       station: 'forge',
       stationLevel: 2,
-      tags: ['station-upgrade'],
+      tags: ['build', 'station-upgrade'],
     });
     expect(building[0].ingredients).toEqual([{ itemId: 'deer-hide', qty: 5 }]);
   });

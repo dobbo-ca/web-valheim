@@ -1,40 +1,18 @@
-import { For, type Component } from 'solid-js';
+import { For, Show, type Component } from 'solid-js';
 import type { FilterState } from '../lib/filter';
 import { emptyFilterState } from '../lib/filter';
 import type { Station } from '../lib/types';
-
-interface TagGroup {
-  label: string;
-  icon: string;
-  classTag: string;       // classification tag toggled by the group chip (e.g. 'weapon')
-  subtags: string[];      // individual sub-type chips
-}
-
-const tagGroups: TagGroup[] = [
-  { label: 'Weapons', icon: 'weapons', classTag: 'weapon', subtags: ['sword', 'axe', 'mace', 'spear', 'knife', 'atgeir', 'sledge', 'battleaxe', 'club', 'fists'] },
-  { label: 'Projectiles', icon: 'projectiles', classTag: 'weapon', subtags: ['bow', 'crossbow', 'arrow', 'bolt', 'staff'] },
-  { label: 'Armor', icon: 'armor', classTag: 'armor', subtags: ['helmet', 'chest', 'legs', 'cape', 'shield', 'tower-shield'] },
-];
-
-const standaloneTags = ['tool', 'station-upgrade', 'utility', 'magic', 'elemental', 'building'];
-
-const biomes: { label: string; value: string }[] = [
-  { label: 'Meadows', value: 'meadows' },
-  { label: 'Black Forest', value: 'black-forest' },
-  { label: 'Swamp', value: 'swamp' },
-  { label: 'Mountain', value: 'mountain' },
-  { label: 'Plains', value: 'plains' },
-  { label: 'Mistlands', value: 'mistlands' },
-  { label: 'Ashlands', value: 'ashlands' },
-  { label: 'Ocean', value: 'ocean' },
-  { label: 'Deep North', value: 'deep-north' },
-];
-
-const typeIcons: Record<string, string> = {
-  crafting: 'crafting',
-  cooking: 'cooking',
-  building: 'building',
-};
+import {
+  categories,
+  biomes,
+  foodStatFocus,
+  handedness,
+  damageTypes,
+  categorySubFilters,
+  defaultSubFilters,
+  tagDisplayNames,
+  type SubFilterKey,
+} from '../lib/filter-categories';
 
 interface Props {
   state: FilterState;
@@ -49,61 +27,90 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
       <use href={`${props.spriteHref ?? ''}#filter-${iconProps.name}`} />
     </svg>
   );
+
   const update = (patch: Partial<FilterState>) =>
     props.onChange({ ...props.state, ...patch });
 
-  const typeChips: Array<{ value: FilterState['type']; label: string }> = [
-    { value: 'all', label: 'All' },
-    { value: 'crafting', label: 'Crafting' },
-    { value: 'cooking', label: 'Cooking' },
-    { value: 'building', label: 'Building' },
-    { value: 'found', label: 'Found' },
-  ];
+  // ── Tag helpers ──────────────────────────────────────────────────────────
+  const hasTags = (...tags: string[]) =>
+    tags.every((t) => props.state.tags.includes(t));
 
-  const toggleTag = (tag: string) => {
-    const current = props.state.tags;
-    const next = current.includes(tag)
-      ? current.filter((t) => t !== tag)
-      : [...current, tag];
-    update({ tags: next });
+  const activeCategory = () =>
+    categories.find((c) => hasTags(c.tag)) ?? null;
+
+  const visibleSubFilters = (): SubFilterKey[] => {
+    const cat = activeCategory();
+    return cat ? (categorySubFilters[cat.tag] ?? defaultSubFilters) : defaultSubFilters;
   };
 
-  const toggleBiome = (biome: string) => {
-    const current = props.state.biomes;
-    const next = current.includes(biome)
-      ? current.filter((b) => b !== biome)
-      : [...current, biome];
-    update({ biomes: next });
-  };
+  const isSubFilterVisible = (key: SubFilterKey) =>
+    visibleSubFilters().includes(key);
 
-  const toggleGroup = (group: TagGroup) => {
-    const current = props.state.tags;
-    const active = current.includes(group.classTag);
-    let next: string[];
-    if (active) {
-      // Remove the classification tag and any of its subtags
-      const remove = new Set([group.classTag, ...group.subtags]);
-      next = current.filter((t) => !remove.has(t));
+  // ── Single-select within a group ─────────────────────────────────────────
+  const selectExclusive = (tag: string, group: string[]) => {
+    const current = props.state.tags.filter((t) => !group.includes(t));
+    if (hasTags(tag)) {
+      update({ tags: current });
     } else {
-      // Add just the classification tag (remove any subtags that would AND-conflict)
-      next = [...current.filter((t) => !group.subtags.includes(t)), group.classTag];
+      update({ tags: [...current, tag] });
     }
-    update({ tags: next });
   };
 
-  const isGroupActive = (group: TagGroup) =>
-    props.state.tags.includes(group.classTag);
+  // ── Category selection ───────────────────────────────────────────────────
+  const selectCategory = (tag: string) => {
+    const categoryTags = categories.map((c) => c.tag);
+    const allSubtypes = categories.flatMap((c) => c.subtypes);
+    const allSubFilters = [
+      ...handedness.map((h) => h.tag),
+      ...foodStatFocus.map((f) => f.tag),
+      ...damageTypes.map((d) => d.tag),
+      'found',
+    ];
+    const clearSet = new Set([...categoryTags, ...allSubtypes, ...allSubFilters]);
+    const base = props.state.tags.filter((t) => !clearSet.has(t));
 
-  const isGroupPartial = (group: TagGroup) =>
-    !isGroupActive(group) && group.subtags.some((t) => props.state.tags.includes(t));
+    if (hasTags(tag)) {
+      update({ tags: base });
+    } else {
+      update({ tags: [...base, tag] });
+    }
+  };
 
+  const selectSubtype = (tag: string) => {
+    const cat = activeCategory();
+    if (!cat) return;
+    selectExclusive(tag, cat.subtypes);
+  };
+
+  const selectBiome = (tag: string) =>
+    selectExclusive(tag, biomes.map((b) => b.tag));
+
+  const selectHandedness = (tag: string) =>
+    selectExclusive(tag, handedness.map((h) => h.tag));
+
+  const selectStatFocus = (tag: string) =>
+    selectExclusive(tag, foodStatFocus.map((f) => f.tag));
+
+  const toggleModifier = (tag: string) => {
+    const current = props.state.tags;
+    if (current.includes(tag)) {
+      update({ tags: current.filter((t) => t !== tag) });
+    } else {
+      update({ tags: [...current, tag] });
+    }
+  };
+
+  const toggleFound = () => toggleModifier('found');
+
+  // ── Advanced section ─────────────────────────────────────────────────────
   const stationsWithUpgrades = () =>
     props.stations.filter((s) => s.upgrades.length > 0);
 
-  const setCeiling = (stationId: string, level: number) => {
-    const next = { ...props.state.stationCeilings, [stationId]: level };
-    update({ stationCeilings: next });
-  };
+  const getCeiling = (station: Station): number =>
+    props.state.stationCeilings[station.id] ?? station.maxLevel;
+
+  const setCeiling = (stationId: string, level: number) =>
+    update({ stationCeilings: { ...props.state.stationCeilings, [stationId]: level } });
 
   const clearCeiling = (stationId: string) => {
     const next = { ...props.state.stationCeilings };
@@ -111,35 +118,18 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
     update({ stationCeilings: next });
   };
 
-  const getCeiling = (station: Station): number =>
-    props.state.stationCeilings[station.id] ?? station.maxLevel;
-
   const hasAnyFilter = () =>
-    props.state.type !== 'all' ||
-    props.state.station !== 'all' ||
     props.state.tags.length > 0 ||
-    props.state.biomes.length > 0 ||
+    props.state.station !== 'all' ||
     Object.keys(props.state.stationCeilings).length > 0 ||
     props.state.query.length > 0;
 
   return (
     <div class="adv-filter">
+      {/* ── Categories ──────────────────────────────────────────────── */}
       <div class="adv-filter__section">
-        <span class="adv-filter__label">Type</span>
-        <div class="adv-filter__tags" role="group" aria-label="Recipe type">
-          <For each={typeChips}>
-            {(chip) => (
-              <button
-                type="button"
-                class="filter-chip filter-chip--sm"
-                classList={{ 'filter-chip--active': props.state.type === chip.value }}
-                onClick={() => update({ type: chip.value })}
-              >
-                {typeIcons[chip.value] && <FilterIcon name={typeIcons[chip.value]} />}
-                {chip.label}
-              </button>
-            )}
-          </For>
+        <div class="adv-filter__section-header">
+          <span class="adv-filter__label">Category</span>
           <button
             type="button"
             class="adv-filter__clear"
@@ -150,125 +140,209 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
             ✕ Clear
           </button>
         </div>
-      </div>
-
-      <div class="adv-filter__section">
-        <span class="adv-filter__label">Station</span>
-        <select
-          aria-label="Station"
-          value={props.state.station}
-          onChange={(e) => update({ station: e.currentTarget.value })}
-        >
-          <option value="all">All stations</option>
-          <For each={props.stations}>
-            {(s) => <option value={s.id}>{s.name}</option>}
+        <div class="adv-filter__tags" role="radiogroup" aria-label="Item category">
+          <For each={categories}>
+            {(cat) => (
+              <button
+                type="button"
+                class="filter-chip filter-chip--sm"
+                classList={{ 'filter-chip--active': hasTags(cat.tag) }}
+                onClick={() => selectCategory(cat.tag)}
+                role="radio"
+                aria-checked={hasTags(cat.tag)}
+              >
+                <FilterIcon name={cat.tag} />
+                {cat.label}
+              </button>
+            )}
           </For>
-        </select>
+        </div>
       </div>
 
-      <div class="adv-filter__section">
-        <span class="adv-filter__label">Categories</span>
-        <For each={tagGroups}>
-          {(group) => (
-            <div class="adv-filter__tag-group">
-              <div class="adv-filter__tags">
+      {/* ── Sub-types ───────────────────────────────────────────────── */}
+      <Show when={activeCategory()?.subtypes.length}>
+        <div class="adv-filter__section">
+          <span class="adv-filter__label">Type</span>
+          <div class="adv-filter__tags" role="radiogroup" aria-label="Sub-type">
+            <For each={activeCategory()!.subtypes}>
+              {(sub) => (
                 <button
                   type="button"
-                  class="filter-chip filter-chip--sm filter-chip--group"
-                  classList={{
-                    'filter-chip--active': isGroupActive(group),
-                    'filter-chip--partial': isGroupPartial(group),
-                  }}
-                  onClick={() => toggleGroup(group)}
-                  aria-label={`Toggle all ${group.label}`}
+                  class="filter-chip filter-chip--sm"
+                  classList={{ 'filter-chip--active': hasTags(sub) }}
+                  onClick={() => selectSubtype(sub)}
+                  role="radio"
+                  aria-checked={hasTags(sub)}
                 >
-                  <FilterIcon name={group.icon} />
-                  {group.label}
+                  <FilterIcon name={sub} />
+                  {tagDisplayNames[sub] ?? sub}
                 </button>
-                <For each={group.subtags}>
-                  {(tag) => (
-                    <button
-                      type="button"
-                      class="filter-chip filter-chip--sm"
-                      classList={{ 'filter-chip--active': props.state.tags.includes(tag) }}
-                      onClick={() => toggleTag(tag)}
-                    >
-                      <FilterIcon name={tag} />
-                      {tag}
-                    </button>
-                  )}
-                </For>
-              </div>
-            </div>
-          )}
-        </For>
-        <div class="adv-filter__tags">
-          <For each={standaloneTags}>
-            {(tag) => (
-              <button
-                type="button"
-                class="filter-chip filter-chip--sm"
-                classList={{ 'filter-chip--active': props.state.tags.includes(tag) }}
-                onClick={() => toggleTag(tag)}
-              >
-                <FilterIcon name={tag} />
-                {tag}
-              </button>
-            )}
-          </For>
+              )}
+            </For>
+          </div>
         </div>
-      </div>
+      </Show>
 
-      <div class="adv-filter__section">
-        <span class="adv-filter__label">Biome</span>
-        <div class="adv-filter__tags">
-          <For each={biomes}>
-            {(biome) => (
-              <button
-                type="button"
-                class="filter-chip filter-chip--sm"
-                classList={{ 'filter-chip--active': props.state.biomes.includes(biome.value) }}
-                onClick={() => toggleBiome(biome.value)}
-              >
-                <FilterIcon name={biome.value} />
-                {biome.label}
-              </button>
-            )}
-          </For>
+      {/* ── Handedness ──────────────────────────────────────────────── */}
+      <Show when={isSubFilterVisible('handedness')}>
+        <div class="adv-filter__section">
+          <span class="adv-filter__label">Handedness</span>
+          <div class="adv-filter__tags" role="radiogroup" aria-label="Handedness">
+            <For each={handedness}>
+              {(h) => (
+                <button
+                  type="button"
+                  class="filter-chip filter-chip--sm"
+                  classList={{ 'filter-chip--active': hasTags(h.tag) }}
+                  onClick={() => selectHandedness(h.tag)}
+                  role="radio"
+                  aria-checked={hasTags(h.tag)}
+                >
+                  <FilterIcon name={h.tag} />
+                  {h.label}
+                </button>
+              )}
+            </For>
+          </div>
         </div>
-      </div>
+      </Show>
 
-      <div class="adv-filter__section">
-        <span class="adv-filter__label">Station Levels</span>
-        <div class="adv-filter__station-levels">
-          <For each={stationsWithUpgrades()}>
-            {(station) => (
-              <div class="adv-filter__station-level">
-                <span class="adv-filter__station-name">{station.name}</span>
-                <input
-                  type="number"
-                  min="1"
-                  max={station.maxLevel}
-                  value={getCeiling(station)}
-                  class="adv-filter__level-input"
-                  aria-label={`${station.name} level ceiling`}
-                  onInput={(e) => {
-                    const val = Number.parseInt(e.currentTarget.value, 10);
-                    if (Number.isFinite(val) && val >= 1 && val <= station.maxLevel) {
-                      if (val === station.maxLevel) {
-                        clearCeiling(station.id);
-                      } else {
-                        setCeiling(station.id, val);
+      {/* ── Biome ───────────────────────────────────────────────────── */}
+      <Show when={isSubFilterVisible('biome')}>
+        <div class="adv-filter__section">
+          <span class="adv-filter__label">Biome</span>
+          <div class="adv-filter__tags" role="radiogroup" aria-label="Biome">
+            <For each={biomes}>
+              {(b) => (
+                <button
+                  type="button"
+                  class="filter-chip filter-chip--sm"
+                  classList={{ 'filter-chip--active': hasTags(b.tag) }}
+                  onClick={() => selectBiome(b.tag)}
+                  role="radio"
+                  aria-checked={hasTags(b.tag)}
+                >
+                  <FilterIcon name={b.tag} />
+                  {b.label}
+                </button>
+              )}
+            </For>
+          </div>
+        </div>
+      </Show>
+
+      {/* ── Stat Focus (Food only) ──────────────────────────────────── */}
+      <Show when={isSubFilterVisible('statFocus')}>
+        <div class="adv-filter__section">
+          <span class="adv-filter__label">Stat Focus</span>
+          <div class="adv-filter__tags" role="radiogroup" aria-label="Food stat focus">
+            <For each={foodStatFocus}>
+              {(s) => (
+                <button
+                  type="button"
+                  class="filter-chip filter-chip--sm"
+                  classList={{ 'filter-chip--active': hasTags(s.tag) }}
+                  onClick={() => selectStatFocus(s.tag)}
+                  role="radio"
+                  aria-checked={hasTags(s.tag)}
+                >
+                  {s.label}
+                </button>
+              )}
+            </For>
+          </div>
+        </div>
+      </Show>
+
+      {/* ── Damage Type (Melee/Ranged/Ammo) ─────────────────────────────── */}
+      <Show when={isSubFilterVisible('damageType')}>
+        <div class="adv-filter__section">
+          <span class="adv-filter__label">Damage Type</span>
+          <div class="adv-filter__tags" role="group" aria-label="Damage type">
+            <For each={damageTypes}>
+              {(d) => (
+                <button
+                  type="button"
+                  class="filter-chip filter-chip--sm"
+                  classList={{ 'filter-chip--active': hasTags(d.tag) }}
+                  onClick={() => toggleModifier(d.tag)}
+                  aria-pressed={hasTags(d.tag)}
+                >
+                  <FilterIcon name={d.tag} />
+                  {d.label}
+                </button>
+              )}
+            </For>
+          </div>
+        </div>
+      </Show>
+
+      {/* ── Found (Food/Building only) ──────────────────────────────── */}
+      <Show when={isSubFilterVisible('found')}>
+        <div class="adv-filter__section">
+          <div class="adv-filter__tags">
+            <button
+              type="button"
+              class="filter-chip filter-chip--sm"
+              classList={{ 'filter-chip--active': hasTags('found') }}
+              onClick={toggleFound}
+              aria-pressed={hasTags('found')}
+            >
+              Found
+            </button>
+          </div>
+        </div>
+      </Show>
+
+      {/* ── Advanced (collapsible) ──────────────────────────────────── */}
+      <details class="adv-filter__advanced">
+        <summary class="adv-filter__label">Advanced</summary>
+        <div class="adv-filter__section">
+          <span class="adv-filter__label">Station</span>
+          <select
+            aria-label="Station"
+            value={props.state.station}
+            onChange={(e) => update({ station: e.currentTarget.value })}
+          >
+            <option value="all">All stations</option>
+            <For each={props.stations}>
+              {(s) => <option value={s.id}>{s.name}</option>}
+            </For>
+          </select>
+        </div>
+
+        <div class="adv-filter__section">
+          <span class="adv-filter__label">Station Levels</span>
+          <div class="adv-filter__station-levels">
+            <For each={stationsWithUpgrades()}>
+              {(station) => (
+                <div class="adv-filter__station-level">
+                  <span class="adv-filter__station-name">{station.name}</span>
+                  <input
+                    type="number"
+                    min="1"
+                    max={station.maxLevel}
+                    value={getCeiling(station)}
+                    class="adv-filter__level-input"
+                    aria-label={`${station.name} level ceiling`}
+                    onInput={(e) => {
+                      const val = Number.parseInt(e.currentTarget.value, 10);
+                      if (Number.isFinite(val) && val >= 1 && val <= station.maxLevel) {
+                        if (val === station.maxLevel) {
+                          clearCeiling(station.id);
+                        } else {
+                          setCeiling(station.id, val);
+                        }
                       }
-                    }
-                  }}
-                />
-                <span class="adv-filter__station-max">/ {station.maxLevel}</span>
-              </div>
-            )}
-          </For>
+                    }}
+                  />
+                  <span class="adv-filter__station-max">/ {station.maxLevel}</span>
+                </div>
+              )}
+            </For>
+          </div>
         </div>
-      </div>
+      </details>
     </div>
   );
 };

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Hammer handle -->
+  <rect x="22" y="22" width="4" height="22" fill="#A0722A"/>
+  <rect x="20" y="22" width="2" height="22" fill="#8B6914"/>
+  <!-- Hammer head -->
+  <rect x="10" y="8" width="28" height="16" fill="#808080"/>
+  <rect x="12" y="10" width="24" height="4" fill="#999"/>
+  <!-- Shadow side -->
+  <rect x="34" y="8" width="4" height="16" fill="#696969"/>
+</svg>
