@@ -30,8 +30,10 @@ const iconIds = getIconSet(iconDir);
 const manifest = JSON.parse(readFileSync(resolve(process.cwd(), 'public/icons/sprite-manifest.json'), 'utf8'));
 const spriteHref = `${base}icons/${manifest.filename}`;
 
-const biomeLabel = recipe.biome
-  ? recipe.biome.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+const biomeValues = ['meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands', 'ocean', 'deep-north'];
+const recipeBiome = (recipe.tags ?? []).find((t: string) => biomeValues.includes(t));
+const biomeLabel = recipeBiome
+  ? recipeBiome.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
   : null;
 
 const tags = recipe.tags ?? [];
