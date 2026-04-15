@@ -40,9 +40,13 @@ export const handedness = [
   { label: 'Dual Wield', tag: 'dual-wield' },
 ] as const;
 
-export const modifiers = [
-  { label: 'Elemental', tag: 'elemental' },
-  { label: 'Magic',     tag: 'magic' },
+export const damageTypes = [
+  { label: 'Fire',      tag: 'fire' },
+  { label: 'Frost',     tag: 'frost' },
+  { label: 'Lightning', tag: 'lightning' },
+  { label: 'Poison',    tag: 'poison' },
+  { label: 'Spirit',    tag: 'spirit' },
+  { label: 'Pure',      tag: 'pure' },
 ] as const;
 
 export const tagDisplayNames: Record<string, string> = {
@@ -59,12 +63,12 @@ export const tagDisplayNames: Record<string, string> = {
   'balanced': 'Balanced',
 };
 
-export type SubFilterKey = 'handedness' | 'biome' | 'statFocus' | 'modifiers' | 'elemental' | 'found';
+export type SubFilterKey = 'handedness' | 'biome' | 'statFocus' | 'damageType' | 'found';
 
 export const categorySubFilters: Record<string, SubFilterKey[]> = {
-  melee:  ['handedness', 'biome', 'elemental'],
-  ranged: ['handedness', 'biome', 'modifiers'],
-  ammo:   ['biome', 'elemental'],
+  melee:  ['handedness', 'biome', 'damageType'],
+  ranged: ['handedness', 'biome', 'damageType'],
+  ammo:   ['biome', 'damageType'],
   armor:  ['biome'],
   tool:   ['biome'],
   build:  ['biome', 'found'],
