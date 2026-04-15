@@ -145,7 +145,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
             disabled={!hasAnyFilter()}
             onClick={() => props.onChange({ ...emptyFilterState })}
           >
-            Clear
+            ✕ Clear
           </button>
         </div>
       </div>
