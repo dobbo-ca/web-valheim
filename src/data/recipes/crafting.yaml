@@ -1176,7 +1176,7 @@
   - {itemId: resin, qty: 8}
   - {itemId: feathers, qty: 2}
   yields: {itemId: fire-arrow, qty: 20}
-  tags: [ammo, arrow, elemental, tier-1, meadows]
+  tags: [ammo, arrow, tier-1, meadows, fire]
   stats:
     primaryAttack:
       damage: {pierce: 11, fire: 22}
@@ -1211,7 +1211,7 @@
   - {itemId: feathers, qty: 2}
   - {itemId: ooze, qty: 2}
   yields: {itemId: poison-arrow, qty: 20}
-  tags: [ammo, arrow, elemental, tier-4, mountain]
+  tags: [ammo, arrow, tier-4, mountain, poison]
   stats:
     primaryAttack:
       damage: {pierce: 26, poison: 52}
@@ -1229,7 +1229,7 @@
   - {itemId: feathers, qty: 2}
   - {itemId: freeze-gland, qty: 1}
   yields: {itemId: frost-arrow, qty: 20}
-  tags: [ammo, arrow, elemental, tier-4, mountain]
+  tags: [ammo, arrow, tier-4, mountain, frost]
   stats:
     primaryAttack:
       damage: {pierce: 26, frost: 52}
@@ -2913,7 +2913,7 @@
   - {itemId: deer-hide, qty: 2}
   - {itemId: guck, qty: 10}
   yields: {itemId: draugr-fang, qty: 1}
-  tags: [ranged, bow, 2h, tier-4, mountain]
+  tags: [ranged, bow, 2h, tier-4, mountain, poison]
   notes: Shoots poison arrows; pairs well with Poison arrows for stacking DoT.
   stats:
     weight: 1.5
@@ -2977,7 +2977,7 @@
   - {itemId: ymir-flesh, qty: 5}
   - {itemId: freeze-gland, qty: 5}
   yields: {itemId: frostner, qty: 1}
-  tags: [melee, mace, 1h, tier-4, mountain]
+  tags: [melee, mace, 1h, tier-4, mountain, frost, spirit]
   notes: Deals frost and spirit damage; slows enemies. Strong vs. undead.
   stats:
     weight: 2.5
@@ -3106,7 +3106,7 @@
   - {itemId: leather-scraps, qty: 3}
   - {itemId: iron, qty: 2}
   yields: {itemId: silver-knife, qty: 1}
-  tags: [melee, knife, 1h, tier-4, mountain]
+  tags: [melee, knife, 1h, tier-4, mountain, spirit]
   stats:
     weight: 0.3
     durability: 200
@@ -3169,7 +3169,7 @@
   - {itemId: silver, qty: 30}
   - {itemId: crystal, qty: 10}
   yields: {itemId: crystal-battleaxe, qty: 1}
-  tags: [melee, axe, 2h, tier-4, mountain]
+  tags: [melee, axe, 2h, tier-4, mountain, spirit]
   stats:
     weight: 3.5
     durability: 200
@@ -3476,7 +3476,7 @@
   - {itemId: silver, qty: 1}
   - {itemId: feathers, qty: 2}
   yields: {itemId: silver-arrow, qty: 20}
-  tags: [ammo, arrow, tier-4, mountain]
+  tags: [ammo, arrow, tier-4, mountain, spirit]
 
   stats:
     primaryAttack:
@@ -4183,7 +4183,7 @@
   - {itemId: wood, qty: 4}
   - {itemId: leather-scraps, qty: 2}
   yields: {itemId: silver-sword, qty: 1}
-  tags: [melee, sword, 1h, tier-4, mountain]
+  tags: [melee, sword, 1h, tier-4, mountain, spirit]
   stats:
     weight: 1
     durability: 200
@@ -4250,7 +4250,7 @@
   - {itemId: yggdrasil-wood, qty: 8}
   - {itemId: refined-eitr, qty: 3}
   yields: {itemId: himminafl, qty: 1}
-  tags: [melee, atgeir, 2h, tier-6, mistlands]
+  tags: [melee, atgeir, 2h, tier-6, mistlands, lightning]
   stats:
     weight: 2.5
     durability: 175
@@ -4335,7 +4335,7 @@
   - {itemId: yggdrasil-wood, qty: 5}
   - {itemId: refined-eitr, qty: 2}
   yields: {itemId: jotun-bane, qty: 1}
-  tags: [melee, knife, 1h, tier-6, mistlands]
+  tags: [melee, knife, 1h, tier-6, mistlands, poison]
   stats:
     weight: 2
     durability: 175
@@ -4420,7 +4420,7 @@
   - {itemId: yggdrasil-wood, qty: 4}
   - {itemId: mandible, qty: 4}
   yields: {itemId: spinesnap, qty: 1}
-  tags: [ranged, crossbow, 2h, tier-6, mistlands]
+  tags: [ranged, crossbow, 2h, tier-6, mistlands, spirit]
   stats:
     weight: 2
     durability: 100
@@ -4609,7 +4609,7 @@
   - {itemId: refined-eitr, qty: 3}
   - {itemId: freeze-gland, qty: 3}
   yields: {itemId: mistwalker, qty: 1}
-  tags: [melee, sword, 1h, tier-6, mistlands]
+  tags: [melee, sword, 1h, tier-6, mistlands, frost]
   stats:
     weight: 1.8
     durability: 200
@@ -5344,7 +5344,7 @@
   - {itemId: flametal, qty: 20}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: dyrnwyn, qty: 1}
-  tags: [melee, sword, 1h, tier-6, ashlands]
+  tags: [melee, sword, 1h, tier-6, ashlands, fire]
   notes: Legendary sword reforged from fragments. Upgrades beyond quality 2 require Black Forge levels not yet available in game.
   stats:
     weight: 0.8
@@ -6054,7 +6054,7 @@
   - {itemId: yggdrasil-wood, qty: 8}
   - {itemId: feathers, qty: 2}
   yields: {itemId: charred-arrow, qty: 20}
-  tags: [ammo, arrow, elemental, tier-6, ashlands]
+  tags: [ammo, arrow, tier-6, ashlands]
 
   stats:
     primaryAttack:
@@ -6133,7 +6133,7 @@
   - {itemId: yggdrasil-wood, qty: 4}
   - {itemId: feathers, qty: 2}
   yields: {itemId: charred-bolt, qty: 20}
-  tags: [ammo, bolt, elemental, tier-6, ashlands]
+  tags: [ammo, bolt, tier-6, ashlands]
 
   stats:
     primaryAttack:
@@ -6151,7 +6151,7 @@
   - {itemId: flametal-mace, qty: 1}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: bloodgeon, qty: 1}
-  tags: [melee, mace, 1h, elemental, tier-6, ashlands]
+  tags: [melee, mace, 1h, tier-6, ashlands]
   notes: Flametal Mace upgraded with Bloodstone. Bleed damage.
   stats:
     weight: 2.5
@@ -6205,7 +6205,7 @@
   - {itemId: slayer, qty: 1}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: brutal-slayer, qty: 1}
-  tags: [melee, mace, 2h, elemental, tier-6, ashlands]
+  tags: [melee, mace, 2h, tier-6, ashlands]
   notes: Slayer upgraded with Bloodstone. Bleed damage.
   stats:
     weight: 4
@@ -6259,7 +6259,7 @@
   - {itemId: slayer, qty: 1}
   - {itemId: iolite, qty: 1}
   yields: {itemId: scourging-slayer, qty: 1}
-  tags: [melee, mace, 2h, elemental, tier-6, ashlands]
+  tags: [melee, mace, 2h, tier-6, ashlands, lightning]
   notes: Slayer upgraded with Iolite. Lightning damage.
   stats:
     weight: 4
@@ -6313,7 +6313,7 @@
   - {itemId: slayer, qty: 1}
   - {itemId: jade, qty: 1}
   yields: {itemId: primal-slayer, qty: 1}
-  tags: [melee, mace, 2h, elemental, tier-6, ashlands]
+  tags: [melee, mace, 2h, tier-6, ashlands]
   notes: Slayer upgraded with Jade. Poison damage.
   stats:
     weight: 4
@@ -6367,7 +6367,7 @@
   - {itemId: nidhogg, qty: 1}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: nidhogg-the-bleeding, qty: 1}
-  tags: [melee, atgeir, 2h, elemental, tier-6, ashlands]
+  tags: [melee, atgeir, 2h, tier-6, ashlands]
   notes: "Nidhögg upgraded with Bloodstone. Bleed damage."
   stats:
     weight: 3.5
@@ -6415,7 +6415,7 @@
   - {itemId: nidhogg, qty: 1}
   - {itemId: iolite, qty: 1}
   yields: {itemId: nidhogg-the-thundering, qty: 1}
-  tags: [melee, atgeir, 2h, elemental, tier-6, ashlands]
+  tags: [melee, atgeir, 2h, tier-6, ashlands, lightning]
   notes: "Nidhögg upgraded with Iolite. Lightning damage."
   stats:
     weight: 3.5
@@ -6463,7 +6463,7 @@
   - {itemId: nidhogg, qty: 1}
   - {itemId: jade, qty: 1}
   yields: {itemId: nidhogg-the-primal, qty: 1}
-  tags: [melee, atgeir, 2h, elemental, tier-6, ashlands]
+  tags: [melee, atgeir, 2h, tier-6, ashlands, poison]
   notes: "Nidhögg upgraded with Jade. Poison damage."
   stats:
     weight: 3.5
@@ -6511,7 +6511,7 @@
   - {itemId: flametal, qty: 8}
   - {itemId: iolite, qty: 1}
   yields: {itemId: storm-star, qty: 1}
-  tags: [melee, mace, 1h, tier-6, ashlands]
+  tags: [melee, mace, 1h, tier-6, ashlands, lightning]
   notes: Flametal Mace upgraded with Iolite. Lightning damage.
   stats:
     weight: 3
@@ -6565,7 +6565,7 @@
   - {itemId: flametal, qty: 8}
   - {itemId: jade, qty: 1}
   yields: {itemId: klossen, qty: 1}
-  tags: [melee, mace, 1h, tier-6, ashlands]
+  tags: [melee, mace, 1h, tier-6, ashlands, poison]
   notes: Flametal Mace upgraded with Jade. Poison damage.
   stats:
     weight: 4.5
@@ -6610,7 +6610,6 @@
       blocking:
         blockForce: 25
 
-# Splitnir elemental variants
 - id: splitnir-the-bleeding
   name: Splitnir the Bleeding
   type: crafting
@@ -6621,7 +6620,7 @@
   - {itemId: splitnir, qty: 1}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: splitnir-the-bleeding, qty: 1}
-  tags: [melee, axe, 2h, elemental, tier-6, ashlands]
+  tags: [melee, axe, 2h, tier-6, ashlands]
   stats:
     weight: 3.5
     durability: 100
@@ -6668,7 +6667,7 @@
   - {itemId: splitnir, qty: 1}
   - {itemId: iolite, qty: 1}
   yields: {itemId: splitnir-the-storming, qty: 1}
-  tags: [melee, axe, 2h, elemental, tier-6, ashlands]
+  tags: [melee, axe, 2h, tier-6, ashlands]
   stats:
     weight: 3.5
     durability: 100
@@ -6715,7 +6714,7 @@
   - {itemId: splitnir, qty: 1}
   - {itemId: jade, qty: 1}
   yields: {itemId: splitnir-the-primal, qty: 1}
-  tags: [melee, axe, 2h, elemental, tier-6, ashlands]
+  tags: [melee, axe, 2h, tier-6, ashlands, poison]
   stats:
     weight: 3.5
     durability: 100
@@ -6741,7 +6740,6 @@
       parryBonus: 2
       blockAdrenaline: 2
       parryAdrenaline: 5
-# Berserkir elemental variants
   upgrades:
   - quality: 2
     stationLevel: 5
@@ -6763,7 +6761,7 @@
   - {itemId: berserkir, qty: 1}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: bleeding-berserkir, qty: 1}
-  tags: [melee, axe, 2h, elemental, tier-6, ashlands]
+  tags: [melee, axe, 2h, tier-6, ashlands]
   stats:
     weight: 2
     durability: 175
@@ -6815,7 +6813,7 @@
   - {itemId: berserkir, qty: 1}
   - {itemId: iolite, qty: 1}
   yields: {itemId: thundering-berserkir, qty: 1}
-  tags: [melee, axe, 2h, elemental, tier-6, ashlands]
+  tags: [melee, axe, 2h, tier-6, ashlands, lightning]
   stats:
     weight: 2
     durability: 175
@@ -6867,7 +6865,7 @@
   - {itemId: berserkir, qty: 1}
   - {itemId: jade, qty: 1}
   yields: {itemId: primal-berserkir, qty: 1}
-  tags: [melee, axe, 2h, elemental, tier-6, ashlands]
+  tags: [melee, axe, 2h, tier-6, ashlands, poison]
   stats:
     weight: 3.5
     durability: 175
@@ -6892,7 +6890,6 @@
       parryBonus: 2
       blockAdrenaline: 2
       parryAdrenaline: 5
-# Ash Fang elemental variants
   upgrades:
   - quality: 2
     stationLevel: 5
@@ -6920,7 +6917,7 @@
   - {itemId: ash-fang, qty: 1}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: blood-fang, qty: 1}
-  tags: [ranged, bow, 2h, elemental, tier-6, ashlands]
+  tags: [ranged, bow, 2h, tier-6, ashlands]
   stats:
     weight: 2
     durability: 100
@@ -6959,7 +6956,7 @@
   - {itemId: ash-fang, qty: 1}
   - {itemId: iolite, qty: 1}
   yields: {itemId: storm-fang, qty: 1}
-  tags: [ranged, bow, 2h, elemental, tier-6, ashlands]
+  tags: [ranged, bow, 2h, tier-6, ashlands, lightning]
   stats:
     weight: 2
     durability: 100
@@ -6998,7 +6995,7 @@
   - {itemId: ash-fang, qty: 1}
   - {itemId: jade, qty: 1}
   yields: {itemId: root-fang, qty: 1}
-  tags: [ranged, bow, 2h, elemental, tier-6, ashlands]
+  tags: [ranged, bow, 2h, tier-6, ashlands, poison]
   stats:
     weight: 2
     durability: 100
@@ -7015,7 +7012,6 @@
       parryBonus: 1.5
       blockAdrenaline: 1
       parryAdrenaline: 5
-# Ripper elemental variants
   upgrades:
   - quality: 2
     stationLevel: 5
@@ -7038,7 +7034,7 @@
   - {itemId: ripper, qty: 1}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: wound-ripper, qty: 1}
-  tags: [ranged, crossbow, 2h, elemental, tier-6, ashlands]
+  tags: [ranged, crossbow, 2h, tier-6, ashlands]
   notes: Crossbow damage comes from bolts.
   stats:
     weight: 3
@@ -7077,7 +7073,7 @@
   - {itemId: ripper, qty: 1}
   - {itemId: iolite, qty: 1}
   yields: {itemId: storm-ripper, qty: 1}
-  tags: [ranged, crossbow, 2h, elemental, tier-6, ashlands]
+  tags: [ranged, crossbow, 2h, tier-6, ashlands, lightning]
   notes: Crossbow damage comes from bolts.
   stats:
     weight: 3
@@ -7116,7 +7112,7 @@
   - {itemId: ripper, qty: 1}
   - {itemId: jade, qty: 1}
   yields: {itemId: root-ripper, qty: 1}
-  tags: [ranged, crossbow, 2h, elemental, tier-6, ashlands]
+  tags: [ranged, crossbow, 2h, tier-6, ashlands, poison]
   notes: Crossbow damage comes from bolts.
   stats:
     weight: 3
@@ -7159,7 +7155,7 @@
   - {itemId: sap, qty: 5}
   - {itemId: refined-eitr, qty: 10}
   yields: {itemId: staff-of-embers, qty: 1}
-  tags: [ranged, staff, 2h, magic, tier-6, mistlands]
+  tags: [ranged, staff, 2h, tier-6, mistlands, fire]
   stats:
     weight: 0.3
     durability: 200
@@ -7228,7 +7224,7 @@
   - {itemId: freeze-gland, qty: 4}
   - {itemId: refined-eitr, qty: 10}
   yields: {itemId: staff-of-frost, qty: 1}
-  tags: [ranged, staff, 2h, magic, tier-6, mistlands]
+  tags: [ranged, staff, 2h, tier-6, mistlands, frost]
   stats:
     weight: 0.3
     durability: 200
@@ -7296,7 +7292,7 @@
   - {itemId: dvergr-needle, qty: 5}
   - {itemId: refined-eitr, qty: 20}
   yields: {itemId: staff-of-storms, qty: 1}
-  tags: [ranged, staff, 2h, magic, tier-6]
+  tags: [ranged, staff, 2h, tier-6]
 
 - id: staff-of-protection
   name: Staff of Protection
@@ -7309,7 +7305,7 @@
   - {itemId: carapace, qty: 5}
   - {itemId: refined-eitr, qty: 10}
   yields: {itemId: staff-of-protection, qty: 1}
-  tags: [ranged, staff, 2h, magic, tier-6, mistlands]
+  tags: [ranged, staff, 2h, tier-6, mistlands]
   stats:
     weight: 0.3
     durability: 200
@@ -7360,7 +7356,7 @@
   - {itemId: refined-eitr, qty: 16}
   - {itemId: jade, qty: 4}
   yields: {itemId: staff-of-the-wild, qty: 1}
-  tags: [ranged, staff, 2h, magic, tier-6, ashlands]
+  tags: [ranged, staff, 2h, tier-6, ashlands, poison]
   stats:
     weight: 0.3
     durability: 200
@@ -7403,7 +7399,7 @@
   - {itemId: refined-eitr, qty: 15}
   - {itemId: iron, qty: 2}
   yields: {itemId: eitr-weave-hood, qty: 1}
-  tags: [helmet, armor, magic, tier-6]
+  tags: [helmet, armor, tier-6]
   armorStats:
     armor: 16
     durability: 1000
@@ -7447,7 +7443,7 @@
   - {itemId: linen-thread, qty: 20}
   - {itemId: carapace, qty: 10}
   yields: {itemId: eitr-robe, qty: 1}
-  tags: [chest, armor, magic, tier-6]
+  tags: [chest, armor, tier-6]
   stats:
     armor: 24
     durability: 1000
@@ -7492,7 +7488,7 @@
   - {itemId: linen-thread, qty: 20}
   - {itemId: carapace, qty: 15}
   yields: {itemId: eitr-weave-tunic, qty: 1}
-  tags: [chest, armor, magic, tier-6]
+  tags: [chest, armor, tier-6]
   armorStats:
     armor: 24
     durability: 1000
@@ -7537,7 +7533,7 @@
   - {itemId: linen-thread, qty: 15}
   - {itemId: carapace, qty: 10}
   yields: {itemId: eitr-weave-trousers, qty: 1}
-  tags: [legs, armor, magic, tier-6]
+  tags: [legs, armor, tier-6]
   armorStats:
     armor: 16
     durability: 1000
@@ -7633,7 +7629,7 @@
   - {itemId: scale-hide, qty: 5}
   - {itemId: refined-eitr, qty: 20}
   yields: {itemId: feather-cape, qty: 1}
-  tags: [cape, armor, magic, tier-6]
+  tags: [cape, armor, tier-6]
   notes: Provides 100% fall damage reduction.
   armorStats:
     armor: 1
@@ -7682,7 +7678,7 @@
   - {itemId: ashwood, qty: 5}
   - {itemId: proustite-powder, qty: 8}
   yields: {itemId: staff-of-fracturing, qty: 1}
-  tags: [ranged, staff, 2h, magic, tier-6, ashlands]
+  tags: [ranged, staff, 2h, tier-6, ashlands, fire]
   stats:
     weight: 0.3
     durability: 200
@@ -7740,7 +7736,7 @@
   - {itemId: celestial-feather, qty: 3}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: dundr, qty: 1}
-  tags: [ranged, staff, 2h, magic, tier-6, ashlands]
+  tags: [ranged, staff, 2h, tier-6, ashlands, lightning]
   notes: Shoots grapeshot of 12 lightning bolts.
   stats:
     weight: 1.5
@@ -7774,7 +7770,7 @@
   - {itemId: flametal, qty: 3}
   - {itemId: bloodstone, qty: 1}
   yields: {itemId: trollstav, qty: 1}
-  tags: [ranged, staff, 2h, magic, tier-6, ashlands]
+  tags: [ranged, staff, 2h, tier-6, ashlands, fire, pure]
   notes: Summons a large troll.
   stats:
     weight: 0.3
@@ -7829,7 +7825,7 @@
   - {itemId: refined-eitr, qty: 16}
   - {itemId: skeleton-trophy, qty: 4}
   yields: {itemId: dead-raiser, qty: 1}
-  tags: [ranged, staff, 2h, magic, tier-6, mistlands]
+  tags: [ranged, staff, 2h, tier-6, mistlands]
   notes: Blood magic staff — uses Eitr and Health.
 
   stats:
@@ -7871,7 +7867,7 @@
   - {itemId: refined-eitr, qty: 15}
   - {itemId: asksvin-hide, qty: 2}
   yields: {itemId: hood-of-embla, qty: 1}
-  tags: [helmet, armor, magic, tier-6]
+  tags: [helmet, armor, tier-6]
   armorStats:
     armor: 19
     durability: 1000
@@ -7907,7 +7903,7 @@
   - {itemId: asksvin-hide, qty: 10}
   - {itemId: flametal, qty: 5}
   yields: {itemId: robes-of-embla, qty: 1}
-  tags: [chest, armor, magic, tier-6]
+  tags: [chest, armor, tier-6]
   armorStats:
     armor: 19
     durability: 1000
@@ -7943,7 +7939,7 @@
   - {itemId: refined-eitr, qty: 20}
   - {itemId: asksvin-hide, qty: 10}
   yields: {itemId: trousers-of-embla, qty: 1}
-  tags: [legs, armor, magic, tier-6]
+  tags: [legs, armor, tier-6]
   armorStats:
     armor: 19
     durability: 1000
@@ -8047,7 +8043,7 @@
   - {itemId: wood, qty: 1}
   - {itemId: resin, qty: 1}
   yields: {itemId: torch, qty: 1}
-  tags: [melee, mace, 1h, utility, tier-0, meadows]
+  tags: [melee, mace, 1h, utility, tier-0, meadows, fire]
   stats:
     weight: 1
     durability: 20
@@ -8166,7 +8162,7 @@
   - {itemId: wood, qty: 2}
   - {itemId: tin, qty: 4}
   yields: {itemId: butcher-knife, qty: 1}
-  tags: [tool, knife, 1h, tier-2, black-forest]
+  tags: [tool, knife, 1h, tier-2, black-forest, pure]
   stats:
     primaryAttack:
       damage: {pure: 1000}
