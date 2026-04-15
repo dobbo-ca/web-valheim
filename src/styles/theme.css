@@ -1248,12 +1248,8 @@ h3 {
   flex-direction: column;
   gap: 12px;
 }
-.adv-filter__section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .adv-filter__clear {
+  margin-left: auto;
   background: transparent;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
