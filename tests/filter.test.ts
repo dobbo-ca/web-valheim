@@ -59,7 +59,7 @@ const sample: Recipe[] = [
       { itemId: 'ancient-bark', qty: 10 },
       { itemId: 'silver', qty: 20 },
     ],
-    tags: ['ranged', 'bow', '2h', 'elemental', 'mountain'],
+    tags: ['ranged', 'bow', '2h', 'poison', 'frost', 'mountain'],
   },
   {
     id: 'minor-healing-mead',
@@ -126,9 +126,9 @@ describe('filterRecipes', () => {
     ).toEqual(['minor-healing-mead']);
   });
 
-  it('filters by modifier tag', () => {
+  it('filters by damage type tag', () => {
     expect(
-      filterRecipes(sample, { ...empty, tags: ['elemental'] }).map((r) => r.id),
+      filterRecipes(sample, { ...empty, tags: ['poison'] }).map((r) => r.id),
     ).toEqual(['draugr-fang']);
   });
 
