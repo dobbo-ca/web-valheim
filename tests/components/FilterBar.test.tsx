@@ -34,16 +34,16 @@ describe('FilterBar', () => {
     expect(screen.getByRole('button', { name: /Clear/ })).toBeInTheDocument();
   });
 
-  it('emits a new state when a tag chip is clicked (after opening panel)', () => {
+  it('emits a new state when a category chip is clicked (after opening panel)', () => {
     const onChange = vi.fn();
     render(() => (
       <FilterBar state={empty} stations={stations} onChange={onChange} />
     ));
     fireEvent.click(screen.getByRole('button', { name: /Filters/ }));
-    fireEvent.click(screen.getByRole('button', { name: 'sword' }));
+    fireEvent.click(screen.getByRole('radio', { name: 'Melee' }));
     expect(onChange).toHaveBeenCalled();
     const newState = onChange.mock.calls[0][0] as FilterState;
-    expect(newState.tags).toContain('sword');
+    expect(newState.tags).toContain('melee');
   });
 
   it('emits a new state when the search input changes', () => {
