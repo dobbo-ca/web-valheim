@@ -1031,6 +1031,17 @@ h3 {
 .filter-chip { font-size: calc(12px * var(--text-scale)); padding: calc(8px * var(--text-scale)) calc(14px * var(--text-scale)); }
 .filter-bar__adv-toggle { font-size: calc(13px * var(--text-scale)); padding: calc(8px * var(--text-scale)) calc(14px * var(--text-scale)); }
 .filter-bar__level-value { font-size: calc(12px * var(--text-scale)); }
+/* Advanced filter panel contents */
+.adv-filter__label { font-size: calc(9px * var(--text-scale)); }
+.adv-filter__clear { font-size: calc(11px * var(--text-scale)); padding: calc(4px * var(--text-scale)) calc(10px * var(--text-scale)); }
+.adv-filter select { font-size: calc(12px * var(--text-scale)); padding: calc(6px * var(--text-scale)) calc(10px * var(--text-scale)); }
+.filter-chip--sm { font-size: calc(11px * var(--text-scale)); padding: calc(4px * var(--text-scale)) calc(10px * var(--text-scale)); }
+.filter-icon { width: calc(16px * var(--text-scale)); height: calc(16px * var(--text-scale)); }
+.adv-filter__tag-group-label { font-size: calc(11px * var(--text-scale)); }
+.adv-filter__station-level { font-size: calc(12px * var(--text-scale)); }
+.adv-filter__station-name { font-size: calc(12px * var(--text-scale)); }
+.adv-filter__station-max { font-size: calc(11px * var(--text-scale)); }
+.adv-filter__level-input { font-size: calc(12px * var(--text-scale)); width: calc(40px * var(--text-scale)); padding: calc(4px * var(--text-scale)); }
 .chip { font-size: calc(12px * var(--text-scale)); padding: calc(3px * var(--text-scale)) calc(10px * var(--text-scale)); }
 .recipe-table__col-toggle-btn { font-size: calc(14px * var(--text-scale)); padding: calc(2px * var(--text-scale)) calc(6px * var(--text-scale)); }
 
