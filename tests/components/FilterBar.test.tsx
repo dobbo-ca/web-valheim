@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, fireEvent, screen } from '@solidjs/testing-library';
 import { FilterBar } from '../../src/components/FilterBar';
-import type { FilterState } from '../../src/lib/filter';
+import { emptyFilterState, type FilterState } from '../../src/lib/filter';
 import type { Station } from '../../src/lib/types';
 
 const stations: Station[] = [
@@ -9,17 +9,7 @@ const stations: Station[] = [
   { id: 'cauldron', name: 'Cauldron', maxLevel: 5, upgrades: [] },
 ];
 
-const empty: FilterState = {
-  type: 'all',
-  station: 'all',
-  minStationLevel: 1,
-  maxStationLevel: Number.POSITIVE_INFINITY,
-  ingredientIds: [],
-  query: '',
-  tags: [],
-  stationCeilings: {},
-  biomes: [],
-};
+const empty: FilterState = { ...emptyFilterState };
 
 describe('FilterBar', () => {
   beforeEach(() => {
@@ -35,27 +25,25 @@ describe('FilterBar', () => {
     expect(screen.getByRole('button', { name: /Filters/ })).toBeInTheDocument();
   });
 
-  it('shows advanced panel with type chips when Filters toggle is clicked', () => {
+  it('shows advanced panel with station selector when Filters toggle is clicked', () => {
     render(() => (
       <FilterBar state={empty} stations={stations} onChange={() => {}} />
     ));
     fireEvent.click(screen.getByRole('button', { name: /Filters/ }));
-    expect(screen.getByRole('button', { name: 'All' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Crafting' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Cooking' })).toBeInTheDocument();
     expect(screen.getByLabelText('Station')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Clear/ })).toBeInTheDocument();
   });
 
-  it('emits a new state when a type chip is clicked (after opening panel)', () => {
+  it('emits a new state when a tag chip is clicked (after opening panel)', () => {
     const onChange = vi.fn();
     render(() => (
       <FilterBar state={empty} stations={stations} onChange={onChange} />
     ));
     fireEvent.click(screen.getByRole('button', { name: /Filters/ }));
-    fireEvent.click(screen.getByRole('button', { name: 'Cooking' }));
+    fireEvent.click(screen.getByRole('button', { name: 'sword' }));
     expect(onChange).toHaveBeenCalled();
     const newState = onChange.mock.calls[0][0] as FilterState;
-    expect(newState.type).toBe('cooking');
+    expect(newState.tags).toContain('sword');
   });
 
   it('emits a new state when the search input changes', () => {

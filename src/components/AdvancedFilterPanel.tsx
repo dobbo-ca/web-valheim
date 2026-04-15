@@ -30,12 +30,6 @@ const biomes: { label: string; value: string }[] = [
   { label: 'Deep North', value: 'deep-north' },
 ];
 
-const typeIcons: Record<string, string> = {
-  crafting: 'crafting',
-  cooking: 'cooking',
-  building: 'building',
-};
-
 interface Props {
   state: FilterState;
   stations: Station[];
@@ -52,14 +46,6 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
   const update = (patch: Partial<FilterState>) =>
     props.onChange({ ...props.state, ...patch });
 
-  const typeChips: Array<{ value: FilterState['type']; label: string }> = [
-    { value: 'all', label: 'All' },
-    { value: 'crafting', label: 'Crafting' },
-    { value: 'cooking', label: 'Cooking' },
-    { value: 'building', label: 'Building' },
-    { value: 'found', label: 'Found' },
-  ];
-
   const toggleTag = (tag: string) => {
     const current = props.state.tags;
     const next = current.includes(tag)
@@ -69,11 +55,8 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
   };
 
   const toggleBiome = (biome: string) => {
-    const current = props.state.biomes;
-    const next = current.includes(biome)
-      ? current.filter((b) => b !== biome)
-      : [...current, biome];
-    update({ biomes: next });
+    // Biomes are now tags
+    toggleTag(biome);
   };
 
   const toggleGroup = (group: TagGroup) => {
@@ -115,31 +98,15 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
     props.state.stationCeilings[station.id] ?? station.maxLevel;
 
   const hasAnyFilter = () =>
-    props.state.type !== 'all' ||
     props.state.station !== 'all' ||
     props.state.tags.length > 0 ||
-    props.state.biomes.length > 0 ||
     Object.keys(props.state.stationCeilings).length > 0 ||
     props.state.query.length > 0;
 
   return (
     <div class="adv-filter">
       <div class="adv-filter__section">
-        <span class="adv-filter__label">Type</span>
-        <div class="adv-filter__tags" role="group" aria-label="Recipe type">
-          <For each={typeChips}>
-            {(chip) => (
-              <button
-                type="button"
-                class="filter-chip filter-chip--sm"
-                classList={{ 'filter-chip--active': props.state.type === chip.value }}
-                onClick={() => update({ type: chip.value })}
-              >
-                {typeIcons[chip.value] && <FilterIcon name={typeIcons[chip.value]} />}
-                {chip.label}
-              </button>
-            )}
-          </For>
+        <div class="adv-filter__tags" role="group" aria-label="Filter actions">
           <button
             type="button"
             class="adv-filter__clear"
@@ -227,7 +194,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
               <button
                 type="button"
                 class="filter-chip filter-chip--sm"
-                classList={{ 'filter-chip--active': props.state.biomes.includes(biome.value) }}
+                classList={{ 'filter-chip--active': props.state.tags.includes(biome.value) }}
                 onClick={() => toggleBiome(biome.value)}
               >
                 <FilterIcon name={biome.value} />

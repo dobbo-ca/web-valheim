@@ -80,13 +80,10 @@ export const FilterBar: Component<Props> = (props) => {
   };
 
   const hasActiveFilters = () =>
-    props.state.type !== 'all' ||
     props.state.station !== 'all' ||
     props.state.tags.length > 0 ||
-    props.state.biomes.length > 0 ||
     Object.keys(props.state.stationCeilings).length > 0 ||
-    props.state.minStationLevel > 1 ||
-    Number.isFinite(props.state.maxStationLevel);
+    props.state.ingredientIds.length > 0;
 
   return (
     <div class="filter-bar">
