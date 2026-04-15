@@ -89,7 +89,6 @@
   tags: [bait, tier-5]
 
 # ── Food Table — Oven Preparations ────────────────────────────────────────────
-# These produce an uncooked item, then secondaryStep indicates baking in oven.
 
 - id: bread
   name: Bread
@@ -97,17 +96,58 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: barley-flour, qty: 10 }
-  yields: { itemId: bread, qty: 1 }
+    - { itemId: bread-dough, qty: 1 }
+  yields: { itemId: bread, qty: 2 }
   secondaryStep:
     station: oven
     description: "Bake in an Oven (~50 seconds). Burns if left too long."
   food:
     hp: 23
     stamina: 70
+    healPerTick: 2
     duration: 1500
-    regen: 2
-  tags: [food, baked, tier-5]
+    weight: 0.5
+  tags: [food, baked, tier-5, plains]
+
+- id: lox-meat-pie
+  name: Lox Meat Pie
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: barley-flour, qty: 4 }
+    - { itemId: cloudberries, qty: 2 }
+    - { itemId: lox-meat, qty: 2 }
+  yields: { itemId: lox-meat-pie, qty: 1 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 75
+    stamina: 24
+    healPerTick: 4
+    duration: 1800
+    weight: 1.0
+  tags: [food, baked, tier-5, plains]
+
+- id: frosted-sweetbread
+  name: Frosted Sweetbread
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: unbaked-sweetbread, qty: 1 }
+  yields: { itemId: frosted-sweetbread, qty: 1 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 43
+    stamina: 43
+    healPerTick: 2
+    duration: 1800
+    weight: 1.0
+  tags: [food, baked, tier-5, plains]
 
 - id: fish-n-bread
   name: "Fish 'n' Bread"
@@ -124,9 +164,10 @@
   food:
     hp: 30
     stamina: 90
+    healPerTick: 3
     duration: 1800
-    regen: 3
-  tags: [food, baked, tier-6]
+    weight: 1.0
+  tags: [food, baked, tier-6, mistlands]
 
 - id: honey-glazed-chicken
   name: Honey Glazed Chicken
@@ -144,29 +185,31 @@
   food:
     hp: 80
     stamina: 26
+    healPerTick: 5
     duration: 1800
-    regen: 5
-  tags: [food, baked, tier-6]
+    weight: 1.0
+  tags: [food, baked, tier-6, mistlands]
 
-- id: lox-meat-pie
-  name: Lox Meat Pie
+- id: misthare-supreme
+  name: Misthare Supreme
   type: cooking
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: cloudberries, qty: 2 }
-    - { itemId: lox-meat, qty: 2 }
-    - { itemId: barley-flour, qty: 4 }
-  yields: { itemId: lox-meat-pie, qty: 1 }
+    - { itemId: hare-meat, qty: 1 }
+    - { itemId: jotun-puffs, qty: 3 }
+    - { itemId: carrot, qty: 2 }
+  yields: { itemId: misthare-supreme, qty: 1 }
   secondaryStep:
     station: oven
     description: "Bake in an Oven (~50 seconds). Burns if left too long."
   food:
-    hp: 75
-    stamina: 24
-    duration: 1800
-    regen: 4
-  tags: [food, baked, tier-5]
+    hp: 85
+    stamina: 28
+    healPerTick: 5
+    duration: 1500
+    weight: 1.0
+  tags: [food, baked, tier-6, mistlands]
 
 - id: stuffed-mushroom
   name: Stuffed Mushroom
@@ -184,10 +227,11 @@
   food:
     hp: 25
     stamina: 12
-    duration: 1500
-    regen: 3
     eitr: 75
-  tags: [food, baked, magic, tier-6]
+    healPerTick: 3
+    duration: 1500
+    weight: 1.0
+  tags: [food, baked, eitr, tier-6, mistlands]
 
 - id: meat-platter
   name: Meat Platter
@@ -195,9 +239,9 @@
   station: food-table
   stationLevel: 1
   ingredients:
-    - { itemId: hare-meat, qty: 1 }
-    - { itemId: lox-meat, qty: 1 }
     - { itemId: seeker-meat, qty: 1 }
+    - { itemId: lox-meat, qty: 1 }
+    - { itemId: hare-meat, qty: 1 }
   yields: { itemId: meat-platter, qty: 1 }
   secondaryStep:
     station: oven
@@ -205,6 +249,49 @@
   food:
     hp: 80
     stamina: 26
+    healPerTick: 5
     duration: 1800
-    regen: 5
-  tags: [food, baked, tier-6]
+    weight: 1.0
+  tags: [food, baked, tier-6, mistlands]
+
+- id: piquant-pie
+  name: Piquant Pie
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: asksvin-tail, qty: 2 }
+    - { itemId: vineberry-cluster, qty: 2 }
+    - { itemId: barley-flour, qty: 4 }
+  yields: { itemId: piquant-pie, qty: 1 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 105
+    stamina: 35
+    healPerTick: 6
+    duration: 1800
+    weight: 1.0
+  tags: [food, baked, tier-7, ashlands]
+
+- id: roasted-crust-pie
+  name: Roasted Crust Pie
+  type: cooking
+  station: food-table
+  stationLevel: 1
+  ingredients:
+    - { itemId: volture-egg, qty: 1 }
+    - { itemId: vineberry-cluster, qty: 2 }
+    - { itemId: barley-flour, qty: 4 }
+  yields: { itemId: roasted-crust-pie, qty: 1 }
+  secondaryStep:
+    station: oven
+    description: "Bake in an Oven (~50 seconds). Burns if left too long."
+  food:
+    hp: 34
+    stamina: 100
+    healPerTick: 4
+    duration: 1800
+    weight: 1.0
+  tags: [food, baked, tier-7, ashlands]

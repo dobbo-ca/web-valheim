@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Bowl -->
+  <ellipse cx="24" cy="38" rx="16" ry="5" fill="#8B6D4A"/>
+  <rect x="8" y="33" width="32" height="5" fill="#A07850"/>
+  <ellipse cx="24" cy="33" rx="16" ry="5" fill="#C4A07A"/>
+  <!-- Powder pile -->
+  <ellipse cx="24" cy="32" rx="13" ry="6" fill="#E8E0C0"/>
+  <!-- Powder highlight -->
+  <ellipse cx="22" cy="30" rx="8" ry="3" fill="#F4EED4"/>
+  <!-- Powder shadow -->
+  <ellipse cx="26" cy="34" rx="7" ry="2" fill="#D0C8A0"/>
+  <!-- Shell fragment top -->
+  <polygon points="20,26 24,22 28,26" fill="#D0C8A0"/>
+  <polygon points="21,27 25,23 27,27" fill="#E8E0C0"/>
+</svg>

@@ -52,4 +52,52 @@ describe('real src/data', () => {
     }
     expect(missing).toEqual([]);
   });
+
+  it('food and mead are mutually exclusive on a recipe', async () => {
+    const data = await loadAll(resolve(__dirname, '../src/data'));
+    const violations: string[] = [];
+    for (const recipe of data.recipes) {
+      if (recipe.food && recipe.mead) {
+        violations.push(`${recipe.id} has both food and mead`);
+      }
+    }
+    expect(violations).toEqual([]);
+  });
+
+  it('every food recipe has a biome tag', async () => {
+    const data = await loadAll(resolve(__dirname, '../src/data'));
+    const biomes = ['meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands', 'ocean'];
+    const violations: string[] = [];
+    for (const recipe of data.recipes) {
+      if (!recipe.food && !recipe.mead) continue;
+      const tags = recipe.tags ?? [];
+      if (!tags.some((t) => biomes.includes(t))) {
+        violations.push(recipe.id);
+      }
+    }
+    expect(violations).toEqual([]);
+  });
+
+  it('every mead recipe has duration and cooldown', async () => {
+    const data = await loadAll(resolve(__dirname, '../src/data'));
+    const violations: string[] = [];
+    for (const recipe of data.recipes) {
+      if (!recipe.mead) continue;
+      if (recipe.mead.duration == null || recipe.mead.cooldown == null) {
+        violations.push(recipe.id);
+      }
+    }
+    expect(violations).toEqual([]);
+  });
+
+  it('no recipe has removed food field "regen" (renamed to healPerTick)', async () => {
+    const data = await loadAll(resolve(__dirname, '../src/data'));
+    const violations: string[] = [];
+    for (const recipe of data.recipes) {
+      if (recipe.food && 'regen' in recipe.food) {
+        violations.push(recipe.id);
+      }
+    }
+    expect(violations).toEqual([]);
+  });
 });

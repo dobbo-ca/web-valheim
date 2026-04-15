@@ -65,7 +65,7 @@ export const HeroDamageBar: Component<Props> = (props) => {
                 classList={{ 'hero-bar__tab--active': selectedQ() === q.quality }}
                 onClick={() => setSelectedQ(q.quality)}
               >
-                Q{q.quality}
+                ★{q.quality}
               </button>
             )}
           </For>

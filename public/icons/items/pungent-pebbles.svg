@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Back pebbles -->
+  <ellipse cx="16" cy="30" rx="7" ry="5" fill="#404040"/>
+  <ellipse cx="32" cy="30" rx="7" ry="5" fill="#404040"/>
+  <!-- Middle pebble -->
+  <ellipse cx="24" cy="28" rx="8" ry="6" fill="#606060"/>
+  <!-- Front pebbles -->
+  <ellipse cx="13" cy="36" rx="6" ry="4" fill="#606060"/>
+  <ellipse cx="35" cy="36" rx="6" ry="4" fill="#606060"/>
+  <!-- Highlight on main pebble -->
+  <ellipse cx="22" cy="25" rx="4" ry="3" fill="#808080"/>
+  <!-- Small highlight spots -->
+  <ellipse cx="14" cy="28" rx="2" ry="2" fill="#808080"/>
+  <ellipse cx="34" cy="28" rx="2" ry="2" fill="#808080"/>
+</svg>

@@ -11,9 +11,10 @@
   food:
     hp: 25
     stamina: 8
+    healPerTick: 2
     duration: 1200
-    regen: 2
-  tags: [food, tier-0]
+    weight: 0.5
+  tags: [food, tier-1, meadows]
 
 - id: cooked-boar-meat
   name: Cooked Boar Meat
@@ -26,9 +27,10 @@
   food:
     hp: 30
     stamina: 10
+    healPerTick: 2
     duration: 1200
-    regen: 2
-  tags: [food, tier-0]
+    weight: 1.0
+  tags: [food, tier-1, meadows]
 
 - id: cooked-deer-meat
   name: Cooked Deer Meat
@@ -41,9 +43,10 @@
   food:
     hp: 35
     stamina: 12
+    healPerTick: 2
     duration: 1200
-    regen: 2
-  tags: [food, tier-1]
+    weight: 1.0
+  tags: [food, tier-1, meadows]
 
 - id: cooked-fish
   name: Cooked Fish
@@ -56,9 +59,10 @@
   food:
     hp: 45
     stamina: 15
+    healPerTick: 2
     duration: 1200
-    regen: 3
-  tags: [food, tier-2]
+    weight: 0.5
+  tags: [food, tier-2, swamp]
 
 - id: cooked-wolf-meat
   name: Cooked Wolf Meat
@@ -71,14 +75,31 @@
   food:
     hp: 45
     stamina: 15
+    healPerTick: 3
     duration: 1200
-    regen: 3
-  tags: [food, tier-3]
+    weight: 1.0
+  tags: [food, tier-4, mountain]
+
+- id: cooked-bear-meat
+  name: Cooked Bear Meat
+  type: cooking
+  station: cooking-spit
+  stationLevel: 1
+  ingredients:
+    - { itemId: bear-meat, qty: 1 }
+  yields: { itemId: cooked-bear-meat, qty: 1 }
+  food:
+    hp: 40
+    stamina: 13
+    healPerTick: 2
+    duration: 1200
+    weight: 1.0
+  tags: [food, tier-2, black-forest]
 
 - id: cooked-hare-meat
   name: Cooked Hare Meat
   type: cooking
-  station: cooking-spit
+  station: iron-spit
   stationLevel: 1
   ingredients:
     - { itemId: hare-meat, qty: 1 }
@@ -86,14 +107,15 @@
   food:
     hp: 60
     stamina: 20
+    healPerTick: 5
     duration: 1200
-    regen: 5
-  tags: [food, tier-6]
+    weight: 1.0
+  tags: [food, tier-6, mistlands]
 
 - id: cooked-chicken-meat
   name: Cooked Chicken Meat
   type: cooking
-  station: cooking-spit
+  station: iron-spit
   stationLevel: 1
   ingredients:
     - { itemId: chicken-meat, qty: 1 }
@@ -101,9 +123,10 @@
   food:
     hp: 60
     stamina: 20
+    healPerTick: 5
     duration: 1200
-    regen: 5
-  tags: [food, tier-6]
+    weight: 1.0
+  tags: [food, tier-5, plains]
 
 # ── Iron Spit ─────────────────────────────────────────────────────────────────
 
@@ -118,9 +141,10 @@
   food:
     hp: 70
     stamina: 23
+    healPerTick: 3
     duration: 1500
-    regen: 3
-  tags: [food, tier-4]
+    weight: 10.0
+  tags: [food, tier-3, swamp]
 
 - id: cooked-lox-meat
   name: Cooked Lox Meat
@@ -133,9 +157,10 @@
   food:
     hp: 50
     stamina: 16
+    healPerTick: 4
     duration: 1200
-    regen: 4
-  tags: [food, tier-5]
+    weight: 1.0
+  tags: [food, tier-5, plains]
 
 - id: cooked-seeker-meat
   name: Cooked Seeker Meat
@@ -148,9 +173,10 @@
   food:
     hp: 60
     stamina: 20
+    healPerTick: 5
     duration: 1200
-    regen: 5
-  tags: [food, tier-6]
+    weight: 1.0
+  tags: [food, tier-6, mistlands]
 
 - id: cooked-bonemaw-meat
   name: Cooked Bonemaw Meat
@@ -163,9 +189,10 @@
   food:
     hp: 90
     stamina: 30
+    healPerTick: 6
     duration: 1500
-    regen: 6
-  tags: [food, tier-7]
+    weight: 10.0
+  tags: [food, tier-7, ashlands]
 
 - id: cooked-asksvin-tail
   name: Cooked Asksvin Tail
@@ -178,9 +205,10 @@
   food:
     hp: 70
     stamina: 24
+    healPerTick: 6
     duration: 1200
-    regen: 6
-  tags: [food, tier-7]
+    weight: 1.0
+  tags: [food, tier-7, ashlands]
 
 - id: cooked-volture-meat
   name: Cooked Volture Meat
@@ -193,6 +221,7 @@
   food:
     hp: 70
     stamina: 24
+    healPerTick: 6
     duration: 1200
-    regen: 6
-  tags: [food, tier-7]
+    weight: 1.0
+  tags: [food, tier-7, ashlands]

@@ -43,7 +43,7 @@ export const CompactUpgradeGrid: Component<Props> = (props) => {
 
           return (
             <div class="compact-upgrades__row">
-              <span class="compact-upgrades__quality">Q{upgrade.quality}</span>
+              <span class="compact-upgrades__quality">★{upgrade.quality}</span>
               <span class="compact-upgrades__station">
                 {stationName()} {upgrade.stationLevel}
               </span>

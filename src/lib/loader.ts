@@ -18,7 +18,7 @@ function computeRecipeBiome(
   let maxIdx = -1;
 
   // Check ingredient biomes
-  for (const ing of recipe.ingredients) {
+  for (const ing of recipe.ingredients ?? []) {
     const item = itemsById.get(ing.itemId);
     if (item?.biome) {
       const idx = BIOME_ORDER.indexOf(item.biome);
@@ -143,7 +143,7 @@ export function validateCrossReferences(data: DataSet): void {
       );
     }
 
-    for (const ing of r.ingredients) {
+    for (const ing of r.ingredients ?? []) {
       if (!itemIds.has(ing.itemId)) {
         throw new Error(
           `Recipe "${r.id}" references unknown item id: ${ing.itemId}`,

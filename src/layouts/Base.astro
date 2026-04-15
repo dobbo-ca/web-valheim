@@ -1,6 +1,7 @@
 ---
 import '../styles/theme.css';
 import { ThemeToggle } from '../components/ThemeToggle';
+import { TextSizeToggle } from '../components/TextSizeToggle';
 
 interface Props {
   title: string;
@@ -18,6 +19,10 @@ const base = import.meta.env.BASE_URL;
         if (t === "dark" || t === "light") {
           document.documentElement.dataset.theme = t;
         }
+        var s = localStorage.getItem("text-size");
+        if (s === "small" || s === "medium" || s === "large") {
+          document.documentElement.dataset.textSize = s;
+        }
       })();
     </script>
     <meta charset="utf-8" />
@@ -30,6 +35,7 @@ const base = import.meta.env.BASE_URL;
     <header class="site-header">
       <div class="site-header-inner">
         <a href={base} class="brand">⚔ Valheim Helper</a>
+        <TextSizeToggle client:load />
         <ThemeToggle client:load />
       </div>
     </header>

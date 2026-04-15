@@ -1,4 +1,4 @@
-import { Show, type Component } from 'solid-js';
+import { Show, For, type Component } from 'solid-js';
 import type { Recipe, Item, Station } from '../lib/types';
 import { AddToCartButton } from './AddToCartButton';
 import { ItemIcon } from './ItemIcon';
@@ -48,7 +48,7 @@ function formatIngredients(
   recipe: Recipe,
   itemsById: Map<string, Item>,
 ): string {
-  return recipe.ingredients
+  return (recipe.ingredients ?? [])
     .map((i) => `${itemsById.get(i.itemId)?.name ?? i.itemId} ×${i.qty}`)
     .join(', ');
 }
@@ -113,57 +113,120 @@ export const RecipeRow: Component<Props> = (props) => {
 
       <Show when={props.expanded}>
         <div class="recipe-row__detail" id={detailId()}>
-          {/* Combined crafting: Q1 ingredients + upgrades */}
-          <div class="recipe-row__section">
-            <CompactUpgradeGrid
-              recipe={props.recipe}
-              itemsById={props.itemsById}
-              stationsById={props.stationsById}
-              upgradeKeysInCart={props.upgradeKeysInCart}
-              onAddUpgradeToCart={props.onAddUpgradeToCart}
-              onAddMaxUpgrades={props.onAddMaxUpgrades}
-              onOpenCart={props.onOpenCart}
-              iconIds={props.iconIds}
-              spriteHref={props.spriteHref}
-            />
-          </div>
-
-          <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
-            <div class="recipe-row__section">
-              <span class="label">Yields</span>
-              <span>×{props.recipe.yields!.qty} per craft</span>
-            </div>
-          </Show>
-
-          {/* Stack size only for non-weapons/armor */}
-          <Show when={!props.recipe.stats && !props.recipe.armorStats && (() => {
-            const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
-            const item = props.itemsById.get(yieldItemId);
-            return item?.stackSize;
-          })()}>
-            {(stackSize) => (
+          <Show when={props.recipe.food || props.recipe.mead} fallback={
+            <>
+              {/* Weapons/armor/other: show upgrades */}
               <div class="recipe-row__section">
-                <span class="label">Stack size</span>
-                <span>{stackSize()}</span>
+                <CompactUpgradeGrid
+                  recipe={props.recipe}
+                  itemsById={props.itemsById}
+                  stationsById={props.stationsById}
+                  upgradeKeysInCart={props.upgradeKeysInCart}
+                  onAddUpgradeToCart={props.onAddUpgradeToCart}
+                  onAddMaxUpgrades={props.onAddMaxUpgrades}
+                  onOpenCart={props.onOpenCart}
+                  iconIds={props.iconIds}
+                  spriteHref={props.spriteHref}
+                />
               </div>
-            )}
-          </Show>
 
-          <Show when={props.recipe.food}>
-            {(food) => (
-              <div class="recipe-row__section">
-                <span class="label">Food stats</span>
-                <div class="food-stats">
-                  <span>HP {food().hp}</span>
-                  <span>Stam {food().stamina}</span>
-                  <span>Regen {food().regen}</span>
-                  <span>Duration {Math.round(food().duration / 60)}m</span>
-                  <Show when={food().eitr}>
-                    <span>Eitr {food().eitr}</span>
-                  </Show>
+              <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
+                <div class="recipe-row__section">
+                  <span class="label">Yields</span>
+                  <span>×{props.recipe.yields!.qty} per craft</span>
                 </div>
-              </div>
-            )}
+              </Show>
+
+              <Show when={!props.recipe.stats && !props.recipe.armorStats && (() => {
+                const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
+                const item = props.itemsById.get(yieldItemId);
+                return item?.stackSize;
+              })()}>
+                {(stackSize) => (
+                  <div class="recipe-row__section">
+                    <span class="label">Stack size</span>
+                    <span>{stackSize()}</span>
+                  </div>
+                )}
+              </Show>
+            </>
+          }>
+            {/* Food/mead: vertical layout — stats, ingredients, yield, stack */}
+              <Show when={props.recipe.food}>
+                {(food) => (
+                  <div class="recipe-row__section">
+                    <span class="label">Stats</span>
+                    <div class="food-detail-grid__stats">
+                      <Show when={food().hp != null}><span class="food-stat"><span class="food-stat__val">{food().hp}</span> HP</span></Show>
+                      <Show when={food().stamina != null}><span class="food-stat"><span class="food-stat__val">{food().stamina}</span> Stam</span></Show>
+                      <Show when={food().eitr != null}><span class="food-stat"><span class="food-stat__val">{food().eitr}</span> Eitr</span></Show>
+                      <Show when={food().healPerTick != null}><span class="food-stat"><span class="food-stat__val">{food().healPerTick}</span> hp/tick</span></Show>
+                      <Show when={food().duration != null}><span class="food-stat"><span class="food-stat__val">{Math.round(food().duration! / 60)}</span>m</span></Show>
+                      <Show when={food().regenModifier != null}><span class="food-stat food-stat--debuff"><span class="food-stat__val">{food().regenModifier! * 100}%</span> regen</span></Show>
+                    </div>
+                  </div>
+                )}
+              </Show>
+
+              <Show when={props.recipe.mead}>
+                {(mead) => (
+                  <div class="recipe-row__section">
+                    <span class="label">Effect</span>
+                    <div class="food-detail-grid__stats">
+                      <Show when={mead().effect.health != null}><span class="food-stat"><span class="food-stat__val">+{mead().effect.health}</span> HP</span></Show>
+                      <Show when={mead().effect.stamina != null}><span class="food-stat"><span class="food-stat__val">+{mead().effect.stamina}</span> Stam</span></Show>
+                      <Show when={mead().effect.eitr != null}><span class="food-stat"><span class="food-stat__val">+{mead().effect.eitr}</span> Eitr</span></Show>
+                      <Show when={mead().effect.resist}><span class="food-stat"><span class="food-stat__val">{mead().effect.resist}</span> resist</span></Show>
+                      <Show when={mead().effect.healthRegen != null}><span class="food-stat"><span class="food-stat__val">{mead().effect.healthRegen! > 0 ? '+' : ''}{mead().effect.healthRegen! * 100}%</span> HP regen</span></Show>
+                      <Show when={mead().effect.staminaRegen != null}><span class="food-stat"><span class="food-stat__val">{mead().effect.staminaRegen! > 0 ? '+' : ''}{mead().effect.staminaRegen! * 100}%</span> Stam regen</span></Show>
+                      <Show when={mead().effect.eitrRegen != null}><span class="food-stat"><span class="food-stat__val">{mead().effect.eitrRegen! > 0 ? '+' : ''}{mead().effect.eitrRegen! * 100}%</span> Eitr regen</span></Show>
+                      <Show when={mead().effect.effects}>{(fx) => <For each={fx()}>{(e) => <span class="food-stat">{e}</span>}</For>}</Show>
+                      <span class="food-stat"><span class="food-stat__val">{mead().duration >= 60 ? `${Math.round(mead().duration / 60)}m` : `${mead().duration}s`}</span> duration</span>
+                      <span class="food-stat"><span class="food-stat__val">{mead().cooldown >= 60 ? `${Math.round(mead().cooldown / 60)}m` : `${mead().cooldown}s`}</span> cooldown</span>
+                    </div>
+                  </div>
+                )}
+              </Show>
+
+              <Show when={(props.recipe.ingredients ?? []).length > 0}>
+                <div class="recipe-row__section">
+                  <span class="label">Ingredients</span>
+                  <div class="food-detail-grid__ings">
+                    <For each={props.recipe.ingredients ?? []}>
+                      {(ing) => {
+                        const name = () => props.itemsById.get(ing.itemId)?.name ?? ing.itemId;
+                        const hasIcon = () => props.iconIds?.has(ing.itemId) ?? false;
+                        return (
+                          <span class="food-detail-grid__ing">
+                            <Show when={hasIcon()}>
+                              <ItemIcon id={ing.itemId} size="sm" spriteHref={spriteHref()} />
+                            </Show>
+                            {name()} ×{ing.qty}
+                          </span>
+                        );
+                      }}
+                    </For>
+                  </div>
+                </div>
+              </Show>
+
+              <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
+                <div class="recipe-row__section">
+                  <span class="label">Yield</span>
+                  <span>×{props.recipe.yields!.qty} per craft</span>
+                </div>
+              </Show>
+
+              {(() => {
+                const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
+                const item = props.itemsById.get(yieldItemId);
+                return item?.stackSize ? (
+                  <div class="recipe-row__section">
+                    <span class="label">Stack</span>
+                    <span>{item.stackSize}</span>
+                  </div>
+                ) : null;
+              })()}
           </Show>
 
           <a

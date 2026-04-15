@@ -18,6 +18,8 @@ import type {
   ResistanceLevelSchema,
   ResistancesSchema,
   SetBonusSchema,
+  MeadEffectSchema,
+  MeadStatsSchema,
 } from './schema';
 
 export type Item = z.infer<typeof ItemSchema>;
@@ -38,3 +40,5 @@ export type ArmorStats = z.infer<typeof ArmorStatsSchema>;
 export type ResistanceLevel = z.infer<typeof ResistanceLevelSchema>;
 export type Resistances = z.infer<typeof ResistancesSchema>;
 export type SetBonus = z.infer<typeof SetBonusSchema>;
+export type MeadEffect = z.infer<typeof MeadEffectSchema>;
+export type MeadStats = z.infer<typeof MeadStatsSchema>;

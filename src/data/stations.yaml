@@ -173,3 +173,7 @@
   name: Inventory
   maxLevel: 1
   upgrades: []
+- id: found
+  name: Found
+  maxLevel: 1
+  upgrades: []

@@ -40,11 +40,32 @@ export const StationSchema = z.object({
 });
 
 export const FoodStatsSchema = z.object({
-  hp: z.number().nonnegative(),
-  stamina: z.number().nonnegative(),
-  duration: z.number().nonnegative(),
-  regen: z.number().nonnegative(),
-  eitr: z.number().nonnegative().optional(),
+  hp: z.number().optional(),
+  stamina: z.number().optional(),
+  eitr: z.number().optional(),
+  healPerTick: z.number().optional(),
+  duration: z.number().optional(),
+  weight: z.number().optional(),
+  regenModifier: z.number().optional(),
+});
+
+export const MeadEffectSchema = z.object({
+  health: z.number().optional(),
+  stamina: z.number().optional(),
+  eitr: z.number().optional(),
+  resist: z.string().optional(),
+  healthRegen: z.number().optional(),
+  staminaRegen: z.number().optional(),
+  eitrRegen: z.number().optional(),
+  effects: z.array(z.string()).optional(),
+});
+
+export const MeadStatsSchema = z.object({
+  effect: MeadEffectSchema,
+  duration: z.number(),
+  cooldown: z.number(),
+  weight: z.number().optional(),
+  cooldownGroup: z.string().optional(),
 });
 
 export const SecondaryStepSchema = z.object({
@@ -150,12 +171,13 @@ export const RecipeSchema = z.object({
   station: z.string().min(1),
   stationLevel: z.number().int().positive(),
   repairLevel: z.number().int().positive().optional(),
-  ingredients: z.array(IngredientRefSchema),
+  ingredients: z.array(IngredientRefSchema).optional(),
   yields: IngredientRefSchema.optional(),
   skill: z.string().optional(),
   tags: z.array(z.string()).optional(),
   notes: z.string().optional(),
   food: FoodStatsSchema.optional(),
+  mead: MeadStatsSchema.optional(),
   secondaryStep: SecondaryStepSchema.optional(),
   stats: WeaponStatsSchema.optional(),                    // base weapon stats
   armorStats: ArmorStatsSchema.optional(),
