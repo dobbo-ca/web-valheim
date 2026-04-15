@@ -779,7 +779,9 @@ h3 {
   cursor: pointer;
 }
 .cart-badge--empty {
-  opacity: 0.5;
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
 }
 .cart-badge:hover {
   border-color: var(--accent);
@@ -997,10 +999,75 @@ h3 {
   color: var(--danger);
 }
 
+/* ===== Text size scaling ===== */
+:root { --text-scale: 1; }
+[data-text-size="small"] { --text-scale: 0.85; }
+[data-text-size="large"] { --text-scale: 1.2; }
+
+.recipe-row, .recipe-row__detail, .food-detail-grid__stats,
+.food-detail-grid__ings, .compact-upgrades, .filter-bar,
+.recipe-table__header { font-size: calc(12px * var(--text-scale)); }
+.recipe-row__name { font-size: calc(13px * var(--text-scale)); }
+.recipe-row__station, .recipe-row__ings, .recipe-row__stats-cell { font-size: calc(12px * var(--text-scale)); }
+
+/* ===== Text size toggle ===== */
+.text-size-toggle {
+  position: relative;
+  margin-left: auto;
+}
+.text-size-toggle__trigger {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-soft);
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+}
+.text-size-toggle__trigger:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.text-size-toggle__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px 0;
+  min-width: 80px;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.text-size-toggle__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--text-soft);
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.text-size-toggle__option:hover {
+  background: var(--surface-sunken);
+  color: var(--text);
+}
+.text-size-toggle__option--active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* ===== Theme toggle ===== */
 .theme-toggle {
   position: relative;
-  margin-left: auto;
 }
 .theme-toggle__trigger {
   background: transparent;

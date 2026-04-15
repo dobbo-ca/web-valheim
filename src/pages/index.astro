@@ -18,7 +18,5 @@ const spriteHref = `${base}icons/${manifest.filename}`;
 const slimData = slimDataSet(data);
 ---
 <Base title="Valheim Recipes">
-  <h1>Recipes</h1>
-  <p class="subtitle">Filterable crafting + cooking + building reference. Click a row to expand; click an ingredient to reverse-lookup.</p>
   <RecipeTable client:load data={slimData} baseHref={base} iconIds={iconIds} spriteHref={spriteHref} />
 </Base>

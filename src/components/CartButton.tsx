@@ -11,6 +11,7 @@ export const CartButton: Component<Props> = (props) => {
       type="button"
       class="cart-badge"
       classList={{ 'cart-badge--empty': props.count === 0 }}
+      disabled={props.count === 0}
       onClick={props.onClick}
       aria-label={props.count > 0 ? `Shopping cart: ${props.count} recipe${props.count === 1 ? '' : 's'}` : 'Shopping cart: empty'}
     >
