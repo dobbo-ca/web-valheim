@@ -151,11 +151,10 @@ export const RecipeRow: Component<Props> = (props) => {
               </Show>
             </>
           }>
-            {/* Food/mead: horizontal stat layout, no upgrades */}
-            <div class="food-detail-grid">
+            {/* Food/mead: vertical layout — stats, ingredients, yield, stack */}
               <Show when={props.recipe.food}>
                 {(food) => (
-                  <div class="food-detail-grid__col">
+                  <div class="recipe-row__section">
                     <span class="label">Stats</span>
                     <div class="food-detail-grid__stats">
                       <Show when={food().hp != null}><span class="food-stat"><span class="food-stat__val">{food().hp}</span> HP</span></Show>
@@ -171,7 +170,7 @@ export const RecipeRow: Component<Props> = (props) => {
 
               <Show when={props.recipe.mead}>
                 {(mead) => (
-                  <div class="food-detail-grid__col">
+                  <div class="recipe-row__section">
                     <span class="label">Effect</span>
                     <div class="food-detail-grid__stats">
                       <Show when={mead().effect.health != null}><span class="food-stat"><span class="food-stat__val">+{mead().effect.health}</span> HP</span></Show>
@@ -190,7 +189,7 @@ export const RecipeRow: Component<Props> = (props) => {
               </Show>
 
               <Show when={(props.recipe.ingredients ?? []).length > 0}>
-                <div class="food-detail-grid__col">
+                <div class="recipe-row__section">
                   <span class="label">Ingredients</span>
                   <div class="food-detail-grid__ings">
                     <For each={props.recipe.ingredients ?? []}>
@@ -211,26 +210,23 @@ export const RecipeRow: Component<Props> = (props) => {
                 </div>
               </Show>
 
-              <div class="food-detail-grid__col food-detail-grid__col--narrow">
-                <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
+              <Show when={props.recipe.yields && props.recipe.yields.qty > 1}>
+                <div class="recipe-row__section">
                   <span class="label">Yield</span>
-                  <span>×{props.recipe.yields!.qty}</span>
-                </Show>
-              </div>
+                  <span>×{props.recipe.yields!.qty} per craft</span>
+                </div>
+              </Show>
 
-              <div class="food-detail-grid__col food-detail-grid__col--narrow">
-                {(() => {
-                  const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
-                  const item = props.itemsById.get(yieldItemId);
-                  return item?.stackSize ? (
-                    <>
-                      <span class="label">Stack</span>
-                      <span>{item.stackSize}</span>
-                    </>
-                  ) : null;
-                })()}
-              </div>
-            </div>
+              {(() => {
+                const yieldItemId = props.recipe.yields?.itemId ?? props.recipe.id;
+                const item = props.itemsById.get(yieldItemId);
+                return item?.stackSize ? (
+                  <div class="recipe-row__section">
+                    <span class="label">Stack</span>
+                    <span>{item.stackSize}</span>
+                  </div>
+                ) : null;
+              })()}
           </Show>
 
           <a
