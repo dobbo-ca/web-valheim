@@ -158,7 +158,7 @@ No `greatsword` tag. Two-handed swords are filtered by selecting Melee → Sword
 
 ▸ Advanced ────────────────────────────────────────────────
   Station:     [All stations ▾]
-  Station levels: Workbench [5]/5  Forge [7]/7  ...
+  (Station level filtering deferred to progression modal — see progression-mode spec)
 ```
 
 ## Filter State
@@ -248,6 +248,8 @@ Update `tests/real-data.test.ts`:
 
 ## Out of Scope
 
+- Progression mode modal and localStorage (separate spec, built after filter redesign)
+- Station level ceiling sliders (moving to progression modal)
 - Building sub-categories (deferred)
 - Damage type sub-filters within elemental (deferred)
 - Additional `found` items for building/crafting categories (rock, stone, wood)
