@@ -16,7 +16,7 @@ export function slimRecipe(r: Recipe): Recipe {
     type: r.type,
     station: r.station,
     stationLevel: r.stationLevel,
-    ingredients: r.ingredients,
+    ingredients: r.ingredients ?? [],
   };
   if (r.tags) slim.tags = r.tags;
   if (r.biome) slim.biome = r.biome;

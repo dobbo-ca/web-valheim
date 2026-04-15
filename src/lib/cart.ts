@@ -83,7 +83,7 @@ export function aggregateGroceryList(
       if (!upgrade) continue;
       ingredients = upgrade.ingredients;
     } else {
-      ingredients = recipe.ingredients;
+      ingredients = recipe.ingredients ?? [];
     }
 
     for (const { itemId, qty } of ingredients) {

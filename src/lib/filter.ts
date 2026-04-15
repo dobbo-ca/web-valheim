@@ -50,7 +50,7 @@ export function filterRecipes(recipes: Recipe[], state: FilterState): Recipe[] {
     }
 
     if (state.ingredientIds.length > 0) {
-      const ingIds = new Set(r.ingredients.map((i) => i.itemId));
+      const ingIds = new Set((r.ingredients ?? []).map((i) => i.itemId));
       if (!state.ingredientIds.every((id) => ingIds.has(id))) return false;
     }
 
@@ -58,7 +58,7 @@ export function filterRecipes(recipes: Recipe[], state: FilterState): Recipe[] {
       const haystacks: string[] = [
         r.name.toLowerCase(),
         ...(r.tags ?? []).map((t) => t.toLowerCase()),
-        ...r.ingredients.map((i) => i.itemId.toLowerCase()),
+        ...(r.ingredients ?? []).map((i) => i.itemId.toLowerCase()),
       ];
       if (!haystacks.some((h) => h.includes(q))) return false;
     }
