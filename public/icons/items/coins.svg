@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Bottom coin -->
+  <ellipse cx="24" cy="38" rx="12" ry="4" fill="#B08010"/>
+  <rect x="12" y="34" width="24" height="4" fill="#D4A020"/>
+  <ellipse cx="24" cy="34" rx="12" ry="4" fill="#F0C040"/>
+  <!-- Middle coin -->
+  <ellipse cx="24" cy="30" rx="12" ry="4" fill="#B08010"/>
+  <rect x="12" y="26" width="24" height="4" fill="#D4A020"/>
+  <ellipse cx="24" cy="26" rx="12" ry="4" fill="#F0C040"/>
+  <!-- Top coin -->
+  <ellipse cx="24" cy="22" rx="12" ry="4" fill="#B08010"/>
+  <rect x="12" y="18" width="24" height="4" fill="#D4A020"/>
+  <ellipse cx="24" cy="18" rx="12" ry="4" fill="#F0C040"/>
+</svg>
