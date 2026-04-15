@@ -7,7 +7,7 @@ import {
   biomes,
   foodStatFocus,
   handedness,
-  modifiers,
+  damageTypes,
   categorySubFilters,
   defaultSubFilters,
   tagDisplayNames,
@@ -63,8 +63,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
     const allSubFilters = [
       ...handedness.map((h) => h.tag),
       ...foodStatFocus.map((f) => f.tag),
-      ...modifiers.map((m) => m.tag),
-      'elemental',
+      ...damageTypes.map((d) => d.tag),
       'found',
     ];
     const clearSet = new Set([...categoryTags, ...allSubtypes, ...allSubFilters]);
@@ -199,6 +198,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                   role="radio"
                   aria-checked={hasTags(h.tag)}
                 >
+                  <FilterIcon name={h.tag} />
                   {h.label}
                 </button>
               )}
@@ -254,42 +254,25 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
         </div>
       </Show>
 
-      {/* ── Modifiers (Melee/Ranged/Ammo only) ─────────────────────── */}
-      <Show when={isSubFilterVisible('modifiers')}>
+      {/* ── Damage Type (Melee/Ranged/Ammo) ─────────────────────────────── */}
+      <Show when={isSubFilterVisible('damageType')}>
         <div class="adv-filter__section">
-          <span class="adv-filter__label">Modifiers</span>
-          <div class="adv-filter__tags" role="group" aria-label="Modifiers">
-            <For each={modifiers}>
-              {(m) => (
+          <span class="adv-filter__label">Damage Type</span>
+          <div class="adv-filter__tags" role="group" aria-label="Damage type">
+            <For each={damageTypes}>
+              {(d) => (
                 <button
                   type="button"
                   class="filter-chip filter-chip--sm"
-                  classList={{ 'filter-chip--active': hasTags(m.tag) }}
-                  onClick={() => toggleModifier(m.tag)}
-                  aria-pressed={hasTags(m.tag)}
+                  classList={{ 'filter-chip--active': hasTags(d.tag) }}
+                  onClick={() => toggleModifier(d.tag)}
+                  aria-pressed={hasTags(d.tag)}
                 >
-                  {m.label}
+                  <FilterIcon name={d.tag} />
+                  {d.label}
                 </button>
               )}
             </For>
-          </div>
-        </div>
-      </Show>
-
-      {/* ── Elemental only (Melee/Ammo) ────────────────────────────── */}
-      <Show when={isSubFilterVisible('elemental')}>
-        <div class="adv-filter__section">
-          <span class="adv-filter__label">Modifiers</span>
-          <div class="adv-filter__tags" role="group" aria-label="Modifiers">
-            <button
-              type="button"
-              class="filter-chip filter-chip--sm"
-              classList={{ 'filter-chip--active': hasTags('elemental') }}
-              onClick={() => toggleModifier('elemental')}
-              aria-pressed={hasTags('elemental')}
-            >
-              Elemental
-            </button>
           </div>
         </div>
       </Show>
