@@ -7,16 +7,17 @@ interface Props {
 
 export const CartButton: Component<Props> = (props) => {
   return (
-    <Show when={props.count > 0}>
-      <button
-        type="button"
-        class="cart-badge"
-        onClick={props.onClick}
-        aria-label={`Shopping cart: ${props.count} recipe${props.count === 1 ? '' : 's'}`}
-      >
-        <span class="cart-badge__icon" aria-hidden="true">🛒</span>
+    <button
+      type="button"
+      class="cart-badge"
+      classList={{ 'cart-badge--empty': props.count === 0 }}
+      onClick={props.onClick}
+      aria-label={props.count > 0 ? `Shopping cart: ${props.count} recipe${props.count === 1 ? '' : 's'}` : 'Shopping cart: empty'}
+    >
+      <span class="cart-badge__icon" aria-hidden="true">🛒</span>
+      <Show when={props.count > 0}>
         <span class="cart-badge__count">{props.count}</span>
-      </button>
-    </Show>
+      </Show>
+    </button>
   );
 };

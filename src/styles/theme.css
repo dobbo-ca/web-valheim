@@ -778,9 +778,13 @@ h3 {
   font-size: 13px;
   cursor: pointer;
 }
+.cart-badge--empty {
+  opacity: 0.5;
+}
 .cart-badge:hover {
   border-color: var(--accent);
   color: var(--accent);
+  opacity: 1;
 }
 .cart-badge__icon {
   font-size: 14px;
