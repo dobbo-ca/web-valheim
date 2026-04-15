@@ -1,5 +1,5 @@
 import { For, type Component, createSignal, createMemo } from 'solid-js';
-import { ALL_BIOMES, type Biome } from '../lib/weather';
+import { ALL_BIOMES, VARIABLE_BIOMES, STATIC_BIOMES, type Biome } from '../lib/weather';
 import { WeatherDayCard } from './WeatherDayCard';
 
 const NUM_DAYS = 10;
@@ -11,7 +11,7 @@ interface Props {
 export const WeatherForecast: Component<Props> = (props) => {
   const [currentDay, setCurrentDay] = createSignal(1);
   const [selectedBiomes, setSelectedBiomes] = createSignal<Set<Biome>>(
-    new Set(ALL_BIOMES),
+    new Set(VARIABLE_BIOMES),
   );
   const [expandedDay, setExpandedDay] = createSignal<number | null>(null);
 
@@ -37,11 +37,12 @@ export const WeatherForecast: Component<Props> = (props) => {
   };
 
   const selectAllBiomes = () => {
-    setSelectedBiomes(new Set(ALL_BIOMES));
+    setSelectedBiomes(new Set(VARIABLE_BIOMES));
   };
 
   const allSelected = createMemo(
-    () => selectedBiomes().size === ALL_BIOMES.length,
+    () => VARIABLE_BIOMES.every((b) => selectedBiomes().has(b)) &&
+      !ALL_BIOMES.some((b) => STATIC_BIOMES.has(b) && selectedBiomes().has(b)),
   );
 
   const handleDayInput = (value: string) => {

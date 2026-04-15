@@ -1790,7 +1790,7 @@ h3 {
 /* Day cards grid */
 .weather-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 10px;
   margin-top: 12px;
 }

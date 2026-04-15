@@ -98,7 +98,18 @@ const BIOME_POOLS: Record<Biome, WeatherEntry[]> = {
   ],
 };
 
-export const ALL_BIOMES: Biome[] = Object.keys(BIOME_POOLS) as Biome[];
+export const ALL_BIOMES: Biome[] = [
+  'Meadows', 'Black Forest', 'Swamp', 'Mountain', 'Plains',
+  'Ocean', 'Mistlands', 'Ashlands', 'Deep North',
+];
+
+/** Biomes with only one weather type — no forecast variation. */
+export const STATIC_BIOMES: Set<Biome> = new Set(
+  ALL_BIOMES.filter((b) => BIOME_POOLS[b].length === 1),
+);
+
+/** Biomes with actual weather variation — useful default selection. */
+export const VARIABLE_BIOMES: Biome[] = ALL_BIOMES.filter((b) => !STATIC_BIOMES.has(b));
 
 // ---------------------------------------------------------------------------
 // Effects mapping
