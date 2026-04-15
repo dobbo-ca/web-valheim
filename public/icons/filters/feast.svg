@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Large platter -->
+  <ellipse cx="24" cy="34" rx="22" ry="8" fill="#8B6D4A"/>
+  <ellipse cx="24" cy="32" rx="20" ry="7" fill="#9A7C5A"/>
+  <!-- Roasted whole item (turkey/boar leg shape) -->
+  <ellipse cx="24" cy="24" rx="14" ry="8" fill="#A06030"/>
+  <!-- Garnish spots -->
+  <circle cx="14" cy="28" r="3" fill="#6AA84F"/>
+  <circle cx="34" cy="28" r="3" fill="#6AA84F"/>
+  <circle cx="24" cy="30" r="2" fill="#CC4444"/>
+  <!-- Bone sticking out -->
+  <rect x="36" y="20" width="8" height="3" rx="1" fill="#E0D8C8"/>
+  <!-- Steam -->
+  <rect x="18" y="8" width="2" height="6" fill="#D0D0D0" opacity="0.5"/>
+  <rect x="24" y="6" width="2" height="8" fill="#D0D0D0" opacity="0.5"/>
+  <rect x="30" y="8" width="2" height="6" fill="#D0D0D0" opacity="0.5"/>
+</svg>

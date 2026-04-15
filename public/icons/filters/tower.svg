@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Tall rectangular shield -->
+  <rect x="10" y="4" width="28" height="40" rx="4" fill="#8B6D4A"/>
+  <!-- Inner face -->
+  <rect x="13" y="7" width="22" height="34" rx="2" fill="#9A7C5A"/>
+  <!-- Horizontal bands -->
+  <rect x="10" y="14" width="28" height="3" fill="#7A5C3A"/>
+  <rect x="10" y="30" width="28" height="3" fill="#7A5C3A"/>
+  <!-- Vertical band -->
+  <rect x="22" y="4" width="4" height="40" fill="#7A5C3A"/>
+  <!-- Center boss -->
+  <circle cx="24" cy="24" r="4" fill="#B0B8C8"/>
+  <circle cx="24" cy="24" r="2" fill="#808080"/>
+</svg>
