@@ -436,7 +436,7 @@
   - {itemId: wood, qty: 10}
   - {itemId: hard-antler, qty: 1}
   yields: {itemId: antler-pickaxe, qty: 1}
-  tags: [melee, pickaxe, 2h, tier-1, meadows]
+  tags: [tool, pickaxe, 2h, tier-1, meadows]
   stats:
     weight: 1.5
     durability: 100
@@ -1510,7 +1510,7 @@
   - {itemId: core-wood, qty: 3}
   - {itemId: bronze, qty: 10}
   yields: {itemId: bronze-pickaxe, qty: 1}
-  tags: [melee, pickaxe, 2h, tier-2, black-forest]
+  tags: [tool, pickaxe, 2h, tier-2, black-forest]
   stats:
     weight: 1.5
     durability: 120
@@ -2384,7 +2384,7 @@
   - {itemId: core-wood, qty: 3}
   - {itemId: iron, qty: 20}
   yields: {itemId: iron-pickaxe, qty: 1}
-  tags: [melee, pickaxe, 2h, tier-3, swamp]
+  tags: [tool, pickaxe, 2h, tier-3, swamp]
   stats:
     weight: 1.5
     durability: 150
@@ -4025,7 +4025,7 @@
   - {itemId: yggdrasil-wood, qty: 3}
   - {itemId: black-metal, qty: 25}
   yields: {itemId: black-metal-pickaxe, qty: 1}
-  tags: [melee, pickaxe, 2h, tier-5, mistlands]
+  tags: [tool, pickaxe, 2h, tier-5, mistlands]
   stats:
     durability: 210
     primaryAttack:

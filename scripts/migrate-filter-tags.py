@@ -171,6 +171,12 @@ def migrate_recipe(recipe, filename):
         if not has_tag(tags, 'tool'):
             add_tag(tags, 'tool', position=0)
 
+    # === Pickaxes → tool (not melee weapons) ===
+    if has_tag(tags, 'pickaxe'):
+        remove_tag(tags, 'melee')
+        if not has_tag(tags, 'tool'):
+            add_tag(tags, 'tool', position=0)
+
     if has_tag(tags, 'mead'):
         for old_tag, new_tag in MEAD_TAG_MAP.items():
             if has_tag(tags, old_tag):

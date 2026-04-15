@@ -5,11 +5,11 @@ export interface FilterCategory {
 }
 
 export const categories: FilterCategory[] = [
-  { label: 'Melee',    tag: 'melee',  subtypes: ['sword', 'axe', 'mace', 'fists', 'knife', 'spear', 'pickaxe'] },
+  { label: 'Melee',    tag: 'melee',  subtypes: ['sword', 'axe', 'mace', 'fists', 'knife', 'spear', 'atgeir'] },
   { label: 'Ranged',   tag: 'ranged', subtypes: ['bow', 'crossbow', 'staff'] },
   { label: 'Ammo',     tag: 'ammo',   subtypes: ['arrow', 'bolt', 'missile'] },
   { label: 'Armor',    tag: 'armor',  subtypes: ['helmet', 'chest', 'legs', 'cape', 'buckler', 'shield', 'tower'] },
-  { label: 'Tools',    tag: 'tool',   subtypes: ['bait'] },
+  { label: 'Tools',    tag: 'tool',   subtypes: ['pickaxe', 'bait'] },
   { label: 'Building', tag: 'build',  subtypes: [] },
   { label: 'Food',     tag: 'food',   subtypes: ['raw', 'cooked', 'baked', 'feast'] },
   { label: 'Mead',     tag: 'mead',   subtypes: ['healing', 'stamina', 'eitr', 'resistance', 'utility'] },
@@ -37,6 +37,7 @@ export const foodStatFocus = [
 export const handedness = [
   { label: 'One-Handed', tag: '1h' },
   { label: 'Two-Handed', tag: '2h' },
+  { label: 'Dual Wield', tag: 'dual-wield' },
 ] as const;
 
 export const modifiers = [
@@ -47,6 +48,8 @@ export const modifiers = [
 export const tagDisplayNames: Record<string, string> = {
   '1h': 'One-Handed',
   '2h': 'Two-Handed',
+  'dual-wield': 'Dual Wield',
+  'atgeir': 'Polearm',
   'tower': 'Tower Shield',
   'build': 'Building',
   'melee': 'Melee',
@@ -56,12 +59,12 @@ export const tagDisplayNames: Record<string, string> = {
   'balanced': 'Balanced',
 };
 
-export type SubFilterKey = 'handedness' | 'biome' | 'statFocus' | 'modifiers' | 'found';
+export type SubFilterKey = 'handedness' | 'biome' | 'statFocus' | 'modifiers' | 'elemental' | 'found';
 
 export const categorySubFilters: Record<string, SubFilterKey[]> = {
-  melee:  ['handedness', 'biome', 'modifiers'],
+  melee:  ['handedness', 'biome', 'elemental'],
   ranged: ['handedness', 'biome', 'modifiers'],
-  ammo:   ['biome', 'modifiers'],
+  ammo:   ['biome', 'elemental'],
   armor:  ['biome'],
   tool:   ['biome'],
   build:  ['biome', 'found'],

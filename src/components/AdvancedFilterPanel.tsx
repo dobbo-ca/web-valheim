@@ -10,6 +10,7 @@ import {
   modifiers,
   categorySubFilters,
   defaultSubFilters,
+  tagDisplayNames,
   type SubFilterKey,
 } from '../lib/filter-categories';
 
@@ -63,6 +64,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
       ...handedness.map((h) => h.tag),
       ...foodStatFocus.map((f) => f.tag),
       ...modifiers.map((m) => m.tag),
+      'elemental',
       'found',
     ];
     const clearSet = new Set([...categoryTags, ...allSubtypes, ...allSubFilters]);
@@ -174,7 +176,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                   aria-checked={hasTags(sub)}
                 >
                   <FilterIcon name={sub} />
-                  {sub}
+                  {tagDisplayNames[sub] ?? sub}
                 </button>
               )}
             </For>
@@ -270,6 +272,24 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
                 </button>
               )}
             </For>
+          </div>
+        </div>
+      </Show>
+
+      {/* ── Elemental only (Melee/Ammo) ────────────────────────────── */}
+      <Show when={isSubFilterVisible('elemental')}>
+        <div class="adv-filter__section">
+          <span class="adv-filter__label">Modifiers</span>
+          <div class="adv-filter__tags" role="group" aria-label="Modifiers">
+            <button
+              type="button"
+              class="filter-chip filter-chip--sm"
+              classList={{ 'filter-chip--active': hasTags('elemental') }}
+              onClick={() => toggleModifier('elemental')}
+              aria-pressed={hasTags('elemental')}
+            >
+              Elemental
+            </button>
           </div>
         </div>
       </Show>

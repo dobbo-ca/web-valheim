@@ -7,4 +7,11 @@ export default defineConfig({
   outDir: './dist/valheim',
   trailingSlash: 'always',
   integrations: [solid()],
+  vite: {
+    server: {
+      fs: {
+        allow: ['../../..'],
+      },
+    },
+  },
 });
