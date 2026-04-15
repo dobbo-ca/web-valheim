@@ -1,7 +1,7 @@
 import type { Recipe, RecipeType } from './types';
 
 export interface FilterState {
-  type: RecipeType | 'all';
+  type: RecipeType | 'all' | 'found';
   station: string;
   minStationLevel: number;
   maxStationLevel: number;
@@ -27,7 +27,8 @@ export const emptyFilterState: FilterState = {
 export function filterRecipes(recipes: Recipe[], state: FilterState): Recipe[] {
   const q = state.query.trim().toLowerCase();
   return recipes.filter((r) => {
-    if (state.type !== 'all' && r.type !== state.type) return false;
+    if (state.type === 'found') { if (r.station !== 'found') return false; }
+    else if (state.type !== 'all' && r.type !== state.type) return false;
     if (state.station !== 'all' && r.station !== state.station) return false;
     if (r.stationLevel < state.minStationLevel) return false;
 

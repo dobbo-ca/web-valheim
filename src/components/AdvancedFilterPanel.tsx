@@ -26,6 +26,7 @@ const biomes: { label: string; value: string }[] = [
   { label: 'Plains', value: 'plains' },
   { label: 'Mistlands', value: 'mistlands' },
   { label: 'Ashlands', value: 'ashlands' },
+  { label: 'Ocean', value: 'ocean' },
   { label: 'Deep North', value: 'deep-north' },
 ];
 
@@ -56,6 +57,7 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
     { value: 'crafting', label: 'Crafting' },
     { value: 'cooking', label: 'Cooking' },
     { value: 'building', label: 'Building' },
+    { value: 'found', label: 'Found' },
   ];
 
   const toggleTag = (tag: string) => {
