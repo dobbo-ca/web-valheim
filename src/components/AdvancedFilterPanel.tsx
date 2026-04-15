@@ -122,17 +122,19 @@ export const AdvancedFilterPanel: Component<Props> = (props) => {
 
   return (
     <div class="adv-filter">
-      {hasAnyFilter() && (
-        <button
-          type="button"
-          class="adv-filter__clear"
-          onClick={() => props.onChange({ ...emptyFilterState })}
-        >
-          Clear All Filters
-        </button>
-      )}
       <div class="adv-filter__section">
-        <span class="adv-filter__label">Type</span>
+        <div class="adv-filter__section-header">
+          <span class="adv-filter__label">Type</span>
+          <button
+            type="button"
+            class="adv-filter__clear"
+            classList={{ 'adv-filter__clear--disabled': !hasAnyFilter() }}
+            disabled={!hasAnyFilter()}
+            onClick={() => props.onChange({ ...emptyFilterState })}
+          >
+            Clear All Filters
+          </button>
+        </div>
         <div class="adv-filter__tags" role="group" aria-label="Recipe type">
           <For each={typeChips}>
             {(chip) => (

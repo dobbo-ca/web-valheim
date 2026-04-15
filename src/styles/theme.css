@@ -1248,8 +1248,12 @@ h3 {
   flex-direction: column;
   gap: 12px;
 }
+.adv-filter__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .adv-filter__clear {
-  align-self: flex-end;
   background: transparent;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -1259,9 +1263,14 @@ h3 {
   padding: 4px 10px;
   cursor: pointer;
 }
-.adv-filter__clear:hover {
+.adv-filter__clear:hover:not(:disabled) {
   border-color: var(--danger);
   background: color-mix(in oklch, var(--danger) 12%, transparent);
+}
+.adv-filter__clear--disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
 }
 .adv-filter__section {
   display: flex;
