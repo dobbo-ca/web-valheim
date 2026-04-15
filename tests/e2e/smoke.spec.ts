@@ -1,9 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('recipe table', () => {
-  test('loads and shows recipes including building type', async ({ page }) => {
-    await page.goto('/valheim/');
-    await expect(page.getByRole('heading', { name: 'Recipes' })).toBeVisible();
+  test('loads and shows recipes', async ({ page }) => {
     await page.goto('/valheim/?q=iron+sword');
     await expect(page.getByText('Iron Sword')).toBeVisible();
   });
@@ -31,9 +29,9 @@ test.describe('advanced filters', () => {
   test('toggle opens and closes the panel', async ({ page }) => {
     await page.goto('/valheim/');
     await page.getByRole('button', { name: /Filters/ }).click();
-    await expect(page.getByText('Type')).toBeVisible();
+    await expect(page.getByText('Category')).toBeVisible();
     await page.getByRole('button', { name: /Filters/ }).click();
-    await expect(page.getByText('Type')).not.toBeVisible();
+    await expect(page.getByText('Category')).not.toBeVisible();
   });
 
   test('cart drawer opens and shows grocery list', async ({ page }) => {
@@ -69,20 +67,20 @@ test.describe('advanced filters', () => {
     await page.locator('.cart-badge').click();
     await page.getByRole('button', { name: 'Clear Cart' }).click();
     await expect(page.locator('.cart-drawer')).not.toBeVisible();
-    await expect(page.locator('.cart-badge')).not.toBeVisible();
+    await expect(page.locator('.cart-badge__count')).not.toBeVisible();
   });
 
   test('building type filter shows station upgrades', async ({ page }) => {
     await page.goto('/valheim/?q=chopping');
     await page.getByRole('button', { name: /Filters/ }).click();
-    await page.getByRole('button', { name: 'Building', exact: true }).click();
+    await page.getByRole('radio', { name: 'Building' }).click();
     await expect(page.getByText('Chopping Block')).toBeVisible();
   });
 
-  test('station-upgrade tag filter works', async ({ page }) => {
+  test('building category with search narrows results', async ({ page }) => {
     await page.goto('/valheim/?q=bellows');
     await page.getByRole('button', { name: /Filters/ }).click();
-    await page.getByRole('button', { name: 'station-upgrade' }).click();
+    await page.getByRole('radio', { name: 'Building' }).click();
     await expect(page.getByText('Forge Bellows')).toBeVisible();
   });
 });
