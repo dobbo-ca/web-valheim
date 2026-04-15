@@ -1001,8 +1001,8 @@ h3 {
 
 /* ===== Text size scaling ===== */
 :root { --text-scale: 1; }
-[data-text-size="small"] { --text-scale: 0.85; }
-[data-text-size="large"] { --text-scale: 1.2; }
+[data-text-size="medium"] { --text-scale: 1.15; }
+[data-text-size="large"] { --text-scale: 1.3; }
 
 .recipe-row, .recipe-row__detail, .food-detail-grid__stats,
 .food-detail-grid__ings, .compact-upgrades, .filter-bar,
