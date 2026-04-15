@@ -5,131 +5,131 @@
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: raspberries, qty: 1 }
+  yields: {itemId: raspberries, qty: 1}
   food:
     hp: 7
     stamina: 20
     healPerTick: 1
     duration: 600
     weight: 0.1
-  tags: [food, raw, tier-1, meadows]
+  tags: [food, raw, tier-1, meadows, stamina, found]
 
 - id: mushroom-food
   name: Mushroom
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: mushroom, qty: 1 }
+  yields: {itemId: mushroom, qty: 1}
   food:
     hp: 15
     stamina: 15
     healPerTick: 1
     duration: 900
     weight: 0.1
-  tags: [food, raw, tier-1, meadows]
+  tags: [food, raw, tier-1, meadows, balanced, found]
 
 - id: honey-food
   name: Honey
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: honey, qty: 1 }
+  yields: {itemId: honey, qty: 1}
   food:
     hp: 8
     stamina: 35
     healPerTick: 1
     duration: 900
     weight: 0.2
-  tags: [food, raw, tier-1, meadows]
+  tags: [food, raw, tier-1, meadows, stamina, found]
 
 - id: blueberries-food
   name: Blueberries
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: blueberries, qty: 1 }
+  yields: {itemId: blueberries, qty: 1}
   food:
     hp: 8
     stamina: 25
     healPerTick: 1
     duration: 600
     weight: 0.1
-  tags: [food, raw, tier-2, black-forest]
+  tags: [food, raw, tier-2, black-forest, stamina, found]
 
 - id: yellow-mushroom-food
   name: Yellow Mushroom
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: yellow-mushroom, qty: 1 }
+  yields: {itemId: yellow-mushroom, qty: 1}
   food:
     hp: 10
     stamina: 30
     healPerTick: 1
     duration: 600
     weight: 0.1
-  tags: [food, raw, tier-2, black-forest]
+  tags: [food, raw, tier-2, black-forest, stamina, found]
 
 - id: carrot-food
   name: Carrot
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: carrot, qty: 1 }
+  yields: {itemId: carrot, qty: 1}
   food:
     hp: 10
     stamina: 32
     healPerTick: 1
     duration: 900
     weight: 0.3
-  tags: [food, raw, tier-2, black-forest]
+  tags: [food, raw, tier-2, black-forest, stamina, found]
 
 - id: bukeperries
   name: Bukeperries
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: bukeperries, qty: 1 }
+  yields: {itemId: bukeperries, qty: 1}
   food:
     regenModifier: -1.0
     duration: 15
     weight: 0.1
-  tags: [food, raw, tier-2, black-forest]
+  tags: [food, raw, tier-2, black-forest, balanced, found]
 
 - id: onion-food
   name: Onion
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: onion, qty: 1 }
+  yields: {itemId: onion, qty: 1}
   food:
     hp: 13
     stamina: 40
     healPerTick: 1
     duration: 900
     weight: 0.3
-  tags: [food, raw, tier-4, mountain]
+  tags: [food, raw, tier-4, mountain, stamina, found]
 
 - id: cloudberries-food
   name: Cloudberries
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: cloudberries, qty: 1 }
+  yields: {itemId: cloudberries, qty: 1}
   food:
     hp: 13
     stamina: 40
     healPerTick: 1
     duration: 900
     weight: 0.1
-  tags: [food, raw, tier-5, plains]
+  tags: [food, raw, tier-5, plains, stamina, found]
 
 - id: magecap-food
   name: Magecap
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: magecap, qty: 1 }
+  yields: {itemId: magecap, qty: 1}
   food:
     hp: 25
     stamina: 25
@@ -137,56 +137,56 @@
     healPerTick: 1
     duration: 900
     weight: 0.1
-  tags: [food, raw, eitr, tier-6, mistlands]
+  tags: [food, raw, eitr, tier-6, mistlands, found]
 
 - id: jotun-puffs-food
   name: Jotun Puffs
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: jotun-puffs, qty: 1 }
+  yields: {itemId: jotun-puffs, qty: 1}
   food:
     hp: 25
     stamina: 25
     healPerTick: 1
     duration: 900
     weight: 0.1
-  tags: [food, raw, tier-6, mistlands]
+  tags: [food, raw, tier-6, mistlands, balanced, found]
 
 - id: smoke-puff-food
   name: Smoke Puff
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: smoke-puff, qty: 1 }
+  yields: {itemId: smoke-puff, qty: 1}
   food:
     hp: 15
     stamina: 15
     healPerTick: 1
     duration: 900
     weight: 0.1
-  tags: [food, raw, tier-7, ashlands]
+  tags: [food, raw, tier-7, ashlands, balanced, found]
 
 - id: fiddlehead-food
   name: Fiddlehead
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: fiddlehead, qty: 1 }
+  yields: {itemId: fiddlehead, qty: 1}
   food:
     hp: 30
     stamina: 30
     healPerTick: 1
     duration: 900
     weight: 0.1
-  tags: [food, raw, tier-7, ashlands]
+  tags: [food, raw, tier-7, ashlands, balanced, found]
 
 - id: vineberry-cluster-food
   name: Vineberry Cluster
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: vineberry-cluster, qty: 1 }
+  yields: {itemId: vineberry-cluster, qty: 1}
   food:
     hp: 30
     stamina: 30
@@ -194,16 +194,16 @@
     healPerTick: 1
     duration: 900
     weight: 0.1
-  tags: [food, raw, eitr, tier-7, ashlands]
+  tags: [food, raw, eitr, tier-7, ashlands, found]
 
 - id: rotten-meat
   name: Rotten Meat
   type: cooking
   station: found
   stationLevel: 1
-  yields: { itemId: rotten-meat, qty: 1 }
+  yields: {itemId: rotten-meat, qty: 1}
   food:
     regenModifier: -1.0
     duration: 15
     weight: 0.5
-  tags: [food, raw, tier-7, ashlands]
+  tags: [food, raw, tier-7, ashlands, balanced, found]

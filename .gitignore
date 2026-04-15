@@ -4,6 +4,9 @@
 # Git worktrees
 .worktrees/
 
+# Python
+.venv/
+
 # Node
 node_modules/
 dist/

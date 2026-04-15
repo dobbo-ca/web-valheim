@@ -8,38 +8,6 @@ import {
 } from './schema';
 import type { Item, Station, Recipe } from './types';
 
-const BIOME_ORDER: string[] = ['meadows', 'black-forest', 'swamp', 'mountain', 'plains', 'mistlands', 'ashlands'];
-
-function computeRecipeBiome(
-  recipe: Recipe,
-  itemsById: Map<string, Item>,
-  stationUpgradeBiomes: Map<string, Map<number, string>>,
-): string | undefined {
-  let maxIdx = -1;
-
-  // Check ingredient biomes
-  for (const ing of recipe.ingredients ?? []) {
-    const item = itemsById.get(ing.itemId);
-    if (item?.biome) {
-      const idx = BIOME_ORDER.indexOf(item.biome);
-      if (idx > maxIdx) maxIdx = idx;
-    }
-  }
-
-  // Check station upgrade biome requirement
-  const upgradeBiomes = stationUpgradeBiomes.get(recipe.station);
-  if (upgradeBiomes) {
-    for (let lvl = 2; lvl <= recipe.stationLevel; lvl++) {
-      const biome = upgradeBiomes.get(lvl);
-      if (biome) {
-        const idx = BIOME_ORDER.indexOf(biome);
-        if (idx > maxIdx) maxIdx = idx;
-      }
-    }
-  }
-
-  return maxIdx >= 0 ? BIOME_ORDER[maxIdx] : undefined;
-}
 
 export interface DataSet {
   items: Item[];
@@ -85,34 +53,9 @@ export async function loadAll(dataRoot: string): Promise<DataSet> {
         station: station.id,
         stationLevel: upgrade.level,
         ingredients: upgrade.requires,
-        tags: ['station-upgrade'],
+        tags: ['build', 'station-upgrade'],
       });
     }
-  }
-
-  // Compute station upgrade biomes
-  const itemsById = new Map(items.map((i) => [i.id, i]));
-  const stationUpgradeBiomes = new Map<string, Map<number, string>>();
-  for (const station of stations) {
-    const levelBiomes = new Map<number, string>();
-    for (const upgrade of station.upgrades) {
-      let maxIdx = -1;
-      for (const req of upgrade.requires) {
-        const item = itemsById.get(req.itemId);
-        if (item?.biome) {
-          const idx = BIOME_ORDER.indexOf(item.biome);
-          if (idx > maxIdx) maxIdx = idx;
-        }
-      }
-      if (maxIdx >= 0) levelBiomes.set(upgrade.level, BIOME_ORDER[maxIdx]);
-    }
-    stationUpgradeBiomes.set(station.id, levelBiomes);
-  }
-
-  // Assign computed biome to each recipe
-  for (const recipe of recipes) {
-    const biome = computeRecipeBiome(recipe, itemsById, stationUpgradeBiomes);
-    if (biome) (recipe as any).biome = biome;
   }
 
   const data: DataSet = { items, stations, recipes };
