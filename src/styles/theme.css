@@ -301,15 +301,32 @@ h3 {
 
 /* ===== Recipe table toolbar ===== */
 .recipe-table__toolbar {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: auto auto;
+  gap: 8px;
+  align-items: center;
   margin-bottom: 10px;
 }
 .recipe-table__toolbar .filter-bar {
+  display: contents;
   margin-bottom: 0;
-  flex: 1;
+}
+.recipe-table__toolbar .filter-bar__search {
+  grid-column: 1;
+  grid-row: 1;
+}
+.recipe-table__toolbar .filter-bar__adv-toggle {
+  grid-column: 2;
+  grid-row: 1;
+}
+.recipe-table__toolbar .cart-badge {
+  grid-column: 3;
+  grid-row: 1;
+}
+.recipe-table__toolbar .filter-bar__adv-panel {
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
 /* ===== Reverse lookup strip ===== */
@@ -1011,6 +1028,9 @@ h3 {
 .recipe-row__station, .recipe-row__ings, .recipe-row__stats-cell { font-size: calc(12px * var(--text-scale)); }
 .add-to-cart-btn { font-size: calc(11px * var(--text-scale)); padding: calc(3px * var(--text-scale)) calc(8px * var(--text-scale)); }
 .filter-bar, .filter-bar select, .filter-bar__search { font-size: calc(12px * var(--text-scale)); }
+.filter-chip { font-size: calc(12px * var(--text-scale)); padding: calc(8px * var(--text-scale)) calc(14px * var(--text-scale)); }
+.filter-bar__adv-toggle { font-size: calc(13px * var(--text-scale)); padding: calc(8px * var(--text-scale)) calc(14px * var(--text-scale)); }
+.filter-bar__level-value { font-size: calc(12px * var(--text-scale)); }
 .chip { font-size: calc(12px * var(--text-scale)); padding: calc(3px * var(--text-scale)) calc(10px * var(--text-scale)); }
 .recipe-table__col-toggle-btn { font-size: calc(14px * var(--text-scale)); padding: calc(2px * var(--text-scale)) calc(6px * var(--text-scale)); }
 
