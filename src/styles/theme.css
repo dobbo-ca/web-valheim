@@ -1722,188 +1722,221 @@ h3 {
   color: var(--accent);
 }
 
-/* ===== Weather forecast ===== */
-.weather-controls {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
+/* ===== Weather forecast (Apple Weather-inspired) ===== */
+.wx {
+  max-width: 900px;
+  margin: 0 auto;
 }
-.weather-controls__day-input {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 6px 12px;
-}
-.weather-controls__day-input label {
-  color: var(--muted);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.weather-controls__day-input input {
-  width: 80px;
+
+/* Inline day input (used in headers) */
+.wx-day-inline-input {
+  width: 56px;
   background: var(--surface-sunken);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text);
   font: inherit;
-  font-size: 14px;
+  font-size: inherit;
   font-weight: 600;
-  padding: 4px 8px;
+  padding: 2px 6px;
   text-align: center;
   -moz-appearance: textfield;
 }
-.weather-controls__day-input input::-webkit-inner-spin-button,
-.weather-controls__day-input input::-webkit-outer-spin-button {
+.wx-day-inline-input::-webkit-inner-spin-button,
+.wx-day-inline-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Biome chips */
-.weather-biome-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.weather-biome-chip {
-  background: var(--accent-bg);
-  border: 1px solid var(--border);
-  color: var(--text-soft);
-  padding: 4px 12px;
-  border-radius: 999px;
-  font: inherit;
-  font-size: 12px;
-  cursor: pointer;
-}
-.weather-biome-chip--active {
-  background: var(--accent-bg);
-  border-color: var(--accent);
-  color: var(--accent);
-  font-weight: 500;
-}
-
-/* Day cards grid */
-.weather-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 10px;
-  margin-top: 12px;
-}
-.weather-day-card {
+/* Detail panel (focused biome + day) */
+.wx-detail {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 12px;
-  cursor: pointer;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
 }
-.weather-day-card:hover {
-  border-color: var(--accent-border);
+.wx-detail__header {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-weight: 600;
 }
-.weather-day-card--current {
-  border-color: var(--accent-border);
-  border-width: 2px;
-}
-.weather-day-card--expanded {
-  background: var(--surface-sunken);
-  border-color: var(--accent-border);
-}
-.weather-day-card__header {
+.wx-detail__row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  gap: 6px;
   margin-bottom: 8px;
 }
-.weather-day-card__day {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted);
+.wx-detail__row:last-child {
+  margin-bottom: 0;
 }
-.weather-day-card--current .weather-day-card__day {
-  color: var(--accent);
-}
-.weather-day-card__expand {
-  font-size: 10px;
-  color: var(--muted);
-}
-
-/* Weather entry (used in both card overview and period detail) */
-.weather-entry {
+.wx-detail__cell {
+  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 4px 0;
+  gap: 4px;
+  padding: 8px 4px;
+  background: var(--surface-sunken);
+  border-radius: var(--radius);
 }
-.weather-entry__icon {
-  width: 24px;
-  height: 24px;
+.wx-detail__cell-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--muted);
+}
+.wx-detail__cell-icon {
+  width: 32px;
+  height: 32px;
   image-rendering: pixelated;
-  flex-shrink: 0;
 }
-.weather-entry__name {
-  font-size: 13px;
+.wx-detail__cell-name {
+  font-size: 11px;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.2;
   font-weight: 500;
 }
-.weather-entry__biome {
-  font-size: 11px;
+.wx-detail__cell-effects {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Wind strip — all wind changes across the day */
+.wx-detail__wind-strip {
+  display: flex;
+  gap: 0;
+  padding: 8px 0 4px;
+  border-top: 1px solid var(--border-soft);
+  margin-top: 8px;
+}
+.wx-wind-tick {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 3px 0;
+  min-width: 0;
+}
+.wx-wind-tick__time {
+  font-size: 9px;
+  color: var(--muted);
+}
+.wx-wind-tick__arrow {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--text);
+}
+.wx-wind-tick__pct {
+  font-size: 9px;
   color: var(--muted);
 }
 
-/* Effect badges */
-.weather-effects {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-.weather-effect-badge {
-  font-size: 10px;
-  padding: 1px 6px;
+/* Effect badges (shared) */
+.wx-effect {
+  font-size: 11px;
+  padding: 3px 10px;
   border-radius: 999px;
   font-weight: 500;
 }
-.weather-effect-badge--wet {
+.wx-effect--sm {
+  font-size: 9px;
+  padding: 1px 5px;
+}
+.wx-effect--wet {
   background: color-mix(in oklch, var(--warning) 20%, transparent);
   color: var(--warning);
 }
-.weather-effect-badge--freezing {
+.wx-effect--freezing {
   background: color-mix(in oklch, var(--info) 20%, transparent);
   color: var(--info);
 }
-.weather-effect-badge--low-visibility {
+.wx-effect--low-visibility {
   background: color-mix(in oklch, var(--text-muted) 20%, transparent);
   color: var(--text-muted);
 }
-.weather-effect-badge--shelter-needed {
+.wx-effect--shelter-needed {
   background: color-mix(in oklch, var(--danger) 20%, transparent);
   color: var(--danger);
 }
-
-/* Period detail (expanded day) */
-.weather-periods {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid var(--border-soft);
+/* All-biomes grid */
+.wx-biomes-grid {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
 }
-.weather-periods__title {
-  font-size: 9px;
+.wx-biomes-grid__title {
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--muted);
-  margin-bottom: 6px;
+  margin-bottom: 12px;
 }
-.weather-period-row {
+.wx-biomes-grid__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+.wx-biome-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  background: var(--surface-sunken);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.wx-biome-card:hover {
+  border-color: var(--border);
+}
+.wx-biome-card--selected {
+  border-color: var(--accent);
+  background: color-mix(in oklch, var(--accent) 10%, var(--surface-sunken));
+}
+.wx-biome-card--selected:hover {
+  border-color: var(--accent);
+}
+.wx-biome-card__name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+.wx-biome-card--selected .wx-biome-card__name {
+  color: var(--accent);
+}
+.wx-biome-card__icon {
+  width: 36px;
+  height: 36px;
+  image-rendering: pixelated;
+}
+.wx-biome-card__weather {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+.wx-biome-card__wind {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 3px 0;
-  font-size: 12px;
-}
-.weather-period-row__index {
-  color: var(--muted);
+  gap: 3px;
   font-size: 10px;
-  min-width: 14px;
+  color: var(--muted);
+}
+.wx-biome-card__wind-arrow {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1;
 }

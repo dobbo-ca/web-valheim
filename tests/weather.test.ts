@@ -70,10 +70,41 @@ describe('getForecast', () => {
     const forecast = getForecast(5, 'Meadows', 3);
     expect(forecast.map(f => f.day)).toEqual([5, 6, 7]);
   });
-  it('each day has at least 2 periods', () => {
-    const forecast = getForecast(1, 'Meadows', 5);
+  it('each day has 2–4 periods matching actual weather transitions', () => {
+    const forecast = getForecast(1, 'Meadows', 10);
     for (const day of forecast) {
       expect(day.periods.length).toBeGreaterThanOrEqual(2);
+      expect(day.periods.length).toBeLessThanOrEqual(4);
+    }
+  });
+  it('period labels are in-game timestamps (HH:MM format)', () => {
+    const forecast = getForecast(1, 'Meadows', 1);
+    for (const period of forecast[0].periods) {
+      expect(period.label).toMatch(/^\d{2}:\d{2}$/);
+    }
+  });
+  it('first period of each day starts at 00:00', () => {
+    const forecast = getForecast(1, 'Meadows', 5);
+    for (const day of forecast) {
+      expect(day.periods[0].label).toBe('00:00');
+    }
+  });
+  it('each period has wind data', () => {
+    const forecast = getForecast(1, 'Meadows', 1);
+    for (const period of forecast[0].periods) {
+      expect(period.wind).toBeDefined();
+      expect(period.wind.intensity).toBeGreaterThanOrEqual(0);
+      expect(period.wind.intensity).toBeLessThanOrEqual(1);
+      expect(typeof period.wind.direction).toBe('string');
+      expect(typeof period.wind.angle).toBe('number');
+    }
+  });
+  it('each day has wind snapshots across the day', () => {
+    const forecast = getForecast(1, 'Meadows', 1);
+    expect(forecast[0].winds.length).toBeGreaterThan(5);
+    for (const w of forecast[0].winds) {
+      expect(w.time).toBeGreaterThanOrEqual(0);
+      expect(w.time).toBeLessThan(1800);
     }
   });
   it('dominant weather is the most frequent across periods', () => {

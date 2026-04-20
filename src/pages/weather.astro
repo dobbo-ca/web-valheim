@@ -5,7 +5,5 @@ import { WeatherForecast } from '../components/WeatherForecast';
 const base = import.meta.env.BASE_URL;
 ---
 <Base title="Valheim Weather Forecast" description="Deterministic weather forecast for all Valheim biomes. Enter your in-game day to plan ahead.">
-  <h1>Weather Forecast</h1>
-  <p class="subtitle">Enter your current in-game day to see upcoming weather across biomes. Click a day to expand period detail.</p>
   <WeatherForecast client:load baseHref={base} />
 </Base>

@@ -1,48 +1,41 @@
-import { For, type Component, createSignal, createMemo } from 'solid-js';
-import { ALL_BIOMES, VARIABLE_BIOMES, STATIC_BIOMES, type Biome } from '../lib/weather';
-import { WeatherDayCard } from './WeatherDayCard';
-
-const NUM_DAYS = 10;
+import { For, Show, type Component, createSignal, createMemo } from 'solid-js';
+import {
+  ALL_BIOMES,
+  type Biome,
+  getForecast,
+  getWeatherIcon,
+  getWeatherLabel,
+} from '../lib/weather';
 
 interface Props {
   baseHref: string;
 }
 
+const DayInput: Component<{ value: number; onInput: (v: string) => void }> = (props) => (
+  <input
+    class="wx-day-inline-input"
+    type="number"
+    min="1"
+    value={props.value}
+    onInput={(e) => props.onInput(e.currentTarget.value)}
+  />
+);
+
 export const WeatherForecast: Component<Props> = (props) => {
   const [currentDay, setCurrentDay] = createSignal(1);
-  const [selectedBiomes, setSelectedBiomes] = createSignal<Set<Biome>>(
-    new Set(VARIABLE_BIOMES),
-  );
-  const [expandedDay, setExpandedDay] = createSignal<number | null>(null);
+  const [selectedBiome, setSelectedBiome] = createSignal<Biome>('Meadows');
 
-  const activeBiomes = createMemo(() => {
-    const sel = selectedBiomes();
-    return ALL_BIOMES.filter((b) => sel.has(b));
-  });
-
-  const days = createMemo(() =>
-    Array.from({ length: NUM_DAYS }, (_, i) => currentDay() + i),
+  const forecast = createMemo(() =>
+    getForecast(currentDay(), selectedBiome(), 1),
   );
 
-  const toggleBiome = (biome: Biome) => {
-    setSelectedBiomes((prev) => {
-      const next = new Set(prev);
-      if (next.has(biome)) {
-        if (next.size > 1) next.delete(biome);
-      } else {
-        next.add(biome);
-      }
-      return next;
-    });
-  };
+  const focusedDay = createMemo(() => forecast()[0]);
 
-  const selectAllBiomes = () => {
-    setSelectedBiomes(new Set(VARIABLE_BIOMES));
-  };
-
-  const allSelected = createMemo(
-    () => VARIABLE_BIOMES.every((b) => selectedBiomes().has(b)) &&
-      !ALL_BIOMES.some((b) => STATIC_BIOMES.has(b) && selectedBiomes().has(b)),
+  const biomeSnapshots = createMemo(() =>
+    ALL_BIOMES.map((biome) => ({
+      biome,
+      forecast: getForecast(currentDay(), biome, 1)[0],
+    })),
   );
 
   const handleDayInput = (value: string) => {
@@ -52,61 +45,119 @@ export const WeatherForecast: Component<Props> = (props) => {
     }
   };
 
-  const toggleDay = (day: number) => {
-    setExpandedDay((prev) => (prev === day ? null : day));
-  };
+  const iconUrl = (icon: string) =>
+    `${props.baseHref}icons/weather/${icon}.svg`;
+
+  const windPct = (intensity: number) => `${Math.round(intensity * 100)}%`;
 
   return (
-    <div>
-      <div class="weather-controls">
-        <div class="weather-controls__day-input">
-          <label for="weather-day">Day</label>
-          <input
-            id="weather-day"
-            type="number"
-            min="1"
-            value={currentDay()}
-            onInput={(e) => handleDayInput(e.currentTarget.value)}
-          />
-        </div>
+    <div class="wx">
+      {/* ── Detail panel (focused biome + day) ── */}
+      <Show when={focusedDay()}>
+        {(f) => (
+          <div class="wx-detail">
+            <div class="wx-detail__header">
+              Day <DayInput value={currentDay()} onInput={handleDayInput} /> &middot; {selectedBiome()}
+            </div>
 
-        <div class="weather-biome-chips">
-          <button
-            type="button"
-            class="weather-biome-chip"
-            classList={{ 'weather-biome-chip--active': allSelected() }}
-            onClick={selectAllBiomes}
-          >
-            All
-          </button>
-          <For each={ALL_BIOMES}>
-            {(biome) => (
-              <button
-                type="button"
-                class="weather-biome-chip"
-                classList={{ 'weather-biome-chip--active': selectedBiomes().has(biome) }}
-                onClick={() => toggleBiome(biome)}
-              >
-                {biome}
-              </button>
-            )}
+            {/* Weather row */}
+            <div class="wx-detail__row">
+              <For each={f().periods}>
+                {(period) => (
+                  <div class="wx-detail__cell">
+                    <span class="wx-detail__cell-label">{period.label}</span>
+                    <img
+                      class="wx-detail__cell-icon"
+                      src={iconUrl(getWeatherIcon(period.weather))}
+                      alt={getWeatherLabel(period.weather)}
+                      width="32"
+                      height="32"
+                    />
+                    <span class="wx-detail__cell-name">
+                      {getWeatherLabel(period.weather)}
+                    </span>
+                    <Show when={period.effects.length > 0}>
+                      <div class="wx-detail__cell-effects">
+                        <For each={period.effects}>
+                          {(effect) => (
+                            <span class={`wx-effect wx-effect--sm wx-effect--${effect}`}>
+                              {effect}
+                            </span>
+                          )}
+                        </For>
+                      </div>
+                    </Show>
+                  </div>
+                )}
+              </For>
+            </div>
+
+            {/* Wind row — all wind changes across the day */}
+            <div class="wx-detail__wind-strip">
+              <For each={f().winds}>
+                {(w) => (
+                  <div class="wx-wind-tick">
+                    <span class="wx-wind-tick__time">{w.label}</span>
+                    <span
+                      class="wx-wind-tick__arrow"
+                      style={{ transform: `rotate(${w.angle + 180}deg)` }}
+                    >
+                      ↑
+                    </span>
+                    <span class="wx-wind-tick__pct">
+                      {windPct(w.intensity)}
+                    </span>
+                  </div>
+                )}
+              </For>
+            </div>
+          </div>
+        )}
+      </Show>
+
+      {/* ── All biomes for the focused day ── */}
+      <div class="wx-biomes-grid">
+        <div class="wx-biomes-grid__title">
+          All Biomes &middot; Day <DayInput value={currentDay()} onInput={handleDayInput} />
+        </div>
+        <div class="wx-biomes-grid__items">
+          <For each={biomeSnapshots()}>
+            {({ biome, forecast }) => {
+              const midWind = forecast.periods[Math.floor(forecast.periods.length / 2)].wind;
+              return (
+                <button
+                  type="button"
+                  class="wx-biome-card"
+                  classList={{
+                    'wx-biome-card--selected': selectedBiome() === biome,
+                  }}
+                  onClick={() => setSelectedBiome(biome)}
+                >
+                  <div class="wx-biome-card__name">{biome}</div>
+                  <img
+                    class="wx-biome-card__icon"
+                    src={iconUrl(getWeatherIcon(forecast.dominant))}
+                    alt=""
+                    width="36"
+                    height="36"
+                  />
+                  <div class="wx-biome-card__weather">
+                    {getWeatherLabel(forecast.dominant)}
+                  </div>
+                  <div class="wx-biome-card__wind">
+                    <span
+                      class="wx-biome-card__wind-arrow"
+                      style={{ transform: `rotate(${midWind.angle + 180}deg)` }}
+                    >
+                      ↑
+                    </span>
+                    <span>{windPct(midWind.intensity)} {midWind.direction}</span>
+                  </div>
+                </button>
+              );
+            }}
           </For>
         </div>
-      </div>
-
-      <div class="weather-grid">
-        <For each={days()}>
-          {(day) => (
-            <WeatherDayCard
-              day={day}
-              biomes={activeBiomes()}
-              isCurrentDay={day === currentDay()}
-              expanded={expandedDay() === day}
-              baseHref={props.baseHref}
-              onToggle={() => toggleDay(day)}
-            />
-          )}
-        </For>
       </div>
     </div>
   );
