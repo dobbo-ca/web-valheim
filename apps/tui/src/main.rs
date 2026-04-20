@@ -1,6 +1,7 @@
 mod component;
 mod event;
 mod message;
+mod theme;
 
 use component::{Action, Component};
 use crossterm::{
@@ -13,18 +14,12 @@ use ratatui::{
     Frame,
     backend::CrosstermBackend,
     layout::{Constraint, Direction, Layout, Rect},
-    style::{Color, Style},
+    style::Style,
     text::Span,
     widgets::{Block, Paragraph, Tabs},
     Terminal,
 };
 use std::time::Duration;
-
-// Placeholder colors — will be replaced by the theme module in Task 9
-const TAB_ACTIVE_FG: Color = Color::Rgb(26, 27, 38);
-const TAB_ACTIVE_BG: Color = Color::Rgb(122, 162, 247);
-const TEXT_COLOR: Color = Color::Rgb(169, 177, 214);
-const MUTED_COLOR: Color = Color::Rgb(86, 95, 137);
 
 struct App {
     active_tab: Tab,
@@ -121,12 +116,8 @@ impl Component for App {
         ];
         let tabs = Tabs::new(tab_titles)
             .select(self.tab_index())
-            .style(Style::default().fg(MUTED_COLOR))
-            .highlight_style(
-                Style::default()
-                    .fg(TAB_ACTIVE_FG)
-                    .bg(TAB_ACTIVE_BG),
-            );
+            .style(Style::default().fg(theme::TEXT_MUTED))
+            .highlight_style(theme::tab_active());
         frame.render_widget(tabs, chunks[0]);
 
         // Content area
@@ -136,7 +127,7 @@ impl Component for App {
             Tab::Cart => "Cart tab — coming soon",
         };
         let content = Paragraph::new(content_label)
-            .style(Style::default().fg(TEXT_COLOR))
+            .style(Style::default().fg(theme::TEXT_SECONDARY))
             .block(Block::default());
         frame.render_widget(content, chunks[1]);
 
@@ -147,7 +138,7 @@ impl Component for App {
             .map(|(key, desc)| format!(" {key} {desc} "))
             .collect::<Vec<_>>()
             .join("  ");
-        let status = Paragraph::new(hints).style(Style::default().fg(MUTED_COLOR));
+        let status = Paragraph::new(hints).style(Style::default().fg(theme::TEXT_MUTED));
         frame.render_widget(status, chunks[2]);
     }
 
