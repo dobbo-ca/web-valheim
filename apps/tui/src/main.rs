@@ -1,6 +1,7 @@
 mod component;
 mod event;
 mod message;
+mod tabs;
 mod theme;
 mod widgets;
 
@@ -20,18 +21,21 @@ use ratatui::{
     widgets::{Block, Paragraph, Tabs},
     Terminal,
 };
+use std::sync::Arc;
 use std::time::Duration;
 
 struct App {
     active_tab: Tab,
     should_quit: bool,
+    items_tab: tabs::items::ItemsTab,
 }
 
 impl App {
-    fn new() -> Self {
+    fn new(data: Arc<valheim_data::GameData>) -> Self {
         Self {
             active_tab: Tab::Items,
             should_quit: false,
+            items_tab: tabs::items::ItemsTab::new(data),
         }
     }
 
@@ -62,38 +66,68 @@ impl App {
 
 impl Component for App {
     fn update(&mut self, msg: &Message) -> Action {
-        match msg {
-            Message::Key(key) => match key.code {
-                KeyCode::Char('q') => Action::Quit,
-                KeyCode::Char('c')
-                    if key
+        // Forward key events to the active tab first.
+        if let Message::Key(key) = msg {
+            // Handle global quit / tab-switch keys before delegating.
+            let is_quit = matches!(key.code, KeyCode::Char('q'))
+                || (key.code == KeyCode::Char('c')
+                    && key
                         .modifiers
-                        .contains(crossterm::event::KeyModifiers::CONTROL) =>
-                {
-                    Action::Quit
+                        .contains(crossterm::event::KeyModifiers::CONTROL));
+            let is_tab_switch = matches!(
+                key.code,
+                KeyCode::Tab
+                    | KeyCode::BackTab
+                    | KeyCode::Char('1')
+                    | KeyCode::Char('2')
+                    | KeyCode::Char('3')
+            );
+
+            if is_quit {
+                return Action::Quit;
+            }
+
+            if !is_tab_switch {
+                // Let the active tab handle it; if it returns None we fall through.
+                match self.active_tab {
+                    Tab::Items => {
+                        let action = self.items_tab.update(msg);
+                        if !matches!(action, Action::None) {
+                            return action;
+                        }
+                    }
+                    _ => {}
                 }
+            }
+
+            // Tab-switching (or key not consumed by tab)
+            match key.code {
                 KeyCode::Char('1') => {
                     self.active_tab = Tab::Items;
-                    Action::None
+                    return Action::None;
                 }
                 KeyCode::Char('2') => {
                     self.active_tab = Tab::Weather;
-                    Action::None
+                    return Action::None;
                 }
                 KeyCode::Char('3') => {
                     self.active_tab = Tab::Cart;
-                    Action::None
+                    return Action::None;
                 }
                 KeyCode::Tab => {
                     self.active_tab = self.next_tab();
-                    Action::None
+                    return Action::None;
                 }
                 KeyCode::BackTab => {
                     self.active_tab = self.prev_tab();
-                    Action::None
+                    return Action::None;
                 }
-                _ => Action::None,
-            },
+                _ => {}
+            }
+            return Action::None;
+        }
+
+        match msg {
             Message::Quit => Action::Quit,
             _ => Action::None,
         }
@@ -122,15 +156,23 @@ impl Component for App {
         frame.render_widget(tabs, chunks[0]);
 
         // Content area
-        let content_label = match self.active_tab {
-            Tab::Items => "Items tab — coming soon",
-            Tab::Weather => "Weather tab — coming soon",
-            Tab::Cart => "Cart tab — coming soon",
-        };
-        let content = Paragraph::new(content_label)
-            .style(Style::default().fg(theme::TEXT_SECONDARY))
-            .block(Block::default());
-        frame.render_widget(content, chunks[1]);
+        match self.active_tab {
+            Tab::Items => {
+                self.items_tab.view(frame, chunks[1]);
+            }
+            Tab::Weather => {
+                let content = Paragraph::new("Weather tab — coming soon")
+                    .style(Style::default().fg(theme::TEXT_SECONDARY))
+                    .block(Block::default());
+                frame.render_widget(content, chunks[1]);
+            }
+            Tab::Cart => {
+                let content = Paragraph::new("Cart tab — coming soon")
+                    .style(Style::default().fg(theme::TEXT_SECONDARY))
+                    .block(Block::default());
+                frame.render_widget(content, chunks[1]);
+            }
+        }
 
         // Status bar / key hints
         let hints = self
@@ -144,11 +186,15 @@ impl Component for App {
     }
 
     fn key_hints(&self) -> Vec<(&str, &str)> {
-        vec![
+        let mut hints = vec![
             ("q", "quit"),
             ("Tab", "next tab"),
             ("1-3", "switch tab"),
-        ]
+        ];
+        if self.active_tab == Tab::Items {
+            hints.extend(self.items_tab.key_hints());
+        }
+        hints
     }
 }
 
@@ -162,7 +208,11 @@ fn main() -> color_eyre::Result<()> {
     let backend = CrosstermBackend::new(stdout);
     let mut terminal = Terminal::new(backend)?;
 
-    let mut app = App::new();
+    let data_dir = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("../../src/data");
+    let data = Arc::new(valheim_data::load_all(&data_dir)?);
+
+    let mut app = App::new(data);
 
     loop {
         terminal.draw(|frame| {
