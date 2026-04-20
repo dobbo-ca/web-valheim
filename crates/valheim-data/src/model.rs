@@ -102,6 +102,7 @@ pub struct FoodStats {
     pub hp: f64,
     pub stamina: f64,
     pub duration: f64,
+    #[serde(alias = "healPerTick")]
     pub regen: f64,
     pub eitr: Option<f64>,
 }
@@ -133,6 +134,7 @@ pub struct Recipe {
     pub station: String,
     pub station_level: u32,
     pub repair_level: Option<u32>,
+    #[serde(default)]
     pub ingredients: Vec<IngredientRef>,
     pub yields: Option<IngredientRef>,
     pub skill: Option<String>,
