@@ -12,3 +12,5 @@ valheim-data = { path = "../../crates/valheim-data" }
 ratatui = "0.29"
 crossterm = { version = "0.28", features = ["event-stream"] }
 color-eyre = "0.6"
+serde = { workspace = true }
+serde_yaml = { workspace = true }

@@ -1,6 +1,7 @@
 mod component;
 mod event;
 mod message;
+mod persistence;
 mod tabs;
 mod theme;
 mod widgets;
@@ -18,9 +19,10 @@ use ratatui::{
     layout::{Constraint, Direction, Layout, Rect},
     style::Style,
     text::Span,
-    widgets::{Block, Paragraph, Tabs},
+    widgets::{Paragraph, Tabs},
     Terminal,
 };
+use std::path::PathBuf;
 use std::sync::Arc;
 use std::time::Duration;
 
@@ -29,15 +31,17 @@ struct App {
     should_quit: bool,
     items_tab: tabs::items::ItemsTab,
     weather_tab: tabs::weather::WeatherTab,
+    cart_tab: tabs::cart::CartTab,
 }
 
 impl App {
-    fn new(data: Arc<valheim_data::GameData>) -> Self {
+    fn new(data: Arc<valheim_data::GameData>, cart_store: persistence::CartStore) -> Self {
         Self {
             active_tab: Tab::Items,
             should_quit: false,
-            items_tab: tabs::items::ItemsTab::new(data),
+            items_tab: tabs::items::ItemsTab::new(data.clone()),
             weather_tab: tabs::weather::WeatherTab::new(),
+            cart_tab: tabs::cart::CartTab::new(data, cart_store),
         }
     }
 
@@ -104,7 +108,12 @@ impl Component for App {
                             return action;
                         }
                     }
-                    _ => {}
+                    Tab::Cart => {
+                        let action = self.cart_tab.update(msg);
+                        if !matches!(action, Action::None) {
+                            return action;
+                        }
+                    }
                 }
             }
 
@@ -172,10 +181,7 @@ impl Component for App {
                 self.weather_tab.view(frame, chunks[1]);
             }
             Tab::Cart => {
-                let content = Paragraph::new("Cart tab — coming soon")
-                    .style(Style::default().fg(theme::TEXT_SECONDARY))
-                    .block(Block::default());
-                frame.render_widget(content, chunks[1]);
+                self.cart_tab.view(frame, chunks[1]);
             }
         }
 
@@ -199,7 +205,7 @@ impl Component for App {
         match self.active_tab {
             Tab::Items => hints.extend(self.items_tab.key_hints()),
             Tab::Weather => hints.extend(self.weather_tab.key_hints()),
-            _ => {}
+            Tab::Cart => hints.extend(self.cart_tab.key_hints()),
         }
         hints
     }
@@ -219,7 +225,10 @@ fn main() -> color_eyre::Result<()> {
         .join("../../src/data");
     let data = Arc::new(valheim_data::load_all(&data_dir)?);
 
-    let mut app = App::new(data);
+    let cart_dir = PathBuf::from(env!("HOME")).join(".config/valheim-tui/lists");
+    let cart_store = persistence::CartStore::load(&cart_dir);
+
+    let mut app = App::new(data, cart_store);
 
     loop {
         terminal.draw(|frame| {
