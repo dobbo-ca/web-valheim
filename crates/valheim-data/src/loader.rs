@@ -156,6 +156,7 @@ pub fn load_all(data_dir: &Path) -> Result<GameData, LoadError> {
     let building_recipes = generate_building_recipes(&stations);
     recipes.extend(building_recipes);
     validate_cross_references(&items, &stations, &recipes)?;
+    crate::biome::assign_biomes(&mut recipes, &items);
     Ok(GameData {
         items,
         stations,

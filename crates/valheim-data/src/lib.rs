@@ -1,3 +1,4 @@
+pub mod biome;
 pub mod loader;
 pub mod model;
 
