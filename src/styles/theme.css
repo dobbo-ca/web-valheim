@@ -429,7 +429,7 @@ h3 {
   border-bottom: 1px solid var(--border-soft);
   color: var(--muted);
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: calc(10px * var(--text-scale));
   letter-spacing: 0.5px;
   background: var(--surface);
 }
@@ -653,7 +653,7 @@ h3 {
   border: none;
   color: var(--muted);
   font: inherit;
-  font-size: 10px;
+  font-size: calc(10px * var(--text-scale));
   text-transform: uppercase;
   letter-spacing: 0.5px;
   cursor: pointer;
@@ -669,7 +669,8 @@ h3 {
 
 .recipe-table__col-toggle {
   position: absolute;
-  top: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 10px;
   z-index: 5;
   display: inline-flex;
@@ -1048,10 +1049,12 @@ h3 {
 [data-text-size="large"] { --text-scale: 1.4; }
 
 .recipe-row, .recipe-row__detail, .food-detail-grid__stats,
-.food-detail-grid__ings, .compact-upgrades,
-.recipe-table__header { font-size: calc(12px * var(--text-scale)); }
-.recipe-row__name { font-size: calc(13px * var(--text-scale)); }
-.recipe-row__station, .recipe-row__ings, .recipe-row__stats-cell { font-size: calc(12px * var(--text-scale)); }
+.food-detail-grid__ings, .compact-upgrades { font-size: calc(12px * var(--text-scale)); }
+.recipe-table__header { font-size: calc(10px * var(--text-scale)); font-weight: 700; }
+.recipe-row .recipe-row__name,
+.recipe-row .recipe-row__station,
+.recipe-row .recipe-row__ings,
+.recipe-row .recipe-row__stats-cell { font-size: calc(12px * var(--text-scale)); }
 .add-to-cart-btn { font-size: calc(11px * var(--text-scale)); padding: calc(3px * var(--text-scale)) calc(8px * var(--text-scale)); }
 .filter-bar, .filter-bar select, .filter-bar__search { font-size: calc(12px * var(--text-scale)); }
 .filter-chip { font-size: calc(12px * var(--text-scale)); padding: calc(8px * var(--text-scale)) calc(14px * var(--text-scale)); }
