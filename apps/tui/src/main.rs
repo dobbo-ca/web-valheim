@@ -28,6 +28,7 @@ struct App {
     active_tab: Tab,
     should_quit: bool,
     items_tab: tabs::items::ItemsTab,
+    weather_tab: tabs::weather::WeatherTab,
 }
 
 impl App {
@@ -36,6 +37,7 @@ impl App {
             active_tab: Tab::Items,
             should_quit: false,
             items_tab: tabs::items::ItemsTab::new(data),
+            weather_tab: tabs::weather::WeatherTab::new(),
         }
     }
 
@@ -92,6 +94,12 @@ impl Component for App {
                 match self.active_tab {
                     Tab::Items => {
                         let action = self.items_tab.update(msg);
+                        if !matches!(action, Action::None) {
+                            return action;
+                        }
+                    }
+                    Tab::Weather => {
+                        let action = self.weather_tab.update(msg);
                         if !matches!(action, Action::None) {
                             return action;
                         }
@@ -161,10 +169,7 @@ impl Component for App {
                 self.items_tab.view(frame, chunks[1]);
             }
             Tab::Weather => {
-                let content = Paragraph::new("Weather tab — coming soon")
-                    .style(Style::default().fg(theme::TEXT_SECONDARY))
-                    .block(Block::default());
-                frame.render_widget(content, chunks[1]);
+                self.weather_tab.view(frame, chunks[1]);
             }
             Tab::Cart => {
                 let content = Paragraph::new("Cart tab — coming soon")
@@ -191,8 +196,10 @@ impl Component for App {
             ("Tab", "next tab"),
             ("1-3", "switch tab"),
         ];
-        if self.active_tab == Tab::Items {
-            hints.extend(self.items_tab.key_hints());
+        match self.active_tab {
+            Tab::Items => hints.extend(self.items_tab.key_hints()),
+            Tab::Weather => hints.extend(self.weather_tab.key_hints()),
+            _ => {}
         }
         hints
     }
