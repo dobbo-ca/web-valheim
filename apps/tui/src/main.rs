@@ -2,6 +2,7 @@ mod component;
 mod event;
 mod message;
 mod theme;
+mod widgets;
 
 use component::{Action, Component};
 use crossterm::{
