@@ -151,6 +151,32 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.5px;
 }
+.site-header nav {
+  display: flex;
+  gap: 6px;
+  font-size: 13px;
+}
+.site-header nav a {
+  color: var(--text-soft);
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+.site-header nav a:hover {
+  color: var(--text);
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+  text-decoration: none;
+}
+.site-header nav a[aria-current="page"] {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
 
 .sr-only {
   position: absolute;
@@ -403,7 +429,7 @@ h3 {
   border-bottom: 1px solid var(--border-soft);
   color: var(--muted);
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: calc(10px * var(--text-scale));
   letter-spacing: 0.5px;
   background: var(--surface);
 }
@@ -627,7 +653,7 @@ h3 {
   border: none;
   color: var(--muted);
   font: inherit;
-  font-size: 10px;
+  font-size: calc(10px * var(--text-scale));
   text-transform: uppercase;
   letter-spacing: 0.5px;
   cursor: pointer;
@@ -643,7 +669,8 @@ h3 {
 
 .recipe-table__col-toggle {
   position: absolute;
-  top: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 10px;
   z-index: 5;
   display: inline-flex;
@@ -1018,14 +1045,16 @@ h3 {
 
 /* ===== Text size scaling ===== */
 :root { --text-scale: 1; }
-[data-text-size="medium"] { --text-scale: 1.15; }
-[data-text-size="large"] { --text-scale: 1.3; }
+[data-text-size="medium"] { --text-scale: 1.25; }
+[data-text-size="large"] { --text-scale: 1.4; }
 
 .recipe-row, .recipe-row__detail, .food-detail-grid__stats,
-.food-detail-grid__ings, .compact-upgrades,
-.recipe-table__header { font-size: calc(12px * var(--text-scale)); }
-.recipe-row__name { font-size: calc(13px * var(--text-scale)); }
-.recipe-row__station, .recipe-row__ings, .recipe-row__stats-cell { font-size: calc(12px * var(--text-scale)); }
+.food-detail-grid__ings, .compact-upgrades { font-size: calc(12px * var(--text-scale)); }
+.recipe-table__header { font-size: calc(10px * var(--text-scale)); font-weight: 700; }
+.recipe-row .recipe-row__name,
+.recipe-row .recipe-row__station,
+.recipe-row .recipe-row__ings,
+.recipe-row .recipe-row__stats-cell { font-size: calc(12px * var(--text-scale)); }
 .add-to-cart-btn { font-size: calc(11px * var(--text-scale)); padding: calc(3px * var(--text-scale)) calc(8px * var(--text-scale)); }
 .filter-bar, .filter-bar select, .filter-bar__search { font-size: calc(12px * var(--text-scale)); }
 .filter-chip { font-size: calc(12px * var(--text-scale)); padding: calc(8px * var(--text-scale)) calc(14px * var(--text-scale)); }
@@ -1394,6 +1423,7 @@ h3 {
 .adv-filter__station-max { font-size: calc(11px * var(--text-scale)); }
 .adv-filter__level-input { font-size: calc(12px * var(--text-scale)); width: calc(40px * var(--text-scale)); padding: calc(4px * var(--text-scale)); }
 
+
 /* ===== Stats table (expanded row) ===== */
 .stats-table {
   display: grid;
@@ -1722,3 +1752,221 @@ h3 {
   color: var(--accent);
 }
 
+/* ===== Weather forecast (Apple Weather-inspired) ===== */
+.wx {
+  max-width: calc(900px * var(--text-scale));
+  margin: 0 auto;
+  font-size: calc(14px * var(--text-scale));
+}
+
+/* Inline day input (used in headers) */
+.wx-day-inline-input {
+  width: 4em;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  padding: 2px 6px;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.wx-day-inline-input::-webkit-inner-spin-button,
+.wx-day-inline-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Detail panel (focused biome + day) */
+.wx-detail {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.wx-detail__header {
+  font-size: 0.9em;
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.wx-detail__row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.wx-detail__row:last-child {
+  margin-bottom: 0;
+}
+.wx-detail__cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  background: var(--surface-sunken);
+  border-radius: var(--radius);
+}
+.wx-detail__cell-time {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--text);
+}
+.wx-detail__cell-name {
+  font-size: 0.85em;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.wx-detail__cell-icon {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+.wx-detail__cell-effects {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Wind strip — all wind changes across the day */
+.wx-detail__wind-strip {
+  display: flex;
+  gap: 0;
+  padding: 8px 0 4px;
+  border-top: 1px solid var(--border-soft);
+  margin-top: 8px;
+}
+.wx-wind-tick {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 3px 0;
+  min-width: 0;
+}
+.wx-wind-tick__time {
+  font-size: 0.6em;
+  color: var(--muted);
+}
+.wx-wind-tick__arrow {
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 1;
+  color: var(--text);
+}
+.wx-wind-tick__pct {
+  font-size: 0.6em;
+  color: var(--muted);
+}
+
+/* Effect badges (shared) */
+.wx-effect {
+  font-size: 0.8em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.wx-effect--sm {
+  font-size: 0.65em;
+  padding: 1px 5px;
+}
+.wx-effect--wet {
+  background: color-mix(in oklch, var(--warning) 20%, transparent);
+  color: var(--warning);
+}
+.wx-effect--freezing {
+  background: color-mix(in oklch, var(--info) 20%, transparent);
+  color: var(--info);
+}
+.wx-effect--low-visibility {
+  background: color-mix(in oklch, var(--text-muted) 20%, transparent);
+  color: var(--text-muted);
+}
+.wx-effect--shelter-needed {
+  background: color-mix(in oklch, var(--danger) 20%, transparent);
+  color: var(--danger);
+}
+/* All-biomes grid */
+.wx-biomes-grid {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.wx-biomes-grid__title {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.wx-biomes-grid__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+.wx-biome-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  background: var(--surface-sunken);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.wx-biome-card:hover {
+  border-color: var(--border);
+}
+.wx-biome-card--selected {
+  border-color: var(--accent);
+  background: color-mix(in oklch, var(--accent) 10%, var(--surface-sunken));
+}
+.wx-biome-card--selected:hover {
+  border-color: var(--accent);
+}
+.wx-biome-card__name {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+.wx-biome-card--selected .wx-biome-card__name {
+  color: var(--accent);
+}
+.wx-biome-card__icon {
+  width: 36px;
+  height: 36px;
+  image-rendering: pixelated;
+}
+.wx-biome-card__weather {
+  font-size: 0.85em;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+.wx-biome-card__wind {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.75em;
+  color: var(--muted);
+}
+.wx-biome-card__wind-arrow {
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1;
+}

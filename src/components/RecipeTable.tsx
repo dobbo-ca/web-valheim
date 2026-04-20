@@ -6,18 +6,11 @@ import { filterRecipes, emptyFilterState } from '../lib/filter';
 import { decodeFilterState, encodeFilterState } from '../lib/url-state';
 import {
   addToCart,
-  removeFromCart,
-  setQty,
-  clearCart,
-  aggregateGroceryList,
   encodeCartUrl,
   decodeCartUrl,
-  parseCartKey,
 } from '../lib/cart';
 import { FilterBar } from './FilterBar';
 import { RecipeRow } from './RecipeRow';
-import { CartButton } from './CartButton';
-import { CartDrawer } from './CartDrawer';
 
 type SortKey = 'name' | 'station' | 'level';
 type SortDir = 'asc' | 'desc';
@@ -81,7 +74,6 @@ export const RecipeTable: Component<Props> = (props) => {
   const [page, setPage] = createSignal(1);
   const [pageSize, setPageSize] = createSignal<number>(readStoredPageSize());
   const [cart, setCart] = createStore<Record<string, number>>({});
-  const [drawerOpen, setDrawerOpen] = createSignal(false);
   const [mounted, setMounted] = createSignal(false);
   const [visibleColumns, setVisibleColumns] = createSignal<ColumnId[]>(readStoredColumns());
   const [colMenuOpen, setColMenuOpen] = createSignal(false);
@@ -197,7 +189,6 @@ export const RecipeTable: Component<Props> = (props) => {
   );
 
   const cartKeys = createMemo(() => Object.keys(cart));
-  const cartCount = createMemo(() => cartKeys().length);
 
   const upgradeKeysInCart = createMemo(() => {
     const set = new Set<string>();
@@ -206,6 +197,11 @@ export const RecipeTable: Component<Props> = (props) => {
     }
     return set;
   });
+
+  const handleAddToCart = (recipeId: string) => {
+    const snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
+    setCart(reconcile(addToCart(snapshot, recipeId)));
+  };
 
   const handleAddUpgradeToCart = (cartKey: string) => {
     const snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
@@ -223,53 +219,6 @@ export const RecipeTable: Component<Props> = (props) => {
       snapshot = addToCart(snapshot, key);
     }
     setCart(reconcile(snapshot));
-  };
-
-  const groceryList = createMemo(() =>
-    aggregateGroceryList(
-      Object.fromEntries(cartKeys().map((k) => [k, cart[k]])),
-      recipesById(),
-      itemsById(),
-    ),
-  );
-
-  const cartEntries = createMemo(() =>
-    cartKeys().map((cartKey) => {
-      const { baseId, quality } = parseCartKey(cartKey);
-      const baseRecipe = recipesById().get(baseId);
-      const baseName = baseRecipe?.name ?? baseId;
-      const displayName = quality != null ? `${baseName} +${quality - 1}` : baseName;
-      return {
-        recipeId: cartKey,
-        recipeName: displayName,
-        qty: cart[cartKey],
-        yieldQty: quality == null ? (baseRecipe?.yields?.qty ?? 1) : 1,
-      };
-    }),
-  );
-
-  const handleAddToCart = (recipeId: string) => {
-    const snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
-    setCart(reconcile(addToCart(snapshot, recipeId)));
-  };
-
-  const handleSetQty = (recipeId: string, qty: number) => {
-    const snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
-    const next = setQty(snapshot, recipeId, qty);
-    setCart(reconcile(next));
-    if (Object.keys(next).length === 0) setDrawerOpen(false);
-  };
-
-  const handleRemoveFromCart = (recipeId: string) => {
-    const snapshot = Object.fromEntries(cartKeys().map((k) => [k, cart[k]]));
-    const next = removeFromCart(snapshot, recipeId);
-    setCart(reconcile(next));
-    if (Object.keys(next).length === 0) setDrawerOpen(false);
-  };
-
-  const handleClearCart = () => {
-    setCart(reconcile(clearCart()));
-    setDrawerOpen(false);
   };
 
   const filtered = createMemo(() => filterRecipes(data().recipes, state()));
@@ -418,7 +367,6 @@ export const RecipeTable: Component<Props> = (props) => {
     <div class="recipe-table">
       <div class="recipe-table__toolbar">
         <FilterBar state={state()} stations={data().stations} spriteHref={props.spriteHref} onChange={commit} />
-        <CartButton count={cartCount()} onClick={() => setDrawerOpen(true)} />
       </div>
 
       <Show when={state().ingredientIds.length > 0}>
@@ -501,7 +449,7 @@ export const RecipeTable: Component<Props> = (props) => {
               inCart={recipe.id in cart}
               onToggle={toggleRow}
               onAddToCart={handleAddToCart}
-              onOpenCart={() => setDrawerOpen(true)}
+              onOpenCart={() => {}}
               iconIds={iconSet()}
               spriteHref={props.spriteHref}
               upgradeKeysInCart={upgradeKeysInCart()}
@@ -580,17 +528,6 @@ export const RecipeTable: Component<Props> = (props) => {
         </div>
       </div>
 
-      <CartDrawer
-        open={drawerOpen()}
-        entries={cartEntries()}
-        groceryList={groceryList()}
-        onClose={() => setDrawerOpen(false)}
-        onSetQty={handleSetQty}
-        onRemove={handleRemoveFromCart}
-        onClear={handleClearCart}
-        iconIds={iconSet()}
-        spriteHref={props.spriteHref}
-      />
     </div>
     </Show>
   );

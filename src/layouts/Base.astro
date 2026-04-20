@@ -2,6 +2,7 @@
 import '../styles/theme.css';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { TextSizeToggle } from '../components/TextSizeToggle';
+import { CartWidget } from '../components/CartWidget';
 
 interface Props {
   title: string;
@@ -9,7 +10,9 @@ interface Props {
 }
 
 const { title, description = 'Valheim helper — recipes, stations, reverse lookup.' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+const path = Astro.url.pathname;
 ---
 <html lang="en">
   <head>
@@ -35,8 +38,13 @@ const base = import.meta.env.BASE_URL;
     <header class="site-header">
       <div class="site-header-inner">
         <a href={base} class="brand">⚔ Valheim Helper</a>
+        <nav>
+          <a href={base} aria-current={path === base || path.startsWith(`${base}items`) ? 'page' : undefined}>Items</a>
+          <a href={`${base}weather`} aria-current={path.startsWith(`${base}weather`) ? 'page' : undefined}>Weather</a>
+        </nav>
         <TextSizeToggle client:load />
         <ThemeToggle client:load />
+        <CartWidget client:load baseHref={base} />
       </div>
     </header>
     <main class="container">
