@@ -1,4 +1,4 @@
-import { For, Show, type Component, createSignal, createMemo } from 'solid-js';
+import { For, Show, type Component, createSignal, createMemo, createEffect, onMount } from 'solid-js';
 import {
   ALL_BIOMES,
   type Biome,
@@ -11,19 +11,51 @@ interface Props {
   baseHref: string;
 }
 
+const MAX_DAY = 99999;
+
 const DayInput: Component<{ value: number; onInput: (v: string) => void }> = (props) => (
   <input
     class="wx-day-inline-input"
     type="number"
     min="1"
+    max={MAX_DAY}
+    maxLength={5}
     value={props.value}
-    onInput={(e) => props.onInput(e.currentTarget.value)}
+    onInput={(e) => {
+      const raw = e.currentTarget.value.slice(0, 5);
+      e.currentTarget.value = raw;
+      props.onInput(raw);
+    }}
   />
 );
 
 export const WeatherForecast: Component<Props> = (props) => {
   const [currentDay, setCurrentDay] = createSignal(1);
   const [selectedBiome, setSelectedBiome] = createSignal<Biome>('Meadows');
+
+  // Hydrate from URL on mount
+  onMount(() => {
+    const params = new URLSearchParams(window.location.search);
+    const dayParam = params.get('day');
+    if (dayParam) {
+      const n = parseInt(dayParam, 10);
+      if (Number.isFinite(n) && n >= 1) setCurrentDay(n);
+    }
+    const biomeParam = params.get('biome');
+    if (biomeParam && ALL_BIOMES.includes(biomeParam as Biome)) {
+      setSelectedBiome(biomeParam as Biome);
+    }
+  });
+
+  // Sync state to URL
+  createEffect(() => {
+    const params = new URLSearchParams();
+    params.set('day', String(currentDay()));
+    params.set('biome', selectedBiome());
+    const qs = params.toString();
+    const url = `${window.location.pathname}?${qs}`;
+    window.history.replaceState({}, '', url);
+  });
 
   const forecast = createMemo(() =>
     getForecast(currentDay(), selectedBiome(), 1),
@@ -41,7 +73,7 @@ export const WeatherForecast: Component<Props> = (props) => {
   const handleDayInput = (value: string) => {
     const n = parseInt(value, 10);
     if (Number.isFinite(n) && n >= 1) {
-      setCurrentDay(n);
+      setCurrentDay(Math.min(n, MAX_DAY));
     }
   };
 
@@ -65,7 +97,10 @@ export const WeatherForecast: Component<Props> = (props) => {
               <For each={f().periods}>
                 {(period) => (
                   <div class="wx-detail__cell">
-                    <span class="wx-detail__cell-label">{period.label}</span>
+                    <span class="wx-detail__cell-time">{period.label}</span>
+                    <span class="wx-detail__cell-name">
+                      {getWeatherLabel(period.weather)}
+                    </span>
                     <img
                       class="wx-detail__cell-icon"
                       src={iconUrl(getWeatherIcon(period.weather))}
@@ -73,9 +108,6 @@ export const WeatherForecast: Component<Props> = (props) => {
                       width="32"
                       height="32"
                     />
-                    <span class="wx-detail__cell-name">
-                      {getWeatherLabel(period.weather)}
-                    </span>
                     <Show when={period.effects.length > 0}>
                       <div class="wx-detail__cell-effects">
                         <For each={period.effects}>

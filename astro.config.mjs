@@ -5,7 +5,7 @@ export default defineConfig({
   site: 'https://www.dobbo.ca',
   base: '/valheim/',
   outDir: './dist/valheim',
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   integrations: [solid()],
   vite: {
     server: {

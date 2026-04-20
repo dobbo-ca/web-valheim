@@ -10,7 +10,9 @@ interface Props {
 }
 
 const { title, description = 'Valheim helper — recipes, stations, reverse lookup.' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+const path = Astro.url.pathname;
 ---
 <html lang="en">
   <head>
@@ -37,8 +39,8 @@ const base = import.meta.env.BASE_URL;
       <div class="site-header-inner">
         <a href={base} class="brand">⚔ Valheim Helper</a>
         <nav>
-          <a href={base}>Items</a>
-          <a href={`${base}weather/`}>Weather</a>
+          <a href={base} aria-current={path === base || path.startsWith(`${base}items`) ? 'page' : undefined}>Items</a>
+          <a href={`${base}weather`} aria-current={path.startsWith(`${base}weather`) ? 'page' : undefined}>Weather</a>
         </nav>
         <TextSizeToggle client:load />
         <ThemeToggle client:load />
