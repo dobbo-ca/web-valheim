@@ -2,6 +2,7 @@
 import '../styles/theme.css';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { TextSizeToggle } from '../components/TextSizeToggle';
+import { CartWidget } from '../components/CartWidget';
 
 interface Props {
   title: string;
@@ -41,6 +42,7 @@ const base = import.meta.env.BASE_URL;
         </nav>
         <TextSizeToggle client:load />
         <ThemeToggle client:load />
+        <CartWidget client:load baseHref={base} />
       </div>
     </header>
     <main class="container">

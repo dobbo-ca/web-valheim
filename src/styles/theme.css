@@ -151,6 +151,22 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.5px;
 }
+.site-header nav {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+}
+.site-header nav a {
+  color: var(--text-soft);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: color 0.1s ease;
+}
+.site-header nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
 
 .sr-only {
   position: absolute;
@@ -1393,6 +1409,21 @@ h3 {
 .adv-filter__station-name { font-size: calc(12px * var(--text-scale)); }
 .adv-filter__station-max { font-size: calc(11px * var(--text-scale)); }
 .adv-filter__level-input { font-size: calc(12px * var(--text-scale)); width: calc(40px * var(--text-scale)); padding: calc(4px * var(--text-scale)); }
+
+/* Weather text-scale */
+.wx-detail__header { font-size: calc(12px * var(--text-scale)); }
+.wx-detail__cell-label { font-size: calc(10px * var(--text-scale)); }
+.wx-detail__cell-name { font-size: calc(11px * var(--text-scale)); }
+.wx-effect { font-size: calc(11px * var(--text-scale)); }
+.wx-effect--sm { font-size: calc(9px * var(--text-scale)); }
+.wx-wind-tick__time { font-size: calc(9px * var(--text-scale)); }
+.wx-wind-tick__pct { font-size: calc(9px * var(--text-scale)); }
+.wx-wind-tick__arrow { font-size: calc(13px * var(--text-scale)); }
+.wx-biomes-grid__title { font-size: calc(11px * var(--text-scale)); }
+.wx-biome-card__name { font-size: calc(11px * var(--text-scale)); }
+.wx-biome-card__weather { font-size: calc(12px * var(--text-scale)); }
+.wx-biome-card__wind { font-size: calc(10px * var(--text-scale)); }
+.wx-day-inline-input { font-size: calc(12px * var(--text-scale)); width: calc(56px * var(--text-scale)); }
 
 /* ===== Stats table (expanded row) ===== */
 .stats-table {
