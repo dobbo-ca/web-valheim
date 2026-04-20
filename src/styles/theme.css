@@ -1816,13 +1816,6 @@ h3 {
   font-weight: 700;
   color: var(--text);
 }
-.wx-detail__cell-name {
-  font-size: 0.85em;
-  color: var(--text);
-  text-align: center;
-  line-height: 1.2;
-  font-weight: 700;
-}
 .wx-detail__cell-icon {
   width: 32px;
   height: 32px;
@@ -1909,7 +1902,7 @@ h3 {
 }
 .wx-biomes-grid__items {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(calc(110px * var(--text-scale, 1)), 1fr));
   gap: 8px;
 }
 .wx-biome-card {
@@ -1917,7 +1910,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  padding: 12px 8px;
+  padding: 12px 4px;
   background: var(--surface-sunken);
   border: 1px solid transparent;
   border-radius: var(--radius);
@@ -1937,12 +1930,21 @@ h3 {
   border-color: var(--accent);
 }
 .wx-biome-card__name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 0.8em;
   font-weight: 600;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.3px;
   text-align: center;
+  white-space: nowrap;
+}
+.wx-biome-card__biome-icon {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
 }
 .wx-biome-card--selected .wx-biome-card__name {
   color: var(--accent);
@@ -1951,12 +1953,6 @@ h3 {
   width: 36px;
   height: 36px;
   image-rendering: pixelated;
-}
-.wx-biome-card__weather {
-  font-size: 0.85em;
-  font-weight: 500;
-  text-align: center;
-  line-height: 1.2;
 }
 .wx-biome-card__wind {
   display: flex;

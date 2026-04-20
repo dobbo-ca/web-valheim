@@ -9,7 +9,12 @@ import {
 
 interface Props {
   baseHref: string;
+  spriteHref?: string;
 }
+
+/** Map biome display name to its sprite symbol ID */
+const biomeIconId = (biome: string): string =>
+  'filter-' + biome.toLowerCase().replace(/\s+/g, '-');
 
 const MAX_DAY = 99999;
 
@@ -98,9 +103,6 @@ export const WeatherForecast: Component<Props> = (props) => {
                 {(period) => (
                   <div class="wx-detail__cell">
                     <span class="wx-detail__cell-time">{period.label}</span>
-                    <span class="wx-detail__cell-name">
-                      {getWeatherLabel(period.weather)}
-                    </span>
                     <img
                       class="wx-detail__cell-icon"
                       src={iconUrl(getWeatherIcon(period.weather))}
@@ -165,17 +167,21 @@ export const WeatherForecast: Component<Props> = (props) => {
                   }}
                   onClick={() => setSelectedBiome(biome)}
                 >
-                  <div class="wx-biome-card__name">{biome}</div>
+                  <div class="wx-biome-card__name">
+                    <Show when={props.spriteHref}>
+                      <svg class="wx-biome-card__biome-icon" width="16" height="16" aria-hidden="true">
+                        <use href={`${props.spriteHref}#${biomeIconId(biome)}`} />
+                      </svg>
+                    </Show>
+                    {biome}
+                  </div>
                   <img
                     class="wx-biome-card__icon"
                     src={iconUrl(getWeatherIcon(forecast.dominant))}
-                    alt=""
+                    alt={getWeatherLabel(forecast.dominant)}
                     width="36"
                     height="36"
                   />
-                  <div class="wx-biome-card__weather">
-                    {getWeatherLabel(forecast.dominant)}
-                  </div>
                   <div class="wx-biome-card__wind">
                     <span
                       class="wx-biome-card__wind-arrow"
