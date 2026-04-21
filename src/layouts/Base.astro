@@ -37,7 +37,7 @@ const path = Astro.url.pathname;
   <body>
     <header class="site-header">
       <div class="site-header-inner">
-        <a href={base} class="brand">⚔ Valheim Helper</a>
+        <a href={base} class="brand"><span class="brand__icon" aria-hidden="true">⚔</span> Valheim Helper</a>
         <nav>
           <a href={base} aria-current={path === base || path.startsWith(`${base}items`) ? 'page' : undefined}>Items</a>
           <a href={`${base}weather`} aria-current={path.startsWith(`${base}weather`) ? 'page' : undefined}>Weather</a>

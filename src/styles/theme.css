@@ -149,7 +149,15 @@ h3 {
 .site-header .brand {
   color: var(--accent);
   font-weight: 700;
+  font-size: 16px;
   letter-spacing: 0.5px;
+  text-decoration: none;
+}
+.brand__icon {
+  font-size: 22px;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
 }
 .site-header nav {
   display: flex;
@@ -159,7 +167,10 @@ h3 {
 .site-header nav a {
   color: var(--text-soft);
   text-decoration: none;
-  padding: 6px 14px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: transparent;
@@ -420,6 +431,7 @@ h3 {
   position: relative;
 }
 .recipe-table__header {
+  position: relative;
   display: grid;
   grid-template-columns: var(--grid-cols, 2fr 1.5fr 3fr auto 62px);
   gap: 12px;
@@ -681,11 +693,13 @@ h3 {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text-soft);
-  font: inherit;
   font-size: 14px;
-  padding: 2px 6px;
+  padding: 4px 6px;
   cursor: pointer;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .recipe-table__col-toggle-btn:hover {
   border-color: var(--accent);
@@ -1061,7 +1075,7 @@ h3 {
 .filter-bar__adv-toggle { font-size: calc(13px * var(--text-scale)); padding: calc(8px * var(--text-scale)) calc(14px * var(--text-scale)); }
 .filter-bar__level-value { font-size: calc(12px * var(--text-scale)); }
 .chip { font-size: calc(12px * var(--text-scale)); padding: calc(3px * var(--text-scale)) calc(10px * var(--text-scale)); }
-.recipe-table__col-toggle-btn { font-size: calc(14px * var(--text-scale)); padding: calc(2px * var(--text-scale)) calc(6px * var(--text-scale)); }
+.recipe-table__col-toggle-btn { font-size: calc(14px * var(--text-scale)); padding: calc(4px * var(--text-scale)) calc(6px * var(--text-scale)); }
 
 /* ===== Text size toggle ===== */
 .text-size-toggle {
@@ -1079,7 +1093,7 @@ h3 {
   align-items: center;
   justify-content: center;
   font: inherit;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   line-height: 1;
@@ -1137,7 +1151,7 @@ h3 {
   align-items: center;
   justify-content: center;
   font: inherit;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
   line-height: 1;
 }
